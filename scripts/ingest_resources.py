@@ -90,13 +90,12 @@ def fetch_repositories(
     Args:
         resource_type: The category of resource being fetched (e.g. 'mcp_server').
         topics: List of topic queries (e.g. ['topic:mcp-server']).
-        max_pages: Maximum number of pages to fetch (100 repos per page).
+        max_pages: Maximum number of pages to fetch (100 repos per page) PER TOPIC.
 
     Returns:
         List of repository dictionaries returned by the GitHub API.
     """
     url = "https://api.github.com/search/repositories"
-    query = " OR ".join(topics) if isinstance(topics, list) else str(topics)
 
     headers = {
         "Accept": "application/vnd.github.v3+json",
@@ -105,85 +104,92 @@ def fetch_repositories(
         headers["Authorization"] = f"token {GITHUB_TOKEN.strip()}"
 
     all_repositories: List[Dict[str, Any]] = []
+    seen_repo_ids = set()
 
-    logger.info("Fetching repositories for '%s' with query: '%s'", resource_type, query)
+    for topic_query in topics:
+        logger.info("Fetching repositories for '%s' with query: '%s'", resource_type, topic_query)
 
-    for page in range(1, max_pages + 1):
-        params = {
-            "q": query,
-            "sort": "updated",
-            "order": "desc",
-            "per_page": 100,
-            "page": page,
-        }
+        for page in range(1, max_pages + 1):
+            params = {
+                "q": topic_query,
+                "sort": "updated",
+                "order": "desc",
+                "per_page": 100,
+                "page": page,
+            }
 
-        try:
-            response = requests.get(url, headers=headers, params=params, timeout=30)
-        except requests.RequestException as req_err:
-            logger.error("Request failed on page %d for %s: %s", page, resource_type, req_err)
-            break
+            try:
+                response = requests.get(url, headers=headers, params=params, timeout=30)
+            except requests.RequestException as req_err:
+                logger.error("Request failed on page %d for %s: %s", page, resource_type, req_err)
+                break
 
-        # Handle rate limits
-        remaining = response.headers.get("X-RateLimit-Remaining")
-        reset_time = response.headers.get("X-RateLimit-Reset")
+            # Handle rate limits
+            remaining = response.headers.get("X-RateLimit-Remaining")
+            reset_time = response.headers.get("X-RateLimit-Reset")
 
-        if response.status_code == 403 and remaining == "0":
-            if reset_time:
-                sleep_sec = max(1, int(reset_time) - int(time.time()) + 1)
-                logger.warning(
-                    "GitHub rate limit reached (HTTP 403). Sleeping for %d seconds until reset...",
-                    sleep_sec,
+            if response.status_code == 403 and remaining == "0":
+                if reset_time:
+                    sleep_sec = max(1, int(reset_time) - int(time.time()) + 1)
+                    logger.warning(
+                        "GitHub rate limit reached (HTTP 403). Sleeping for %d seconds until reset...",
+                        sleep_sec,
+                    )
+                    time.sleep(sleep_sec)
+                    # Retry request after sleep
+                    try:
+                        response = requests.get(url, headers=headers, params=params, timeout=30)
+                        remaining = response.headers.get("X-RateLimit-Remaining")
+                        reset_time = response.headers.get("X-RateLimit-Reset")
+                    except requests.RequestException as retry_err:
+                        logger.error("Retry failed for %s on page %d: %s", resource_type, page, retry_err)
+                        break
+
+            if remaining is not None and int(remaining) == 0:
+                if reset_time:
+                    sleep_sec = max(1, int(reset_time) - int(time.time()) + 1)
+                    logger.warning(
+                        "GitHub rate limit remaining is 0. Sleeping for %d seconds until reset...",
+                        sleep_sec,
+                    )
+                    time.sleep(sleep_sec)
+
+            if response.status_code != 200:
+                logger.error(
+                    "GitHub API error (%d) for %s on page %d: %s",
+                    response.status_code,
+                    resource_type,
+                    page,
+                    response.text,
                 )
-                time.sleep(sleep_sec)
-                # Retry request after sleep
-                try:
-                    response = requests.get(url, headers=headers, params=params, timeout=30)
-                    remaining = response.headers.get("X-RateLimit-Remaining")
-                    reset_time = response.headers.get("X-RateLimit-Reset")
-                except requests.RequestException as retry_err:
-                    logger.error("Retry failed for %s on page %d: %s", resource_type, page, retry_err)
-                    break
+                break
 
-        if remaining is not None and int(remaining) == 0:
-            if reset_time:
-                sleep_sec = max(1, int(reset_time) - int(time.time()) + 1)
-                logger.warning(
-                    "GitHub rate limit remaining is 0. Sleeping for %d seconds until reset...",
-                    sleep_sec,
-                )
-                time.sleep(sleep_sec)
+            data = response.json()
+            items = data.get("items", [])
+            if not items:
+                logger.info("No items returned on page %d for %s.", page, topic_query)
+                break
 
-        if response.status_code != 200:
-            logger.error(
-                "GitHub API error (%d) for %s on page %d: %s",
-                response.status_code,
-                resource_type,
+            for item in items:
+                repo_id = item.get("id")
+                if repo_id not in seen_repo_ids:
+                    seen_repo_ids.add(repo_id)
+                    all_repositories.append(item)
+
+            logger.info(
+                "Fetched page %d (%d items) for %s (total unique fetched: %d)",
                 page,
-                response.text,
+                len(items),
+                topic_query,
+                len(all_repositories),
             )
-            break
 
-        data = response.json()
-        items = data.get("items", [])
-        if not items:
-            logger.info("No items returned on page %d for %s.", page, resource_type)
-            break
+            if len(items) < 100:
+                # End of available search results
+                break
 
-        all_repositories.extend(items)
-        logger.info(
-            "Fetched page %d (%d items) for %s (total fetched: %d)",
-            page,
-            len(items),
-            resource_type,
-            len(all_repositories),
-        )
-
-        if len(items) < 100:
-            # End of available search results
-            break
-
-        # Small polite delay between pagination requests
-        time.sleep(1)
+            # Small polite delay between pagination requests
+            time.sleep(1)
 
     return all_repositories
 
@@ -281,9 +287,14 @@ def process_and_upsert(
         return 0
 
     if client is None:
+        import json
+        out_file = f"dry_run_{resource_type}.json"
+        with open(out_file, "w", encoding="utf-8") as f:
+            json.dump(records, f, indent=2, default=str)
         logger.warning(
-            "Supabase client not initialized (missing credentials). Prepared %d records without DB upsert.",
+            "Supabase client not initialized. Saved %d records to %s without DB upsert.",
             len(records),
+            out_file,
         )
         return len(records)
 
