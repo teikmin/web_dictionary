@@ -56,6 +56,9 @@ These filters use metadata already returned in GitHub Search results and cost ze
 > [!TIP]
 > Embed Gate G4 directly into GitHub Search API queries (e.g., `topic:mcp-server stars:>=100 archived:false fork:false sort:stars`) to retrieve only pre-qualified repositories and preserve the search rate limit.
 
+> [!NOTE]
+> **Finding Skills via Code Search:** Many skill repositories lack consistent topic tags. In addition to topic queries, skill discovery utilizes GitHub Code Search for `filename:SKILL.md`, applying the same hard gates to the parent repository.
+
 ---
 
 ## 4. Layer 2 — Type Check (File Evidence Required)
@@ -71,8 +74,11 @@ Keyword topics frequently produce false positives. **A repository is accepted on
 - Contains `SKILL.md` files (with structured YAML frontmatter containing `name` and `description`).
 - Contains a valid plugin manifest targeting **Claude Code**, **Codex**, or **Antigravity**.
 
-### Monorepo Extraction
+### Monorepo Extraction & Sub-entry Evidence
 If a single repository contains multiple MCP servers or multiple `SKILL.md` subdirectories, **each tool is ingested as an independent Entry** referencing its specific repository subpath.
+
+> [!WARNING]
+> **Sub-entry Evidence Rule:** To prevent a popular monorepo (e.g. $\ge 5,000$ stars) from flooding the catalog with trivial or unmaintained utilities, each sub-entry must carry its own verifiable evidence: its own official registry listing, independent package downloads, or recent commits in that specific subfolder.
 
 ---
 
@@ -93,6 +99,9 @@ Entries meeting all criteria are admitted in priority order:
 1. **Official Vendors & Pinned Repos:** Always included (exempt from star count).
 2. **Category Minimums:** The top 5 tools in any category with $\ge 5$ qualifying candidates.
 3. **Type Percentile Rank:** Filled by quality percentile up to **$\sim 350$ MCP servers** and **$\sim 150$ Agent skills**.
+
+> [!IMPORTANT]
+> **500 is a cap, not a quota.** The 100-star minimum is never lowered to fill empty slots. If fewer entries qualify, the catalog is simply smaller. Quality strictly takes precedence over quantity.
 
 ---
 

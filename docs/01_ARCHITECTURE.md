@@ -233,30 +233,29 @@ Built with **Astro Static Site Generation (SSG)** and indexed locally with **Pag
 
 ## 8. Repository Layout
 
+Top-level summary. The full file-level structure, folder ownership and data flow are in [05_FOLDER_STRUCTURE.md](file:///c:/teikmin/exploring/web_database/docs/05_FOLDER_STRUCTURE.md).
+
 ```text
 web_database/
-├── content/                  # SOURCE OF TRUTH (managed by pipeline)
-│   ├── entries/
-│   │   ├── mcp/              # Markdown entry per MCP server
-│   │   └── skills/           # Markdown entry per agent skill
-│   ├── clients/              # Client definitions (Claude Code, Codex, Antigravity)
-│   └── categories/           # Category definitions
+├── content/                  # SOURCE OF TRUTH: published catalog
+│   ├── entries/{mcp,skills}/ #   pipeline-owned, one Markdown file per entry
+│   ├── clients/              #   human-owned client definitions
+│   ├── categories/           #   human-owned categories + matching rules
+│   └── pages/                #   human-owned about / criteria pages
 ├── data/
-│   ├── signals/              # Weekly metric snapshots
-│   ├── overrides/            # block.yaml and pin.yaml
-│   └── runs/                 # Per-run validation & audit reports
-├── pipeline/                 # TypeScript ingestion & filter engine
-│   ├── sources/              # GitHub Search, MCP Registry, npm, PyPI
-│   ├── select/               # Gates, file evidence verification, scoring
-│   ├── enrich/               # Launch spec & skill spec extractors
-│   ├── lifecycle/            # Status transition rules
-│   └── config/               # Thresholds, weights, vendor lists
-├── renderers/                # Shared spec -> client config translators
-├── site/                     # Astro static site
-├── docs/                     # Architectural documentation
-└── .github/workflows/
-    ├── pipeline.yml          # Weekly scheduled ingestion run
-    └── deploy.yml            # Triggered on main branch push
+│   ├── overrides/            # block.yaml / pin.yaml (optional)
+│   ├── reference/            # vendor orgs, trusted awesome-lists
+│   ├── signals/              # weekly metric snapshots
+│   ├── runs/                 # per-run report, decisions, diff
+│   └── state/                # cross-run tracking (failures, slugs)
+├── apps/
+│   ├── pipeline/             # TypeScript weekly pipeline (sources, stages, enrich, config)
+│   └── site/                 # Astro static site + Pagefind
+├── packages/
+│   ├── schema/               # Shared data shapes (pipeline writes, site reads)
+│   └── renderers/            # Launch spec -> Claude Code / Codex / Antigravity configs
+├── docs/
+└── .github/workflows/        # ci.yml, pipeline.yml (weekly), deploy.yml (on push)
 ```
 
 ---
