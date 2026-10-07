@@ -6,6 +6,11 @@
 
 ---
 
+> [!NOTE]
+> **Historical Context:** This independent evaluation evaluated the original September 2026 concept. The architectural risks identified here (such as registry timing, DB operational complexity, and scope discipline) directly informed the v2 architecture in [01_ARCHITECTURE.md](file:///c:/teikmin/exploring/web_database/docs/01_ARCHITECTURE.md).
+
+---
+
 ## Executive Summary
 
 This is a **fundamentally well-conceived project** from a founder whose profile is unusually well-aligned with the problem space. Unlike many solo developer projects that are "solutions looking for a problem," this one identifies a genuine, acute friction point in a rapidly expanding ecosystem — and proposes an architecture that plays directly to your strengths (automated systems, Python ingestion, PostgreSQL, zero-framework pragmatism).
