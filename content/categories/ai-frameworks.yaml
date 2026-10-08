@@ -1,0 +1,14 @@
+id: ai-frameworks
+name: AI Frameworks & Memory
+tagline: Multi-agent orchestrators, LLM memory engines, and cognitive architectures
+description: Frameworks, vector retrieval layers, long-term memory systems, and multi-agent coordination runtimes.
+icon: cpu
+keywords:
+  - agent
+  - crew
+  - autogen
+  - orchestrat
+  - swarm
+  - langchain
+  - llama
+  - memory

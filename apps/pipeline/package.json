@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "report": "tsx src/cli/report.ts",
+    "run": "tsx src/cli/run.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

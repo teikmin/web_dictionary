@@ -1,0 +1,139 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  indexed?: boolean;
+}
+
+const {
+  title = 'AI Tools Hub — MCP & Agent Skill Registry',
+  description = 'Curated registry of MCP servers and agent skills with 1-click launch configurations for Claude Code, Codex, and Google Antigravity.',
+  indexed = true,
+} = Astro.props;
+
+const clients = [
+  { id: 'claude-code', name: 'Claude Code' },
+  { id: 'codex', name: 'Codex' },
+  { id: 'antigravity', name: 'Antigravity' },
+];
+
+const categories = [
+  { id: 'databases', name: 'Databases' },
+  { id: 'browser-automation', name: 'Browsers' },
+  { id: 'dev-tools', name: 'Dev Tools' },
+  { id: 'ai-frameworks', name: 'AI Runtimes' },
+  { id: 'productivity', name: 'Productivity' },
+  { id: 'security', name: 'Security' },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#090d16" />
+  </head>
+  <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-600 selection:text-white">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 w-full border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-6">
+          <a href="/" class="flex items-center gap-2.5 font-bold text-lg text-slate-100 hover:text-blue-400 transition-colors">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20 font-mono text-sm">
+              ⚡
+            </div>
+            <span>AI Tools Hub</span>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-4 text-sm font-medium text-slate-300">
+            <a href="/#catalog" class="hover:text-white transition-colors">Catalog</a>
+            <div class="relative group">
+              <button type="button" class="flex items-center gap-1 hover:text-white transition-colors">
+                <span>Clients</span>
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div class="absolute left-0 top-full hidden group-hover:block w-44 pt-2 z-50">
+                <div class="p-1 rounded-lg bg-slate-900 border border-slate-800 shadow-xl space-y-0.5">
+                  {clients.map((c) => (
+                    <a href={`/client/${c.id}`} class="block px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-800 hover:text-white rounded">
+                      {c.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div class="relative group">
+              <button type="button" class="flex items-center gap-1 hover:text-white transition-colors">
+                <span>Categories</span>
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div class="absolute left-0 top-full hidden group-hover:block w-48 pt-2 z-50">
+                <div class="p-1 rounded-lg bg-slate-900 border border-slate-800 shadow-xl space-y-0.5">
+                  {categories.map((c) => (
+                    <a href={`/category/${c.id}`} class="block px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-800 hover:text-white rounded">
+                      {c.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <a href="/about/criteria" class="hover:text-white transition-colors">Criteria</a>
+          </nav>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a
+            href="https://github.com/modelcontextprotocol"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white transition-colors"
+          >
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1" data-pagefind-body={indexed ? '' : undefined}>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-slate-950 py-10 text-xs text-slate-400" data-pagefind-ignore>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <div class="flex items-center gap-2 font-semibold text-slate-200">
+            <span>⚡ AI Tools Hub &amp; MCP Registry</span>
+          </div>
+          <p class="mt-1 text-slate-500">
+            Automated 3-layer selection engine. Git-backed catalog for Claude Code, Codex, and Antigravity.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-6 text-slate-400">
+          <a href="/about/criteria" class="hover:text-slate-200 transition-colors">Quality Gates &amp; Criteria</a>
+          <span class="text-slate-700">|</span>
+          <span>Catalog: CC BY 4.0</span>
+          <span class="text-slate-700">|</span>
+          <span>Code: MIT</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+id: claude-code
+name: Claude Code
+tagline: Anthropic's agentic coding assistant for terminal workflows
+description: Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and edits files directly with full MCP tool support.
+website: https://claude.ai/code
+configFormat: cli
+configPath: ~/.claude/mcp.json
+supportsMcp: true
+supportsSkills: true
+icon: /clients/claude-code.svg

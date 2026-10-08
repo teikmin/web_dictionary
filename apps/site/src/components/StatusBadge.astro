@@ -1,0 +1,46 @@
+---
+import type { EntryStatus } from '@web-db/schema';
+
+interface Props {
+  status?: EntryStatus;
+  class?: string;
+}
+
+const { status = 'active', class: className = '' } = Astro.props;
+
+const styles: Record<EntryStatus, { label: string; bg: string; dot: string }> = {
+  active: {
+    label: 'Active',
+    bg: 'bg-emerald-950/40 text-emerald-300 border-emerald-800/50',
+    dot: 'bg-emerald-400',
+  },
+  slowing: {
+    label: 'Slowing',
+    bg: 'bg-amber-950/40 text-amber-300 border-amber-800/50',
+    dot: 'bg-amber-400',
+  },
+  dormant: {
+    label: 'Dormant',
+    bg: 'bg-slate-800/60 text-slate-400 border-slate-700',
+    dot: 'bg-slate-500',
+  },
+  archived: {
+    label: 'Archived',
+    bg: 'bg-red-950/40 text-red-300 border-red-800/50',
+    dot: 'bg-red-400',
+  },
+};
+
+const current = styles[status] || styles.active;
+---
+
+<span
+  class:list={[
+    'inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-xs font-medium border',
+    current.bg,
+    className,
+  ]}
+>
+  <span class:list={['w-1.5 h-1.5 rounded-full', current.dot]} aria-hidden="true"></span>
+  <span>{current.label}</span>
+</span>

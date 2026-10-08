@@ -1,0 +1,32 @@
+---
+slug: joooook-12306-mcp
+name: 12306-mcp
+tagline: This is a 12306 ticket search server based on the Model Context Protocol (MCP).
+categories:
+  - productivity
+status: active
+quality_percentile: 29
+selection_reason: quality_percentile
+first_seen: 2025-04-14T14:31:32Z
+last_updated: 2026-10-08T15:17:45.934Z
+source:
+  kind: github_repo
+  repo: Joooook/12306-mcp
+  license: MIT
+signals:
+  stars: 2288
+  last_commit: 2026-07-31T06:22:59Z
+type: mcp_server
+launch:
+  transport: stdio
+  command: docker
+  args:
+    - run
+    - -i
+    - --rm
+    - ghcr.io/joooook/12306-mcp
+  env_vars: []
+  confidence: manifest
+---
+
+This is a 12306 ticket search server based on the Model Context Protocol (MCP).

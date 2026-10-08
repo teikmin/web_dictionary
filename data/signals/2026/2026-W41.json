@@ -1,0 +1,1858 @@
+{
+  "google-gemini-gemini-cli-gemini-skills-agent-tui": {
+    "stars": 107245,
+    "forks": 14709,
+    "watchers": 107245,
+    "pushedAt": "2026-10-07T01:31:40Z",
+    "compositeScore": 81,
+    "percentile": 77
+  },
+  "koala73-worldmonitor-agents-skills-sentry-triage": {
+    "stars": 87972,
+    "forks": 13416,
+    "watchers": 87972,
+    "pushedAt": "2026-10-07T15:54:03Z",
+    "compositeScore": 86,
+    "percentile": 96
+  },
+  "d4vinci-scrapling-agent-skill-scrapling-skill": {
+    "stars": 86124,
+    "forks": 8824,
+    "watchers": 86124,
+    "pushedAt": "2026-10-06T23:25:22Z",
+    "compositeScore": 83,
+    "percentile": 90
+  },
+  "ruvnet-ruflo-agents-skills-agent-adaptive-coordinator": {
+    "stars": 74048,
+    "forks": 8807,
+    "watchers": 74048,
+    "pushedAt": "2026-10-07T15:37:43Z",
+    "compositeScore": 84,
+    "percentile": 92
+  },
+  "upstash-context7-packages-opencode-skills-context7-mcp": {
+    "stars": 62764,
+    "forks": 3053,
+    "watchers": 62764,
+    "pushedAt": "2026-10-07T13:59:55Z",
+    "compositeScore": 81,
+    "percentile": 77
+  },
+  "chromedevtools-chrome-devtools-mcp-skills-a11y-debugging": {
+    "stars": 53072,
+    "forks": 5771,
+    "watchers": 53072,
+    "pushedAt": "2026-10-07T14:52:11Z",
+    "compositeScore": 81,
+    "percentile": 77
+  },
+  "deusdata-codebase-memory-mcp": {
+    "stars": 45967,
+    "forks": 3781,
+    "watchers": 45967,
+    "pushedAt": "2026-10-07T00:33:23Z",
+    "compositeScore": 83,
+    "percentile": 89
+  },
+  "reactive-resume-reactive-resume-skills-resume-builder": {
+    "stars": 43949,
+    "forks": 4833,
+    "watchers": 43949,
+    "pushedAt": "2026-10-06T04:42:39Z",
+    "compositeScore": 80,
+    "percentile": 71
+  },
+  "bytedance-ui-tars-desktop": {
+    "stars": 39208,
+    "forks": 3970,
+    "watchers": 39208,
+    "pushedAt": "2026-10-05T22:52:08Z",
+    "compositeScore": 83,
+    "percentile": 89
+  },
+  "github-github-mcp-server": {
+    "stars": 33427,
+    "forks": 5104,
+    "watchers": 33427,
+    "pushedAt": "2026-10-07T15:26:49Z",
+    "compositeScore": 89,
+    "percentile": 98
+  },
+  "assafelovic-gpt-researcher-claude": {
+    "stars": 29938,
+    "forks": 4086,
+    "watchers": 29938,
+    "pushedAt": "2026-10-01T19:33:35Z",
+    "compositeScore": 84,
+    "percentile": 92
+  },
+  "pascalorg-editor-agents-skills-open-pr": {
+    "stars": 24713,
+    "forks": 3053,
+    "watchers": 24713,
+    "pushedAt": "2026-10-07T12:29:07Z",
+    "compositeScore": 84,
+    "percentile": 92
+  },
+  "modelcontextprotocol-python-sdk-claude-skills-test-quality": {
+    "stars": 24504,
+    "forks": 4017,
+    "watchers": 24504,
+    "pushedAt": "2026-10-05T13:26:06Z",
+    "compositeScore": 92,
+    "percentile": 99
+  },
+  "czlonkowski-n8n-mcp-data-skills-n8n-agents": {
+    "stars": 23049,
+    "forks": 3661,
+    "watchers": 23049,
+    "pushedAt": "2026-10-06T13:22:38Z",
+    "compositeScore": 86,
+    "percentile": 96
+  },
+  "1panel-dev-maxkb": {
+    "stars": 22912,
+    "forks": 3169,
+    "watchers": 22912,
+    "pushedAt": "2026-10-04T03:52:36Z",
+    "compositeScore": 81,
+    "percentile": 77
+  },
+  "modelscope-funasr": {
+    "stars": 20602,
+    "forks": 2064,
+    "watchers": 20602,
+    "pushedAt": "2026-10-02T04:51:05Z",
+    "compositeScore": 83,
+    "percentile": 89
+  },
+  "evil0ctal-douyin_tiktok_download_api": {
+    "stars": 20496,
+    "forks": 2844,
+    "watchers": 20496,
+    "pushedAt": "2026-10-02T00:45:24Z",
+    "compositeScore": 84,
+    "percentile": 92
+  },
+  "nukeop-nuclear-agents-skills-creating-components": {
+    "stars": 18615,
+    "forks": 1337,
+    "watchers": 18615,
+    "pushedAt": "2026-10-06T13:06:45Z",
+    "compositeScore": 82,
+    "percentile": 82
+  },
+  "wanshuiyin-auto-claude-code-research-in-sleep-skills-ablation-planner": {
+    "stars": 17090,
+    "forks": 1437,
+    "watchers": 17090,
+    "pushedAt": "2026-10-07T07:46:15Z",
+    "compositeScore": 83,
+    "percentile": 89
+  },
+  "triggerdotdev-trigger-dev-claude-skills-drizzle": {
+    "stars": 16493,
+    "forks": 1481,
+    "watchers": 16493,
+    "pushedAt": "2026-10-07T13:36:22Z",
+    "compositeScore": 83,
+    "percentile": 88
+  },
+  "xpzouying-xiaohongshu-mcp-skills-post-to-xhs": {
+    "stars": 16133,
+    "forks": 2372,
+    "watchers": 16133,
+    "pushedAt": "2026-10-05T05:06:45Z",
+    "compositeScore": 82,
+    "percentile": 81
+  },
+  "open-metadata-openmetadata-skills-code-review": {
+    "stars": 15400,
+    "forks": 2428,
+    "watchers": 15400,
+    "pushedAt": "2026-10-07T15:57:38Z",
+    "compositeScore": 82,
+    "percentile": 81
+  },
+  "yusufkaraaslan-skill_seekers-distribution-claude-plugin-skills-skill-builder": {
+    "stars": 15114,
+    "forks": 1539,
+    "watchers": 15114,
+    "pushedAt": "2026-09-30T18:49:17Z",
+    "compositeScore": 83,
+    "percentile": 88
+  },
+  "joeanamier-xhs-downloader": {
+    "stars": 12930,
+    "forks": 1900,
+    "watchers": 12930,
+    "pushedAt": "2026-09-30T10:40:12Z",
+    "compositeScore": 81,
+    "percentile": 76
+  },
+  "morluto-rea-skills-reverse-engineer-anything": {
+    "stars": 12895,
+    "forks": 1370,
+    "watchers": 12895,
+    "pushedAt": "2026-10-07T16:03:46Z",
+    "compositeScore": 84,
+    "percentile": 92
+  },
+  "openbyteinc-quantdinger": {
+    "stars": 12519,
+    "forks": 2541,
+    "watchers": 12519,
+    "pushedAt": "2026-10-06T21:14:39Z",
+    "compositeScore": 88,
+    "percentile": 97
+  },
+  "mrexodia-ida-pro-mcp-skills-idapython": {
+    "stars": 12505,
+    "forks": 1480,
+    "watchers": 12505,
+    "pushedAt": "2026-09-26T15:42:10Z",
+    "compositeScore": 83,
+    "percentile": 88
+  },
+  "0x4m4-hexstrike-ai": {
+    "stars": 12494,
+    "forks": 2544,
+    "watchers": 12494,
+    "pushedAt": "2026-08-03T14:33:09Z",
+    "compositeScore": 79,
+    "percentile": 64
+  },
+  "0xjacky-nginx-ui-claude-skills-release": {
+    "stars": 11571,
+    "forks": 890,
+    "watchers": 11571,
+    "pushedAt": "2026-10-07T12:20:31Z",
+    "compositeScore": 79,
+    "percentile": 64
+  },
+  "xinnan-tech-xiaozhi-esp32-server": {
+    "stars": 10747,
+    "forks": 3666,
+    "watchers": 10747,
+    "pushedAt": "2026-10-07T13:27:13Z",
+    "compositeScore": 90,
+    "percentile": 99
+  },
+  "mcp-use-mcp-use-libraries-typescript-packages-server-examples-skills-over-mcp-skills-purchasing": {
+    "stars": 10728,
+    "forks": 1494,
+    "watchers": 10728,
+    "pushedAt": "2026-10-06T22:28:29Z",
+    "compositeScore": 81,
+    "percentile": 76
+  },
+  "apify-apify-mcp-server-claude-skills-bug-triage": {
+    "stars": 9987,
+    "forks": 300,
+    "watchers": 9987,
+    "pushedAt": "2026-10-07T12:58:11Z",
+    "compositeScore": 79,
+    "percentile": 64
+  },
+  "awslabs-mcp-src-aurora-dsql-mcp-server-skills-amazon-aurora-dsql-skill": {
+    "stars": 9761,
+    "forks": 1799,
+    "watchers": 9761,
+    "pushedAt": "2026-10-07T15:02:16Z",
+    "compositeScore": 84,
+    "percentile": 91
+  },
+  "trailhq-graft-claude-skills-graft": {
+    "stars": 9672,
+    "forks": 882,
+    "watchers": 9672,
+    "pushedAt": "2026-10-07T12:45:42Z",
+    "compositeScore": 83,
+    "percentile": 88
+  },
+  "openstatushq-openstatus-apps-web-public-well-known-agent-skills-openstatus-api": {
+    "stars": 9175,
+    "forks": 787,
+    "watchers": 9175,
+    "pushedAt": "2026-10-07T14:59:31Z",
+    "compositeScore": 82,
+    "percentile": 81
+  },
+  "maximhq-bifrost-claude-skills-add-pricing-field": {
+    "stars": 8605,
+    "forks": 1355,
+    "watchers": 8605,
+    "pushedAt": "2026-10-07T16:03:08Z",
+    "compositeScore": 86,
+    "percentile": 96
+  },
+  "firerpa-lamda": {
+    "stars": 8544,
+    "forks": 1155,
+    "watchers": 8544,
+    "pushedAt": "2026-09-27T10:05:24Z",
+    "compositeScore": 83,
+    "percentile": 88
+  },
+  "osaurus-ai-osaurus": {
+    "stars": 8026,
+    "forks": 475,
+    "watchers": 8026,
+    "pushedAt": "2026-10-07T15:19:43Z",
+    "compositeScore": 76,
+    "percentile": 47
+  },
+  "firecrawl-firecrawl-mcp-server-plugins-claude-firecrawl-search-skills-firecrawl-developer-index": {
+    "stars": 7566,
+    "forks": 901,
+    "watchers": 7566,
+    "pushedAt": "2026-10-07T02:59:19Z",
+    "compositeScore": 83,
+    "percentile": 87
+  },
+  "devlikeapro-waha": {
+    "stars": 7562,
+    "forks": 1799,
+    "watchers": 7562,
+    "pushedAt": "2026-10-07T09:37:04Z",
+    "compositeScore": 89,
+    "percentile": 98
+  },
+  "agentdeskai-browser-tools-mcp": {
+    "stars": 7327,
+    "forks": 537,
+    "watchers": 7327,
+    "pushedAt": "2026-08-12T16:48:04Z",
+    "compositeScore": 73,
+    "percentile": 36
+  },
+  "zipstack-unstract-claude-skills-adapter-ops": {
+    "stars": 7275,
+    "forks": 718,
+    "watchers": 7275,
+    "pushedAt": "2026-10-07T15:48:19Z",
+    "compositeScore": 82,
+    "percentile": 81
+  },
+  "minishlab-semble": {
+    "stars": 6187,
+    "forks": 274,
+    "watchers": 6187,
+    "pushedAt": "2026-10-07T12:50:02Z",
+    "compositeScore": 78,
+    "percentile": 58
+  },
+  "asciimoo-hister": {
+    "stars": 5931,
+    "forks": 264,
+    "watchers": 5931,
+    "pushedAt": "2026-10-07T08:08:26Z",
+    "compositeScore": 75,
+    "percentile": 42
+  },
+  "lemonade-sdk-lemonade": {
+    "stars": 5839,
+    "forks": 522,
+    "watchers": 5839,
+    "pushedAt": "2026-10-07T15:47:50Z",
+    "compositeScore": 77,
+    "percentile": 53
+  },
+  "jerbouma-financetoolkit": {
+    "stars": 5404,
+    "forks": 630,
+    "watchers": 5404,
+    "pushedAt": "2026-10-06T22:20:57Z",
+    "compositeScore": 79,
+    "percentile": 64
+  },
+  "54yyyu-zotero-mcp-src-zotero_mcp-skills-zotero-cli": {
+    "stars": 5272,
+    "forks": 418,
+    "watchers": 5272,
+    "pushedAt": "2026-10-07T14:51:25Z",
+    "compositeScore": 80,
+    "percentile": 71
+  },
+  "vitali87-code-graph-rag-github-skills-code-review": {
+    "stars": 5236,
+    "forks": 699,
+    "watchers": 5236,
+    "pushedAt": "2026-10-07T14:11:44Z",
+    "compositeScore": 83,
+    "percentile": 87
+  },
+  "tabularisdb-tabularis-claude-skills-gitnexus-gitnexus-cli": {
+    "stars": 5134,
+    "forks": 337,
+    "watchers": 5134,
+    "pushedAt": "2026-10-06T18:37:16Z",
+    "compositeScore": 79,
+    "percentile": 64
+  },
+  "atilaahmettaner-tradingview-mcp-openclaw": {
+    "stars": 4952,
+    "forks": 986,
+    "watchers": 4952,
+    "pushedAt": "2026-10-06T16:37:03Z",
+    "compositeScore": 86,
+    "percentile": 95
+  },
+  "bethington-ghidra-mcp": {
+    "stars": 4702,
+    "forks": 215,
+    "watchers": 4702,
+    "pushedAt": "2026-10-07T11:20:51Z",
+    "compositeScore": 77,
+    "percentile": 53
+  },
+  "u14app-deep-research": {
+    "stars": 4694,
+    "forks": 1059,
+    "watchers": 4694,
+    "pushedAt": "2026-06-18T14:43:29Z",
+    "compositeScore": 72,
+    "percentile": 33
+  },
+  "ivanmurzak-unity-mcp-claude-skills-build-cli": {
+    "stars": 4397,
+    "forks": 388,
+    "watchers": 4397,
+    "pushedAt": "2026-10-04T08:59:47Z",
+    "compositeScore": 79,
+    "percentile": 63
+  },
+  "open-webui-mcpo": {
+    "stars": 4392,
+    "forks": 497,
+    "watchers": 4392,
+    "pushedAt": "2026-05-17T20:40:30Z",
+    "compositeScore": 54,
+    "percentile": 3
+  },
+  "antvis-mcp-server-chart": {
+    "stars": 4391,
+    "forks": 420,
+    "watchers": 4391,
+    "pushedAt": "2026-08-27T01:50:14Z",
+    "compositeScore": 74,
+    "percentile": 39
+  },
+  "microsoft-flint-chart-github-extensions-flint-chart-skills-flint-chart-author": {
+    "stars": 4345,
+    "forks": 245,
+    "watchers": 4345,
+    "pushedAt": "2026-10-07T02:26:00Z",
+    "compositeScore": 84,
+    "percentile": 91
+  },
+  "dagucloud-dagu-skills-dagu": {
+    "stars": 4292,
+    "forks": 363,
+    "watchers": 4292,
+    "pushedAt": "2026-10-07T15:46:53Z",
+    "compositeScore": 79,
+    "percentile": 63
+  },
+  "haris-musa-excel-mcp-server": {
+    "stars": 4212,
+    "forks": 470,
+    "watchers": 4212,
+    "pushedAt": "2026-09-28T16:09:47Z",
+    "compositeScore": 75,
+    "percentile": 42
+  },
+  "irinabuht12-oss-google-ads-meta-ads-mcp": {
+    "stars": 4200,
+    "forks": 365,
+    "watchers": 4200,
+    "pushedAt": "2026-09-25T23:37:23Z",
+    "compositeScore": 74,
+    "percentile": 38
+  },
+  "txn2-kubefwd": {
+    "stars": 4173,
+    "forks": 238,
+    "watchers": 4173,
+    "pushedAt": "2026-10-06T22:36:34Z",
+    "compositeScore": 77,
+    "percentile": 53
+  },
+  "evalstate-fast-agent-design-fast-agent-system": {
+    "stars": 3929,
+    "forks": 446,
+    "watchers": 3929,
+    "pushedAt": "2026-10-07T14:40:10Z",
+    "compositeScore": 81,
+    "percentile": 76
+  },
+  "yvgude-lean-ctx-rust-src-templates": {
+    "stars": 3866,
+    "forks": 350,
+    "watchers": 3866,
+    "pushedAt": "2026-10-07T15:06:02Z",
+    "compositeScore": 79,
+    "percentile": 63
+  },
+  "pipeshub-ai-pipeshub-ai-claude-skills-release-changelog": {
+    "stars": 3814,
+    "forks": 594,
+    "watchers": 3814,
+    "pushedAt": "2026-10-07T15:02:21Z",
+    "compositeScore": 79,
+    "percentile": 63
+  },
+  "stickerdaniel-linkedin-mcp-server-agents-skills-1-triage-issues": {
+    "stars": 3782,
+    "forks": 658,
+    "watchers": 3782,
+    "pushedAt": "2026-10-07T03:53:44Z",
+    "compositeScore": 84,
+    "percentile": 91
+  },
+  "modelcontextprotocol-java-sdk": {
+    "stars": 3722,
+    "forks": 1153,
+    "watchers": 3722,
+    "pushedAt": "2026-10-06T15:19:53Z",
+    "compositeScore": 96,
+    "percentile": 100
+  },
+  "davepoon-buildwithclaude-plugins-agent-triforce-skills-code-health": {
+    "stars": 3604,
+    "forks": 567,
+    "watchers": 3604,
+    "pushedAt": "2026-10-06T12:39:52Z",
+    "compositeScore": 83,
+    "percentile": 87
+  },
+  "huangjunsen0406-py-xiaozhi": {
+    "stars": 3492,
+    "forks": 742,
+    "watchers": 3492,
+    "pushedAt": "2026-09-11T02:20:50Z",
+    "compositeScore": 82,
+    "percentile": 81
+  },
+  "taylorwilsdon-google_workspace_mcp-skills-managing-google-workspace": {
+    "stars": 3298,
+    "forks": 1033,
+    "watchers": 3298,
+    "pushedAt": "2026-10-07T13:34:20Z",
+    "compositeScore": 90,
+    "percentile": 99
+  },
+  "neomjs-neo": {
+    "stars": 3285,
+    "forks": 247,
+    "watchers": 3285,
+    "pushedAt": "2026-10-07T15:56:44Z",
+    "compositeScore": 78,
+    "percentile": 58
+  },
+  "xpf0000-flyenv-codex-skills-flyenv-module-boundaries": {
+    "stars": 3265,
+    "forks": 378,
+    "watchers": 3265,
+    "pushedAt": "2026-10-07T13:31:00Z",
+    "compositeScore": 80,
+    "percentile": 71
+  },
+  "cortex-docs-cortex": {
+    "stars": 3232,
+    "forks": 158,
+    "watchers": 3232,
+    "pushedAt": "2026-10-06T05:58:39Z",
+    "compositeScore": 72,
+    "percentile": 33
+  },
+  "silexlabs-silex": {
+    "stars": 2997,
+    "forks": 684,
+    "watchers": 2997,
+    "pushedAt": "2026-10-07T14:04:43Z",
+    "compositeScore": 86,
+    "percentile": 95
+  },
+  "zhizhuodemao-js-reverse-mcp": {
+    "stars": 2904,
+    "forks": 374,
+    "watchers": 2904,
+    "pushedAt": "2026-09-03T11:45:13Z",
+    "compositeScore": 76,
+    "percentile": 46
+  },
+  "zinja-coder-jadx-ai-mcp": {
+    "stars": 2861,
+    "forks": 263,
+    "watchers": 2861,
+    "pushedAt": "2026-09-23T07:51:12Z",
+    "compositeScore": 69,
+    "percentile": 25
+  },
+  "vexa-ai-vexa-clients-claude-plugin-skills-meetings": {
+    "stars": 2858,
+    "forks": 499,
+    "watchers": 2858,
+    "pushedAt": "2026-10-06T21:12:47Z",
+    "compositeScore": 79,
+    "percentile": 63
+  },
+  "opensolon-solon": {
+    "stars": 2794,
+    "forks": 287,
+    "watchers": 2794,
+    "pushedAt": "2026-10-01T01:24:41Z",
+    "compositeScore": 78,
+    "percentile": 57
+  },
+  "sparfenyuk-mcp-proxy": {
+    "stars": 2773,
+    "forks": 267,
+    "watchers": 2773,
+    "pushedAt": "2026-07-20T21:05:47Z",
+    "compositeScore": 68,
+    "percentile": 22
+  },
+  "metatool-ai-metamcp": {
+    "stars": 2697,
+    "forks": 436,
+    "watchers": 2697,
+    "pushedAt": "2026-06-22T16:50:50Z",
+    "compositeScore": 63,
+    "percentile": 13
+  },
+  "brightdata-brightdata-mcp": {
+    "stars": 2659,
+    "forks": 331,
+    "watchers": 2659,
+    "pushedAt": "2026-10-07T13:33:27Z",
+    "compositeScore": 80,
+    "percentile": 71
+  },
+  "chrisryugj-korean-law-mcp": {
+    "stars": 2647,
+    "forks": 532,
+    "watchers": 2647,
+    "pushedAt": "2026-10-05T04:29:41Z",
+    "compositeScore": 84,
+    "percentile": 91
+  },
+  "go-nunu-nunu": {
+    "stars": 2607,
+    "forks": 209,
+    "watchers": 2607,
+    "pushedAt": "2026-08-14T09:17:55Z",
+    "compositeScore": 63,
+    "percentile": 12
+  },
+  "samanhappy-mcphub-agents-skills-polish-release": {
+    "stars": 2500,
+    "forks": 330,
+    "watchers": 2500,
+    "pushedAt": "2026-10-07T12:59:33Z",
+    "compositeScore": 80,
+    "percentile": 70
+  },
+  "nitrocloudofficial-nitrostack-sample-apps-ai-scheduler-nitrostack-hackathon-agents-skills-auth-security": {
+    "stars": 2465,
+    "forks": 1427,
+    "watchers": 2465,
+    "pushedAt": "2026-10-07T15:31:44Z",
+    "compositeScore": 90,
+    "percentile": 98
+  },
+  "0xmassi-webclaw": {
+    "stars": 2371,
+    "forks": 236,
+    "watchers": 2371,
+    "pushedAt": "2026-09-23T08:10:19Z",
+    "compositeScore": 76,
+    "percentile": 46
+  },
+  "jnmetacode-agency-orchestrator-ao-skills-shortfilm-prompt": {
+    "stars": 2330,
+    "forks": 307,
+    "watchers": 2330,
+    "pushedAt": "2026-10-05T12:49:43Z",
+    "compositeScore": 80,
+    "percentile": 70
+  },
+  "joooook-12306-mcp": {
+    "stars": 2288,
+    "forks": 330,
+    "watchers": 2288,
+    "pushedAt": "2026-07-31T06:22:59Z",
+    "compositeScore": 71,
+    "percentile": 29
+  },
+  "amoylab-unla": {
+    "stars": 2238,
+    "forks": 185,
+    "watchers": 2238,
+    "pushedAt": "2026-08-27T07:52:00Z",
+    "compositeScore": 71,
+    "percentile": 29
+  },
+  "777genius-agent-teams-ai": {
+    "stars": 2235,
+    "forks": 369,
+    "watchers": 2235,
+    "pushedAt": "2026-10-07T16:03:04Z",
+    "compositeScore": 81,
+    "percentile": 76
+  },
+  "vibheksoni-stealth-browser-mcp-skills-stealth-browser-mcp": {
+    "stars": 2212,
+    "forks": 302,
+    "watchers": 2212,
+    "pushedAt": "2026-10-05T18:19:25Z",
+    "compositeScore": 80,
+    "percentile": 70
+  },
+  "cyb3rmx-qu1cksc0pe": {
+    "stars": 2065,
+    "forks": 259,
+    "watchers": 2065,
+    "pushedAt": "2026-09-18T12:45:23Z",
+    "compositeScore": 74,
+    "percentile": 38
+  },
+  "doobidoo-mcp-memory-service-claude-skills-gitnexus-debugging": {
+    "stars": 1993,
+    "forks": 342,
+    "watchers": 1993,
+    "pushedAt": "2026-10-07T15:51:22Z",
+    "compositeScore": 81,
+    "percentile": 76
+  },
+  "zzet-gortex": {
+    "stars": 1869,
+    "forks": 168,
+    "watchers": 1869,
+    "pushedAt": "2026-10-06T18:43:50Z",
+    "compositeScore": 77,
+    "percentile": 52
+  },
+  "korotovsky-slack-mcp-server": {
+    "stars": 1860,
+    "forks": 382,
+    "watchers": 1860,
+    "pushedAt": "2026-07-16T17:14:22Z",
+    "compositeScore": 71,
+    "percentile": 29
+  },
+  "openagentplatform-dive": {
+    "stars": 1827,
+    "forks": 175,
+    "watchers": 1827,
+    "pushedAt": "2026-07-31T03:11:22Z",
+    "compositeScore": 68,
+    "percentile": 22
+  },
+  "mcp-brasil-mcp-brasil": {
+    "stars": 1806,
+    "forks": 280,
+    "watchers": 1806,
+    "pushedAt": "2026-09-19T22:50:58Z",
+    "compositeScore": 71,
+    "percentile": 29
+  },
+  "hkuds-nanobot-nanobot-skills-clawhub": {
+    "stars": 48838,
+    "forks": 8614,
+    "watchers": 48838,
+    "pushedAt": "2026-10-07T14:47:17Z",
+    "compositeScore": 87,
+    "percentile": 97
+  },
+  "ahujasid-mcp-for-blender": {
+    "stars": 30173,
+    "forks": 2735,
+    "watchers": 30173,
+    "pushedAt": "2026-10-06T15:08:04Z",
+    "compositeScore": 83,
+    "percentile": 87
+  },
+  "prefecthq-fastmcp-agents-skills-docs": {
+    "stars": 27993,
+    "forks": 2440,
+    "watchers": 27993,
+    "pushedAt": "2026-10-07T13:17:54Z",
+    "compositeScore": 83,
+    "percentile": 86
+  },
+  "coplaydev-unity-mcp-claude-skills-blender-to-unity": {
+    "stars": 14742,
+    "forks": 1534,
+    "watchers": 14742,
+    "pushedAt": "2026-10-07T04:28:13Z",
+    "compositeScore": 83,
+    "percentile": 86
+  },
+  "xiaoduoya-codex-with-chatgpt-skill": {
+    "stars": 7095,
+    "forks": 661,
+    "watchers": 7095,
+    "pushedAt": "2026-10-01T05:19:24Z",
+    "compositeScore": 81,
+    "percentile": 75
+  },
+  "grab-cursor-talk-to-figma-mcp": {
+    "stars": 7047,
+    "forks": 778,
+    "watchers": 7047,
+    "pushedAt": "2026-07-26T07:14:26Z",
+    "compositeScore": 73,
+    "percentile": 36
+  },
+  "prest-prest-cursor-skills-prest-integration-tests": {
+    "stars": 4622,
+    "forks": 325,
+    "watchers": 4622,
+    "pushedAt": "2026-10-06T00:35:45Z",
+    "compositeScore": 79,
+    "percentile": 62
+  },
+  "ibm-mcp-context-forge": {
+    "stars": 4582,
+    "forks": 905,
+    "watchers": 4582,
+    "pushedAt": "2026-10-07T15:58:59Z",
+    "compositeScore": 86,
+    "percentile": 95
+  },
+  "jub0t-concat-claude-skills-run-concat": {
+    "stars": 4202,
+    "forks": 391,
+    "watchers": 4202,
+    "pushedAt": "2026-10-07T12:58:00Z",
+    "compositeScore": 80,
+    "percentile": 70
+  },
+  "ahujasid-ableton-mcp": {
+    "stars": 3148,
+    "forks": 425,
+    "watchers": 3148,
+    "pushedAt": "2026-09-22T10:37:13Z",
+    "compositeScore": 79,
+    "percentile": 62
+  },
+  "zcaceres-markdownify-mcp": {
+    "stars": 3001,
+    "forks": 255,
+    "watchers": 3001,
+    "pushedAt": "2026-09-25T05:23:14Z",
+    "compositeScore": 77,
+    "percentile": 52
+  },
+  "beenuar-aisoc": {
+    "stars": 2387,
+    "forks": 266,
+    "watchers": 2387,
+    "pushedAt": "2026-10-07T15:25:34Z",
+    "compositeScore": 79,
+    "percentile": 62
+  },
+  "ibm-assetopsbench": {
+    "stars": 2330,
+    "forks": 332,
+    "watchers": 2330,
+    "pushedAt": "2026-10-06T22:00:53Z",
+    "compositeScore": 80,
+    "percentile": 69
+  },
+  "stacklok-toolhive-claude-skills-add-rule": {
+    "stars": 2242,
+    "forks": 314,
+    "watchers": 2242,
+    "pushedAt": "2026-10-07T14:43:46Z",
+    "compositeScore": 80,
+    "percentile": 69
+  },
+  "can4hou6joeng4-boss-agent-cli": {
+    "stars": 2045,
+    "forks": 171,
+    "watchers": 2045,
+    "pushedAt": "2026-10-04T04:21:56Z",
+    "compositeScore": 76,
+    "percentile": 46
+  },
+  "0xsteph-pentest-ai": {
+    "stars": 1718,
+    "forks": 317,
+    "watchers": 1718,
+    "pushedAt": "2026-10-07T16:01:26Z",
+    "compositeScore": 82,
+    "percentile": 80
+  },
+  "openosint-openosint": {
+    "stars": 1707,
+    "forks": 268,
+    "watchers": 1707,
+    "pushedAt": "2026-10-06T18:22:01Z",
+    "compositeScore": 80,
+    "percentile": 69
+  },
+  "mukul975-cve-mcp-server": {
+    "stars": 1619,
+    "forks": 268,
+    "watchers": 1619,
+    "pushedAt": "2026-10-01T07:11:17Z",
+    "compositeScore": 80,
+    "percentile": 69
+  },
+  "nicobailon-pi-mcp-adapter-skills-mcp-scripting": {
+    "stars": 1578,
+    "forks": 388,
+    "watchers": 1578,
+    "pushedAt": "2026-10-06T01:43:00Z",
+    "compositeScore": 81,
+    "percentile": 75
+  },
+  "designcomputer-mysql_mcp_server": {
+    "stars": 1398,
+    "forks": 260,
+    "watchers": 1398,
+    "pushedAt": "2026-08-02T13:36:20Z",
+    "compositeScore": 72,
+    "percentile": 32
+  },
+  "awslabs-cli-agent-orchestrator-agent-plugin-cao-contributor-skills-cao-plugin": {
+    "stars": 1394,
+    "forks": 291,
+    "watchers": 1394,
+    "pushedAt": "2026-10-07T15:31:16Z",
+    "compositeScore": 82,
+    "percentile": 80
+  },
+  "mcpjungle-mcpjungle": {
+    "stars": 1292,
+    "forks": 164,
+    "watchers": 1292,
+    "pushedAt": "2026-08-02T15:15:01Z",
+    "compositeScore": 69,
+    "percentile": 24
+  },
+  "ling71671-open-reverselab": {
+    "stars": 1228,
+    "forks": 286,
+    "watchers": 1228,
+    "pushedAt": "2026-09-29T15:34:53Z",
+    "compositeScore": 82,
+    "percentile": 80
+  },
+  "ai-ql-tuui": {
+    "stars": 1155,
+    "forks": 107,
+    "watchers": 1155,
+    "pushedAt": "2026-05-14T09:02:28Z",
+    "compositeScore": 51,
+    "percentile": 2
+  },
+  "helpcode-ai-anythingmcp": {
+    "stars": 990,
+    "forks": 88,
+    "watchers": 990,
+    "pushedAt": "2026-10-07T16:03:23Z",
+    "compositeScore": 70,
+    "percentile": 27
+  },
+  "rath-team-openrath": {
+    "stars": 960,
+    "forks": 51,
+    "watchers": 960,
+    "pushedAt": "2026-09-28T07:04:56Z",
+    "compositeScore": 67,
+    "percentile": 20
+  },
+  "arben-adm-mcp-sequential-thinking": {
+    "stars": 952,
+    "forks": 120,
+    "watchers": 952,
+    "pushedAt": "2026-09-25T05:13:29Z",
+    "compositeScore": 71,
+    "percentile": 28
+  },
+  "suekou-mcp-notion-server": {
+    "stars": 920,
+    "forks": 180,
+    "watchers": 920,
+    "pushedAt": "2026-07-31T07:14:56Z",
+    "compositeScore": 70,
+    "percentile": 26
+  },
+  "codeabra-iai-personal-memory-engine": {
+    "stars": 901,
+    "forks": 111,
+    "watchers": 901,
+    "pushedAt": "2026-10-07T11:51:57Z",
+    "compositeScore": 76,
+    "percentile": 45
+  },
+  "riponcm-projectmem": {
+    "stars": 852,
+    "forks": 46,
+    "watchers": 852,
+    "pushedAt": "2026-10-03T00:01:18Z",
+    "compositeScore": 71,
+    "percentile": 28
+  },
+  "utensils-mcp-nixos": {
+    "stars": 851,
+    "forks": 46,
+    "watchers": 851,
+    "pushedAt": "2026-09-05T02:31:09Z",
+    "compositeScore": 67,
+    "percentile": 19
+  },
+  "karanb192-reddit-mcp-buddy": {
+    "stars": 846,
+    "forks": 106,
+    "watchers": 846,
+    "pushedAt": "2026-08-17T09:42:37Z",
+    "compositeScore": 69,
+    "percentile": 24
+  },
+  "alexander-zuev-supabase-mcp-server": {
+    "stars": 831,
+    "forks": 102,
+    "watchers": 831,
+    "pushedAt": "2026-08-21T20:27:19Z",
+    "compositeScore": 65,
+    "percentile": 16
+  },
+  "jonigl-mcp-client-for-ollama": {
+    "stars": 827,
+    "forks": 127,
+    "watchers": 827,
+    "pushedAt": "2026-10-05T08:33:55Z",
+    "compositeScore": 77,
+    "percentile": 50
+  },
+  "rahilp-second-brain-cloudflare": {
+    "stars": 803,
+    "forks": 119,
+    "watchers": 803,
+    "pushedAt": "2026-10-03T13:13:58Z",
+    "compositeScore": 76,
+    "percentile": 45
+  },
+  "zinja-coder-jadx-mcp-server": {
+    "stars": 791,
+    "forks": 131,
+    "watchers": 791,
+    "pushedAt": "2026-09-23T07:51:37Z",
+    "compositeScore": 69,
+    "percentile": 24
+  },
+  "dadbodgeoff-drift": {
+    "stars": 790,
+    "forks": 65,
+    "watchers": 790,
+    "pushedAt": "2026-09-11T00:14:02Z",
+    "compositeScore": 70,
+    "percentile": 26
+  },
+  "wshobson-maverick-mcp": {
+    "stars": 701,
+    "forks": 162,
+    "watchers": 701,
+    "pushedAt": "2026-10-05T20:40:23Z",
+    "compositeScore": 80,
+    "percentile": 69
+  },
+  "marc-shade-world-intel-mcp": {
+    "stars": 657,
+    "forks": 113,
+    "watchers": 657,
+    "pushedAt": "2026-09-02T20:53:26Z",
+    "compositeScore": 69,
+    "percentile": 23
+  },
+  "affaan-m-ecc-agents-skills-agent-introspection-debugging": {
+    "stars": 274698,
+    "forks": 40988,
+    "watchers": 274698,
+    "pushedAt": "2026-10-05T04:55:16Z",
+    "compositeScore": 81,
+    "percentile": 75
+  },
+  "nousresearch-hermes-agent-optional-skills-autonomous-ai-agents-agent-merge-conflict-arbiter": {
+    "stars": 251859,
+    "forks": 54204,
+    "watchers": 251859,
+    "pushedAt": "2026-10-07T15:48:06Z",
+    "compositeScore": 86,
+    "percentile": 95
+  },
+  "dietrichgebert-ponytail-openclaw-skills-ponytail-audit": {
+    "stars": 157371,
+    "forks": 8460,
+    "watchers": 157371,
+    "pushedAt": "2026-10-05T20:46:39Z",
+    "compositeScore": 81,
+    "percentile": 75
+  },
+  "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-banner-design": {
+    "stars": 133772,
+    "forks": 14180,
+    "watchers": 133772,
+    "pushedAt": "2026-10-03T16:05:26Z",
+    "compositeScore": 83,
+    "percentile": 86
+  },
+  "graphify-labs-graphify": {
+    "stars": 124586,
+    "forks": 12010,
+    "watchers": 124586,
+    "pushedAt": "2026-10-06T23:27:20Z",
+    "compositeScore": 79,
+    "percentile": 62
+  },
+  "juliusbrussee-caveman-plugins-caveman-skills-cavecrew": {
+    "stars": 110366,
+    "forks": 6387,
+    "watchers": 110366,
+    "pushedAt": "2026-10-07T11:48:38Z",
+    "compositeScore": 81,
+    "percentile": 75
+  },
+  "addyosmani-agent-skills-skills-api-and-interface-design": {
+    "stars": 102528,
+    "forks": 10744,
+    "watchers": 102528,
+    "pushedAt": "2026-10-03T18:21:11Z",
+    "compositeScore": 83,
+    "percentile": 86
+  },
+  "thedotmack-claude-mem-claude-mem-cursor-skills-agent-cost-report": {
+    "stars": 97519,
+    "forks": 8584,
+    "watchers": 97519,
+    "pushedAt": "2026-10-07T00:57:45Z",
+    "compositeScore": 83,
+    "percentile": 86
+  },
+  "leonxlnx-taste-skill-skills-brandkit": {
+    "stars": 93423,
+    "forks": 6336,
+    "watchers": 93423,
+    "pushedAt": "2026-10-07T06:20:58Z",
+    "compositeScore": 82,
+    "percentile": 80
+  },
+  "panniantong-agent-reach-agent_reach-skill": {
+    "stars": 93055,
+    "forks": 8152,
+    "watchers": 93055,
+    "pushedAt": "2026-09-15T16:16:24Z",
+    "compositeScore": 80,
+    "percentile": 68
+  },
+  "stablyai-orca-skills-computer-use": {
+    "stars": 86961,
+    "forks": 5580,
+    "watchers": 86961,
+    "pushedAt": "2026-10-07T15:59:23Z",
+    "compositeScore": 82,
+    "percentile": 80
+  },
+  "egonex-ai-understand-anything-understand-anything-plugin-skills-understand-chat": {
+    "stars": 85511,
+    "forks": 7199,
+    "watchers": 85511,
+    "pushedAt": "2026-10-06T02:50:30Z",
+    "compositeScore": 79,
+    "percentile": 61
+  },
+  "headroomlabs-ai-headroom": {
+    "stars": 74574,
+    "forks": 5773,
+    "watchers": 74574,
+    "pushedAt": "2026-10-07T16:00:32Z",
+    "compositeScore": 78,
+    "percentile": 55
+  },
+  "diegosouzapw-omniroute-config-quality-skill-templates-green-prs": {
+    "stars": 73849,
+    "forks": 10619,
+    "watchers": 73849,
+    "pushedAt": "2026-10-07T12:56:42Z",
+    "compositeScore": 85,
+    "percentile": 94
+  },
+  "career-ops-hq-career-ops-agents-skills-career-ops": {
+    "stars": 73692,
+    "forks": 13838,
+    "watchers": 73692,
+    "pushedAt": "2026-10-07T11:14:43Z",
+    "compositeScore": 83,
+    "percentile": 85
+  },
+  "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-anthropic-skills-schedule": {
+    "stars": 69069,
+    "forks": 11218,
+    "watchers": 69069,
+    "pushedAt": "2026-10-06T02:31:25Z",
+    "compositeScore": 86,
+    "percentile": 95
+  },
+  "shanraisshan-claude-code-best-practice-claude-skills-agent-browser": {
+    "stars": 67232,
+    "forks": 6716,
+    "watchers": 67232,
+    "pushedAt": "2026-10-07T06:46:17Z",
+    "compositeScore": 83,
+    "percentile": 85
+  },
+  "mvanhorn-last30days-skill-skills-last30days": {
+    "stars": 63673,
+    "forks": 5551,
+    "watchers": 63673,
+    "pushedAt": "2026-10-07T01:48:14Z",
+    "compositeScore": 83,
+    "percentile": 85
+  },
+  "blader-humanizer": {
+    "stars": 54590,
+    "forks": 4327,
+    "watchers": 54590,
+    "pushedAt": "2026-09-28T05:55:12Z",
+    "compositeScore": 81,
+    "percentile": 74
+  },
+  "cherryhq-cherry-studio-agents-skills-cherry-electron-dev": {
+    "stars": 52419,
+    "forks": 5043,
+    "watchers": 52419,
+    "pushedAt": "2026-10-07T06:55:12Z",
+    "compositeScore": 83,
+    "percentile": 85
+  },
+  "zhayujie-cowagent-skills-image-generation": {
+    "stars": 47264,
+    "forks": 10377,
+    "watchers": 47264,
+    "pushedAt": "2026-10-07T13:10:23Z",
+    "compositeScore": 89,
+    "percentile": 98
+  },
+  "madslorentzen-ai-job-search-agents-skills-freehire-search": {
+    "stars": 45190,
+    "forks": 15687,
+    "watchers": 45190,
+    "pushedAt": "2026-10-05T17:27:43Z",
+    "compositeScore": 94,
+    "percentile": 100
+  },
+  "cathrynlavery-diagram-design-skills-diagram-design": {
+    "stars": 44654,
+    "forks": 2869,
+    "watchers": 44654,
+    "pushedAt": "2026-10-06T16:12:51Z",
+    "compositeScore": 82,
+    "percentile": 79
+  },
+  "wei-shaw-sub2api-skills-sub2api-admin": {
+    "stars": 43398,
+    "forks": 9295,
+    "watchers": 43398,
+    "pushedAt": "2026-10-07T02:03:02Z",
+    "compositeScore": 84,
+    "percentile": 90
+  },
+  "herdrdev-herdr-agents-skills-herdr-pre-release-audit": {
+    "stars": 42777,
+    "forks": 3343,
+    "watchers": 42777,
+    "pushedAt": "2026-10-07T14:48:46Z",
+    "compositeScore": 79,
+    "percentile": 61
+  },
+  "wshobson-agents-plugins-accessibility-compliance-skills-screen-reader-testing": {
+    "stars": 40271,
+    "forks": 4287,
+    "watchers": 40271,
+    "pushedAt": "2026-10-05T01:07:11Z",
+    "compositeScore": 83,
+    "percentile": 85
+  },
+  "yeachan-heo-oh-my-claudecode-skills-agent-doc-discipline": {
+    "stars": 39649,
+    "forks": 3549,
+    "watchers": 39649,
+    "pushedAt": "2026-10-07T12:12:20Z",
+    "compositeScore": 79,
+    "percentile": 61
+  },
+  "anthropics-claude-plugins-official-external_plugins-discord-skills-access": {
+    "stars": 37497,
+    "forks": 4222,
+    "watchers": 37497,
+    "pushedAt": "2026-10-07T15:51:17Z",
+    "compositeScore": 90,
+    "percentile": 98
+  },
+  "mukul975-anthropic-cybersecurity-skills-skills-abusing-dpapi-for-credential-access": {
+    "stars": 33900,
+    "forks": 4118,
+    "watchers": 33900,
+    "pushedAt": "2026-08-31T04:32:44Z",
+    "compositeScore": 79,
+    "percentile": 61
+  },
+  "iofficeai-aionui-claude-skills-architecture": {
+    "stars": 33357,
+    "forks": 3470,
+    "watchers": 33357,
+    "pushedAt": "2026-09-09T07:57:01Z",
+    "compositeScore": 80,
+    "percentile": 68
+  },
+  "tirth8205-code-review-graph-skills-build-graph": {
+    "stars": 31955,
+    "forks": 2925,
+    "watchers": 31955,
+    "pushedAt": "2026-10-06T19:33:08Z",
+    "compositeScore": 83,
+    "percentile": 84
+  },
+  "iofficeai-officecli": {
+    "stars": 31654,
+    "forks": 2157,
+    "watchers": 31654,
+    "pushedAt": "2026-10-06T06:23:55Z",
+    "compositeScore": 82,
+    "percentile": 79
+  },
+  "nanocoai-nanoclaw-claude-skills-add-anydoc": {
+    "stars": 30890,
+    "forks": 12768,
+    "watchers": 30890,
+    "pushedAt": "2026-10-06T14:42:11Z",
+    "compositeScore": 94,
+    "percentile": 100
+  },
+  "decolua-9router-skills-9router-chat": {
+    "stars": 30411,
+    "forks": 5781,
+    "watchers": 30411,
+    "pushedAt": "2026-10-01T03:46:37Z",
+    "compositeScore": 87,
+    "percentile": 97
+  },
+  "alirezarezvani-claude-skills-gemini-skills-readme": {
+    "stars": 27812,
+    "forks": 3905,
+    "watchers": 27812,
+    "pushedAt": "2026-08-30T09:46:16Z",
+    "compositeScore": 80,
+    "percentile": 68
+  },
+  "gastownhall-beads-claude-skills-beads-docs": {
+    "stars": 27707,
+    "forks": 1879,
+    "watchers": 27707,
+    "pushedAt": "2026-10-07T11:10:39Z",
+    "compositeScore": 79,
+    "percentile": 61
+  },
+  "othmanadi-planning-with-files-agents-skills-planning-with-files": {
+    "stars": 27320,
+    "forks": 2269,
+    "watchers": 27320,
+    "pushedAt": "2026-10-06T16:31:38Z",
+    "compositeScore": 83,
+    "percentile": 84
+  },
+  "titanwings-distilly": {
+    "stars": 25376,
+    "forks": 2182,
+    "watchers": 25376,
+    "pushedAt": "2026-09-22T14:01:08Z",
+    "compositeScore": 81,
+    "percentile": 74
+  },
+  "slopus-happy-agents-skills-agent-browser": {
+    "stars": 24045,
+    "forks": 2053,
+    "watchers": 24045,
+    "pushedAt": "2026-10-07T09:28:34Z",
+    "compositeScore": 83,
+    "percentile": 84
+  },
+  "steipete-codexbar-agents-skills-codexbar": {
+    "stars": 22274,
+    "forks": 2071,
+    "watchers": 22274,
+    "pushedAt": "2026-10-07T12:45:50Z",
+    "compositeScore": 83,
+    "percentile": 84
+  },
+  "kkkkhazix-khazix-skills-aihot": {
+    "stars": 21220,
+    "forks": 2242,
+    "watchers": 21220,
+    "pushedAt": "2026-10-01T13:15:32Z",
+    "compositeScore": 83,
+    "percentile": 83
+  },
+  "nvidia-skillspector-skills-skill-inspector": {
+    "stars": 19623,
+    "forks": 1715,
+    "watchers": 19623,
+    "pushedAt": "2026-10-07T09:24:43Z",
+    "compositeScore": 83,
+    "percentile": 83
+  },
+  "agricidaniel-claude-seo-extensions-ahrefs-skills-seo-ahrefs": {
+    "stars": 18470,
+    "forks": 2702,
+    "watchers": 18470,
+    "pushedAt": "2026-10-04T23:41:12Z",
+    "compositeScore": 85,
+    "percentile": 94
+  },
+  "rowboatlabs-rowboat-skills-rowboat-spaces": {
+    "stars": 17997,
+    "forks": 1795,
+    "watchers": 17997,
+    "pushedAt": "2026-10-07T15:05:59Z",
+    "compositeScore": 80,
+    "percentile": 68
+  },
+  "img2threejs-img2threejs": {
+    "stars": 17639,
+    "forks": 1474,
+    "watchers": 17639,
+    "pushedAt": "2026-10-07T05:35:53Z",
+    "compositeScore": 83,
+    "percentile": 83
+  },
+  "xbtlin-ai-berkshire-codex-skills-bottleneck-hunter": {
+    "stars": 16646,
+    "forks": 2473,
+    "watchers": 16646,
+    "pushedAt": "2026-10-06T17:13:32Z",
+    "compositeScore": 86,
+    "percentile": 94
+  },
+  "yishentu-claudian": {
+    "stars": 15598,
+    "forks": 1056,
+    "watchers": 15598,
+    "pushedAt": "2026-10-07T15:57:20Z",
+    "compositeScore": 82,
+    "percentile": 79
+  },
+  "agricidaniel-claude-obsidian-skills-autoresearch": {
+    "stars": 15392,
+    "forks": 1532,
+    "watchers": 15392,
+    "pushedAt": "2026-09-10T17:44:23Z",
+    "compositeScore": 80,
+    "percentile": 68
+  },
+  "nanmicoder-cc-haha-agents-skills-release-announcement": {
+    "stars": 14893,
+    "forks": 8596,
+    "watchers": 14893,
+    "pushedAt": "2026-10-05T21:21:08Z",
+    "compositeScore": 94,
+    "percentile": 99
+  },
+  "siteboon-claudecodeui-agents-skills-backend-module-standards": {
+    "stars": 13966,
+    "forks": 2013,
+    "watchers": 13966,
+    "pushedAt": "2026-10-05T03:35:26Z",
+    "compositeScore": 85,
+    "percentile": 93
+  },
+  "orchestratorinc-agent-orchestrator-agents-skills-ao-desktop-dev": {
+    "stars": 12863,
+    "forks": 1773,
+    "watchers": 12863,
+    "pushedAt": "2026-10-07T16:01:11Z",
+    "compositeScore": 85,
+    "percentile": 93
+  },
+  "jeffallan-claude-skills-skills-angular-architect": {
+    "stars": 11759,
+    "forks": 1136,
+    "watchers": 11759,
+    "pushedAt": "2026-10-03T15:49:55Z",
+    "compositeScore": 83,
+    "percentile": 83
+  },
+  "getagentseal-codeburn": {
+    "stars": 11350,
+    "forks": 878,
+    "watchers": 11350,
+    "pushedAt": "2026-10-07T14:48:01Z",
+    "compositeScore": 82,
+    "percentile": 79
+  },
+  "simonlin1212-a-stock-data": {
+    "stars": 10657,
+    "forks": 1937,
+    "watchers": 10657,
+    "pushedAt": "2026-10-07T06:22:49Z",
+    "compositeScore": 87,
+    "percentile": 97
+  },
+  "omnigent-ai-omnigent-claude-skills-antigravity-native-e2e-dev": {
+    "stars": 10648,
+    "forks": 1705,
+    "watchers": 10648,
+    "pushedAt": "2026-10-07T14:54:43Z",
+    "compositeScore": 82,
+    "percentile": 78
+  },
+  "agricidaniel-claude-ads-ads": {
+    "stars": 9774,
+    "forks": 1446,
+    "watchers": 9774,
+    "pushedAt": "2026-10-07T15:48:52Z",
+    "compositeScore": 85,
+    "percentile": 93
+  },
+  "backnotprop-plannotator-agents-skills-release": {
+    "stars": 9194,
+    "forks": 695,
+    "watchers": 9194,
+    "pushedAt": "2026-10-07T16:03:11Z",
+    "compositeScore": 82,
+    "percentile": 78
+  },
+  "revfactory-harness-skills-evolve": {
+    "stars": 9131,
+    "forks": 1295,
+    "watchers": 9131,
+    "pushedAt": "2026-09-28T05:19:20Z",
+    "compositeScore": 84,
+    "percentile": 90
+  },
+  "genspark-ai-genoffice-skills-genoffice": {
+    "stars": 8842,
+    "forks": 1128,
+    "watchers": 8842,
+    "pushedAt": "2026-10-06T23:14:30Z",
+    "compositeScore": 80,
+    "percentile": 67
+  },
+  "harnessmd-munder-difflin-claude-skills-ian-xiaohei-illustrations": {
+    "stars": 8550,
+    "forks": 1206,
+    "watchers": 8550,
+    "pushedAt": "2026-10-07T16:01:05Z",
+    "compositeScore": 85,
+    "percentile": 93
+  },
+  "jnmetacode-superpowers-zh-skills-brainstorming": {
+    "stars": 8267,
+    "forks": 771,
+    "watchers": 8267,
+    "pushedAt": "2026-10-04T15:51:54Z",
+    "compositeScore": 82,
+    "percentile": 78
+  },
+  "zenstory-ai-oh-story-claudecode-skills-browser-cdp": {
+    "stars": 7340,
+    "forks": 1050,
+    "watchers": 7340,
+    "pushedAt": "2026-10-03T08:56:23Z",
+    "compositeScore": 80,
+    "percentile": 67
+  },
+  "kyegomez-swarms": {
+    "stars": 7233,
+    "forks": 1038,
+    "watchers": 7233,
+    "pushedAt": "2026-10-06T12:57:26Z",
+    "compositeScore": 85,
+    "percentile": 93
+  },
+  "tw93-waza-plugins-waza-skills-check": {
+    "stars": 7170,
+    "forks": 415,
+    "watchers": 7170,
+    "pushedAt": "2026-10-07T00:42:15Z",
+    "compositeScore": 80,
+    "percentile": 67
+  },
+  "htdt-godogen-asset-gen": {
+    "stars": 7059,
+    "forks": 659,
+    "watchers": 7059,
+    "pushedAt": "2026-10-01T18:40:42Z",
+    "compositeScore": 81,
+    "percentile": 74
+  },
+  "q00-ouroboros-skills-auto": {
+    "stars": 6192,
+    "forks": 623,
+    "watchers": 6192,
+    "pushedAt": "2026-10-07T12:38:22Z",
+    "compositeScore": 81,
+    "percentile": 74
+  },
+  "guillaumemeyer-watermarks-remover-skills-clean-user-facing-text": {
+    "stars": 23518,
+    "forks": 2698,
+    "watchers": 23518,
+    "pushedAt": "2026-10-05T20:25:57Z",
+    "compositeScore": 84,
+    "percentile": 90
+  },
+  "0xnyk-council-of-high-intelligence": {
+    "stars": 4550,
+    "forks": 429,
+    "watchers": 4550,
+    "pushedAt": "2026-10-05T05:40:13Z",
+    "compositeScore": 80,
+    "percentile": 67
+  },
+  "nexu-io-open-design-claude-skills-od-contribute": {
+    "stars": 99839,
+    "forks": 11529,
+    "watchers": 99839,
+    "pushedAt": "2026-10-07T15:56:06Z",
+    "compositeScore": 80,
+    "percentile": 66
+  },
+  "alibaba-open-code-review-plugins-open-code-review-skills-open-code-review-delegate": {
+    "stars": 44194,
+    "forks": 3194,
+    "watchers": 44194,
+    "pushedAt": "2026-10-05T06:43:52Z",
+    "compositeScore": 82,
+    "percentile": 78
+  },
+  "virgiliojr94-book-to-skill": {
+    "stars": 34049,
+    "forks": 3577,
+    "watchers": 34049,
+    "pushedAt": "2026-10-05T22:51:12Z",
+    "compositeScore": 84,
+    "percentile": 90
+  },
+  "feder-cr-invisible_dots-invisible_engine_dots-skills-invisible-playwright": {
+    "stars": 31792,
+    "forks": 4691,
+    "watchers": 31792,
+    "pushedAt": "2026-10-07T15:23:03Z",
+    "compositeScore": 81,
+    "percentile": 73
+  },
+  "topoteretes-cognee-agents-skills-cognee-cli": {
+    "stars": 31540,
+    "forks": 3237,
+    "watchers": 31540,
+    "pushedAt": "2026-10-07T15:17:05Z",
+    "compositeScore": 83,
+    "percentile": 83
+  },
+  "googleworkspace-cli-skills-gws-admin-reports": {
+    "stars": 31270,
+    "forks": 1857,
+    "watchers": 31270,
+    "pushedAt": "2026-10-06T20:23:04Z",
+    "compositeScore": 81,
+    "percentile": 73
+  },
+  "phuryn-pm-skills-pm-ai-shipping-skills-code-review": {
+    "stars": 26820,
+    "forks": 2841,
+    "watchers": 26820,
+    "pushedAt": "2026-09-14T21:15:33Z",
+    "compositeScore": 81,
+    "percentile": 73
+  },
+  "microsoft-skillopt-plugins-claude-code-skills-skillopt-sleep": {
+    "stars": 18098,
+    "forks": 1705,
+    "watchers": 18098,
+    "pushedAt": "2026-10-06T17:42:32Z",
+    "compositeScore": 89,
+    "percentile": 97
+  },
+  "eigent-ai-eigent-resources-example-skills-docx": {
+    "stars": 15467,
+    "forks": 1841,
+    "watchers": 15467,
+    "pushedAt": "2026-10-07T12:59:14Z",
+    "compositeScore": 80,
+    "percentile": 66
+  },
+  "krillinai-opencreator-apps-daemon-runtime-opencreator-runtime": {
+    "stars": 12614,
+    "forks": 1298,
+    "watchers": 12614,
+    "pushedAt": "2026-10-05T01:38:19Z",
+    "compositeScore": 83,
+    "percentile": 82
+  },
+  "aden-hive-hive-claude-skills-browser-edge-cases": {
+    "stars": 11088,
+    "forks": 5649,
+    "watchers": 11088,
+    "pushedAt": "2026-10-07T15:24:22Z",
+    "compositeScore": 87,
+    "percentile": 96
+  },
+  "trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor": {
+    "stars": 7412,
+    "forks": 633,
+    "watchers": 7412,
+    "pushedAt": "2026-10-02T10:05:35Z",
+    "compositeScore": 81,
+    "percentile": 73
+  },
+  "thinkinaixyz-deepchat-agents-skills-add-provider": {
+    "stars": 6356,
+    "forks": 750,
+    "watchers": 6356,
+    "pushedAt": "2026-10-07T09:06:43Z",
+    "compositeScore": 83,
+    "percentile": 82
+  },
+  "gosom-google-maps-scraper-skills-google-maps-scraper": {
+    "stars": 6309,
+    "forks": 993,
+    "watchers": 6309,
+    "pushedAt": "2026-09-24T04:54:54Z",
+    "compositeScore": 83,
+    "percentile": 82
+  },
+  "mvschwarz-openrig-agents-skills-developing-openrig": {
+    "stars": 5667,
+    "forks": 417,
+    "watchers": 5667,
+    "pushedAt": "2026-10-07T15:57:37Z",
+    "compositeScore": 80,
+    "percentile": 66
+  },
+  "dotnet-skills-agents-skills-authoring-github-workflows": {
+    "stars": 5571,
+    "forks": 429,
+    "watchers": 5571,
+    "pushedAt": "2026-10-07T15:56:57Z",
+    "compositeScore": 80,
+    "percentile": 66
+  },
+  "aipoch-open-science-resources-skills-alphafold2": {
+    "stars": 5451,
+    "forks": 505,
+    "watchers": 5451,
+    "pushedAt": "2026-10-07T14:59:33Z",
+    "compositeScore": 81,
+    "percentile": 73
+  },
+  "eugeniughelbur-obsidian-second-brain": {
+    "stars": 4690,
+    "forks": 580,
+    "watchers": 4690,
+    "pushedAt": "2026-10-01T15:27:54Z",
+    "compositeScore": 81,
+    "percentile": 72
+  },
+  "0x0funky-agent-sprite-forge-skills-codeart2d": {
+    "stars": 4334,
+    "forks": 422,
+    "watchers": 4334,
+    "pushedAt": "2026-10-06T14:09:38Z",
+    "compositeScore": 80,
+    "percentile": 66
+  },
+  "muxuuu-serenity-skill": {
+    "stars": 4054,
+    "forks": 626,
+    "watchers": 4054,
+    "pushedAt": "2026-09-16T12:58:45Z",
+    "compositeScore": 80,
+    "percentile": 65
+  },
+  "nvidia-skills-plugins-nvidia-skills-skills-nvidia-skill-finder": {
+    "stars": 3536,
+    "forks": 434,
+    "watchers": 3536,
+    "pushedAt": "2026-10-07T15:54:02Z",
+    "compositeScore": 81,
+    "percentile": 72
+  },
+  "ar9av-obsidian-wiki-skills-claude-history-ingest": {
+    "stars": 3529,
+    "forks": 355,
+    "watchers": 3529,
+    "pushedAt": "2026-10-07T12:45:14Z",
+    "compositeScore": 80,
+    "percentile": 65
+  },
+  "microsoft-skills-github-plugins-azure-cost-skills-cost-analysis": {
+    "stars": 3089,
+    "forks": 350,
+    "watchers": 3089,
+    "pushedAt": "2026-10-06T16:44:34Z",
+    "compositeScore": 86,
+    "percentile": 94
+  },
+  "nateherkai-scroll-craft-plugins-nateherk-design-skills-scroll-craft": {
+    "stars": 2978,
+    "forks": 440,
+    "watchers": 2978,
+    "pushedAt": "2026-09-30T13:31:42Z",
+    "compositeScore": 81,
+    "percentile": 72
+  },
+  "jeremylongshore-tons-of-skills-marketplace-plugins-ai-agency-agency-os-skills-agency-os": {
+    "stars": 2820,
+    "forks": 413,
+    "watchers": 2820,
+    "pushedAt": "2026-10-07T10:26:32Z",
+    "compositeScore": 81,
+    "percentile": 72
+  },
+  "zenstory-ai-drama-skills-maintainers-skills-short-drama-knowhow": {
+    "stars": 2574,
+    "forks": 556,
+    "watchers": 2574,
+    "pushedAt": "2026-10-03T08:56:29Z",
+    "compositeScore": 80,
+    "percentile": 65
+  },
+  "agricidaniel-claude-blog-brain-raw-sources-claude-blog-skill-skills-blog-analyze": {
+    "stars": 2340,
+    "forks": 397,
+    "watchers": 2340,
+    "pushedAt": "2026-10-07T15:48:15Z",
+    "compositeScore": 82,
+    "percentile": 78
+  },
+  "sahir619-fable-method-eval-scenarios-s14-trapped-skill-claude-skills-release-helper": {
+    "stars": 2296,
+    "forks": 330,
+    "watchers": 2296,
+    "pushedAt": "2026-10-03T00:38:29Z",
+    "compositeScore": 80,
+    "percentile": 65
+  },
+  "kevinluosl-deepbot": {
+    "stars": 2239,
+    "forks": 166,
+    "watchers": 2239,
+    "pushedAt": "2026-05-23T05:49:13Z",
+    "compositeScore": 57,
+    "percentile": 5
+  },
+  "0xsline-openchatcut-skills-openchatcut": {
+    "stars": 2170,
+    "forks": 329,
+    "watchers": 2170,
+    "pushedAt": "2026-10-07T06:36:29Z",
+    "compositeScore": 81,
+    "percentile": 71
+  }
+}

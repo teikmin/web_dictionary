@@ -1,0 +1,15 @@
+id: dev-tools
+name: Developer Tools & CLI
+tagline: Git integrations, terminal orchestrators, build systems, and debuggers
+description: Tools for interacting with version control systems, build processes, terminal environments, container runtimes, and local developer workflows.
+icon: terminal
+keywords:
+  - tool
+  - git
+  - cli
+  - dev
+  - terminal
+  - docker
+  - kubernetes
+  - debug
+  - monitor

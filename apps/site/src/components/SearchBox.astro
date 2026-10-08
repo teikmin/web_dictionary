@@ -1,0 +1,51 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class:list={['search-box-wrapper w-full max-w-2xl mx-auto', className]}>
+  <div id="search" class="w-full"></div>
+</div>
+
+<script is:inline>
+  function initPagefind() {
+    const el = document.getElementById('search');
+    if (!el || el.dataset.initialized) return;
+
+    function mount() {
+      if (typeof PagefindUI !== 'undefined') {
+        el.dataset.initialized = 'true';
+        new PagefindUI({
+          element: '#search',
+          showSubResults: true,
+          showImages: false,
+          resetStyles: false,
+        });
+      }
+    }
+
+    if (typeof PagefindUI !== 'undefined') {
+      mount();
+    } else {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/pagefind/pagefind-ui.css';
+      document.head.appendChild(link);
+
+      const script = document.createElement('script');
+      script.src = '/pagefind/pagefind-ui.js';
+      script.onload = mount;
+      document.body.appendChild(script);
+    }
+  }
+
+  if (document.readyState === 'complete') {
+    initPagefind();
+  } else {
+    window.addEventListener('DOMContentLoaded', initPagefind);
+  }
+  document.addEventListener('astro:page-load', initPagefind);
+</script>

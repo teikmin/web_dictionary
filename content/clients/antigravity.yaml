@@ -1,0 +1,10 @@
+id: antigravity
+name: Google Antigravity
+tagline: Google DeepMind's agentic AI IDE and pair programming assistant
+description: Antigravity is Google's next-generation autonomous pair programmer with native MCP server support, tool execution, and hierarchical multi-agent coordination.
+website: https://antigravity.google
+configFormat: json
+configPath: ~/.gemini/antigravity/mcp_config.json
+supportsMcp: true
+supportsSkills: true
+icon: /clients/antigravity.svg

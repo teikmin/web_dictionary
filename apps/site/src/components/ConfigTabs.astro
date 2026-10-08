@@ -1,0 +1,188 @@
+---
+import type { LaunchSpec, SkillSpec } from '@web-db/schema';
+import { renderMcpForAllClients, renderSkillForAllClients } from '@web-db/renderers';
+import CopyButton from './CopyButton.astro';
+
+interface Props {
+  type: 'mcp_server' | 'agent_skill';
+  name: string;
+  launchSpec?: LaunchSpec;
+  skillSpec?: SkillSpec;
+}
+
+const { type, name, launchSpec, skillSpec } = Astro.props;
+
+const clients = [
+  { id: 'claude-code', name: 'Claude Code', icon: '⚡' },
+  { id: 'codex', name: 'OpenAI Codex', icon: '🤖' },
+  { id: 'antigravity', name: 'Google Antigravity', icon: '🌌' },
+] as const;
+
+const configs =
+  type === 'mcp_server' && launchSpec
+    ? renderMcpForAllClients(name, launchSpec)
+    : type === 'agent_skill' && skillSpec
+    ? renderSkillForAllClients(name, skillSpec)
+    : null;
+---
+
+<div class="config-tabs-container my-6 rounded-xl border border-slate-800 bg-slate-900/90 overflow-hidden shadow-lg">
+  <!-- Tab navigation -->
+  <div class="flex items-center justify-between border-b border-slate-800 bg-slate-950/60 px-4 pt-2">
+    <div role="tablist" aria-label="Target AI Agent Clients" class="flex gap-2">
+      {clients.map((client, idx) => (
+        <button
+          type="button"
+          role="tab"
+          id={`tab-${client.id}`}
+          aria-selected={idx === 0 ? 'true' : 'false'}
+          aria-controls={`panel-${client.id}`}
+          tabindex={idx === 0 ? 0 : -1}
+          data-client={client.id}
+          class:list={[
+            'tab-btn flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-all -mb-px focus:outline-none focus:ring-1 focus:ring-blue-500 rounded-t',
+            idx === 0
+              ? 'border-blue-500 text-blue-400 bg-slate-900/80'
+              : 'border-transparent text-slate-400 hover:text-slate-200 hover:border-slate-700'
+          ]}
+        >
+          <span>{client.icon}</span>
+          <span>{client.name}</span>
+        </button>
+      ))}
+    </div>
+
+    <span class="text-[11px] font-mono text-slate-500 hidden sm:inline">1-Click Launch Config</span>
+  </div>
+
+  <!-- Tab Panels -->
+  <div class="p-5">
+    {clients.map((client, idx) => {
+      const config = configs ? configs[client.id] : null;
+      return (
+        <div
+          role="tabpanel"
+          id={`panel-${client.id}`}
+          aria-labelledby={`tab-${client.id}`}
+          class:list={['tab-panel space-y-4', idx !== 0 && 'hidden']}
+        >
+          {type === 'mcp_server' ? (
+            <>
+              {config?.mcpCommand && (
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-xs font-semibold text-slate-300">Quick Add (CLI)</span>
+                    <CopyButton text={config.mcpCommand} label="Copy Command" />
+                  </div>
+                  <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-emerald-300">
+                    <code>{config.mcpCommand}</code>
+                  </pre>
+                </div>
+              )}
+
+              {config?.mcpSnippet && (
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-xs font-semibold text-slate-300">
+                      Configuration File ({client.id === 'codex' ? 'config.toml' : client.id === 'claude-code' ? '.mcp.json' : 'mcp_config.json'})
+                    </span>
+                    <CopyButton text={config.mcpSnippet} label="Copy Snippet" />
+                  </div>
+                  <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-sky-200">
+                    <code>{config.mcpSnippet}</code>
+                  </pre>
+                </div>
+              )}
+            </>
+          ) : (
+            <>
+              {config?.skillInstallPath && (
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-xs font-semibold text-slate-300">Installation Path</span>
+                    <CopyButton text={config.skillInstallPath} label="Copy Path" />
+                  </div>
+                  <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-purple-300">
+                    <code>{config.skillInstallPath}</code>
+                  </pre>
+                </div>
+              )}
+
+              {config?.skillInstructions && (
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-xs font-semibold text-slate-300">Instructions / Prompt Template</span>
+                    <CopyButton text={config.skillInstructions} label="Copy Instructions" />
+                  </div>
+                  <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300 max-h-60">
+                    <code>{config.skillInstructions}</code>
+                  </pre>
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      );
+    })}
+  </div>
+</div>
+
+<script>
+  function setupConfigTabs() {
+    document.querySelectorAll('.config-tabs-container').forEach((container) => {
+      const tabs = Array.from(container.querySelectorAll<HTMLButtonElement>('.tab-btn'));
+      const panels = Array.from(container.querySelectorAll<HTMLElement>('.tab-panel'));
+
+      function switchTab(targetTab: HTMLButtonElement) {
+        tabs.forEach((tab) => {
+          const isSelected = tab === targetTab;
+          tab.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+          tab.setAttribute('tabindex', isSelected ? '0' : '-1');
+          if (isSelected) {
+            tab.classList.add('border-blue-500', 'text-blue-400', 'bg-slate-900/80');
+            tab.classList.remove('border-transparent', 'text-slate-400');
+          } else {
+            tab.classList.remove('border-blue-500', 'text-blue-400', 'bg-slate-900/80');
+            tab.classList.add('border-transparent', 'text-slate-400');
+          }
+        });
+
+        const targetClient = targetTab.getAttribute('data-client');
+        panels.forEach((panel) => {
+          if (panel.id === `panel-${targetClient}`) {
+            panel.classList.remove('hidden');
+          } else {
+            panel.classList.add('hidden');
+          }
+        });
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => switchTab(tab));
+
+        tab.addEventListener('keydown', (e) => {
+          let targetIndex: number | null = null;
+          if (e.key === 'ArrowRight') {
+            targetIndex = (index + 1) % tabs.length;
+          } else if (e.key === 'ArrowLeft') {
+            targetIndex = (index - 1 + tabs.length) % tabs.length;
+          } else if (e.key === 'Home') {
+            targetIndex = 0;
+          } else if (e.key === 'End') {
+            targetIndex = tabs.length - 1;
+          }
+
+          if (targetIndex !== null) {
+            e.preventDefault();
+            const nextTab = tabs[targetIndex];
+            nextTab.focus();
+            switchTab(nextTab);
+          }
+        });
+      });
+    });
+  }
+
+  setupConfigTabs();
+  document.addEventListener('astro:page-load', setupConfigTabs);
+</script>

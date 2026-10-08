@@ -8,6 +8,11 @@ export type EntryType = z.infer<typeof EntryTypeSchema>;
 export const EntryStatusSchema = z.enum(['active', 'slowing', 'dormant', 'archived']);
 export type EntryStatus = z.infer<typeof EntryStatusSchema>;
 
+const DateOrString = z.union([z.string(), z.date()]).transform((val) => {
+  if (val instanceof Date) return val.toISOString();
+  return String(val);
+});
+
 export const SourceMetadataSchema = z.object({
   kind: z.literal('github_repo').default('github_repo'),
   repo: z.string(), // "owner/repo"
@@ -21,7 +26,7 @@ export type SourceMetadata = z.infer<typeof SourceMetadataSchema>;
 
 export const LatestSignalsSchema = z.object({
   stars: z.number().default(0),
-  last_commit: z.string().optional(), // ISO date string
+  last_commit: DateOrString.optional(),
   weekly_downloads: z.number().optional(),
   contributors: z.number().optional(),
 });
@@ -36,8 +41,8 @@ export const BaseEntrySchema = z.object({
   status: EntryStatusSchema.default('active'),
   quality_percentile: z.number().min(0).max(100).default(0),
   selection_reason: z.string().default('threshold'),
-  first_seen: z.string(),
-  last_updated: z.string(),
+  first_seen: DateOrString,
+  last_updated: DateOrString,
   source: SourceMetadataSchema,
   signals: LatestSignalsSchema,
 });

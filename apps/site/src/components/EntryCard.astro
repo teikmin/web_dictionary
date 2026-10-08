@@ -1,0 +1,65 @@
+---
+import type { AnyCollectionItem } from '../lib/entries';
+import ConfidenceBadge from './ConfidenceBadge.astro';
+import SignalStats from './SignalStats.astro';
+
+interface Props {
+  entry: AnyCollectionItem;
+}
+
+const { entry } = Astro.props;
+const data = entry.data;
+const isMcp = data.type === 'mcp_server';
+const href = isMcp ? `/mcp/${data.slug}` : `/skills/${data.slug}`;
+---
+
+<div class="group relative flex flex-col justify-between p-5 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 hover:bg-slate-850/80 transition-all duration-150 shadow-sm hover:shadow-md">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <div class="flex items-center gap-2">
+        <span class:list={[
+          'px-2 py-0.5 text-[11px] font-semibold tracking-wide uppercase rounded',
+          isMcp ? 'bg-cyan-950/80 text-cyan-300 border border-cyan-800/50' : 'bg-purple-950/80 text-purple-300 border border-purple-800/50'
+        ]}>
+          {isMcp ? 'MCP Server' : 'Agent Skill'}
+        </span>
+        {isMcp && 'launch' in data && (
+          <ConfidenceBadge confidence={data.launch.confidence} />
+        )}
+      </div>
+      <SignalStats
+        stars={data.signals.stars}
+        percentile={data.quality_percentile}
+        officialVendor={data.source.official_vendor}
+      />
+    </div>
+
+    <h3 class="text-base font-semibold text-slate-100 group-hover:text-blue-400 transition-colors line-clamp-1">
+      <a href={href} class="focus:outline-none">
+        <span class="absolute inset-0" aria-hidden="true"></span>
+        {data.name}
+      </a>
+    </h3>
+
+    <p class="mt-1.5 text-xs text-slate-400 line-clamp-2 leading-relaxed">
+      {data.tagline || 'No description provided.'}
+    </p>
+  </div>
+
+  <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+    <div class="flex flex-wrap gap-1.5 z-10">
+      {data.categories.slice(0, 3).map((cat: string) => (
+        <a
+          href={`/category/${cat}`}
+          class="px-2 py-0.5 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors text-[11px]"
+        >
+          {cat}
+        </a>
+      ))}
+    </div>
+
+    <span class="text-slate-500 font-mono text-[11px] z-10">
+      {data.source.repo}
+    </span>
+  </div>
+</div>

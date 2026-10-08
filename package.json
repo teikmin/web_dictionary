@@ -5,6 +5,10 @@
   "description": "AI Tools Hub / MCP & Agent Registry monorepo",
   "scripts": {
     "pipeline:report": "pnpm --filter @web-db/pipeline run report",
+    "pipeline:run": "pnpm --filter @web-db/pipeline run run",
+    "site:dev": "pnpm --filter @web-db/site run dev",
+    "site:build": "pnpm --filter @web-db/site run build",
+    "test": "pnpm -r run test",
     "typecheck": "pnpm -r run typecheck"
   },
   "devDependencies": {

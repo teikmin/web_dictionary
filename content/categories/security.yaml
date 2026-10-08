@@ -1,0 +1,13 @@
+id: security
+name: Security & Auditing
+tagline: Vulnerability scanners, penetration testing, CVE lookups, and reverse engineering
+description: Security tools for discovering vulnerabilities, analyzing binary artifacts, monitoring code compliance, and offensive/defensive research.
+icon: shield
+keywords:
+  - security
+  - pentest
+  - cve
+  - vulnerability
+  - auth
+  - crypto
+  - audit

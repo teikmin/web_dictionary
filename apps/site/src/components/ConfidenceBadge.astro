@@ -1,0 +1,59 @@
+---
+import type { LaunchConfidence } from '@web-db/schema';
+
+interface Props {
+  confidence?: LaunchConfidence;
+  class?: string;
+}
+
+const { confidence = 'manifest', class: className = '' } = Astro.props;
+
+const config = {
+  registry: {
+    label: 'Verified Registry',
+    icon: '✓',
+    bg: 'bg-emerald-950/70 border-emerald-500/40 text-emerald-300',
+    dot: 'bg-emerald-400',
+    title: 'Extracted directly from official MCP registry manifest',
+  },
+  manifest: {
+    label: 'Repo Manifest',
+    icon: '●',
+    bg: 'bg-blue-950/70 border-blue-500/40 text-blue-300',
+    dot: 'bg-blue-400',
+    title: 'Parsed directly from repository package manifest (package.json, pyproject.toml)',
+  },
+  readme: {
+    label: 'README Heuristic',
+    icon: '▲',
+    bg: 'bg-amber-950/70 border-amber-500/40 text-amber-300',
+    dot: 'bg-amber-400',
+    title: 'Heuristically extracted from README code blocks; verify configuration before use',
+  },
+  none: {
+    label: 'Community Spec',
+    icon: '○',
+    bg: 'bg-slate-800/80 border-slate-700 text-slate-300',
+    dot: 'bg-slate-400',
+    title: 'Default configuration template; review command parameters',
+  },
+}[confidence] || {
+  label: 'Unknown',
+  icon: '?',
+  bg: 'bg-slate-800 border-slate-700 text-slate-400',
+  dot: 'bg-slate-500',
+  title: 'Unknown configuration confidence',
+};
+---
+
+<span
+  class:list={[
+    'inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium border shadow-xs',
+    config.bg,
+    className,
+  ]}
+  title={config.title}
+>
+  <span class:list={['w-1.5 h-1.5 rounded-full animate-pulse', config.dot]} aria-hidden="true"></span>
+  <span>{config.label}</span>
+</span>

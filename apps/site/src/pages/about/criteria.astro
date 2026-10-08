@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Quality Criteria &amp; Curation Engine — AI Tools Hub"
+  description="Transparent explanation of the 3-layer selection engine, automated gates, and anti-fake-star defense."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header -->
+    <header class="border-b border-slate-800 pb-8 mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium border border-emerald-500/30 bg-emerald-950/40 text-emerald-300 mb-4">
+        <span>Transparent &amp; Deterministic</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        Repo Quality Criteria &amp; Selection Engine
+      </h1>
+      <p class="text-base text-slate-400 mt-3 leading-relaxed">
+        Why trust our registry? Every single entry is filtered, verified, and scored through our automated 3-layer curation pipeline. Zero pay-for-placement, zero unmaintained repos.
+      </p>
+    </header>
+
+    <!-- Architecture Overview -->
+    <section class="space-y-12 text-slate-300">
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2.5">
+          <span class="w-7 h-7 rounded-lg bg-blue-950 border border-blue-800 flex items-center justify-center text-blue-400 text-sm font-mono font-bold">1</span>
+          <span>Layer 1: Hard Metadata Gates (G1 &ndash; G9)</span>
+        </h2>
+        <p class="text-sm text-slate-400 mb-4 leading-relaxed">
+          Before any repository is scored or categorized, it must pass 9 non-negotiable metadata filters:
+        </p>
+        <div class="overflow-x-auto rounded-lg border border-slate-800">
+          <table class="w-full text-left text-xs font-mono">
+            <thead class="bg-slate-900 border-b border-slate-800 text-slate-400 uppercase text-[10px]">
+              <tr>
+                <th class="p-3">Gate</th>
+                <th class="p-3">Rule</th>
+                <th class="p-3 font-sans">Rationale</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 bg-slate-950">
+              <tr>
+                <td class="p-3 font-semibold text-blue-400">G1</td>
+                <td class="p-3 text-slate-200">archived == false</td>
+                <td class="p-3 text-slate-400 font-sans">Eliminates abandoned or frozen repositories.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-blue-400">G2</td>
+                <td class="p-3 text-slate-200">fork == false</td>
+                <td class="p-3 text-slate-400 font-sans">Points to canonical upstream repositories only.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-blue-400">G3</td>
+                <td class="p-3 text-slate-200">stars &ge; 100</td>
+                <td class="p-3 text-slate-400 font-sans">Community adoption baseline (waived for official vendors).</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-blue-400">G4</td>
+                <td class="p-3 text-slate-200">pushed_at &ge; now - 180d</td>
+                <td class="p-3 text-slate-400 font-sans">Rejects tools unmaintained for over 6 months.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-blue-400">G5</td>
+                <td class="p-3 text-slate-200">created_at &le; now - 14d</td>
+                <td class="p-3 text-slate-400 font-sans">Spam incubation defense; prevents sudden astro-turfing.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-blue-400">G6</td>
+                <td class="p-3 text-slate-200">has_description == true</td>
+                <td class="p-3 text-slate-400 font-sans">Requires clear repo purpose in metadata.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-blue-400">G7</td>
+                <td class="p-3 text-slate-200">has_readme == true</td>
+                <td class="p-3 text-slate-400 font-sans">Ensures basic documentation exists for users.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-blue-400">G8</td>
+                <td class="p-3 text-slate-200">license in OSI_ALLOWLIST</td>
+                <td class="p-3 text-slate-400 font-sans">Ensures legally usable open-source licensing.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-blue-400">G9</td>
+                <td class="p-3 text-slate-200">not_blocked == true</td>
+                <td class="p-3 text-slate-400 font-sans">Honors human curator blocklist in <code class="text-blue-300">data/overrides/block.yaml</code>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2.5">
+          <span class="w-7 h-7 rounded-lg bg-indigo-950 border border-indigo-800 flex items-center justify-center text-indigo-400 text-sm font-mono font-bold">2</span>
+          <span>Layer 2: Type Check &amp; Verifiable Evidence</span>
+        </h2>
+        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+          A repo claiming to be an MCP server or Agent Skill is never trusted by topic alone. Our engine inspects git trees for verifiable evidence:
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-xs leading-relaxed text-slate-300">
+          <li><strong class="text-white">MCP Servers:</strong> Must have SDK dependency (<code class="bg-slate-900 px-1 py-0.5 rounded text-sky-300">@modelcontextprotocol/sdk</code>, Python <code class="bg-slate-900 px-1 py-0.5 rounded text-sky-300">mcp</code>), manifest entry point, or presence in the official MCP Registry.</li>
+          <li><strong class="text-white">Agent Skills:</strong> Must contain physical <code class="bg-slate-900 px-1 py-0.5 rounded text-purple-300">SKILL.md</code> files with valid YAML frontmatter specifying instructions, tools, and actions.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2.5">
+          <span class="w-7 h-7 rounded-lg bg-purple-950 border border-purple-800 flex items-center justify-center text-purple-400 text-sm font-mono font-bold">3</span>
+          <span>Layer 3: Quality Scoring &amp; Anti-Fake Star Defense</span>
+        </h2>
+        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+          Composite quality scoring balances multiple signals to prevent star manipulation:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div class="p-4 rounded-lg bg-slate-900 border border-slate-800">
+            <h3 class="font-bold text-slate-200 mb-2">Composite Score Signals</h3>
+            <ul class="space-y-1 text-slate-400">
+              <li>&bull; Log-scaled star baseline (prevents hyper-stars from dwarfing peers)</li>
+              <li>&bull; Push recency decay function</li>
+              <li>&bull; Contributor breadth &amp; fork activity</li>
+              <li>&bull; Official vendor bonus (+15 points)</li>
+            </ul>
+          </div>
+          <div class="p-4 rounded-lg bg-slate-900 border border-slate-800">
+            <h3 class="font-bold text-rose-300 mb-2">Anti-Fake Defense Triggers</h3>
+            <ul class="space-y-1 text-slate-400">
+              <li>&bull; Star burst anomaly (&gt;80% of stars in under 48h)</li>
+              <li>&bull; Commit activity check (avoids zero-code star farms)</li>
+              <li>&bull; Issue ratio check (abnormally low issue activity)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
