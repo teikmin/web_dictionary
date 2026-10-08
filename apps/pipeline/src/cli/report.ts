@@ -8,6 +8,7 @@ import { evaluateLayer1Gates } from '../stages/2-gates.js';
 import { evaluateLayer2TypeCheck } from '../stages/3-type-check.js';
 import { evaluateLayer3Scoring } from '../stages/4-score.js';
 import { runStage6Selection } from '../stages/6-select.js';
+import { runStage7Enrich } from '../stages/7-enrich.js';
 
 function getWeekString(date = new Date()): string {
   const year = date.getFullYear();
@@ -20,7 +21,7 @@ function getWeekString(date = new Date()): string {
 async function main() {
   const startTime = new Date();
   logger.info('========================================================');
-  logger.info('PHASE 1: RUNNING SELECTION ENGINE & AUDIT REPORT');
+  logger.info('PHASE 2: RUNNING SELECTION & ENRICHMENT PIPELINE');
   logger.info('========================================================');
 
   const rateLimit = await checkRateLimit();
@@ -43,6 +44,9 @@ async function main() {
   // 5. Selection
   const decisions = runStage6Selection(scored);
 
+  // 6. Enrich (Phase 2)
+  const { enrichedEntries, stats: enrichStats } = await runStage7Enrich(decisions);
+
   const endTime = new Date();
   const weekStr = getWeekString(startTime);
   const runDir = path.join(config.rootDir, 'data/runs', weekStr);
@@ -55,6 +59,11 @@ async function main() {
   fs.writeFileSync(decisionsPath, JSON.stringify(decisions, null, 2), 'utf8');
   logger.info(`Saved decision records to ${decisionsPath}`);
 
+  // Write enriched.json
+  const enrichedPath = path.join(runDir, 'enriched.json');
+  fs.writeFileSync(enrichedPath, JSON.stringify(enrichedEntries, null, 2), 'utf8');
+  logger.info(`Saved enriched entries to ${enrichedPath}`);
+
   // Compile statistics
   const totalDiscovered = candidates.length;
   const passedLayer1 = gateChecked.filter((c) => c.layer1.passed).length;
@@ -63,21 +72,31 @@ async function main() {
   const selectedMcp = selectedEntries.filter((d) => d.layer2?.detectedType === 'mcp_server');
   const selectedSkills = selectedEntries.filter((d) => d.layer2?.detectedType === 'agent_skill');
 
-  // Top 30 MCP
-  const top30Mcp = [...selectedMcp]
-    .sort((a, b) => (b.layer3?.compositeScore || 0) - (a.layer3?.compositeScore || 0))
+  // Top 30 MCP from enriched
+  const topMcpEnriched = enrichedEntries
+    .filter((e) => e.decision.layer2?.detectedType === 'mcp_server')
+    .sort(
+      (a, b) =>
+        (b.decision.layer3?.compositeScore || 0) -
+        (a.decision.layer3?.compositeScore || 0)
+    )
     .slice(0, 30);
 
-  // Top 30 Skills
-  const top30Skills = [...selectedSkills]
-    .sort((a, b) => (b.layer3?.compositeScore || 0) - (a.layer3?.compositeScore || 0))
+  // Top 30 Skills from enriched
+  const topSkillsEnriched = enrichedEntries
+    .filter((e) => e.decision.layer2?.detectedType === 'agent_skill')
+    .sort(
+      (a, b) =>
+        (b.decision.layer3?.compositeScore || 0) -
+        (a.decision.layer3?.compositeScore || 0)
+    )
     .slice(0, 30);
 
   // Build report.md
   let reportMd = `# Run Audit Report: ${weekStr}\n\n`;
   reportMd += `> **Run Date:** ${startTime.toISOString()}  \n`;
   reportMd += `> **Duration:** ${((endTime.getTime() - startTime.getTime()) / 1000).toFixed(1)} seconds  \n`;
-  reportMd += `> **Exit Criteria:** Review the top 30 MCP servers and Skills below to verify automatic selection quality.\n\n`;
+  reportMd += `> **Phase 2 Status:** Enriched ${enrichedEntries.length} entries with client adapters (Claude Code, Codex, Antigravity).\n\n`;
   reportMd += `--- \n\n`;
 
   reportMd += `## 1. Funnel Summary\n\n`;
@@ -89,24 +108,37 @@ async function main() {
   reportMd += `| **Selected Catalog** | ${selectedEntries.length} | ${((selectedEntries.length / Math.max(totalDiscovered, 1)) * 100).toFixed(1)}% | Cap $\\sim 500$ entries (${selectedMcp.length} MCP, ${selectedSkills.length} Skills) |\n\n`;
 
   reportMd += `--- \n\n`;
-  reportMd += `## 2. Top 30 MCP Servers (Spot Check)\n\n`;
-  reportMd += `| # | Repository | Stars | Score | Percentile | Evidence | Reason |\n`;
-  reportMd += `|:---:|---|:---:|:---:|:---:|---|---|\n`;
-  top30Mcp.forEach((d, idx) => {
-    reportMd += `| ${idx + 1} | [${d.repo.fullName}](https://github.com/${d.repo.fullName}) | ${d.repo.stars} | ${d.layer3?.compositeScore} | ${d.layer3?.percentileRank}% | \`${d.layer2?.evidenceKind}\` | ${d.selectionReason} |\n`;
+  reportMd += `## 2. Launch Spec Extraction & Confidence (Phase 2)\n\n`;
+  reportMd += `| Confidence Level | Count | Share | Target Exit Criteria |\n`;
+  reportMd += `|---|:---:|:---:|:---:|\n`;
+  reportMd += `| **Registry** (✅ Official) | ${enrichStats.confidenceCounts.registry} | ${((enrichStats.confidenceCounts.registry / Math.max(enrichStats.totalMcp, 1)) * 100).toFixed(1)}% | — |\n`;
+  reportMd += `| **Manifest** (🟢 package.json / pyproject) | ${enrichStats.confidenceCounts.manifest} | ${((enrichStats.confidenceCounts.manifest / Math.max(enrichStats.totalMcp, 1)) * 100).toFixed(1)}% | — |\n`;
+  reportMd += `| **README** (🟡 Code fence parsed) | ${enrichStats.confidenceCounts.readme} | ${((enrichStats.confidenceCounts.readme / Math.max(enrichStats.totalMcp, 1)) * 100).toFixed(1)}% | — |\n`;
+  reportMd += `| **None** (Manual link only) | ${enrichStats.confidenceCounts.none} | ${((enrichStats.confidenceCounts.none / Math.max(enrichStats.totalMcp, 1)) * 100).toFixed(1)}% | — |\n`;
+  reportMd += `| **High-Confidence Total (Registry + Manifest)** | **${enrichStats.confidenceCounts.registry + enrichStats.confidenceCounts.manifest}** | **${enrichStats.highConfidencePct.toFixed(1)}%** | **$\\ge 70\\%$** |\n\n`;
+
+  reportMd += `--- \n\n`;
+  reportMd += `## 3. Top 30 MCP Servers with Generated Launch Commands\n\n`;
+  reportMd += `| # | Repository | Stars | Confidence | Score | Claude Code Command |\n`;
+  reportMd += `|:---:|---|:---:|:---:|:---:|---|\n`;
+  topMcpEnriched.forEach((e, idx) => {
+    const cmd = e.renderedConfigs['claude-code']?.mcpCommand || '*(manual repo link)*';
+    reportMd += `| ${idx + 1} | [${e.decision.repo.fullName}](https://github.com/${e.decision.repo.fullName}) | ${e.decision.repo.stars} | \`${e.launchSpec?.confidence}\` | ${e.decision.layer3?.compositeScore} | \`${cmd}\` |\n`;
   });
 
   reportMd += `\n--- \n\n`;
-  reportMd += `## 3. Top 30 Agent Skills (Spot Check)\n\n`;
-  reportMd += `| # | Repository | Stars | Score | Percentile | Subpaths | Reason |\n`;
-  reportMd += `|:---:|---|:---:|:---:|:---:|---|---|\n`;
-  top30Skills.forEach((d, idx) => {
-    const subpathInfo = d.layer2?.subpaths?.length ? `${d.layer2.subpaths.length} folder(s)` : 'root';
-    reportMd += `| ${idx + 1} | [${d.repo.fullName}](https://github.com/${d.repo.fullName}) | ${d.repo.stars} | ${d.layer3?.compositeScore} | ${d.layer3?.percentileRank}% | ${subpathInfo} | ${d.selectionReason} |\n`;
+  reportMd += `## 4. Top 30 Agent Skills with Install Paths\n\n`;
+  reportMd += `| # | Repository | Stars | Skill Name | Score | Claude Code Path | Antigravity Path |\n`;
+  reportMd += `|:---:|---|:---:|---|:---:|---|---|\n`;
+  topSkillsEnriched.forEach((e, idx) => {
+    const sName = e.skillSpec?.skill_name || e.decision.repo.name;
+    const claudePath = e.renderedConfigs['claude-code']?.skillInstallPath || '';
+    const agyPath = e.renderedConfigs['antigravity']?.skillInstallPath || '';
+    reportMd += `| ${idx + 1} | [${e.decision.repo.fullName}](https://github.com/${e.decision.repo.fullName}) | ${e.decision.repo.stars} | \`${sName}\` | ${e.decision.layer3?.compositeScore} | \`${claudePath}\` | \`${agyPath}\` |\n`;
   });
 
   reportMd += `\n--- \n\n`;
-  reportMd += `## 4. Rejection Analysis (Sample)\n\n`;
+  reportMd += `## 5. Rejection Analysis\n\n`;
   const rejections = decisions.filter((d) => !d.selected);
   const reasonCounts = new Map<string, number>();
   for (const r of rejections) {
@@ -123,7 +155,7 @@ async function main() {
   const reportPath = path.join(runDir, 'report.md');
   fs.writeFileSync(reportPath, reportMd, 'utf8');
   logger.info(`Saved Markdown audit report to ${reportPath}`);
-  logger.info('PHASE 1 VALIDATION RUN COMPLETE!');
+  logger.info('PHASE 2 VALIDATION RUN COMPLETE!');
 }
 
 main().catch((err) => {

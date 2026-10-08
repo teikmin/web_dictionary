@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@octokit/rest": "^21.1.1",
+    "@web-db/renderers": "workspace:*",
     "@web-db/schema": "workspace:*",
     "dotenv": "^16.4.7",
     "yaml": "^2.7.0",

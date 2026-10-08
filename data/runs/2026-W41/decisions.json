@@ -127,12 +127,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 41,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 75,
+      "percentileRank": 77,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -239,7 +239,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 46,
       "docs": 100,
@@ -304,12 +304,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 31,
       "docs": 100,
-      "compositeScore": 84,
-      "percentileRank": 92,
+      "compositeScore": 83,
+      "percentileRank": 90,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -747,7 +747,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 36,
       "docs": 100,
@@ -804,12 +804,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 15,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 75,
+      "percentileRank": 77,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -923,12 +923,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 33,
       "docs": 70,
       "compositeScore": 81,
-      "percentileRank": 75,
+      "percentileRank": 77,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -986,12 +986,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 25,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 88,
+      "percentileRank": 89,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -1046,7 +1046,7 @@
       "community": 33,
       "docs": 100,
       "compositeScore": 80,
-      "percentileRank": 70,
+      "percentileRank": 71,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -1103,7 +1103,7 @@
       "community": 30,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 88,
+      "percentileRank": 89,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -1144,7 +1144,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 100,
       "community": 46,
       "docs": 70,
@@ -1257,12 +1257,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 97,
+      "maintenance": 96,
       "trust": 70,
       "community": 41,
       "docs": 100,
       "compositeScore": 84,
-      "percentileRank": 91,
+      "percentileRank": 92,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -1444,12 +1444,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 37,
       "docs": 100,
-      "compositeScore": 85,
-      "percentileRank": 94,
+      "compositeScore": 84,
+      "percentileRank": 92,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -1493,7 +1493,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 100,
       "community": 49,
       "docs": 100,
@@ -1618,7 +1618,7 @@
       "community": 41,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 75,
+      "percentileRank": 77,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -1676,12 +1676,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 97,
+      "maintenance": 96,
       "trust": 70,
       "community": 30,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 88,
+      "percentileRank": 89,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -1739,12 +1739,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 97,
+      "maintenance": 96,
       "trust": 70,
       "community": 42,
       "docs": 100,
-      "compositeScore": 85,
-      "percentileRank": 93,
+      "compositeScore": 84,
+      "percentileRank": 92,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -2115,12 +2115,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 25,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 88,
+      "percentileRank": 89,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -2187,12 +2187,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 27,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 87,
+      "percentileRank": 88,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -2235,7 +2235,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 44,
       "docs": 70,
@@ -2387,7 +2387,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 47,
       "docs": 100,
@@ -2480,7 +2480,7 @@
       "community": 31,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 87,
+      "percentileRank": 88,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -2586,12 +2586,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 96,
+      "maintenance": 95,
       "trust": 70,
       "community": 44,
       "docs": 70,
-      "compositeScore": 82,
-      "percentileRank": 81,
+      "compositeScore": 81,
+      "percentileRank": 76,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -2651,12 +2651,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 32,
       "docs": 100,
       "compositeScore": 84,
-      "percentileRank": 91,
+      "percentileRank": 92,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -2713,7 +2713,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 61,
       "docs": 100,
@@ -2767,12 +2767,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 94,
+      "maintenance": 93,
       "trust": 70,
       "community": 36,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 87,
+      "percentileRank": 88,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -2830,7 +2830,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 64,
+      "maintenance": 63,
       "trust": 70,
       "community": 61,
       "docs": 100,
@@ -2947,7 +2947,7 @@
     },
     "layer3": {
       "adoption": 99,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 23,
       "docs": 70,
@@ -2997,12 +2997,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 100,
       "docs": 100,
       "compositeScore": 90,
-      "percentileRank": 98,
+      "percentileRank": 99,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -3067,12 +3067,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 42,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 75,
+      "percentileRank": 76,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -3118,7 +3118,7 @@
     },
     "layer3": {
       "adoption": 95,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 9,
       "docs": 100,
@@ -3188,7 +3188,7 @@
       "community": 21,
       "docs": 100,
       "compositeScore": 77,
-      "percentileRank": 52,
+      "percentileRank": 53,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -3243,7 +3243,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 55,
       "docs": 70,
@@ -3305,12 +3305,12 @@
     },
     "layer3": {
       "adoption": 99,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 27,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 87,
+      "percentileRank": 88,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -3370,7 +3370,7 @@
     },
     "layer3": {
       "adoption": 98,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 26,
       "docs": 100,
@@ -3445,7 +3445,7 @@
     },
     "layer3": {
       "adoption": 99,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 47,
       "docs": 100,
@@ -3512,7 +3512,7 @@
       "community": 41,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 86,
+      "percentileRank": 88,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -3560,12 +3560,12 @@
     },
     "layer3": {
       "adoption": 95,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 18,
       "docs": 100,
       "compositeScore": 76,
-      "percentileRank": 46,
+      "percentileRank": 47,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -3679,12 +3679,12 @@
     },
     "layer3": {
       "adoption": 97,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 36,
       "docs": 100,
-      "compositeScore": 84,
-      "percentileRank": 91,
+      "compositeScore": 83,
+      "percentileRank": 87,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -3737,7 +3737,7 @@
     },
     "layer3": {
       "adoption": 98,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 71,
       "docs": 100,
@@ -3785,7 +3785,7 @@
     },
     "layer3": {
       "adoption": 95,
-      "maintenance": 69,
+      "maintenance": 68,
       "trust": 70,
       "community": 22,
       "docs": 100,
@@ -3845,7 +3845,7 @@
     },
     "layer3": {
       "adoption": 96,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 30,
       "docs": 100,
@@ -3959,7 +3959,7 @@
     },
     "layer3": {
       "adoption": 92,
-      "maintenance": 97,
+      "maintenance": 96,
       "trust": 70,
       "community": 15,
       "docs": 100,
@@ -4009,7 +4009,7 @@
     },
     "layer3": {
       "adoption": 91,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 13,
       "docs": 100,
@@ -4066,7 +4066,7 @@
     },
     "layer3": {
       "adoption": 90,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 13,
       "docs": 70,
@@ -4128,12 +4128,12 @@
     },
     "layer3": {
       "adoption": 93,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 27,
       "docs": 100,
       "compositeScore": 77,
-      "percentileRank": 51,
+      "percentileRank": 53,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -4187,12 +4187,12 @@
     },
     "layer3": {
       "adoption": 93,
-      "maintenance": 29,
+      "maintenance": 28,
       "trust": 50,
       "community": 29,
       "docs": 100,
-      "compositeScore": 60,
-      "percentileRank": 10,
+      "compositeScore": 59,
+      "percentileRank": 8,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -4314,7 +4314,7 @@
     },
     "layer3": {
       "adoption": 93,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 35,
       "docs": 70,
@@ -4424,12 +4424,12 @@
     },
     "layer3": {
       "adoption": 91,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 24,
       "docs": 100,
       "compositeScore": 80,
-      "percentileRank": 70,
+      "percentileRank": 71,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -4489,12 +4489,12 @@
     },
     "layer3": {
       "adoption": 94,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 40,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 86,
+      "percentileRank": 87,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -4566,7 +4566,7 @@
       "community": 20,
       "docs": 100,
       "compositeScore": 79,
-      "percentileRank": 63,
+      "percentileRank": 64,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -4620,7 +4620,7 @@
       "community": 24,
       "docs": 70,
       "compositeScore": 73,
-      "percentileRank": 35,
+      "percentileRank": 36,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -4687,7 +4687,7 @@
     },
     "layer3": {
       "adoption": 89,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 14,
       "docs": 70,
@@ -4799,12 +4799,12 @@
     },
     "layer3": {
       "adoption": 88,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 14,
       "docs": 100,
-      "compositeScore": 78,
-      "percentileRank": 58,
+      "compositeScore": 77,
+      "percentileRank": 53,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -4979,7 +4979,7 @@
       "community": 24,
       "docs": 100,
       "compositeScore": 74,
-      "percentileRank": 38,
+      "percentileRank": 39,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -5165,12 +5165,12 @@
     },
     "layer3": {
       "adoption": 91,
-      "maintenance": 21,
+      "maintenance": 20,
       "trust": 50,
       "community": 34,
       "docs": 70,
-      "compositeScore": 55,
-      "percentileRank": 4,
+      "compositeScore": 54,
+      "percentileRank": 3,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -5214,12 +5214,12 @@
     },
     "layer3": {
       "adoption": 90,
-      "maintenance": 77,
+      "maintenance": 76,
       "trust": 70,
       "community": 29,
       "docs": 100,
-      "compositeScore": 75,
-      "percentileRank": 42,
+      "compositeScore": 74,
+      "percentileRank": 39,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -5329,12 +5329,12 @@
     },
     "layer3": {
       "adoption": 88,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 100,
       "community": 17,
       "docs": 100,
       "compositeScore": 84,
-      "percentileRank": 90,
+      "percentileRank": 91,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -5448,7 +5448,7 @@
     },
     "layer3": {
       "adoption": 89,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 25,
       "docs": 100,
@@ -5501,12 +5501,12 @@
     },
     "layer3": {
       "adoption": 90,
-      "maintenance": 95,
+      "maintenance": 94,
       "trust": 50,
       "community": 33,
       "docs": 100,
-      "compositeScore": 76,
-      "percentileRank": 46,
+      "compositeScore": 75,
+      "percentileRank": 42,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -5711,12 +5711,12 @@
     },
     "layer3": {
       "adoption": 87,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 17,
       "docs": 100,
-      "compositeScore": 78,
-      "percentileRank": 58,
+      "compositeScore": 77,
+      "percentileRank": 53,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -5818,12 +5818,12 @@
     },
     "layer3": {
       "adoption": 89,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 34,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 74,
+      "percentileRank": 76,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -5884,7 +5884,7 @@
     },
     "layer3": {
       "adoption": 88,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 27,
       "docs": 100,
@@ -6019,7 +6019,7 @@
     },
     "layer3": {
       "adoption": 90,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 47,
       "docs": 100,
@@ -6078,7 +6078,7 @@
     },
     "layer3": {
       "adoption": 88,
-      "maintenance": 97,
+      "maintenance": 96,
       "trust": 50,
       "community": 29,
       "docs": 100,
@@ -6148,12 +6148,12 @@
     },
     "layer3": {
       "adoption": 91,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 52,
       "docs": 100,
       "compositeScore": 84,
-      "percentileRank": 90,
+      "percentileRank": 91,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -6326,7 +6326,7 @@
     },
     "layer3": {
       "adoption": 86,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 20,
       "docs": 100,
@@ -6850,7 +6850,7 @@
       "community": 47,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 86,
+      "percentileRank": 87,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -6958,7 +6958,7 @@
       "community": 64,
       "docs": 100,
       "compositeScore": 82,
-      "percentileRank": 80,
+      "percentileRank": 81,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -7038,7 +7038,7 @@
       "community": 35,
       "docs": 70,
       "compositeScore": 77,
-      "percentileRank": 51,
+      "percentileRank": 53,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -7098,11 +7098,11 @@
     },
     "layer3": {
       "adoption": 92,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 94,
       "docs": 100,
-      "compositeScore": 91,
+      "compositeScore": 90,
       "percentileRank": 99,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
@@ -7161,12 +7161,12 @@
     },
     "layer3": {
       "adoption": 85,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 23,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 57,
+      "percentileRank": 58,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -7227,12 +7227,12 @@
     },
     "layer3": {
       "adoption": 87,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 35,
       "docs": 100,
       "compositeScore": 80,
-      "percentileRank": 70,
+      "percentileRank": 71,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -7294,7 +7294,7 @@
       "community": 15,
       "docs": 100,
       "compositeScore": 72,
-      "percentileRank": 32,
+      "percentileRank": 33,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -7340,12 +7340,12 @@
     },
     "layer3": {
       "adoption": 87,
-      "maintenance": 91,
+      "maintenance": 90,
       "trust": 70,
       "community": 37,
       "docs": 70,
       "compositeScore": 75,
-      "percentileRank": 41,
+      "percentileRank": 42,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -7400,7 +7400,7 @@
       "community": 24,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 57,
+      "percentileRank": 58,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -7450,12 +7450,12 @@
     },
     "layer3": {
       "adoption": 85,
-      "maintenance": 77,
+      "maintenance": 76,
       "trust": 70,
       "community": 29,
       "docs": 100,
       "compositeScore": 73,
-      "percentileRank": 35,
+      "percentileRank": 36,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -7509,7 +7509,7 @@
     },
     "layer3": {
       "adoption": 89,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 68,
       "docs": 100,
@@ -7563,7 +7563,7 @@
     },
     "layer3": {
       "adoption": 86,
-      "maintenance": 81,
+      "maintenance": 80,
       "trust": 70,
       "community": 39,
       "docs": 100,
@@ -7624,7 +7624,7 @@
       "community": 28,
       "docs": 70,
       "compositeScore": 70,
-      "percentileRank": 26,
+      "percentileRank": 27,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -7683,12 +7683,12 @@
     },
     "layer3": {
       "adoption": 87,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 52,
       "docs": 100,
       "compositeScore": 79,
-      "percentileRank": 62,
+      "percentileRank": 63,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -7743,12 +7743,12 @@
     },
     "layer3": {
       "adoption": 83,
-      "maintenance": 98,
+      "maintenance": 97,
       "trust": 70,
       "community": 18,
       "docs": 100,
       "compositeScore": 76,
-      "percentileRank": 45,
+      "percentileRank": 46,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -7902,7 +7902,7 @@
     },
     "layer3": {
       "adoption": 85,
-      "maintenance": 97,
+      "maintenance": 96,
       "trust": 70,
       "community": 31,
       "docs": 100,
@@ -8024,7 +8024,7 @@
     },
     "layer3": {
       "adoption": 86,
-      "maintenance": 41,
+      "maintenance": 40,
       "trust": 50,
       "community": 48,
       "docs": 100,
@@ -8147,12 +8147,12 @@
     },
     "layer3": {
       "adoption": 85,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 37,
       "docs": 100,
       "compositeScore": 80,
-      "percentileRank": 69,
+      "percentileRank": 71,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -8203,12 +8203,12 @@
     },
     "layer3": {
       "adoption": 87,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 60,
       "docs": 100,
       "compositeScore": 84,
-      "percentileRank": 90,
+      "percentileRank": 91,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -8319,7 +8319,7 @@
     },
     "layer3": {
       "adoption": 83,
-      "maintenance": 70,
+      "maintenance": 69,
       "trust": 50,
       "community": 24,
       "docs": 70,
@@ -8369,12 +8369,12 @@
     },
     "layer3": {
       "adoption": 85,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 40,
       "docs": 100,
-      "compositeScore": 81,
-      "percentileRank": 74,
+      "compositeScore": 80,
+      "percentileRank": 70,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -9655,12 +9655,12 @@
     },
     "layer3": {
       "adoption": 89,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 100,
       "docs": 100,
-      "compositeScore": 91,
-      "percentileRank": 99,
+      "compositeScore": 90,
+      "percentileRank": 98,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -9738,7 +9738,7 @@
     },
     "layer3": {
       "adoption": 81,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 19,
       "docs": 100,
@@ -9805,12 +9805,12 @@
     },
     "layer3": {
       "adoption": 84,
-      "maintenance": 89,
+      "maintenance": 88,
       "trust": 70,
       "community": 43,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 56,
+      "percentileRank": 57,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -9869,12 +9869,12 @@
     },
     "layer3": {
       "adoption": 83,
-      "maintenance": 96,
+      "maintenance": 95,
       "trust": 70,
       "community": 32,
       "docs": 100,
-      "compositeScore": 78,
-      "percentileRank": 56,
+      "compositeScore": 77,
+      "percentileRank": 52,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -9937,7 +9937,7 @@
       "community": 30,
       "docs": 100,
       "compositeScore": 76,
-      "percentileRank": 45,
+      "percentileRank": 46,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -9998,12 +9998,12 @@
     },
     "layer3": {
       "adoption": 84,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 40,
       "docs": 100,
       "compositeScore": 80,
-      "percentileRank": 69,
+      "percentileRank": 70,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -10045,7 +10045,7 @@
     },
     "layer3": {
       "adoption": 84,
-      "maintenance": 62,
+      "maintenance": 61,
       "trust": 70,
       "community": 43,
       "docs": 100,
@@ -10222,12 +10222,12 @@
     },
     "layer3": {
       "adoption": 84,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 50,
       "docs": 100,
-      "compositeScore": 82,
-      "percentileRank": 80,
+      "compositeScore": 81,
+      "percentileRank": 76,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -10287,12 +10287,12 @@
     },
     "layer3": {
       "adoption": 83,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 41,
       "docs": 100,
       "compositeScore": 80,
-      "percentileRank": 69,
+      "percentileRank": 70,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -10402,12 +10402,12 @@
     },
     "layer3": {
       "adoption": 82,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 32,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 56,
+      "percentileRank": 57,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -10756,7 +10756,7 @@
       "community": 38,
       "docs": 70,
       "compositeScore": 74,
-      "percentileRank": 37,
+      "percentileRank": 38,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -10819,12 +10819,12 @@
     },
     "layer3": {
       "adoption": 83,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 51,
       "docs": 100,
-      "compositeScore": 82,
-      "percentileRank": 80,
+      "compositeScore": 81,
+      "percentileRank": 76,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -10917,12 +10917,12 @@
     },
     "layer3": {
       "adoption": 81,
-      "maintenance": 88,
+      "maintenance": 87,
       "trust": 70,
       "community": 40,
       "docs": 100,
       "compositeScore": 76,
-      "percentileRank": 45,
+      "percentileRank": 46,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -10985,7 +10985,7 @@
       "community": 27,
       "docs": 100,
       "compositeScore": 77,
-      "percentileRank": 51,
+      "percentileRank": 52,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -11030,12 +11030,12 @@
     },
     "layer3": {
       "adoption": 83,
-      "maintenance": 54,
+      "maintenance": 53,
       "trust": 70,
       "community": 62,
       "docs": 100,
-      "compositeScore": 72,
-      "percentileRank": 32,
+      "compositeScore": 71,
+      "percentileRank": 29,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -11149,7 +11149,7 @@
     },
     "layer3": {
       "adoption": 78,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 18,
       "docs": 100,
@@ -11202,7 +11202,7 @@
     },
     "layer3": {
       "adoption": 80,
-      "maintenance": 62,
+      "maintenance": 61,
       "trust": 70,
       "community": 29,
       "docs": 100,
@@ -11390,7 +11390,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 53,
       "docs": 100,
@@ -11449,7 +11449,7 @@
       "community": 27,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 86,
+      "percentileRank": 87,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -11508,7 +11508,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 26,
       "docs": 100,
@@ -11572,12 +11572,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 31,
       "docs": 100,
-      "compositeScore": 84,
-      "percentileRank": 90,
+      "compositeScore": 83,
+      "percentileRank": 86,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -11947,7 +11947,7 @@
       "community": 28,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 74,
+      "percentileRank": 75,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -12006,7 +12006,7 @@
       "community": 33,
       "docs": 100,
       "compositeScore": 73,
-      "percentileRank": 35,
+      "percentileRank": 36,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -12054,12 +12054,12 @@
     },
     "layer3": {
       "adoption": 93,
-      "maintenance": 85,
+      "maintenance": 84,
       "trust": 50,
       "community": 24,
       "docs": 100,
       "compositeScore": 73,
-      "percentileRank": 35,
+      "percentileRank": 36,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -12117,12 +12117,12 @@
     },
     "layer3": {
       "adoption": 93,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 27,
       "docs": 100,
       "compositeScore": 77,
-      "percentileRank": 51,
+      "percentileRank": 52,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -12234,7 +12234,7 @@
     },
     "layer3": {
       "adoption": 94,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 35,
       "docs": 100,
@@ -12343,12 +12343,12 @@
     },
     "layer3": {
       "adoption": 88,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 14,
       "docs": 100,
-      "compositeScore": 74,
-      "percentileRank": 37,
+      "compositeScore": 73,
+      "percentileRank": 35,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -12472,7 +12472,7 @@
     },
     "layer3": {
       "adoption": 94,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 59,
       "docs": 100,
@@ -12532,12 +12532,12 @@
     },
     "layer3": {
       "adoption": 89,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 28,
       "docs": 100,
       "compositeScore": 80,
-      "percentileRank": 69,
+      "percentileRank": 70,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -12646,7 +12646,7 @@
     },
     "layer3": {
       "adoption": 87,
-      "maintenance": 92,
+      "maintenance": 91,
       "trust": 70,
       "community": 41,
       "docs": 100,
@@ -12703,7 +12703,7 @@
       "community": 25,
       "docs": 100,
       "compositeScore": 77,
-      "percentileRank": 51,
+      "percentileRank": 52,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -12889,12 +12889,12 @@
     },
     "layer3": {
       "adoption": 80,
-      "maintenance": 83,
+      "maintenance": 82,
       "trust": 70,
       "community": 15,
       "docs": 100,
       "compositeScore": 71,
-      "percentileRank": 28,
+      "percentileRank": 29,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -12952,7 +12952,7 @@
     },
     "layer3": {
       "adoption": 83,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 33,
       "docs": 100,
@@ -13017,12 +13017,12 @@
     },
     "layer3": {
       "adoption": 82,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 26,
       "docs": 100,
-      "compositeScore": 78,
-      "percentileRank": 56,
+      "compositeScore": 77,
+      "percentileRank": 51,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -13068,12 +13068,12 @@
     },
     "layer3": {
       "adoption": 84,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 43,
       "docs": 100,
-      "compositeScore": 81,
-      "percentileRank": 74,
+      "compositeScore": 80,
+      "percentileRank": 69,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -13254,12 +13254,12 @@
     },
     "layer3": {
       "adoption": 84,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 42,
       "docs": 100,
-      "compositeScore": 81,
-      "percentileRank": 73,
+      "compositeScore": 80,
+      "percentileRank": 69,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -13382,12 +13382,12 @@
     },
     "layer3": {
       "adoption": 81,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 32,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 55,
+      "percentileRank": 56,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -13446,7 +13446,7 @@
       "community": 25,
       "docs": 100,
       "compositeScore": 76,
-      "percentileRank": 45,
+      "percentileRank": 46,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -13754,12 +13754,12 @@
     },
     "layer3": {
       "adoption": 82,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 52,
       "docs": 100,
       "compositeScore": 77,
-      "percentileRank": 50,
+      "percentileRank": 51,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -13812,12 +13812,12 @@
     },
     "layer3": {
       "adoption": 81,
-      "maintenance": 94,
+      "maintenance": 93,
       "trust": 70,
       "community": 39,
       "docs": 100,
-      "compositeScore": 78,
-      "percentileRank": 55,
+      "compositeScore": 77,
+      "percentileRank": 51,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -13875,7 +13875,7 @@
     },
     "layer3": {
       "adoption": 82,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 55,
       "docs": 100,
@@ -14003,7 +14003,7 @@
       "community": 50,
       "docs": 100,
       "compositeScore": 80,
-      "percentileRank": 68,
+      "percentileRank": 69,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -14156,7 +14156,7 @@
       "community": 74,
       "docs": 70,
       "compositeScore": 81,
-      "percentileRank": 73,
+      "percentileRank": 75,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -14379,7 +14379,7 @@
     },
     "layer3": {
       "adoption": 80,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 63,
       "docs": 100,
@@ -14919,12 +14919,12 @@
     },
     "layer3": {
       "adoption": 79,
-      "maintenance": 96,
+      "maintenance": 95,
       "trust": 70,
       "community": 70,
       "docs": 100,
       "compositeScore": 82,
-      "percentileRank": 79,
+      "percentileRank": 80,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -14987,12 +14987,12 @@
     },
     "layer3": {
       "adoption": 76,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 42,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 55,
+      "percentileRank": 56,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -15105,12 +15105,12 @@
     },
     "layer3": {
       "adoption": 75,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 37,
       "docs": 100,
       "compositeScore": 77,
-      "percentileRank": 50,
+      "percentileRank": 51,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -15168,7 +15168,7 @@
     },
     "layer3": {
       "adoption": 74,
-      "maintenance": 19,
+      "maintenance": 18,
       "trust": 50,
       "community": 28,
       "docs": 100,
@@ -15423,7 +15423,7 @@
     },
     "layer3": {
       "adoption": 73,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 28,
       "docs": 100,
@@ -15499,12 +15499,12 @@
     },
     "layer3": {
       "adoption": 75,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 38,
       "docs": 100,
       "compositeScore": 77,
-      "percentileRank": 50,
+      "percentileRank": 51,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -15677,12 +15677,12 @@
     },
     "layer3": {
       "adoption": 74,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 34,
       "docs": 100,
       "compositeScore": 76,
-      "percentileRank": 44,
+      "percentileRank": 45,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -15742,12 +15742,12 @@
     },
     "layer3": {
       "adoption": 72,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 26,
       "docs": 100,
-      "compositeScore": 75,
-      "percentileRank": 41,
+      "compositeScore": 74,
+      "percentileRank": 38,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -15805,12 +15805,12 @@
     },
     "layer3": {
       "adoption": 72,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 27,
       "docs": 100,
-      "compositeScore": 71,
-      "percentileRank": 28,
+      "compositeScore": 70,
+      "percentileRank": 26,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -15861,7 +15861,7 @@
     },
     "layer3": {
       "adoption": 72,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 29,
       "docs": 100,
@@ -15921,12 +15921,12 @@
     },
     "layer3": {
       "adoption": 70,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 16,
       "docs": 100,
       "compositeScore": 72,
-      "percentileRank": 31,
+      "percentileRank": 32,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -15983,12 +15983,12 @@
     },
     "layer3": {
       "adoption": 69,
-      "maintenance": 95,
+      "maintenance": 94,
       "trust": 50,
       "community": 16,
       "docs": 100,
       "compositeScore": 67,
-      "percentileRank": 19,
+      "percentileRank": 20,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -16108,12 +16108,12 @@
     },
     "layer3": {
       "adoption": 71,
-      "maintenance": 98,
+      "maintenance": 97,
       "trust": 70,
       "community": 25,
       "docs": 100,
-      "compositeScore": 74,
-      "percentileRank": 37,
+      "compositeScore": 73,
+      "percentileRank": 35,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -16169,7 +16169,7 @@
     },
     "layer3": {
       "adoption": 73,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 42,
       "docs": 100,
@@ -16270,12 +16270,12 @@
     },
     "layer3": {
       "adoption": 74,
-      "maintenance": 62,
+      "maintenance": 61,
       "trust": 70,
       "community": 59,
       "docs": 100,
-      "compositeScore": 71,
-      "percentileRank": 28,
+      "compositeScore": 70,
+      "percentileRank": 26,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -16594,12 +16594,12 @@
     },
     "layer3": {
       "adoption": 72,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 35,
       "docs": 100,
       "compositeScore": 72,
-      "percentileRank": 31,
+      "percentileRank": 32,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -16720,12 +16720,12 @@
     },
     "layer3": {
       "adoption": 72,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 37,
       "docs": 100,
       "compositeScore": 76,
-      "percentileRank": 44,
+      "percentileRank": 45,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -16840,7 +16840,7 @@
       "community": 16,
       "docs": 100,
       "compositeScore": 71,
-      "percentileRank": 27,
+      "percentileRank": 28,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -16897,7 +16897,7 @@
     },
     "layer3": {
       "adoption": 68,
-      "maintenance": 82,
+      "maintenance": 81,
       "trust": 70,
       "community": 16,
       "docs": 100,
@@ -16948,7 +16948,7 @@
     },
     "layer3": {
       "adoption": 71,
-      "maintenance": 72,
+      "maintenance": 71,
       "trust": 70,
       "community": 38,
       "docs": 100,
@@ -17077,7 +17077,7 @@
       "community": 25,
       "docs": 100,
       "compositeScore": 73,
-      "percentileRank": 34,
+      "percentileRank": 35,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -17119,12 +17119,12 @@
     },
     "layer3": {
       "adoption": 71,
-      "maintenance": 74,
+      "maintenance": 73,
       "trust": 50,
       "community": 37,
       "docs": 100,
       "compositeScore": 65,
-      "percentileRank": 15,
+      "percentileRank": 16,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -17182,12 +17182,12 @@
     },
     "layer3": {
       "adoption": 72,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 46,
       "docs": 100,
       "compositeScore": 77,
-      "percentileRank": 49,
+      "percentileRank": 50,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -17551,12 +17551,12 @@
     },
     "layer3": {
       "adoption": 70,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 34,
       "docs": 100,
       "compositeScore": 75,
-      "percentileRank": 40,
+      "percentileRank": 41,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -17611,12 +17611,12 @@
     },
     "layer3": {
       "adoption": 72,
-      "maintenance": 98,
+      "maintenance": 97,
       "trust": 70,
       "community": 44,
       "docs": 100,
-      "compositeScore": 77,
-      "percentileRank": 49,
+      "compositeScore": 76,
+      "percentileRank": 45,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -17717,12 +17717,12 @@
     },
     "layer3": {
       "adoption": 72,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 51,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 55,
+      "percentileRank": 56,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -17889,7 +17889,7 @@
       "community": 25,
       "docs": 100,
       "compositeScore": 70,
-      "percentileRank": 25,
+      "percentileRank": 26,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -17960,7 +17960,7 @@
       "community": 27,
       "docs": 100,
       "compositeScore": 70,
-      "percentileRank": 25,
+      "percentileRank": 26,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -18020,12 +18020,12 @@
     },
     "layer3": {
       "adoption": 67,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 17,
       "docs": 100,
-      "compositeScore": 72,
-      "percentileRank": 31,
+      "compositeScore": 71,
+      "percentileRank": 28,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -18207,12 +18207,12 @@
     },
     "layer3": {
       "adoption": 69,
-      "maintenance": 95,
+      "maintenance": 94,
       "trust": 50,
       "community": 32,
       "docs": 100,
       "compositeScore": 69,
-      "percentileRank": 23,
+      "percentileRank": 24,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -18310,12 +18310,12 @@
     },
     "layer3": {
       "adoption": 72,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 67,
       "docs": 70,
-      "compositeScore": 78,
-      "percentileRank": 54,
+      "compositeScore": 77,
+      "percentileRank": 50,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -18478,12 +18478,12 @@
     },
     "layer3": {
       "adoption": 72,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 69,
       "docs": 100,
-      "compositeScore": 81,
-      "percentileRank": 73,
+      "compositeScore": 80,
+      "percentileRank": 69,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -18543,12 +18543,12 @@
     },
     "layer3": {
       "adoption": 69,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 33,
       "docs": 100,
-      "compositeScore": 75,
-      "percentileRank": 40,
+      "compositeScore": 74,
+      "percentileRank": 37,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -18641,7 +18641,7 @@
       "community": 45,
       "docs": 100,
       "compositeScore": 77,
-      "percentileRank": 49,
+      "percentileRank": 50,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -18703,12 +18703,12 @@
     },
     "layer3": {
       "adoption": 54,
-      "maintenance": 94,
+      "maintenance": 93,
       "trust": 50,
       "community": 1,
       "docs": 100,
       "compositeScore": 60,
-      "percentileRank": 9,
+      "percentileRank": 10,
       "antiFakeFlags": [
         "Suspicious fork-to-star ratio: 0.0044 (< 0.01)"
       ],
@@ -18825,7 +18825,7 @@
     },
     "layer3": {
       "adoption": 69,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 41,
       "docs": 100,
@@ -18892,12 +18892,12 @@
     },
     "layer3": {
       "adoption": 70,
-      "maintenance": 93,
+      "maintenance": 92,
       "trust": 50,
       "community": 57,
       "docs": 100,
       "compositeScore": 73,
-      "percentileRank": 34,
+      "percentileRank": 35,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -19009,7 +19009,7 @@
     },
     "layer3": {
       "adoption": 70,
-      "maintenance": 81,
+      "maintenance": 80,
       "trust": 50,
       "community": 52,
       "docs": 100,
@@ -20207,12 +20207,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 50,
       "community": 45,
       "docs": 100,
-      "compositeScore": 82,
-      "percentileRank": 79,
+      "compositeScore": 81,
+      "percentileRank": 75,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -20475,7 +20475,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 65,
       "docs": 70,
@@ -20541,12 +20541,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 16,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 73,
+      "percentileRank": 75,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -20680,12 +20680,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 98,
+      "maintenance": 97,
       "trust": 70,
       "community": 32,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 85,
+      "percentileRank": 86,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -20743,12 +20743,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 29,
       "docs": 100,
       "compositeScore": 79,
-      "percentileRank": 61,
+      "percentileRank": 62,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -20825,12 +20825,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 17,
       "docs": 100,
-      "compositeScore": 82,
-      "percentileRank": 79,
+      "compositeScore": 81,
+      "percentileRank": 75,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -20900,12 +20900,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 98,
+      "maintenance": 97,
       "trust": 70,
       "community": 31,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 85,
+      "percentileRank": 86,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -21000,12 +21000,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 26,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 85,
+      "percentileRank": 86,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -21070,12 +21070,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 20,
       "docs": 100,
       "compositeScore": 82,
-      "percentileRank": 79,
+      "percentileRank": 80,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -21132,7 +21132,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 88,
+      "maintenance": 87,
       "trust": 70,
       "community": 26,
       "docs": 100,
@@ -21202,12 +21202,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 19,
       "docs": 100,
       "compositeScore": 82,
-      "percentileRank": 78,
+      "percentileRank": 80,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -21341,12 +21341,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 19,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 54,
+      "percentileRank": 56,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -21407,12 +21407,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 20,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 54,
+      "percentileRank": 55,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -21586,12 +21586,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 23,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 54,
+      "percentileRank": 55,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -21702,12 +21702,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 43,
       "docs": 100,
       "compositeScore": 85,
-      "percentileRank": 93,
+      "percentileRank": 94,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -21774,7 +21774,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 56,
       "docs": 100,
@@ -22122,12 +22122,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 30,
       "docs": 100,
-      "compositeScore": 84,
-      "percentileRank": 90,
+      "compositeScore": 83,
+      "percentileRank": 85,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -22187,7 +22187,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 26,
       "docs": 100,
@@ -22309,12 +22309,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 95,
+      "maintenance": 94,
       "trust": 70,
       "community": 24,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 73,
+      "percentileRank": 74,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -22448,12 +22448,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 29,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 84,
+      "percentileRank": 85,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -22691,7 +22691,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 66,
       "docs": 100,
@@ -22756,7 +22756,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 100,
       "docs": 100,
@@ -22814,7 +22814,7 @@
       "community": 19,
       "docs": 100,
       "compositeScore": 82,
-      "percentileRank": 78,
+      "percentileRank": 79,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -22863,12 +22863,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 64,
       "docs": 100,
-      "compositeScore": 85,
-      "percentileRank": 93,
+      "compositeScore": 84,
+      "percentileRank": 90,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -22930,7 +22930,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 23,
       "docs": 70,
@@ -23281,12 +23281,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 32,
       "docs": 100,
-      "compositeScore": 84,
-      "percentileRank": 89,
+      "compositeScore": 83,
+      "percentileRank": 85,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -23382,7 +23382,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 27,
       "docs": 100,
@@ -23462,7 +23462,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 100,
       "community": 34,
       "docs": 100,
@@ -24643,7 +24643,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 27,
       "docs": 100,
@@ -24718,7 +24718,7 @@
       "community": 20,
       "docs": 100,
       "compositeScore": 82,
-      "percentileRank": 78,
+      "percentileRank": 79,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -25914,7 +25914,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 79,
+      "maintenance": 78,
       "trust": 70,
       "community": 42,
       "docs": 100,
@@ -26026,17 +26026,17 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 20,
       "docs": 70,
       "compositeScore": 79,
-      "percentileRank": 60,
+      "percentileRank": 61,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
-    "selected": false,
-    "selectionReason": "exceeded_catalog_cap"
+    "selected": true,
+    "selectionReason": "quality_percentile"
   },
   {
     "repo": {
@@ -26082,12 +26082,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 66,
+      "maintenance": 65,
       "trust": 70,
       "community": 21,
       "docs": 100,
-      "compositeScore": 74,
-      "percentileRank": 37,
+      "compositeScore": 73,
+      "percentileRank": 34,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -26347,12 +26347,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 92,
+      "maintenance": 91,
       "trust": 70,
       "community": 26,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 72,
+      "percentileRank": 74,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -26406,7 +26406,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 26,
       "docs": 100,
@@ -26515,12 +26515,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 28,
       "docs": 100,
       "compositeScore": 83,
-      "percentileRank": 83,
+      "percentileRank": 84,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -26574,7 +26574,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 97,
+      "maintenance": 96,
       "trust": 70,
       "community": 32,
       "docs": 100,
@@ -26847,7 +26847,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 26,
       "docs": 100,
@@ -26938,7 +26938,7 @@
       "community": 44,
       "docs": 100,
       "compositeScore": 85,
-      "percentileRank": 93,
+      "percentileRank": 94,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -26993,12 +26993,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 30,
       "docs": 70,
-      "compositeScore": 81,
-      "percentileRank": 72,
+      "compositeScore": 80,
+      "percentileRank": 68,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -27048,7 +27048,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 25,
       "docs": 100,
@@ -27237,12 +27237,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 23,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 54,
+      "percentileRank": 55,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -27293,7 +27293,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 92,
+      "maintenance": 91,
       "trust": 70,
       "community": 16,
       "docs": 100,
@@ -27431,12 +27431,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 20,
       "docs": 100,
       "compositeScore": 82,
-      "percentileRank": 78,
+      "percentileRank": 79,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -27754,7 +27754,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 100,
       "docs": 100,
@@ -27811,7 +27811,7 @@
       "community": 21,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 53,
+      "percentileRank": 55,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -27864,7 +27864,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 43,
       "docs": 100,
@@ -28020,7 +28020,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 37,
+      "maintenance": 36,
       "trust": 50,
       "community": 21,
       "docs": 100,
@@ -28137,12 +28137,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 41,
       "docs": 100,
       "compositeScore": 85,
-      "percentileRank": 92,
+      "percentileRank": 93,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -28415,7 +28415,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 98,
+      "maintenance": 97,
       "trust": 70,
       "community": 29,
       "docs": 100,
@@ -28637,12 +28637,12 @@
     },
     "layer3": {
       "adoption": 99,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 23,
       "docs": 100,
       "compositeScore": 82,
-      "percentileRank": 78,
+      "percentileRank": 79,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -28696,7 +28696,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 55,
       "docs": 100,
@@ -28801,12 +28801,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 48,
       "docs": 100,
       "compositeScore": 82,
-      "percentileRank": 77,
+      "percentileRank": 78,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -29030,12 +29030,12 @@
     },
     "layer3": {
       "adoption": 99,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 22,
       "docs": 70,
       "compositeScore": 75,
-      "percentileRank": 40,
+      "percentileRank": 41,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -29175,12 +29175,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 44,
       "docs": 100,
-      "compositeScore": 86,
-      "percentileRank": 94,
+      "compositeScore": 85,
+      "percentileRank": 93,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -29355,7 +29355,7 @@
     },
     "layer3": {
       "adoption": 95,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 12,
       "docs": 100,
@@ -29485,12 +29485,12 @@
     },
     "layer3": {
       "adoption": 98,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 23,
       "docs": 100,
       "compositeScore": 82,
-      "percentileRank": 77,
+      "percentileRank": 78,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -29535,7 +29535,7 @@
     },
     "layer3": {
       "adoption": 97,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 20,
       "docs": 100,
@@ -29585,12 +29585,12 @@
     },
     "layer3": {
       "adoption": 99,
-      "maintenance": 95,
+      "maintenance": 94,
       "trust": 70,
       "community": 43,
       "docs": 100,
       "compositeScore": 84,
-      "percentileRank": 89,
+      "percentileRank": 90,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -29735,7 +29735,7 @@
       "community": 29,
       "docs": 100,
       "compositeScore": 76,
-      "percentileRank": 44,
+      "percentileRank": 45,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -29845,7 +29845,7 @@
     },
     "layer3": {
       "adoption": 99,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 38,
       "docs": 100,
@@ -30027,12 +30027,12 @@
     },
     "layer3": {
       "adoption": 99,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 42,
       "docs": 100,
       "compositeScore": 85,
-      "percentileRank": 92,
+      "percentileRank": 93,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -30163,7 +30163,7 @@
       "community": 28,
       "docs": 100,
       "compositeScore": 82,
-      "percentileRank": 77,
+      "percentileRank": 78,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -30369,12 +30369,12 @@
     },
     "layer3": {
       "adoption": 97,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 33,
       "docs": 100,
       "compositeScore": 79,
-      "percentileRank": 59,
+      "percentileRank": 60,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -30505,7 +30505,7 @@
     },
     "layer3": {
       "adoption": 98,
-      "maintenance": 98,
+      "maintenance": 97,
       "trust": 50,
       "community": 43,
       "docs": 100,
@@ -30578,7 +30578,7 @@
       "community": 43,
       "docs": 100,
       "compositeScore": 85,
-      "percentileRank": 92,
+      "percentileRank": 93,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -30642,7 +30642,7 @@
     },
     "layer3": {
       "adoption": 94,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 17,
       "docs": 100,
@@ -30697,12 +30697,12 @@
     },
     "layer3": {
       "adoption": 96,
-      "maintenance": 97,
+      "maintenance": 96,
       "trust": 70,
       "community": 28,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 72,
+      "percentileRank": 74,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -30934,7 +30934,7 @@
     },
     "layer3": {
       "adoption": 94,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 20,
       "docs": 70,
@@ -31045,7 +31045,7 @@
     },
     "layer3": {
       "adoption": 93,
-      "maintenance": 82,
+      "maintenance": 81,
       "trust": 70,
       "community": 20,
       "docs": 100,
@@ -31280,7 +31280,7 @@
       "community": 15,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 53,
+      "percentileRank": 54,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -31387,12 +31387,12 @@
     },
     "layer3": {
       "adoption": 87,
-      "maintenance": 95,
+      "maintenance": 94,
       "trust": 50,
       "community": 5,
       "docs": 100,
-      "compositeScore": 71,
-      "percentileRank": 27,
+      "compositeScore": 70,
+      "percentileRank": 25,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -31474,12 +31474,12 @@
     },
     "layer3": {
       "adoption": 94,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 30,
       "docs": 100,
-      "compositeScore": 82,
-      "percentileRank": 77,
+      "compositeScore": 81,
+      "percentileRank": 74,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -31545,12 +31545,12 @@
     },
     "layer3": {
       "adoption": 94,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 29,
       "docs": 100,
-      "compositeScore": 78,
-      "percentileRank": 53,
+      "compositeScore": 77,
+      "percentileRank": 49,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -31722,12 +31722,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 34,
       "docs": 100,
       "compositeScore": 84,
-      "percentileRank": 89,
+      "percentileRank": 90,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -31782,7 +31782,7 @@
     },
     "layer3": {
       "adoption": 90,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 28,
       "docs": 100,
@@ -32021,7 +32021,7 @@
     },
     "layer3": {
       "adoption": 82,
-      "maintenance": 81,
+      "maintenance": 80,
       "trust": 70,
       "community": 9,
       "docs": 100,
@@ -32188,12 +32188,12 @@
     },
     "layer3": {
       "adoption": 88,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 46,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 53,
+      "percentileRank": 54,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -32246,7 +32246,7 @@
     },
     "layer3": {
       "adoption": 84,
-      "maintenance": 58,
+      "maintenance": 57,
       "trust": 50,
       "community": 35,
       "docs": 100,
@@ -32303,12 +32303,12 @@
     },
     "layer3": {
       "adoption": 82,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 27,
       "docs": 100,
       "compositeScore": 77,
-      "percentileRank": 48,
+      "percentileRank": 49,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -32364,12 +32364,12 @@
     },
     "layer3": {
       "adoption": 77,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 12,
       "docs": 100,
       "compositeScore": 74,
-      "percentileRank": 36,
+      "percentileRank": 37,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -32654,7 +32654,7 @@
     },
     "layer3": {
       "adoption": 78,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 50,
       "community": 24,
       "docs": 100,
@@ -32757,12 +32757,12 @@
     },
     "layer3": {
       "adoption": 79,
-      "maintenance": 97,
+      "maintenance": 96,
       "trust": 50,
       "community": 31,
       "docs": 100,
-      "compositeScore": 73,
-      "percentileRank": 34,
+      "compositeScore": 72,
+      "percentileRank": 31,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -32822,12 +32822,12 @@
     },
     "layer3": {
       "adoption": 79,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 32,
       "docs": 100,
-      "compositeScore": 78,
-      "percentileRank": 53,
+      "compositeScore": 77,
+      "percentileRank": 49,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -32887,7 +32887,7 @@
     },
     "layer3": {
       "adoption": 72,
-      "maintenance": 95,
+      "maintenance": 94,
       "trust": 50,
       "community": 12,
       "docs": 100,
@@ -33069,12 +33069,12 @@
     },
     "layer3": {
       "adoption": 74,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 26,
       "docs": 100,
       "compositeScore": 75,
-      "percentileRank": 39,
+      "percentileRank": 40,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -33189,7 +33189,7 @@
     },
     "layer3": {
       "adoption": 54,
-      "maintenance": 96,
+      "maintenance": 95,
       "trust": 70,
       "community": 1,
       "docs": 70,
@@ -33405,7 +33405,7 @@
     },
     "layer3": {
       "adoption": 71,
-      "maintenance": 68,
+      "maintenance": 67,
       "trust": 70,
       "community": 40,
       "docs": 100,
@@ -33532,7 +33532,7 @@
     },
     "layer3": {
       "adoption": 68,
-      "maintenance": 77,
+      "maintenance": 76,
       "trust": 70,
       "community": 25,
       "docs": 100,
@@ -33816,7 +33816,7 @@
       "community": 24,
       "docs": 100,
       "compositeScore": 67,
-      "percentileRank": 18,
+      "percentileRank": 19,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -33863,7 +33863,7 @@
     },
     "layer3": {
       "adoption": 63,
-      "maintenance": 79,
+      "maintenance": 78,
       "trust": 70,
       "community": 21,
       "docs": 100,
@@ -34166,12 +34166,12 @@
     },
     "layer3": {
       "adoption": 65,
-      "maintenance": 95,
+      "maintenance": 94,
       "trust": 70,
       "community": 42,
       "docs": 100,
-      "compositeScore": 74,
-      "percentileRank": 36,
+      "compositeScore": 73,
+      "percentileRank": 34,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -34232,7 +34232,7 @@
     },
     "layer3": {
       "adoption": 66,
-      "maintenance": 94,
+      "maintenance": 93,
       "trust": 70,
       "community": 60,
       "docs": 100,
@@ -34292,7 +34292,7 @@
       "community": 40,
       "docs": 100,
       "compositeScore": 71,
-      "percentileRank": 27,
+      "percentileRank": 28,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -34565,12 +34565,12 @@
     },
     "layer3": {
       "adoption": 63,
-      "maintenance": 45,
+      "maintenance": 44,
       "trust": 50,
       "community": 31,
       "docs": 100,
       "compositeScore": 55,
-      "percentileRank": 3,
+      "percentileRank": 4,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -34621,7 +34621,7 @@
     },
     "layer3": {
       "adoption": 58,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 12,
       "docs": 100,
@@ -34679,7 +34679,7 @@
     },
     "layer3": {
       "adoption": 62,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 35,
       "docs": 100,
@@ -34748,12 +34748,12 @@
     },
     "layer3": {
       "adoption": 56,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 10,
       "docs": 100,
       "compositeScore": 67,
-      "percentileRank": 18,
+      "percentileRank": 19,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -34812,7 +34812,7 @@
     },
     "layer3": {
       "adoption": 61,
-      "maintenance": 95,
+      "maintenance": 94,
       "trust": 70,
       "community": 33,
       "docs": 100,
@@ -34864,7 +34864,7 @@
     },
     "layer3": {
       "adoption": 62,
-      "maintenance": 64,
+      "maintenance": 63,
       "trust": 50,
       "community": 44,
       "docs": 100,
@@ -35135,12 +35135,12 @@
     },
     "layer3": {
       "adoption": 57,
-      "maintenance": 92,
+      "maintenance": 91,
       "trust": 70,
       "community": 23,
       "docs": 100,
-      "compositeScore": 68,
-      "percentileRank": 20,
+      "compositeScore": 67,
+      "percentileRank": 18,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -35191,12 +35191,12 @@
     },
     "layer3": {
       "adoption": 56,
-      "maintenance": 97,
+      "maintenance": 96,
       "trust": 70,
       "community": 17,
       "docs": 100,
-      "compositeScore": 68,
-      "percentileRank": 20,
+      "compositeScore": 67,
+      "percentileRank": 18,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -35269,7 +35269,7 @@
     },
     "layer3": {
       "adoption": 56,
-      "maintenance": 95,
+      "maintenance": 94,
       "trust": 70,
       "community": 17,
       "docs": 100,
@@ -35454,12 +35454,12 @@
     },
     "layer3": {
       "adoption": 62,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 68,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 52,
+      "percentileRank": 54,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -35519,11 +35519,11 @@
     },
     "layer3": {
       "adoption": 59,
-      "maintenance": 17,
+      "maintenance": 16,
       "trust": 70,
       "community": 38,
       "docs": 100,
-      "compositeScore": 52,
+      "compositeScore": 51,
       "percentileRank": 2,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
@@ -35624,7 +35624,7 @@
     },
     "layer3": {
       "adoption": 56,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 21,
       "docs": 100,
@@ -35689,7 +35689,7 @@
     },
     "layer3": {
       "adoption": 55,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 19,
       "docs": 100,
@@ -35946,7 +35946,7 @@
     },
     "layer3": {
       "adoption": 56,
-      "maintenance": 61,
+      "maintenance": 60,
       "trust": 70,
       "community": 29,
       "docs": 100,
@@ -36118,7 +36118,7 @@
     },
     "layer3": {
       "adoption": 57,
-      "maintenance": 88,
+      "maintenance": 87,
       "trust": 70,
       "community": 53,
       "docs": 100,
@@ -36177,7 +36177,7 @@
     },
     "layer3": {
       "adoption": 50,
-      "maintenance": 98,
+      "maintenance": 97,
       "trust": 70,
       "community": 10,
       "docs": 100,
@@ -36335,7 +36335,7 @@
     },
     "layer3": {
       "adoption": 54,
-      "maintenance": 97,
+      "maintenance": 96,
       "trust": 50,
       "community": 32,
       "docs": 70,
@@ -36386,7 +36386,7 @@
     },
     "layer3": {
       "adoption": 51,
-      "maintenance": 26,
+      "maintenance": 25,
       "trust": 70,
       "community": 15,
       "docs": 100,
@@ -36441,7 +36441,7 @@
       "community": 30,
       "docs": 100,
       "compositeScore": 69,
-      "percentileRank": 22,
+      "percentileRank": 23,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -36568,12 +36568,12 @@
     },
     "layer3": {
       "adoption": 54,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 30,
       "docs": 100,
-      "compositeScore": 66,
-      "percentileRank": 16,
+      "compositeScore": 65,
+      "percentileRank": 15,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -36616,7 +36616,7 @@
     },
     "layer3": {
       "adoption": 52,
-      "maintenance": 85,
+      "maintenance": 84,
       "trust": 50,
       "community": 20,
       "docs": 70,
@@ -36664,12 +36664,12 @@
     },
     "layer3": {
       "adoption": 45,
-      "maintenance": 76,
+      "maintenance": 75,
       "trust": 70,
       "community": 4,
       "docs": 100,
       "compositeScore": 57,
-      "percentileRank": 5,
+      "percentileRank": 6,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -36738,7 +36738,7 @@
       "community": 47,
       "docs": 100,
       "compositeScore": 72,
-      "percentileRank": 30,
+      "percentileRank": 31,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -36792,11 +36792,11 @@
     },
     "layer3": {
       "adoption": 46,
-      "maintenance": 68,
+      "maintenance": 67,
       "trust": 50,
       "community": 6,
       "docs": 100,
-      "compositeScore": 52,
+      "compositeScore": 51,
       "percentileRank": 2,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
@@ -36858,7 +36858,7 @@
     },
     "layer3": {
       "adoption": 43,
-      "maintenance": 71,
+      "maintenance": 70,
       "trust": 50,
       "community": 3,
       "docs": 100,
@@ -36910,7 +36910,7 @@
     },
     "layer3": {
       "adoption": 52,
-      "maintenance": 93,
+      "maintenance": 92,
       "trust": 70,
       "community": 26,
       "docs": 100,
@@ -37144,7 +37144,7 @@
     },
     "layer3": {
       "adoption": 50,
-      "maintenance": 58,
+      "maintenance": 57,
       "trust": 70,
       "community": 18,
       "docs": 70,
@@ -37361,12 +37361,12 @@
     },
     "layer3": {
       "adoption": 54,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 48,
       "docs": 100,
       "compositeScore": 72,
-      "percentileRank": 30,
+      "percentileRank": 31,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -37413,7 +37413,7 @@
     },
     "layer3": {
       "adoption": 48,
-      "maintenance": 92,
+      "maintenance": 91,
       "trust": 70,
       "community": 12,
       "docs": 100,
@@ -37581,7 +37581,7 @@
     },
     "layer3": {
       "adoption": 42,
-      "maintenance": 91,
+      "maintenance": 90,
       "trust": 50,
       "community": 4,
       "docs": 100,
@@ -37646,12 +37646,12 @@
     },
     "layer3": {
       "adoption": 46,
-      "maintenance": 82,
+      "maintenance": 81,
       "trust": 70,
       "community": 9,
       "docs": 100,
-      "compositeScore": 60,
-      "percentileRank": 9,
+      "compositeScore": 59,
+      "percentileRank": 8,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -38053,7 +38053,7 @@
     },
     "layer3": {
       "adoption": 38,
-      "maintenance": 95,
+      "maintenance": 94,
       "trust": 70,
       "community": 0,
       "docs": 100,
@@ -38248,12 +38248,12 @@
     },
     "layer3": {
       "adoption": 56,
-      "maintenance": 93,
+      "maintenance": 92,
       "trust": 70,
       "community": 100,
       "docs": 70,
       "compositeScore": 76,
-      "percentileRank": 43,
+      "percentileRank": 44,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -38435,12 +38435,12 @@
     },
     "layer3": {
       "adoption": 52,
-      "maintenance": 65,
+      "maintenance": 64,
       "trust": 50,
       "community": 56,
       "docs": 100,
       "compositeScore": 60,
-      "percentileRank": 8,
+      "percentileRank": 9,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -38679,7 +38679,7 @@
     },
     "layer3": {
       "adoption": 37,
-      "maintenance": 95,
+      "maintenance": 94,
       "trust": 70,
       "community": 0,
       "docs": 100,
@@ -38951,7 +38951,7 @@
     },
     "layer3": {
       "adoption": 47,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 25,
       "docs": 100,
@@ -39005,7 +39005,7 @@
     },
     "layer3": {
       "adoption": 50,
-      "maintenance": 89,
+      "maintenance": 88,
       "trust": 70,
       "community": 44,
       "docs": 100,
@@ -39059,7 +39059,7 @@
     },
     "layer3": {
       "adoption": 50,
-      "maintenance": 94,
+      "maintenance": 93,
       "trust": 50,
       "community": 44,
       "docs": 100,
@@ -39362,7 +39362,7 @@
       "community": 31,
       "docs": 100,
       "compositeScore": 60,
-      "percentileRank": 8,
+      "percentileRank": 9,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -39488,12 +39488,12 @@
     },
     "layer3": {
       "adoption": 50,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 63,
       "docs": 100,
       "compositeScore": 73,
-      "percentileRank": 33,
+      "percentileRank": 34,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -39607,7 +39607,7 @@
       "community": 10,
       "docs": 100,
       "compositeScore": 55,
-      "percentileRank": 3,
+      "percentileRank": 4,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -39821,7 +39821,7 @@
     },
     "layer3": {
       "adoption": 43,
-      "maintenance": 92,
+      "maintenance": 91,
       "trust": 50,
       "community": 17,
       "docs": 100,
@@ -40520,7 +40520,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 35,
       "docs": 100,
@@ -40814,7 +40814,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 50,
       "community": 27,
       "docs": 100,
@@ -40868,12 +40868,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 22,
       "docs": 100,
       "compositeScore": 82,
-      "percentileRank": 76,
+      "percentileRank": 78,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -40983,7 +40983,7 @@
       "community": 32,
       "docs": 100,
       "compositeScore": 84,
-      "percentileRank": 89,
+      "percentileRank": 90,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -41043,12 +41043,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 44,
       "docs": 100,
-      "compositeScore": 82,
-      "percentileRank": 76,
+      "compositeScore": 81,
+      "percentileRank": 73,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -41128,12 +41128,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 31,
       "docs": 100,
-      "compositeScore": 84,
-      "percentileRank": 88,
+      "compositeScore": 83,
+      "percentileRank": 83,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -41283,12 +41283,12 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 18,
       "docs": 100,
-      "compositeScore": 82,
-      "percentileRank": 76,
+      "compositeScore": 81,
+      "percentileRank": 73,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -41408,7 +41408,7 @@
       "community": 32,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 72,
+      "percentileRank": 73,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -41724,7 +41724,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 36,
       "docs": 100,
@@ -41795,7 +41795,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 31,
       "docs": 100,
@@ -41877,7 +41877,7 @@
     },
     "layer3": {
       "adoption": 100,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 100,
       "docs": 70,
@@ -42178,7 +42178,7 @@
       "community": 26,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 71,
+      "percentileRank": 73,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -42312,7 +42312,7 @@
     },
     "layer3": {
       "adoption": 95,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 35,
       "docs": 100,
@@ -42367,7 +42367,7 @@
     },
     "layer3": {
       "adoption": 96,
-      "maintenance": 93,
+      "maintenance": 92,
       "trust": 70,
       "community": 47,
       "docs": 100,
@@ -42600,12 +42600,12 @@
     },
     "layer3": {
       "adoption": 91,
-      "maintenance": 96,
+      "maintenance": 95,
       "trust": 70,
       "community": 17,
       "docs": 70,
       "compositeScore": 75,
-      "percentileRank": 39,
+      "percentileRank": 40,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -42663,7 +42663,7 @@
     },
     "layer3": {
       "adoption": 94,
-      "maintenance": 94,
+      "maintenance": 93,
       "trust": 50,
       "community": 34,
       "docs": 100,
@@ -43001,7 +43001,7 @@
     },
     "layer3": {
       "adoption": 92,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 22,
       "docs": 100,
@@ -43214,7 +43214,7 @@
     },
     "layer3": {
       "adoption": 92,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 23,
       "docs": 100,
@@ -43303,12 +43303,12 @@
     },
     "layer3": {
       "adoption": 92,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 28,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 71,
+      "percentileRank": 73,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -43467,7 +43467,7 @@
     },
     "layer3": {
       "adoption": 86,
-      "maintenance": 85,
+      "maintenance": 84,
       "trust": 70,
       "community": 7,
       "docs": 100,
@@ -43591,7 +43591,7 @@
       "community": 21,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 52,
+      "percentileRank": 54,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -43651,12 +43651,12 @@
     },
     "layer3": {
       "adoption": 92,
-      "maintenance": 97,
+      "maintenance": 96,
       "trust": 70,
       "community": 37,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 71,
+      "percentileRank": 72,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -43908,12 +43908,12 @@
     },
     "layer3": {
       "adoption": 88,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 20,
       "docs": 70,
       "compositeScore": 75,
-      "percentileRank": 39,
+      "percentileRank": 40,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -44015,12 +44015,12 @@
     },
     "layer3": {
       "adoption": 88,
-      "maintenance": 92,
+      "maintenance": 91,
       "trust": 70,
       "community": 20,
       "docs": 100,
       "compositeScore": 76,
-      "percentileRank": 43,
+      "percentileRank": 44,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -44239,7 +44239,7 @@
       "community": 23,
       "docs": 70,
       "compositeScore": 68,
-      "percentileRank": 19,
+      "percentileRank": 20,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -44444,12 +44444,12 @@
     },
     "layer3": {
       "adoption": 87,
-      "maintenance": 92,
+      "maintenance": 91,
       "trust": 70,
       "community": 23,
       "docs": 100,
-      "compositeScore": 77,
-      "percentileRank": 48,
+      "compositeScore": 76,
+      "percentileRank": 44,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -45281,12 +45281,12 @@
     },
     "layer3": {
       "adoption": 88,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 37,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 71,
+      "percentileRank": 72,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -45383,7 +45383,7 @@
     },
     "layer3": {
       "adoption": 88,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 30,
       "docs": 100,
@@ -45492,12 +45492,12 @@
     },
     "layer3": {
       "adoption": 85,
-      "maintenance": 97,
+      "maintenance": 96,
       "trust": 70,
       "community": 20,
       "docs": 100,
       "compositeScore": 77,
-      "percentileRank": 47,
+      "percentileRank": 48,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -45559,12 +45559,12 @@
     },
     "layer3": {
       "adoption": 88,
-      "maintenance": 87,
+      "maintenance": 86,
       "trust": 70,
       "community": 35,
       "docs": 100,
       "compositeScore": 77,
-      "percentileRank": 47,
+      "percentileRank": 48,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -45633,7 +45633,7 @@
     },
     "layer3": {
       "adoption": 88,
-      "maintenance": 99,
+      "maintenance": 98,
       "trust": 70,
       "community": 34,
       "docs": 70,
@@ -45808,7 +45808,7 @@
     },
     "layer3": {
       "adoption": 78,
-      "maintenance": 77,
+      "maintenance": 76,
       "trust": 70,
       "community": 4,
       "docs": 100,
@@ -45982,7 +45982,7 @@
       "community": 27,
       "docs": 100,
       "compositeScore": 71,
-      "percentileRank": 26,
+      "percentileRank": 27,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -46468,7 +46468,7 @@
     },
     "layer3": {
       "adoption": 87,
-      "maintenance": 48,
+      "maintenance": 47,
       "trust": 50,
       "community": 40,
       "docs": 100,
@@ -46594,12 +46594,12 @@
     },
     "layer3": {
       "adoption": 84,
-      "maintenance": 87,
+      "maintenance": 86,
       "trust": 70,
       "community": 22,
       "docs": 100,
       "compositeScore": 74,
-      "percentileRank": 36,
+      "percentileRank": 37,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -46649,12 +46649,12 @@
     },
     "layer3": {
       "adoption": 76,
-      "maintenance": 89,
+      "maintenance": 88,
       "trust": 70,
       "community": 3,
       "docs": 100,
-      "compositeScore": 70,
-      "percentileRank": 25,
+      "compositeScore": 69,
+      "percentileRank": 22,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -46714,7 +46714,7 @@
       "community": 44,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 71,
+      "percentileRank": 72,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -46858,17 +46858,17 @@
     },
     "layer3": {
       "adoption": 88,
-      "maintenance": 85,
+      "maintenance": 84,
       "trust": 70,
       "community": 53,
       "docs": 100,
-      "compositeScore": 80,
-      "percentileRank": 65,
+      "compositeScore": 79,
+      "percentileRank": 59,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
-    "selected": true,
-    "selectionReason": "quality_percentile"
+    "selected": false,
+    "selectionReason": "exceeded_catalog_cap"
   },
   {
     "repo": {
@@ -46972,12 +46972,12 @@
     },
     "layer3": {
       "adoption": 85,
-      "maintenance": 76,
+      "maintenance": 75,
       "trust": 70,
       "community": 26,
       "docs": 100,
       "compositeScore": 72,
-      "percentileRank": 29,
+      "percentileRank": 30,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -47156,12 +47156,12 @@
     },
     "layer3": {
       "adoption": 86,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 39,
       "docs": 100,
-      "compositeScore": 77,
-      "percentileRank": 46,
+      "compositeScore": 76,
+      "percentileRank": 43,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -53339,12 +53339,12 @@
     },
     "layer3": {
       "adoption": 87,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 44,
       "docs": 100,
-      "compositeScore": 82,
-      "percentileRank": 76,
+      "compositeScore": 81,
+      "percentileRank": 72,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -53404,12 +53404,12 @@
     },
     "layer3": {
       "adoption": 84,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 24,
       "docs": 100,
       "compositeScore": 78,
-      "percentileRank": 52,
+      "percentileRank": 54,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -53469,7 +53469,7 @@
     },
     "layer3": {
       "adoption": 85,
-      "maintenance": 75,
+      "maintenance": 74,
       "trust": 70,
       "community": 32,
       "docs": 100,
@@ -53527,7 +53527,7 @@
       "community": 28,
       "docs": 100,
       "compositeScore": 71,
-      "percentileRank": 26,
+      "percentileRank": 27,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -53643,7 +53643,7 @@
     },
     "layer3": {
       "adoption": 87,
-      "maintenance": 98,
+      "maintenance": 97,
       "trust": 50,
       "community": 65,
       "docs": 100,
@@ -53756,7 +53756,7 @@
     },
     "layer3": {
       "adoption": 82,
-      "maintenance": 68,
+      "maintenance": 67,
       "trust": 70,
       "community": 23,
       "docs": 100,
@@ -53817,7 +53817,7 @@
     },
     "layer3": {
       "adoption": 77,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 6,
       "docs": 100,
@@ -53927,7 +53927,7 @@
     },
     "layer3": {
       "adoption": 83,
-      "maintenance": 88,
+      "maintenance": 87,
       "trust": 70,
       "community": 33,
       "docs": 100,
@@ -54318,7 +54318,7 @@
       "community": 30,
       "docs": 100,
       "compositeScore": 75,
-      "percentileRank": 38,
+      "percentileRank": 39,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -54442,12 +54442,12 @@
     },
     "layer3": {
       "adoption": 85,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 51,
       "docs": 100,
       "compositeScore": 82,
-      "percentileRank": 76,
+      "percentileRank": 78,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -54519,12 +54519,12 @@
     },
     "layer3": {
       "adoption": 82,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 25,
       "docs": 100,
       "compositeScore": 77,
-      "percentileRank": 46,
+      "percentileRank": 47,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -54645,7 +54645,7 @@
       "community": 43,
       "docs": 100,
       "compositeScore": 80,
-      "percentileRank": 64,
+      "percentileRank": 65,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -54705,7 +54705,7 @@
     },
     "layer3": {
       "adoption": 83,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 35,
       "docs": 100,
@@ -54808,12 +54808,12 @@
     },
     "layer3": {
       "adoption": 81,
-      "maintenance": 24,
+      "maintenance": 23,
       "trust": 70,
       "community": 22,
       "docs": 100,
-      "compositeScore": 58,
-      "percentileRank": 7,
+      "compositeScore": 57,
+      "percentileRank": 5,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -54903,12 +54903,12 @@
     },
     "layer3": {
       "adoption": 84,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 70,
       "community": 45,
       "docs": 100,
       "compositeScore": 81,
-      "percentileRank": 70,
+      "percentileRank": 71,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -55134,7 +55134,7 @@
     },
     "layer3": {
       "adoption": 78,
-      "maintenance": 21,
+      "maintenance": 20,
       "trust": 70,
       "community": 17,
       "docs": 100,
@@ -55184,12 +55184,12 @@
     },
     "layer3": {
       "adoption": 80,
-      "maintenance": 100,
+      "maintenance": 99,
       "trust": 50,
       "community": 31,
       "docs": 70,
-      "compositeScore": 71,
-      "percentileRank": 26,
+      "compositeScore": 70,
+      "percentileRank": 25,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -55326,12 +55326,12 @@
     },
     "layer3": {
       "adoption": 72,
-      "maintenance": 72,
+      "maintenance": 71,
       "trust": 50,
       "community": 12,
       "docs": 70,
       "compositeScore": 58,
-      "percentileRank": 6,
+      "percentileRank": 7,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -55428,7 +55428,7 @@
       "community": 52,
       "docs": 70,
       "compositeScore": 72,
-      "percentileRank": 29,
+      "percentileRank": 30,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -55472,7 +55472,7 @@
       "community": 58,
       "docs": 100,
       "compositeScore": 76,
-      "percentileRank": 42,
+      "percentileRank": 43,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -55582,7 +55582,7 @@
       "community": 44,
       "docs": 100,
       "compositeScore": 70,
-      "percentileRank": 24,
+      "percentileRank": 25,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -55632,12 +55632,12 @@
     },
     "layer3": {
       "adoption": 63,
-      "maintenance": 95,
+      "maintenance": 94,
       "trust": 70,
       "community": 49,
       "docs": 100,
       "compositeScore": 74,
-      "percentileRank": 36,
+      "percentileRank": 37,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -55677,7 +55677,7 @@
     },
     "layer3": {
       "adoption": 55,
-      "maintenance": 13,
+      "maintenance": 12,
       "trust": 50,
       "community": 20,
       "docs": 100,
@@ -55727,7 +55727,7 @@
     },
     "layer3": {
       "adoption": 58,
-      "maintenance": 43,
+      "maintenance": 42,
       "trust": 70,
       "community": 44,
       "docs": 70,
@@ -55935,7 +55935,7 @@
     },
     "layer3": {
       "adoption": 53,
-      "maintenance": 67,
+      "maintenance": 66,
       "trust": 70,
       "community": 77,
       "docs": 70,
@@ -56088,7 +56088,7 @@
     },
     "layer3": {
       "adoption": 51,
-      "maintenance": 37,
+      "maintenance": 36,
       "trust": 50,
       "community": 22,
       "docs": 100,
@@ -56251,12 +56251,12 @@
     },
     "layer3": {
       "adoption": 50,
-      "maintenance": 57,
+      "maintenance": 56,
       "trust": 70,
       "community": 16,
       "docs": 100,
-      "compositeScore": 56,
-      "percentileRank": 4,
+      "compositeScore": 55,
+      "percentileRank": 3,
       "antiFakeFlags": [],
       "antiFakeExcluded": false
     },
@@ -56491,7 +56491,7 @@
     },
     "layer3": {
       "adoption": 48,
-      "maintenance": 89,
+      "maintenance": 88,
       "trust": 70,
       "community": 30,
       "docs": 100,
@@ -56588,7 +56588,7 @@
     },
     "layer3": {
       "adoption": 41,
-      "maintenance": 92,
+      "maintenance": 91,
       "trust": 70,
       "community": 11,
       "docs": 70,
