@@ -1,0 +1,5 @@
+# Repositories explicitly excluded from publication
+# Format:
+# - repo: owner/repo
+#   reason: Explanation for block
+blocked: []

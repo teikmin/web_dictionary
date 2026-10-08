@@ -1,0 +1,28 @@
+# GitHub Search Discovery Queries
+
+mcp_queries:
+  - "topic:mcp-server archived:false fork:false stars:>=100"
+  - "topic:model-context-protocol archived:false fork:false stars:>=100"
+
+skill_queries:
+  - "topic:claude-code archived:false fork:false stars:>=100"
+  - "topic:agent-skill archived:false fork:false stars:>=100"
+  - "topic:agent-skills archived:false fork:false stars:>=100"
+
+code_queries:
+  - "filename:SKILL.md"
+
+# Educational / demo keyword blacklist for Gate G9
+blacklist_keywords:
+  - "awesome-"
+  - "awesome-list"
+  - "tutorial"
+  - "tutorials"
+  - "course"
+  - "courses"
+  - "for-beginners"
+  - "examples"
+  - "boilerplate"
+  - "starter"
+  - "template"
+  - "curated-list"

@@ -1,0 +1,8 @@
+# Anti-Fake Star Heuristics Thresholds
+# Any 2 or more flags exclude the candidate repository
+
+heuristics:
+  min_fork_to_star_ratio: 0.01      # Flags if forks / stars < 0.01 for repos with > 500 stars
+  min_stars_for_ratio_check: 500
+  min_lifetime_commits: 5           # Flags if high stars but < 5 commits
+  min_stars_for_commit_check: 200

@@ -1,0 +1,10 @@
+# Curated Awesome-Lists
+# Repositories referenced in these curated collections receive a trust signal boost.
+
+lists:
+  - repo: punkpeye/awesome-mcp-servers
+    title: Awesome MCP Servers
+  - repo: wong2/awesome-mcp-servers
+    title: Awesome Model Context Protocol Servers
+  - repo: appcypher/awesome-mcp-servers
+    title: Awesome MCP Servers (Categorized)

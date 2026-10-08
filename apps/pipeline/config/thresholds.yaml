@@ -1,0 +1,14 @@
+# Pipeline Filtering Thresholds (Layer 1 & Selection Cap)
+# As defined in docs/02_REPO_QUALITY_CRITERIA.md
+
+min_stars: 100
+max_pushed_days: 180
+min_repo_age_days: 30
+min_description_chars: 20
+
+# Catalog Sizing (Cap, NOT a quota)
+catalog_cap: 500
+mcp_split_target: 350
+skills_split_target: 150
+category_minimum_guarantee: 5
+min_category_size_for_guarantee: 5

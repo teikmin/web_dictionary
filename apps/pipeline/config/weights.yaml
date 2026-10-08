@@ -1,0 +1,9 @@
+# Quality Scoring Weights (Layer 3)
+# Total must equal 100%
+
+weights:
+  adoption: 0.30     # Weekly downloads (log), stars (log), forks, dependents
+  maintenance: 0.25  # Commits in 90d, days since release, releases in 12m, issue close ratio
+  trust: 0.20        # Org ownership, official vendor, registry listing, OpenSSF
+  community: 0.15    # Contributor count (bus factor >= 2), top contributor share
+  docs: 0.10         # Semantic versioning, active CI, README quality, install examples

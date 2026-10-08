@@ -1,0 +1,39 @@
+# Official Vendor GitHub Organizations
+# Repositories owned by these organizations are exempt from Gate G4 (100 stars minimum).
+# They still must pass all other hard gates and file evidence type checks.
+
+vendors:
+  - org: modelcontextprotocol
+    name: Model Context Protocol (Official)
+  - org: anthropics
+    name: Anthropic
+  - org: cloudflare
+    name: Cloudflare
+  - org: stripe
+    name: Stripe
+  - org: docker
+    name: Docker
+  - org: github
+    name: GitHub
+  - org: google
+    name: Google
+  - org: google-deepmind
+    name: Google DeepMind
+  - org: microsoft
+    name: Microsoft
+  - org: aws
+    name: Amazon Web Services
+  - org: postmanlabs
+    name: Postman
+  - org: supabase
+    name: Supabase
+  - org: qdrant
+    name: Qdrant
+  - org: weaviate
+    name: Weaviate
+  - org: brave
+    name: Brave Software
+  - org: sentry-io
+    name: Sentry
+  - org: elastic
+    name: Elastic

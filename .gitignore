@@ -1,4 +1,4 @@
-﻿# Environment secrets - NEVER commit these
+# Environment secrets - NEVER commit these
 .env
 *.env
 
@@ -10,10 +10,12 @@ __pycache__/
 venv/
 env/
 
-# Node / Astro (for later)
+# Node / Astro / Pipeline
 node_modules/
 .astro/
 dist/
+.cache/
+apps/pipeline/.cache/
 
 # OS
 .DS_Store

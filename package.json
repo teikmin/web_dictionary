@@ -1,0 +1,13 @@
+{
+  "name": "web-database-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI Tools Hub / MCP & Agent Registry monorepo",
+  "scripts": {
+    "pipeline:report": "pnpm --filter @web-db/pipeline run report",
+    "typecheck": "pnpm -r run typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}

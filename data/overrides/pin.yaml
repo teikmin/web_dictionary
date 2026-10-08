@@ -1,0 +1,6 @@
+# Repositories explicitly included regardless of gate thresholds
+# Format:
+# - repo: owner/repo
+#   type: mcp_server | agent_skill
+#   reason: Explanation for pin
+pinned: []
