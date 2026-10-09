@@ -1,26 +1,117 @@
-# AI Tools Hub (MCP & Agent Skills Registry)
+# AI Tools Hub — MCP & Agent Skills Registry
 
-A high-signal, zero-database catalog of Model Context Protocol (MCP) servers and Agent Skills with 1-click launch configurations for **Claude Code**, **Codex**, and **Antigravity**.
+[![CI](https://github.com/teikmin/web_database/actions/workflows/ci.yml/badge.svg)](https://github.com/teikmin/web_database/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](LICENSE-DATA)
 
----
-
-## 📖 Architecture & Documentation
-
-All architectural decisions, criteria, and roadmap details live in [`docs/`](docs/):
-
-1. **[01. Project Architecture (v2)](docs/01_ARCHITECTURE.md)**: Target architecture, Git source of truth, pipeline workflow, data model, and phased roadmap.
-2. **[02. Repo Quality Criteria](docs/02_REPO_QUALITY_CRITERIA.md)**: 3-layer automated selection engine, hard gates ($\ge 100$ stars), file evidence verification, scoring formula, and fake-star heuristics.
-3. **[03. Growth, SEO & Positioning](docs/03_GROWTH_AND_SEO.md)**: Programmatic SEO matrix, 1-click config copy hook, README badges, and launch timeline.
-4. **[04. Future Roadmap & Non-Goals](docs/04_FUTURE_ROADMAP.md)**: Scope discipline, deferred features (API, comparison matrix, monetization), and ideas parking lot.
-5. **[05. Folder Structure & Workspace Layout](docs/05_FOLDER_STRUCTURE.md)**: Detailed file-level repository structure, folder ownership (pipeline vs. human), shared schema/renderers, and data flow.
-6. **[00. Independent Project Evaluation](docs/00_PROJECT_EVALUATION.md)**: Historical review and analysis.
+A high-signal, zero-database catalog of Model Context Protocol (MCP) servers and Agent Skills with **1-click launch configurations** tailored for **Claude Code**, **OpenAI Codex**, and **Google Antigravity**.
 
 ---
 
-## 🚀 Tech Stack
+## 🌟 Key Highlights
 
-- **Pipeline:** TypeScript (scheduled weekly via GitHub Actions)
-- **Source of Truth:** Git (`content/entries/*`, `data/signals/*`)
-- **Site:** Astro (Static Site Generation) + Tailwind CSS
-- **Search:** Pagefind (fast, client-side static indexing)
-- **Hosting:** Cloudflare Pages / Vercel
+- **Git-Backed Source of Truth:** No runtime database (Supabase is retired). The catalog lives in clean Markdown with YAML frontmatter under `content/entries/` and weekly signal snapshots in `data/signals/`.
+- **Automated 3-Layer Selection Engine:**
+  - **Layer 1 (Hard Gates G1–G9):** $\ge 100$ stars, non-fork, non-archived, recently pushed ($< 180$d), OSI license, spam protection.
+  - **Layer 2 (Type Check):** Physical verification via recursive Git trees (`@modelcontextprotocol/sdk`, Python `mcp`, or `SKILL.md`).
+  - **Layer 3 (Quality Scoring):** Composite score weighting stars, velocity, commit recency, contributor breadth, with anti-fake-star defense.
+- **1-Click Launch Configs:** Pre-formatted configs for Claude Code (`claude mcp add` / `.mcp.json`), OpenAI Codex (`config.toml`), and Google Antigravity (`mcp_config.json`).
+- **Blazing Fast Static Site:** Built with **Astro 5** and **Tailwind CSS**. Prerenders hundreds of static pages in seconds.
+- **Static Search via Pagefind:** Zero external search APIs or indexing bills. Instant client-side search across all tools, descriptions, and commands.
+
+---
+
+## 📁 Repository Structure
+
+```text
+.
+├── apps/
+│   ├── pipeline/            # Discovery, scoring, enrichment & catalog writer
+│   └── site/                # Astro 5 static site + Pagefind search UI
+├── packages/
+│   ├── schema/              # Shared Zod schemas (Entry, LaunchSpec, SkillSpec, Client, Category)
+│   └── renderers/           # Multi-client config adapters (Claude Code, Codex, Antigravity)
+├── content/
+│   ├── clients/             # Supported AI agent client definitions (*.yaml)
+│   ├── categories/          # Catalog vertical taxonomy (*.yaml)
+│   └── entries/
+│       ├── mcp/             # Verified MCP servers (*.md)
+│       └── skills/          # Verified Agent skills (*.md)
+├── data/
+│   ├── runs/                # Weekly audit reports & decision logs
+│   ├── signals/             # Weekly signal snapshot time series (*.json)
+│   └── overrides/           # Manual curation overrides (blocklist, pins, vendors)
+├── docs/                    # Architecture documents & quality criteria
+└── .github/workflows/       # CI verification, weekly cron pipeline & deployment
+```
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- **Node.js** `v22` or `v24` (see [`.nvmrc`](.nvmrc))
+- **pnpm** `v12.9.1` or newer
+
+### Setup
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/teikmin/web_database.git
+cd web_database
+
+# 2. Install workspace dependencies
+pnpm install
+
+# 3. (Optional) Set up GitHub Token for pipeline runs
+cp .env.example .env
+# Edit .env and insert your GITHUB_TOKEN (read:public_repo)
+```
+
+### Development & Build Commands
+
+| Command | Description |
+|---|---|
+| `pnpm run site:dev` | Start local Astro development server with hot reload |
+| `pnpm run site:build` | Build production static site into `dist/` and generate Pagefind search index |
+| `pnpm run pipeline:report` | Run pipeline dry-run and generate audit report in `data/runs/<week>/report.md` |
+| `pnpm run pipeline:run` | Run production pipeline and update `content/entries/` and `data/signals/` |
+| `pnpm test` | Run Vitest snapshot and unit tests in `packages/renderers` |
+| `pnpm run typecheck` | Typecheck all workspace packages (`schema`, `renderers`, `pipeline`, `site`) |
+
+---
+
+## 🤖 Supported Agent Clients
+
+| Client | Launch Command / Snippet | Default Config Path |
+|---|---|---|
+| **Claude Code** | `claude mcp add <name> -- <cmd>` or `.mcp.json` | `~/.claude/mcp.json` |
+| **OpenAI Codex** | `[mcp_servers.<name>]` in TOML | `~/.codex/config.toml` |
+| **Google Antigravity** | `"mcpServers": { ... }` in JSON | `~/.gemini/antigravity/mcp_config.json` |
+
+---
+
+## 🔄 CI / CD Automation
+
+- **`ci.yml`:** Runs on every pull request and push to `main`: verifies typechecking, executes Vitest tests, and confirms static site generation.
+- **`pipeline.yml`:** Runs weekly at 02:00 UTC every Monday: automatically discovers new tools, applies gates and scoring, enriches launch configs, and commits updates to `content/` and `data/`.
+- **`deploy.yml`:** Builds the static site and deploys `apps/site/dist/` to GitHub Pages / Cloudflare Pages.
+
+---
+
+## 📚 Documentation Index
+
+All architectural guidelines and reference specs are available in [`docs/`](docs/):
+
+- [`01_ARCHITECTURE.md`](docs/01_ARCHITECTURE.md): Architecture overview and target design.
+- [`02_REPO_QUALITY_CRITERIA.md`](docs/02_REPO_QUALITY_CRITERIA.md): Hard gates (G1–G9), type check, scoring formulas, and anti-fake star heuristics.
+- [`03_GROWTH_AND_SEO.md`](docs/03_GROWTH_AND_SEO.md): Programmatic SEO, 1-click config hooks, and growth timeline.
+- [`04_FUTURE_ROADMAP.md`](docs/04_FUTURE_ROADMAP.md): Deferred scope, non-goals, and future ideas parking lot.
+- [`05_FOLDER_STRUCTURE.md`](docs/05_FOLDER_STRUCTURE.md): Detailed workspace structure and folder ownership rules.
+
+---
+
+## 📜 Licenses
+
+- **Code:** [MIT License](LICENSE)
+- **Catalog Metadata & Signals:** [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE-DATA)

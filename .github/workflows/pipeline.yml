@@ -1,0 +1,57 @@
+name: Weekly Pipeline Run
+
+on:
+  schedule:
+    # Runs at 02:00 UTC every Monday
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
+    inputs:
+      force_full_run:
+        description: 'Force full re-discovery run'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  run-pipeline:
+    name: Execute Discovery & Catalog Update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 12.9.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Execute Full Pipeline Runner
+        run: pnpm run pipeline:run
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit & Push Catalog Changes
+        run: |
+          if [ -n "$(git status --porcelain content/ data/)" ]; then
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git add content/ data/
+            git commit -m "chore(catalog): weekly catalog refresh [skip ci]"
+            git push origin main
+          else
+            echo "No catalog changes detected this run."
+          fi
