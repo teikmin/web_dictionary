@@ -6,6 +6,14 @@ export const antigravityAdapter: ClientAdapter = {
   name: 'Antigravity',
 
   renderMcp(serverName: string, spec: LaunchSpec): ClientConfigOutput {
+    if (!spec.command && !spec.remote_url) {
+      return {
+        clientId: 'antigravity',
+        clientName: 'Antigravity',
+        mcpSnippet: '',
+      };
+    }
+
     const envObj: Record<string, string> = {};
     for (const v of spec.env_vars) {
       envObj[v.name] = v.secret ? `YOUR_${v.name}_HERE` : '';
@@ -28,7 +36,7 @@ export const antigravityAdapter: ClientAdapter = {
       );
     } else {
       const serverConfig: Record<string, unknown> = {
-        command: spec.command || 'npx',
+        command: spec.command,
         args: spec.args,
       };
 
@@ -55,12 +63,12 @@ export const antigravityAdapter: ClientAdapter = {
   },
 
   renderSkill(skillName: string, spec: SkillSpec): ClientConfigOutput {
-    const installPath = `.gemini/skills/${skillName}/`;
+    const installPath = `.gemini/config/skills/${skillName}/`;
     return {
       clientId: 'antigravity',
       clientName: 'Antigravity',
       skillInstallPath: installPath,
-      skillInstructions: `Copy the skill folder "${spec.folder_path}" into "${installPath}" or your global Antigravity skills directory.`,
+      skillInstructions: `Place the skill folder in "${installPath}" or global "~/.gemini/config/skills/${skillName}/".`,
     };
   },
 };

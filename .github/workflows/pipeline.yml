@@ -14,6 +14,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   run-pipeline:
@@ -45,6 +46,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit & Push Catalog Changes
+        id: commit_step
         run: |
           if [ -n "$(git status --porcelain content/ data/)" ]; then
             git config --global user.name "github-actions[bot]"
@@ -52,6 +54,16 @@ jobs:
             git add content/ data/
             git commit -m "chore(catalog): weekly catalog refresh [skip ci]"
             git push origin main
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
           else
             echo "No catalog changes detected this run."
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Trigger Deployment Workflow
+        if: steps.commit_step.outputs.has_changes == 'true'
+        run: |
+          echo "Triggering deploy.yml workflow..."
+          gh workflow run deploy.yml --ref main || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

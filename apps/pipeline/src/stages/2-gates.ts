@@ -35,7 +35,7 @@ export function evaluateLayer1Gates(candidates: CandidateRepo[]): GateCheckedCan
     const failureReasons: GateFailureReason[] = [];
 
     if (isBlocked) {
-      failureReasons.push('FAILED_G3_TEMPLATE_OR_MIRROR');
+      failureReasons.push('FAILED_BLOCKLIST');
     }
 
     // G1: Not archived

@@ -6,8 +6,9 @@ export async function extractFromServerJson(
   repo: string,
   paths: string[]
 ): Promise<LaunchSpec | null> {
+  // Target genuine server.json manifests conforming to MCP spec
   const serverJsonPath = paths.find(
-    (p) => p.endsWith('server.json') || p.endsWith('mcp.json')
+    (p) => p === 'server.json' || p.endsWith('/server.json')
   );
 
   if (serverJsonPath) {
@@ -15,29 +16,6 @@ export async function extractFromServerJson(
     if (content) {
       try {
         const data = JSON.parse(content);
-
-        // Standard mcp.json format { mcpServers: { [name]: { command, args, env } } }
-        if (data.mcpServers) {
-          const keys = Object.keys(data.mcpServers);
-          if (keys.length > 0) {
-            const s = data.mcpServers[keys[0]];
-            return {
-              transport: s.url ? 'http' : s.transport || 'stdio',
-              command: s.command,
-              args: Array.isArray(s.args) ? s.args : [],
-              remote_url: s.url,
-              env_vars: s.env
-                ? Object.keys(s.env).map((k) => ({
-                    name: k,
-                    required: true,
-                    secret: true,
-                  }))
-                : [],
-              confidence: 'manifest',
-            };
-          }
-        }
-
         const server = data.server || data;
 
         if (server.remotes && server.remotes.length > 0 && server.remotes[0].url) {
@@ -51,45 +29,49 @@ export async function extractFromServerJson(
         }
 
         if (server.command) {
-          return {
-            transport: server.transport || 'stdio',
-            command: server.command,
-            args: Array.isArray(server.args) ? server.args : [],
-            env_vars: server.env
-              ? Object.keys(server.env).map((k) => ({
-                  name: k,
-                  required: true,
-                  secret: true,
-                }))
-              : [],
-            confidence: 'manifest',
-          };
+          const rawCommand = String(server.command).trim();
+          const rawArgs = Array.isArray(server.args) ? server.args.map(String) : [];
+
+          // Reject template placeholders
+          const hasPlaceholder =
+            rawCommand.includes('{{') ||
+            rawCommand.includes('/path/') ||
+            rawArgs.some((a: string) => a.includes('{{') || a.includes('/path/') || a.includes('IPADDRESS'));
+
+          if (!hasPlaceholder) {
+            return {
+              transport: server.transport || 'stdio',
+              command: rawCommand,
+              args: rawArgs,
+              env_vars: server.env
+                ? Object.keys(server.env).map((k) => ({
+                    name: k,
+                    required: true,
+                    secret: true,
+                  }))
+                : [],
+              confidence: 'manifest',
+            };
+          }
         }
 
-        if (server.name) {
-          return {
-            transport: 'stdio',
-            command: 'npx',
-            args: ['-y', server.name],
-            env_vars: [],
-            confidence: 'manifest',
-          };
+        // npm package name declared in manifest
+        if (server.name && !server.name.includes('{{')) {
+          // Verify it's a valid package name, not a registry ID or template
+          if (!server.name.startsWith('io.github.') && !server.name.includes('/mcp-server-{{')) {
+            return {
+              transport: 'stdio',
+              command: 'npx',
+              args: ['-y', server.name],
+              env_vars: [],
+              confidence: 'manifest',
+            };
+          }
         }
       } catch {
         // ignore parse error
       }
     }
-  }
-
-  // Check for Dockerfile in an official or standalone MCP server
-  if (paths.includes('Dockerfile') && repo.toLowerCase().includes('mcp')) {
-    return {
-      transport: 'stdio',
-      command: 'docker',
-      args: ['run', '-i', '--rm', `ghcr.io/${owner.toLowerCase()}/${repo.toLowerCase()}`],
-      env_vars: [],
-      confidence: 'manifest',
-    };
   }
 
   return null;

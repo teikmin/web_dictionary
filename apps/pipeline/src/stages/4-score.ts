@@ -60,11 +60,11 @@ export function evaluateLayer3Scoring(candidates: TypeCheckedCandidate[]): Score
     const daysSincePush = Math.max(0, (now - new Date(pushedAt).getTime()) / msInDay);
     const maintenance = Math.round(Math.max(0, 100 - (daysSincePush / 180) * 100));
 
-    // Trust (20%): Official vendor or recognized org
+    // Trust (20%): Official vendor, pinned, or verified ecosystem domain
     let trust = 50;
     if (c.isOfficialVendor) trust = 100;
     else if (c.isPinned) trust = 90;
-    else if (c.repo.owner.length > 0 && !c.repo.owner.includes('-')) trust = 70;
+    else if (c.repo.topics.includes('mcp') || c.repo.topics.includes('modelcontextprotocol')) trust = 70;
 
     // Community (15%): Forks and watchers ratio
     const community = Math.min(100, Math.round((forks / Math.max(stars, 1)) * 300));

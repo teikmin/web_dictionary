@@ -58,23 +58,48 @@ export async function runStage9Write(
 
   const nowIso = new Date().toISOString();
 
+  const writtenMcpSlugs = new Set<string>();
+  const writtenSkillSlugs = new Set<string>();
+
   for (const item of enrichedEntries) {
     const { repo, layer2, layer3, selectionReason } = item.decision;
     const isOfficialVendor = selectionReason === 'official_vendor';
     const isMcp = layer2?.detectedType === 'mcp_server';
-    const subpath = layer2?.subpaths?.[0] || '';
+    const subpath = isMcp ? '' : item.skillSpec?.folder_path || layer2?.subpaths?.[0] || '';
     const slug = generateSlug(repo.owner, repo.name, isMcp ? undefined : subpath);
     const categories = assignCategory(repo.name, repo.description || '', repo.topics);
 
+    const targetDir = isMcp ? mcpDir : skillsDir;
+    const filePath = path.join(targetDir, `${slug}.md`);
+
+    // Cross-run memory: preserve original first_seen date if already exists on disk
+    let firstSeen = nowIso.slice(0, 10);
+    if (fs.existsSync(filePath)) {
+      try {
+        const raw = fs.readFileSync(filePath, 'utf8');
+        const match = raw.match(/first_seen:\s*['"]?([0-9T:.-]+)['"]?/);
+        if (match && match[1]) {
+          firstSeen = match[1];
+        }
+      } catch {
+        // ignore read error
+      }
+    }
+
+    const title = isMcp ? repo.name : item.skillSpec?.skill_name || repo.name;
+    const tagline = isMcp
+      ? (repo.description || '').slice(0, 150)
+      : (item.skillSpec?.description || repo.description || '').slice(0, 150);
+
     const baseData = {
       slug,
-      name: repo.name,
-      tagline: (repo.description || '').slice(0, 150),
+      name: title,
+      tagline,
       categories,
       status: 'active' as const,
       quality_percentile: layer3?.percentileRank || 0,
       selection_reason: selectionReason || 'quality_percentile',
-      first_seen: repo.createdAt,
+      first_seen: firstSeen,
       last_updated: nowIso,
       source: {
         kind: 'github_repo' as const,
@@ -109,8 +134,9 @@ export async function runStage9Write(
       };
 
       const mdContent = `---\n${yaml.stringify(entry)}---\n\n${repo.description || ''}\n`;
-      fs.writeFileSync(path.join(mcpDir, `${slug}.md`), mdContent, 'utf8');
+      fs.writeFileSync(filePath, mdContent, 'utf8');
       writtenMcp++;
+      writtenMcpSlugs.add(`${slug}.md`);
     } else if (!isMcp && item.skillSpec) {
       const entry: SkillEntry = {
         ...baseData,
@@ -119,9 +145,28 @@ export async function runStage9Write(
       };
 
       const mdContent = `---\n${yaml.stringify(entry)}---\n\n${item.skillSpec.description}\n`;
-      fs.writeFileSync(path.join(skillsDir, `${slug}.md`), mdContent, 'utf8');
+      fs.writeFileSync(filePath, mdContent, 'utf8');
       writtenSkills++;
+      writtenSkillSlugs.add(`${slug}.md`);
     }
+  }
+
+  // Pruning: remove stale entries that no longer qualify
+  let prunedCount = 0;
+  for (const file of fs.readdirSync(mcpDir)) {
+    if (file.endsWith('.md') && !writtenMcpSlugs.has(file)) {
+      fs.unlinkSync(path.join(mcpDir, file));
+      prunedCount++;
+    }
+  }
+  for (const file of fs.readdirSync(skillsDir)) {
+    if (file.endsWith('.md') && !writtenSkillSlugs.has(file)) {
+      fs.unlinkSync(path.join(skillsDir, file));
+      prunedCount++;
+    }
+  }
+  if (prunedCount > 0) {
+    logger.info(`Pruned ${prunedCount} stale catalog files that no longer qualify.`);
   }
 
   // Write weekly signals snapshot

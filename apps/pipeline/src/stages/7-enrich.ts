@@ -101,16 +101,18 @@ export async function runStage7Enrich(
         renderedConfigs,
       });
     } else if (d.layer2?.detectedType === 'agent_skill') {
-      totalSkills++;
-      const subpath = d.layer2?.subpaths?.[0] || '';
-      const skillSpec = await extractSkillSpec(owner, name, subpath, paths);
-      const renderedConfigs = renderSkillForAllClients(skillSpec.skill_name, skillSpec);
+      const subpaths = d.layer2?.subpaths?.length ? d.layer2.subpaths : [''];
+      for (const subpath of subpaths) {
+        totalSkills++;
+        const skillSpec = await extractSkillSpec(owner, name, subpath, paths);
+        const renderedConfigs = renderSkillForAllClients(skillSpec.skill_name, skillSpec);
 
-      enrichedEntries.push({
-        decision: d,
-        skillSpec,
-        renderedConfigs,
-      });
+        enrichedEntries.push({
+          decision: d,
+          skillSpec,
+          renderedConfigs,
+        });
+      }
     }
   }
 

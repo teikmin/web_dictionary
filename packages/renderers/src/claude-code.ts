@@ -18,6 +18,15 @@ export const claudeCodeAdapter: ClientAdapter = {
     let mcpCommand = '';
     let mcpSnippet = '';
 
+    if (!spec.command && !spec.remote_url) {
+      return {
+        clientId: 'claude-code',
+        clientName: 'Claude Code',
+        mcpCommand: '',
+        mcpSnippet: '',
+      };
+    }
+
     if (spec.transport === 'http' && spec.remote_url) {
       mcpCommand = `claude mcp add --transport http ${serverName} ${spec.remote_url}`;
       mcpSnippet = JSON.stringify(

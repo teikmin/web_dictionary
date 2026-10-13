@@ -96,6 +96,22 @@ describe('Client Config Renderers', () => {
 
     expect(rendered['claude-code'].skillInstallPath).toBe('.claude/skills/pdf-extractor/');
     expect(rendered['codex'].skillInstallPath).toBe('.codex/skills/pdf-extractor/');
-    expect(rendered['antigravity'].skillInstallPath).toBe('.gemini/skills/pdf-extractor/');
+    expect(rendered['antigravity'].skillInstallPath).toBe('.gemini/config/skills/pdf-extractor/');
+  });
+
+  it('renders empty commands and snippets honestly when spec has no command (confidence: none)', () => {
+    const spec: LaunchSpec = {
+      transport: 'stdio',
+      args: [],
+      env_vars: [],
+      confidence: 'none',
+    };
+
+    const rendered = renderMcpForAllClients('unconfigured-tool', spec);
+
+    expect(rendered['claude-code'].mcpCommand).toBe('');
+    expect(rendered['claude-code'].mcpSnippet).toBe('');
+    expect(rendered['codex'].mcpSnippet).toBe('');
+    expect(rendered['antigravity'].mcpSnippet).toBe('');
   });
 });

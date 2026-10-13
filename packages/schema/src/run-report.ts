@@ -21,6 +21,7 @@ export const CandidateRepoSchema = z.object({
 export type CandidateRepo = z.infer<typeof CandidateRepoSchema>;
 
 export const GateFailureReasonSchema = z.enum([
+  'FAILED_BLOCKLIST',
   'FAILED_G1_ARCHIVED',
   'FAILED_G2_FORK',
   'FAILED_G3_TEMPLATE_OR_MIRROR',

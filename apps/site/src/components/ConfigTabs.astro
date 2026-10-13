@@ -68,30 +68,41 @@ const configs =
         >
           {type === 'mcp_server' ? (
             <>
-              {config?.mcpCommand && (
-                <div>
-                  <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-xs font-semibold text-slate-300">Quick Add (CLI)</span>
-                    <CopyButton text={config.mcpCommand} label="Copy Command" />
-                  </div>
-                  <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-emerald-300">
-                    <code>{config.mcpCommand}</code>
-                  </pre>
+              {!config?.mcpCommand && !config?.mcpSnippet ? (
+                <div class="py-6 px-4 text-center rounded-lg bg-slate-950/60 border border-slate-800/80">
+                  <p class="text-xs font-semibold text-amber-400 mb-1">Manual Setup Required</p>
+                  <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
+                    No verified launch command could be automatically extracted from official manifests. Please refer to the upstream GitHub documentation to configure this tool manually.
+                  </p>
                 </div>
-              )}
+              ) : (
+                <>
+                  {config?.mcpCommand && (
+                    <div>
+                      <div class="flex items-center justify-between mb-1.5">
+                        <span class="text-xs font-semibold text-slate-300">Quick Add (CLI)</span>
+                        <CopyButton text={config.mcpCommand} label="Copy Command" />
+                      </div>
+                      <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-emerald-300">
+                        <code>{config.mcpCommand}</code>
+                      </pre>
+                    </div>
+                  )}
 
-              {config?.mcpSnippet && (
-                <div>
-                  <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-xs font-semibold text-slate-300">
-                      Configuration File ({client.id === 'codex' ? 'config.toml' : client.id === 'claude-code' ? '.mcp.json' : 'mcp_config.json'})
-                    </span>
-                    <CopyButton text={config.mcpSnippet} label="Copy Snippet" />
-                  </div>
-                  <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-sky-200">
-                    <code>{config.mcpSnippet}</code>
-                  </pre>
-                </div>
+                  {config?.mcpSnippet && (
+                    <div>
+                      <div class="flex items-center justify-between mb-1.5">
+                        <span class="text-xs font-semibold text-slate-300">
+                          Configuration File ({client.id === 'codex' ? 'config.toml' : client.id === 'claude-code' ? '.mcp.json' : 'mcp_config.json'})
+                        </span>
+                        <CopyButton text={config.mcpSnippet} label="Copy Snippet" />
+                      </div>
+                      <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-sky-200">
+                        <code>{config.mcpSnippet}</code>
+                      </pre>
+                    </div>
+                  )}
+                </>
               )}
             </>
           ) : (

@@ -8,6 +8,14 @@ export const codexAdapter: ClientAdapter = {
   renderMcp(serverName: string, spec: LaunchSpec): ClientConfigOutput {
     let mcpSnippet = '';
 
+    if (!spec.command && !spec.remote_url) {
+      return {
+        clientId: 'codex',
+        clientName: 'Codex',
+        mcpSnippet: '',
+      };
+    }
+
     if (spec.transport === 'http' && spec.remote_url) {
       mcpSnippet = `[mcp_servers.${serverName}]\nurl = "${spec.remote_url}"\ntransport = "http"\n`;
     } else {
