@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import SearchBox from '../../components/SearchBox.astro';
+import { getAllMcp } from '../../lib/entries';
+import { getCollection } from 'astro:content';
+
+const [mcpServers, categories] = await Promise.all([
+  getAllMcp(),
+  getCollection('categories'),
+]);
+---
+
+<BaseLayout
+  title="All MCP Servers — AI Tools Hub"
+  description={`Browse ${mcpServers.length} verified Model Context Protocol servers with 1-click launch configurations for Claude Code, Codex, and Antigravity.`}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header -->
+    <header class="border-b border-slate-800 pb-8 mb-10">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-4">
+        <a href="/" class="hover:text-slate-300">Home</a>
+        <span>/</span>
+        <span class="text-slate-300 font-medium">MCP Servers</span>
+      </nav>
+
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight flex items-center gap-3">
+            <span class="text-cyan-400">🔌</span>
+            <span>All Verified MCP Servers</span>
+            <span class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-300 font-mono">
+              {mcpServers.length} tools
+            </span>
+          </h1>
+          <p class="text-base text-slate-400 mt-2 max-w-3xl">
+            Model Context Protocol servers providing database connectors, API bridges, and system tools with verified launch configs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Search in MCP section -->
+      <div class="mt-8 max-w-xl">
+        <SearchBox />
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="mt-6 flex flex-wrap items-center gap-2">
+        <span class="text-xs text-slate-500 font-medium">Filter by category:</span>
+        {categories.map((cat) => (
+          <a
+            href={`/category/${cat.data.id}`}
+            class="px-2.5 py-1 rounded-md text-xs font-medium border border-slate-800/80 bg-slate-900/50 hover:bg-slate-800 hover:text-white text-slate-300 transition-colors"
+          >
+            {cat.data.name}
+          </a>
+        ))}
+      </div>
+    </header>
+
+    <!-- MCP Grid -->
+    <div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {mcpServers.map((entry) => (
+          <EntryCard entry={entry} />
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

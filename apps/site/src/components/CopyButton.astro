@@ -50,7 +50,7 @@ const { text, label = 'Copy', class: className = '' } = Astro.props;
             document.body.appendChild(textArea);
             textArea.focus();
             textArea.select();
-            document.execCommand('copy');
+            (document as { execCommand?: (cmd: string) => boolean }).execCommand?.('copy');
             textArea.remove();
           }
 

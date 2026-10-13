@@ -18,7 +18,12 @@ export async function extractFromRegistry(
     const s = item.server || item;
     const url = (s.repositoryUrl || s.repository?.url || '').toLowerCase();
     const name = (s.name || '').toLowerCase();
-    return url.includes(repoSlug) || name.includes(repoName) || name.endsWith(`/${repoName}`);
+    return (
+      (url && (url.includes(repoSlug) || url.endsWith(`/${repoName}`))) ||
+      name === repoName ||
+      name.endsWith(`/${repoName}`) ||
+      name === repoSlug
+    );
   });
 
   if (!matched) return null;

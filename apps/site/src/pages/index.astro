@@ -76,7 +76,7 @@ const topSkills = agentSkills.slice(0, 8);
   <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
     <!-- MCP Servers -->
     <div>
-      <div class="flex items-center justify-between mb-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
           <h2 class="text-2xl font-bold text-white flex items-center gap-2.5">
             <span class="text-cyan-400">🔌</span>
@@ -89,6 +89,14 @@ const topSkills = agentSkills.slice(0, 8);
             Model Context Protocol servers providing database connections, browser automation, and developer tools.
           </p>
         </div>
+
+        <a
+          href="/mcp"
+          class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors shrink-0"
+        >
+          <span>View all {mcpServers.length} MCP servers</span>
+          <span>&rarr;</span>
+        </a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -100,7 +108,7 @@ const topSkills = agentSkills.slice(0, 8);
 
     <!-- Agent Skills -->
     <div>
-      <div class="flex items-center justify-between mb-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
           <h2 class="text-2xl font-bold text-white flex items-center gap-2.5">
             <span class="text-purple-400">🧠</span>
@@ -113,6 +121,14 @@ const topSkills = agentSkills.slice(0, 8);
             Verifiable agent instructions with <code class="text-xs bg-slate-900 px-1 py-0.5 rounded text-purple-300">SKILL.md</code> definitions.
           </p>
         </div>
+
+        <a
+          href="/skills"
+          class="inline-flex items-center gap-1.5 text-xs font-semibold text-purple-400 hover:text-purple-300 transition-colors shrink-0"
+        >
+          <span>View all {agentSkills.length} skills</span>
+          <span>&rarr;</span>
+        </a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
