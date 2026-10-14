@@ -4,11 +4,12 @@
   "private": true,
   "description": "AI Tools Hub / MCP & Agent Registry monorepo",
   "scripts": {
-    "pipeline:report": "pnpm --filter @web-db/pipeline run report",
-    "pipeline:run": "pnpm --filter @web-db/pipeline run run",
+    "build:packages": "pnpm --filter @web-db/schema run build && pnpm --filter @web-db/renderers run build",
+    "pipeline:report": "pnpm run build:packages && pnpm --filter @web-db/pipeline run report",
+    "pipeline:run": "pnpm run build:packages && pnpm --filter @web-db/pipeline run run",
     "site:dev": "pnpm --filter @web-db/site run dev",
-    "site:build": "pnpm --filter @web-db/site run build",
-    "test": "pnpm -r run test",
+    "site:build": "pnpm run build:packages && pnpm --filter @web-db/site run build",
+    "test": "pnpm run build:packages && pnpm -r run test",
     "typecheck": "pnpm -r run typecheck"
   },
   "devDependencies": {

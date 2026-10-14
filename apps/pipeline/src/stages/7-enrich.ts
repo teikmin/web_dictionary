@@ -51,68 +51,106 @@ export async function runStage7Enrich(
   let totalMcp = 0;
   let totalSkills = 0;
 
-  for (const d of selected) {
-    const { owner, name, defaultBranch } = d.repo;
-    const { paths } = await fetchRepoTree(owner, name, defaultBranch);
+  const chunkSize = 10;
+  let processedCount = 0;
 
-    if (d.layer2?.detectedType === 'mcp_server') {
-      totalMcp++;
-      let spec: LaunchSpec | null = null;
+  for (let i = 0; i < selected.length; i += chunkSize) {
+    const chunk = selected.slice(i, i + chunkSize);
 
-      // 1. Try Registry
-      spec = await extractFromRegistry(owner, name);
+    await Promise.all(
+      chunk.map(async (d) => {
+        const { owner, name, defaultBranch } = d.repo;
+        const { paths } = await fetchRepoTree(owner, name, defaultBranch);
 
-      // 2. Try server.json manifest
-      if (!spec) {
-        spec = await extractFromServerJson(owner, name, paths);
-      }
+        if (d.layer2?.detectedType === 'mcp_server') {
+          totalMcp++;
+          let spec: LaunchSpec | null = null;
 
-      // 3. Try package.json manifest
-      if (!spec) {
-        spec = await extractFromPackageJson(owner, name, paths);
-      }
+          // 1. Try Registry
+          spec = await extractFromRegistry(owner, name);
 
-      // 3. Try pyproject.toml manifest
-      if (!spec) {
-        spec = await extractFromPyproject(owner, name, paths);
-      }
+          // 2. Try server.json manifest
+          if (!spec) {
+            spec = await extractFromServerJson(owner, name, paths);
+          }
 
-      // 4. Try README extraction
-      if (!spec) {
-        spec = await extractFromReadme(owner, name, paths);
-      }
+          // 3. Try package.json manifest
+          if (!spec) {
+            spec = await extractFromPackageJson(owner, name, paths);
+          }
 
-      // Fallback
-      if (!spec) {
-        spec = {
-          transport: 'stdio',
-          args: [],
-          env_vars: [],
-          confidence: 'none',
-        };
-      }
+          // 4. Try pyproject.toml manifest
+          if (!spec) {
+            spec = await extractFromPyproject(owner, name, paths);
+          }
 
-      confidenceCounts[spec.confidence]++;
+          // 5. Try README extraction
+          if (!spec) {
+            spec = await extractFromReadme(owner, name, paths);
+          }
 
-      const renderedConfigs = renderMcpForAllClients(name, spec);
-      enrichedEntries.push({
-        decision: d,
-        launchSpec: spec,
-        renderedConfigs,
-      });
-    } else if (d.layer2?.detectedType === 'agent_skill') {
-      const subpaths = d.layer2?.subpaths?.length ? d.layer2.subpaths : [''];
-      for (const subpath of subpaths) {
-        totalSkills++;
-        const skillSpec = await extractSkillSpec(owner, name, subpath, paths);
-        const renderedConfigs = renderSkillForAllClients(skillSpec.skill_name, skillSpec);
+          // Fallback
+          if (!spec) {
+            spec = {
+              transport: 'stdio',
+              args: [],
+              env_vars: [],
+              confidence: 'none',
+            };
+          }
 
-        enrichedEntries.push({
-          decision: d,
-          skillSpec,
-          renderedConfigs,
-        });
-      }
+          confidenceCounts[spec.confidence]++;
+
+          const renderedConfigs = renderMcpForAllClients(name, spec);
+          enrichedEntries.push({
+            decision: d,
+            launchSpec: spec,
+            renderedConfigs,
+          });
+        } else if (d.layer2?.detectedType === 'agent_skill') {
+          const subpaths = d.layer2?.subpaths?.length ? d.layer2.subpaths : [''];
+          const seenSkills = new Set<string>();
+
+          for (const subpath of subpaths) {
+            if (seenSkills.size >= 5) break;
+
+            const skillSpec = await extractSkillSpec(owner, name, subpath, paths);
+
+            // Disambiguate if skillName is generic or already seen
+            let skillName = skillSpec.skill_name;
+            if (seenSkills.has(skillName)) {
+              const parts = subpath.split('/').filter(Boolean);
+              if (parts.length > 1) {
+                // e.g. external_plugins/discord/skills/access -> discord-access
+                const parentFolder = parts.length >= 3 ? parts[parts.length - 3] : parts[0];
+                skillName = `${parentFolder}-${skillName}`;
+              }
+            }
+
+            // If still duplicate (e.g. exact same skill duplicated across client target folders), skip
+            if (seenSkills.has(skillName)) {
+              continue;
+            }
+
+            seenSkills.add(skillName);
+            totalSkills++;
+
+            skillSpec.skill_name = skillName;
+            const renderedConfigs = renderSkillForAllClients(skillName, skillSpec);
+
+            enrichedEntries.push({
+              decision: d,
+              skillSpec,
+              renderedConfigs,
+            });
+          }
+        }
+      })
+    );
+
+    processedCount += chunk.length;
+    if (processedCount % 30 === 0 || processedCount >= selected.length) {
+      logger.info(`[Enrichment Progress: ${processedCount}/${selected.length}] Enriched catalog entries...`);
     }
   }
 

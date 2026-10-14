@@ -12,6 +12,17 @@ export async function extractFromReadme(
   const content = await fetchFileContent(owner, repo, readmePath);
   if (!content) return null;
 
+function hasPlaceholder(str: string): boolean {
+  return (
+    /path\/to/i.test(str) ||
+    /\{\{.*?\}\}/.test(str) ||
+    /<.*?>/.test(str) ||
+    /your[-_]/i.test(str) ||
+    /ipaddress/i.test(str) ||
+    str.includes('...')
+  );
+}
+
   // 1. Check for JSON code blocks containing mcpServers
   const jsonBlocks = content.match(/```(?:json)?\s*([\s\S]*?)\s*```/g);
   if (jsonBlocks) {
@@ -24,10 +35,15 @@ export async function extractFromReadme(
           if (keys.length > 0) {
             const s = parsed.mcpServers[keys[0]];
             if (s && (s.command || s.url)) {
+              if (s.command && hasPlaceholder(s.command)) continue;
+              if (s.url && hasPlaceholder(s.url)) continue;
+              const args: string[] = Array.isArray(s.args) ? s.args : [];
+              if (args.some((a) => typeof a === 'string' && hasPlaceholder(a))) continue;
+
               return {
                 transport: s.url ? 'http' : s.transport || 'stdio',
                 command: s.command,
-                args: Array.isArray(s.args) ? s.args : [],
+                args,
                 remote_url: s.url,
                 env_vars: s.env
                   ? Object.keys(s.env).map((k) => ({
@@ -44,6 +60,9 @@ export async function extractFromReadme(
         }
 
         if (parsed.command && Array.isArray(parsed.args)) {
+          if (hasPlaceholder(parsed.command)) continue;
+          if (parsed.args.some((a: any) => typeof a === 'string' && hasPlaceholder(a))) continue;
+
           return {
             transport: 'stdio',
             command: parsed.command,
@@ -74,13 +93,15 @@ export async function extractFromReadme(
     const command = parts[0];
     const args = parts.slice(1);
 
-    return {
-      transport: 'stdio',
-      command,
-      args,
-      env_vars: extractEnvVarsFromText(content),
-      confidence: 'readme',
-    };
+    if (!hasPlaceholder(command) && !args.some(hasPlaceholder)) {
+      return {
+        transport: 'stdio',
+        command,
+        args,
+        env_vars: extractEnvVarsFromText(content),
+        confidence: 'readme',
+      };
+    }
   }
 
   // 3. Check for `docker run ... <image>`
