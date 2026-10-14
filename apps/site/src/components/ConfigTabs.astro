@@ -24,9 +24,9 @@ const {
 } = Astro.props;
 
 const clients = [
-  { id: 'claude-code', name: 'Claude Code', icon: '⚡' },
-  { id: 'codex', name: 'OpenAI Codex', icon: '🤖' },
-  { id: 'antigravity', name: 'Google Antigravity', icon: '🌌' },
+  { id: 'claude-code', name: 'Claude Code' },
+  { id: 'codex', name: 'OpenAI Codex' },
+  { id: 'antigravity', name: 'Google Antigravity' },
 ] as const;
 
 const configs =
@@ -52,9 +52,9 @@ function getSkillInstallCommand(clientId: string): string {
 }
 ---
 
-<div class="config-tabs-container my-6 rounded-xl border border-slate-800 bg-slate-900/90 overflow-hidden shadow-lg">
+<div class="config-tabs-container my-6 rounded-xl border border-slate-200 bg-white overflow-hidden shadow-xs">
   <!-- Tab navigation -->
-  <div class="flex items-center justify-between border-b border-slate-800 bg-slate-950/60 px-4 pt-2">
+  <div class="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-4 pt-2">
     <div role="tablist" aria-label="Target AI Agent Clients" class="flex gap-2">
       {clients.map((client, idx) => (
         <button
@@ -66,13 +66,12 @@ function getSkillInstallCommand(clientId: string): string {
           tabindex={idx === 0 ? 0 : -1}
           data-client={client.id}
           class:list={[
-            'tab-btn flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-all -mb-px focus:outline-none focus:ring-1 focus:ring-blue-500 rounded-t cursor-pointer',
+            'tab-btn flex items-center gap-2 px-4 py-2.5 text-xs font-semibold border-b-2 transition-all -mb-px focus:outline-none focus:ring-1 focus:ring-blue-500 rounded-t cursor-pointer',
             idx === 0
-              ? 'border-blue-500 text-blue-400 bg-slate-900/80 active-tab'
-              : 'border-transparent text-slate-400 hover:text-slate-200 hover:border-slate-700'
+              ? 'border-blue-600 text-blue-600 bg-white active-tab'
+              : 'border-transparent text-slate-500 hover:text-slate-900 hover:border-slate-300'
           ]}
         >
-          <span>{client.icon}</span>
           <span>{client.name}</span>
         </button>
       ))}
@@ -97,9 +96,9 @@ function getSkillInstallCommand(clientId: string): string {
           {type === 'mcp_server' ? (
             <>
               {!config?.mcpCommand && !config?.mcpSnippet ? (
-                <div class="py-6 px-4 text-center rounded-lg bg-slate-950/60 border border-slate-800/80">
-                  <p class="text-xs font-semibold text-slate-300 mb-1">No install command found. See the repository</p>
-                  <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
+                <div class="py-6 px-4 text-center rounded-lg bg-slate-50 border border-slate-200">
+                  <p class="text-xs font-semibold text-slate-800 mb-1">No install command found. See the repository</p>
+                  <p class="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
                     No launch command could be automatically extracted. Please refer to the upstream GitHub documentation to configure this tool manually.
                   </p>
                 </div>
@@ -108,10 +107,10 @@ function getSkillInstallCommand(clientId: string): string {
                   {config?.mcpCommand && (
                     <div>
                       <div class="flex items-center justify-between mb-1.5">
-                        <span class="text-xs font-semibold text-slate-300">Option 1: Quick Add (CLI Command)</span>
+                        <span class="text-xs font-semibold text-slate-700">Option 1: Quick Add (CLI Command)</span>
                         <CopyButton text={config.mcpCommand} label="Copy Command" />
                       </div>
-                      <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-emerald-300">
+                      <pre class="overflow-x-auto p-3.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-mono text-slate-800">
                         <code>{config.mcpCommand}</code>
                       </pre>
                     </div>
@@ -120,35 +119,35 @@ function getSkillInstallCommand(clientId: string): string {
                   {config?.mcpSnippet && (
                     <div>
                       <div class="flex items-center justify-between mb-1.5">
-                        <span class="text-xs font-semibold text-slate-300">
+                        <span class="text-xs font-semibold text-slate-700">
                           {config?.mcpCommand ? 'Option 2: Config File' : 'Configuration Snippet'}
                         </span>
                         <CopyButton text={config.mcpSnippet} label="Copy Snippet" />
                       </div>
-                      <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-sky-200">
+                      <pre class="overflow-x-auto p-3.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-mono text-slate-800">
                         <code>{config.mcpSnippet}</code>
                       </pre>
                     </div>
                   )}
 
                   <!-- Where the snippet goes & how to check -->
-                  <div class="rounded-lg bg-slate-950/50 border border-slate-800/60 p-3.5 text-xs text-slate-400 space-y-1.5">
+                  <div class="rounded-lg bg-slate-50 border border-slate-200 p-3.5 text-xs text-slate-600 space-y-1.5">
                     <div class="flex items-start gap-2">
-                      <span class="text-slate-300 font-semibold shrink-0">📍 Where it goes:</span>
+                      <span class="text-slate-900 font-semibold shrink-0">Location:</span>
                       {client.id === 'claude-code' && (
-                        <span>Run in terminal from your workspace root, or paste JSON into <code class="text-sky-300">.mcp.json</code> (workspace) or <code class="text-sky-300">~/.claude.json</code> (global).</span>
+                        <span>Run in terminal from your workspace root, or paste JSON into <code class="text-blue-700 bg-blue-50 border border-blue-100 px-1 py-0.2 rounded font-mono">.mcp.json</code> (workspace) or <code class="text-blue-700 bg-blue-50 border border-blue-100 px-1 py-0.2 rounded font-mono">~/.claude.json</code> (global).</span>
                       )}
                       {client.id === 'codex' && (
-                        <span>Paste into <code class="text-sky-300">.codex/config.json</code> in your project, or global config in <code class="text-sky-300">~/.codex/config.json</code>.</span>
+                        <span>Paste into <code class="text-blue-700 bg-blue-50 border border-blue-100 px-1 py-0.2 rounded font-mono">.codex/config.json</code> in your project, or global config in <code class="text-blue-700 bg-blue-50 border border-blue-100 px-1 py-0.2 rounded font-mono">~/.codex/config.json</code>.</span>
                       )}
                       {client.id === 'antigravity' && (
-                        <span>Add server definition into <code class="text-sky-300">~/.gemini/antigravity/mcp_servers.json</code> or project <code class="text-sky-300">.gemini/mcp_servers.json</code>.</span>
+                        <span>Add server definition into <code class="text-blue-700 bg-blue-50 border border-blue-100 px-1 py-0.2 rounded font-mono">~/.gemini/antigravity/mcp_servers.json</code> or project <code class="text-blue-700 bg-blue-50 border border-blue-100 px-1 py-0.2 rounded font-mono">.gemini/mcp_servers.json</code>.</span>
                       )}
                     </div>
                     <div class="flex items-start gap-2">
-                      <span class="text-slate-300 font-semibold shrink-0">✅ Verify:</span>
+                      <span class="text-slate-900 font-semibold shrink-0">Verify:</span>
                       {client.id === 'claude-code' && (
-                        <span>Run <code class="text-emerald-400">claude mcp list</code> to confirm the server is connected and ready.</span>
+                        <span>Run <code class="text-emerald-700 bg-emerald-50 border border-emerald-100 px-1 py-0.2 rounded font-mono">claude mcp list</code> to confirm the server is connected and ready.</span>
                       )}
                       {client.id === 'codex' && (
                         <span>Restart the Codex CLI / IDE extension; active tools will appear in the prompt suggestions.</span>
@@ -166,10 +165,10 @@ function getSkillInstallCommand(clientId: string): string {
               {skillCmd && (
                 <div>
                   <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-xs font-semibold text-slate-300">1. Download Skill File (CLI)</span>
+                    <span class="text-xs font-semibold text-slate-700">1. Download Skill File (CLI)</span>
                     <CopyButton text={skillCmd} label="Copy Command" />
                   </div>
-                  <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-purple-300">
+                  <pre class="overflow-x-auto p-3.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-mono text-slate-800">
                     <code>{skillCmd}</code>
                   </pre>
                 </div>
@@ -178,10 +177,10 @@ function getSkillInstallCommand(clientId: string): string {
               {config?.skillInstallPath && (
                 <div>
                   <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-xs font-semibold text-slate-300">Destination Directory</span>
+                    <span class="text-xs font-semibold text-slate-700">Destination Directory</span>
                     <CopyButton text={config.skillInstallPath} label="Copy Path" />
                   </div>
-                  <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">
+                  <pre class="overflow-x-auto p-3.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-mono text-slate-700">
                     <code>{config.skillInstallPath}</code>
                   </pre>
                 </div>
@@ -190,32 +189,32 @@ function getSkillInstallCommand(clientId: string): string {
               {config?.skillInstructions && (
                 <div>
                   <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-xs font-semibold text-slate-300">Prompt / System Instructions</span>
+                    <span class="text-xs font-semibold text-slate-700">Prompt / System Instructions</span>
                     <CopyButton text={config.skillInstructions} label="Copy Instructions" />
                   </div>
-                  <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-400 max-h-48">
+                  <pre class="overflow-x-auto p-3.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-mono text-slate-700 max-h-48">
                     <code>{config.skillInstructions}</code>
                   </pre>
                 </div>
               )}
 
               <!-- Where the skill goes & how to check -->
-              <div class="rounded-lg bg-slate-950/50 border border-slate-800/60 p-3.5 text-xs text-slate-400 space-y-1.5">
+              <div class="rounded-lg bg-slate-50 border border-slate-200 p-3.5 text-xs text-slate-600 space-y-1.5">
                 <div class="flex items-start gap-2">
-                  <span class="text-slate-300 font-semibold shrink-0">📍 Where it goes:</span>
+                  <span class="text-slate-900 font-semibold shrink-0">Location:</span>
                   {client.id === 'claude-code' && (
-                    <span>Save to <code class="text-purple-300">.claude/skills/{name}/SKILL.md</code> in your workspace.</span>
+                    <span>Save to <code class="text-teal-700 bg-teal-50 border border-teal-100 px-1 py-0.2 rounded font-mono">.claude/skills/{name}/SKILL.md</code> in your workspace.</span>
                   )}
                   {client.id === 'codex' && (
-                    <span>Save to <code class="text-purple-300">.codex/skills/{name}/SKILL.md</code> in your project repository.</span>
+                    <span>Save to <code class="text-teal-700 bg-teal-50 border border-teal-100 px-1 py-0.2 rounded font-mono">.codex/skills/{name}/SKILL.md</code> in your project repository.</span>
                   )}
                   {client.id === 'antigravity' && (
-                    <span>Save to <code class="text-purple-300">~/.gemini/config/skills/{name}/SKILL.md</code> (user) or <code class="text-purple-300">.gemini/skills/{name}/SKILL.md</code>.</span>
+                    <span>Save to <code class="text-teal-700 bg-teal-50 border border-teal-100 px-1 py-0.2 rounded font-mono">~/.gemini/config/skills/{name}/SKILL.md</code> (user) or <code class="text-teal-700 bg-teal-50 border border-teal-100 px-1 py-0.2 rounded font-mono">.gemini/skills/{name}/SKILL.md</code>.</span>
                   )}
                 </div>
                 <div class="flex items-start gap-2">
-                  <span class="text-slate-300 font-semibold shrink-0">✅ Verify:</span>
-                  <span>Invoke your agent and ask it to execute or inspect the skill: <code class="text-emerald-400">{name}</code>.</span>
+                  <span class="text-slate-900 font-semibold shrink-0">Verify:</span>
+                  <span>Invoke your agent and ask it to execute or inspect the skill: <code class="text-emerald-700 bg-emerald-50 border border-emerald-100 px-1 py-0.2 rounded font-mono">{name}</code>.</span>
                 </div>
               </div>
             </>
@@ -243,11 +242,11 @@ function getSkillInstallCommand(clientId: string): string {
           tab.setAttribute('aria-selected', isSelected ? 'true' : 'false');
           tab.setAttribute('tabindex', isSelected ? '0' : '-1');
           if (isSelected) {
-            tab.classList.add('border-blue-500', 'text-blue-400', 'bg-slate-900/80', 'active-tab');
-            tab.classList.remove('border-transparent', 'text-slate-400');
+            tab.classList.add('border-blue-600', 'text-blue-600', 'bg-white', 'active-tab');
+            tab.classList.remove('border-transparent', 'text-slate-500');
           } else {
-            tab.classList.remove('border-blue-500', 'text-blue-400', 'bg-slate-900/80', 'active-tab');
-            tab.classList.add('border-transparent', 'text-slate-400');
+            tab.classList.remove('border-blue-600', 'text-blue-600', 'bg-white', 'active-tab');
+            tab.classList.add('border-transparent', 'text-slate-500');
           }
         });
 

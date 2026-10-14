@@ -87,12 +87,12 @@ const initialItems = allEntries
   data-initial-official={initialOfficial ? 'true' : 'false'}
 >
   {pageTitle && (
-    <div class="mb-8 border-b border-slate-800 pb-6">
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+    <div class="mb-8 border-b border-slate-200 pb-6">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
         {pageTitle}
       </h1>
       {pageDescription && (
-        <p class="text-sm text-slate-400 mt-2 max-w-3xl leading-relaxed">
+        <p class="text-sm text-slate-600 mt-2 max-w-3xl leading-relaxed">
           {pageDescription}
         </p>
       )}
@@ -101,10 +101,10 @@ const initialItems = allEntries
 
   <div class="flex flex-col lg:flex-row gap-8 items-start">
     <!-- Filter Sidebar (Drawer on mobile) -->
-    <aside class="w-full lg:w-64 shrink-0 bg-slate-900/40 lg:bg-transparent rounded-xl p-4 lg:p-0 border border-slate-800/80 lg:border-none">
+    <aside class="w-full lg:w-64 shrink-0 bg-white rounded-xl p-5 border border-slate-200 shadow-xs">
       <div class="flex items-center justify-between lg:hidden mb-3">
-        <span class="text-xs font-bold text-slate-200 uppercase tracking-wider">Filters &amp; Refine</span>
-        <button type="button" id="toggle-mobile-filters" class="text-xs text-sky-400 font-medium">
+        <span class="text-xs font-bold text-slate-800 uppercase tracking-wider">Filters &amp; Refine</span>
+        <button type="button" id="toggle-mobile-filters" class="text-xs text-blue-600 font-medium">
           Toggle
         </button>
       </div>
@@ -112,20 +112,20 @@ const initialItems = allEntries
       <div id="filter-controls-body" class="space-y-6">
         <!-- Type Filter -->
         <div>
-          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+          <label class="block text-xs font-semibold text-slate-800 uppercase tracking-wider mb-2">
             Tool Type
           </label>
-          <div class="space-y-1">
-            <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer hover:text-white">
-              <input type="radio" name="filter-type" value="all" checked={initialType === 'all'} class="text-blue-500 focus:ring-0" />
+          <div class="space-y-1.5">
+            <label class="flex items-center gap-2 text-xs text-slate-700 cursor-pointer hover:text-slate-900">
+              <input type="radio" name="filter-type" value="all" checked={initialType === 'all'} class="text-blue-600 focus:ring-0" />
               <span>All Types</span>
             </label>
-            <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer hover:text-white">
-              <input type="radio" name="filter-type" value="mcp_server" checked={initialType === 'mcp_server'} class="text-blue-500 focus:ring-0" />
+            <label class="flex items-center gap-2 text-xs text-slate-700 cursor-pointer hover:text-slate-900">
+              <input type="radio" name="filter-type" value="mcp_server" checked={initialType === 'mcp_server'} class="text-blue-600 focus:ring-0" />
               <span>MCP Servers</span>
             </label>
-            <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer hover:text-white">
-              <input type="radio" name="filter-type" value="agent_skill" checked={initialType === 'agent_skill'} class="text-blue-500 focus:ring-0" />
+            <label class="flex items-center gap-2 text-xs text-slate-700 cursor-pointer hover:text-slate-900">
+              <input type="radio" name="filter-type" value="agent_skill" checked={initialType === 'agent_skill'} class="text-blue-600 focus:ring-0" />
               <span>Agent Skills</span>
             </label>
           </div>
@@ -133,12 +133,12 @@ const initialItems = allEntries
 
         <!-- Category Filter -->
         <div>
-          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+          <label class="block text-xs font-semibold text-slate-800 uppercase tracking-wider mb-2">
             Category
           </label>
           <select
             id="filter-category"
-            class="w-full rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-200 p-2 focus:border-blue-500 focus:outline-none"
+            class="w-full rounded-lg bg-white border border-slate-200 text-xs text-slate-800 p-2 focus:border-blue-500 focus:outline-none"
           >
             {categoryList.map((c) => (
               <option value={c.id} selected={initialCategory === c.id}>{c.name}</option>
@@ -148,12 +148,12 @@ const initialItems = allEntries
 
         <!-- Client Filter -->
         <div>
-          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+          <label class="block text-xs font-semibold text-slate-800 uppercase tracking-wider mb-2">
             AI Client
           </label>
           <select
             id="filter-client"
-            class="w-full rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-200 p-2 focus:border-blue-500 focus:outline-none"
+            class="w-full rounded-lg bg-white border border-slate-200 text-xs text-slate-800 p-2 focus:border-blue-500 focus:outline-none"
           >
             {clientList.map((c) => (
               <option value={c.id} selected={initialClient === c.id}>{c.name}</option>
@@ -163,25 +163,25 @@ const initialItems = allEntries
 
         <!-- Official Only Checkbox -->
         <div>
-          <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer hover:text-white pt-1">
+          <label class="flex items-center gap-2 text-xs text-slate-700 cursor-pointer hover:text-slate-900 pt-1">
             <input
               type="checkbox"
               id="filter-official"
               checked={initialOfficial}
-              class="rounded border-slate-700 bg-slate-900 text-blue-500 focus:ring-0"
+              class="rounded border-slate-300 text-blue-600 focus:ring-0"
             />
-            <span class="font-medium text-slate-200">Official Vendors only</span>
+            <span class="font-medium text-slate-800">Official Vendors only</span>
           </label>
         </div>
 
         <!-- License Filter -->
         <div>
-          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+          <label class="block text-xs font-semibold text-slate-800 uppercase tracking-wider mb-2">
             License
           </label>
           <select
             id="filter-license"
-            class="w-full rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-200 p-2 focus:border-blue-500 focus:outline-none"
+            class="w-full rounded-lg bg-white border border-slate-200 text-xs text-slate-800 p-2 focus:border-blue-500 focus:outline-none"
           >
             <option value="all">All Open Licenses</option>
             <option value="MIT">MIT</option>
@@ -195,7 +195,7 @@ const initialItems = allEntries
         <button
           type="button"
           id="btn-clear-filters"
-          class="w-full py-2 px-3 rounded-lg border border-slate-800 hover:border-slate-700 bg-slate-900/60 text-xs text-slate-400 hover:text-white transition-colors"
+          class="w-full py-2 px-3 rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50 text-xs text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
         >
           Reset all filters
         </button>
@@ -205,27 +205,27 @@ const initialItems = allEntries
     <!-- Results Main Column -->
     <div class="flex-1 w-full min-w-0">
       <!-- Search, Sort & View Controls Bar -->
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-800/80">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-200">
         <!-- Live Quick Filter Text Search -->
         <div class="relative flex-1 max-w-md">
           <input
             type="text"
             id="filter-search-input"
             placeholder="Filter by keyword (name, description, owner)..."
-            class="w-full pl-9 pr-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-200 placeholder-slate-500 focus:border-blue-500 focus:outline-none transition-colors"
+            class="w-full pl-9 pr-4 py-2 rounded-lg bg-white border border-slate-200 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none transition-colors shadow-xs"
           />
-          <svg class="w-4 h-4 text-slate-500 absolute left-3 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </div>
 
         <div class="flex items-center gap-3 self-end sm:self-auto">
           <!-- Sort -->
-          <div class="flex items-center gap-1.5 text-xs text-slate-400">
+          <div class="flex items-center gap-1.5 text-xs text-slate-600">
             <span class="hidden sm:inline">Sort:</span>
             <select
               id="filter-sort"
-              class="rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-200 p-2 focus:border-blue-500 focus:outline-none"
+              class="rounded-lg bg-white border border-slate-200 text-xs text-slate-800 p-2 focus:border-blue-500 focus:outline-none shadow-xs"
             >
               <option value="popular" selected={initialSort === 'popular'}>Most Popular (Stars)</option>
               <option value="updated" selected={initialSort === 'updated'}>Recently Updated</option>
@@ -235,12 +235,12 @@ const initialItems = allEntries
           </div>
 
           <!-- Grid / List View Toggle (Task D3) -->
-          <div class="flex items-center rounded-lg border border-slate-800 bg-slate-900 p-0.5">
+          <div class="flex items-center rounded-lg border border-slate-200 bg-white p-0.5 shadow-xs">
             <button
               type="button"
               id="view-grid-btn"
               title="Card Grid View"
-              class="p-1.5 rounded text-xs text-slate-200 bg-slate-800 focus:outline-none"
+              class="p-1.5 rounded text-xs text-slate-900 bg-slate-100 focus:outline-none cursor-pointer"
             >
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
@@ -250,7 +250,7 @@ const initialItems = allEntries
               type="button"
               id="view-list-btn"
               title="Compact Table / List View"
-              class="p-1.5 rounded text-xs text-slate-400 hover:text-white focus:outline-none"
+              class="p-1.5 rounded text-xs text-slate-400 hover:text-slate-800 focus:outline-none cursor-pointer"
             >
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -265,7 +265,7 @@ const initialItems = allEntries
         <div id="active-filter-chips" class="flex flex-wrap items-center gap-1.5 text-xs">
           <!-- Filled dynamically by JavaScript -->
         </div>
-        <div id="result-count" class="text-xs font-mono text-slate-400">
+        <div id="result-count" class="text-xs font-mono text-slate-500">
           Showing {initialItems.length} of {clientItems.length} tools
         </div>
       </div>
@@ -278,15 +278,15 @@ const initialItems = allEntries
       </div>
 
       <!-- Compact List Container (hidden by default) -->
-      <div id="catalog-list" class="hidden divide-y divide-slate-800/80 rounded-xl border border-slate-800 bg-slate-900/60 overflow-hidden">
+      <div id="catalog-list" class="hidden divide-y divide-slate-100 rounded-xl border border-slate-200 bg-white shadow-xs overflow-hidden">
         <!-- Filled dynamically by JavaScript -->
       </div>
 
       <!-- Empty State -->
-      <div id="catalog-empty" class="hidden py-16 text-center rounded-xl border border-slate-800 bg-slate-900/30">
-        <p class="text-sm font-semibold text-slate-300">No tools match your current filter combination.</p>
+      <div id="catalog-empty" class="hidden py-16 text-center rounded-xl border border-slate-200 bg-white">
+        <p class="text-sm font-semibold text-slate-800">No tools match your current filter combination.</p>
         <p class="text-xs text-slate-500 mt-1">Try clearing some filters or searching with a different term.</p>
-        <button type="button" id="btn-empty-reset" class="mt-4 px-4 py-2 rounded-lg bg-slate-800 text-xs font-medium text-slate-200 hover:bg-slate-700">
+        <button type="button" id="btn-empty-reset" class="mt-4 px-4 py-2 rounded-lg bg-blue-600 text-xs font-semibold text-white hover:bg-blue-700 cursor-pointer">
           Reset all filters
         </button>
       </div>
@@ -296,10 +296,10 @@ const initialItems = allEntries
         <button
           type="button"
           id="btn-load-more"
-          class="px-6 py-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:bg-slate-800 hover:border-slate-700 text-xs font-semibold text-slate-200 transition-colors shadow-sm inline-flex items-center gap-2"
+          class="px-6 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 hover:border-slate-300 text-xs font-semibold text-slate-700 transition-colors shadow-xs inline-flex items-center gap-2 cursor-pointer"
         >
           <span>Load more tools</span>
-          <span class="text-slate-500">(+24)</span>
+          <span class="text-slate-400">(+24)</span>
         </button>
       </div>
     </div>
@@ -462,8 +462,8 @@ const initialItems = allEntries
       chips.forEach((chip) => {
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-sky-950/70 border border-sky-800/80 text-sky-300 hover:bg-sky-900 text-xs font-medium transition-colors cursor-pointer';
-        btn.innerHTML = `<span>${chip.label}</span><span class="text-sky-400 font-bold">&times;</span>`;
+        btn.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 hover:bg-blue-100 text-xs font-medium transition-colors cursor-pointer';
+        btn.innerHTML = `<span>${chip.label}</span><span class="text-blue-500 font-bold">&times;</span>`;
         btn.addEventListener('click', () => {
           chip.reset();
           state.limit = state.pageSize;
@@ -476,7 +476,7 @@ const initialItems = allEntries
       if (chips.length > 1) {
         const clearAll = document.createElement('button');
         clearAll.type = 'button';
-        clearAll.className = 'text-xs text-slate-400 hover:text-white underline ml-2';
+        clearAll.className = 'text-xs text-slate-500 hover:text-slate-800 underline ml-2 cursor-pointer';
         clearAll.textContent = 'Clear all';
         clearAll.addEventListener('click', () => {
           resetAllFilters();
@@ -564,24 +564,24 @@ const initialItems = allEntries
         if (listContainer) {
           listContainer.classList.remove('hidden');
           listContainer.innerHTML = visible.map((item: any) => `
-            <a href="${item.href}" class="flex items-center justify-between p-3.5 hover:bg-slate-850 transition-colors group">
+            <a href="${item.href}" class="flex items-center justify-between p-3.5 hover:bg-slate-50 transition-colors group">
               <div class="flex items-center gap-3 min-w-0">
-                <img src="https://github.com/${item.owner}.png?size=40" alt="${item.owner}" class="w-8 h-8 rounded-lg bg-slate-950 border border-slate-800 object-cover shrink-0" loading="lazy" />
+                <img src="https://github.com/${item.owner}.png?size=40" alt="${item.owner}" class="w-8 h-8 rounded-lg bg-slate-50 border border-slate-200 object-cover shrink-0" loading="lazy" />
                 <div class="min-w-0">
                   <div class="flex items-center gap-2">
-                    <span class="font-semibold text-sm text-slate-100 group-hover:text-sky-300 truncate">${item.name}</span>
-                    <span class="text-[10px] px-1.5 py-0.2 rounded font-mono ${item.type === 'mcp_server' ? 'bg-cyan-950 text-cyan-300' : 'bg-purple-950 text-purple-300'}">
+                    <span class="font-semibold text-sm text-slate-900 group-hover:text-blue-600 truncate">${item.name}</span>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded font-mono ${item.type === 'mcp_server' ? 'bg-blue-50 text-blue-700 border border-blue-200' : 'bg-teal-50 text-teal-700 border border-teal-200'}">
                       ${item.type === 'mcp_server' ? 'MCP' : 'Skill'}
                     </span>
-                    ${item.official ? '<span class="text-[10px] px-1.5 py-0.2 rounded bg-sky-950 text-sky-300">Official</span>' : ''}
+                    ${item.official ? '<span class="text-[10px] px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200 font-medium">Official</span>' : ''}
                   </div>
-                  <p class="text-xs text-slate-400 truncate">${item.summary || item.tagline}</p>
+                  <p class="text-xs text-slate-500 truncate mt-0.5">${item.summary || item.tagline}</p>
                 </div>
               </div>
-              <div class="flex items-center gap-4 text-xs text-slate-400 font-mono shrink-0 pl-3">
+              <div class="flex items-center gap-4 text-xs text-slate-500 font-mono shrink-0 pl-3">
                 <span class="hidden sm:inline text-slate-500">${item.category}</span>
-                <span>★ ${formatNumber(item.stars)}</span>
-                <span class="text-sky-400 font-medium group-hover:translate-x-0.5 transition-transform">&rarr;</span>
+                <span class="text-slate-700">★ ${formatNumber(item.stars)}</span>
+                <span class="text-blue-600 font-medium group-hover:translate-x-0.5 transition-transform">&rarr;</span>
               </div>
             </a>
           `).join('');
@@ -593,33 +593,33 @@ const initialItems = allEntries
           gridContainer.innerHTML = visible.map((item: any) => {
             const isMcp = item.type === 'mcp_server';
             return `
-              <a href="${item.href}" class="group flex flex-col justify-between p-5 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-slate-700 hover:bg-slate-850/90 transition-all duration-150 shadow-sm hover:shadow-md text-left">
+              <a href="${item.href}" class="group flex flex-col justify-between p-5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 hover:shadow-xs transition-all duration-150 text-left">
                 <div>
                   <div class="flex items-start justify-between gap-3 mb-3">
                     <div class="flex items-start gap-3 min-w-0">
-                      <img src="https://github.com/${item.owner}.png?size=64" alt="${item.owner}" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-950 object-cover shrink-0" loading="lazy" />
+                      <img src="https://github.com/${item.owner}.png?size=64" alt="${item.owner}" class="w-10 h-10 rounded-lg border border-slate-200 bg-slate-50 object-cover shrink-0" loading="lazy" />
                       <div class="min-w-0">
-                        <h3 class="text-base font-semibold text-slate-100 group-hover:text-sky-300 transition-colors truncate">${item.name}</h3>
-                        <p class="text-xs text-slate-400 font-mono truncate">${item.owner}</p>
+                        <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors truncate">${item.name}</h3>
+                        <p class="text-xs text-slate-500 font-mono truncate">${item.owner}</p>
                       </div>
                     </div>
-                    <span class="px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider rounded shrink-0 ${isMcp ? 'bg-cyan-950/80 text-cyan-300 border border-cyan-800/60' : 'bg-purple-950/80 text-purple-300 border border-purple-800/60'}">
+                    <span class="px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider rounded shrink-0 ${isMcp ? 'bg-blue-50 text-blue-700 border border-blue-200' : 'bg-teal-50 text-teal-700 border border-teal-200'}">
                       ${isMcp ? 'MCP server' : 'Agent skill'}
                     </span>
                   </div>
-                  <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed mb-4">${item.summary || item.tagline}</p>
+                  <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed mb-4">${item.summary || item.tagline}</p>
                 </div>
-                <div class="pt-3 border-t border-slate-800/70 flex items-center justify-between text-xs text-slate-400 font-sans">
+                <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-sans">
                   <div class="flex items-center gap-1.5 truncate">
-                    <span class="text-slate-300 font-medium truncate">${item.category}</span>
-                    <span class="text-slate-600">·</span>
-                    <span class="text-slate-300 font-mono font-medium">★ ${formatNumber(item.stars)}</span>
-                    <span class="text-slate-600">·</span>
-                    <span class="inline-flex items-center gap-1 text-slate-400">
-                      <span class="w-1.5 h-1.5 rounded-full inline-block bg-emerald-400"></span>
+                    <span class="text-slate-700 font-medium truncate">${item.category}</span>
+                    <span class="text-slate-300">·</span>
+                    <span class="text-slate-700 font-mono font-medium">★ ${formatNumber(item.stars)}</span>
+                    <span class="text-slate-300">·</span>
+                    <span class="inline-flex items-center gap-1 text-slate-600">
+                      <span class="w-1.5 h-1.5 rounded-full inline-block bg-emerald-500"></span>
                       <span>Active</span>
                     </span>
-                    ${item.official ? '<span class="text-slate-600">·</span><span class="text-sky-400 font-medium">Official</span>' : ''}
+                    ${item.official ? '<span class="text-slate-300">·</span><span class="text-blue-700 bg-blue-50 border border-blue-200 font-medium px-1.5 py-0.2 rounded text-[10px]">Official</span>' : ''}
                   </div>
                 </div>
               </a>
@@ -708,9 +708,9 @@ const initialItems = allEntries
     if (gridBtn && listBtn) {
       gridBtn.addEventListener('click', () => {
         state.view = 'grid';
-        gridBtn.classList.add('bg-slate-800', 'text-slate-200');
+        gridBtn.classList.add('bg-slate-100', 'text-slate-900');
         gridBtn.classList.remove('text-slate-400');
-        listBtn.classList.remove('bg-slate-800', 'text-slate-200');
+        listBtn.classList.remove('bg-slate-100', 'text-slate-900');
         listBtn.classList.add('text-slate-400');
         syncUrl();
         applyFilterAndRender();
@@ -718,9 +718,9 @@ const initialItems = allEntries
 
       listBtn.addEventListener('click', () => {
         state.view = 'list';
-        listBtn.classList.add('bg-slate-800', 'text-slate-200');
+        listBtn.classList.add('bg-slate-100', 'text-slate-900');
         listBtn.classList.remove('text-slate-400');
-        gridBtn.classList.remove('bg-slate-800', 'text-slate-200');
+        gridBtn.classList.remove('bg-slate-100', 'text-slate-900');
         gridBtn.classList.add('text-slate-400');
         syncUrl();
         applyFilterAndRender();

@@ -47,19 +47,19 @@ const primaryCategory = data.categories[0] || 'other';
 const categoryLabel = categoryNames[primaryCategory] || primaryCategory;
 
 const statusColors: Record<string, string> = {
-  active: 'bg-emerald-400',
-  slowing: 'bg-amber-400',
-  dormant: 'bg-slate-500',
-  archived: 'bg-slate-600',
+  active: 'bg-emerald-500',
+  slowing: 'bg-amber-500',
+  dormant: 'bg-slate-400',
+  archived: 'bg-slate-400',
 };
-const statusDotColor = statusColors[data.status || 'active'] || 'bg-emerald-400';
+const statusDotColor = statusColors[data.status || 'active'] || 'bg-emerald-500';
 const statusText = data.status ? data.status.charAt(0).toUpperCase() + data.status.slice(1) : 'Active';
 ---
 
 <a
   href={href}
   class:list={[
-    'group flex flex-col justify-between p-5 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-slate-700 hover:bg-slate-850/90 transition-all duration-150 shadow-sm hover:shadow-md text-left',
+    'group flex flex-col justify-between p-5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 hover:shadow-xs transition-all duration-150 text-left',
     className
   ]}
 >
@@ -70,14 +70,14 @@ const statusText = data.status ? data.status.charAt(0).toUpperCase() + data.stat
         <img
           src={avatarUrl}
           alt={`${owner} avatar`}
-          class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-950 object-cover shrink-0"
+          class="w-10 h-10 rounded-lg border border-slate-200 bg-slate-50 object-cover shrink-0"
           loading="lazy"
         />
         <div class="min-w-0">
-          <h3 class="text-base font-semibold text-slate-100 group-hover:text-sky-300 transition-colors truncate">
+          <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors truncate">
             {data.name}
           </h3>
-          <p class="text-xs text-slate-400 font-mono truncate">
+          <p class="text-xs text-slate-500 font-mono truncate">
             {owner}
           </p>
         </div>
@@ -87,8 +87,8 @@ const statusText = data.status ? data.status.charAt(0).toUpperCase() + data.stat
         class:list={[
           'px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider rounded shrink-0',
           isMcp
-            ? 'bg-cyan-950/80 text-cyan-300 border border-cyan-800/60'
-            : 'bg-purple-950/80 text-purple-300 border border-purple-800/60'
+            ? 'bg-blue-50 text-blue-700 border border-blue-200'
+            : 'bg-teal-50 text-teal-700 border border-teal-200'
         ]}
       >
         {isMcp ? 'MCP server' : 'Agent skill'}
@@ -96,26 +96,26 @@ const statusText = data.status ? data.status.charAt(0).toUpperCase() + data.stat
     </div>
 
     <!-- 3-line Description / Summary (Understanding first per §5.4) -->
-    <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed mb-4">
+    <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed mb-4">
       {data.summary || data.tagline || 'Open tool integration.'}
     </p>
   </div>
 
   <!-- Bottom Signals: Category · ★ stars · ● Status · Official -->
-  <div class="pt-3 border-t border-slate-800/70 flex items-center justify-between text-xs text-slate-400 font-sans">
+  <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-sans">
     <div class="flex items-center gap-1.5 truncate">
-      <span class="text-slate-300 font-medium truncate">{categoryLabel}</span>
-      <span class="text-slate-600">·</span>
-      <span class="text-slate-300 font-mono font-medium">★ {formatStars(data.signals.stars)}</span>
-      <span class="text-slate-600">·</span>
-      <span class="inline-flex items-center gap-1 text-slate-400">
+      <span class="text-slate-700 font-medium truncate">{categoryLabel}</span>
+      <span class="text-slate-300">·</span>
+      <span class="text-slate-800 font-mono font-medium">★ {formatStars(data.signals.stars)}</span>
+      <span class="text-slate-300">·</span>
+      <span class="inline-flex items-center gap-1 text-slate-600">
         <span class:list={['w-1.5 h-1.5 rounded-full inline-block', statusDotColor]}></span>
         <span>{statusText}</span>
       </span>
       {data.source.official_vendor && (
         <>
-          <span class="text-slate-600">·</span>
-          <span class="text-sky-400 font-medium">Official</span>
+          <span class="text-slate-300">·</span>
+          <span class="text-blue-700 font-medium">Official</span>
         </>
       )}
     </div>

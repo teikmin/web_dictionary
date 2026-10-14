@@ -18,10 +18,10 @@ const {
 } = Astro.props;
 ---
 
-<div class:list={['flex flex-wrap items-center gap-3 text-xs text-slate-400', className]}>
+<div class:list={['flex flex-wrap items-center gap-3 text-xs text-slate-600', className]}>
   {officialVendor && (
-    <span class="inline-flex items-center gap-1 text-sky-400 font-semibold bg-sky-950/60 border border-sky-800/60 px-2 py-0.5 rounded">
-      <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+    <span class="inline-flex items-center gap-1 text-sky-800 font-semibold bg-sky-50 border border-sky-200 px-2 py-0.5 rounded-md">
+      <svg class="w-3.5 h-3.5 text-sky-600" viewBox="0 0 20 20" fill="currentColor">
         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
       </svg>
       Official Vendor
@@ -29,8 +29,8 @@ const {
   )}
 
   {stars !== undefined && (
-    <span class="inline-flex items-center gap-1 font-mono text-slate-300" title={`${stars.toLocaleString()} GitHub stars`}>
-      <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
+    <span class="inline-flex items-center gap-1 font-mono text-slate-800 font-medium" title={`${stars.toLocaleString()} GitHub stars`}>
+      <svg class="w-3.5 h-3.5 text-amber-500" viewBox="0 0 20 20" fill="currentColor">
         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
       </svg>
       {formatStars(stars)}
@@ -38,8 +38,8 @@ const {
   )}
 
   {lastCommit && (
-    <span class="inline-flex items-center gap-1 text-slate-400" title={`Last commit: ${lastCommit}`}>
-      <svg class="w-3.5 h-3.5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <span class="inline-flex items-center gap-1 text-slate-500" title={`Last commit: ${lastCommit}`}>
+      <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
       {formatTimeAgo(lastCommit)}
@@ -47,7 +47,7 @@ const {
   )}
 
   {percentile !== undefined && percentile > 0 && (
-    <span class="inline-flex items-center gap-1 text-purple-400 bg-purple-950/40 border border-purple-800/40 px-1.5 py-0.5 rounded text-[11px] font-mono" title={`Top ${100 - percentile}% quality rank among all evaluated repos`}>
+    <span class="inline-flex items-center gap-1 text-slate-700 bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded text-[11px] font-mono" title={`Top ${100 - percentile}% quality rank among all evaluated repos`}>
       Top {Math.max(1, 100 - percentile)}%
     </span>
   )}

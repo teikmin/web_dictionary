@@ -11,6 +11,7 @@ export const ClientSchema = z.object({
   supportsMcp: z.boolean().default(true),
   supportsSkills: z.boolean().default(true),
   icon: z.string().optional(),
+  checked_on: z.string().optional(),
 });
 
 export type Client = z.infer<typeof ClientSchema>;

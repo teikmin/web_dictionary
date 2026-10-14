@@ -11,23 +11,23 @@ const { status = 'active', class: className = '' } = Astro.props;
 const styles: Record<EntryStatus, { label: string; bg: string; dot: string }> = {
   active: {
     label: 'Active',
-    bg: 'bg-emerald-950/40 text-emerald-300 border-emerald-800/50',
-    dot: 'bg-emerald-400',
+    bg: 'bg-emerald-50 text-emerald-800 border-emerald-200',
+    dot: 'bg-emerald-500',
   },
   slowing: {
     label: 'Slowing',
-    bg: 'bg-amber-950/40 text-amber-300 border-amber-800/50',
-    dot: 'bg-amber-400',
+    bg: 'bg-amber-50 text-amber-800 border-amber-200',
+    dot: 'bg-amber-500',
   },
   dormant: {
     label: 'Dormant',
-    bg: 'bg-slate-800/60 text-slate-400 border-slate-700',
-    dot: 'bg-slate-500',
+    bg: 'bg-slate-100 text-slate-700 border-slate-200',
+    dot: 'bg-slate-400',
   },
   archived: {
     label: 'Archived',
-    bg: 'bg-red-950/40 text-red-300 border-red-800/50',
-    dot: 'bg-red-400',
+    bg: 'bg-slate-100 text-slate-600 border-slate-300',
+    dot: 'bg-slate-400',
   },
 };
 

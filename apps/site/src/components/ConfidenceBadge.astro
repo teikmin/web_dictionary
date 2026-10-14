@@ -11,37 +11,32 @@ const { confidence = 'manifest', class: className = '' } = Astro.props;
 const config = {
   registry: {
     label: 'From the official registry',
-    icon: '✓',
-    bg: 'bg-emerald-950/70 border-emerald-500/40 text-emerald-300',
-    dot: 'bg-emerald-400',
+    bg: 'bg-emerald-50 border-emerald-200 text-emerald-800',
+    dot: 'bg-emerald-500',
     title: 'Extracted directly from official MCP registry manifest',
   },
   manifest: {
     label: 'From the package file',
-    icon: '●',
-    bg: 'bg-blue-950/70 border-blue-500/40 text-blue-300',
-    dot: 'bg-blue-400',
+    bg: 'bg-blue-50 border-blue-200 text-blue-800',
+    dot: 'bg-blue-500',
     title: 'Parsed directly from repository package manifest (package.json, pyproject.toml)',
   },
   readme: {
     label: 'From the README. Check before use',
-    icon: '▲',
-    bg: 'bg-amber-950/70 border-amber-500/40 text-amber-300',
-    dot: 'bg-amber-400',
+    bg: 'bg-amber-50 border-amber-200 text-amber-800',
+    dot: 'bg-amber-500',
     title: 'Heuristically extracted from README code blocks; verify configuration before use',
   },
   none: {
     label: 'No install command found. See the repository',
-    icon: '○',
-    bg: 'bg-slate-800/80 border-slate-700 text-slate-300',
+    bg: 'bg-slate-100 border-slate-200 text-slate-700',
     dot: 'bg-slate-400',
     title: 'No install command found. Refer to upstream repository documentation.',
   },
 }[confidence] || {
   label: 'Unknown',
-  icon: '?',
-  bg: 'bg-slate-800 border-slate-700 text-slate-400',
-  dot: 'bg-slate-500',
+  bg: 'bg-slate-100 border-slate-200 text-slate-600',
+  dot: 'bg-slate-400',
   title: 'Unknown configuration confidence',
 };
 ---

@@ -3,31 +3,150 @@
 @tailwind utilities;
 
 :root {
-  --color-bg: #090d16;
-  --color-surface: #111827;
-  --color-border: #1f2937;
-  --color-text: #f3f4f6;
-  --color-muted: #9ca3af;
+  --color-bg: #f8fafc; /* Very pale blue-grey (cold tone) */
+  --color-surface: #ffffff; /* Pure white card/reading surface */
+  --color-border: #e2e8f0; /* Thin pale blue-grey border */
+  --color-text: #0f172a; /* Deep slate for headings & primary text */
+  --color-text-secondary: #334155; /* Medium slate */
+  --color-muted: #64748b; /* Soft slate */
+  --color-primary: #2563eb; /* Calm mid-blue */
+  --color-primary-hover: #1d4ed8;
+  --color-accent-bg: #f0f7ff; /* Light sky blue */
+  --color-accent-border: #bae6fd;
+  --color-accent-text: #0369a1;
 }
 
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-/* Pagefind search styling */
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Pagefind search styling for light theme */
 .pagefind-ui {
   --pagefind-ui-scale: 0.9;
-  --pagefind-ui-primary: #3b82f6;
-  --pagefind-ui-text: #f3f4f6;
-  --pagefind-ui-background: #111827;
-  --pagefind-ui-border: #374151;
-  --pagefind-ui-tag: #1f2937;
+  --pagefind-ui-primary: #2563eb;
+  --pagefind-ui-text: #0f172a;
+  --pagefind-ui-background: #ffffff;
+  --pagefind-ui-border: #cbd5e1;
+  --pagefind-ui-tag: #f1f5f9;
   --pagefind-ui-border-width: 1px;
   --pagefind-ui-border-radius: 0.5rem;
   --pagefind-ui-image-border-radius: 0.375rem;
   --pagefind-ui-image-box-ratio: 3 / 2;
   --pagefind-ui-font: inherit;
+}
+
+/* Light prose reading typography for Markdown body */
+.prose {
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: #0f172a;
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  scroll-margin-top: 5rem;
+}
+
+.prose h1 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+}
+
+.prose h2 {
+  font-size: 1.35rem;
+  line-height: 1.35;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.3em;
+}
+
+.prose h3 {
+  font-size: 1.15rem;
+}
+
+.prose p, .prose ul, .prose ol {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+.prose code {
+  color: #0f172a;
+  background-color: #f1f5f9;
+  padding: 0.15em 0.35em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  border: 1px solid #e2e8f0;
+}
+
+.prose pre {
+  background-color: #f8fafc;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.prose pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
+.prose a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: #1d4ed8;
+}
+
+.prose blockquote {
+  border-left: 3px solid #cbd5e1;
+  padding-left: 1rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 0.875rem;
+}
+
+.prose th, .prose td {
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.prose th {
+  background-color: #f8fafc;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 2em 0;
 }
