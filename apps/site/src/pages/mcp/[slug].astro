@@ -2,9 +2,9 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConfigTabs from '../../components/ConfigTabs.astro';
-import ConfidenceBadge from '../../components/ConfidenceBadge.astro';
 import StatusBadge from '../../components/StatusBadge.astro';
 import SignalStats from '../../components/SignalStats.astro';
+import { formatStars } from '../../lib/entries';
 
 export async function getStaticPaths() {
   const mcpEntries = await getCollection('mcp');
@@ -16,153 +16,366 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const data = entry.data;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+
+// Headings for table of contents
+const tocHeadings = headings ? headings.filter((h) => h.depth >= 2 && h.depth <= 3) : [];
+
+// Extract owner for avatar
+const [owner] = data.source.repo.split('/');
+const avatarUrl = `https://github.com/${owner}.png?size=80`;
+
+// Find related tools (Task C6)
+const allMcp = await getCollection('mcp');
+const primaryCategory = data.categories[0] || 'other';
+const relatedTools = allMcp
+  .filter((e) => e.data.slug !== data.slug && e.data.categories.includes(primaryCategory))
+  .sort((a, b) => (b.data.signals?.stars || 0) - (a.data.signals?.stars || 0))
+  .slice(0, 4);
+
+// Format why listed in plain words (Task C5)
+function getWhyListedText(reason: string, percentile: number): string {
+  if (reason === 'official_vendor') {
+    return 'Official vendor repository verified from primary provider';
+  }
+  if (reason === 'pinned') {
+    return 'Curator highlighted entry';
+  }
+  const topPct = Math.max(1, 100 - (percentile || 0));
+  return `Ranked in the top ${topPct}% by community adoption, code health, and recent maintenance`;
+}
+
+// Runtime/Environment badge
+const primaryRuntime =
+  data.prerequisites && data.prerequisites.length > 0
+    ? data.prerequisites[0]
+    : data.launch.transport === 'http'
+    ? 'HTTP Remote'
+    : 'Node.js / stdio';
 ---
 
 <BaseLayout
   title={`${data.name} — MCP Server for Claude Code, Codex, Antigravity`}
-  description={data.tagline || `Launch configuration for ${data.name} MCP server.`}
+  description={data.summary || data.tagline || `Launch configuration and documentation for ${data.name} MCP server.`}
 >
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
     <!-- Breadcrumbs -->
     <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6">
       <a href="/" class="hover:text-slate-300">Home</a>
       <span>/</span>
-      <a href="/#catalog" class="hover:text-slate-300">MCP Servers</a>
+      <a href="/catalog?type=mcp_server" class="hover:text-slate-300">MCP Servers</a>
       <span>/</span>
       <span class="text-slate-300 font-medium">{data.name}</span>
     </nav>
 
-    <!-- Header -->
-    <header class="border-b border-slate-800 pb-8">
-      <div class="flex flex-wrap items-center gap-3 mb-3">
-        <span class="px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider rounded bg-cyan-950/80 text-cyan-300 border border-cyan-800/60">
-          MCP Server
-        </span>
-        <ConfidenceBadge confidence={data.launch.confidence} />
-        <StatusBadge status={data.status} />
-      </div>
+    <!-- 1. Header (Avatar, name, owner, description, type tag, View on GitHub, Jump to install) -->
+    <header class="border-b border-slate-800 pb-8 mb-8">
+      <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+        <div class="flex items-start gap-4">
+          <img
+            src={avatarUrl}
+            alt={`${owner} avatar`}
+            class="w-14 h-14 rounded-xl border border-slate-700 bg-slate-900 object-cover shrink-0 shadow-sm"
+            loading="lazy"
+          />
+          <div>
+            <div class="flex flex-wrap items-center gap-2.5 mb-1.5">
+              <span class="px-2 py-0.5 text-xs font-semibold uppercase tracking-wider rounded bg-cyan-950/80 text-cyan-300 border border-cyan-800/60">
+                MCP Server
+              </span>
+              <StatusBadge status={data.status} />
+              {data.source.official_vendor && (
+                <span class="px-2 py-0.5 text-xs font-semibold rounded bg-sky-950 text-sky-300 border border-sky-800/60 inline-flex items-center gap-1">
+                  ✓ Official
+                </span>
+              )}
+            </div>
 
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            {data.name}
-          </h1>
-          <p class="text-base text-slate-400 mt-2 max-w-2xl">
-            {data.tagline || 'No tagline provided.'}
-          </p>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              {data.name}
+            </h1>
+
+            <p class="text-xs font-mono text-slate-400 mt-1">
+              by <a href={`https://github.com/${owner}`} target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:underline">{owner}</a>
+              <span class="text-slate-600">/</span>
+              <span class="text-slate-300">{data.source.repo.split('/')[1]}</span>
+            </p>
+
+            <p class="text-sm text-slate-300 mt-3 max-w-3xl leading-relaxed">
+              {data.summary || data.tagline || 'Open MCP server integration.'}
+            </p>
+          </div>
         </div>
 
-        <a
-          href={`https://github.com/${data.source.repo}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 hover:border-slate-600 hover:bg-slate-800 text-sm font-medium text-slate-200 transition-colors shrink-0"
-        >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-          </svg>
-          <span>View on GitHub</span>
-        </a>
+        <!-- Action Links -->
+        <div class="flex sm:flex-col items-stretch gap-2.5 shrink-0">
+          <a
+            href={`https://github.com/${data.source.repo}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 hover:border-slate-600 hover:bg-slate-800 text-xs font-medium text-slate-200 transition-colors"
+          >
+            <svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            <span>View on GitHub</span>
+          </a>
+
+          <a
+            href="#install"
+            class="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-sky-950/70 border border-sky-800/80 hover:bg-sky-900/80 text-xs font-semibold text-sky-300 transition-colors"
+          >
+            <span>Jump to install</span>
+            <span>↓</span>
+          </a>
+        </div>
       </div>
 
-      <div class="mt-6 flex flex-wrap items-center gap-4 text-xs text-slate-400">
+      <!-- 2. At-a-glance strip (stars, last commit, status, license, runtime, official badge) -->
+      <div class="mt-6 flex flex-wrap items-center gap-4 text-xs text-slate-400 pt-4 border-t border-slate-800/60">
         <SignalStats
           stars={data.signals.stars}
           lastCommit={data.signals.last_commit}
-          percentile={data.quality_percentile}
           officialVendor={data.source.official_vendor}
         />
         {data.source.license && (
-          <span class="inline-flex items-center gap-1 font-mono text-slate-300">
-            <span>License:</span>
+          <span class="inline-flex items-center gap-1.5 font-mono text-slate-300">
+            <span class="text-slate-500">License:</span>
             <span class="text-white font-medium">{data.source.license}</span>
           </span>
         )}
+        <span class="inline-flex items-center gap-1.5 font-mono text-slate-300">
+          <span class="text-slate-500">Runtime:</span>
+          <span class="text-slate-200">{primaryRuntime}</span>
+        </span>
       </div>
     </header>
 
-    <!-- 1-Click Launch Configuration Tabs -->
-    <section class="py-8">
-      <h2 class="text-xl font-bold text-white mb-2">1-Click Launch Configuration</h2>
-      <p class="text-xs text-slate-400 mb-4">
-        Pre-formatted launch commands and snippet files ready to copy into your agent's config.
-      </p>
-
-      <ConfigTabs
-        type="mcp_server"
-        name={data.name}
-        launchSpec={data.launch}
-      />
-    </section>
-
-    <!-- Environment Variables (if any) -->
-    {data.launch.env_vars && data.launch.env_vars.length > 0 && (
-      <section class="py-6 border-t border-slate-800">
-        <h3 class="text-lg font-semibold text-white mb-3">Required Environment Variables</h3>
-        <div class="overflow-x-auto rounded-lg border border-slate-800">
-          <table class="w-full text-left text-xs text-slate-300 font-mono">
-            <thead class="bg-slate-900 border-b border-slate-800 text-slate-400 uppercase text-[10px]">
-              <tr>
-                <th class="p-3">Variable</th>
-                <th class="p-3">Status</th>
-                <th class="p-3">Description</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-800/60 bg-slate-950">
-              {data.launch.env_vars.map((v) => (
-                <tr>
-                  <td class="p-3 font-semibold text-sky-400">{v.name}</td>
-                  <td class="p-3">
-                    <span class:list={[
-                      'px-2 py-0.5 rounded text-[10px]',
-                      v.required ? 'bg-amber-950 text-amber-300 border border-amber-800/60' : 'bg-slate-800 text-slate-400'
-                    ]}>
-                      {v.required ? 'Required' : 'Optional'}
-                    </span>
-                  </td>
-                  <td class="p-3 text-slate-400 font-sans">{v.description || 'Configured via environment variable.'}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+    <!-- 3. Language Note (Task C9) -->
+    {data.language && data.language !== 'en' && (
+      <div class="mb-8 p-4 rounded-xl bg-amber-950/40 border border-amber-800/60 text-amber-200 text-xs flex items-center gap-3">
+        <span class="text-lg">🌐</span>
+        <p>
+          <strong>Notice:</strong> This repository's primary documentation is written in {data.language === 'zh' ? 'Chinese' : data.language}. If you are browsing in English, your browser's automatic translation may be helpful.
+        </p>
+      </div>
     )}
 
-    <!-- Categories & Metadata -->
-    <section class="py-6 border-t border-slate-800">
-      <h3 class="text-lg font-semibold text-white mb-3">Categories &amp; Provenance</h3>
-      <div class="flex flex-wrap gap-2 mb-6">
-        {data.categories.map((cat: string) => (
-          <a
-            href={`/category/${cat}`}
-            class="px-3 py-1 rounded-md text-xs bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition-colors"
-          >
-            {cat}
-          </a>
-        ))}
+    <!-- Main Content Area: 3. About (README) + Sticky TOC on Wide Screens -->
+    <div class="flex flex-col lg:flex-row gap-10">
+      <!-- Left / Main Reading Column -->
+      <div class="min-w-0 flex-1 max-w-4xl">
+        <section id="about" class="mb-12">
+          <div class="flex items-center justify-between pb-3 mb-6 border-b border-slate-800">
+            <h2 class="text-xl font-bold text-white tracking-tight">About this MCP Server</h2>
+            <a
+              href={`https://github.com/${data.source.repo}#readme`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs text-sky-400 hover:underline flex items-center gap-1"
+            >
+              <span>GitHub README</span>
+              <span>↗</span>
+            </a>
+          </div>
+
+          <article class="prose prose-invert prose-base max-w-none text-slate-300 leading-relaxed overflow-hidden">
+            <Content />
+          </article>
+
+          <!-- Upstream source attribution & license (Task C3, §6.1) -->
+          <div class="mt-8 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-3">
+            <span>
+              Source: <a href={`https://github.com/${data.source.repo}`} target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:underline font-medium">{data.source.repo}</a>
+              {data.source.license && ` · License: ${data.source.license}`}
+            </span>
+            <a
+              href={`https://github.com/${data.source.repo}#readme`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sky-400 hover:underline inline-flex items-center gap-1"
+            >
+              <span>Read the full README on GitHub</span>
+              <span>→</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- 4. Details section (Task C5) -->
+        <section id="details" class="py-8 border-t border-slate-800">
+          <h2 class="text-xl font-bold text-white mb-4">Details &amp; Selection Criteria</h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800">
+              <span class="text-xs text-slate-500 uppercase font-semibold tracking-wider block mb-1">Why it's listed</span>
+              <p class="text-sm font-medium text-slate-200">
+                {getWhyListedText(data.selection_reason, data.quality_percentile)}
+              </p>
+              <a href="/about/criteria" class="text-xs text-sky-400 hover:underline inline-block mt-2">
+                Learn how entries are selected →
+              </a>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800">
+              <span class="text-xs text-slate-500 uppercase font-semibold tracking-wider block mb-1">Prerequisites &amp; Keys</span>
+              <p class="text-sm text-slate-200">
+                {data.needs_keys ? 'Requires API keys or environment credentials' : 'No API keys required'}
+              </p>
+              {data.prerequisites && data.prerequisites.length > 0 && (
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  {data.prerequisites.map((p: string) => (
+                    <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-[11px] font-mono">
+                      {p}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="text-xs text-slate-400 mr-1">Categories:</span>
+            {data.categories.map((cat: string) => (
+              <a
+                href={`/category/${cat}`}
+                class="px-3 py-1 rounded-md text-xs bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition-colors"
+              >
+                {cat}
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <!-- 5. Related Tools (Task C6) -->
+        {relatedTools.length > 0 && (
+          <section id="related" class="py-8 border-t border-slate-800">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="text-xl font-bold text-white">Related MCP Servers</h2>
+              <a href={`/category/${primaryCategory}`} class="text-xs text-sky-400 hover:underline">
+                Explore {primaryCategory} →
+              </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {relatedTools.map((rel) => (
+                <a
+                  href={`/mcp/${rel.data.slug}`}
+                  class="block p-4 rounded-xl border border-slate-800 bg-slate-900/40 hover:border-slate-700 hover:bg-slate-900 transition-all group"
+                >
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="font-bold text-white text-sm group-hover:text-sky-300 transition-colors truncate">
+                      {rel.data.name}
+                    </span>
+                    <span class="text-xs font-mono text-slate-400 shrink-0">
+                      ★ {formatStars(rel.data.signals.stars)}
+                    </span>
+                  </div>
+                  <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                    {rel.data.summary || rel.data.tagline || 'Open MCP server.'}
+                  </p>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- 6. Install section (LAST per §5.5, Task C1, C7) -->
+        <section id="install" class="pt-10 pb-16 border-t border-slate-800">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h2 class="text-2xl font-extrabold text-white tracking-tight">Install &amp; Setup</h2>
+            <span class="text-xs text-slate-400 font-mono">1-Click Agent Integration</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-6">
+            Connect this server to Claude Code, OpenAI Codex, or Google Antigravity. Select your client below:
+          </p>
+
+          <!-- Prerequisites & keys help -->
+          {data.launch.env_vars && data.launch.env_vars.length > 0 && (
+            <div class="mb-6 rounded-xl border border-slate-800 bg-slate-950/70 p-4">
+              <h3 class="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-2">
+                Required Environment Keys
+              </h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs font-mono">
+                  <tbody class="divide-y divide-slate-800/60">
+                    {data.launch.env_vars.map((v) => (
+                      <tr>
+                        <td class="py-2 pr-3 font-semibold text-sky-300">{v.name}</td>
+                        <td class="py-2 pr-3">
+                          <span class:list={[
+                            'px-1.5 py-0.5 rounded text-[10px]',
+                            v.required ? 'bg-amber-950 text-amber-300 border border-amber-800/60' : 'bg-slate-800 text-slate-400'
+                          ]}>
+                            {v.required ? 'Required' : 'Optional'}
+                          </span>
+                        </td>
+                        <td class="py-2 text-slate-400 font-sans text-xs">
+                          {v.description || 'API key or authentication token.'}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
+          <ConfigTabs
+            type="mcp_server"
+            name={data.name}
+            launchSpec={data.launch}
+            repo={data.source.repo}
+            branch={data.readme_source?.branch || 'main'}
+          />
+        </section>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 p-4 rounded-lg bg-slate-900/40 border border-slate-800/80 text-xs">
-        <div>
-          <span class="text-slate-500 block">Selection Reason:</span>
-          <span class="text-slate-300 font-mono font-medium">{data.selection_reason}</span>
-        </div>
-        <div>
-          <span class="text-slate-500 block">First Discovered:</span>
-          <span class="text-slate-300 font-mono">{new Date(data.first_seen).toLocaleDateString()}</span>
-        </div>
-        <div>
-          <span class="text-slate-500 block">Catalog Last Updated:</span>
-          <span class="text-slate-300 font-mono">{new Date(data.last_updated).toLocaleDateString()}</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Details / Body -->
-    <article class="prose prose-invert prose-sm max-w-none py-8 border-t border-slate-800 text-slate-300">
-      <Content />
-    </article>
+      <!-- Right Column: Sticky Table of Contents on Wide Screens (Task C2) -->
+      {tocHeadings.length > 0 && (
+        <aside class="hidden lg:block w-64 shrink-0">
+          <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-xs">
+            <div class="font-semibold text-slate-200 uppercase tracking-wider text-[11px] mb-3">
+              On this page
+            </div>
+            <nav class="space-y-1.5" aria-label="Table of contents">
+              <a href="#about" class="block text-slate-300 hover:text-sky-300 transition-colors font-medium">
+                About
+              </a>
+              {tocHeadings.map((h) => (
+                <a
+                  href={`#${h.slug}`}
+                  class:list={[
+                    'block text-slate-400 hover:text-sky-300 transition-colors line-clamp-1',
+                    h.depth === 3 && 'pl-2 text-slate-500 hover:text-slate-300',
+                  ]}
+                >
+                  {h.text}
+                </a>
+              ))}
+              <a
+                href="#details"
+                class="block pt-2 text-slate-400 hover:text-sky-300 transition-colors font-medium border-t border-slate-800/80"
+              >
+                Details &amp; Selection
+              </a>
+              {relatedTools.length > 0 && (
+                <a
+                  href="#related"
+                  class="block text-slate-400 hover:text-sky-300 transition-colors font-medium"
+                >
+                  Related Tools
+                </a>
+              )}
+              <a
+                href="#install"
+                class="block pt-2 text-sky-400 hover:text-sky-300 transition-colors font-semibold border-t border-slate-800/80"
+              >
+                Jump to install ↓
+              </a>
+            </nav>
+          </div>
+        </aside>
+      )}
+    </div>
   </div>
 </BaseLayout>

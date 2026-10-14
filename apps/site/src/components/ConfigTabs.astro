@@ -8,9 +8,20 @@ interface Props {
   name: string;
   launchSpec?: LaunchSpec;
   skillSpec?: SkillSpec;
+  repo?: string;
+  branch?: string;
+  subpath?: string;
 }
 
-const { type, name, launchSpec, skillSpec } = Astro.props;
+const {
+  type,
+  name,
+  launchSpec,
+  skillSpec,
+  repo = '',
+  branch = 'main',
+  subpath = '',
+} = Astro.props;
 
 const clients = [
   { id: 'claude-code', name: 'Claude Code', icon: '⚡' },
@@ -24,6 +35,21 @@ const configs =
     : type === 'agent_skill' && skillSpec
     ? renderSkillForAllClients(name, skillSpec)
     : null;
+
+// Compute a real skill install command
+function getSkillInstallCommand(clientId: string): string {
+  if (!repo) return '';
+  const cleanSub = subpath && subpath !== '.' ? subpath.replace(/\/$/, '') : '';
+  const skillFileUrl = `https://raw.githubusercontent.com/${repo}/${branch}/${cleanSub ? cleanSub + '/' : ''}SKILL.md`;
+
+  if (clientId === 'claude-code') {
+    return `mkdir -p .claude/skills/${name} && curl -sSL "${skillFileUrl}" > .claude/skills/${name}/SKILL.md`;
+  } else if (clientId === 'codex') {
+    return `mkdir -p .codex/skills/${name} && curl -sSL "${skillFileUrl}" > .codex/skills/${name}/SKILL.md`;
+  } else {
+    return `mkdir -p ~/.gemini/config/skills/${name} && curl -sSL "${skillFileUrl}" > ~/.gemini/config/skills/${name}/SKILL.md`;
+  }
+}
 ---
 
 <div class="config-tabs-container my-6 rounded-xl border border-slate-800 bg-slate-900/90 overflow-hidden shadow-lg">
@@ -40,9 +66,9 @@ const configs =
           tabindex={idx === 0 ? 0 : -1}
           data-client={client.id}
           class:list={[
-            'tab-btn flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-all -mb-px focus:outline-none focus:ring-1 focus:ring-blue-500 rounded-t',
+            'tab-btn flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-all -mb-px focus:outline-none focus:ring-1 focus:ring-blue-500 rounded-t cursor-pointer',
             idx === 0
-              ? 'border-blue-500 text-blue-400 bg-slate-900/80'
+              ? 'border-blue-500 text-blue-400 bg-slate-900/80 active-tab'
               : 'border-transparent text-slate-400 hover:text-slate-200 hover:border-slate-700'
           ]}
         >
@@ -52,19 +78,21 @@ const configs =
       ))}
     </div>
 
-    <span class="text-[11px] font-mono text-slate-500 hidden sm:inline">1-Click Launch Config</span>
+    <span class="text-[11px] font-mono text-slate-500 hidden sm:inline">Install Snippet</span>
   </div>
 
   <!-- Tab Panels -->
   <div class="p-5">
     {clients.map((client, idx) => {
       const config = configs ? configs[client.id] : null;
+      const skillCmd = getSkillInstallCommand(client.id);
+
       return (
         <div
           role="tabpanel"
           id={`panel-${client.id}`}
           aria-labelledby={`tab-${client.id}`}
-          class:list={['tab-panel space-y-4', idx !== 0 && 'hidden']}
+          class:list={['tab-panel space-y-5', idx !== 0 && 'hidden']}
         >
           {type === 'mcp_server' ? (
             <>
@@ -80,7 +108,7 @@ const configs =
                   {config?.mcpCommand && (
                     <div>
                       <div class="flex items-center justify-between mb-1.5">
-                        <span class="text-xs font-semibold text-slate-300">Quick Add (CLI)</span>
+                        <span class="text-xs font-semibold text-slate-300">Option 1: Quick Add (CLI Command)</span>
                         <CopyButton text={config.mcpCommand} label="Copy Command" />
                       </div>
                       <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-emerald-300">
@@ -93,7 +121,7 @@ const configs =
                     <div>
                       <div class="flex items-center justify-between mb-1.5">
                         <span class="text-xs font-semibold text-slate-300">
-                          Configuration File ({client.id === 'codex' ? 'config.toml' : client.id === 'claude-code' ? '.mcp.json' : 'mcp_config.json'})
+                          {config?.mcpCommand ? 'Option 2: Config File' : 'Configuration Snippet'}
                         </span>
                         <CopyButton text={config.mcpSnippet} label="Copy Snippet" />
                       </div>
@@ -102,18 +130,58 @@ const configs =
                       </pre>
                     </div>
                   )}
+
+                  <!-- Where the snippet goes & how to check -->
+                  <div class="rounded-lg bg-slate-950/50 border border-slate-800/60 p-3.5 text-xs text-slate-400 space-y-1.5">
+                    <div class="flex items-start gap-2">
+                      <span class="text-slate-300 font-semibold shrink-0">📍 Where it goes:</span>
+                      {client.id === 'claude-code' && (
+                        <span>Run in terminal from your workspace root, or paste JSON into <code class="text-sky-300">.mcp.json</code> (workspace) or <code class="text-sky-300">~/.claude.json</code> (global).</span>
+                      )}
+                      {client.id === 'codex' && (
+                        <span>Paste into <code class="text-sky-300">.codex/config.json</code> in your project, or global config in <code class="text-sky-300">~/.codex/config.json</code>.</span>
+                      )}
+                      {client.id === 'antigravity' && (
+                        <span>Add server definition into <code class="text-sky-300">~/.gemini/antigravity/mcp_servers.json</code> or project <code class="text-sky-300">.gemini/mcp_servers.json</code>.</span>
+                      )}
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-slate-300 font-semibold shrink-0">✅ Verify:</span>
+                      {client.id === 'claude-code' && (
+                        <span>Run <code class="text-emerald-400">claude mcp list</code> to confirm the server is connected and ready.</span>
+                      )}
+                      {client.id === 'codex' && (
+                        <span>Restart the Codex CLI / IDE extension; active tools will appear in the prompt suggestions.</span>
+                      )}
+                      {client.id === 'antigravity' && (
+                        <span>Restart session or check agent tool inspector to confirm tool registration.</span>
+                      )}
+                    </div>
+                  </div>
                 </>
               )}
             </>
           ) : (
             <>
+              {skillCmd && (
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-xs font-semibold text-slate-300">1. Download Skill File (CLI)</span>
+                    <CopyButton text={skillCmd} label="Copy Command" />
+                  </div>
+                  <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-purple-300">
+                    <code>{skillCmd}</code>
+                  </pre>
+                </div>
+              )}
+
               {config?.skillInstallPath && (
                 <div>
                   <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-xs font-semibold text-slate-300">Installation Path</span>
+                    <span class="text-xs font-semibold text-slate-300">Destination Directory</span>
                     <CopyButton text={config.skillInstallPath} label="Copy Path" />
                   </div>
-                  <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-purple-300">
+                  <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">
                     <code>{config.skillInstallPath}</code>
                   </pre>
                 </div>
@@ -122,14 +190,34 @@ const configs =
               {config?.skillInstructions && (
                 <div>
                   <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-xs font-semibold text-slate-300">Instructions / Prompt Template</span>
+                    <span class="text-xs font-semibold text-slate-300">Prompt / System Instructions</span>
                     <CopyButton text={config.skillInstructions} label="Copy Instructions" />
                   </div>
-                  <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300 max-h-60">
+                  <pre class="overflow-x-auto p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-400 max-h-48">
                     <code>{config.skillInstructions}</code>
                   </pre>
                 </div>
               )}
+
+              <!-- Where the skill goes & how to check -->
+              <div class="rounded-lg bg-slate-950/50 border border-slate-800/60 p-3.5 text-xs text-slate-400 space-y-1.5">
+                <div class="flex items-start gap-2">
+                  <span class="text-slate-300 font-semibold shrink-0">📍 Where it goes:</span>
+                  {client.id === 'claude-code' && (
+                    <span>Save to <code class="text-purple-300">.claude/skills/{name}/SKILL.md</code> in your workspace.</span>
+                  )}
+                  {client.id === 'codex' && (
+                    <span>Save to <code class="text-purple-300">.codex/skills/{name}/SKILL.md</code> in your project repository.</span>
+                  )}
+                  {client.id === 'antigravity' && (
+                    <span>Save to <code class="text-purple-300">~/.gemini/config/skills/{name}/SKILL.md</code> (user) or <code class="text-purple-300">.gemini/skills/{name}/SKILL.md</code>.</span>
+                  )}
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-slate-300 font-semibold shrink-0">✅ Verify:</span>
+                  <span>Invoke your agent and ask it to execute or inspect the skill: <code class="text-emerald-400">{name}</code>.</span>
+                </div>
+              </div>
             </>
           )}
         </div>
@@ -139,26 +227,30 @@ const configs =
 </div>
 
 <script>
+  const PREFERRED_CLIENT_KEY = 'preferred-agent-client';
+
   function setupConfigTabs() {
     document.querySelectorAll('.config-tabs-container').forEach((container) => {
       const tabs = Array.from(container.querySelectorAll<HTMLButtonElement>('.tab-btn'));
       const panels = Array.from(container.querySelectorAll<HTMLElement>('.tab-panel'));
 
-      function switchTab(targetTab: HTMLButtonElement) {
+      function switchTab(targetTab: HTMLButtonElement, savePreference = true) {
+        const targetClient = targetTab.getAttribute('data-client');
+        if (!targetClient) return;
+
         tabs.forEach((tab) => {
           const isSelected = tab === targetTab;
           tab.setAttribute('aria-selected', isSelected ? 'true' : 'false');
           tab.setAttribute('tabindex', isSelected ? '0' : '-1');
           if (isSelected) {
-            tab.classList.add('border-blue-500', 'text-blue-400', 'bg-slate-900/80');
+            tab.classList.add('border-blue-500', 'text-blue-400', 'bg-slate-900/80', 'active-tab');
             tab.classList.remove('border-transparent', 'text-slate-400');
           } else {
-            tab.classList.remove('border-blue-500', 'text-blue-400', 'bg-slate-900/80');
+            tab.classList.remove('border-blue-500', 'text-blue-400', 'bg-slate-900/80', 'active-tab');
             tab.classList.add('border-transparent', 'text-slate-400');
           }
         });
 
-        const targetClient = targetTab.getAttribute('data-client');
         panels.forEach((panel) => {
           if (panel.id === `panel-${targetClient}`) {
             panel.classList.remove('hidden');
@@ -166,10 +258,18 @@ const configs =
             panel.classList.add('hidden');
           }
         });
+
+        if (savePreference) {
+          try {
+            localStorage.setItem(PREFERRED_CLIENT_KEY, targetClient);
+          } catch {
+            // ignore localStorage quota/privacy error
+          }
+        }
       }
 
       tabs.forEach((tab, index) => {
-        tab.addEventListener('click', () => switchTab(tab));
+        tab.addEventListener('click', () => switchTab(tab, true));
 
         tab.addEventListener('keydown', (e) => {
           let targetIndex: number | null = null;
@@ -187,10 +287,23 @@ const configs =
             e.preventDefault();
             const nextTab = tabs[targetIndex];
             nextTab.focus();
-            switchTab(nextTab);
+            switchTab(nextTab, true);
           }
         });
       });
+
+      // Restore saved client preference (Task C8)
+      try {
+        const saved = localStorage.getItem(PREFERRED_CLIENT_KEY);
+        if (saved) {
+          const matchingTab = tabs.find((t) => t.getAttribute('data-client') === saved);
+          if (matchingTab) {
+            switchTab(matchingTab, false);
+          }
+        }
+      } catch {
+        // ignore
+      }
     });
   }
 
