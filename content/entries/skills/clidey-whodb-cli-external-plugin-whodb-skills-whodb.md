@@ -3,13 +3,17 @@ slug: clidey-whodb-cli-external-plugin-whodb-skills-whodb
 name: whodb-whodb
 tagline: Work with WhoDB platform hosts, organizations, projects, and resources
   through MCP, or use database-only MCP tools when database mode is configured.
+summary: "whodb mcp serve exposes hosted platform tools. Sign in to each
+  required host with whodb login --host . Start with whodbplatformhosts to
+  discover saved hosts and accounts, then whodbplatformorgs with workspace:
+  {host}..."
 categories:
   - databases
 status: active
 quality_percentile: 34
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:22:24.653Z
+last_updated: 2026-10-14T14:55:21.336Z
 source:
   kind: github_repo
   repo: clidey/whodb
@@ -19,6 +23,15 @@ source:
 signals:
   stars: 5036
   last_commit: 2026-10-13T15:37:17Z
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: clidey/whodb
+  path: cli/external-plugin/whodb/skills/whodb/SKILL.md
+  branch: main
+  fetched_at: 2026-10-14T14:54:58.219Z
+  truncated: false
 type: agent_skill
 skill:
   skill_name: whodb-whodb
@@ -29,4 +42,186 @@ skill:
   extra_files: []
 ---
 
-Work with WhoDB platform hosts, organizations, projects, and resources through MCP, or use database-only MCP tools when database mode is configured.
+# WhoDB Database Assistant
+You have access to WhoDB for database operations. Use these tools and commands to help users with database tasks.
+
+## Platform MCP (default)
+
+`whodb mcp serve` exposes hosted platform tools. Sign in to each required host with
+`whodb login --host <url>`. Start with `whodb_platform_hosts` to discover saved
+hosts and accounts, then `whodb_platform_orgs` with `workspace: {host}` and
+`whodb_platform_projects` with `workspace: {host, org}`.
+
+When the user wants the whole conversation on one host (for example UAT or
+production), call `whodb_platform_session_use` once with
+`workspace: {host, org, project}`. It verifies the login, resolves canonical IDs,
+and becomes the default for later calls in this MCP session only. It is never
+saved to disk, so other chats and terminals keep their own defaults. Confirm
+with `whodb_platform_status`, which reports `session_scope`. Use
+`whodb_platform_session_clear` to drop it.
+
+For one-off calls to another host or project, pass an explicit
+`workspace: {host, org, project}` on that call. Resolve it first with
+`whodb_platform_workspace_resolve` if unsure. Per-call targets, including
+parallel calls, never change the session default or saved defaults. Check the
+returned `scope`. Resolution order for an omitted `workspace`: session default,
+then process overrides, then saved defaults. Do not run `whodb use` to switch
+hosts for one chat; it rewrites the saved default for every session. Read
+`whodb://platform/schema` for operations and payloads.
+
+To answer a question about ontology data, call `whodb_platform_ontology_describe`
+first to learn entity and property names, then `whodb_platform_ontology_aggregate`
+for exact counts, sums and group-bys, or `whodb_platform_ontology_query` for
+filtered rows, search and joins (bounded scan, max 5000 rows). Drill into rows
+with `whodb_platform_ontology_rows`. For bulk inserts use
+`whodb_platform_add_ontology_records` with an `idempotency_key`. Preview behavior
+actions with `whodb_platform_ontology_action_preview` before executing them.
+
+Writes return a preview bound to its host, account, organization, and project.
+Confirm only after approval of that exact preview. Changing defaults does not
+redirect a pending confirmation. Ask for `whodb login --host <url>` when a host
+needs authentication; no separate login is needed per project.
+
+## Guided setup
+
+This skill is optional. WhoDB MCP supplies its own instructions, tool schemas,
+and setup guidance. Prefer live MCP discovery if this skill differs from it.
+Keep one entry: command `whodb`, args `["mcp", "serve"]`.
+
+Use `whodb_mcp_setup` with `action: "inspect"` to discover settings, targets,
+choices, and the settings schema. Ask the user what they want, then use
+`action: "preview"` with a `patch`. Show the proposed settings and obtain approval
+before `action: "apply"` with the returned `confirmation_token` and `approved: true`.
+Do not send a patch with apply. Tokens expire after five minutes; only the latest
+preview is valid. Restart MCP after changed settings, then use `action: "verify"`.
+Verification checks active settings. Omitted patch fields are preserved.
+
+No shell access is required for this flow. Browser sign-in and credential entry
+remain user actions; never request credentials in chat. If setup tools are
+filtered out, ask the user to run `whodb setup`. CLI agents can alternatively use
+`whodb setup inspect`, `validate`, `apply --yes`, and `verify`.
+Inspect `whodb://mcp/configuration` for active modules and restrictions.
+Platform calls target `workspace`; database calls target `connection`.
+
+## Database-only MCP
+
+Enable the database module through `whodb setup`; both modules can run in the same `whodb mcp serve` connection. `--database` remains an advanced process override.
+This connects directly to databases without a WhoDB platform server; databases
+can be remote. The terminal UI is available with `whodb --tui`.
+
+### Database tools
+
+When database-only MCP is configured, use these tools directly:
+
+### whodb_connections
+List all available database connections.
+```
+No parameters required.
+Returns: List of connection names with type and source (env/saved).
+```
+
+### whodb_query
+Execute SQL queries against a database.
+```
+Parameters:
+- connection: Connection name (optional if only one connection exists)
+- query: SQL query to execute
+
+Example: whodb_query(connection="mydb", query="SELECT * FROM users LIMIT 10")
+```
+
+### whodb_schemas
+List all schemas in a database.
+```
+Parameters:
+- connection: Connection name (optional if only one connection exists)
+
+Example: whodb_schemas(connection="mydb")
+```
+
+### whodb_tables
+List all tables in a schema.
+```
+Parameters:
+- connection: Connection name (optional if only one connection exists)
+- schema: Schema name (optional, uses default if not specified)
+
+Example: whodb_tables(connection="mydb", schema="public")
+```
+
+### whodb_columns
+Describe columns in a table.
+```
+Parameters:
+- connection: Connection name (optional if only one connection exists)
+- table: Table name (required)
+- schema: Schema name (optional)
+
+Example: whodb_columns(connection="mydb", table="users")
+```
+
+## CLI Commands (Fallback)
+
+If MCP tools are unavailable, use the CLI directly via Bash:
+
+### Query Execution
+```bash
+whodb query "SELECT * FROM users LIMIT 10" --connection mydb --format json
+```
+
+### Schema Discovery
+```bash
+# List schemas
+whodb schemas --connection mydb --format json
+
+# List tables
+whodb tables --connection mydb --schema public --format json
+
+# Describe columns
+whodb columns --connection mydb --table users --format json
+```
+
+### Connection Management
+```bash
+# List connections
+whodb connections list --format json
+
+# Test connection
+whodb connections test mydb
+
+# Add new connection (interactive)
+whodb connections add --name mydb --type Postgres --host localhost --database mydb
+```
+
+### Data Export
+```bash
+# Export to CSV
+whodb export --connection mydb --table users --output users.csv
+
+# Export query results
+whodb export --connection mydb --query "SELECT * FROM orders" --output orders.xlsx
+```
+
+## Workflow Examples
+
+### Explore a New Database
+1. List connections: `whodb_connections`
+2. List schemas: `whodb_schemas(connection="name")`
+3. List tables: `whodb_tables(connection="name", schema="public")`
+4. Describe table: `whodb_columns(connection="name", table="users")`
+5. Sample data: `whodb_query(connection="name", query="SELECT * FROM users LIMIT 5")`
+
+### Answer Data Questions
+1. Understand the schema first - check table structure
+2. Write targeted queries with appropriate filters
+3. Always use LIMIT for exploratory queries
+4. Present results in a clear, readable format
+
+## Best Practices
+
+- **Always explore schema first** before writing queries
+- **Use LIMIT** for exploratory queries to avoid overwhelming output
+- **Prefer specific columns** over SELECT * for clarity
+- **Check foreign keys** via whodb_columns to understand relationships
+- **Use JSON format** (--format json) when parsing output programmatically
+- **Never expose credentials** - use connection names, not connection strings

@@ -32,11 +32,21 @@ export const LatestSignalsSchema = z.object({
 });
 export type LatestSignals = z.infer<typeof LatestSignalsSchema>;
 
+export const ReadmeSourceSchema = z.object({
+  repo: z.string(),
+  path: z.string(),
+  branch: z.string().default('main'),
+  fetched_at: DateOrString.optional(),
+  truncated: z.boolean().default(false),
+});
+export type ReadmeSource = z.infer<typeof ReadmeSourceSchema>;
+
 export const BaseEntrySchema = z.object({
   slug: z.string(),
   type: EntryTypeSchema,
   name: z.string(),
   tagline: z.string().default(''),
+  summary: z.string().optional(),
   categories: z.array(z.string()).default([]),
   status: EntryStatusSchema.default('active'),
   quality_percentile: z.number().min(0).max(100).default(0),
@@ -45,6 +55,10 @@ export const BaseEntrySchema = z.object({
   last_updated: DateOrString,
   source: SourceMetadataSchema,
   signals: LatestSignalsSchema,
+  language: z.string().default('en'),
+  needs_keys: z.boolean().default(false),
+  prerequisites: z.array(z.string()).default([]),
+  readme_source: ReadmeSourceSchema.optional(),
 });
 
 export const McpEntrySchema = BaseEntrySchema.extend({

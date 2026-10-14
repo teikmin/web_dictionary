@@ -3,13 +3,14 @@ slug: backnotprop-plannotator-apps-skills-claude-plannotator-last
 name: plannotator-last
 tagline: Open Plannotator on the latest rendered assistant message and use the
   returned annotations to revise that message or continue.
+summary: "!plannotator annotate-last $ARGUMENTS"
 categories:
   - dev-tools
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:22:24.653Z
+last_updated: 2026-10-14T14:55:21.336Z
 source:
   kind: github_repo
   repo: backnotprop/plannotator
@@ -19,6 +20,15 @@ source:
 signals:
   stars: 9393
   last_commit: 2026-10-13T16:08:41Z
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: backnotprop/plannotator
+  path: apps/skills/claude/plannotator-last/SKILL.md
+  branch: main
+  fetched_at: 2026-10-14T14:55:16.406Z
+  truncated: false
 type: agent_skill
 skill:
   skill_name: plannotator-last
@@ -28,4 +38,15 @@ skill:
   extra_files: []
 ---
 
-Open Plannotator on the latest rendered assistant message and use the returned annotations to revise that message or continue.
+# Plannotator Last
+## Message annotations
+
+!`plannotator annotate-last $ARGUMENTS`
+
+## Your task
+
+The output above will be one of:
+
+1. The exact text `The user approved.`, an "Approved with Notes" message, OR a JSON object with `"decision": "approved"`. The user approved your last message. If it is the Approved with Notes message, or that object also carries a `"feedback"` field, the user approved *with notes*: read them and carry them into subsequent work — they are non-blocking guidance, not a request to revise the message. Otherwise acknowledge with a single sentence ("Approved.") and stop. Either way, do not begin any work.
+2. Empty, OR a JSON object with `"decision": "dismissed"`. The user closed the session without requesting changes. Acknowledge with a single sentence ("Annotation session closed.") and stop. Do not begin any work.
+3. Plaintext annotation feedback, OR a JSON object with `"decision": "annotated"` and a `"feedback"` field. Address the feedback. The user has reviewed your last message and provided specific annotations and comments.

@@ -3,13 +3,17 @@ slug: ciembor-agent-rules-books-clean-architecture
 name: clean-architecture
 tagline: Apply Robert C. Martin-inspired architecture rules when separating
   business policy from frameworks, databases, UI, or infrastructure details.
+summary: Before making design or code decisions, read and apply
+  clean-architecture.mini.md. Use clean-architecture.md only as a deeper
+  reference when the mini rules are not enough for the current architectural
+  tradeoff.
 categories:
   - dev-tools
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:22:24.653Z
+last_updated: 2026-10-14T14:55:21.336Z
 source:
   kind: github_repo
   repo: ciembor/agent-rules-books
@@ -19,6 +23,15 @@ source:
 signals:
   stars: 3022
   last_commit: 2026-09-10T11:21:47Z
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: ciembor/agent-rules-books
+  path: clean-architecture/SKILL.md
+  branch: main
+  fetched_at: 2026-10-14T14:55:19.232Z
+  truncated: false
 type: agent_skill
 skill:
   skill_name: clean-architecture
@@ -31,4 +44,7 @@ skill:
     - clean-architecture.nano.md
 ---
 
-Apply Robert C. Martin-inspired architecture rules when separating business policy from frameworks, databases, UI, or infrastructure details.
+# Clean Architecture Skill
+Use this skill when a task involves architectural boundaries, dependency direction, use cases, entities, interface adapters, framework isolation, or technology churn.
+
+Before making design or code decisions, read and apply [clean-architecture.mini.md](https://github.com/ciembor/agent-rules-books/blob/main/clean-architecture/clean-architecture.mini.md). Use [clean-architecture.md](https://github.com/ciembor/agent-rules-books/blob/main/clean-architecture/clean-architecture.md) only as a deeper reference when the mini rules are not enough for the current architectural tradeoff.

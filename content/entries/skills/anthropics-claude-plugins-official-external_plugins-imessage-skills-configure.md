@@ -4,13 +4,14 @@ name: imessage-configure
 tagline: Check iMessage channel setup and review access policy. Use when the
   user asks to configure iMessage, asks "how do I set this up" or "who can reach
   me,
+summary: "Arguments passed: $ARGUMENTS (unused — this skill only shows status)"
 categories:
   - productivity
 status: active
 quality_percentile: 99
 selection_reason: official_vendor
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:22:24.653Z
+last_updated: 2026-10-14T14:55:21.336Z
 source:
   kind: github_repo
   repo: anthropics/claude-plugins-official
@@ -20,6 +21,15 @@ source:
 signals:
   stars: 37789
   last_commit: 2026-10-13T07:57:35Z
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: anthropics/claude-plugins-official
+  path: external_plugins/imessage/skills/configure/SKILL.md
+  branch: main
+  fetched_at: 2026-10-14T14:55:13.484Z
+  truncated: false
 type: agent_skill
 skill:
   skill_name: imessage-configure
@@ -30,4 +40,75 @@ skill:
   extra_files: []
 ---
 
-Check iMessage channel setup and review access policy. Use when the user asks to configure iMessage, asks "how do I set this up" or "who can reach me," or wants to know why texts aren't reaching the assistant.
+# /imessage:configure — iMessage Channel Setup
+There's no token to save — iMessage reads `~/Library/Messages/chat.db`
+directly. This skill checks whether that works and orients the user on
+access policy.
+
+Arguments passed: `$ARGUMENTS` (unused — this skill only shows status)
+
+---
+
+## Status and guidance
+
+Read state and give the user a complete picture:
+
+1. **Full Disk Access** — run `ls ~/Library/Messages/chat.db`. If it fails
+   with "Operation not permitted", FDA isn't granted. Say: *"Grant Full Disk
+   Access to your terminal (or IDE if that's where Claude Code runs): System
+   Settings → Privacy & Security → Full Disk Access. The server can't read
+   chat.db without it."*
+
+2. **Access** — read `~/.claude/channels/imessage/access.json` (missing file
+   = defaults: `dmPolicy: "allowlist"`, empty allowlist). Show:
+   - DM policy and what it means in one line
+   - Allowed senders: count, and list the handles
+   - Pending pairings: count, with codes if any (only if policy is `pairing`)
+
+3. **What next** — end with a concrete next step based on state:
+   - FDA not granted → the FDA instructions above
+   - FDA granted, policy is allowlist → *"Text yourself from any device
+     signed into your Apple ID — self-chat always bypasses the gate. To let
+     someone else through: `/imessage:access allow +15551234567`."*
+   - FDA granted, someone allowed → *"Ready. Self-chat works; {N} other
+     sender(s) allowed."*
+
+---
+
+## Build the allowlist — don't pair
+
+iMessage reads your **personal** `chat.db`. You already know the phone
+numbers and emails of people you'd allow — there's no ID-capture problem to
+solve. Pairing has no upside here and a clear downside: every contact who
+texts this Mac gets an unsolicited auto-reply.
+
+Drive the conversation this way:
+
+1. Read the allowlist. Tell the user who's in it (self-chat always works
+   regardless).
+2. Ask: *"Besides yourself, who should be able to text you through this?"*
+3. **"Nobody, just me"** → done. The default `allowlist` with an empty list
+   is correct. Self-chat bypasses the gate.
+4. **"My partner / a friend / a couple people"** → ask for each handle
+   (phone like `+15551234567` or email like `them@icloud.com`) and offer to
+   run `/imessage:access allow <handle>` for each. Stay on `allowlist`.
+5. **Current policy is `pairing`** → flag it immediately: *"Your policy is
+   `pairing`, which auto-replies a code to every contact who texts this Mac.
+   Switch back to `allowlist`?"* and offer `/imessage:access policy
+   allowlist`. Don't wait to be asked.
+6. **User asks for `pairing`** → push back. Explain the auto-reply-to-
+   everyone consequence. If they insist and confirm a dedicated line with
+   few contacts, fine — but treat it as a one-off, not a recommendation.
+
+Handles are `+15551234567` or `someone@icloud.com`. `disabled` drops
+everything except self-chat.
+
+---
+
+## Implementation notes
+
+- No `.env` file for this channel. No token. The only OS-level setup is FDA
+  plus the one-time Automation prompt when the server first sends (which
+  can't be checked from here).
+- `access.json` is re-read on every inbound message — policy changes via
+  `/imessage:access` take effect immediately, no restart.

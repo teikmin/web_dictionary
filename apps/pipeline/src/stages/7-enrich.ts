@@ -1,24 +1,32 @@
 import { logger } from '../lib/logger.js';
-import { fetchRepoTree } from '../sources/github-contents.js';
+import { fetchRepoTree, fetchFileContent } from '../sources/github-contents.js';
 import { extractFromRegistry } from '../enrich/mcp/from-registry.js';
 import { extractFromServerJson } from '../enrich/mcp/from-server-json.js';
 import { extractFromPackageJson } from '../enrich/mcp/from-package-json.js';
 import { extractFromPyproject } from '../enrich/mcp/from-pyproject.js';
 import { extractFromReadme } from '../enrich/mcp/from-readme.js';
 import { extractSkillSpec } from '../enrich/skills/from-skill-md.js';
+import { cleanReadme, derivePrerequisitesAndKeys } from '../enrich/readme-cleaner.js';
 import {
   renderMcpForAllClients,
   renderSkillForAllClients,
   type ClientConfigOutput,
   type ClientId,
 } from '@web-db/renderers';
-import type { CandidateDecision, LaunchSpec, SkillSpec } from '@web-db/schema';
+import type { CandidateDecision, LaunchSpec, SkillSpec, ReadmeSource } from '@web-db/schema';
 
 export interface EnrichedEntry {
   decision: CandidateDecision;
   launchSpec?: LaunchSpec;
   skillSpec?: SkillSpec;
   renderedConfigs: Record<ClientId, ClientConfigOutput>;
+  readmeBody?: string;
+  readmeSource?: ReadmeSource;
+  summary?: string;
+  language?: string;
+  needsKeys?: boolean;
+  prerequisites?: string[];
+  readmeFetchFailed?: boolean;
 }
 
 export interface EnrichmentStats {
@@ -31,12 +39,18 @@ export interface EnrichmentStats {
     none: number;
   };
   highConfidencePct: number; // (registry + manifest) / totalMcp
+  readmeStats: {
+    withBody: number;
+    truncated: number;
+    nonEnglish: number;
+    failed: number;
+  };
 }
 
 export async function runStage7Enrich(
   decisions: CandidateDecision[]
 ): Promise<{ enrichedEntries: EnrichedEntry[]; stats: EnrichmentStats }> {
-  logger.stage(5, 'Stage 7: Enrich Launch Specs & Client Config Renderers');
+  logger.stage(5, 'Stage 7: Enrich Launch Specs, READMEs & Client Config Renderers');
   const selected = decisions.filter((d) => d.selected);
   logger.info(`Enriching ${selected.length} selected catalog entries...`);
 
@@ -50,6 +64,10 @@ export async function runStage7Enrich(
 
   let totalMcp = 0;
   let totalSkills = 0;
+  let withBody = 0;
+  let truncatedCount = 0;
+  let nonEnglishCount = 0;
+  let failedCount = 0;
 
   const chunkSize = 10;
   let processedCount = 0;
@@ -102,10 +120,74 @@ export async function runStage7Enrich(
           confidenceCounts[spec.confidence]++;
 
           const renderedConfigs = renderMcpForAllClients(name, spec);
+
+          // Fetch and clean README for MCP
+          const subpath = d.layer2?.subpaths?.[0] || '';
+          let readmePath = '';
+          if (subpath) {
+            const subPrefix = subpath.endsWith('/') ? subpath.toLowerCase() : `${subpath.toLowerCase()}/`;
+            const subMatch = paths.find((p) => p.toLowerCase() === `${subPrefix}readme.md`);
+            if (subMatch) readmePath = subMatch;
+          }
+          if (!readmePath) {
+            const rootMatch = paths.find((p) => p.toLowerCase() === 'readme.md');
+            if (rootMatch) readmePath = rootMatch;
+          }
+
+          let readmeBody = '';
+          let summary = '';
+          let language = 'en';
+          let truncated = false;
+          let readmeFetchFailed = false;
+
+          if (readmePath) {
+            const rawReadme = await fetchFileContent(owner, name, readmePath);
+            if (rawReadme) {
+              const cleanRes = cleanReadme(rawReadme, {
+                owner,
+                repo: name,
+                branch: defaultBranch || 'main',
+                subpath,
+              });
+              readmeBody = cleanRes.cleaned;
+              summary = cleanRes.summary;
+              language = cleanRes.language;
+              truncated = cleanRes.truncated;
+              withBody++;
+              if (truncated) truncatedCount++;
+              if (language !== 'en') nonEnglishCount++;
+            } else {
+              readmeFetchFailed = true;
+              failedCount++;
+            }
+          } else {
+            readmeFetchFailed = true;
+            failedCount++;
+          }
+
+          const { needsKeys, prerequisites } = derivePrerequisitesAndKeys(spec);
+
+          const readmeSource: ReadmeSource | undefined = readmePath
+            ? {
+                repo: d.repo.fullName,
+                path: readmePath,
+                branch: defaultBranch || 'main',
+                fetched_at: new Date().toISOString(),
+                truncated,
+              }
+            : undefined;
+
           enrichedEntries.push({
             decision: d,
             launchSpec: spec,
             renderedConfigs,
+            readmeBody,
+            readmeSource,
+            summary: summary || d.repo.description || '',
+            language,
+            needsKeys,
+            prerequisites,
+            readmeFetchFailed,
           });
         } else if (d.layer2?.detectedType === 'agent_skill') {
           const subpaths = d.layer2?.subpaths?.length ? d.layer2.subpaths : [''];
@@ -114,7 +196,7 @@ export async function runStage7Enrich(
           for (const subpath of subpaths) {
             if (seenSkills.size >= 5) break;
 
-            const skillSpec = await extractSkillSpec(owner, name, subpath, paths);
+            const { spec: skillSpec, rawBody } = await extractSkillSpec(owner, name, subpath, paths);
 
             // Disambiguate if skillName is generic or already seen
             let skillName = skillSpec.skill_name;
@@ -138,10 +220,52 @@ export async function runStage7Enrich(
             skillSpec.skill_name = skillName;
             const renderedConfigs = renderSkillForAllClients(skillName, skillSpec);
 
+            // Clean SKILL.md body
+            const skillMdPath = subpath ? `${subpath}/SKILL.md` : 'SKILL.md';
+            let readmeBody = '';
+            let summary = '';
+            let language = 'en';
+            let truncated = false;
+            let readmeFetchFailed = false;
+
+            if (rawBody) {
+              const cleanRes = cleanReadme(rawBody, {
+                owner,
+                repo: name,
+                branch: defaultBranch || 'main',
+                subpath,
+              });
+              readmeBody = cleanRes.cleaned;
+              summary = cleanRes.summary || skillSpec.description;
+              language = cleanRes.language;
+              truncated = cleanRes.truncated;
+              withBody++;
+              if (truncated) truncatedCount++;
+              if (language !== 'en') nonEnglishCount++;
+            } else {
+              readmeFetchFailed = true;
+              failedCount++;
+            }
+
+            const readmeSource: ReadmeSource = {
+              repo: d.repo.fullName,
+              path: skillMdPath,
+              branch: defaultBranch || 'main',
+              fetched_at: new Date().toISOString(),
+              truncated,
+            };
+
             enrichedEntries.push({
               decision: d,
               skillSpec,
               renderedConfigs,
+              readmeBody,
+              readmeSource,
+              summary: summary || skillSpec.description,
+              language,
+              needsKeys: false,
+              prerequisites: [],
+              readmeFetchFailed,
             });
           }
         }
@@ -163,6 +287,9 @@ export async function runStage7Enrich(
   logger.info(
     `Confidence Breakdown: Registry ${confidenceCounts.registry}, Manifest ${confidenceCounts.manifest}, README ${confidenceCounts.readme}, None ${confidenceCounts.none}`
   );
+  logger.info(
+    `README Collection: ${withBody} with body, ${truncatedCount} truncated (>60KB), ${nonEnglishCount} non-English, ${failedCount} fetch issues`
+  );
 
   return {
     enrichedEntries,
@@ -171,6 +298,12 @@ export async function runStage7Enrich(
       totalSkills,
       confidenceCounts,
       highConfidencePct,
+      readmeStats: {
+        withBody,
+        truncated: truncatedCount,
+        nonEnglish: nonEnglishCount,
+        failed: failedCount,
+      },
     },
   };
 }

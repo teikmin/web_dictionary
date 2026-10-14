@@ -4,13 +4,16 @@ name: review-findings
 tagline: Addresses and fixes findings from a QA code review. Reads the review
   report, fixes critical and warning issues, and prepares for re-verification.
   Dele
+summary: "- After receiving a code review from Centinela (QA) - When a review
+  report has findings that need to be addressed - Fixing critical and warning
+  issues before re-verification"
 categories:
   - dev-tools
 status: active
 quality_percentile: 90
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:22:24.653Z
+last_updated: 2026-10-14T14:55:21.336Z
 source:
   kind: github_repo
   repo: davepoon/buildwithclaude
@@ -20,6 +23,15 @@ source:
 signals:
   stars: 3631
   last_commit: 2026-10-13T07:52:46Z
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: davepoon/buildwithclaude
+  path: plugins/agent-triforce/skills/review-findings/SKILL.md
+  branch: main
+  fetched_at: 2026-10-14T14:55:01.004Z
+  truncated: false
 type: agent_skill
 skill:
   skill_name: review-findings
@@ -30,4 +42,52 @@ skill:
   extra_files: []
 ---
 
-Addresses and fixes findings from a QA code review. Reads the review report, fixes critical and warning issues, and prepares for re-verification. Delegates to the Forja (Dev) agent.
+# Review Findings
+Addresses and fixes QA findings using the Forja (Dev) agent.
+
+## When to Use This Skill
+
+- After receiving a code review from Centinela (QA)
+- When a review report has findings that need to be addressed
+- Fixing critical and warning issues before re-verification
+
+## What This Skill Does
+
+1. Runs the SIGN IN checklist
+2. Reads the review report and understands each finding's root cause
+3. Plans fix order: Critical first, then Warnings
+4. Implements fixes with updated tests for each finding
+5. Scans for dead code after all fixes
+6. Runs Implementation Complete and Pre-Delivery checklists (TIME OUT)
+7. Verifies every Critical finding addressed, every Warning addressed or deferred with justification
+8. Prepares a fix report for QA re-verification
+
+## How to Use
+
+### Basic Usage
+
+```
+/review-findings
+```
+
+### With Specific Review
+
+```
+/review-findings docs/reviews/user-auth-review.md
+```
+
+## Example
+
+**User**: `/review-findings docs/reviews/webhook-system-review.md`
+
+**Output**:
+- All Critical findings fixed with tests
+- All Warning findings fixed or explicitly deferred with justification
+- Fix report documenting what was changed and why
+- Ready for QA re-verification
+
+## Tips
+
+- If no review is specified, the most recent review in `docs/reviews/` is used
+- The agent understands root causes before writing any fix
+- Conflicting fixes are identified and planned around during the pre-fix phase

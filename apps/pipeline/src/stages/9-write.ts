@@ -102,10 +102,39 @@ export async function runStage9Write(
       ? (repo.description || '').slice(0, 150)
       : (item.skillSpec?.description || repo.description || '').slice(0, 150);
 
+    // B7: Handle body and failure fallback retention
+    let body = item.readmeBody || '';
+    let effectiveReadmeSource = item.readmeSource;
+
+    if (!body && fs.existsSync(filePath)) {
+      try {
+        const existingRaw = fs.readFileSync(filePath, 'utf8');
+        const parts = existingRaw.split(/^---\r?\n/m);
+        if (parts.length >= 3) {
+          const existingBody = parts.slice(2).join('---').trim();
+          if (existingBody && existingBody !== (repo.description || '') && existingBody !== (item.skillSpec?.description || '')) {
+            body = existingBody;
+            const parsed = yaml.parse(parts[1]);
+            if (parsed?.readme_source && !effectiveReadmeSource) {
+              effectiveReadmeSource = parsed.readme_source;
+            }
+            logger.warn(`Retained existing README for ${slug} due to missing fresh fetch.`);
+          }
+        }
+      } catch {
+        // ignore read error
+      }
+    }
+
+    if (!body) {
+      body = isMcp ? (repo.description || '') : (item.skillSpec?.description || repo.description || '');
+    }
+
     const baseData = {
       slug,
       name: title,
       tagline,
+      summary: item.summary || tagline,
       categories,
       status: 'active' as const,
       quality_percentile: layer3?.percentileRank || 0,
@@ -126,6 +155,10 @@ export async function runStage9Write(
         weekly_downloads: undefined,
         contributors: undefined,
       },
+      language: item.language || 'en',
+      needs_keys: item.needsKeys || false,
+      prerequisites: item.prerequisites || [],
+      readme_source: effectiveReadmeSource,
     };
 
     signalSnapshots[slug] = {
@@ -144,7 +177,7 @@ export async function runStage9Write(
         launch: item.launchSpec,
       };
 
-      const mdContent = `---\n${yaml.stringify(entry)}---\n\n${repo.description || ''}\n`;
+      const mdContent = `---\n${yaml.stringify(entry)}---\n\n${body}\n`;
       fs.writeFileSync(filePath, mdContent, 'utf8');
       writtenMcp++;
       writtenMcpSlugs.add(`${slug}.md`);
@@ -155,7 +188,7 @@ export async function runStage9Write(
         skill: item.skillSpec,
       };
 
-      const mdContent = `---\n${yaml.stringify(entry)}---\n\n${item.skillSpec.description}\n`;
+      const mdContent = `---\n${yaml.stringify(entry)}---\n\n${body}\n`;
       fs.writeFileSync(filePath, mdContent, 'utf8');
       writtenSkills++;
       writtenSkillSlugs.add(`${slug}.md`);

@@ -3,13 +3,16 @@ slug: aden-hive-hive-core-framework-skills-_default_skills-error-recovery
 name: hive.error-recovery
 tagline: Follow a structured recovery decision tree when tool calls fail instead
   of blindly retrying or giving up.
+summary: 1. Diagnose — classify the failure as transient (network blip, rate
+  limit, timeout) or structural (wrong selector, missing auth, invalid schema,
+  permission denied).
 categories:
   - ai-frameworks
 status: active
 quality_percentile: 97
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:22:24.653Z
+last_updated: 2026-10-14T14:55:21.336Z
 source:
   kind: github_repo
   repo: aden-hive/hive
@@ -19,6 +22,15 @@ source:
 signals:
   stars: 11099
   last_commit: 2026-10-12T11:34:20Z
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: aden-hive/hive
+  path: core/framework/skills/_default_skills/error-recovery/SKILL.md
+  branch: main
+  fetched_at: 2026-10-14T14:55:18.153Z
+  truncated: false
 type: agent_skill
 skill:
   skill_name: hive.error-recovery
@@ -28,4 +40,24 @@ skill:
   extra_files: []
 ---
 
-Follow a structured recovery decision tree when tool calls fail instead of blindly retrying or giving up.
+## Operational Protocol: Error Recovery
+
+When a tool call fails:
+
+1. **Diagnose** — classify the failure as *transient* (network blip, rate limit, timeout) or *structural* (wrong selector, missing auth, invalid schema, permission denied).
+
+2. **Decide:**
+   - Transient → retry once.
+   - Structural + fixable → fix the input and retry.
+   - Structural + unfixable → record the failure and move to the next item.
+   - Blocking all progress → escalate.
+
+3. **Adapt** — if the same tool has failed {{max_retries_per_tool}}+ times in a row, stop using it and find an alternative approach.
+
+**Never silently drop a failed item.** If the item is a task in the colony queue, write the failure to the DB instead of an in-memory buffer:
+
+```bash
+sqlite3 "$DB_PATH" "UPDATE tasks SET status='failed', last_error='<one-sentence reason>', completed_at=datetime('now'), updated_at=datetime('now') WHERE id='<task-id>' AND worker_id='<your-worker-id>';"
+```
+
+The `tasks.retry_count` column and the stale-claim reclaimer handle auto-retry for crashes; your job is the within-run decision tree above. See `hive.colony-progress-tracker` for the full queue protocol.

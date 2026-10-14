@@ -141,7 +141,16 @@ async function main() {
   reportMd += `| **High-Confidence Total (Registry + Manifest)** | **${enrichStats.confidenceCounts.registry + enrichStats.confidenceCounts.manifest}** | **${enrichStats.highConfidencePct.toFixed(1)}%** | **$\\ge 70\\%$** |\n\n`;
 
   reportMd += `--- \n\n`;
-  reportMd += `## 3. Top 30 MCP Servers with Generated Launch Commands\n\n`;
+  reportMd += `## 3. README & Content Collection (Phase B)\n\n`;
+  reportMd += `| Metric | Count | Ratio |\n`;
+  reportMd += `|---|:---:|:---:|\n`;
+  reportMd += `| **Entries with Markdown Body** | ${enrichStats.readmeStats.withBody} | ${((enrichStats.readmeStats.withBody / Math.max(enrichedEntries.length, 1)) * 100).toFixed(1)}% |\n`;
+  reportMd += `| **Truncated at 60 KB Heading Boundary** | ${enrichStats.readmeStats.truncated} | ${((enrichStats.readmeStats.truncated / Math.max(enrichedEntries.length, 1)) * 100).toFixed(1)}% |\n`;
+  reportMd += `| **Non-English Content Flagged (CJK)** | ${enrichStats.readmeStats.nonEnglish} | ${((enrichStats.readmeStats.nonEnglish / Math.max(enrichedEntries.length, 1)) * 100).toFixed(1)}% |\n`;
+  reportMd += `| **Fetch Issues (Fallback/Retained)** | ${enrichStats.readmeStats.failed} | ${((enrichStats.readmeStats.failed / Math.max(enrichedEntries.length, 1)) * 100).toFixed(1)}% |\n\n`;
+
+  reportMd += `--- \n\n`;
+  reportMd += `## 4. Top 30 MCP Servers with Generated Launch Commands\n\n`;
   reportMd += `| # | Repository | Stars | Confidence | Score | Claude Code Command |\n`;
   reportMd += `|:---:|---|:---:|:---:|:---:|---|\n`;
   topMcpEnriched.forEach((e, idx) => {

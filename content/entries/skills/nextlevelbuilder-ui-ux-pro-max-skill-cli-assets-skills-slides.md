@@ -3,13 +3,16 @@ slug: nextlevelbuilder-ui-ux-pro-max-skill-cli-assets-skills-slides
 name: slides
 tagline: Create strategic HTML presentations with Chart.js, design tokens,
   responsive layouts, copywriting formulas, and contextual slide strategies.
+summary: "- Marketing presentations and pitch decks - Data-driven slides with
+  Chart.js - Strategic slide design with layout patterns - Copywriting-optimized
+  presentation content"
 categories:
   - ai-frameworks
 status: active
 quality_percentile: 77
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:22:24.653Z
+last_updated: 2026-10-14T14:55:21.336Z
 source:
   kind: github_repo
   repo: nextlevelbuilder/ui-ux-pro-max-skill
@@ -19,6 +22,15 @@ source:
 signals:
   stars: 135424
   last_commit: 2026-10-12T11:08:03Z
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: nextlevelbuilder/ui-ux-pro-max-skill
+  path: cli/assets/skills/slides/SKILL.md
+  branch: main
+  fetched_at: 2026-10-14T14:55:11.956Z
+  truncated: false
 type: agent_skill
 skill:
   skill_name: slides
@@ -33,4 +45,37 @@ skill:
     - references/slide-strategies.md
 ---
 
-Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies.
+# Slides
+Strategic HTML presentation design with data visualization.
+
+## When to Use
+
+- Marketing presentations and pitch decks
+- Data-driven slides with Chart.js
+- Strategic slide design with layout patterns
+- Copywriting-optimized presentation content
+
+## Subcommands
+
+| Subcommand | Description | Reference |
+|------------|-------------|-----------|
+| `create` | Create strategic presentation slides | `references/create.md` |
+
+## Script Paths
+
+Script paths in this skill and its `references/` are relative to the directory that contains this SKILL.md, not to the project: `scripts/<file>` is this skill's own `scripts/` folder, and `../<skill>/scripts/<file>` is a sibling sub-skill installed alongside it. Build the full path from that directory (Claude Code reports it as the skill's base directory when the skill loads) and keep the working directory at the project root — the scripts read and write project files such as `docs/brand-guidelines.md`, `assets/design-tokens.json` or `src/` relative to it.
+
+## References (Knowledge Base)
+
+| Topic | File |
+|-------|------|
+| Layout Patterns | `references/layout-patterns.md` |
+| HTML Template | `references/html-template.md` |
+| Copywriting Formulas | `references/copywriting-formulas.md` |
+| Slide Strategies | `references/slide-strategies.md` |
+
+## Routing
+
+1. Parse subcommand from `$ARGUMENTS` (first word)
+2. Load corresponding `references/{subcommand}.md`
+3. Execute with remaining arguments

@@ -4,13 +4,16 @@ name: seo-bing
 tagline: Bing Webmaster Tools + IndexNow extension. Microsoft Copilot citations
   are fed by the Bing index; this skill makes Bing visibility, link data, and
   Ind
+summary: "- Run extensions/bing-webmaster/install.sh or install.ps1. - A Bing
+  Webmaster Tools API key. - Optional: an IndexNow host key (32+ chars)
+  published at the URL declared as INDEXNOWKEYLOCATION."
 categories:
   - productivity
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:22:24.653Z
+last_updated: 2026-10-14T14:55:21.336Z
 source:
   kind: github_repo
   repo: AgriciDaniel/claude-seo
@@ -20,6 +23,15 @@ source:
 signals:
   stars: 18843
   last_commit: 2026-10-04T23:41:12Z
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: AgriciDaniel/claude-seo
+  path: extensions/bing-webmaster/skills/seo-bing/SKILL.md
+  branch: main
+  fetched_at: 2026-10-14T14:55:14.644Z
+  truncated: false
 type: agent_skill
 skill:
   skill_name: seo-bing
@@ -30,4 +42,41 @@ skill:
   extra_files: []
 ---
 
-Bing Webmaster Tools + IndexNow extension. Microsoft Copilot citations are fed by the Bing index; this skill makes Bing visibility, link data, and IndexNow URL submission first-class.
+# seo-bing
+The non-Google indexing surface. Google still rejects IndexNow (per
+Gary Illyes, multiple SOTR episodes 2024-2025), so this skill is
+specifically for **Amazon/Bing/Naver/Seznam.cz/Yandex/Yep indexing** and
+**Microsoft Copilot AI citation** (which pulls from the Bing index).
+
+## Prerequisites
+
+- Run `extensions/bing-webmaster/install.sh` or `install.ps1`.
+- A Bing Webmaster Tools API key.
+- Optional: an IndexNow host key (32+ chars) published at the URL
+  declared as `INDEXNOW_KEY_LOCATION`.
+
+## Routing
+
+| Command | Underlying script |
+|---|---|
+| `/seo bing links <url>` | `"${CLAUDE_PLUGIN_ROOT}/scripts/claude-seo" run bing_webmaster.py links <url>` |
+| `/seo bing compare <urlA> <urlB>` | `"${CLAUDE_PLUGIN_ROOT}/scripts/claude-seo" run bing_webmaster.py compare <urlA> <urlB>`; both properties must be registered to the API account |
+| `/seo bing submit <url>` (single URL) | `"${CLAUDE_PLUGIN_ROOT}/scripts/claude-seo" run indexnow_submit.py --host ... --urls <url>` |
+| `/seo bing submit-batch <file>` | `"${CLAUDE_PLUGIN_ROOT}/scripts/claude-seo" run indexnow_submit.py --host ... --urls-file <file>` |
+| `/seo bing verify-indexnow` | `"${CLAUDE_PLUGIN_ROOT}/scripts/claude-seo" run indexnow_submit.py --host ... --verify-only` |
+
+## When this skill applies
+
+- The user is publishing new pages and wants Microsoft Copilot
+  citation eligibility (Bing index ingestion).
+- The user wants to nudge Amazon/Bing/Naver/Seznam.cz/Yandex/Yep indexing for fresh
+  URLs.
+- The user manages both properties and wants to compare their Bing link data.
+  For an arbitrary competitor, route to DataForSEO, Moz, or Common Crawl.
+
+## Cross-skill delegation
+
+- For Google indexing (very different model, sitemap-driven, no
+  IndexNow), use `seo-google indexing`.
+- For multi-source backlink confidence weighting, fall back to
+  `seo-backlinks` which already integrates Bing + Moz + CC.
