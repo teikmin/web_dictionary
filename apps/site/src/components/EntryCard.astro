@@ -1,65 +1,123 @@
 ---
-import type { AnyCollectionItem } from '../lib/entries';
-import ConfidenceBadge from './ConfidenceBadge.astro';
-import SignalStats from './SignalStats.astro';
+import { formatStars } from '../lib/entries';
 
 interface Props {
-  entry: AnyCollectionItem;
+  entry: {
+    data: {
+      slug: string;
+      type: 'mcp_server' | 'agent_skill';
+      name: string;
+      tagline?: string;
+      summary?: string;
+      categories: string[];
+      status?: 'active' | 'slowing' | 'dormant' | 'archived';
+      signals: {
+        stars: number;
+        last_commit?: string;
+      };
+      source: {
+        repo: string;
+        official_vendor?: boolean;
+        license?: string;
+      };
+    };
+  };
+  class?: string;
 }
 
-const { entry } = Astro.props;
+const { entry, class: className = '' } = Astro.props;
 const data = entry.data;
 const isMcp = data.type === 'mcp_server';
 const href = isMcp ? `/mcp/${data.slug}` : `/skills/${data.slug}`;
+
+const [owner] = data.source.repo.split('/');
+const avatarUrl = `https://github.com/${owner}.png?size=64`;
+
+const categoryNames: Record<string, string> = {
+  'dev-tools': 'Developer tools',
+  'productivity': 'Productivity',
+  'ai-frameworks': 'AI frameworks',
+  'security': 'Security',
+  'databases': 'Databases',
+  'browser-automation': 'Browser automation',
+  'other': 'Other utilities',
+};
+
+const primaryCategory = data.categories[0] || 'other';
+const categoryLabel = categoryNames[primaryCategory] || primaryCategory;
+
+const statusColors: Record<string, string> = {
+  active: 'bg-emerald-400',
+  slowing: 'bg-amber-400',
+  dormant: 'bg-slate-500',
+  archived: 'bg-slate-600',
+};
+const statusDotColor = statusColors[data.status || 'active'] || 'bg-emerald-400';
+const statusText = data.status ? data.status.charAt(0).toUpperCase() + data.status.slice(1) : 'Active';
 ---
 
-<div class="group relative flex flex-col justify-between p-5 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 hover:bg-slate-850/80 transition-all duration-150 shadow-sm hover:shadow-md">
+<a
+  href={href}
+  class:list={[
+    'group flex flex-col justify-between p-5 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-slate-700 hover:bg-slate-850/90 transition-all duration-150 shadow-sm hover:shadow-md text-left',
+    className
+  ]}
+>
   <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <div class="flex items-center gap-2">
-        <span class:list={[
-          'px-2 py-0.5 text-[11px] font-semibold tracking-wide uppercase rounded',
-          isMcp ? 'bg-cyan-950/80 text-cyan-300 border border-cyan-800/50' : 'bg-purple-950/80 text-purple-300 border border-purple-800/50'
-        ]}>
-          {isMcp ? 'MCP Server' : 'Agent Skill'}
-        </span>
-        {isMcp && 'launch' in data && (
-          <ConfidenceBadge confidence={data.launch.confidence} />
-        )}
+    <!-- Top Row: Avatar, Name, Owner, Type pill -->
+    <div class="flex items-start justify-between gap-3 mb-3">
+      <div class="flex items-start gap-3 min-w-0">
+        <img
+          src={avatarUrl}
+          alt={`${owner} avatar`}
+          class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-950 object-cover shrink-0"
+          loading="lazy"
+        />
+        <div class="min-w-0">
+          <h3 class="text-base font-semibold text-slate-100 group-hover:text-sky-300 transition-colors truncate">
+            {data.name}
+          </h3>
+          <p class="text-xs text-slate-400 font-mono truncate">
+            {owner}
+          </p>
+        </div>
       </div>
-      <SignalStats
-        stars={data.signals.stars}
-        percentile={data.quality_percentile}
-        officialVendor={data.source.official_vendor}
-      />
+
+      <span
+        class:list={[
+          'px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider rounded shrink-0',
+          isMcp
+            ? 'bg-cyan-950/80 text-cyan-300 border border-cyan-800/60'
+            : 'bg-purple-950/80 text-purple-300 border border-purple-800/60'
+        ]}
+      >
+        {isMcp ? 'MCP server' : 'Agent skill'}
+      </span>
     </div>
 
-    <h3 class="text-base font-semibold text-slate-100 group-hover:text-blue-400 transition-colors line-clamp-1">
-      <a href={href} class="focus:outline-none">
-        <span class="absolute inset-0" aria-hidden="true"></span>
-        {data.name}
-      </a>
-    </h3>
-
-    <p class="mt-1.5 text-xs text-slate-400 line-clamp-2 leading-relaxed">
-      {data.tagline || 'No description provided.'}
+    <!-- 3-line Description / Summary (Understanding first per §5.4) -->
+    <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed mb-4">
+      {data.summary || data.tagline || 'Open tool integration.'}
     </p>
   </div>
 
-  <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
-    <div class="flex flex-wrap gap-1.5 z-10">
-      {data.categories.slice(0, 3).map((cat: string) => (
-        <a
-          href={`/category/${cat}`}
-          class="px-2 py-0.5 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors text-[11px]"
-        >
-          {cat}
-        </a>
-      ))}
+  <!-- Bottom Signals: Category · ★ stars · ● Status · Official -->
+  <div class="pt-3 border-t border-slate-800/70 flex items-center justify-between text-xs text-slate-400 font-sans">
+    <div class="flex items-center gap-1.5 truncate">
+      <span class="text-slate-300 font-medium truncate">{categoryLabel}</span>
+      <span class="text-slate-600">·</span>
+      <span class="text-slate-300 font-mono font-medium">★ {formatStars(data.signals.stars)}</span>
+      <span class="text-slate-600">·</span>
+      <span class="inline-flex items-center gap-1 text-slate-400">
+        <span class:list={['w-1.5 h-1.5 rounded-full inline-block', statusDotColor]}></span>
+        <span>{statusText}</span>
+      </span>
+      {data.source.official_vendor && (
+        <>
+          <span class="text-slate-600">·</span>
+          <span class="text-sky-400 font-medium">Official</span>
+        </>
+      )}
     </div>
-
-    <span class="text-slate-500 font-mono text-[11px] z-10">
-      {data.source.repo}
-    </span>
   </div>
-</div>
+</a>

@@ -23,12 +23,13 @@ const clients = [
 ];
 
 const categories = [
-  { id: 'databases', name: 'Databases' },
-  { id: 'browser-automation', name: 'Browsers' },
-  { id: 'dev-tools', name: 'Dev Tools' },
-  { id: 'ai-frameworks', name: 'AI Runtimes' },
+  { id: 'dev-tools', name: 'Developer Tools' },
   { id: 'productivity', name: 'Productivity' },
+  { id: 'ai-frameworks', name: 'AI Frameworks' },
   { id: 'security', name: 'Security' },
+  { id: 'databases', name: 'Databases' },
+  { id: 'browser-automation', name: 'Browser Automation' },
+  { id: 'other', name: 'Other Utilities' },
 ];
 ---
 
@@ -44,32 +45,43 @@ const categories = [
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#090d16" />
+    <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
   </head>
   <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-600 selection:text-white">
-    <!-- Header -->
-    <header class="sticky top-0 z-40 w-full border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <!-- Header (Ignored by Pagefind to avoid matching navigation chrome, Task D5) -->
+    <header class="sticky top-0 z-40 w-full border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md" data-pagefind-ignore>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         <div class="flex items-center gap-6">
-          <a href="/" class="flex items-center gap-2.5 font-bold text-lg text-slate-100 hover:text-blue-400 transition-colors">
+          <a href="/" class="flex items-center gap-2.5 font-bold text-lg text-slate-100 hover:text-sky-400 transition-colors shrink-0">
             <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20 font-mono text-sm">
               ⚡
             </div>
             <span>AI Tools Hub</span>
           </a>
 
-          <nav class="hidden md:flex items-center gap-4 text-sm font-medium text-slate-300">
-            <a href="/#catalog" class="hover:text-white transition-colors">Catalog</a>
-            <div class="relative group">
-              <button type="button" class="flex items-center gap-1 hover:text-white transition-colors">
+          <!-- Accessible Navigation (Task E4) -->
+          <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300" aria-label="Main navigation">
+            <a href="/catalog" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-900 transition-colors">
+              Catalog
+            </a>
+
+            <!-- Clients Dropdown -->
+            <div class="relative dropdown-container">
+              <button
+                type="button"
+                class="dropdown-btn flex items-center gap-1 px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-900 transition-colors cursor-pointer"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 <span>Clients</span>
                 <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
               </button>
-              <div class="absolute left-0 top-full hidden group-hover:block w-44 pt-2 z-50">
-                <div class="p-1 rounded-lg bg-slate-900 border border-slate-800 shadow-xl space-y-0.5">
+              <div class="dropdown-menu absolute left-0 top-full hidden w-44 pt-1 z-50">
+                <div class="p-1 rounded-xl bg-slate-900 border border-slate-800 shadow-xl space-y-0.5">
                   {clients.map((c) => (
-                    <a href={`/client/${c.id}`} class="block px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-800 hover:text-white rounded">
+                    <a href={`/client/${c.id}`} class="block px-3 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-white rounded-lg transition-colors">
                       {c.name}
                     </a>
                   ))}
@@ -77,17 +89,23 @@ const categories = [
               </div>
             </div>
 
-            <div class="relative group">
-              <button type="button" class="flex items-center gap-1 hover:text-white transition-colors">
+            <!-- Categories Dropdown -->
+            <div class="relative dropdown-container">
+              <button
+                type="button"
+                class="dropdown-btn flex items-center gap-1 px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-900 transition-colors cursor-pointer"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 <span>Categories</span>
                 <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
               </button>
-              <div class="absolute left-0 top-full hidden group-hover:block w-48 pt-2 z-50">
-                <div class="p-1 rounded-lg bg-slate-900 border border-slate-800 shadow-xl space-y-0.5">
+              <div class="dropdown-menu absolute left-0 top-full hidden w-52 pt-1 z-50">
+                <div class="p-1 rounded-xl bg-slate-900 border border-slate-800 shadow-xl space-y-0.5">
                   {categories.map((c) => (
-                    <a href={`/category/${c.id}`} class="block px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-800 hover:text-white rounded">
+                    <a href={`/catalog?category=${c.id}`} class="block px-3 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-white rounded-lg transition-colors">
                       {c.name}
                     </a>
                   ))}
@@ -95,11 +113,27 @@ const categories = [
               </div>
             </div>
 
-            <a href="/about/criteria" class="hover:text-white transition-colors">Criteria</a>
+            <a href="/about/criteria" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-900 transition-colors">
+              Criteria
+            </a>
           </nav>
         </div>
 
         <div class="flex items-center gap-3">
+          <!-- Header Search Button with '/' Shortcut (Task D5) -->
+          <button
+            type="button"
+            id="open-search-modal-btn"
+            class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900 hover:bg-slate-850 hover:border-slate-700 text-xs text-slate-400 hover:text-slate-200 transition-colors cursor-pointer"
+            aria-label="Open search dialog (shortcut: /)"
+          >
+            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <span class="hidden sm:inline">Search catalog</span>
+            <kbd class="hidden sm:inline-block px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-[10px] font-mono text-slate-400">/</kbd>
+          </button>
+
           <a
             href="https://github.com/teikmin/web_dictionary"
             target="_blank"
@@ -111,6 +145,32 @@ const categories = [
         </div>
       </div>
     </header>
+
+    <!-- Header Search Modal (Task D5) -->
+    <div
+      id="search-modal-backdrop"
+      class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-start justify-center pt-16 sm:pt-24 px-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="search-modal-title"
+    >
+      <div class="w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden p-6 relative">
+        <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+          <h2 id="search-modal-title" class="text-sm font-semibold text-slate-200 flex items-center gap-2">
+            <span>🔍 Search Tools &amp; Skills</span>
+          </h2>
+          <button
+            type="button"
+            id="close-search-modal-btn"
+            class="text-xs text-slate-400 hover:text-white px-2 py-1 rounded bg-slate-800"
+          >
+            ESC
+          </button>
+        </div>
+
+        <div id="modal-search-box"></div>
+      </div>
+    </div>
 
     <!-- Main Content -->
     <main class="flex-1" data-pagefind-body={indexed ? '' : undefined}>
@@ -140,5 +200,116 @@ const categories = [
         </div>
       </div>
     </footer>
+
+    <script is:inline src="/pagefind/pagefind-ui.js"></script>
+    <script>
+      declare const PagefindUI: any;
+
+      function setupHeaderAndSearch() {
+        // Dropdown toggle logic (Task E4)
+        document.querySelectorAll('.dropdown-container').forEach((container) => {
+          const btn = container.querySelector<HTMLButtonElement>('.dropdown-btn');
+          const menu = container.querySelector<HTMLElement>('.dropdown-menu');
+          if (!btn || !menu) return;
+
+          const currentBtn = btn;
+          const currentMenu = menu;
+
+          function toggleMenu(open?: boolean) {
+            const isCurrentlyOpen = !currentMenu.classList.contains('hidden');
+            const shouldOpen = open !== undefined ? open : !isCurrentlyOpen;
+            if (shouldOpen) {
+              currentMenu.classList.remove('hidden');
+              currentBtn.setAttribute('aria-expanded', 'true');
+            } else {
+              currentMenu.classList.add('hidden');
+              currentBtn.setAttribute('aria-expanded', 'false');
+            }
+          }
+
+          currentBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+          });
+
+          currentBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+              toggleMenu(false);
+              currentBtn.focus();
+            }
+          });
+        });
+
+        // Close dropdowns on outside click
+        document.addEventListener('click', () => {
+          document.querySelectorAll('.dropdown-menu').forEach((menu) => {
+            menu.classList.add('hidden');
+          });
+          document.querySelectorAll('.dropdown-btn').forEach((btn) => {
+            btn.setAttribute('aria-expanded', 'false');
+          });
+        });
+
+        // Search modal logic (Task D5)
+        const modalBackdrop = document.getElementById('search-modal-backdrop');
+        const openBtn = document.getElementById('open-search-modal-btn');
+        const closeBtn = document.getElementById('close-search-modal-btn');
+        let pagefindMounted = false;
+
+        function openSearch() {
+          if (!modalBackdrop) return;
+          modalBackdrop.classList.remove('hidden');
+          modalBackdrop.classList.add('flex');
+
+          if (!pagefindMounted && typeof PagefindUI !== 'undefined') {
+            const container = document.getElementById('modal-search-box');
+            if (container) {
+              pagefindMounted = true;
+              new PagefindUI({
+                element: '#modal-search-box',
+                showSubResults: true,
+                showImages: false,
+                resetStyles: false,
+                autofocus: true,
+              });
+            }
+          }
+
+          // Focus search input
+          setTimeout(() => {
+            const input = modalBackdrop.querySelector<HTMLInputElement>('input.pagefind-ui__search-input');
+            if (input) input.focus();
+          }, 50);
+        }
+
+        function closeSearch() {
+          if (!modalBackdrop) return;
+          modalBackdrop.classList.add('hidden');
+          modalBackdrop.classList.remove('flex');
+        }
+
+        if (openBtn) openBtn.addEventListener('click', openSearch);
+        if (closeBtn) closeBtn.addEventListener('click', closeSearch);
+
+        if (modalBackdrop) {
+          modalBackdrop.addEventListener('click', (e) => {
+            if (e.target === modalBackdrop) closeSearch();
+          });
+        }
+
+        // Global shortcut '/' to open search
+        window.addEventListener('keydown', (e) => {
+          if (e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes((e.target as HTMLElement)?.tagName)) {
+            e.preventDefault();
+            openSearch();
+          } else if (e.key === 'Escape' && modalBackdrop && !modalBackdrop.classList.contains('hidden')) {
+            closeSearch();
+          }
+        });
+      }
+
+      setupHeaderAndSearch();
+      document.addEventListener('astro:page-load', setupHeaderAndSearch);
+    </script>
   </body>
 </html>

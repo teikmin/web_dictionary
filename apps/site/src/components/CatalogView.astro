@@ -1,0 +1,746 @@
+---
+import { getAllEntries } from '../lib/entries';
+import EntryCard from './EntryCard.astro';
+
+interface Props {
+  initialType?: string;
+  initialCategory?: string;
+  initialClient?: string;
+  initialSort?: string;
+  initialOfficial?: boolean;
+  pageTitle?: string;
+  pageDescription?: string;
+}
+
+const {
+  initialType = 'all',
+  initialCategory = 'all',
+  initialClient = 'all',
+  initialSort = 'popular',
+  initialOfficial = false,
+  pageTitle,
+  pageDescription,
+} = Astro.props;
+
+const allEntries = await getAllEntries();
+
+const categoryList = [
+  { id: 'all', name: 'All Categories' },
+  { id: 'dev-tools', name: 'Developer Tools' },
+  { id: 'productivity', name: 'Productivity' },
+  { id: 'ai-frameworks', name: 'AI Frameworks' },
+  { id: 'security', name: 'Security' },
+  { id: 'databases', name: 'Databases' },
+  { id: 'browser-automation', name: 'Browser Automation' },
+  { id: 'other', name: 'Other Utilities' },
+];
+
+const clientList = [
+  { id: 'all', name: 'All Clients' },
+  { id: 'claude-code', name: 'Claude Code' },
+  { id: 'codex', name: 'OpenAI Codex' },
+  { id: 'antigravity', name: 'Google Antigravity' },
+];
+
+// Serialize lightweight items for client-side instant filtering
+const clientItems = allEntries.map((e) => {
+  const d = e.data;
+  const [owner] = d.source.repo.split('/');
+  return {
+    slug: d.slug,
+    type: d.type,
+    name: d.name,
+    owner,
+    repo: d.source.repo,
+    tagline: d.tagline || '',
+    summary: d.summary || d.tagline || '',
+    categories: d.categories || [],
+    category: d.categories[0] || 'other',
+    status: d.status || 'active',
+    stars: d.signals?.stars || 0,
+    lastCommit: d.signals?.last_commit || '',
+    firstSeen: d.first_seen || '',
+    license: d.source?.license || '',
+    official: Boolean(d.source?.official_vendor),
+    href: d.type === 'mcp_server' ? `/mcp/${d.slug}` : `/skills/${d.slug}`,
+  };
+});
+
+// Pre-render the top 24 for SEO and immediate layout
+const initialItems = allEntries
+  .filter((e) => {
+    if (initialType !== 'all' && e.data.type !== initialType) return false;
+    if (initialCategory !== 'all' && !e.data.categories.includes(initialCategory)) return false;
+    if (initialOfficial && !e.data.source.official_vendor) return false;
+    return true;
+  })
+  .sort((a, b) => (b.data.signals?.stars || 0) - (a.data.signals?.stars || 0))
+  .slice(0, 24);
+---
+
+<div
+  class="catalog-view max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
+  data-initial-type={initialType}
+  data-initial-category={initialCategory}
+  data-initial-client={initialClient}
+  data-initial-sort={initialSort}
+  data-initial-official={initialOfficial ? 'true' : 'false'}
+>
+  {pageTitle && (
+    <div class="mb-8 border-b border-slate-800 pb-6">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        {pageTitle}
+      </h1>
+      {pageDescription && (
+        <p class="text-sm text-slate-400 mt-2 max-w-3xl leading-relaxed">
+          {pageDescription}
+        </p>
+      )}
+    </div>
+  )}
+
+  <div class="flex flex-col lg:flex-row gap-8 items-start">
+    <!-- Filter Sidebar (Drawer on mobile) -->
+    <aside class="w-full lg:w-64 shrink-0 bg-slate-900/40 lg:bg-transparent rounded-xl p-4 lg:p-0 border border-slate-800/80 lg:border-none">
+      <div class="flex items-center justify-between lg:hidden mb-3">
+        <span class="text-xs font-bold text-slate-200 uppercase tracking-wider">Filters &amp; Refine</span>
+        <button type="button" id="toggle-mobile-filters" class="text-xs text-sky-400 font-medium">
+          Toggle
+        </button>
+      </div>
+
+      <div id="filter-controls-body" class="space-y-6">
+        <!-- Type Filter -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+            Tool Type
+          </label>
+          <div class="space-y-1">
+            <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer hover:text-white">
+              <input type="radio" name="filter-type" value="all" checked={initialType === 'all'} class="text-blue-500 focus:ring-0" />
+              <span>All Types</span>
+            </label>
+            <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer hover:text-white">
+              <input type="radio" name="filter-type" value="mcp_server" checked={initialType === 'mcp_server'} class="text-blue-500 focus:ring-0" />
+              <span>MCP Servers</span>
+            </label>
+            <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer hover:text-white">
+              <input type="radio" name="filter-type" value="agent_skill" checked={initialType === 'agent_skill'} class="text-blue-500 focus:ring-0" />
+              <span>Agent Skills</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Category Filter -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+            Category
+          </label>
+          <select
+            id="filter-category"
+            class="w-full rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-200 p-2 focus:border-blue-500 focus:outline-none"
+          >
+            {categoryList.map((c) => (
+              <option value={c.id} selected={initialCategory === c.id}>{c.name}</option>
+            ))}
+          </select>
+        </div>
+
+        <!-- Client Filter -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+            AI Client
+          </label>
+          <select
+            id="filter-client"
+            class="w-full rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-200 p-2 focus:border-blue-500 focus:outline-none"
+          >
+            {clientList.map((c) => (
+              <option value={c.id} selected={initialClient === c.id}>{c.name}</option>
+            ))}
+          </select>
+        </div>
+
+        <!-- Official Only Checkbox -->
+        <div>
+          <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer hover:text-white pt-1">
+            <input
+              type="checkbox"
+              id="filter-official"
+              checked={initialOfficial}
+              class="rounded border-slate-700 bg-slate-900 text-blue-500 focus:ring-0"
+            />
+            <span class="font-medium text-slate-200">Official Vendors only</span>
+          </label>
+        </div>
+
+        <!-- License Filter -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+            License
+          </label>
+          <select
+            id="filter-license"
+            class="w-full rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-200 p-2 focus:border-blue-500 focus:outline-none"
+          >
+            <option value="all">All Open Licenses</option>
+            <option value="MIT">MIT</option>
+            <option value="Apache-2.0">Apache 2.0</option>
+            <option value="GPL">GPL / LGPL</option>
+            <option value="BSD">BSD</option>
+          </select>
+        </div>
+
+        <!-- Reset button -->
+        <button
+          type="button"
+          id="btn-clear-filters"
+          class="w-full py-2 px-3 rounded-lg border border-slate-800 hover:border-slate-700 bg-slate-900/60 text-xs text-slate-400 hover:text-white transition-colors"
+        >
+          Reset all filters
+        </button>
+      </div>
+    </aside>
+
+    <!-- Results Main Column -->
+    <div class="flex-1 w-full min-w-0">
+      <!-- Search, Sort & View Controls Bar -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-800/80">
+        <!-- Live Quick Filter Text Search -->
+        <div class="relative flex-1 max-w-md">
+          <input
+            type="text"
+            id="filter-search-input"
+            placeholder="Filter by keyword (name, description, owner)..."
+            class="w-full pl-9 pr-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-200 placeholder-slate-500 focus:border-blue-500 focus:outline-none transition-colors"
+          />
+          <svg class="w-4 h-4 text-slate-500 absolute left-3 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+
+        <div class="flex items-center gap-3 self-end sm:self-auto">
+          <!-- Sort -->
+          <div class="flex items-center gap-1.5 text-xs text-slate-400">
+            <span class="hidden sm:inline">Sort:</span>
+            <select
+              id="filter-sort"
+              class="rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-200 p-2 focus:border-blue-500 focus:outline-none"
+            >
+              <option value="popular" selected={initialSort === 'popular'}>Most Popular (Stars)</option>
+              <option value="updated" selected={initialSort === 'updated'}>Recently Updated</option>
+              <option value="newest" selected={initialSort === 'newest'}>Newest Added</option>
+              <option value="name" selected={initialSort === 'name'}>Name (A–Z)</option>
+            </select>
+          </div>
+
+          <!-- Grid / List View Toggle (Task D3) -->
+          <div class="flex items-center rounded-lg border border-slate-800 bg-slate-900 p-0.5">
+            <button
+              type="button"
+              id="view-grid-btn"
+              title="Card Grid View"
+              class="p-1.5 rounded text-xs text-slate-200 bg-slate-800 focus:outline-none"
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              id="view-list-btn"
+              title="Compact Table / List View"
+              class="p-1.5 rounded text-xs text-slate-400 hover:text-white focus:outline-none"
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Filters Chips & Result Count (Task D2) -->
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+        <div id="active-filter-chips" class="flex flex-wrap items-center gap-1.5 text-xs">
+          <!-- Filled dynamically by JavaScript -->
+        </div>
+        <div id="result-count" class="text-xs font-mono text-slate-400">
+          Showing {initialItems.length} of {clientItems.length} tools
+        </div>
+      </div>
+
+      <!-- Cards Grid Container -->
+      <div id="catalog-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {initialItems.map((entry) => (
+          <EntryCard entry={entry} />
+        ))}
+      </div>
+
+      <!-- Compact List Container (hidden by default) -->
+      <div id="catalog-list" class="hidden divide-y divide-slate-800/80 rounded-xl border border-slate-800 bg-slate-900/60 overflow-hidden">
+        <!-- Filled dynamically by JavaScript -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="catalog-empty" class="hidden py-16 text-center rounded-xl border border-slate-800 bg-slate-900/30">
+        <p class="text-sm font-semibold text-slate-300">No tools match your current filter combination.</p>
+        <p class="text-xs text-slate-500 mt-1">Try clearing some filters or searching with a different term.</p>
+        <button type="button" id="btn-empty-reset" class="mt-4 px-4 py-2 rounded-lg bg-slate-800 text-xs font-medium text-slate-200 hover:bg-slate-700">
+          Reset all filters
+        </button>
+      </div>
+
+      <!-- Pagination / Load More (Task D3) -->
+      <div id="catalog-pagination" class="mt-10 text-center">
+        <button
+          type="button"
+          id="btn-load-more"
+          class="px-6 py-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:bg-slate-800 hover:border-slate-700 text-xs font-semibold text-slate-200 transition-colors shadow-sm inline-flex items-center gap-2"
+        >
+          <span>Load more tools</span>
+          <span class="text-slate-500">(+24)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Raw Catalog Items Data for Instant Client-Side Rendering -->
+  <script id="catalog-items-json" type="application/json" set:html={JSON.stringify(clientItems)}></script>
+</div>
+
+<script>
+  function setupCatalog() {
+    const root = document.querySelector('.catalog-view');
+    if (!root) return;
+
+    const dataEl = document.getElementById('catalog-items-json');
+    if (!dataEl) return;
+
+    let items: any[] = [];
+    try {
+      items = JSON.parse(dataEl.textContent || '[]');
+    } catch {
+      return;
+    }
+
+    // Elements
+    const gridContainer = document.getElementById('catalog-grid');
+    const listContainer = document.getElementById('catalog-list');
+    const emptyContainer = document.getElementById('catalog-empty');
+    const chipsContainer = document.getElementById('active-filter-chips');
+    const countEl = document.getElementById('result-count');
+    const loadMoreBtn = document.getElementById('btn-load-more');
+    const paginationContainer = document.getElementById('catalog-pagination');
+
+    const typeRadios = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="filter-type"]'));
+    const categorySelect = document.getElementById('filter-category') as HTMLSelectElement | null;
+    const clientSelect = document.getElementById('filter-client') as HTMLSelectElement | null;
+    const officialCheckbox = document.getElementById('filter-official') as HTMLInputElement | null;
+    const licenseSelect = document.getElementById('filter-license') as HTMLSelectElement | null;
+    const searchInput = document.getElementById('filter-search-input') as HTMLInputElement | null;
+    const sortSelect = document.getElementById('filter-sort') as HTMLSelectElement | null;
+
+    const gridBtn = document.getElementById('view-grid-btn');
+    const listBtn = document.getElementById('view-list-btn');
+    const clearBtn = document.getElementById('btn-clear-filters');
+    const emptyResetBtn = document.getElementById('btn-empty-reset');
+
+    // State
+    const urlParams = new URLSearchParams(window.location.search);
+    let state = {
+      type: urlParams.get('type') || root.getAttribute('data-initial-type') || 'all',
+      category: urlParams.get('category') || root.getAttribute('data-initial-category') || 'all',
+      client: urlParams.get('client') || root.getAttribute('data-initial-client') || 'all',
+      sort: urlParams.get('sort') || root.getAttribute('data-initial-sort') || 'popular',
+      official: urlParams.get('official') === 'true' || root.getAttribute('data-initial-official') === 'true',
+      license: urlParams.get('license') || 'all',
+      q: urlParams.get('q') || '',
+      view: urlParams.get('view') || 'grid',
+      pageSize: 24,
+      limit: 24,
+    };
+
+    // Sync input values to state
+    typeRadios.forEach((r) => {
+      if (r.value === state.type) r.checked = true;
+    });
+    if (categorySelect) categorySelect.value = state.category;
+    if (clientSelect) clientSelect.value = state.client;
+    if (officialCheckbox) officialCheckbox.checked = state.official;
+    if (licenseSelect) licenseSelect.value = state.license;
+    if (searchInput) searchInput.value = state.q;
+    if (sortSelect) sortSelect.value = state.sort;
+
+    function syncUrl() {
+      const p = new URLSearchParams();
+      if (state.type !== 'all') p.set('type', state.type);
+      if (state.category !== 'all') p.set('category', state.category);
+      if (state.client !== 'all') p.set('client', state.client);
+      if (state.sort !== 'popular') p.set('sort', state.sort);
+      if (state.official) p.set('official', 'true');
+      if (state.license !== 'all') p.set('license', state.license);
+      if (state.q) p.set('q', state.q);
+      if (state.view !== 'grid') p.set('view', state.view);
+
+      const newUrl = `${window.location.pathname}${p.toString() ? '?' + p.toString() : ''}`;
+      window.history.replaceState({}, '', newUrl);
+    }
+
+    function formatNumber(num: number): string {
+      if (num >= 1000) return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+      return String(num);
+    }
+
+    function renderChips(_totalFiltered?: number) {
+      if (!chipsContainer) return;
+      chipsContainer.innerHTML = '';
+
+      const chips: { label: string; reset: () => void }[] = [];
+
+      if (state.type !== 'all') {
+        const typeLabel = state.type === 'mcp_server' ? 'MCP Servers' : 'Agent Skills';
+        chips.push({
+          label: `Type: ${typeLabel}`,
+          reset: () => {
+            state.type = 'all';
+            typeRadios.forEach((r) => { if (r.value === 'all') r.checked = true; });
+          },
+        });
+      }
+
+      if (state.category !== 'all') {
+        chips.push({
+          label: `Category: ${state.category}`,
+          reset: () => {
+            state.category = 'all';
+            if (categorySelect) categorySelect.value = 'all';
+          },
+        });
+      }
+
+      if (state.client !== 'all') {
+        chips.push({
+          label: `Client: ${state.client}`,
+          reset: () => {
+            state.client = 'all';
+            if (clientSelect) clientSelect.value = 'all';
+          },
+        });
+      }
+
+      if (state.official) {
+        chips.push({
+          label: 'Official only',
+          reset: () => {
+            state.official = false;
+            if (officialCheckbox) officialCheckbox.checked = false;
+          },
+        });
+      }
+
+      if (state.license !== 'all') {
+        chips.push({
+          label: `License: ${state.license}`,
+          reset: () => {
+            state.license = 'all';
+            if (licenseSelect) licenseSelect.value = 'all';
+          },
+        });
+      }
+
+      if (state.q) {
+        chips.push({
+          label: `Search: "${state.q}"`,
+          reset: () => {
+            state.q = '';
+            if (searchInput) searchInput.value = '';
+          },
+        });
+      }
+
+      chips.forEach((chip) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-sky-950/70 border border-sky-800/80 text-sky-300 hover:bg-sky-900 text-xs font-medium transition-colors cursor-pointer';
+        btn.innerHTML = `<span>${chip.label}</span><span class="text-sky-400 font-bold">&times;</span>`;
+        btn.addEventListener('click', () => {
+          chip.reset();
+          state.limit = state.pageSize;
+          syncUrl();
+          applyFilterAndRender();
+        });
+        chipsContainer.appendChild(btn);
+      });
+
+      if (chips.length > 1) {
+        const clearAll = document.createElement('button');
+        clearAll.type = 'button';
+        clearAll.className = 'text-xs text-slate-400 hover:text-white underline ml-2';
+        clearAll.textContent = 'Clear all';
+        clearAll.addEventListener('click', () => {
+          resetAllFilters();
+        });
+        chipsContainer.appendChild(clearAll);
+      }
+    }
+
+    function resetAllFilters() {
+      state.type = 'all';
+      state.category = 'all';
+      state.client = 'all';
+      state.official = false;
+      state.license = 'all';
+      state.q = '';
+      state.limit = state.pageSize;
+
+      typeRadios.forEach((r) => { if (r.value === 'all') r.checked = true; });
+      if (categorySelect) categorySelect.value = 'all';
+      if (clientSelect) clientSelect.value = 'all';
+      if (officialCheckbox) officialCheckbox.checked = false;
+      if (licenseSelect) licenseSelect.value = 'all';
+      if (searchInput) searchInput.value = '';
+
+      syncUrl();
+      applyFilterAndRender();
+    }
+
+    function applyFilterAndRender() {
+      // 1. Filter
+      const qLower = state.q.trim().toLowerCase();
+      let filtered = items.filter((item: any) => {
+        if (state.type !== 'all' && item.type !== state.type) return false;
+        if (state.category !== 'all' && !item.categories.includes(state.category)) return false;
+        if (state.official && !item.official) return false;
+        if (state.license !== 'all') {
+          if (!item.license || !item.license.toLowerCase().includes(state.license.toLowerCase())) return false;
+        }
+        if (qLower) {
+          const match =
+            item.name.toLowerCase().includes(qLower) ||
+            item.owner.toLowerCase().includes(qLower) ||
+            item.summary.toLowerCase().includes(qLower) ||
+            item.tagline.toLowerCase().includes(qLower);
+          if (!match) return false;
+        }
+        return true;
+      });
+
+      // 2. Sort
+      if (state.sort === 'popular') {
+        filtered.sort((a: any, b: any) => (b.stars || 0) - (a.stars || 0));
+      } else if (state.sort === 'updated') {
+        filtered.sort((a: any, b: any) => (new Date(b.lastCommit).getTime() || 0) - (new Date(a.lastCommit).getTime() || 0));
+      } else if (state.sort === 'newest') {
+        filtered.sort((a: any, b: any) => (new Date(b.firstSeen).getTime() || 0) - (new Date(a.firstSeen).getTime() || 0));
+      } else if (state.sort === 'name') {
+        filtered.sort((a: any, b: any) => a.name.localeCompare(b.name));
+      }
+
+      // Update counters & chips
+      const total = filtered.length;
+      if (countEl) {
+        countEl.textContent = `Showing ${Math.min(state.limit, total)} of ${total} tools`;
+      }
+      renderChips(total);
+
+      // Handle empty state
+      if (total === 0) {
+        if (gridContainer) gridContainer.classList.add('hidden');
+        if (listContainer) listContainer.classList.add('hidden');
+        if (paginationContainer) paginationContainer.classList.add('hidden');
+        if (emptyContainer) emptyContainer.classList.remove('hidden');
+        return;
+      }
+
+      if (emptyContainer) emptyContainer.classList.add('hidden');
+
+      // Paginate
+      const visible = filtered.slice(0, state.limit);
+
+      // Render Grid or List
+      if (state.view === 'list') {
+        if (gridContainer) gridContainer.classList.add('hidden');
+        if (listContainer) {
+          listContainer.classList.remove('hidden');
+          listContainer.innerHTML = visible.map((item: any) => `
+            <a href="${item.href}" class="flex items-center justify-between p-3.5 hover:bg-slate-850 transition-colors group">
+              <div class="flex items-center gap-3 min-w-0">
+                <img src="https://github.com/${item.owner}.png?size=40" alt="${item.owner}" class="w-8 h-8 rounded-lg bg-slate-950 border border-slate-800 object-cover shrink-0" loading="lazy" />
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <span class="font-semibold text-sm text-slate-100 group-hover:text-sky-300 truncate">${item.name}</span>
+                    <span class="text-[10px] px-1.5 py-0.2 rounded font-mono ${item.type === 'mcp_server' ? 'bg-cyan-950 text-cyan-300' : 'bg-purple-950 text-purple-300'}">
+                      ${item.type === 'mcp_server' ? 'MCP' : 'Skill'}
+                    </span>
+                    ${item.official ? '<span class="text-[10px] px-1.5 py-0.2 rounded bg-sky-950 text-sky-300">Official</span>' : ''}
+                  </div>
+                  <p class="text-xs text-slate-400 truncate">${item.summary || item.tagline}</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-slate-400 font-mono shrink-0 pl-3">
+                <span class="hidden sm:inline text-slate-500">${item.category}</span>
+                <span>★ ${formatNumber(item.stars)}</span>
+                <span class="text-sky-400 font-medium group-hover:translate-x-0.5 transition-transform">&rarr;</span>
+              </div>
+            </a>
+          `).join('');
+        }
+      } else {
+        if (listContainer) listContainer.classList.add('hidden');
+        if (gridContainer) {
+          gridContainer.classList.remove('hidden');
+          gridContainer.innerHTML = visible.map((item: any) => {
+            const isMcp = item.type === 'mcp_server';
+            return `
+              <a href="${item.href}" class="group flex flex-col justify-between p-5 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-slate-700 hover:bg-slate-850/90 transition-all duration-150 shadow-sm hover:shadow-md text-left">
+                <div>
+                  <div class="flex items-start justify-between gap-3 mb-3">
+                    <div class="flex items-start gap-3 min-w-0">
+                      <img src="https://github.com/${item.owner}.png?size=64" alt="${item.owner}" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-950 object-cover shrink-0" loading="lazy" />
+                      <div class="min-w-0">
+                        <h3 class="text-base font-semibold text-slate-100 group-hover:text-sky-300 transition-colors truncate">${item.name}</h3>
+                        <p class="text-xs text-slate-400 font-mono truncate">${item.owner}</p>
+                      </div>
+                    </div>
+                    <span class="px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider rounded shrink-0 ${isMcp ? 'bg-cyan-950/80 text-cyan-300 border border-cyan-800/60' : 'bg-purple-950/80 text-purple-300 border border-purple-800/60'}">
+                      ${isMcp ? 'MCP server' : 'Agent skill'}
+                    </span>
+                  </div>
+                  <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed mb-4">${item.summary || item.tagline}</p>
+                </div>
+                <div class="pt-3 border-t border-slate-800/70 flex items-center justify-between text-xs text-slate-400 font-sans">
+                  <div class="flex items-center gap-1.5 truncate">
+                    <span class="text-slate-300 font-medium truncate">${item.category}</span>
+                    <span class="text-slate-600">·</span>
+                    <span class="text-slate-300 font-mono font-medium">★ ${formatNumber(item.stars)}</span>
+                    <span class="text-slate-600">·</span>
+                    <span class="inline-flex items-center gap-1 text-slate-400">
+                      <span class="w-1.5 h-1.5 rounded-full inline-block bg-emerald-400"></span>
+                      <span>Active</span>
+                    </span>
+                    ${item.official ? '<span class="text-slate-600">·</span><span class="text-sky-400 font-medium">Official</span>' : ''}
+                  </div>
+                </div>
+              </a>
+            `;
+          }).join('');
+        }
+      }
+
+      // Load more button visibility
+      if (paginationContainer) {
+        if (state.limit >= total) {
+          paginationContainer.classList.add('hidden');
+        } else {
+          paginationContainer.classList.remove('hidden');
+        }
+      }
+    }
+
+    // Attach listeners
+    typeRadios.forEach((r) => {
+      r.addEventListener('change', () => {
+        state.type = r.value;
+        state.limit = state.pageSize;
+        syncUrl();
+        applyFilterAndRender();
+      });
+    });
+
+    if (categorySelect) {
+      categorySelect.addEventListener('change', () => {
+        state.category = categorySelect.value;
+        state.limit = state.pageSize;
+        syncUrl();
+        applyFilterAndRender();
+      });
+    }
+
+    if (clientSelect) {
+      clientSelect.addEventListener('change', () => {
+        state.client = clientSelect.value;
+        state.limit = state.pageSize;
+        syncUrl();
+        applyFilterAndRender();
+      });
+    }
+
+    if (officialCheckbox) {
+      officialCheckbox.addEventListener('change', () => {
+        state.official = officialCheckbox.checked;
+        state.limit = state.pageSize;
+        syncUrl();
+        applyFilterAndRender();
+      });
+    }
+
+    if (licenseSelect) {
+      licenseSelect.addEventListener('change', () => {
+        state.license = licenseSelect.value;
+        state.limit = state.pageSize;
+        syncUrl();
+        applyFilterAndRender();
+      });
+    }
+
+    if (sortSelect) {
+      sortSelect.addEventListener('change', () => {
+        state.sort = sortSelect.value;
+        syncUrl();
+        applyFilterAndRender();
+      });
+    }
+
+    let searchDebounce: any;
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        clearTimeout(searchDebounce);
+        searchDebounce = setTimeout(() => {
+          state.q = searchInput.value;
+          state.limit = state.pageSize;
+          syncUrl();
+          applyFilterAndRender();
+        }, 150);
+      });
+    }
+
+    if (gridBtn && listBtn) {
+      gridBtn.addEventListener('click', () => {
+        state.view = 'grid';
+        gridBtn.classList.add('bg-slate-800', 'text-slate-200');
+        gridBtn.classList.remove('text-slate-400');
+        listBtn.classList.remove('bg-slate-800', 'text-slate-200');
+        listBtn.classList.add('text-slate-400');
+        syncUrl();
+        applyFilterAndRender();
+      });
+
+      listBtn.addEventListener('click', () => {
+        state.view = 'list';
+        listBtn.classList.add('bg-slate-800', 'text-slate-200');
+        listBtn.classList.remove('text-slate-400');
+        gridBtn.classList.remove('bg-slate-800', 'text-slate-200');
+        gridBtn.classList.add('text-slate-400');
+        syncUrl();
+        applyFilterAndRender();
+      });
+    }
+
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', () => {
+        state.limit += state.pageSize;
+        applyFilterAndRender();
+      });
+    }
+
+    if (clearBtn) clearBtn.addEventListener('click', resetAllFilters);
+    if (emptyResetBtn) emptyResetBtn.addEventListener('click', resetAllFilters);
+
+    // Initial render
+    applyFilterAndRender();
+  }
+
+  setupCatalog();
+  document.addEventListener('astro:page-load', setupCatalog);
+</script>

@@ -1,141 +1,236 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SearchBox from '../components/SearchBox.astro';
 import EntryCard from '../components/EntryCard.astro';
-import { getAllMcp, getAllSkills } from '../lib/entries';
+import SearchBox from '../components/SearchBox.astro';
+import { getAllEntries, getAllMcp, getAllSkills, getCatalogState } from '../lib/entries';
 import { getCollection } from 'astro:content';
 
-const [mcpServers, agentSkills, clients, categories] = await Promise.all([
+const [allEntries, mcpServers, agentSkills, categories, clients] = await Promise.all([
+  getAllEntries(),
   getAllMcp(),
   getAllSkills(),
-  getCollection('clients'),
   getCollection('categories'),
+  getCollection('clients'),
 ]);
 
-const topMcp = mcpServers.slice(0, 8);
-const topSkills = agentSkills.slice(0, 8);
+const catalogState = getCatalogState();
+
+// Row 1: Most Popular (by stars)
+const popularRow = [...allEntries]
+  .sort((a, b) => (b.data.signals?.stars || 0) - (a.data.signals?.stars || 0))
+  .slice(0, 4);
+
+// Row 2: Recently Updated (by last commit)
+const updatedRow = [...allEntries]
+  .sort((a, b) => (new Date(b.data.signals?.last_commit || 0).getTime()) - (new Date(a.data.signals?.last_commit || 0).getTime()))
+  .slice(0, 4);
+
+// Row 3: Official Vendor Tools
+const officialRow = [...allEntries]
+  .filter((e) => e.data.source?.official_vendor)
+  .sort((a, b) => (b.data.signals?.stars || 0) - (a.data.signals?.stars || 0))
+  .slice(0, 4);
+
+// Row 4: Newest Added (by first_seen)
+const newestRow = [...allEntries]
+  .sort((a, b) => (new Date(b.data.first_seen).getTime()) - (new Date(a.data.first_seen).getTime()))
+  .slice(0, 4);
+
+// Calculate category counts
+const categoryCounts: Record<string, number> = {};
+for (const e of allEntries) {
+  for (const cat of e.data.categories) {
+    categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+  }
+}
 ---
 
 <BaseLayout>
-  <!-- Hero Section -->
-  <section class="relative overflow-hidden py-16 md:py-24 border-b border-slate-800/80 bg-gradient-to-b from-slate-900/50 via-slate-950 to-slate-950">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium border border-blue-500/30 bg-blue-950/40 text-blue-300 mb-6">
-        <span class="w-2 h-2 rounded-full bg-blue-400"></span>
-        <span>Open directory of MCP servers and agent skills</span>
+  <!-- Browse Hub Top Section (§5.2) -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10">
+    <!-- Short intro banner only, no marketing hero (§5.2 item 2) -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-8 border-b border-slate-800">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Browse AI Agent Tools &amp; Skills
+        </h1>
+        <p class="text-xs text-slate-400 mt-1">
+          Open catalog of <strong>{allEntries.length} tools</strong> ({mcpServers.length} MCP servers, {agentSkills.length} agent skills). Refreshed on {catalogState.formattedDate}.
+        </p>
       </div>
 
-      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
-        MCP Servers &amp; Agent Skills <br class="hidden sm:inline" />
-        <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">
-          with 1-Click Launch Configs
-        </span>
-      </h1>
-
-      <p class="text-base md:text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Open directory of MCP servers and agent skills. Explore {mcpServers.length} MCP servers and {agentSkills.length} agent skills, with install steps for <span class="text-slate-200 font-medium">Claude Code</span>, <span class="text-slate-200 font-medium">Codex</span>, and <span class="text-slate-200 font-medium">Antigravity</span>.
-      </p>
-
-      <!-- Search Box with Pagefind -->
-      <SearchBox class="mb-8" />
-
-      <!-- Client Quick Pills -->
-      <div class="flex flex-wrap items-center justify-center gap-3 pt-4">
-        <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Clients:</span>
+      <!-- Quick Client Switcher -->
+      <div class="flex items-center gap-2">
+        <span class="text-xs text-slate-500 font-medium hidden sm:inline">Clients:</span>
         {clients.map((c) => (
           <a
             href={`/client/${c.data.id}`}
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900/80 hover:bg-slate-800 hover:border-slate-700 text-xs text-slate-300 hover:text-white transition-all shadow-xs"
+            class="px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-xs text-slate-300 hover:text-white transition-colors"
           >
-            <span>{c.data.id === 'claude-code' ? '⚡' : c.data.id === 'codex' ? '🤖' : '🌌'}</span>
-            <span class="font-medium">{c.data.name}</span>
+            {c.data.name}
           </a>
         ))}
       </div>
     </div>
-  </section>
 
-  <!-- Categories Bar -->
-  <section class="border-b border-slate-800/80 bg-slate-900/30 py-4">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center gap-2 overflow-x-auto py-1 scrollbar-none">
-        <span class="text-xs text-slate-500 font-medium whitespace-nowrap mr-2">Categories:</span>
-        {categories.map((cat) => (
-          <a
-            href={`/category/${cat.data.id}`}
-            class="px-3 py-1 rounded-md text-xs font-medium border border-slate-800/80 bg-slate-900/50 hover:bg-slate-800 hover:text-white text-slate-300 transition-colors whitespace-nowrap"
-          >
-            {cat.data.name}
+    <!-- Search Box (always visible) -->
+    <div class="mb-10 max-w-3xl">
+      <SearchBox />
+    </div>
+
+    <!-- 1. Browse by Type (§5.2 item 4) -->
+    <div class="mb-12">
+      <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">
+        Browse by Type
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a
+          href="/catalog?type=mcp_server"
+          class="p-6 rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/90 to-slate-950 hover:border-cyan-800/80 hover:from-cyan-950/20 transition-all group"
+        >
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2.5 py-0.5 rounded text-xs font-semibold uppercase tracking-wider bg-cyan-950/80 text-cyan-300 border border-cyan-800/60">
+              MCP Servers
+            </span>
+            <span class="font-mono text-sm text-cyan-400 font-bold group-hover:translate-x-1 transition-transform">
+              {mcpServers.length} servers &rarr;
+            </span>
+          </div>
+          <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+            Standardized servers exposing databases, browser automation, filesystem access, and API integrations via Model Context Protocol.
+          </p>
+        </a>
+
+        <a
+          href="/catalog?type=agent_skill"
+          class="p-6 rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/90 to-slate-950 hover:border-purple-800/80 hover:from-purple-950/20 transition-all group"
+        >
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2.5 py-0.5 rounded text-xs font-semibold uppercase tracking-wider bg-purple-950/80 text-purple-300 border border-purple-800/60">
+              Agent Skills
+            </span>
+            <span class="font-mono text-sm text-purple-400 font-bold group-hover:translate-x-1 transition-transform">
+              {agentSkills.length} skills &rarr;
+            </span>
+          </div>
+          <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+            Composable skills and task instructions packaged in SKILL.md specs for Claude Code, OpenAI Codex, and Google Antigravity.
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. Browse by Category (§5.2 item 3) -->
+    <div class="mb-14">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+          Browse by Category
+        </h2>
+        <a href="/catalog" class="text-xs text-sky-400 hover:underline">
+          View all categories in catalog &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3.5">
+        {categories.map((cat) => {
+          const count = categoryCounts[cat.data.id] || 0;
+          return (
+            <a
+              href={`/catalog?category=${cat.data.id}`}
+              class="p-4 rounded-xl border border-slate-800 bg-slate-900/50 hover:border-slate-700 hover:bg-slate-900 transition-all group"
+            >
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-semibold text-sm text-slate-100 group-hover:text-sky-300 transition-colors">
+                  {cat.data.name}
+                </span>
+                <span class="text-xs font-mono text-slate-500 font-medium">
+                  {count}
+                </span>
+              </div>
+              <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                {cat.data.description}
+              </p>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+
+    <!-- 3. Rows (§5.2 item 5): Popular, Recently Updated, Official, New -->
+    <div class="space-y-12 pt-4 border-t border-slate-800">
+      <!-- Most Popular Row -->
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-lg font-bold text-white">Most Popular</h2>
+            <p class="text-xs text-slate-400">Widely adopted tools ranked by GitHub community stars</p>
+          </div>
+          <a href="/catalog?sort=popular" class="text-xs font-semibold text-sky-400 hover:underline">
+            See all popular &rarr;
           </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Catalog Main -->
-  <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
-    <!-- MCP Servers -->
-    <div>
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-        <div>
-          <h2 class="text-2xl font-bold text-white flex items-center gap-2.5">
-            <span class="text-cyan-400">🔌</span>
-            <span>Top MCP Servers</span>
-            <span class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-300 font-mono">
-              {mcpServers.length} servers
-            </span>
-          </h2>
-          <p class="text-sm text-slate-400 mt-1">
-            Model Context Protocol servers providing database connections, browser automation, and developer tools.
-          </p>
         </div>
-
-        <a
-          href="/mcp"
-          class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors shrink-0"
-        >
-          <span>View all {mcpServers.length} MCP servers</span>
-          <span>&rarr;</span>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {topMcp.map((entry) => (
-          <EntryCard entry={entry} />
-        ))}
-      </div>
-    </div>
-
-    <!-- Agent Skills -->
-    <div>
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-        <div>
-          <h2 class="text-2xl font-bold text-white flex items-center gap-2.5">
-            <span class="text-purple-400">🧠</span>
-            <span>Top Agent Skills</span>
-            <span class="text-xs px-2.5 py-0.5 rounded-full bg-purple-950/60 border border-purple-800/60 text-purple-300 font-mono">
-              {agentSkills.length} skills
-            </span>
-          </h2>
-          <p class="text-sm text-slate-400 mt-1">
-            Agent instructions with <code class="text-xs bg-slate-900 px-1 py-0.5 rounded text-purple-300">SKILL.md</code> definitions.
-          </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {popularRow.map((entry) => (
+            <EntryCard entry={entry} />
+          ))}
         </div>
-
-        <a
-          href="/skills"
-          class="inline-flex items-center gap-1.5 text-xs font-semibold text-purple-400 hover:text-purple-300 transition-colors shrink-0"
-        >
-          <span>View all {agentSkills.length} skills</span>
-          <span>&rarr;</span>
-        </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {topSkills.map((entry) => (
-          <EntryCard entry={entry} />
-        ))}
+      <!-- Recently Updated Row -->
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-lg font-bold text-white">Recently Updated</h2>
+            <p class="text-xs text-slate-400">Actively maintained tools with fresh repository commits</p>
+          </div>
+          <a href="/catalog?sort=updated" class="text-xs font-semibold text-sky-400 hover:underline">
+            See all recently updated &rarr;
+          </a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {updatedRow.map((entry) => (
+            <EntryCard entry={entry} />
+          ))}
+        </div>
+      </div>
+
+      <!-- Official Vendors Row -->
+      {officialRow.length > 0 && (
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h2 class="text-lg font-bold text-white">Official Vendor Tools</h2>
+              <p class="text-xs text-slate-400">Servers published and supported directly by primary platform providers</p>
+            </div>
+            <a href="/catalog?official=true" class="text-xs font-semibold text-sky-400 hover:underline">
+              See all official tools &rarr;
+            </a>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {officialRow.map((entry) => (
+              <EntryCard entry={entry} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Newest Added Row -->
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-lg font-bold text-white">Newest Added</h2>
+            <p class="text-xs text-slate-400">Tools and skills newly joined to the directory catalog</p>
+          </div>
+          <a href="/catalog?sort=newest" class="text-xs font-semibold text-sky-400 hover:underline">
+            See all newest &rarr;
+          </a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {newestRow.map((entry) => (
+            <EntryCard entry={entry} />
+          ))}
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 </BaseLayout>
