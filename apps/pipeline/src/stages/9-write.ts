@@ -7,34 +7,40 @@ import { generateSlug } from '../lib/slug.js';
 import type { EnrichedEntry } from './7-enrich.js';
 import type { McpEntry, SkillEntry } from '@web-db/schema';
 
-function assignCategory(name: string, desc: string, topics: string[]): string[] {
-  const text = `${name} ${desc} ${topics.join(' ')}`.toLowerCase();
-  const categories: string[] = [];
+function assignCategory(name: string, desc: string, topics: string[], skillName?: string): string[] {
+  const text = `${name} ${desc} ${topics.join(' ')} ${skillName || ''}`.toLowerCase();
 
-  if (/database|postgres|mysql|sqlite|redis|sql|supabase|qdrant|chroma|milvus|vector/i.test(text)) {
-    categories.push('databases');
-  }
-  if (/browser|crawl|scrape|web|playwright|puppeteer|selenium|http/i.test(text)) {
-    categories.push('browser-automation');
-  }
-  if (/security|pentest|cve|vulnerability|auth|crypto|audit/i.test(text)) {
-    categories.push('security');
-  }
-  if (/agent|crew|autogen|orchestrat|swarm|langchain|llama/i.test(text)) {
-    categories.push('ai-frameworks');
-  }
-  if (/tool|git|cli|dev|terminal|docker|kubernetes|debug|monitor/i.test(text)) {
-    categories.push('dev-tools');
-  }
-  if (/notion|slack|calendar|email|office|workflow|job|search/i.test(text)) {
-    categories.push('productivity');
+  // 1. Databases & Storage
+  if (/\b(database|postgres|postgresql|mysql|sqlite|redis|sql|supabase|qdrant|chroma|milvus|mongodb|neo4j|dynamodb|elasticsearch|vector|orm|prisma|convex|faiss|lance|knowledge-graph|graph-rag|s3|minio|storage)\b/i.test(text)) {
+    return ['databases'];
   }
 
-  if (categories.length === 0) {
-    categories.push('other');
+  // 2. Browser & Web Scraping (strict: no bare 'web' or 'http')
+  if (/\b(browser|playwright|puppeteer|selenium|headless|scrape|scraper|scraping|crawl|crawler|crawling|spider|web-search|web-extract)\b/i.test(text)) {
+    return ['browser-automation'];
   }
 
-  return categories;
+  // 3. Security, Auth, Identity
+  if (/\b(security|pentest|cve|vulnerability|vulnerabilities|auth|authentication|oauth|crypto|cryptography|audit|sandbox|credential|credentials|secret|secrets|token|firewall|ssl|tls|cert)\b/i.test(text)) {
+    return ['security'];
+  }
+
+  // 4. Productivity, Communication & Workflows
+  if (/\b(slack|discord|telegram|imessage|email|gmail|notion|calendar|jira|linear|trello|todoist|airtable|sheets|office365|google-workspace|workspace|productivity|reminder|task|meeting|notes|todo|project-management|workflow|n8n|zapier|crm|marketing|sales|finance|social|post|resume|pdf|document)\b/i.test(text)) {
+    return ['productivity'];
+  }
+
+  // 5. Developer Tools & Code Utilities (strict: no bare 'tool' or 'dev')
+  if (/\b(git|github|gitlab|terminal|shell|cli|docker|kubernetes|k8s|profiler|debugger|linter|ci-cd|compiler|cargo|npm|pnpm|pip|editor|ide|filesystem|linux|macos|bash|zsh|powershell|ast|ast-grep|code-analysis|documentation|code-search|codebase|sdk|devtools|coding|programming)\b/i.test(text)) {
+    return ['dev-tools'];
+  }
+
+  // 6. AI Frameworks, Autonomous Research & Orchestration (strict: no bare 'agent')
+  if (/\b(langchain|langgraph|autogen|crewai|llamaindex|semantic-kernel|dify|open-webui|swarm|multi-player|multi-agent|orchestrat|rag|inference|model-serving|ollama|vllm|evals|benchmark|copilot|research|experiment|prompt|agent|llm)\b/i.test(text)) {
+    return ['ai-frameworks'];
+  }
+
+  return ['other'];
 }
 
 export async function runStage9Write(
@@ -67,7 +73,12 @@ export async function runStage9Write(
     const isMcp = layer2?.detectedType === 'mcp_server';
     const subpath = isMcp ? '' : item.skillSpec?.folder_path || layer2?.subpaths?.[0] || '';
     const slug = generateSlug(repo.owner, repo.name, isMcp ? undefined : subpath);
-    const categories = assignCategory(repo.name, repo.description || '', repo.topics);
+    const categories = assignCategory(
+      repo.name,
+      repo.description || '',
+      repo.topics,
+      item.skillSpec?.skill_name
+    );
 
     const targetDir = isMcp ? mcpDir : skillsDir;
     const filePath = path.join(targetDir, `${slug}.md`);
@@ -173,10 +184,31 @@ export async function runStage9Write(
   const signalFile = path.join(signalsDir, `${weekStr}.json`);
   fs.writeFileSync(signalFile, JSON.stringify(signalSnapshots, null, 2), 'utf8');
 
+  // Persist cross-run state (Task A5, D8)
+  const stateDir = path.join(config.rootDir, 'data/state');
+  fs.mkdirSync(stateDir, { recursive: true });
+  const stateFile = path.join(stateDir, 'catalog-state.json');
+  fs.writeFileSync(
+    stateFile,
+    JSON.stringify(
+      {
+        refreshed_at: nowIso,
+        week: weekStr,
+        total_mcp: writtenMcp,
+        total_skills: writtenSkills,
+        total_entries: writtenMcp + writtenSkills,
+      },
+      null,
+      2
+    ),
+    'utf8'
+  );
+
   logger.info(
     `Stage 9 Complete: Written ${writtenMcp} MCP entries and ${writtenSkills} Skill entries to content/entries/.`
   );
   logger.info(`Saved signal snapshots to ${signalFile}`);
+  logger.info(`Saved catalog state to ${stateFile}`);
 
   return { writtenMcp, writtenSkills };
 }

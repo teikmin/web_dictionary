@@ -1,24 +1,24 @@
 ---
 slug: 0xnyk-council-of-high-intelligence
-name: council-of-high-intelligence
-tagline: Structured multi-perspective deliberation for hard decisions. Run full
-  councils, focused triads, or duo debates across Claude Code, Codex, Gemini
-  CLI,
+name: council
+tagline: Convene the Council of High Intelligence — multi-persona deliberation
+  with historical thinkers for deeper analysis of complex problems.
 categories:
-  - ai-frameworks
   - dev-tools
 status: active
-quality_percentile: 67
+quality_percentile: 50
 selection_reason: quality_percentile
-first_seen: 2026-03-02T08:47:09Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-03-02T08:47:09
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: 0xNyk/council-of-high-intelligence
+  subpath: .
+  official_vendor: false
   license: MIT
 signals:
-  stars: 4550
-  last_commit: 2026-10-05T05:40:13Z
+  stars: 4622
+  last_commit: 2026-10-12T05:38:28Z
 type: agent_skill
 skill:
   skill_name: council

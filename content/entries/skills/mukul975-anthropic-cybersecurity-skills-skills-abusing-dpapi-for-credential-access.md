@@ -1,25 +1,24 @@
 ---
 slug: mukul975-anthropic-cybersecurity-skills-skills-abusing-dpapi-for-credential-access
-name: Anthropic-Cybersecurity-Skills
-tagline: "817 structured cybersecurity skills for AI agents · Mapped to 6
-  frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF &
-  MITRE F3 (F"
+name: abusing-dpapi-for-credential-access
+tagline: Extract and decrypt Windows DPAPI-protected secrets (Credential
+  Manager, browser logins/cookies, Wi-Fi credentials, KeePass keys) online or
+  offline us
 categories:
   - security
-  - ai-frameworks
-  - dev-tools
 status: active
-quality_percentile: 61
+quality_percentile: 63
 selection_reason: quality_percentile
-first_seen: 2026-02-25T09:47:50Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-02-25T09:47:50
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: mukul975/Anthropic-Cybersecurity-Skills
   subpath: skills/abusing-dpapi-for-credential-access
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 33900
+  stars: 34367
   last_commit: 2026-08-31T04:32:44Z
 type: agent_skill
 skill:

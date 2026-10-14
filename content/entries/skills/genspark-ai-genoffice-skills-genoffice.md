@@ -1,26 +1,25 @@
 ---
 slug: genspark-ai-genoffice-skills-genoffice
 name: genoffice
-tagline: "Free, open-source AI Office suite: Docs, Sheets, Slides, PDF, Markdown
-  and HTML editors with a built-in AI agent, plus a `genoffice` CLI and agent
-  ski"
+tagline: "Create, convert, read and edit Office documents locally with
+  GenOffice's command line. Build a new presentation (pptx) from a brief through
+  a checked "
 categories:
-  - ai-frameworks
-  - dev-tools
   - productivity
 status: active
-quality_percentile: 67
+quality_percentile: 80
 selection_reason: quality_percentile
-first_seen: 2026-07-31T09:40:58Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-07-31T09:40:58
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: genspark-ai/genoffice
   subpath: skills/genoffice
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 8842
-  last_commit: 2026-10-06T23:14:30Z
+  stars: 9558
+  last_commit: 2026-10-13T15:10:17Z
 type: agent_skill
 skill:
   skill_name: genoffice

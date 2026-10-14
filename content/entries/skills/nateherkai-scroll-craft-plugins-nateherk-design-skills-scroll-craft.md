@@ -1,23 +1,24 @@
 ---
 slug: nateherkai-scroll-craft-plugins-nateherk-design-skills-scroll-craft
 name: scroll-craft
-tagline: An agent skill for building premium, immersive, scroll-driven websites.
-  Works with Codex, Claude Code, and other coding agents. Also available as a Cl
+tagline: Build premium scroll-driven landing pages for service, product, food,
+  and drink brands. Plan the visitor journey, page grammar, emotional peak, and
+  be
 categories:
-  - browser-automation
-  - ai-frameworks
+  - dev-tools
 status: active
-quality_percentile: 72
+quality_percentile: 49
 selection_reason: quality_percentile
-first_seen: 2026-08-22T15:25:08Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-08-22T15:25:08
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: nateherkai/scroll-craft
   subpath: plugins/nateherk-design/skills/scroll-craft
+  official_vendor: false
   license: MIT
 signals:
-  stars: 2978
+  stars: 3334
   last_commit: 2026-09-30T13:31:42Z
 type: agent_skill
 skill:

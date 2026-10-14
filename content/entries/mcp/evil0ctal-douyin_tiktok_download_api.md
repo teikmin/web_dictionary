@@ -6,19 +6,18 @@ tagline: 🚀 抖音、TikTok 数据采集与无水印视频下载 API，自托�
   MCP
 categories:
   - databases
-  - browser-automation
-  - dev-tools
 status: active
-quality_percentile: 92
+quality_percentile: 78
 selection_reason: quality_percentile
-first_seen: 2021-11-07T01:35:09Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2021-11-07T01:35:09
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: Evil0ctal/Douyin_TikTok_Download_API
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 20496
+  stars: 20625
   last_commit: 2026-10-02T00:45:24Z
 type: mcp_server
 launch:

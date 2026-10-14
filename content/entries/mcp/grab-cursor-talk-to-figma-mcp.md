@@ -7,23 +7,25 @@ tagline: "TalkToFigma: MCP integration between AI Agent (Cursor, Claude Code,
 categories:
   - ai-frameworks
 status: active
-quality_percentile: 36
+quality_percentile: 37
 selection_reason: quality_percentile
-first_seen: 2025-03-16T16:45:37Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-03-16T16:45:37
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: grab/cursor-talk-to-figma-mcp
+  official_vendor: false
   license: MIT
 signals:
-  stars: 7047
+  stars: 7050
   last_commit: 2026-07-26T07:14:26Z
 type: mcp_server
 launch:
   transport: stdio
-  command: bunx
+  command: npx
   args:
-    - cursor-talk-to-figma-mcp@latest
+    - -y
+    - cursor-talk-to-figma-mcp
   env_vars: []
   confidence: manifest
 ---

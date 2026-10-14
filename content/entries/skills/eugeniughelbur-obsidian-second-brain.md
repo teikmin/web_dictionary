@@ -1,26 +1,25 @@
 ---
 slug: eugeniughelbur-obsidian-second-brain
 name: obsidian-second-brain
-tagline: Persistent memory for Claude Code and 6 other CLI agents, stored as
-  plain markdown in your Obsidian vault. Stop re-explaining your projects,
-  decisions
+tagline: "Operate any Obsidian vault as a living, self-rewriting second brain
+  (an evolution of Karpathy's LLM Wiki pattern: sources rewrite existing pages,
+  cont"
 categories:
-  - browser-automation
-  - ai-frameworks
-  - dev-tools
-  - productivity
+  - databases
 status: active
-quality_percentile: 72
+quality_percentile: 60
 selection_reason: quality_percentile
-first_seen: 2026-03-24T11:58:12Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-03-24T11:58:12
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: eugeniughelbur/obsidian-second-brain
+  subpath: .
+  official_vendor: false
   license: MIT
 signals:
-  stars: 4690
-  last_commit: 2026-10-01T15:27:54Z
+  stars: 4746
+  last_commit: 2026-10-10T21:14:30Z
 type: agent_skill
 skill:
   skill_name: obsidian-second-brain

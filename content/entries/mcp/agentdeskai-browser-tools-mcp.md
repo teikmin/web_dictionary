@@ -4,18 +4,18 @@ name: browser-tools-mcp
 tagline: Monitor browser logs directly from Cursor and other MCP compatible IDEs.
 categories:
   - browser-automation
-  - dev-tools
 status: active
-quality_percentile: 36
+quality_percentile: 38
 selection_reason: quality_percentile
-first_seen: 2025-02-10T09:20:38Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-02-10T09:20:38
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: AgentDeskAI/browser-tools-mcp
+  official_vendor: false
   license: MIT
 signals:
-  stars: 7327
+  stars: 7329
   last_commit: 2026-08-12T16:48:04Z
 type: mcp_server
 launch:
@@ -23,9 +23,9 @@ launch:
   command: npx
   args:
     - -y
-    - io.github.AgentDeskAI/browser-tools-mcp
+    - "@agentdeskai/browser-tools-mcp@latest"
   env_vars: []
-  confidence: manifest
+  confidence: readme
 ---
 
 Monitor browser logs directly from Cursor and other MCP compatible IDEs.

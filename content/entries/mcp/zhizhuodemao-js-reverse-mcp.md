@@ -5,19 +5,18 @@ tagline: AI Agent-first JS 逆向 MCP Server：有头 Chrome 调试、断点、�
   分析、Patchright 反检测，可选 CloakBrowser。
 categories:
   - browser-automation
-  - ai-frameworks
-  - dev-tools
 status: active
-quality_percentile: 46
+quality_percentile: 47
 selection_reason: quality_percentile
-first_seen: 2025-11-29T15:42:31Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-11-29T15:42:31
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: zhizhuodemao/js-reverse-mcp
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 2904
+  stars: 2945
   last_commit: 2026-09-03T11:45:13Z
 type: mcp_server
 launch:

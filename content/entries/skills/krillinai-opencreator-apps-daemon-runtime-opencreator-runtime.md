@@ -1,25 +1,23 @@
 ---
 slug: krillinai-opencreator-apps-daemon-runtime-opencreator-runtime
-name: OpenCreator
-tagline: "Formerly KrillinAI. Open-source AI workspace for creators, powered by
-  Codex. Create videos, images, voice, avatars, video translation, and edits
-  with "
+name: opencreator-runtime
+tagline: OpenCreator 内部 Creator Agent 的稳定运行规则，仅由应用自动安装和激活。
 categories:
-  - ai-frameworks
-  - dev-tools
+  - productivity
 status: active
-quality_percentile: 82
+quality_percentile: 75
 selection_reason: quality_percentile
-first_seen: 2024-12-17T01:59:22Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2024-12-17T01:59:22
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: krillinai/OpenCreator
   subpath: apps/daemon/runtime/opencreator-runtime
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 12614
-  last_commit: 2026-10-05T01:38:19Z
+  stars: 12884
+  last_commit: 2026-10-13T09:45:23Z
 type: agent_skill
 skill:
   skill_name: opencreator-runtime

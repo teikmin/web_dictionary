@@ -5,17 +5,18 @@ tagline: MCP server for JADX-AI Plugin
 categories:
   - security
 status: active
-quality_percentile: 24
+quality_percentile: 42
 selection_reason: quality_percentile
-first_seen: 2025-04-08T11:30:57Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-04-08T11:30:57
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: zinja-coder/jadx-mcp-server
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 791
-  last_commit: 2026-09-23T07:51:37Z
+  stars: 800
+  last_commit: 2026-10-09T08:03:18Z
 type: mcp_server
 launch:
   transport: stdio

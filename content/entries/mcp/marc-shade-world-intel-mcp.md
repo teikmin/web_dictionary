@@ -1,24 +1,24 @@
 ---
 slug: marc-shade-world-intel-mcp
 name: world-intel-mcp
-tagline: "120-tool MCP server for real-time global intelligence: markets, SEC
-  filings, conflict, military, cyber, climate, news, and 30+ domains. AI
-  situation b"
+tagline: "139-tool MCP server for real-time global intelligence from free public
+  APIs: markets, SEC filings, conflict, military, aircraft-cohort early warning,
+  "
 categories:
-  - security
-  - dev-tools
+  - other
 status: active
-quality_percentile: 23
+quality_percentile: 64
 selection_reason: quality_percentile
-first_seen: 2025-11-29T16:49:53Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-11-29T16:49:53
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: marc-shade/world-intel-mcp
+  official_vendor: false
   license: MIT
 signals:
-  stars: 657
-  last_commit: 2026-09-02T20:53:26Z
+  stars: 941
+  last_commit: 2026-10-12T19:11:43Z
 type: mcp_server
 launch:
   transport: stdio
@@ -29,4 +29,4 @@ launch:
   confidence: manifest
 ---
 
-120-tool MCP server for real-time global intelligence: markets, SEC filings, conflict, military, cyber, climate, news, and 30+ domains. AI situation briefs that cite their sources, user-defined geofences with escalation scoring, cited daily digests, live SSE dashboard. MIT, no paid API keys.
+139-tool MCP server for real-time global intelligence from free public APIs: markets, SEC filings, conflict, military, aircraft-cohort early warning, refugee and migration flows, cyber, climate, news, and 30+ domains. Cited AI situation briefs, geofences with change detection, live SSE dashboard. MIT, no paid API keys.

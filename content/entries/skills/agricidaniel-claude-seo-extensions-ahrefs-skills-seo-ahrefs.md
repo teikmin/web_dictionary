@@ -1,24 +1,24 @@
 ---
 slug: agricidaniel-claude-seo-extensions-ahrefs-skills-seo-ahrefs
-name: claude-seo
-tagline: Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents
-  covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse
-  Agent
+name: seo-ahrefs
+tagline: Ahrefs API analyst (extension). Reads referring domains, backlinks,
+  organic keywords, and content explorer data via the tested @ahrefs/mcp@0.0.11
+  serv
 categories:
-  - browser-automation
-  - ai-frameworks
+  - productivity
 status: active
-quality_percentile: 94
+quality_percentile: 76
 selection_reason: quality_percentile
-first_seen: 2026-02-07T08:17:38Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-02-07T08:17:38
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: AgriciDaniel/claude-seo
   subpath: extensions/ahrefs/skills/seo-ahrefs
+  official_vendor: false
   license: MIT
 signals:
-  stars: 18470
+  stars: 18843
   last_commit: 2026-10-04T23:41:12Z
 type: agent_skill
 skill:

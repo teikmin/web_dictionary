@@ -1,25 +1,25 @@
 ---
 slug: agricidaniel-claude-ads-ads
-name: claude-ads
-tagline: Claude-first paid-media operations skill for Claude Code across 12 ad
-  platforms (Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, Apple, Amazon,
-  Re
+name: ads
+tagline: Operate professional paid advertising across Google, Meta, YouTube,
+  LinkedIn, TikTok, Microsoft, Apple, Amazon, Reddit, Pinterest, Snapchat, and
+  X. Us
 categories:
-  - security
-  - ai-frameworks
+  - productivity
 status: active
-quality_percentile: 93
+quality_percentile: 81
 selection_reason: quality_percentile
-first_seen: 2026-02-11T13:01:49Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-02-11T13:01:49
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: AgriciDaniel/claude-ads
   subpath: ads
+  official_vendor: false
   license: MIT
 signals:
-  stars: 9774
-  last_commit: 2026-10-07T15:48:52Z
+  stars: 9953
+  last_commit: 2026-10-07T17:11:47Z
 type: agent_skill
 skill:
   skill_name: ads

@@ -1,26 +1,22 @@
 ---
 slug: googleworkspace-cli-skills-gws-admin-reports
-name: cli
-tagline: "Google Workspace CLI — one command-line tool for Drive, Gmail,
-  Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google
-  Discovery "
+name: gws-admin-reports
+tagline: "Google Workspace Admin SDK: Audit logs and usage reports."
 categories:
-  - security
-  - ai-frameworks
-  - dev-tools
   - productivity
 status: active
-quality_percentile: 73
+quality_percentile: 55
 selection_reason: quality_percentile
-first_seen: 2026-03-02T19:46:06Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-03-02T19:46:06
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: googleworkspace/cli
   subpath: skills/gws-admin-reports
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 31270
+  stars: 31448
   last_commit: 2026-10-06T20:23:04Z
 type: agent_skill
 skill:

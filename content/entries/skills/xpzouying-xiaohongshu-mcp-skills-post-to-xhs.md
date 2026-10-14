@@ -1,22 +1,25 @@
 ---
 slug: xpzouying-xiaohongshu-mcp-skills-post-to-xhs
-name: xiaohongshu-mcp
-tagline: MCP for xiaohongshu.com
+name: post-to-xhs
+tagline: >
+  小红书内容发布技能。支持两种发布模式：(1) 上传图文模式 - 图片+短文；(2) 写长文模式 - 长篇文章+排版模板。
+  支持两种输入方式：用户提供完整内容和图片/图片URL，直接发布；或提供网页URL，自动提取内容和图片。 用户说"发长文"时使用长文模式，否则默认图文模式。
 categories:
-  - other
+  - productivity
 status: active
-quality_percentile: 81
+quality_percentile: 87
 selection_reason: quality_percentile
-first_seen: 2025-08-03T09:08:45Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-08-03T09:08:45
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: xpzouying/xiaohongshu-mcp
   subpath: skills/post-to-xhs
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 16133
-  last_commit: 2026-10-05T05:06:45Z
+  stars: 16257
+  last_commit: 2026-10-12T04:56:03Z
 type: agent_skill
 skill:
   skill_name: post-to-xhs

@@ -1,0 +1,34 @@
+---
+slug: epoko77-ai-im-not-ai-copilot-skills-humanize-korean
+name: copilot-humanize-korean
+tagline: AI(ChatGPT·Claude·Gemini)가 쓴 한글 텍스트를 사람이 쓴 글처럼 윤문한다. 번역투·영어 인용 과다·기계적
+  병렬·관용구·피동 남용·접속사 남발·리듬 균일·이모지/불릿 과다 등 10대 카테고리 70개 AI 티 패턴을 탐지·분류해 내용은 한 글자도
+  건드리
+categories:
+  - ai-frameworks
+status: active
+quality_percentile: 60
+selection_reason: quality_percentile
+first_seen: 2026-10-14
+last_updated: 2026-10-14T14:22:24.653Z
+source:
+  kind: github_repo
+  repo: epoko77-ai/im-not-ai
+  subpath: copilot/skills/humanize-korean
+  official_vendor: false
+  license: MIT
+signals:
+  stars: 5971
+  last_commit: 2026-10-12T09:57:11Z
+type: agent_skill
+skill:
+  skill_name: copilot-humanize-korean
+  description: AI(ChatGPT·Claude·Gemini)가 쓴 한글 텍스트를 사람이 쓴 글처럼 윤문한다. 번역투·영어 인용
+    과다·기계적 병렬·관용구·피동 남용·접속사 남발·리듬 균일·이모지/불릿 과다 등 10대 카테고리 70개 AI 티 패턴을 탐지·분류해
+    내용은 한 글자도 건드리지 않고 문체·리듬·표현만 자연스럽게 재작성한다. 트리거 — "AI 티 없애줘", "AI 윤문", "ChatGPT
+    티 제거", "번역투 고쳐", "사람이 쓴 것처럼", "humanize Korean". 단순 맞춤법 교정·번역·내용 추가는 대상 아님.
+  folder_path: copilot/skills/humanize-korean
+  extra_files: []
+---
+
+AI(ChatGPT·Claude·Gemini)가 쓴 한글 텍스트를 사람이 쓴 글처럼 윤문한다. 번역투·영어 인용 과다·기계적 병렬·관용구·피동 남용·접속사 남발·리듬 균일·이모지/불릿 과다 등 10대 카테고리 70개 AI 티 패턴을 탐지·분류해 내용은 한 글자도 건드리지 않고 문체·리듬·표현만 자연스럽게 재작성한다. 트리거 — "AI 티 없애줘", "AI 윤문", "ChatGPT 티 제거", "번역투 고쳐", "사람이 쓴 것처럼", "humanize Korean". 단순 맞춤법 교정·번역·내용 추가는 대상 아님.

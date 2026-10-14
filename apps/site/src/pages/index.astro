@@ -21,8 +21,8 @@ const topSkills = agentSkills.slice(0, 8);
   <section class="relative overflow-hidden py-16 md:py-24 border-b border-slate-800/80 bg-gradient-to-b from-slate-900/50 via-slate-950 to-slate-950">
     <div class="max-w-5xl mx-auto px-4 text-center">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium border border-blue-500/30 bg-blue-950/40 text-blue-300 mb-6">
-        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-        <span>Curated &amp; Verified for Coding Agents</span>
+        <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+        <span>Open directory of MCP servers and agent skills</span>
       </div>
 
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
@@ -33,7 +33,7 @@ const topSkills = agentSkills.slice(0, 8);
       </h1>
 
       <p class="text-base md:text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Autonomous coding agents need verified tools. Search {mcpServers.length} MCP servers and {agentSkills.length} agent skills, with verified configs for <span class="text-slate-200 font-medium">Claude Code</span>, <span class="text-slate-200 font-medium">Codex</span>, and <span class="text-slate-200 font-medium">Antigravity</span>.
+        Open directory of MCP servers and agent skills. Explore {mcpServers.length} MCP servers and {agentSkills.length} agent skills, with install steps for <span class="text-slate-200 font-medium">Claude Code</span>, <span class="text-slate-200 font-medium">Codex</span>, and <span class="text-slate-200 font-medium">Antigravity</span>.
       </p>
 
       <!-- Search Box with Pagefind -->
@@ -80,9 +80,9 @@ const topSkills = agentSkills.slice(0, 8);
         <div>
           <h2 class="text-2xl font-bold text-white flex items-center gap-2.5">
             <span class="text-cyan-400">🔌</span>
-            <span>Top Curated MCP Servers</span>
+            <span>Top MCP Servers</span>
             <span class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-300 font-mono">
-              {mcpServers.length} verified
+              {mcpServers.length} servers
             </span>
           </h2>
           <p class="text-sm text-slate-400 mt-1">
@@ -112,13 +112,13 @@ const topSkills = agentSkills.slice(0, 8);
         <div>
           <h2 class="text-2xl font-bold text-white flex items-center gap-2.5">
             <span class="text-purple-400">🧠</span>
-            <span>Top Curated Agent Skills</span>
+            <span>Top Agent Skills</span>
             <span class="text-xs px-2.5 py-0.5 rounded-full bg-purple-950/60 border border-purple-800/60 text-purple-300 font-mono">
-              {agentSkills.length} verified
+              {agentSkills.length} skills
             </span>
           </h2>
           <p class="text-sm text-slate-400 mt-1">
-            Verifiable agent instructions with <code class="text-xs bg-slate-900 px-1 py-0.5 rounded text-purple-300">SKILL.md</code> definitions.
+            Agent instructions with <code class="text-xs bg-slate-900 px-1 py-0.5 rounded text-purple-300">SKILL.md</code> definitions.
           </p>
         </div>
 

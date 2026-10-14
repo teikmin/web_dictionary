@@ -1,25 +1,24 @@
 ---
 slug: gosom-google-maps-scraper-skills-google-maps-scraper
 name: google-maps-scraper
-tagline: scrape data  from Google Maps. Extracts data such as the name, address,
-  phone number, website URL, rating,  reviews number, latitude and longitude, re
+tagline: Find businesses, leads, emails, reviews, ratings, and contact details
+  from Google Maps. Use for requests such as "find dentists in Berlin", "scrape
+  Go
 categories:
   - browser-automation
-  - ai-frameworks
-  - dev-tools
-  - productivity
 status: active
-quality_percentile: 82
+quality_percentile: 60
 selection_reason: quality_percentile
-first_seen: 2023-04-22T14:35:13Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2023-04-22T14:35:13
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: gosom/google-maps-scraper
   subpath: skills/google-maps-scraper
+  official_vendor: false
   license: MIT
 signals:
-  stars: 6309
+  stars: 6406
   last_commit: 2026-09-24T04:54:54Z
 type: agent_skill
 skill:

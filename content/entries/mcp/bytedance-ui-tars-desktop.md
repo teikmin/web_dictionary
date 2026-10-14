@@ -5,28 +5,28 @@ tagline: "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI
   Models and Agent Infra"
 categories:
   - browser-automation
-  - ai-frameworks
 status: active
-quality_percentile: 89
+quality_percentile: 92
 selection_reason: quality_percentile
-first_seen: 2025-01-19T09:04:43Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-01-19T09:04:43
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: bytedance/UI-TARS-desktop
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 39208
-  last_commit: 2026-10-05T22:52:08Z
+  stars: 39261
+  last_commit: 2026-10-09T01:29:53Z
 type: mcp_server
 launch:
   transport: stdio
   command: npx
   args:
     - -y
-    - io.github.username/mcp-server-{{name}}
+    - "@agent-tars/cli@latest"
   env_vars: []
-  confidence: manifest
+  confidence: readme
 ---
 
 The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra

@@ -5,20 +5,20 @@ tagline: "Stock market MCP server for Yahoo Finance data, technical analysis,
   portfolio tracking, and Python backtesting. Runs locally with no API key for
   core "
 categories:
-  - ai-frameworks
-  - dev-tools
+  - productivity
 status: active
-quality_percentile: 69
+quality_percentile: 81
 selection_reason: quality_percentile
-first_seen: 2025-08-24T15:24:20Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-08-24T15:24:20
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: wshobson/maverick-mcp
+  official_vendor: false
   license: MIT
 signals:
-  stars: 701
-  last_commit: 2026-10-05T20:40:23Z
+  stars: 704
+  last_commit: 2026-10-13T06:17:27Z
 type: mcp_server
 launch:
   transport: http

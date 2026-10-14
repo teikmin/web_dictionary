@@ -1,31 +1,31 @@
 ---
 slug: haris-musa-excel-mcp-server
 name: excel-mcp-server
-tagline: A Model Context Protocol server for Excel file manipulation
+tagline: "Excel MCP server: let AI (Claude, Cursor, Codex) create and edit Excel
+  files with charts, PivotTables, slicers and formulas. No Excel required."
 categories:
-  - browser-automation
-  - dev-tools
+  - ai-frameworks
 status: active
-quality_percentile: 42
+quality_percentile: 78
 selection_reason: quality_percentile
-first_seen: 2025-02-12T06:39:48Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-02-12T06:39:48
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: haris-musa/excel-mcp-server
+  official_vendor: false
   license: MIT
 signals:
-  stars: 4212
-  last_commit: 2026-09-28T16:09:47Z
+  stars: 4235
+  last_commit: 2026-10-10T19:18:13Z
 type: mcp_server
 launch:
   transport: stdio
-  command: npx
+  command: uvx
   args:
-    - -y
-    - io.github.haris-musa/excel-mcp-server
+    - excel-mcp-server
   env_vars: []
   confidence: manifest
 ---
 
-A Model Context Protocol server for Excel file manipulation
+Excel MCP server: let AI (Claude, Cursor, Codex) create and edit Excel files with charts, PivotTables, slicers and formulas. No Excel required.

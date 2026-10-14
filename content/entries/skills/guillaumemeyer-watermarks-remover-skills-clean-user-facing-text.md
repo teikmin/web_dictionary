@@ -1,23 +1,25 @@
 ---
 slug: guillaumemeyer-watermarks-remover-skills-clean-user-facing-text
-name: watermarks-remover
-tagline: A privacy-first app that strips AI watermarks from content you own.
+name: clean-user-facing-text
+tagline: Clean and finalize authorized natural-language text intended for
+  readers by auditing suspicious invisible Unicode and rewriting prose while
+  preserving
 categories:
   - ai-frameworks
-  - dev-tools
 status: active
-quality_percentile: 90
+quality_percentile: 69
 selection_reason: quality_percentile
-first_seen: 2026-08-11T16:32:38Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-08-11T16:32:38
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: guillaumemeyer/watermarks-remover
   subpath: skills/clean-user-facing-text
+  official_vendor: false
   license: MIT
 signals:
-  stars: 23518
-  last_commit: 2026-10-05T20:25:57Z
+  stars: 23994
+  last_commit: 2026-10-09T01:10:19Z
 type: agent_skill
 skill:
   skill_name: clean-user-facing-text

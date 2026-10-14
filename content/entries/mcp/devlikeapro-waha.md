@@ -6,18 +6,18 @@ tagline: "WAHA - WhatsApp HTTP API (REST API) that you can configure in a click!
   (websoc"
 categories:
   - browser-automation
-  - dev-tools
 status: active
 quality_percentile: 98
 selection_reason: quality_percentile
-first_seen: 2020-10-20T08:49:48Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2020-10-20T08:49:48
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: devlikeapro/waha
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 7562
+  stars: 7587
   last_commit: 2026-10-07T09:37:04Z
 type: mcp_server
 launch:

@@ -1,25 +1,25 @@
 ---
 slug: trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor
-name: skills
-tagline: Trail of Bits Claude Code skills for security research, vulnerability
-  detection, and audit workflows
+name: agentic-actions-auditor
+tagline: Audits GitHub Actions workflows for security vulnerabilities in AI
+  agent integrations including Claude Code Action, Gemini CLI, OpenAI Codex, and
+  GitH
 categories:
   - security
-  - ai-frameworks
-  - productivity
 status: active
-quality_percentile: 73
+quality_percentile: 55
 selection_reason: quality_percentile
-first_seen: 2026-01-14T18:23:21Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-01-14T18:23:21
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: trailofbits/skills
   subpath: plugins/agentic-actions-auditor/skills/agentic-actions-auditor
+  official_vendor: false
   license: CC-BY-SA-4.0
 signals:
-  stars: 7412
-  last_commit: 2026-10-02T10:05:35Z
+  stars: 7507
+  last_commit: 2026-10-13T15:45:03Z
 type: agent_skill
 skill:
   skill_name: agentic-actions-auditor

@@ -1,25 +1,25 @@
 ---
 slug: iofficeai-officecli
-name: OfficeCLI
-tagline: OfficeCLI is the first and best Office suite  purpose-built for AI
-  agents to read, edit, and automate Word, Excel, and PowerPoint files. Free,
-  open-so
+name: officecli
+tagline: Create, analyze, proofread, and modify Office documents (.docx, .xlsx,
+  .pptx) using the officecli CLI tool. Use when the user wants to create,
+  inspect
 categories:
-  - ai-frameworks
   - dev-tools
-  - productivity
 status: active
-quality_percentile: 79
+quality_percentile: 63
 selection_reason: quality_percentile
-first_seen: 2026-03-15T07:39:12Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-03-15T07:39:12
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: iOfficeAI/OfficeCLI
+  subpath: .
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 31654
-  last_commit: 2026-10-06T06:23:55Z
+  stars: 31942
+  last_commit: 2026-10-13T02:29:44Z
 type: agent_skill
 skill:
   skill_name: officecli

@@ -6,28 +6,25 @@ tagline: AI-powered OSINT agent with interactive REPL, MCP server, and CLI. 20
   resear
 categories:
   - security
-  - ai-frameworks
-  - dev-tools
-  - productivity
 status: active
-quality_percentile: 69
+quality_percentile: 77
 selection_reason: quality_percentile
-first_seen: 2026-05-06T11:12:42Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-05-06T11:12:42
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: OpenOSINT/OpenOSINT
+  official_vendor: false
   license: MIT
 signals:
-  stars: 1707
-  last_commit: 2026-10-06T18:22:01Z
+  stars: 1749
+  last_commit: 2026-10-13T06:28:51Z
 type: mcp_server
 launch:
   transport: stdio
-  command: npx
+  command: uvx
   args:
-    - -y
-    - io.github.OpenOSINT/openosint
+    - openosint
   env_vars: []
   confidence: manifest
 ---

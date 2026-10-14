@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { getCatalogState } from '../lib/entries';
 
 interface Props {
   title?: string;
@@ -8,10 +9,12 @@ interface Props {
 }
 
 const {
-  title = 'AI Tools Hub — MCP & Agent Skill Registry',
-  description = 'Curated registry of MCP servers and agent skills with 1-click launch configurations for Claude Code, Codex, and Google Antigravity.',
+  title = 'AI Tools Hub — Open Directory of MCP & Agent Skills',
+  description = 'Open directory of MCP servers and agent skills with install steps for Claude Code, Codex, and Google Antigravity.',
   indexed = true,
 } = Astro.props;
+
+const catalogState = getCatalogState();
 
 const clients = [
   { id: 'claude-code', name: 'Claude Code' },
@@ -98,7 +101,7 @@ const categories = [
 
         <div class="flex items-center gap-3">
           <a
-            href="https://github.com/modelcontextprotocol"
+            href="https://github.com/teikmin/web_dictionary"
             target="_blank"
             rel="noopener noreferrer"
             class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white transition-colors"
@@ -119,15 +122,17 @@ const categories = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
           <div class="flex items-center gap-2 font-semibold text-slate-200">
-            <span>⚡ AI Tools Hub &amp; MCP Registry</span>
+            <span>⚡ AI Tools Hub &amp; MCP Directory</span>
           </div>
           <p class="mt-1 text-slate-500">
-            Automated 3-layer selection engine. Git-backed catalog for Claude Code, Codex, and Antigravity.
+            Entries are selected automatically by public rules. Nothing here is hand-tested. <a href="/about/criteria" class="text-blue-400 hover:underline">Read the selection criteria &rarr;</a>
           </p>
         </div>
 
-        <div class="flex flex-wrap items-center gap-6 text-slate-400">
-          <a href="/about/criteria" class="hover:text-slate-200 transition-colors">Quality Gates &amp; Criteria</a>
+        <div class="flex flex-wrap items-center gap-4 text-slate-400">
+          <span>Catalog refreshed: <strong class="text-slate-300 font-medium">{catalogState.formattedDate}</strong></span>
+          <span class="text-slate-700">|</span>
+          <a href="/about/criteria" class="hover:text-slate-200 transition-colors">Selection Criteria</a>
           <span class="text-slate-700">|</span>
           <span>Catalog: CC BY 4.0</span>
           <span class="text-slate-700">|</span>

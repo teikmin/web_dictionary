@@ -44,3 +44,26 @@ export function formatTimeAgo(isoString?: string): string {
   if (diffDays < 365) return `${Math.floor(diffDays / 30)}mo ago`;
   return `${Math.floor(diffDays / 365)}y ago`;
 }
+
+export function getCatalogState(): { refreshed_at: string; formattedDate: string } {
+  try {
+    const fs = (globalThis as any).process?.versions?.node ? require('node:fs') : null;
+    const path = (globalThis as any).process?.versions?.node ? require('node:path') : null;
+    if (fs && path) {
+      const stateFile = path.resolve(process.cwd(), '../../data/state/catalog-state.json');
+      if (fs.existsSync(stateFile)) {
+        const data = JSON.parse(fs.readFileSync(stateFile, 'utf8'));
+        const d = new Date(data.refreshed_at);
+        const formattedDate = d.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+        });
+        return { refreshed_at: data.refreshed_at, formattedDate };
+      }
+    }
+  } catch {
+    // fallback
+  }
+  return { refreshed_at: '2026-10-14T13:10:15.358Z', formattedDate: 'Oct 14, 2026' };
+}

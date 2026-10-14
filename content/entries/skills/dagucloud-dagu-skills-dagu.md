@@ -1,27 +1,25 @@
 ---
 slug: dagucloud-dagu-skills-dagu
 name: dagu
-tagline: "Self-hostable workflow orchestrator for teams whose main work isn't
-  orchestration. Declarative YAML over your scripts, SSH commands, containers,
-  etc; "
+tagline: Authors, validates, and troubleshoots Dagu DAG definitions and assists
+  with Dagu CLI operations. Use when creating or debugging DAG YAML, choosing
+  Dag
 categories:
   - databases
-  - ai-frameworks
-  - dev-tools
-  - productivity
 status: active
-quality_percentile: 63
+quality_percentile: 73
 selection_reason: quality_percentile
-first_seen: 2022-04-22T13:00:42Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2022-04-22T13:00:42
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: dagucloud/dagu
   subpath: skills/dagu
+  official_vendor: false
   license: GPL-3.0
 signals:
-  stars: 4292
-  last_commit: 2026-10-07T15:46:53Z
+  stars: 4341
+  last_commit: 2026-10-13T15:14:58Z
 type: agent_skill
 skill:
   skill_name: dagu

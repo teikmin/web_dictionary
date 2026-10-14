@@ -7,17 +7,18 @@ tagline: "AssetOpsBench - Industry 4.0: A unified benchmark and framework for
 categories:
   - ai-frameworks
 status: active
-quality_percentile: 69
+quality_percentile: 52
 selection_reason: quality_percentile
-first_seen: 2025-05-01T20:48:50Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-05-01T20:48:50
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: IBM/AssetOpsBench
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 2330
-  last_commit: 2026-10-06T22:00:53Z
+  stars: 2350
+  last_commit: 2026-10-13T12:38:54Z
 type: mcp_server
 launch:
   transport: stdio

@@ -1,23 +1,24 @@
 ---
 slug: microsoft-skillopt-plugins-claude-code-skills-skillopt-sleep
-name: SkillOpt
-tagline: SkillOpt is a text-space optimizer that trains reusable
-  natural-language skills for frozen LLM agents through trajectory-driven edits,
-  validation-gate
+name: skillopt-sleep
+tagline: Use when the user wants their Claude agent to self-improve from past
+  usage, asks about a nightly/offline 'sleep' or 'dream' cycle, memory/skill
+  consol
 categories:
   - ai-frameworks
 status: active
-quality_percentile: 97
+quality_percentile: 98
 selection_reason: official_vendor
-first_seen: 2026-05-08T06:41:01Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-05-08T06:41:01
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: microsoft/SkillOpt
   subpath: plugins/claude-code/skills/skillopt-sleep
+  official_vendor: true
   license: MIT
 signals:
-  stars: 18098
+  stars: 18302
   last_commit: 2026-10-06T17:42:32Z
 type: agent_skill
 skill:

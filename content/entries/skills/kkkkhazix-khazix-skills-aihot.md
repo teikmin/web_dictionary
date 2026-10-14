@@ -1,23 +1,24 @@
 ---
 slug: kkkkhazix-khazix-skills-aihot
-name: khazix-skills
-tagline: "数字生命卡兹克开源的 AI Skills 合集 | Agent Skills: leader（帮你定义目标）, neat-freak 洁癖,
-  hv-analysis, khazix-writer & more — Claude Code, Codex & 40+ agents"
+name: aihot
+tagline: 查询 AIHOT（aihot.news）的中文 AI 资讯。用户问今天或最近 AI 圈发生了什么、AI 新闻和 AI 日报、大模型与 AI
+  产品发布、OpenAI／Anthropic／Google 等公司或某个 AI 话题的最新消息、当前最热的 AI 事件及来龙去脉、AI 模型排行、Codex
+  额度
 categories:
-  - ai-frameworks
   - dev-tools
 status: active
-quality_percentile: 83
+quality_percentile: 63
 selection_reason: quality_percentile
-first_seen: 2026-04-06T07:37:02Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-04-06T07:37:02
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: KKKKhazix/khazix-skills
   subpath: aihot
+  official_vendor: false
   license: MIT
 signals:
-  stars: 21220
+  stars: 21368
   last_commit: 2026-10-01T13:15:32Z
 type: agent_skill
 skill:

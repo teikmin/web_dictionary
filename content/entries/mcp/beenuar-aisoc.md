@@ -6,19 +6,19 @@ tagline: "Open-source AI Security Operations Center: alert fusion, LLM-agent
   agen"
 categories:
   - security
-  - ai-frameworks
 status: active
-quality_percentile: 62
+quality_percentile: 72
 selection_reason: quality_percentile
-first_seen: 2026-05-02T03:30:19Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-05-02T03:30:19
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: beenuar/AiSOC
+  official_vendor: false
   license: MIT
 signals:
-  stars: 2387
-  last_commit: 2026-10-07T15:25:34Z
+  stars: 2405
+  last_commit: 2026-10-12T22:49:48Z
 type: mcp_server
 launch:
   transport: stdio

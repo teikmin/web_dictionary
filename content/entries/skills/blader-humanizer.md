@@ -1,21 +1,26 @@
 ---
 slug: blader-humanizer
 name: humanizer
-tagline: Agent skill that removes signs of AI-generated writing from text
+tagline: >-
+  Rewrite AI-sounding text so it reads like the writer without changing what it
+  says.
+
+  Use when editing or reviewing prose for AI tells: not-X-but-Y cont
 categories:
   - ai-frameworks
-  - dev-tools
 status: active
-quality_percentile: 74
+quality_percentile: 50
 selection_reason: quality_percentile
-first_seen: 2026-01-18T05:30:15Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-01-18T05:30:15
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: blader/humanizer
+  subpath: .
+  official_vendor: false
   license: MIT
 signals:
-  stars: 54590
+  stars: 56481
   last_commit: 2026-09-28T05:55:12Z
 type: agent_skill
 skill:

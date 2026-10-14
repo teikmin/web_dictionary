@@ -1,25 +1,25 @@
 ---
 slug: nvidia-skills-plugins-nvidia-skills-skills-nvidia-skill-finder
-name: skills
-tagline: Agent Skills for NVIDIA products — install into Claude Code, Codex, and
-  other coding agents to run Physical AI, robotics, simulation, CUDA, and RAG wo
+name: nvidia-skill-finder
+tagline: Use for NVIDIA-related requests where an NVIDIA skill might help, even
+  if the user did not ask for a skill. Trigger on NVIDIA products, hardware,
+  soft
 categories:
-  - ai-frameworks
   - dev-tools
-  - productivity
 status: active
-quality_percentile: 72
+quality_percentile: 54
 selection_reason: quality_percentile
-first_seen: 2026-02-25T21:54:05Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-02-25T21:54:05
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: NVIDIA/skills
   subpath: plugins/nvidia-skills/skills/nvidia-skill-finder
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 3536
-  last_commit: 2026-10-07T15:54:02Z
+  stars: 3581
+  last_commit: 2026-10-09T15:27:20Z
 type: agent_skill
 skill:
   skill_name: nvidia-skill-finder

@@ -6,18 +6,18 @@ tagline: A desktop MCP client designed as a tool unitary utility integration,
   cr
 categories:
   - ai-frameworks
-  - dev-tools
 status: active
-quality_percentile: 2
+quality_percentile: 6
 selection_reason: quality_percentile
-first_seen: 2025-04-01T15:09:38Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-04-01T15:09:38
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: AI-QL/tuui
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 1155
+  stars: 1157
   last_commit: 2026-05-14T09:02:28Z
 type: mcp_server
 launch:
@@ -25,7 +25,7 @@ launch:
   command: npx
   args:
     - -y
-    - "@modelcontextprotocol/server-everything"
+    - tuui
   env_vars: []
   confidence: manifest
 ---

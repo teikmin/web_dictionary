@@ -1,25 +1,25 @@
 ---
 slug: cathrynlavery-diagram-design-skills-diagram-design
 name: diagram-design
-tagline: Editorial diagram design for Claude Code, Codex, GitHub Copilot,
-  Factory Droid, and Pi. 42 diagram types. Self-contained HTML + SVG. No
-  shadows. No Me
+tagline: Create branded architecture, architecture delta, IT current-state,
+  flowchart, sequence, state machine, ER/data model, timeline, swimlane,
+  quadrant, ra
 categories:
-  - ai-frameworks
   - dev-tools
 status: active
-quality_percentile: 79
+quality_percentile: 63
 selection_reason: quality_percentile
-first_seen: 2026-04-16T18:01:16Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-04-16T18:01:16
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: cathrynlavery/diagram-design
   subpath: skills/diagram-design
+  official_vendor: false
   license: MIT
 signals:
-  stars: 44654
-  last_commit: 2026-10-06T16:12:51Z
+  stars: 53703
+  last_commit: 2026-10-13T14:57:55Z
 type: agent_skill
 skill:
   skill_name: diagram-design
@@ -31,10 +31,10 @@ skill:
     dumbbell, waterfall, line (slopegraph, ridgeline, streamgraph, bump), Gantt
     and scatter charts (bubble, beeswarm), high-level, process, medallion, data
     flow, DP integration, DP security matrix, Sankey, fishbone, Wardley map,
-    kanban, user journey, deployment, dependency graph, UML class, story map, or
-    database schema diagrams as HTML/SVG/PNG, with .drawio, Mermaid, and
-    .excalidraw import, plus lifecycle phase maps, block decomposition trees,
-    and onboarding guidance.
+    kanban, user journey, service blueprint, deployment, dependency graph, UML
+    class, story map, or database schema diagrams as HTML/SVG/PNG, with .drawio,
+    Mermaid, and .excalidraw import, plus lifecycle phase maps, block
+    decomposition trees, and onboarding guidance.
   folder_path: skills/diagram-design
   extra_files:
     - assets/example-architecture-dark.html
@@ -49,4 +49,4 @@ skill:
     - assets/example-axonometric-plan-campus.html
 ---
 
-Create branded architecture, architecture delta, IT current-state, flowchart, sequence, state machine, ER/data model, timeline, swimlane, quadrant, radar/spider, polar chart (polar/radial lollipop), loop/flywheel, nested, tree, org chart, layer stack, exploded axonometric, axonometric plan, Venn, pyramid/funnel, treemap and marimekko, heatmap, bar and dumbbell, waterfall, line (slopegraph, ridgeline, streamgraph, bump), Gantt and scatter charts (bubble, beeswarm), high-level, process, medallion, data flow, DP integration, DP security matrix, Sankey, fishbone, Wardley map, kanban, user journey, deployment, dependency graph, UML class, story map, or database schema diagrams as HTML/SVG/PNG, with .drawio, Mermaid, and .excalidraw import, plus lifecycle phase maps, block decomposition trees, and onboarding guidance.
+Create branded architecture, architecture delta, IT current-state, flowchart, sequence, state machine, ER/data model, timeline, swimlane, quadrant, radar/spider, polar chart (polar/radial lollipop), loop/flywheel, nested, tree, org chart, layer stack, exploded axonometric, axonometric plan, Venn, pyramid/funnel, treemap and marimekko, heatmap, bar and dumbbell, waterfall, line (slopegraph, ridgeline, streamgraph, bump), Gantt and scatter charts (bubble, beeswarm), high-level, process, medallion, data flow, DP integration, DP security matrix, Sankey, fishbone, Wardley map, kanban, user journey, service blueprint, deployment, dependency graph, UML class, story map, or database schema diagrams as HTML/SVG/PNG, with .drawio, Mermaid, and .excalidraw import, plus lifecycle phase maps, block decomposition trees, and onboarding guidance.

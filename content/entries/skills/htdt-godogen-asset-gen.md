@@ -1,22 +1,24 @@
 ---
 slug: htdt-godogen-asset-gen
-name: godogen
-tagline: Autonomous game development for Godot, Bevy, and Babylon.js with Claude
-  Code and Codex
+name: asset-gen
+tagline: "Generate visual assets from text prompts: PNG images (Gemini / xAI
+  Grok, or local Qwen-Image when installed), GLB 3D models (Tripo CLI), rigged
+  charac"
 categories:
   - dev-tools
 status: active
-quality_percentile: 74
+quality_percentile: 50
 selection_reason: quality_percentile
-first_seen: 2026-02-06T18:46:52Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-02-06T18:46:52
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: htdt/godogen
   subpath: asset-gen
+  official_vendor: false
   license: MIT
 signals:
-  stars: 7059
+  stars: 7106
   last_commit: 2026-10-01T18:40:42Z
 type: agent_skill
 skill:

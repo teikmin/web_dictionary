@@ -1,23 +1,24 @@
 ---
 slug: jeffallan-claude-skills-skills-angular-architect
-name: claude-skills
-tagline: 67 Specialized Skills for Full-Stack Developers. Transform Claude Code
-  into your expert pair programmer.
+name: angular-architect
+tagline: "Generates Angular 17+ standalone components, configures advanced
+  routing with lazy loading and guards, implements NgRx state management,
+  applies RxJS "
 categories:
-  - ai-frameworks
-  - dev-tools
+  - other
 status: active
-quality_percentile: 83
+quality_percentile: 61
 selection_reason: quality_percentile
-first_seen: 2025-10-20T20:27:22Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-10-20T20:27:22
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: Jeffallan/claude-skills
   subpath: skills/angular-architect
+  official_vendor: false
   license: MIT
 signals:
-  stars: 11759
+  stars: 11852
   last_commit: 2026-10-03T15:49:55Z
 type: agent_skill
 skill:

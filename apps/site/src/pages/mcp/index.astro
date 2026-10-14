@@ -13,7 +13,7 @@ const [mcpServers, categories] = await Promise.all([
 
 <BaseLayout
   title="All MCP Servers — AI Tools Hub"
-  description={`Browse ${mcpServers.length} verified Model Context Protocol servers with 1-click launch configurations for Claude Code, Codex, and Antigravity.`}
+  description={`Browse ${mcpServers.length} Model Context Protocol servers with install steps for Claude Code, Codex, and Antigravity.`}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Header -->
@@ -28,13 +28,13 @@ const [mcpServers, categories] = await Promise.all([
         <div>
           <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight flex items-center gap-3">
             <span class="text-cyan-400">🔌</span>
-            <span>All Verified MCP Servers</span>
+            <span>All MCP Servers</span>
             <span class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-300 font-mono">
-              {mcpServers.length} tools
+              {mcpServers.length} servers
             </span>
           </h1>
           <p class="text-base text-slate-400 mt-2 max-w-3xl">
-            Model Context Protocol servers providing database connectors, API bridges, and system tools with verified launch configs.
+            Model Context Protocol servers providing database connectors, API bridges, and system tools with launch configs.
           </p>
         </div>
       </div>

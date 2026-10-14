@@ -1,25 +1,25 @@
 ---
 slug: zenstory-ai-oh-story-claudecode-skills-browser-cdp
-name: oh-story-claudecode
-tagline: "Claude Code / Codex / OpenCode agent skills for writing Chinese web
-  novels (网文): 扫榜、拆文、写作、去AI味、封面全流程，长篇短篇都支持 | 13 skills for novel writing and
-  long-fo"
+name: browser-cdp
+tagline: "Use this skill when you need to control a Chrome browser via CDP
+  (Chrome DevTools Protocol) to reuse existing login sessions. Covers: launching
+  Chrome"
 categories:
   - browser-automation
-  - ai-frameworks
 status: active
-quality_percentile: 67
+quality_percentile: 76
 selection_reason: quality_percentile
-first_seen: 2026-04-22T16:35:39Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-04-22T16:35:39
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: zenstory-ai/oh-story-claudecode
   subpath: skills/browser-cdp
+  official_vendor: false
   license: MIT
 signals:
-  stars: 7340
-  last_commit: 2026-10-03T08:56:23Z
+  stars: 7517
+  last_commit: 2026-10-10T11:50:41Z
 type: agent_skill
 skill:
   skill_name: browser-cdp

@@ -5,21 +5,20 @@ tagline: Harness the power of local LLMs with this TUI MCP Client for Ollama.
   Featuring all core MCP primitives (tools, prompts, resources), agent mode,
   multi-
 categories:
-  - browser-automation
-  - ai-frameworks
   - dev-tools
 status: active
-quality_percentile: 50
+quality_percentile: 57
 selection_reason: quality_percentile
-first_seen: 2025-04-23T21:05:02Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-04-23T21:05:02
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: jonigl/mcp-client-for-ollama
+  official_vendor: false
   license: MIT
 signals:
-  stars: 827
-  last_commit: 2026-10-05T08:33:55Z
+  stars: 830
+  last_commit: 2026-10-13T00:55:22Z
 type: mcp_server
 launch:
   transport: stdio

@@ -10,32 +10,32 @@ const { confidence = 'manifest', class: className = '' } = Astro.props;
 
 const config = {
   registry: {
-    label: 'Verified Registry',
+    label: 'From the official registry',
     icon: '✓',
     bg: 'bg-emerald-950/70 border-emerald-500/40 text-emerald-300',
     dot: 'bg-emerald-400',
     title: 'Extracted directly from official MCP registry manifest',
   },
   manifest: {
-    label: 'Repo Manifest',
+    label: 'From the package file',
     icon: '●',
     bg: 'bg-blue-950/70 border-blue-500/40 text-blue-300',
     dot: 'bg-blue-400',
     title: 'Parsed directly from repository package manifest (package.json, pyproject.toml)',
   },
   readme: {
-    label: 'README Heuristic',
+    label: 'From the README. Check before use',
     icon: '▲',
     bg: 'bg-amber-950/70 border-amber-500/40 text-amber-300',
     dot: 'bg-amber-400',
     title: 'Heuristically extracted from README code blocks; verify configuration before use',
   },
   none: {
-    label: 'Community Spec',
+    label: 'No install command found. See the repository',
     icon: '○',
     bg: 'bg-slate-800/80 border-slate-700 text-slate-300',
     dot: 'bg-slate-400',
-    title: 'Default configuration template; review command parameters',
+    title: 'No install command found. Refer to upstream repository documentation.',
   },
 }[confidence] || {
   label: 'Unknown',
@@ -54,6 +54,6 @@ const config = {
   ]}
   title={config.title}
 >
-  <span class:list={['w-1.5 h-1.5 rounded-full animate-pulse', config.dot]} aria-hidden="true"></span>
+  <span class:list={['w-1.5 h-1.5 rounded-full', config.dot]} aria-hidden="true"></span>
   <span>{config.label}</span>
 </span>

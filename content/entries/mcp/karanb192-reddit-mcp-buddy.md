@@ -4,18 +4,19 @@ name: reddit-mcp-buddy
 tagline: Clean, LLM-optimized Reddit MCP server. Browse posts, search content,
   analyze users. No fluff, just Reddit data.
 categories:
-  - productivity
+  - ai-frameworks
 status: active
-quality_percentile: 24
+quality_percentile: 26
 selection_reason: quality_percentile
-first_seen: 2025-09-14T05:52:29Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-09-14T05:52:29
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: karanb192/reddit-mcp-buddy
+  official_vendor: false
   license: MIT
 signals:
-  stars: 846
+  stars: 853
   last_commit: 2026-08-17T09:42:37Z
 type: mcp_server
 launch:
@@ -23,7 +24,7 @@ launch:
   command: npx
   args:
     - -y
-    - io.github.karanb192/reddit-mcp-buddy
+    - reddit-mcp-buddy
   env_vars: []
   confidence: manifest
 ---

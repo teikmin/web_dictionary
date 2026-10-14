@@ -1,23 +1,25 @@
 ---
 slug: img2threejs-img2threejs
 name: img2threejs
-tagline: Rebuild the object in a reference image as a code-only, procedural,
-  quality-gated, animation-ready Three.js model. Token-efficient image-to-3D.
+tagline: Turn an object or character reference image into a quality-gated,
+  animation-ready procedural Three.js model built in code. Use for image-to-3D
+  reconst
 categories:
-  - browser-automation
-  - ai-frameworks
+  - security
 status: active
-quality_percentile: 83
+quality_percentile: 62
 selection_reason: quality_percentile
-first_seen: 2026-07-15T02:58:39Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-07-15T02:58:39
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: img2threejs/img2threejs
+  subpath: .
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 17639
-  last_commit: 2026-10-07T05:35:53Z
+  stars: 18060
+  last_commit: 2026-10-08T04:50:41Z
 type: agent_skill
 skill:
   skill_name: img2threejs

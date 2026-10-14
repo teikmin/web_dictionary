@@ -1,0 +1,29 @@
+---
+slug: open-gsd-gsd-core-skills-gsd-audit-milestone
+name: gsd-audit-milestone
+tagline: Audit milestone completion against original intent before archiving
+categories:
+  - security
+status: active
+quality_percentile: 45
+selection_reason: quality_percentile
+first_seen: 2026-10-14
+last_updated: 2026-10-14T14:22:24.653Z
+source:
+  kind: github_repo
+  repo: open-gsd/gsd-core
+  subpath: skills/gsd-audit-milestone
+  official_vendor: false
+  license: MIT
+signals:
+  stars: 10480
+  last_commit: 2026-10-13T16:06:01Z
+type: agent_skill
+skill:
+  skill_name: gsd-audit-milestone
+  description: Audit milestone completion against original intent before archiving
+  folder_path: skills/gsd-audit-milestone
+  extra_files: []
+---
+
+Audit milestone completion against original intent before archiving

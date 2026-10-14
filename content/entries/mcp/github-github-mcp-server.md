@@ -7,20 +7,21 @@ categories:
 status: active
 quality_percentile: 98
 selection_reason: official_vendor
-first_seen: 2025-03-04T16:42:04Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-03-04T16:42:04
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: github/github-mcp-server
+  official_vendor: true
   license: MIT
 signals:
-  stars: 33427
-  last_commit: 2026-10-07T15:26:49Z
+  stars: 33579
+  last_commit: 2026-10-13T14:59:15Z
 type: mcp_server
 launch:
   transport: http
-  args: []
   remote_url: https://api.githubcopilot.com/mcp/
+  args: []
   env_vars: []
   confidence: manifest
 ---

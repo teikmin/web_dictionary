@@ -1,22 +1,25 @@
 ---
 slug: anthropics-claude-plugins-official-external_plugins-discord-skills-access
-name: claude-plugins-official
-tagline: Official, Anthropic-managed directory of high quality Claude Code Plugins.
+name: access
+tagline: Manage Discord channel access — approve pairings, edit allowlists, set
+  DM/group policy. Use when the user asks to pair, approve someone, check who's
+  a
 categories:
   - other
 status: active
-quality_percentile: 98
+quality_percentile: 99
 selection_reason: official_vendor
-first_seen: 2025-11-20T18:36:20Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-11-20T18:36:20
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: anthropics/claude-plugins-official
   subpath: external_plugins/discord/skills/access
+  official_vendor: true
   license: Apache-2.0
 signals:
-  stars: 37497
-  last_commit: 2026-10-07T15:51:17Z
+  stars: 37789
+  last_commit: 2026-10-13T07:57:35Z
 type: agent_skill
 skill:
   skill_name: access

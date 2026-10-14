@@ -3,27 +3,26 @@ slug: utensils-mcp-nixos
 name: mcp-nixos
 tagline: MCP-NixOS - Model Context Protocol Server for NixOS resources
 categories:
-  - dev-tools
-  - productivity
+  - ai-frameworks
 status: active
-quality_percentile: 19
+quality_percentile: 22
 selection_reason: quality_percentile
-first_seen: 2025-03-20T05:05:00Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-03-20T05:05:00
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: utensils/mcp-nixos
+  official_vendor: false
   license: MIT
 signals:
-  stars: 851
+  stars: 853
   last_commit: 2026-09-05T02:31:09Z
 type: mcp_server
 launch:
   transport: stdio
-  command: nix
+  command: uvx
   args:
-    - run
-    - .#mcp-nixos
+    - mcp-nixos
   env_vars: []
   confidence: manifest
 ---

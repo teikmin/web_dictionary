@@ -7,13 +7,14 @@ tagline: "Query MCP enables end-to-end management of Supabase via chat
 categories:
   - databases
 status: active
-quality_percentile: 16
+quality_percentile: 19
 selection_reason: quality_percentile
-first_seen: 2025-02-15T08:54:29Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-02-15T08:54:29
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: alexander-zuev/supabase-mcp-server
+  official_vendor: false
   license: Apache-2.0
 signals:
   stars: 831
@@ -21,12 +22,9 @@ signals:
 type: mcp_server
 launch:
   transport: stdio
-  command: docker
+  command: uvx
   args:
-    - run
-    - -i
-    - --rm
-    - ghcr.io/alexander-zuev/supabase-mcp-server
+    - supabase-mcp-server
   env_vars: []
   confidence: manifest
 ---

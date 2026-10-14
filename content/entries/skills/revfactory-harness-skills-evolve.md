@@ -1,22 +1,23 @@
 ---
 slug: revfactory-harness-skills-evolve
-name: harness
-tagline: A meta-skill that designs domain-specific agent teams, defines
-  specialized agents, and generates the skills they use.
+name: evolve
+tagline: 하네스 진화 스킬. 사용 중인 하네스의 실행 결과에 대한 피드백을 수집·일반화하여 에이전트/스킬/오케스트레이터에 반영하고, 초기
+  구성 대비 델타를 포착해 변경 이력을 갱신한다. '하네스 회고', '하네스 진화', '하네스 피드백 반영', '하네스 개선', '결과가 아쉬
 categories:
   - ai-frameworks
 status: active
-quality_percentile: 90
+quality_percentile: 69
 selection_reason: quality_percentile
-first_seen: 2026-03-26T21:22:07Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-03-26T21:22:07
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: revfactory/harness
   subpath: skills/evolve
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 9131
+  stars: 9168
   last_commit: 2026-09-28T05:19:20Z
 type: agent_skill
 skill:

@@ -64,6 +64,29 @@ async function main() {
   fs.writeFileSync(enrichedPath, JSON.stringify(enrichedEntries, null, 2), 'utf8');
   logger.info(`Saved enriched entries to ${enrichedPath}`);
 
+  // Write catalog state
+  const stateDir = path.join(config.rootDir, 'data/state');
+  if (!fs.existsSync(stateDir)) {
+    fs.mkdirSync(stateDir, { recursive: true });
+  }
+  const statePath = path.join(stateDir, 'catalog-state.json');
+  fs.writeFileSync(
+    statePath,
+    JSON.stringify(
+      {
+        refreshed_at: startTime.toISOString(),
+        week: weekStr,
+        total_mcp: enrichStats.totalMcp,
+        total_skills: enrichStats.totalSkills,
+        total_entries: enrichedEntries.length,
+      },
+      null,
+      2
+    ),
+    'utf8'
+  );
+  logger.info(`Saved catalog state to ${statePath}`);
+
   // Compile statistics
   const totalDiscovered = candidates.length;
   const passedLayer1 = gateChecked.filter((c) => c.layer1.passed).length;

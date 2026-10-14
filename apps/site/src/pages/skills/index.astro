@@ -13,7 +13,7 @@ const [agentSkills, categories] = await Promise.all([
 
 <BaseLayout
   title="All Agent Skills — AI Tools Hub"
-  description={`Browse ${agentSkills.length} verified Agent Skills with structured SKILL.md definitions and install paths for Claude Code, Codex, and Antigravity.`}
+  description={`Browse ${agentSkills.length} Agent Skills with structured SKILL.md definitions and install paths for Claude Code, Codex, and Antigravity.`}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Header -->
@@ -28,13 +28,13 @@ const [agentSkills, categories] = await Promise.all([
         <div>
           <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight flex items-center gap-3">
             <span class="text-purple-400">🧠</span>
-            <span>All Verified Agent Skills</span>
+            <span>All Agent Skills</span>
             <span class="text-xs px-2.5 py-0.5 rounded-full bg-purple-950/60 border border-purple-800/60 text-purple-300 font-mono">
               {agentSkills.length} skills
             </span>
           </h1>
           <p class="text-base text-slate-400 mt-2 max-w-3xl">
-            Autonomous agent workflows and specialized domain knowledge with verified <code class="text-xs bg-slate-900 px-1 py-0.5 rounded text-purple-300">SKILL.md</code> definitions.
+            Autonomous agent workflows and specialized domain knowledge with structured <code class="text-xs bg-slate-900 px-1 py-0.5 rounded text-purple-300">SKILL.md</code> definitions.
           </p>
         </div>
       </div>

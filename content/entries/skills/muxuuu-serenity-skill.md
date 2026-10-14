@@ -1,22 +1,25 @@
 ---
 slug: muxuuu-serenity-skill
 name: serenity-skill
-tagline: Serenity-inspired Agent Skill for supply-chain bottleneck stock research
+tagline: Research technology and advanced-manufacturing investments using
+  Serenity-inspired supply-chain bottleneck analysis. Use for theme scans,
+  company thes
 categories:
   - ai-frameworks
-  - productivity
 status: active
-quality_percentile: 65
+quality_percentile: 68
 selection_reason: quality_percentile
-first_seen: 2026-05-04T06:24:37Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-05-04T06:24:37
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: muxuuu/serenity-skill
+  subpath: .
+  official_vendor: false
   license: MIT
 signals:
-  stars: 4054
-  last_commit: 2026-09-16T12:58:45Z
+  stars: 4083
+  last_commit: 2026-10-11T06:10:53Z
 type: agent_skill
 skill:
   skill_name: serenity-skill

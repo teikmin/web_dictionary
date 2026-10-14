@@ -1,25 +1,25 @@
 ---
 slug: mvanhorn-last30days-skill-skills-last30days
-name: last30days-skill
-tagline: AI agent skill that researches any topic across Reddit, X, YouTube, HN,
-  Polymarket, and the web - then synthesizes a grounded summary
+name: last30days
+tagline: Research what people actually say about any topic in the last 30 days.
+  Pulls posts and engagement from Reddit, X, YouTube, TikTok, Hacker News,
+  Polyma
 categories:
   - browser-automation
-  - ai-frameworks
-  - productivity
 status: active
-quality_percentile: 85
+quality_percentile: 63
 selection_reason: quality_percentile
-first_seen: 2026-01-23T20:37:37Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-01-23T20:37:37
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: mvanhorn/last30days-skill
   subpath: skills/last30days
+  official_vendor: false
   license: MIT
 signals:
-  stars: 63673
-  last_commit: 2026-10-07T01:48:14Z
+  stars: 64141
+  last_commit: 2026-10-11T19:10:49Z
 type: agent_skill
 skill:
   skill_name: last30days
@@ -36,9 +36,9 @@ skill:
     - assets/dog-as-human.png
     - assets/dog-original.jpeg
     - assets/swimmom-mockup.jpeg
-    - references/save-html-brief.md
-    - scripts/box_chrome_login.py
-    - scripts/briefing.py
+    - references/agent-mode.md
+    - references/category-peers.md
+    - references/comparison.md
 ---
 
 Research what people actually say about any topic in the last 30 days. Pulls posts and engagement from Reddit, X, YouTube, TikTok, Hacker News, Polymarket, GitHub, and the web. Includes a doctor health check to diagnose broken or missing sources.

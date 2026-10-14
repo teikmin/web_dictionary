@@ -3,16 +3,16 @@ slug: suekou-mcp-notion-server
 name: mcp-notion-server
 tagline: A Model Context Protocol server for connecting Notion to MCP-compatible clients
 categories:
-  - dev-tools
   - productivity
 status: active
-quality_percentile: 26
+quality_percentile: 30
 selection_reason: quality_percentile
-first_seen: 2024-11-30T10:01:30Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2024-11-30T10:01:30
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: suekou/mcp-notion-server
+  official_vendor: false
   license: MIT
 signals:
   stars: 920

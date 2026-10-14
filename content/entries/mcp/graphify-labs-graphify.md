@@ -6,33 +6,26 @@ tagline: "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into
   "
 categories:
   - databases
-  - ai-frameworks
-  - dev-tools
-  - productivity
 status: active
-quality_percentile: 62
+quality_percentile: 89
 selection_reason: quality_percentile
-first_seen: 2026-04-03T15:49:07Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-04-03T15:49:07
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: Graphify-Labs/graphify
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 124586
-  last_commit: 2026-10-06T23:27:20Z
+  stars: 126101
+  last_commit: 2026-10-13T10:43:52Z
 type: mcp_server
 launch:
   transport: stdio
-  command: npx
+  command: uvx
   args:
-    - -y
-    - "@modelcontextprotocol/server-filesystem"
-    - /tmp/workspace
-  env_vars:
-    - name: FILESYSTEM_ROOT
-      required: true
-      secret: true
+    - graphifyy
+  env_vars: []
   confidence: manifest
 ---
 

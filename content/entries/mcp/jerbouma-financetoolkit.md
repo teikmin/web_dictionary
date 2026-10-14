@@ -3,19 +3,20 @@ slug: jerbouma-financetoolkit
 name: FinanceToolkit
 tagline: Transparent and Efficient Financial Analysis
 categories:
-  - dev-tools
+  - productivity
 status: active
-quality_percentile: 64
+quality_percentile: 48
 selection_reason: quality_percentile
-first_seen: 2019-04-08T11:44:25Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2019-04-08T11:44:25
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: JerBouma/FinanceToolkit
+  official_vendor: false
   license: MIT
 signals:
-  stars: 5404
-  last_commit: 2026-10-06T22:20:57Z
+  stars: 5428
+  last_commit: 2026-10-12T20:22:08Z
 type: mcp_server
 launch:
   transport: http

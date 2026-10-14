@@ -1,28 +1,31 @@
 ---
 slug: titanwings-distilly
 name: distilly
-tagline: Distilly — Distill how they think into reusable Skills for any Agent or
-  Bot. Formerly Colleague Skill（原同事 Skill）.
+tagline: Set up the owner profile so a personal agent knows who it works for
+  (first-run setup, "get to know me"), or distill colleague, relationship, or
+  celebr
 categories:
   - ai-frameworks
-  - dev-tools
 status: active
-quality_percentile: 74
+quality_percentile: 70
 selection_reason: quality_percentile
-first_seen: 2026-03-30T05:22:23Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-03-30T05:22:23
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: titanwings/distilly
+  subpath: .
+  official_vendor: false
   license: MIT
 signals:
-  stars: 25376
-  last_commit: 2026-09-22T14:01:08Z
+  stars: 25573
+  last_commit: 2026-10-13T05:57:17Z
 type: agent_skill
 skill:
   skill_name: distilly
-  description: Distill colleague, relationship, or celebrity source material into
-    reusable Person Profiles for agents.
+  description: Set up the owner profile so a personal agent knows who it works for
+    (first-run setup, "get to know me"), or distill colleague, relationship, or
+    celebrity source material into reusable Person Profiles for agents.
   folder_path: .
   extra_files:
     - .github/ISSUE_TEMPLATE/bug_report.md
@@ -37,4 +40,4 @@ skill:
     - CITATION.cff
 ---
 
-Distill colleague, relationship, or celebrity source material into reusable Person Profiles for agents.
+Set up the owner profile so a personal agent knows who it works for (first-run setup, "get to know me"), or distill colleague, relationship, or celebrity source material into reusable Person Profiles for agents.

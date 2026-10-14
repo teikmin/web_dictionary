@@ -1,24 +1,25 @@
 ---
 slug: eigent-ai-eigent-resources-example-skills-docx
-name: eigent
-tagline: "Eigent: The Open Source Cowork Desktop - Local and Free Alternative to
-  Claude Cowork and Codex"
+name: docx
+tagline: 'Use this skill whenever the user wants to create, read, edit, or
+  manipulate Word documents (.docx files). Triggers include: any mention of
+  "Word doc",'
 categories:
-  - ai-frameworks
   - productivity
 status: active
-quality_percentile: 66
+quality_percentile: 75
 selection_reason: quality_percentile
-first_seen: 2025-07-29T15:56:02Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2025-07-29T15:56:02
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: eigent-ai/eigent
   subpath: resources/example-skills/docx
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 15467
-  last_commit: 2026-10-07T12:59:14Z
+  stars: 15514
+  last_commit: 2026-10-13T12:26:39Z
 type: agent_skill
 skill:
   skill_name: docx

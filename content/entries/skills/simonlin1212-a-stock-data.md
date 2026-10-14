@@ -1,25 +1,23 @@
 ---
 slug: simonlin1212-a-stock-data
 name: a-stock-data
-tagline: "A股全栈数据工具包：行情K线·当日逐笔·研报·信号·资金面·新闻·财务·公告·打板·ETF期权·舆情·宏观利率·期货大宗(含大商所日K)·\
-  事件驱动·可转债 | 15层·87端点·34数据源·除iwencai外免Key | A-share data for AI agents: K-lines,
-  ti"
+tagline: 当任务需要写代码实际获取A股及相关市场数据时使用——行情/K线/逐笔(腾讯日周月前后复权+分钟线+当日逐笔、通达信官网全市场盘后包、百度)、研报(东财+新浪+同花顺+iwencai)、信号(热点/北向/龙虎榜/解禁/行业/板块资金流)、资金面(融资融券/大宗/股东户数/分红/资金流/ETF份额)、新
 categories:
-  - ai-frameworks
-  - dev-tools
   - productivity
 status: active
-quality_percentile: 97
+quality_percentile: 88
 selection_reason: quality_percentile
-first_seen: 2026-05-11T01:08:15Z
-last_updated: 2026-10-08T15:17:45.934Z
+first_seen: 2026-05-11T01:08:15
+last_updated: 2026-10-14T14:22:24.653Z
 source:
   kind: github_repo
   repo: simonlin1212/a-stock-data
+  subpath: .
+  official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 10657
-  last_commit: 2026-10-07T06:22:49Z
+  stars: 10843
+  last_commit: 2026-10-11T13:08:34Z
 type: agent_skill
 skill:
   skill_name: a-stock-data
