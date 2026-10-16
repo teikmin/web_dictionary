@@ -1,6 +1,6 @@
 # AI Tools Hub — MCP & Agent Skills Registry
 
-[![CI](https://github.com/teikmin/web_database/actions/workflows/ci.yml/badge.svg)](https://github.com/teikmin/web_database/actions/workflows/ci.yml)
+[![CI](https://github.com/teikmin/web_dictionary/actions/workflows/ci.yml/badge.svg)](https://github.com/teikmin/web_dictionary/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](LICENSE-DATA)
 
@@ -15,7 +15,7 @@ A high-signal, zero-database catalog of Model Context Protocol (MCP) servers and
   - **Layer 1 (Hard Gates G1–G9):** $\ge 100$ stars, non-fork, non-archived, recently pushed ($< 180$d), OSI license, spam protection.
   - **Layer 2 (Type Check):** Physical verification via recursive Git trees (`@modelcontextprotocol/sdk`, Python `mcp`, or `SKILL.md`).
   - **Layer 3 (Quality Scoring):** Composite score weighting stars, velocity, commit recency, contributor breadth, with anti-fake-star defense.
-- **1-Click Launch Configs:** Pre-formatted configs for Claude Code (`claude mcp add` / `.mcp.json`), OpenAI Codex (`config.toml`), and Google Antigravity (`mcp_config.json`).
+- **1-Click Launch Configs:** Pre-formatted configs for Claude Code (`claude mcp add` / `.mcp.json`), OpenAI Codex (`.codex/config.json`), and Google Antigravity (`.gemini/mcp_servers.json`).
 - **Blazing Fast Static Site:** Built with **Astro 5** and **Tailwind CSS**. Prerenders hundreds of static pages in seconds.
 - **Static Search via Pagefind:** Zero external search APIs or indexing bills. Instant client-side search across all tools, descriptions, and commands.
 
@@ -35,8 +35,8 @@ A high-signal, zero-database catalog of Model Context Protocol (MCP) servers and
 │   ├── clients/             # Supported AI agent client definitions (*.yaml)
 │   ├── categories/          # Catalog vertical taxonomy (*.yaml)
 │   └── entries/
-│       ├── mcp/             # Verified MCP servers (*.md)
-│       └── skills/          # Verified Agent skills (*.md)
+│       ├── mcp/             # MCP servers (*.md)
+│       └── skills/          # Agent skills (*.md)
 ├── data/
 │   ├── runs/                # Weekly audit reports & decision logs
 │   ├── signals/             # Weekly signal snapshot time series (*.json)
@@ -57,8 +57,8 @@ A high-signal, zero-database catalog of Model Context Protocol (MCP) servers and
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/teikmin/web_database.git
-cd web_database
+git clone https://github.com/teikmin/web_dictionary.git
+cd web_dictionary
 
 # 2. Install workspace dependencies
 pnpm install
@@ -82,12 +82,12 @@ cp .env.example .env
 ---
 
 ## 🤖 Supported Agent Clients
-
-| Client | Launch Command / Snippet | Default Config Path |
-|---|---|---|
-| **Claude Code** | `claude mcp add <name> -- <cmd>` or `.mcp.json` | `~/.claude/mcp.json` |
-| **OpenAI Codex** | `[mcp_servers.<name>]` in TOML | `~/.codex/config.toml` |
-| **Google Antigravity** | `"mcpServers": { ... }` in JSON | `~/.gemini/antigravity/mcp_config.json` |
+ 
+| Client | Launch Command / Snippet | Default Config Path | Skills Path |
+|---|---|---|---|
+| **Claude Code** | `claude mcp add <name> -- <cmd>` or `.mcp.json` | `.mcp.json` (workspace) / `~/.claude.json` (global) | `.claude/skills/<name>/SKILL.md` |
+| **OpenAI Codex** | `.codex/config.json` | `.codex/config.json` (workspace) / `~/.codex/config.json` (global) | `.codex/skills/<name>/SKILL.md` |
+| **Google Antigravity** | `.gemini/mcp_servers.json` | `.gemini/mcp_servers.json` (workspace) / `~/.gemini/antigravity/mcp_servers.json` (global) | `~/.gemini/config/skills/<name>/SKILL.md` |
 
 ---
 
@@ -103,11 +103,14 @@ cp .env.example .env
 
 All architectural guidelines and reference specs are available in [`docs/`](docs/):
 
-- [`01_ARCHITECTURE.md`](docs/01_ARCHITECTURE.md): Architecture overview and target design.
+- [`01_ARCHITECTURE.md`](docs/01_ARCHITECTURE.md): Architecture overview, client adapters, and system topology.
 - [`02_REPO_QUALITY_CRITERIA.md`](docs/02_REPO_QUALITY_CRITERIA.md): Hard gates (G1–G9), type check, scoring formulas, and anti-fake star heuristics.
 - [`03_GROWTH_AND_SEO.md`](docs/03_GROWTH_AND_SEO.md): Programmatic SEO, 1-click config hooks, and growth timeline.
 - [`04_FUTURE_ROADMAP.md`](docs/04_FUTURE_ROADMAP.md): Deferred scope, non-goals, and future ideas parking lot.
-- [`05_FOLDER_STRUCTURE.md`](docs/05_FOLDER_STRUCTURE.md): Detailed workspace structure and folder ownership rules.
+- [`05_FOLDER_STRUCTURE.md`](docs/05_FOLDER_STRUCTURE.md): Detailed workspace structure, content schemas, and folder ownership rules.
+- [`06_CATALOG_RELIABILITY_FIX_PLAN.md`](docs/06_CATALOG_RELIABILITY_FIX_PLAN.md): Completed root-cause fix plan for type detection, genuine skills extraction, and honest confidence labels.
+- [`06_FRONTEND_UX_REVIEW.md`](docs/06_FRONTEND_UX_REVIEW.md): Completed frontend redesign direction and execution plan (Phases A–E).
+- [`07_CHECKPOINT_STATUS.md`](docs/07_CHECKPOINT_STATUS.md): Current system state, monorepo metrics, verified client paths, and production catalog health report.
 
 ---
 

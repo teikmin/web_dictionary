@@ -82,8 +82,8 @@ content/
 |---|---|
 | **File name = slug** | Lowercase, hyphenated: `<owner>-<repo>` for single-tool repos, `<owner>-<repo>-<subfolder>` for monorepo sub-entries |
 | **Slug is permanent** | Once published, a slug never changes (keeps URLs stable). If a repo is renamed, the `source.repo` field changes, not the slug |
-| **Format** | Markdown with structured frontmatter. The frontmatter holds all data; the body holds only a short generated summary |
-| **No copied READMEs** | Only metadata, a short tagline, and links. Don't copy upstream README text (licensing and duplicate-content reasons) |
+| **Format** | Markdown with structured frontmatter. The frontmatter holds all structured data and signals |
+| **Sanitized README Body** | Below frontmatter, the body contains the sanitized upstream README / `SKILL.md` (capped at ~60KB, badge rows stripped, relative links rewritten to absolute URLs, script/event handlers purged) with upstream source link and license attribution to enable read-first discovery |
 
 ### 4.2 Entry frontmatter fields (MCP entry)
 
@@ -222,8 +222,9 @@ apps/pipeline/
 │   │   │   ├── from-package-json.ts Confidence: manifest
 │   │   │   ├── from-pyproject.ts    Confidence: manifest
 │   │   │   └── from-readme.ts       Confidence: readme
-│   │   └── skills/
-│   │       └── from-skill-md.ts     Frontmatter + folder contents
+│   │   ├── skills/
+│   │   │   └── from-skill-md.ts     Frontmatter + folder contents
+│   │   └── readme-cleaner.ts        Sanitizes README/SKILL.md, link rewriting, badge stripping, 60KB limit
 │   ├── classify/
 │   │   └── categories.ts            Applies content/categories matching rules
 │   └── lib/                         Shared helpers
@@ -255,24 +256,26 @@ apps/site/
 ├── src/
 │   ├── content.config.ts            Collections pointing at ../../content/*, validated with packages/schema
 │   ├── pages/
-│   │   ├── index.astro              Search, top per category, new this week
-│   │   ├── mcp/[slug].astro
-│   │   ├── skills/[slug].astro
-│   │   ├── client/[client].astro
+│   │   ├── index.astro              Search, top per category, new this week, official picks
+│   │   ├── catalog.astro            Live filterable/searchable tool directory with client & category pills
+│   │   ├── mcp/[slug].astro         Read-first tool page with sanitized README & install section
+│   │   ├── skills/[slug].astro      Agent skill detail with rendered SKILL.md body
+│   │   ├── client/[client].astro    Pre-filtered catalog grid for specific agent clients
 │   │   ├── category/[category].astro   Only generated for categories with ≥ 5 entries
 │   │   ├── changelog.astro          Built from data/runs/*/diff.json
 │   │   ├── about/criteria.astro     Renders content/pages/criteria.md
 │   │   ├── rss.xml.ts               Changelog feed
 │   │   └── 404.astro
 │   ├── components/
-│   │   ├── ConfigTabs.astro         Claude Code / Codex / Antigravity tabs (the only interactive island)
+│   │   ├── CatalogView.astro        Live filter & sort controls (client, category, type, sort, pagination)
+│   │   ├── ConfigTabs.astro         Claude Code / Codex / Antigravity tabs (interactive island)
 │   │   ├── CopyButton.astro
 │   │   ├── ConfidenceBadge.astro    Registry ✅ / Manifest 🟢 / README 🟡
 │   │   ├── StatusBadge.astro        Active / Slowing / Dormant / Archived
 │   │   ├── SignalStats.astro        Stars, last commit, downloads, contributors
 │   │   ├── SelectionReason.astro    "Why it's listed"
-│   │   ├── EntryCard.astro
-│   │   └── SearchBox.astro          Pagefind UI
+│   │   ├── EntryCard.astro          Browse card with avatar, 3-line summary, category & stars
+│   │   └── SearchBox.astro          Pagefind UI modal with keyboard shortcut (/)
 │   ├── layouts/
 │   │   ├── BaseLayout.astro         Meta tags, OpenGraph, JSON-LD
 │   │   └── EntryLayout.astro

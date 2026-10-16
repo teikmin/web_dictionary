@@ -207,11 +207,11 @@ erDiagram
 ### Client Adapters (v1)
 Renderers convert a single `LAUNCH_SPEC` into each client's format at build time:
 
-| Client | MCP Server Output | Skill Output |
-|---|---|---|
-| **Claude Code** | `claude mcp add ...` CLI command & `.mcp.json` snippet | Instructions to install skill folder into `.claude/skills/` |
-| **Codex** | `config.toml` block (`[mcp_servers.<name>]`) | Install path for Codex skills folder |
-| **Antigravity** | `mcp_config.json` snippet (`mcpServers` object) | Install path for Antigravity skills directory |
+| Client | MCP Server Output | Skill Output | Default Config Path |
+|---|---|---|---|
+| **Claude Code** | `claude mcp add ...` CLI command & `.mcp.json` snippet | Instructions to install skill folder into `.claude/skills/<name>/` | `.mcp.json` / `~/.claude.json` |
+| **Codex** | `.codex/config.json` JSON block | Instructions to install skill folder into `.codex/skills/<name>/` | `.codex/config.json` |
+| **Antigravity** | `.gemini/mcp_servers.json` snippet (`mcpServers` object) | Instructions to install skill into `~/.gemini/config/skills/<name>/` | `.gemini/mcp_servers.json` |
 
 ---
 
@@ -221,10 +221,11 @@ Built with **Astro Static Site Generation (SSG)** and indexed locally with **Pag
 
 | URL Route | Purpose |
 |---|---|
-| `/` | Instant search, top tools by category, "New This Week" highlights |
-| `/mcp/[slug]` | MCP tool detail: signals, verification confidence, client config tabs |
-| `/skills/[slug]` | Agent skill detail: description, target client install paths, `SKILL.md` preview |
-| `/client/[client]` | Client view (`/client/claude-code`, `/client/codex`, `/client/antigravity`) |
+| `/` | Instant search, top tools by category, "New This Week" highlights, official tools |
+| `/catalog` | Unified, filterable, searchable catalog grid with client pills, category filter, sort controls, and pagination |
+| `/mcp/[slug]` | MCP tool detail: signals, verification confidence, client config tabs, sanitized upstream README |
+| `/skills/[slug]` | Agent skill detail: description, target client install paths, full `SKILL.md` preview |
+| `/client/[client]` | Client view (`/client/claude-code`, `/client/codex`, `/client/antigravity`) reusing filtered catalog grid |
 | `/category/[category]` | Filtered view for categories with $\ge 5$ entries |
 | `/changelog` | Weekly diff of added, updated, and archived tools |
 | `/about/criteria` | Public transparency page explaining the automated quality formula |
@@ -236,7 +237,7 @@ Built with **Astro Static Site Generation (SSG)** and indexed locally with **Pag
 Top-level summary. The full file-level structure, folder ownership and data flow are in [05_FOLDER_STRUCTURE.md](file:///c:/teikmin/exploring/web_database/docs/05_FOLDER_STRUCTURE.md).
 
 ```text
-web_database/
+web_dictionary/
 ├── content/                  # SOURCE OF TRUTH: published catalog
 │   ├── entries/{mcp,skills}/ #   pipeline-owned, one Markdown file per entry
 │   ├── clients/              #   human-owned client definitions
@@ -247,7 +248,7 @@ web_database/
 │   ├── reference/            # vendor orgs, trusted awesome-lists
 │   ├── signals/              # weekly metric snapshots
 │   ├── runs/                 # per-run report, decisions, diff
-│   └── state/                # cross-run tracking (failures, slugs)
+│   └── state/                # cross-run tracking (failures, slugs, diff.json)
 ├── apps/
 │   ├── pipeline/             # TypeScript weekly pipeline (sources, stages, enrich, config)
 │   └── site/                 # Astro static site + Pagefind
@@ -262,10 +263,12 @@ web_database/
 
 ## 9. Phased Implementation Roadmap
 
-| Phase | Milestone | Deliverables & Exit Criteria |
-|---|---|---|
-| **Phase 0: Reset** | Complete | Legacy code deleted, `.env.example` cleaned, docs unified |
-| **Phase 1: Selection Engine** | In Progress | TypeScript discovery + 3-layer filter; generates a **run report only** (no publishing); spot-check top 30 |
-| **Phase 2: Enrich & Renderers** | Next | `LAUNCH_SPEC` extraction; client adapters (Claude Code, Codex, Antigravity); $\ge 70\%$ config extraction rate |
-| **Phase 3: Astro Site Live** | Next | Astro app with Content Collections, Pagefind search, client tabs; automated deploy to Cloudflare/Vercel |
-| **Phase 4: Lifecycle & Trends** | Future | Automated archive/dormant status tracking; signal history trends |
+| Phase | Milestone | Deliverables & Exit Criteria | Status |
+|---|---|---|:---:|
+| **Phase 0: Reset** | Complete | Legacy code deleted, `.env.example` cleaned, docs unified | ✅ Completed |
+| **Phase 1: Selection Engine** | Complete | TypeScript discovery + 3-layer filter; generates a **run report**; spot-checked top 30 | ✅ Completed |
+| **Phase 2: Enrich & Renderers** | Complete | `LAUNCH_SPEC` extraction; client adapters (Claude Code, Codex, Antigravity); sanitized READMEs | ✅ Completed |
+| **Phase 3: Astro Site Live** | Complete | Astro 5 app with Content Collections, Pagefind search, client tabs; automated deploy workflows | ✅ Completed |
+| **Reliability Overhaul (P1–P6)** | Complete | Strict type checks, multi-entry skills, honest confidence labels, direct deploy trigger, pruning | ✅ Completed |
+| **Frontend UX Overhaul (Phases A–E)** | Complete | Read-first tool pages, `/catalog` filterable grid, light cold-tone theme, honest labels, verified paths | ✅ Completed |
+| **Phase 4: Lifecycle & Trends** | Active | Automated archive/dormant status tracking; weekly signal history trends and diffs | 🔄 Active |

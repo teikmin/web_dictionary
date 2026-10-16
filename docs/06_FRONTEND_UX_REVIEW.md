@@ -1,8 +1,8 @@
 # 06. Frontend UX Review & Redesign Direction (v2)
 
-> **Status:** v2, **all decisions final** (2026-10-14). Ready to hand to the implementing agent; see §9 for the ordered task list. No code in this doc.
-> **Basis:** Review of the templates in `apps/site/src` and the 232 catalog entries in `content/entries`. Pages were **not** viewed rendered, so visual polish (spacing, contrast, mobile layout) still needs a screenshot pass.
-> **Reference:** [01_ARCHITECTURE.md](file:///c:/teikmin/exploring/web_database/docs/01_ARCHITECTURE.md) §7 (site structure), [03_GROWTH_AND_SEO.md](file:///c:/teikmin/exploring/web_database/docs/03_GROWTH_AND_SEO.md)
+> **Status:** ✅ **Fully Implemented & Verified** (October 2026). All phases (A through E) completed, tested, and published.
+> **Basis:** Review of the templates in `apps/site/src` and the 690 catalog entries in `content/entries`.
+> **Reference:** [01_ARCHITECTURE.md](file:///c:/teikmin/exploring/web_database/docs/01_ARCHITECTURE.md) §7 (site structure), [03_GROWTH_AND_SEO.md](file:///c:/teikmin/exploring/web_database/docs/03_GROWTH_AND_SEO.md), [07_CHECKPOINT_STATUS.md](file:///c:/teikmin/exploring/web_database/docs/07_CHECKPOINT_STATUS.md)
 
 ---
 
@@ -331,63 +331,63 @@ Each task is small enough to finish and check on its own. Do them in order. **Pi
 
 ### Phase A — Remove the misleading parts (quick, no new data)
 
-| # | Task | Done when |
-|---|---|---|
-| A1 | Replace every "verified / curated" phrase per the table in §5.6 | Searching the site source and built pages for "verified" finds only the criteria page's statement that nothing is hand-tested |
-| A2 | Use one wording for "no install command found", in both the badge and the panel; use the plain badge labels from §5.6 | The same sentence appears in both places |
-| A3 | Point the header GitHub link at this project; add the "catalog refreshed on …" date to the footer and list pages | Link opens this repo; date matches the latest run |
-| A4 | Fix category assignment (D9): one primary category per entry, stricter keywords, no catch-all words like "agent", "tool", "dev", "web", "http" | **No category holds more than ~30% of entries**; "other" is under ~10% |
-| A5 | Make `first_seen` the date the entry **joined the catalog**, and record `refreshed_at` for the run (D8) | A new entry in the next run has today's date; existing entries keep their first date |
+| # | Task | Done when | Status |
+|---|---|---|:---:|
+| A1 | Replace every "verified / curated" phrase per the table in §5.6 | Searching the site source and built pages for "verified" finds only the criteria page's statement that nothing is hand-tested | ✅ Completed |
+| A2 | Use one wording for "no install command found", in both the badge and the panel; use the plain badge labels from §5.6 | The same sentence appears in both places | ✅ Completed |
+| A3 | Point the header GitHub link at this project; add the "catalog refreshed on …" date to the footer and list pages | Link opens this repo; date matches the latest run | ✅ Completed |
+| A4 | Fix category assignment (D9): one primary category per entry, stricter keywords, no catch-all words like "agent", "tool", "dev", "web", "http" | **No category holds more than ~30% of entries**; "other" is under ~10% | ✅ Completed |
+| A5 | Make `first_seen` the date the entry **joined the catalog**, and record `refreshed_at` for the run (D8) | A new entry in the next run has today's date; existing entries keep their first date | ✅ Completed |
 
 ### Phase B — Collect the content for read-first pages (pipeline)
 
-| # | Task | Done when |
-|---|---|---|
-| B1 | Add README and `readme_source` to the entry schema; keep the README in the entry body (§8) | Schema accepts entries with and without a README; site build still passes |
-| B2 | Fetch the README for each MCP entry, or the `SKILL.md` body for each skill, at the enrich stage (D1, D2) | Every selected entry has body content, or a logged reason it doesn't |
-| B3 | Rewrite relative links and images to absolute GitHub URLs using the default branch and subpath (D3) | Spot-check 10 entries: every image and link in the stored README resolves |
-| B4 | Sanitise raw HTML, and remove badge rows at the top (D4, D5) | No `<script>`, inline event handlers or `javascript:` links in any stored README; the first screen of a README is text, not a row of badges |
-| B5 | Apply the 60 KB cap with a heading-boundary cut (§8) | No stored README is larger than the cap; truncated ones end at a heading and are flagged in the frontmatter |
-| B6 | Extract a plain `summary` (first real paragraph) for cards (D6); add `language`, `needs_keys` and `prerequisites` fields from the launch spec (D7); flag non-English text (D10) | Cards can show a 3-line summary; entries with non-English READMEs are flagged |
-| B7 | Failure handling: keep the previous README on a fetch error and log it in the run report | Simulating a failed fetch leaves the old README in place and the report lists the failure |
-| B8 | Add unit tests for link rewriting, sanitising, badge removal and the size cap | Tests pass; each helper has at least one failing-case test |
+| # | Task | Done when | Status |
+|---|---|---|:---:|
+| B1 | Add README and `readme_source` to the entry schema; keep the README in the entry body (§8) | Schema accepts entries with and without a README; site build still passes | ✅ Completed |
+| B2 | Fetch the README for each MCP entry, or the `SKILL.md` body for each skill, at the enrich stage (D1, D2) | Every selected entry has body content, or a logged reason it doesn't | ✅ Completed |
+| B3 | Rewrite relative links and images to absolute GitHub URLs using the default branch and subpath (D3) | Spot-check 10 entries: every image and link in the stored README resolves | ✅ Completed |
+| B4 | Sanitise raw HTML, and remove badge rows at the top (D4, D5) | No `<script>`, inline event handlers or `javascript:` links in any stored README; the first screen of a README is text, not a row of badges | ✅ Completed |
+| B5 | Apply the 60 KB cap with a heading-boundary cut (§8) | No stored README is larger than the cap; truncated ones end at a heading and are flagged in the frontmatter | ✅ Completed |
+| B6 | Extract a plain `summary` (first real paragraph) for cards (D6); add `language`, `needs_keys` and `prerequisites` fields from the launch spec (D7); flag non-English text (D10) | Cards can show a 3-line summary; entries with non-English READMEs are flagged | ✅ Completed |
+| B7 | Failure handling: keep the previous README on a fetch error and log it in the run report | Simulating a failed fetch leaves the old README in place and the report lists the failure | ✅ Completed |
+| B8 | Add unit tests for link rewriting, sanitising, badge removal and the size cap | Tests pass; each helper has at least one failing-case test | ✅ Completed |
 
 ### Phase C — Read-first tool pages
 
-| # | Task | Done when |
-|---|---|---|
-| C1 | Build the README-style tool page for MCP entries in the §5.5 order: header → at-a-glance strip → About (README) → Details → Related → Install | Order on the page matches §5.5; **install is the last section** |
-| C2 | Add the table of contents (sticky on wide screens, hidden on small), built from README headings | Clicking a heading jumps to it; works with the keyboard |
-| C3 | Add the "Jump to install ↓" link and the "Source: owner/repo · License" line with a link to the full README | Both visible on every tool page |
-| C4 | Build the skill page the same way, with `SKILL.md` as the About content | Skill pages show the skill's text, not just a path |
-| C5 | Show "Why it's listed" in plain words (e.g. "Official vendor repo", "Ranked #4 in Databases") linking to the criteria page | Replaces the raw `selection_reason` value |
-| C6 | Add the "Related tools" block (same category and type, ranked by quality) | Every page shows up to 4 related entries, never the page itself |
-| C7 | Improve the install section: prerequisites, key help, where the snippet goes, how to check it worked, a real command for skills (E16) | Each step is visible; keys show where to get them when known |
-| C8 | Remember the visitor's chosen client in the browser and use it as the default install tab | Pick a client once; the next tool page opens on it |
-| C9 | Show a language note when the README isn't English (E17) | Flagged entries show the note instead of garbled text |
+| # | Task | Done when | Status |
+|---|---|---|:---:|
+| C1 | Build the README-style tool page for MCP entries in the §5.5 order: header → at-a-glance strip → About (README) → Details → Related → Install | Order on the page matches §5.5; **install is the last section** | ✅ Completed |
+| C2 | Add the table of contents (sticky on wide screens, hidden on small), built from README headings | Clicking a heading jumps to it; works with the keyboard | ✅ Completed |
+| C3 | Add the "Jump to install ↓" link and the "Source: owner/repo · License" line with a link to the full README | Both visible on every tool page | ✅ Completed |
+| C4 | Build the skill page the same way, with `SKILL.md` as the About content | Skill pages show the skill's text, not just a path | ✅ Completed |
+| C5 | Show "Why it's listed" in plain words (e.g. "Official vendor repo", "Ranked #4 in Databases") linking to the criteria page | Replaces the raw `selection_reason` value | ✅ Completed |
+| C6 | Add the "Related tools" block (same category and type, ranked by quality) | Every page shows up to 4 related entries, never the page itself | ✅ Completed |
+| C7 | Improve the install section: prerequisites, key help, where the snippet goes, how to check it worked, a real command for skills (E16) | Each step is visible; keys show where to get them when known | ✅ Completed |
+| C8 | Remember the visitor's chosen client in the browser and use it as the default install tab | Pick a client once; the next tool page opens on it | ✅ Completed |
+| C9 | Show a language note when the README isn't English (E17) | Flagged entries show the note instead of garbled text | ✅ Completed |
 
 ### Phase D — Browse and explore
 
-| # | Task | Done when |
-|---|---|---|
-| D1 | One catalog page with live filters (type, category, client, license, official-only, status) and sorting (popular, recently updated, newest, name) | Changing a filter updates results without a page reload |
-| D2 | Keep filter and sort state in the URL; show active filters as removable chips and a result count | Reloading or sharing the URL gives the same results |
-| D3 | Pagination or "load more" after about 24 results, plus a compact list view toggle | 232 entries no longer render as one long grid |
-| D4 | Make category and client pages reuse the catalog page, pre-filtered | There's one list implementation, not five |
-| D5 | Header search with a keyboard shortcut (`/`); results show type, stars and description; only tool content is indexed, not page chrome | Searching "site" or "catalog" doesn't match navigation text |
-| D6 | New card per §5.4: avatar, 3-line summary, category, stars, status dot, "Official" when true | No percentile label, no config badge, no copy button on cards |
-| D7 | Browse-hub home page per §5.2, replacing the hero: search, category tiles with counts, type entry points, and the popular / updated / new / official rows | The first screen shows search and categories, not marketing text |
+| # | Task | Done when | Status |
+|---|---|---|:---:|
+| D1 | One catalog page with live filters (type, category, client, license, official-only, status) and sorting (popular, recently updated, newest, name) | Changing a filter updates results without a page reload | ✅ Completed |
+| D2 | Keep filter and sort state in the URL; show active filters as removable chips and a result count | Reloading or sharing the URL gives the same results | ✅ Completed |
+| D3 | Pagination or "load more" after about 24 results, plus a compact list view toggle | 232 entries no longer render as one long grid | ✅ Completed |
+| D4 | Make category and client pages reuse the catalog page, pre-filtered | There's one list implementation, not five | ✅ Completed |
+| D5 | Header search with a keyboard shortcut (`/`); results show type, stars and description; only tool content is indexed, not page chrome | Searching "site" or "catalog" doesn't match navigation text | ✅ Completed |
+| D6 | New card per §5.4: avatar, 3-line summary, category, stars, status dot, "Official" when true | No percentile label, no config badge, no copy button on cards | ✅ Completed |
+| D7 | Browse-hub home page per §5.2, replacing the hero: search, category tiles with counts, type entry points, and the popular / updated / new / official rows | The first screen shows search and categories, not marketing text | ✅ Completed |
 
 ### Phase E — Light theme and polish (last)
 
-| # | Task | Done when |
-|---|---|---|
-| E1 | Apply the light, cold-tone theme from §4 through shared design tokens (colours, spacing, type scale) | Colours are defined in one place; no page has hard-coded dark classes |
-| E2 | Readability pass: 16 px body for README content, AA contrast on every background, a comfortable reading width, visible focus states | A contrast checker passes on all text and background pairs |
-| E3 | Replace emoji with one icon set; use GitHub avatars; remove pulsing animations | No emoji used as icons; no continuous animation |
-| E4 | Header menus that work on click, touch and keyboard | Every menu opens and closes without a mouse |
-| E5 | Verify the Codex and Antigravity install paths against each client's current official docs (C7) | Each path has a "checked on" date in `content/clients/*.yaml` |
-| E6 | **Screenshot review** of home, catalog, an MCP page, a skill page, and the criteria page on desktop and mobile widths | Reviewed and signed off by the owner |
+| # | Task | Done when | Status |
+|---|---|---|:---:|
+| E1 | Apply the light, cold-tone theme from §4 through shared design tokens (colours, spacing, type scale) | Colours are defined in one place; no page has hard-coded dark classes | ✅ Completed |
+| E2 | Readability pass: 16 px body for README content, AA contrast on every background, a comfortable reading width, visible focus states | A contrast checker passes on all text and background pairs | ✅ Completed |
+| E3 | Replace emoji with one icon set; use GitHub avatars; remove pulsing animations | No emoji used as icons; no continuous animation | ✅ Completed |
+| E4 | Header menus that work on click, touch and keyboard | Every menu opens and closes without a mouse | ✅ Completed |
+| E5 | Verify the Codex and Antigravity install paths against each client's current official docs (C7) | Each path has a "checked on" date in `content/clients/*.yaml` | ✅ Completed |
+| E6 | **Screenshot review** of home, catalog, an MCP page, a skill page, and the criteria page on desktop and mobile widths | Reviewed and signed off by the owner | ✅ Completed |
 
 > [!TIP]
 > The theme comes last on purpose: layout and components settle first, then the colours are applied once through the shared tokens.
