@@ -8,7 +8,7 @@ summary: "- Bug has multiple plausible root causes - Initial debugging attempts
   haven't identified the issue - Issue spans multiple modules or components -
   Need systematic root cause analysis with evidence - Want to avoid confi..."
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 92
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
   folder_path: plugins/agent-teams/skills/parallel-debugging
   extra_files:
     - references/hypothesis-testing.md
+tags: []
 ---
 
 # Parallel Debugging

@@ -6,7 +6,7 @@ tagline: "Extract any website's complete design system with one command. DTCG
   Code/Cursor/Windsurf, "
 summary: Built by Manav Arya Singh (@Manavarya09)
 categories:
-  - browser-automation
+  - media-creative
 status: active
 quality_percentile: 48
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - designlang
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <p align="center">

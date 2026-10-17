@@ -23,12 +23,15 @@ const clients = [
 ];
 
 const categories = [
-  { id: 'dev-tools', name: 'Developer Tools' },
-  { id: 'productivity', name: 'Productivity' },
-  { id: 'ai-frameworks', name: 'AI Frameworks' },
-  { id: 'security', name: 'Security' },
-  { id: 'databases', name: 'Databases' },
-  { id: 'browser-automation', name: 'Browser Automation' },
+  { id: 'coding-agents', name: 'Coding & Dev' },
+  { id: 'browser-web', name: 'Browser & Web' },
+  { id: 'databases-memory', name: 'Databases & Memory' },
+  { id: 'agent-frameworks', name: 'Frameworks' },
+  { id: 'productivity-ops', name: 'Productivity' },
+  { id: 'cloud-infra', name: 'Cloud & DevOps' },
+  { id: 'media-creative', name: 'Media & Docs' },
+  { id: 'security-auth', name: 'Security' },
+  { id: 'domain-research', name: 'Research & Domain' },
   { id: 'other', name: 'Other Utilities' },
 ];
 ---
@@ -45,6 +48,7 @@ const categories = [
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#f8fafc" />
+    <link rel="alternate" type="application/rss+xml" title="AI Tools Hub Weekly Trending RSS Feed" href="/rss.xml" />
     <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
   </head>
   <body class="bg-[#f8fafc] text-slate-800 min-h-screen flex flex-col antialiased selection:bg-blue-600 selection:text-white">
@@ -65,6 +69,11 @@ const categories = [
           <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-600" aria-label="Main navigation">
             <a href="/catalog" class="px-3 py-1.5 rounded-lg hover:text-slate-900 hover:bg-slate-100 transition-colors">
               Catalog
+            </a>
+
+            <a href="/trending" class="px-3 py-1.5 rounded-lg hover:text-slate-900 hover:bg-slate-100 transition-colors flex items-center gap-1.5">
+              <span>🔥</span>
+              <span>Trending</span>
             </a>
 
             <!-- Clients Dropdown -->
@@ -193,6 +202,12 @@ const categories = [
 
         <div class="flex flex-wrap items-center gap-4 text-slate-600">
           <span>Catalog refreshed: <strong class="text-slate-800 font-medium">{catalogState.formattedDate}</strong></span>
+          <span class="text-slate-300">|</span>
+          <a href="/trending" class="hover:text-slate-900 transition-colors">🔥 Trending Board</a>
+          <span class="text-slate-300">|</span>
+          <a href="/changelog" class="hover:text-slate-900 transition-colors">Changelog</a>
+          <span class="text-slate-300">|</span>
+          <a href="/rss.xml" class="hover:text-slate-900 transition-colors">RSS Feed</a>
           <span class="text-slate-300">|</span>
           <a href="/about/criteria" class="hover:text-slate-900 transition-colors">Selection Criteria</a>
           <span class="text-slate-300">|</span>

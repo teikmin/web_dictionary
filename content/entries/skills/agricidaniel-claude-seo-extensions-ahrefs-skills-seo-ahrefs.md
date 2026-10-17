@@ -8,7 +8,7 @@ summary: "- Run extensions/ahrefs/install.sh (Linux/macOS) or install.ps1
   (Windows) before using this skill. - An Ahrefs API token
   (https://ahrefs.com/api). - Node 18+ on $PATH for the MCP server."
 categories:
-  - productivity
+  - browser-web
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     confidence weighting.
   folder_path: extensions/ahrefs/skills/seo-ahrefs
   extra_files: []
+tags: []
 ---
 
 # seo-ahrefs

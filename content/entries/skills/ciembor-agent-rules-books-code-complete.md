@@ -7,7 +7,7 @@ summary: Before making design or code decisions, read and apply
   code-complete.mini.md. Use code-complete.md only as a deeper reference when
   the mini rules are not enough for the current construction tradeoff.
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     - code-complete.md
     - code-complete.mini.md
     - code-complete.nano.md
+tags: []
 ---
 
 # Code Complete Skill

@@ -6,7 +6,7 @@ tagline: Convert documentation websites, GitHub repositories, and PDFs into
 summary: English | 简体中文 | 日本語 | 한국어 | Español | Français | Deutsch | Português |
   Türkçe | العربية | हिन्दी | Русский
 categories:
-  - browser-automation
+  - coding-agents
 status: active
 quality_percentile: 87
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ launch:
     - skill-seekers
   env_vars: []
   confidence: manifest
+tags:
+  - github
 ---
 
 <p align="center">

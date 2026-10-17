@@ -6,7 +6,7 @@ tagline: Generate images via 9Router /v1/images/generations using OpenAI /
   Use when
 summary: POST $NINEROUTERURL/v1/images/generations
 categories:
-  - security
+  - other
 status: active
 quality_percentile: 89
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     picture, or text-to-image (txt2img).
   folder_path: skills/9router-image
   extra_files: []
+tags: []
 ---
 
 # 9Router — Image Generation

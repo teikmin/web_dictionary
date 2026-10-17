@@ -9,7 +9,7 @@ summary: 1. What is the geographic scope (single city/region vs global)? 2. What
   nearest-neighbor)? 3. What units do you need for distance/area (meters vs CRS
   u...
 categories:
-  - databases
+  - media-creative
 status: active
 quality_percentile: 43
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     patterns for location-based applications
   folder_path: skills/design-postgis-tables
   extra_files: []
+tags: []
 ---
 
 # PostGIS Spatial Table Design

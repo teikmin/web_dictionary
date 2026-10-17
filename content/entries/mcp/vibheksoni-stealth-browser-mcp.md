@@ -6,7 +6,7 @@ tagline: "Stealth browser automation for AI agents over MCP and the Chrome
   pixel-accurate UI c"
 summary: Stealth browser automation for MCP-compatible AI agents.
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 53
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - stealth-browser-mcp
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <div align="center">

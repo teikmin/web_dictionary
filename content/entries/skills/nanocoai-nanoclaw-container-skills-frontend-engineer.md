@@ -8,7 +8,7 @@ summary: Never say "done" until you have visually verified the result in a real
   browser. Screenshots are your proof. If you can't take a screenshot, you're
   not done.
 categories:
-  - security
+  - browser-web
 status: active
 quality_percentile: 99
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     Pairs with a deployment skill such as vercel-cli, where one is installed.
   folder_path: container/skills/frontend-engineer
   extra_files: []
+tags: []
 ---
 
 # Frontend Engineer

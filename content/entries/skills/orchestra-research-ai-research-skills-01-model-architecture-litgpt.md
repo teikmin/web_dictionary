@@ -7,7 +7,7 @@ tagline: Implements and trains LLMs using Lightning AI's LitGPT with 20+
 summary: LitGPT provides 20+ pretrained LLM implementations with clean, readable
   code and production-ready training workflows.
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
     - references/distributed-training.md
     - references/supported-models.md
     - references/training-recipes.md
+tags: []
 ---
 
 # LitGPT - Clean LLM Implementations

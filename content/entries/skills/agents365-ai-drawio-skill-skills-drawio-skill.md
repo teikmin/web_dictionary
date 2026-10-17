@@ -7,7 +7,7 @@ tagline: Create and edit draw.io/diagrams.net diagrams as editable `.drawio`
 summary: "Run from this skill directory, or replace scripts/ with the absolute
   path to this skill's scripts directory:"
 categories:
-  - databases
+  - other
 status: active
 quality_percentile: 59
 selection_reason: quality_percentile
@@ -52,6 +52,7 @@ skill:
     - references/autolayout.md
     - references/ci-gate.md
     - references/cookbook.md
+tags: []
 ---
 
 # Draw.io Architecture Studio

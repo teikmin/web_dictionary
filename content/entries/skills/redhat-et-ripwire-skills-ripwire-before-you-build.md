@@ -8,7 +8,7 @@ summary: = repo root. FEATURE/APPROACH = your task in 2–4 plain words; SYM = a
   representative symbol. Run only the sections your question needs — they share
   the same building blocks.
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 53
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
     with an obvious home needs none of this.
   folder_path: skills/ripwire-before-you-build
   extra_files: []
+tags: []
 ---
 
 # Before you build — with ripwire

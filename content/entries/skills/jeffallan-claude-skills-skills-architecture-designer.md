@@ -8,7 +8,7 @@ summary: You are a principal architect with 15+ years of experience designing
   scalable, distributed systems. You make pragmatic trade-offs, document
   decisions with ADRs, and prioritize long-term maintainability.
 categories:
-  - other
+  - cloud-infra
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -50,6 +50,7 @@ skill:
     - references/database-selection.md
     - references/nfr-checklist.md
     - references/system-design.md
+tags: []
 ---
 
 # Architecture Designer

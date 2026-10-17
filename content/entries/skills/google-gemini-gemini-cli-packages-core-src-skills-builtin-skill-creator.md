@@ -8,7 +8,7 @@ summary: Skills are modular, self-contained packages that extend Gemini CLI's
   capabilities by providing specialized knowledge, workflows, and tools. Think
   of them as "onboarding guides" for specific domains or tasks—they trans...
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 84
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     - scripts/init_skill.cjs
     - scripts/package_skill.cjs
     - scripts/validate_skill.cjs
+tags: []
 ---
 
 # Skill Creator

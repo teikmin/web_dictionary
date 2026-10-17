@@ -6,7 +6,7 @@ tagline: The missing open-source Kubernetes UI with a built-in MCP server for AI
 summary: The missing open-source Kubernetes UI. Single binary. No account
   required. Free forever.
 categories:
-  - dev-tools
+  - cloud-infra
 status: active
 quality_percentile: 59
 selection_reason: quality_percentile
@@ -35,6 +35,8 @@ launch:
   args: []
   env_vars: []
   confidence: none
+tags:
+  - kubernetes
 ---
 
 # Radar

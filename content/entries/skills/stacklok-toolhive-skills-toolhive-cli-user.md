@@ -8,7 +8,7 @@ summary: "- Container Runtime: Docker, Podman, Colima, or Rancher Desktop (with
   dockerd/moby) - ToolHive CLI: Install with brew install stacklok/tap/thv
   (macOS/Linux) or winget install stacklok.thv (Windows)"
 categories:
-  - security
+  - coding-agents
 status: active
 quality_percentile: 77
 selection_reason: quality_percentile
@@ -47,6 +47,8 @@ skill:
   extra_files:
     - references/COMMANDS.md
     - references/EXAMPLES.md
+tags:
+  - docker
 ---
 
 # ToolHive CLI User Guide

@@ -9,7 +9,7 @@ summary: "Expected output: a tracking pre-flight checklist
   versioned UTM/event-spec binding (naming convention + conversion-event table +
   exact ref/hash), c..."
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 48
 selection_reason: quality_percentile
@@ -49,6 +49,7 @@ skill:
   extra_files:
     - references/preflight-checklist.md
     - references/utm-event-spec.md
+tags: []
 ---
 
 # Conversion Signal QA

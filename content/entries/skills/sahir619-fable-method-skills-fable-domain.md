@@ -8,7 +8,7 @@ summary: 'Its generation core is a recording, not a guess: two Fable 5 agents
   were asked, with zero process hints, to "create an adapter that can be trusted
   the way the others are", and both independently followed the same proc...'
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 44
 selection_reason: quality_percentile
@@ -45,6 +45,8 @@ skill:
   folder_path: skills/fable-domain
   extra_files:
     - agents/openai.yaml
+tags:
+  - research
 ---
 
 # fable-domain

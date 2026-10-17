@@ -9,7 +9,7 @@ summary: For plain csv/xlsx/json reshuffling, default to the Node path (an array
   pandas.DataFrame plays on the Python side) per this environment's Node-first
   p...
 categories:
-  - databases
+  - media-creative
 status: active
 quality_percentile: 91
 selection_reason: quality_percentile
@@ -44,6 +44,9 @@ skill:
     attempt one that will silently fail or produce a wrong result.
   folder_path: backend/python/app/agents/agent_loop/skills/builtin_packs/file-conversion
   extra_files: []
+tags:
+  - pdf
+  - python
 ---
 
 # File format conversion

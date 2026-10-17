@@ -7,7 +7,7 @@ tagline: Quick single-paper lookup via AlphaXiv LLM-optimized summaries with
 summary: "This skill is the quick single-paper reader that returns LLM-optimized
   summaries:"
 categories:
-  - ai-frameworks
+  - domain-research
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     understanding - not for broad literature search.
   folder_path: skills/alphaxiv
   extra_files: []
+tags: []
 ---
 
 # AlphaXiv Paper Lookup

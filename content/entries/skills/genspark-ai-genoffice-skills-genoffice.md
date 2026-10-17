@@ -8,7 +8,7 @@ summary: 'Always add --json when a program reads the output: one JSON object on
   stdout, { "status": "ok" | "partial", "command", "summary", "outputpath"?,
   "warnings"?, "detail"? } (partial: an apply with --best-effort / --stop-...'
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 80
 selection_reason: quality_percentile
@@ -50,6 +50,7 @@ skill:
     to the provider configured in GenOffice.
   folder_path: skills/genoffice
   extra_files: []
+tags: []
 ---
 
 # genoffice — GenOffice from the terminal

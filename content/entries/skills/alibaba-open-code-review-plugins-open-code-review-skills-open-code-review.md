@@ -7,7 +7,7 @@ summary: A skill for invoking open-code-review (ocr) — an open-source AI code
   review CLI that reads Git diffs and generates structured, line-level review
   comments.
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 60
 selection_reason: quality_percentile
@@ -44,6 +44,9 @@ skill:
     performance problems, and code quality concerns.
   folder_path: plugins/open-code-review/skills/open-code-review
   extra_files: []
+tags:
+  - git
+  - ocr
 ---
 
 # Open Code Review

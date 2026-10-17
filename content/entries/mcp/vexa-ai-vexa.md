@@ -7,7 +7,7 @@ tagline: Open-source meeting transcription API for Google Meet, Microsoft Teams
 summary: Open-source meeting bots and real-time transcription — cloud or fully
   self-hosted.
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 90
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <div align="center">

@@ -1,0 +1,18 @@
+id: cloud-infra
+name: Cloud, DevOps & Infra
+tagline: AWS, Cloudflare, Kubernetes, Docker, and observability platforms
+description: Cloud provider integrations, container management, Kubernetes operators, infrastructure-as-code, and observability.
+icon: cloud
+keywords:
+  - aws
+  - cloudflare
+  - kubernetes
+  - k8s
+  - docker
+  - terraform
+  - vercel
+  - prometheus
+  - grafana
+  - sentry
+  - datadog
+  - telemetry

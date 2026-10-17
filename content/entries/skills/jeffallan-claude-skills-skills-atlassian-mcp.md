@@ -9,7 +9,7 @@ summary: "- Querying Jira issues with JQL filters - Searching or creating
   Setting up MCP server authentication (OAuth/API tokens) - Syncing meeting
   notes t..."
 categories:
-  - other
+  - productivity-ops
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -49,6 +49,8 @@ skill:
     - references/confluence-operations.md
     - references/jira-queries.md
     - references/mcp-server-setup.md
+tags:
+  - jira
 ---
 
 # Atlassian MCP Expert

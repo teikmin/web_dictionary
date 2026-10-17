@@ -6,7 +6,7 @@ summary: "【模板: 博客长文 / Blog Post】 【意图】≥ 600 字的真�
   20% 图 10% chrome。 【布局】 - Masthead (publication name + date) - Hero (大标题 + 副标 +
   作者署名 + 阅读时间) - 正文 (单栏 65ch, 含 figures, pull quotes, 行内引用) - Author bi..."
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 69
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ skill:
   folder_path: next/src/lib/templates/skills/blog-post
   extra_files:
     - example.html
+tags: []
 ---
 
 【模板: 博客长文 / Blog Post】

@@ -1,0 +1,17 @@
+id: security-auth
+name: Security & Identity
+tagline: Vulnerability scanners, secret vaults, sandboxes, and authentication
+description: Vulnerability detection, penetration testing, authentication providers, sandbox execution, and credential vaults.
+icon: shield
+keywords:
+  - security
+  - pentest
+  - cve
+  - vulnerability
+  - oauth
+  - auth0
+  - clerk
+  - vault
+  - sandbox
+  - audit
+  - cryptography

@@ -7,7 +7,7 @@ summary: 1. Read the applicable AGENTS.md instructions. 2. Inspect the complete
   diff for the requested target and enough surrounding code to understand each
   changed path. 3. Identify concrete regressions introduced by the chan...
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 69
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
   folder_path: vendor/atlas-engine/skills/src/assets/samples/review-agent
   extra_files:
     - agents/openai.yaml
+tags: []
 ---
 
 # Review Agent

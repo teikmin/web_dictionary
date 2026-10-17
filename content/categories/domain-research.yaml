@@ -1,0 +1,17 @@
+id: domain-research
+name: Research, Finance & Domain
+tagline: Academic research, financial market data, legal, and specialized data
+description: ArXiv and paper search, quantitative financial data, legal case analysis, medical knowledge, and specialized domains.
+icon: book-open
+keywords:
+  - arxiv
+  - paper
+  - research-agent
+  - finance
+  - stock
+  - trading
+  - sec-edgar
+  - legal
+  - law
+  - biomedical
+  - weather

@@ -7,7 +7,7 @@ tagline: Create, inspect, and update Obsidian JSON Canvas boards with text,
 summary: "Resolve the installed product root from this skill's own location, not
   from the vault or current working directory:"
 categories:
-  - databases
+  - media-creative
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
   folder_path: skills/canvas
   extra_files:
     - references/canvas-spec.md
+tags: []
 ---
 
 # Canvas

@@ -9,7 +9,7 @@ summary: "- Memory or standing instructions → Edit memory/ or
   persisted on the host. The composed provider document (CLAUDE.md or AGENTS.md)
   is regenerated..."
 categories:
-  - security
+  - databases-memory
 status: active
 quality_percentile: 99
 selection_reason: quality_percentile
@@ -42,6 +42,8 @@ skill:
     changes, delegate to a builder agent via create_agent.
   folder_path: container/skills/self-customize
   extra_files: []
+tags:
+  - memory
 ---
 
 # Self-Customization

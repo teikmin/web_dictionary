@@ -6,7 +6,7 @@ tagline: Phase 4 of building a Claude Managed Agent — make it run without you.
   event
 summary: See ../../references/loops-and-workflows.md.
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 46
 selection_reason: quality_percentile
@@ -52,6 +52,7 @@ skill:
     - scripts/cron_validator.py
     - scripts/deployment_builder.py
     - scripts/next_directions_writer.py
+tags: []
 ---
 
 # Phase 4 — Run Without You (the recurring loop)

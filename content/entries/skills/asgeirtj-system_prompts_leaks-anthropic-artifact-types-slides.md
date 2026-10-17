@@ -6,7 +6,7 @@ summary: "Work on THAT deck, its url on every call: never create another or send
   typeurl again. read project/deck.json: none, or its order is empty: an empty
   deck, see Creating. Else see Revising. If no deck exists yet: one cal..."
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 85
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     - artifact-type/reference/layout.md
     - artifact-type/reference/photo-library.md
     - artifact-type/reference/questions.md
+tags: []
 ---
 
 # Slides

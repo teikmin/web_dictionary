@@ -5,7 +5,7 @@ tagline: Local-first, self-hosted AI agent runtime and MCP bridge with sandboxed
   sessions, memory, credentials, audit/replay, and a local Console.
 summary: "AI-readable project metadata: llms.txt · installation guide"
 categories:
-  - security
+  - agent-frameworks
 status: active
 quality_percentile: 32
 selection_reason: quality_percentile
@@ -38,6 +38,8 @@ launch:
     - managed-agents
   env_vars: []
   confidence: manifest
+tags:
+  - memory
 ---
 
 # SandBase Harness

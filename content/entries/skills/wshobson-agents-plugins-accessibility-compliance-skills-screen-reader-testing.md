@@ -9,7 +9,7 @@ summary: "- Validating screen reader compatibility - Testing ARIA
   accessibility - Testing dynamic content announcements - Ensuring navigation
   accessibility"
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 92
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     accessibility issues, or ensuring assistive technology support.
   folder_path: plugins/accessibility-compliance/skills/screen-reader-testing
   extra_files: []
+tags: []
 ---
 
 # Screen Reader Testing

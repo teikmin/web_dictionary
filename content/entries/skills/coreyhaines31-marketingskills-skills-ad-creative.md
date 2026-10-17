@@ -9,7 +9,7 @@ summary: "Check for product marketing context first: If
   legacy product-marketing-context.md filename, in older setups), read it before
   asking question..."
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 84
 selection_reason: quality_percentile
@@ -62,6 +62,7 @@ skill:
     - references/imessage-video-ads.md
     - references/meta-creative-formats.md
     - references/motion-video-ads.md
+tags: []
 ---
 
 # Ad Creative

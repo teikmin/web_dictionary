@@ -8,7 +8,7 @@ summary: "- Python 3.11+ (venv managed automatically by run.py) - GOOGLEAIAPIKEY
   environment variable (same key used by blog-image) - FFmpeg (for WAV-to-MP3
   conversion; falls back to WAV if missing)"
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 54
 selection_reason: quality_percentile
@@ -52,6 +52,9 @@ skill:
     - scripts/requirements.txt
     - scripts/run.py
     - scripts/setup_environment.py
+tags:
+  - python
+  - audio
 ---
 
 # Blog Audio: Gemini TTS Narration for Blog Posts

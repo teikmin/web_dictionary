@@ -9,7 +9,7 @@ summary: "- 커밋 메시지 초안(subject 1줄 + 선택적 body). 여러 개�
   type/scope 접두사는 그대로 두고, 콜론 뒤 한국어 부분만 윤문 대상으로 삼는다. - (선택) 사용자가 git diff나 변경 요약을
   함께..."
 categories:
-  - ai-frameworks
+  - coding-agents
 status: active
 quality_percentile: 60
 selection_reason: quality_percentile
@@ -45,6 +45,8 @@ skill:
   folder_path: extras/skills/commit-ko
   extra_files:
     - references/commit-lexicon.md
+tags:
+  - git
 ---
 
 # commit-ko — 커밋 메시지 자연화

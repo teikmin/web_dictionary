@@ -8,7 +8,7 @@ summary: "- PAPERDIR - Local directory to save downloaded PDFs. Default: papers/
   in the current project directory. - MAXRESULTS = 10 - Default number of search
   results. - ARXIVFETCHER — canonical name arxivfetch.py, resolved pe..."
 categories:
-  - ai-frameworks
+  - domain-research
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     local paper library.
   folder_path: skills/arxiv
   extra_files: []
+tags: []
 ---
 
 # arXiv Paper Search & Download

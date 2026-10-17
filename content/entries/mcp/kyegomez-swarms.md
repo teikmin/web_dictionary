@@ -6,7 +6,7 @@ tagline: "The Enterprise-Grade Multi-Agent Orchestration Framework. Website:
 summary: Swarms Website &nbsp;&nbsp;•&nbsp;&nbsp; Documentation
   &nbsp;&nbsp;•&nbsp;&nbsp; Swarms Marketplace &nbsp;&nbsp;•&nbsp;&nbsp; 中文
 categories:
-  - productivity
+  - agent-frameworks
 status: active
 quality_percentile: 80
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - swarms
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <div align="left">

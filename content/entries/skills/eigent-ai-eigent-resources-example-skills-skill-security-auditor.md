@@ -9,7 +9,7 @@ summary: This guide covers security auditing workflows for source code,
   detection rules, see references/vulnerability-patterns.md. For secrets
   detection...
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -51,6 +51,8 @@ skill:
     - references/vulnerability-patterns.md
     - scripts/scan_project.py
     - scripts/scan_secrets.py
+tags:
+  - security
 ---
 
 # Security Auditor Guide

@@ -7,7 +7,7 @@ tagline: Use when the user gives a topic and wants an automated topic-driven
 summary: Automated pipeline for 4K Bilibili horizontal knowledge videos from a
   topic. Coding agent + TTS backend + Remotion + FFmpeg.
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 36
 selection_reason: quality_percentile
@@ -60,6 +60,8 @@ skill:
     - assets/perfect-beauty-191271.mp3
     - assets/snow-stevekaldes-piano-397491.mp3
     - package.json
+tags:
+  - video
 ---
 
 > **Recommended: Load Remotion Best Practices**

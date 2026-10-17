@@ -4,7 +4,7 @@ name: no-eval-skill
 tagline: A skill with no eval.yaml for testing discovery behavior.
 summary: A skill with no eval.yaml for testing discovery behavior.
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 49
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: A skill with no eval.yaml for testing discovery behavior.
   folder_path: eng/skill-validator/tests/fixtures/no-eval-skill
   extra_files: []
+tags: []
 ---
 
 # No Eval Skill

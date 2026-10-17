@@ -8,7 +8,7 @@ summary: Examples in references/workflows.md and references/tools-reference.md
   are reusable templates. They may be inaccurate across Unity versions, package
   setups (UGUI/TMP/Input System), and project-specific conventions. Ple...
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 89
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     - references/resources-reference.md
     - references/tools-reference.md
     - references/workflows.md
+tags: []
 ---
 
 # Unity-MCP Operator Guide

@@ -5,7 +5,7 @@ tagline: Best practices for implementing and applying Guards, Interceptors,
   Middleware, Pipes, and Exception Filters in the NitroStack SDK.
 summary: "Apply the guard using @UseGuards(...):"
 categories:
-  - other
+  - agent-frameworks
 status: active
 quality_percentile: 99
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
     Middleware, Pipes, and Exception Filters in the NitroStack SDK.
   folder_path: sample-apps/Rampd-AI-Onboarding-Offboarding-Orchestrator/skills/middleware-pipeline
   extra_files: []
+tags: []
 ---
 
 ## When to Use

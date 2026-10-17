@@ -7,7 +7,7 @@ summary: Web search, page scraping, structured data extraction, and browser
   automation for AI agents and LLMs over the Model Context Protocol. Works with
   AI agents, coding agents, chat assistants, and any MCP-compatible client.
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 78
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ launch:
     - "@brightdata/mcp"
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <div align="center">

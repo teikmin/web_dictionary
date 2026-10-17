@@ -7,7 +7,7 @@ tagline: Prepares codebases for security review using Trail of Bits' checklist.
 summary: Helps prepare for a security review using Trail of Bits' checklist. A
   well-prepared codebase makes the review process smoother and more effective.
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 55
 selection_reason: quality_percentile
@@ -47,6 +47,8 @@ skill:
   extra_files:
     - agents/openai.yaml
     - assets/trail-of-bits-mark.svg
+tags:
+  - security
 ---
 
 # Audit Prep Assistant

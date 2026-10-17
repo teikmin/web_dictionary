@@ -9,7 +9,7 @@ summary: Antigravity CLI is a next-generation terminal interface for
   highly interactive and agent-driven, launching a Terminal User Interface
   (TUI)...
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 84
 selection_reason: quality_percentile
@@ -42,6 +42,8 @@ skill:
     commands sourced from the official Antigravity CLI documentation.
   folder_path: packages/core/src/skills/builtin/antigravity-support
   extra_files: []
+tags:
+  - terminal
 ---
 
 # Antigravity CLI Support

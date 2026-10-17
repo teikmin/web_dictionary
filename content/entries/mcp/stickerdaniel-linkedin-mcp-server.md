@@ -7,7 +7,7 @@ summary: Give your AI agents access to LinkedIn through your own browser
   session. Read profiles, research companies, find jobs, and manage
   conversations and connection requests.
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 93
 selection_reason: quality_percentile
@@ -40,6 +40,8 @@ launch:
     - mcp-server-linkedin
   env_vars: []
   confidence: manifest
+tags:
+  - research
 ---
 
 # MCP Server for LinkedIn

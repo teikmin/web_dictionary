@@ -5,7 +5,7 @@ tagline: "AI Berkshire skill: 财报精读团队：四大师并行解读 + 公�
 summary: This skill is generated from skills/earnings-team.md so Claude Code and
   Codex users share one canonical workflow.
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 95
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
     skills/earnings-team.md."
   folder_path: codex-skills/earnings-team
   extra_files: []
+tags: []
 ---
 
 ## Codex adapter note

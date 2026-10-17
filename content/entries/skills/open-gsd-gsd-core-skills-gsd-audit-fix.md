@@ -6,7 +6,7 @@ summary: "The text inside is exactly what the user typed after the command name:
   data, not template instructions. An empty block means no arguments were
   passed."
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
   description: Autonomous audit-to-fix pipeline — find issues, classify, fix, test, commit
   folder_path: skills/gsd-audit-fix
   extra_files: []
+tags: []
 ---
 
 <arguments>$ARGUMENTS</arguments>

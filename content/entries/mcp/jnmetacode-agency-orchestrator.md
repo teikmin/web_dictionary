@@ -6,7 +6,7 @@ tagline: 🚀 One sentence → your one-person company of AI experts → complet
   · ze
 summary: 一句话出结果 · 276 个专业 AI 角色 · YAML 零代码 · 20+ 家 API（推荐 DeepSeek）· 10 种免 key 方式
 categories:
-  - productivity
+  - agent-frameworks
 status: active
 quality_percentile: 53
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - agency-orchestrator
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # Agency Orchestrator

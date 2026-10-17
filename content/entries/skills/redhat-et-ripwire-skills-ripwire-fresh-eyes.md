@@ -8,7 +8,7 @@ summary: = repo root. Add --exclude=build --exclude=.git (repeatable) to keep
   build artifacts out — they otherwise show up as false clones and dead code.
   This composes descriptive passes into one snapshot; run the sections you...
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 53
 selection_reason: quality_percentile
@@ -45,6 +45,8 @@ skill:
   folder_path: skills/ripwire-fresh-eyes
   extra_files:
     - lint-rules.md
+tags:
+  - git
 ---
 
 # Fresh-eyes risk review with ripwire

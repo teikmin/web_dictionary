@@ -7,7 +7,7 @@ summary: This skill points to a remote MCP service that is not preconfigured as
   a named broker server. Load this skill when you need to discover or call that
   remote service dynamically.
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 82
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
   folder_path: examples/mcpbroker/basic/skills/remote-http-mcp
   extra_files:
     - docs/usage.md
+tags: []
 ---
 
 Overview

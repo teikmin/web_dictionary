@@ -7,7 +7,7 @@ tagline: Generate or edit images from text prompts. Use when the user asks to
 summary: "Supported models (passed via model only when the user asks for a
   specific one):"
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 98
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
   folder_path: skills/image-generation
   extra_files:
     - scripts/generate.py
+tags: []
 ---
 
 # Image Generation

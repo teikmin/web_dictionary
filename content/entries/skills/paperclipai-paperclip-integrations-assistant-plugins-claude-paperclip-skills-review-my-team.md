@@ -7,7 +7,7 @@ summary: Call paperclipconnection to identify the person and authorized company.
   Use that explicit company ID on every call. If the user intended a different
   team, reconnect to that team; selecting an agent never changes the c...
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 96
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     attention.
   folder_path: integrations/assistant-plugins/claude/paperclip/skills/review-my-team
   extra_files: []
+tags: []
 ---
 
 Call `paperclip_connection` to identify the person and authorized company. Use that explicit company ID on every call. If the user intended a different team, reconnect to that team; selecting an agent never changes the caller's identity.

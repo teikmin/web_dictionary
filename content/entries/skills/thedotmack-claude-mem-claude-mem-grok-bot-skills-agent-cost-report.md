@@ -9,7 +9,7 @@ summary: 'Resolve the absolute directory containing this SKILL.md; all helper
   python3 "${CLAUDESKILLDIR}/scripts/acr.py" …. Python 3.9+ standard library
   o...'
 categories:
-  - databases
+  - other
 status: active
 quality_percentile: 71
 selection_reason: quality_percentile
@@ -53,6 +53,8 @@ skill:
     - scripts/acr/devices.py
     - scripts/acr/evidence.py
     - scripts/acr/labels.py
+tags:
+  - python
 ---
 
 # Agent Cost Report

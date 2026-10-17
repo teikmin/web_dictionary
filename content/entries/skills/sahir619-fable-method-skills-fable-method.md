@@ -8,7 +8,7 @@ summary: "Deeper material loads on demand: references/failure-modes.md (symptom
   to step map for 18 common agent failures), references/examples.md (full worked
   examples for every ask shape), references/domains/ (domain adapters,..."
 categories:
-  - productivity
+  - domain-research
 status: active
 quality_percentile: 44
 selection_reason: quality_percentile
@@ -54,6 +54,7 @@ skill:
     - references/domains/legal-compliance.md
     - references/domains/marketing.md
     - references/domains/research.md
+tags: []
 ---
 
 # The Fable Method

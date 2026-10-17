@@ -6,7 +6,7 @@ tagline: 音频降噪：去除录音中的背景噪声、电流声、风噪、�
   的区别：audio-editi
 summary: 支持格式：wav, mp3, flac, aac, m4a, mp4, mkv, mov。
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ skill:
   folder_path: skills/builtin/audio-denoise
   extra_files:
     - EASEL-META.md
+tags:
+  - audio
 ---
 
 # 音频降噪

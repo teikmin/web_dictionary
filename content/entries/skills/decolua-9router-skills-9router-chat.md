@@ -7,7 +7,7 @@ tagline: "Chat / code generation via 9Router using OpenAI /v1/chat/completions
 summary: "- POST $NINEROUTERURL/v1/chat/completions — OpenAI format - POST
   $NINEROUTERURL/v1/messages — Anthropic format"
 categories:
-  - security
+  - other
 status: active
 quality_percentile: 89
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     summarize text, or run prompts through 9Router.
   folder_path: skills/9router-chat
   extra_files: []
+tags: []
 ---
 
 # 9Router — Chat

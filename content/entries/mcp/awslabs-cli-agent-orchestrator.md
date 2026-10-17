@@ -7,7 +7,7 @@ summary: "<!-- An absolute raw URL, not a repo-relative path: this file is also
   the PyPI long description (see readme in pyproject.toml) and PyPI cannot
   resolve relative paths."
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 86
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ launch:
     - cli-agent-orchestrator
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <!-- An absolute raw URL, not a repo-relative path: this file is also the PyPI

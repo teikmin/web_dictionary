@@ -7,7 +7,7 @@ summary: The command makes two live, read-only API requests and writes a
   Markdown briefing. It never books travel, sends alerts, or changes external
   data.
 categories:
-  - dev-tools
+  - domain-research
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -52,6 +52,7 @@ skill:
     - contracts/data_contract_open_meteo/code/contract_health.py
     - discovery.json
     - evals/corrections/correction-20260827-135741-90678cdffd.json
+tags: []
 ---
 
 # /live-weather-briefing-skill

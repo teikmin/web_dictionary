@@ -7,7 +7,7 @@ summary: For static-mesh LOD reimport, lost textures or gray/default surfaces
   despite a correct component material, read mesh reimport material mappings.
   The bundled scripts/meshmaterialslots.py exposes explicit section inspec...
 categories:
-  - dev-tools
+  - browser-web
 status: active
 quality_percentile: 51
 selection_reason: quality_percentile
@@ -48,6 +48,7 @@ skill:
     - references/mesh-reimport-materials.md
     - scripts/find_and_save.txt
     - scripts/mesh_material_slots.py
+tags: []
 ---
 
 > 🧠 **Brains complement:** IF an `unreal-engine-skills-manager` tool (external MCP) exists in this session, call it with `{action: "load", skill: "asset-management"}` for UE domain knowledge on this topic — correct APIs, architecture, best practices — and treat it as the rubric for any review / "best practices" question. If no such tool is available (e.g. running under Claude Code or Codex without that MCP), skip this line entirely and proceed with this skill alone — do NOT attempt the call.

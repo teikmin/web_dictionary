@@ -6,7 +6,7 @@ summary: Tools like Chrome DevTools MCP and Playwright MCP drive a fresh,
   automated browser. That is the right choice for writing tests. It is the wrong
   choice for debugging the app you are actually looking at, because since C...
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 38
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ launch:
     - "@agentdeskai/browser-tools-mcp@latest"
   env_vars: []
   confidence: readme
+tags:
+  - playwright
 ---
 
 # BrowserTools MCP

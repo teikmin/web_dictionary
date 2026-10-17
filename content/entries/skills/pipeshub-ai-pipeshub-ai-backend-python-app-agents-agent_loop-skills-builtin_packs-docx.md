@@ -8,7 +8,7 @@ summary: Always CREATE documents with docx (docx-js) in TypeScript — never wit
   python-docx. python-docx is in this environment for reading existing documents
   only. Run the TypeScript program via whatever coding surface you ha...
 categories:
-  - databases
+  - media-creative
 status: active
 quality_percentile: 91
 selection_reason: quality_percentile
@@ -44,6 +44,9 @@ skill:
     supported in this environment).
   folder_path: backend/python/app/agents/agent_loop/skills/builtin_packs/docx
   extra_files: []
+tags:
+  - python
+  - typescript
 ---
 
 # Word documents (.docx)

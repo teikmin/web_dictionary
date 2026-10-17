@@ -2,8 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConfigTabs from '../../components/ConfigTabs.astro';
-import StatusBadge from '../../components/StatusBadge.astro';
-import SignalStats from '../../components/SignalStats.astro';
+import DictionaryCard from '../../components/DictionaryCard.astro';
 import { formatStars } from '../../lib/entries';
 
 export async function getStaticPaths() {
@@ -20,10 +19,6 @@ const { Content, headings } = await render(entry);
 
 // Headings for table of contents
 const tocHeadings = headings ? headings.filter((h) => h.depth >= 2 && h.depth <= 3) : [];
-
-// Extract owner for avatar
-const [owner] = data.source.repo.split('/');
-const avatarUrl = `https://github.com/${owner}.png?size=80`;
 
 // Find related tools (Task C6)
 const allMcp = await getCollection('mcp');
@@ -44,14 +39,6 @@ function getWhyListedText(reason: string, percentile: number): string {
   const topPct = Math.max(1, 100 - (percentile || 0));
   return `Ranked in the top ${topPct}% by community adoption, code health, and recent maintenance`;
 }
-
-// Runtime/Environment badge
-const primaryRuntime =
-  data.prerequisites && data.prerequisites.length > 0
-    ? data.prerequisites[0]
-    : data.launch.transport === 'http'
-    ? 'HTTP Remote'
-    : 'Node.js / stdio';
 ---
 
 <BaseLayout
@@ -68,90 +55,12 @@ const primaryRuntime =
       <span class="text-slate-800 font-medium">{data.name}</span>
     </nav>
 
-    <!-- 1. Header (Avatar, name, owner, description, type tag, View on GitHub, Jump to install) -->
-    <header class="border-b border-slate-200 pb-8 mb-8">
-      <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
-        <div class="flex items-start gap-4">
-          <img
-            src={avatarUrl}
-            alt={`${owner} avatar`}
-            class="w-14 h-14 rounded-xl border border-slate-200 bg-slate-50 object-cover shrink-0 shadow-xs"
-            loading="lazy"
-          />
-          <div>
-            <div class="flex flex-wrap items-center gap-2.5 mb-1.5">
-              <span class="px-2 py-0.5 text-xs font-semibold uppercase tracking-wider rounded bg-blue-50 text-blue-700 border border-blue-200">
-                MCP Server
-              </span>
-              <StatusBadge status={data.status} />
-              {data.source.official_vendor && (
-                <span class="px-2 py-0.5 text-xs font-semibold rounded bg-blue-50 text-blue-700 border border-blue-200 inline-flex items-center gap-1">
-                  Official
-                </span>
-              )}
-            </div>
+    <!-- Unified Dictionary Entry Header -->
+    <div class="mb-10">
+      <DictionaryCard entry={entry} />
+    </div>
 
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              {data.name}
-            </h1>
-
-            <p class="text-xs font-mono text-slate-500 mt-1">
-              by <a href={`https://github.com/${owner}`} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">{owner}</a>
-              <span class="text-slate-300">/</span>
-              <span class="text-slate-700">{data.source.repo.split('/')[1]}</span>
-            </p>
-
-            <p class="text-sm text-slate-600 mt-3 max-w-3xl leading-relaxed">
-              {data.summary || data.tagline || 'Open MCP server integration.'}
-            </p>
-          </div>
-        </div>
-
-        <!-- Action Links -->
-        <div class="flex sm:flex-col items-stretch gap-2.5 shrink-0">
-          <a
-            href={`https://github.com/${data.source.repo}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 text-xs font-medium text-slate-700 transition-colors shadow-xs"
-          >
-            <svg class="w-4 h-4 text-slate-500" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-            </svg>
-            <span>View on GitHub</span>
-          </a>
-
-          <a
-            href="#install"
-            class="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-blue-50 border border-blue-200 hover:bg-blue-100 text-xs font-semibold text-blue-700 transition-colors shadow-xs"
-          >
-            <span>Jump to install</span>
-            <span>↓</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- 2. At-a-glance strip (stars, last commit, status, license, runtime, official badge) -->
-      <div class="mt-6 flex flex-wrap items-center gap-4 text-xs text-slate-500 pt-4 border-t border-slate-200">
-        <SignalStats
-          stars={data.signals.stars}
-          lastCommit={data.signals.last_commit}
-          officialVendor={data.source.official_vendor}
-        />
-        {data.source.license && (
-          <span class="inline-flex items-center gap-1.5 font-mono text-slate-600">
-            <span class="text-slate-400">License:</span>
-            <span class="text-slate-800 font-medium">{data.source.license}</span>
-          </span>
-        )}
-        <span class="inline-flex items-center gap-1.5 font-mono text-slate-600">
-          <span class="text-slate-400">Runtime:</span>
-          <span class="text-slate-800">{primaryRuntime}</span>
-        </span>
-      </div>
-    </header>
-
-    <!-- 3. Language Note (Task C9, E3) -->
+    <!-- Language Note (Task C9, E3) -->
     {data.language && data.language !== 'en' && (
       <div class="mb-8 p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-center gap-3">
         <svg class="w-5 h-5 text-amber-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">

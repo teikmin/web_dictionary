@@ -5,7 +5,7 @@ tagline: "Write warm, direct collaboration comments. Trigger: PR feedback, issue
   replies, reviews, Slack messages, or GitHub comments."
 summary: Load this skill whenever you write a comment that another human will read.
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -36,6 +36,9 @@ skill:
     issue replies, reviews, Slack messages, or GitHub comments."
   folder_path: internal/assets/skills/comment-writer
   extra_files: []
+tags:
+  - slack
+  - github
 ---
 
 ## When to Use

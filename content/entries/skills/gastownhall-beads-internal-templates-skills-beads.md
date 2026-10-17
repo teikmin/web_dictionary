@@ -7,7 +7,7 @@ tagline: Use when working in a repository that uses bd or Beads for durable
 summary: "If that prints nothing, check whether the repository has an active
   Beads workspace:"
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
   folder_path: internal/templates/skills/beads
   extra_files:
     - agents/openai.yaml
+tags: []
 ---
 
 # Beads

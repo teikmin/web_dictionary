@@ -8,7 +8,7 @@ summary: You operate on the connected Figma file (the plugin's current session).
   There is no fetch-by-URL; the user must have the target file open. Confirm a
   plugin is connected (ping) before building.
 categories:
-  - other
+  - media-creative
 status: active
 quality_percentile: 37
 selection_reason: quality_percentile
@@ -52,6 +52,7 @@ skill:
     - references/author-design-system.md
     - references/motion.md
     - references/write-rules.md
+tags: []
 ---
 
 # figma-build

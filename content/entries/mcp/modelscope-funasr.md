@@ -6,7 +6,7 @@ tagline: Open-source speech recognition toolkit for training, inference,
   OpenAI-compatible/
 summary: (简体中文|English|日本語|한국어)
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 74
 selection_reason: quality_percentile
@@ -35,6 +35,7 @@ launch:
   args: []
   env_vars: []
   confidence: none
+tags: []
 ---
 
 ([简体中文](https://github.com/modelscope/FunASR/blob/main/README_zh.md)|English|[日本語](https://github.com/modelscope/FunASR/blob/main/README_ja.md)|[한국어](https://github.com/modelscope/FunASR/blob/main/README_ko.md))

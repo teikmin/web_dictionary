@@ -8,7 +8,7 @@ summary: "whodb mcp serve exposes hosted platform tools. Sign in to each
   discover saved hosts and accounts, then whodbplatformorgs with workspace:
   {host}..."
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 34
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     configured.
   folder_path: cli/external-plugin/whodb/skills/whodb
   extra_files: []
+tags: []
 ---
 
 # WhoDB Database Assistant

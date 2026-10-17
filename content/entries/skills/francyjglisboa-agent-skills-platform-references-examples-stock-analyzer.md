@@ -8,7 +8,7 @@ summary: The Stock Analyzer Skill provides comprehensive technical analysis
   capabilities for stocks and ETFs, utilizing industry-standard indicators and
   generating actionable trading signals.
 categories:
-  - dev-tools
+  - domain-research
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -51,6 +51,7 @@ skill:
     - evals/caliper/stock-analyzer.eval.yaml
     - evals/golden/case-1/expected.json
     - evals/golden/case-1/input.json
+tags: []
 ---
 
 # Stock Analyzer Skill - Technical Specification

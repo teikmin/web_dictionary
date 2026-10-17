@@ -6,7 +6,7 @@ tagline: "Open-source, self-hosted MCP gateway: turn any REST/OpenAPI, SOAP,
   connect"
 summary: "AnythingMCP: self-hosted MCP gateway"
 categories:
-  - databases
+  - agent-frameworks
 status: active
 quality_percentile: 46
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <p align="center">

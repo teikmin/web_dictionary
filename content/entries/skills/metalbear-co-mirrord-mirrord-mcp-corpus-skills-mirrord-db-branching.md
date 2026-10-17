@@ -9,7 +9,7 @@ summary: "Generate and validate mirrord.json configurations for database
   descriptions - Explain copy modes, connection sources, schema migrations, IAM
   authent..."
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 38
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
   extra_files:
     - README.md
     - references/troubleshooting.md
+tags: []
 ---
 
 # Mirrord DB Branching Skill

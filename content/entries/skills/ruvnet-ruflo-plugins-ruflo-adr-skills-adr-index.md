@@ -7,7 +7,7 @@ tagline: Build or rebuild the ADR index + dependency graph by running
 summary: "- v3-style: # ADR-097: Title heading + Status: Proposed line -
   plugin-style: YAML frontmatter (id: ADR-NNNN, status: Proposed)"
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 79
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     call vs hundreds of MCP round-trips)
   folder_path: plugins/ruflo-adr/skills/adr-index
   extra_files: []
+tags: []
 ---
 
 # ADR Index

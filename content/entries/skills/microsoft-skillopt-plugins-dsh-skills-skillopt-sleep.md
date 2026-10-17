@@ -8,7 +8,7 @@ summary: This skill drives the engine through the 7 skillopt tools exposed by
   the dsh-skillopt plugin. The default mock backend makes no model calls, which
   is useful for verifying the plumbing; a real backend consumes your API...
 categories:
-  - ai-frameworks
+  - databases-memory
 status: active
 quality_percentile: 98
 selection_reason: official_vendor
@@ -45,6 +45,8 @@ skill:
     selected backend -> consolidate validated skills behind a held-out gate."
   folder_path: plugins/dsh/skills/skillopt-sleep
   extra_files: []
+tags:
+  - memory
 ---
 
 # SkillOpt-Sleep: usage-driven self-evolution for the dsh agent

@@ -8,7 +8,7 @@ summary: "Multi-dimensional code review with quality gates. Every change gets
   reviewed before merge — no exceptions. Review covers five axes: correctness,
   readability, architecture, security, and performance."
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 71
 selection_reason: quality_percentile
@@ -42,6 +42,8 @@ skill:
     when the diff is pasted inline.
   folder_path: skills/code-review-and-quality
   extra_files: []
+tags:
+  - security
 ---
 
 # Code Review and Quality

@@ -6,7 +6,7 @@ summary: "Transport matters: - SSE clients receive push notifications for
   debugger events (breakpoints, exceptions, state changes) in real time. - HTTP
   clients must poll — call WaitForEvent to long-poll for events, or read the..."
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 72
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     - logo.png
     - src/core/bridge.zig
     - src/core/config.zig
+tags: []
 ---
 
 # x64dbg Reverse Engineering — MCP Workflow Guide

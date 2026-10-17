@@ -7,7 +7,7 @@ summary: "- User wants to turn a topic or notes into a multi-slide carousel -
   User has a list, a framework, or a transformation to teach - User wants a
   slide-by-slide structure, not just a caption"
 categories:
-  - productivity
+  - agent-frameworks
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
   folder_path: skills/ig-carousel-planner
   extra_files:
     - references/slide-architecture.md
+tags: []
 ---
 
 # Instagram Carousel Planner

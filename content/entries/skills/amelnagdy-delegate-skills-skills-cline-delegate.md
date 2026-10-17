@@ -7,7 +7,7 @@ tagline: Delegate a coding task to the Cline coding agent CLI (`cline`) as a
 summary: The loop needs only a shell command and file access, so any comparable
   orchestrator can drive it.
 categories:
-  - productivity
+  - coding-agents
 status: active
 quality_percentile: 34
 selection_reason: quality_percentile
@@ -49,6 +49,7 @@ skill:
     - references/review-and-land.md
     - references/writing-the-brief.md
     - scripts/relay.mjs
+tags: []
 ---
 
 # Cline Delegate

@@ -8,7 +8,7 @@ summary: "- Prefer Setup Stores for complex logic, composables, and watchers -
   Use storeToRefs() when destructuring state/getters to preserve reactivity -
   Actions can be destructured directly - they're bound to the store - Call..."
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -50,6 +50,7 @@ skill:
     - references/features-composables.md
     - references/features-composing-stores.md
     - references/features-plugins.md
+tags: []
 ---
 
 # Pinia

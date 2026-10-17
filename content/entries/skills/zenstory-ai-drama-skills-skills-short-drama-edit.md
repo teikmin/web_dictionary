@@ -4,7 +4,7 @@ name: short-drama-edit
 tagline: 将已生成的短剧镜头剪成成片，记录入出点、镜序、声音、字幕与交付规格。用于套剪、加字幕、统一响度、调整节奏或导出精修素材；需要补素材或修改故事时转回对应创作阶段。
 summary: 根据实际素材选择可用片段，按剧本与分镜核对叙事。素材与意图不一致时，记录取舍和缺口。
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 67
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     - assets/remotion/src/font.ts
     - assets/remotion/src/index.ts
     - assets/remotion/src/rules.mjs
+tags: []
 ---
 
 # 短剧剪辑与成片

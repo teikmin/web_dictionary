@@ -10,7 +10,7 @@ summary: "- Define a PRIMARY KEY for reference tables (users, orders, etc.). Not
   always needed for time-series/event/log data. When used, prefer BIGINT
   GENERATED ALWAYS AS IDENTITY; use UUID only when global uniqueness/opacity..."
 categories:
-  - databases
+  - databases-memory
 status: active
 quality_percentile: 43
 selection_reason: quality_percentile
@@ -67,6 +67,8 @@ skill:
     practices.
   folder_path: skills/design-postgres-tables
   extra_files: []
+tags:
+  - postgres
 ---
 
 # PostgreSQL Table Design

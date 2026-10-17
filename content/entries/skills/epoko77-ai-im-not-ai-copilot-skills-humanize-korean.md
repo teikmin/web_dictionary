@@ -8,7 +8,7 @@ summary: "1. 의미 불변: 사실·주장·수치·날짜·고유명사·인용
   건드리지 않는다. 3. 장르 유지: 입력 장르(칼럼·리포트·블로그·공적)에서 이탈 금지. 4. register 보존: 원문 격식체면 결과도
   격식체. AI 티는 문법·수사이지 격식 자체가 아니다. 5. 과윤문 금지: 변경률 30% 초과 = 경고, 50% 초과 =..."
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 60
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     티 제거", "번역투 고쳐", "사람이 쓴 것처럼", "humanize Korean". 단순 맞춤법 교정·번역·내용 추가는 대상 아님.
   folder_path: copilot/skills/humanize-korean
   extra_files: []
+tags: []
 ---
 
 # Humanize Korean — Single-call Path (GitHub Copilot CLI)

@@ -8,7 +8,7 @@ summary: This implementation supports metabolic and isotopic steady state, a
   single shared flux state across one or more tracer experiments, nonnegative
   one-way reaction fluxes, and carbon-subset mass distributions. Reversible...
 categories:
-  - ai-frameworks
+  - domain-research
 status: active
 quality_percentile: 68
 selection_reason: quality_percentile
@@ -55,6 +55,7 @@ skill:
     - assets/tca-model.json
     - assets/tca-reference-mdv.json
     - assets/tca-tracer.json
+tags: []
 ---
 
 # Carbon-13 metabolic flux inference

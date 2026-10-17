@@ -8,7 +8,7 @@ summary: = repo root. Run from the repo with your working changes
   staged/unstaged, or check out the PR branch first. This works on a real diff —
   --situ, --map-diff, and --pr-context read git diff automatically.
 categories:
-  - dev-tools
+  - domain-research
 status: active
 quality_percentile: 53
 selection_reason: quality_percentile
@@ -43,6 +43,8 @@ skill:
     runs --edit-check.
   folder_path: skills/ripwire-change-check
   extra_files: []
+tags:
+  - git
 ---
 
 # Change check with ripwire

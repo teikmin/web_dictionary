@@ -8,7 +8,7 @@ summary: "- Code changes only, on a branch: Edit application code, dependency
   manifests, and app config in the user's repo. Don't commit to main, push, or
   open PRs unless the user asks. - No infrastructure changes: Never run ku..."
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 38
 selection_reason: quality_percentile
@@ -56,6 +56,7 @@ skill:
     - references/libraries.md
     - references/propagation-layer.md
     - references/storage-handoffs.md
+tags: []
 ---
 
 # mirrord Header Propagation Skill

@@ -7,7 +7,7 @@ summary: Analyze the review target (commits, branch, or changes) to extract
   concise business context. Pass this context via --background to improve review
   quality.
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 60
 selection_reason: quality_percentile
@@ -44,6 +44,9 @@ skill:
     performance problems, and code quality concerns.
   folder_path: skills/open-code-review
   extra_files: []
+tags:
+  - git
+  - ocr
 ---
 
 # Open Code Review

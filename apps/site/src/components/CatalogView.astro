@@ -26,12 +26,15 @@ const allEntries = await getAllEntries();
 
 const categoryList = [
   { id: 'all', name: 'All Categories' },
-  { id: 'dev-tools', name: 'Developer Tools' },
-  { id: 'productivity', name: 'Productivity' },
-  { id: 'ai-frameworks', name: 'AI Frameworks' },
-  { id: 'security', name: 'Security' },
-  { id: 'databases', name: 'Databases' },
-  { id: 'browser-automation', name: 'Browser Automation' },
+  { id: 'coding-agents', name: 'Coding & Dev' },
+  { id: 'browser-web', name: 'Browser & Web' },
+  { id: 'databases-memory', name: 'Databases & Memory' },
+  { id: 'agent-frameworks', name: 'Frameworks' },
+  { id: 'productivity-ops', name: 'Productivity' },
+  { id: 'cloud-infra', name: 'Cloud & DevOps' },
+  { id: 'media-creative', name: 'Media & Docs' },
+  { id: 'security-auth', name: 'Security' },
+  { id: 'domain-research', name: 'Research & Domain' },
   { id: 'other', name: 'Other Utilities' },
 ];
 
@@ -42,14 +45,42 @@ const clientList = [
   { id: 'antigravity', name: 'Google Antigravity' },
 ];
 
+// Calculate monorepo Skill Packs mapping (Step 5.3 FIX-4)
+const repoSkillCounts = new Map<string, number>();
+const repoSkillNames = new Map<string, string[]>();
+const repoPrimarySkillSlug = new Map<string, string>();
+
+for (const e of allEntries) {
+  if (e.data.type === 'agent_skill') {
+    const repo = e.data.source.repo;
+    const currentCount = repoSkillCounts.get(repo) || 0;
+    repoSkillCounts.set(repo, currentCount + 1);
+
+    const names = repoSkillNames.get(repo) || [];
+    names.push(e.data.name);
+    repoSkillNames.set(repo, names);
+
+    const isExplicitPrimary = e.data.skill?.is_pack_primary === true;
+    if (!repoPrimarySkillSlug.has(repo) || isExplicitPrimary) {
+      repoPrimarySkillSlug.set(repo, e.data.slug);
+    }
+  }
+}
+
 // Serialize lightweight items for client-side instant filtering
 const clientItems = allEntries.map((e) => {
   const d = e.data;
-  const [owner] = d.source.repo.split('/');
+  const [owner, repoShortName] = d.source.repo.split('/');
+  const isSkill = d.type === 'agent_skill';
+  const packCount = isSkill ? (repoSkillCounts.get(d.source.repo) || 1) : 1;
+  const isPrimary = isSkill ? (repoPrimarySkillSlug.get(d.source.repo) === d.slug) : true;
+  const packSkills = isSkill ? (repoSkillNames.get(d.source.repo) || []) : [];
+
   return {
     slug: d.slug,
     type: d.type,
     name: d.name,
+    repoName: repoShortName || d.name,
     owner,
     repo: d.source.repo,
     tagline: d.tagline || '',
@@ -58,23 +89,39 @@ const clientItems = allEntries.map((e) => {
     category: d.categories[0] || 'other',
     status: d.status || 'active',
     stars: d.signals?.stars || 0,
+    starsDelta7d: d.signals?.stars_delta_7d || 0,
+    trendingScore: d.signals?.trending_score || 0,
+    rankCurrent: d.signals?.rank_current || null,
+    sparkline4w: d.signals?.sparkline_4w || [],
     lastCommit: d.signals?.last_commit || '',
     firstSeen: d.first_seen || '',
     license: d.source?.license || '',
     official: Boolean(d.source?.official_vendor),
-    href: d.type === 'mcp_server' ? `/mcp/${d.slug}` : `/skills/${d.slug}`,
+    href: d.type === 'mcp_server' ? `/mcp/${d.slug}` : d.type === 'agent_tool' ? `/tools/${d.slug}` : `/skills/${d.slug}`,
+    packCount,
+    isPrimary,
+    packSkills,
   };
 });
 
-// Pre-render the top 24 for SEO and immediate layout
+// Pre-render the top 24 for SEO and immediate layout (collapsing skill packs by default)
 const initialItems = allEntries
   .filter((e) => {
     if (initialType !== 'all' && e.data.type !== initialType) return false;
     if (initialCategory !== 'all' && !e.data.categories.includes(initialCategory)) return false;
     if (initialOfficial && !e.data.source.official_vendor) return false;
+    if (e.data.type === 'agent_skill') {
+      const isPrimary = repoPrimarySkillSlug.get(e.data.source.repo) === e.data.slug;
+      if (!isPrimary) return false;
+    }
     return true;
   })
-  .sort((a, b) => (b.data.signals?.stars || 0) - (a.data.signals?.stars || 0))
+  .sort((a, b) => {
+    if (initialSort === 'trending') {
+      return (b.data.signals?.trending_score || 0) - (a.data.signals?.trending_score || 0);
+    }
+    return (b.data.signals?.stars || 0) - (a.data.signals?.stars || 0);
+  })
   .slice(0, 24);
 ---
 
@@ -128,6 +175,10 @@ const initialItems = allEntries
               <input type="radio" name="filter-type" value="agent_skill" checked={initialType === 'agent_skill'} class="text-blue-600 focus:ring-0" />
               <span>Agent Skills</span>
             </label>
+            <label class="flex items-center gap-2 text-xs text-slate-700 cursor-pointer hover:text-slate-900">
+              <input type="radio" name="filter-type" value="agent_tool" checked={initialType === 'agent_tool'} class="text-blue-600 focus:ring-0" />
+              <span>Agent Tools</span>
+            </label>
           </div>
         </div>
 
@@ -172,6 +223,25 @@ const initialItems = allEntries
             />
             <span class="font-medium text-slate-800">Official Vendors only</span>
           </label>
+        </div>
+
+        <!-- Skill Packs Grouping Checkbox (Step 5.3 FIX-4) -->
+        <div class="pt-2 border-t border-slate-100">
+          <label class="block text-xs font-semibold text-slate-800 uppercase tracking-wider mb-2">
+            Skill Packs
+          </label>
+          <label class="flex items-center gap-2 text-xs text-slate-700 cursor-pointer hover:text-slate-900">
+            <input
+              type="checkbox"
+              id="filter-collapse-packs"
+              checked
+              class="rounded border-slate-300 text-blue-600 focus:ring-0"
+            />
+            <span class="font-medium text-slate-800">Group skills by repo</span>
+          </label>
+          <p class="text-[11px] text-slate-500 mt-1 leading-normal">
+            Collapses multi-skill repos into 1 representative card. Uncheck to browse all individual skills.
+          </p>
         </div>
 
         <!-- License Filter -->
@@ -227,6 +297,7 @@ const initialItems = allEntries
               id="filter-sort"
               class="rounded-lg bg-white border border-slate-200 text-xs text-slate-800 p-2 focus:border-blue-500 focus:outline-none shadow-xs"
             >
+              <option value="trending" selected={initialSort === 'trending'}>🔥 Trending This Week</option>
               <option value="popular" selected={initialSort === 'popular'}>Most Popular (Stars)</option>
               <option value="updated" selected={initialSort === 'updated'}>Recently Updated</option>
               <option value="newest" selected={initialSort === 'newest'}>Newest Added</option>
@@ -266,14 +337,18 @@ const initialItems = allEntries
           <!-- Filled dynamically by JavaScript -->
         </div>
         <div id="result-count" class="text-xs font-mono text-slate-500">
-          Showing {initialItems.length} of {clientItems.length} tools
+          Showing {initialItems.length} of {allEntries.filter(e => e.data.type !== 'agent_skill' || repoPrimarySkillSlug.get(e.data.source.repo) === e.data.slug).length} repositories ({allEntries.length} total tools & skills)
         </div>
       </div>
 
       <!-- Cards Grid Container -->
-      <div id="catalog-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div id="catalog-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {initialItems.map((entry) => (
-          <EntryCard entry={entry} />
+          <EntryCard
+            entry={entry}
+            packSkillsCount={repoSkillCounts.get(entry.data.source.repo)}
+            packSkillNames={repoSkillNames.get(entry.data.source.repo)}
+          />
         ))}
       </div>
 
@@ -337,6 +412,7 @@ const initialItems = allEntries
     const categorySelect = document.getElementById('filter-category') as HTMLSelectElement | null;
     const clientSelect = document.getElementById('filter-client') as HTMLSelectElement | null;
     const officialCheckbox = document.getElementById('filter-official') as HTMLInputElement | null;
+    const collapsePacksCheckbox = document.getElementById('filter-collapse-packs') as HTMLInputElement | null;
     const licenseSelect = document.getElementById('filter-license') as HTMLSelectElement | null;
     const searchInput = document.getElementById('filter-search-input') as HTMLInputElement | null;
     const sortSelect = document.getElementById('filter-sort') as HTMLSelectElement | null;
@@ -354,6 +430,7 @@ const initialItems = allEntries
       client: urlParams.get('client') || root.getAttribute('data-initial-client') || 'all',
       sort: urlParams.get('sort') || root.getAttribute('data-initial-sort') || 'popular',
       official: urlParams.get('official') === 'true' || root.getAttribute('data-initial-official') === 'true',
+      collapsePacks: urlParams.get('collapsePacks') !== 'false',
       license: urlParams.get('license') || 'all',
       q: urlParams.get('q') || '',
       view: urlParams.get('view') || 'grid',
@@ -368,6 +445,7 @@ const initialItems = allEntries
     if (categorySelect) categorySelect.value = state.category;
     if (clientSelect) clientSelect.value = state.client;
     if (officialCheckbox) officialCheckbox.checked = state.official;
+    if (collapsePacksCheckbox) collapsePacksCheckbox.checked = state.collapsePacks;
     if (licenseSelect) licenseSelect.value = state.license;
     if (searchInput) searchInput.value = state.q;
     if (sortSelect) sortSelect.value = state.sort;
@@ -379,6 +457,7 @@ const initialItems = allEntries
       if (state.client !== 'all') p.set('client', state.client);
       if (state.sort !== 'popular') p.set('sort', state.sort);
       if (state.official) p.set('official', 'true');
+      if (!state.collapsePacks) p.set('collapsePacks', 'false');
       if (state.license !== 'all') p.set('license', state.license);
       if (state.q) p.set('q', state.q);
       if (state.view !== 'grid') p.set('view', state.view);
@@ -392,6 +471,60 @@ const initialItems = allEntries
       return String(num);
     }
 
+    const categoryLabels: Record<string, string> = {
+      'coding-agents': 'Coding & dev',
+      'browser-web': 'Browser & web',
+      'databases-memory': 'Databases & memory',
+      'agent-frameworks': 'Frameworks',
+      'productivity-ops': 'Productivity',
+      'cloud-infra': 'Cloud & DevOps',
+      'media-creative': 'Media & creative',
+      'security-auth': 'Security',
+      'domain-research': 'Research & domain',
+      'other': 'Other utilities',
+    };
+
+    function renderSparklineSvg(points?: number[], width = 48, height = 14): string {
+      if (!points || !Array.isArray(points) || points.length < 2) return '';
+      const valid = points.filter((p) => typeof p === 'number' && Number.isFinite(p));
+      const count = valid.length;
+      if (count < 2) return '';
+
+      const w = width;
+      const h = height;
+      const pad = 2;
+      const usableW = Math.max(1, w - 2 * pad);
+      const usableH = Math.max(1, h - 2 * pad);
+      const min = Math.min(...valid);
+      const max = Math.max(...valid);
+
+      const isPositive = valid[count - 1] > valid[0];
+      const isNegative = valid[count - 1] < valid[0];
+      const strokeColor = isPositive ? 'text-emerald-500' : isNegative ? 'text-rose-500' : 'text-slate-400';
+
+      let pointsStr = '';
+      if (max === min) {
+        const midY = (h / 2).toFixed(1);
+        pointsStr = `${pad},${midY} ${(w - pad).toFixed(1)},${midY}`;
+      } else {
+        pointsStr = valid
+          .map((p, i) => {
+            const x = pad + (i / (count - 1)) * usableW;
+            const y = h - pad - ((p - min) / (max - min)) * usableH;
+            return `${x.toFixed(1)},${y.toFixed(1)}`;
+          })
+          .join(' ');
+      }
+
+      const dash = max === min ? 'stroke-dasharray="3 2" opacity="0.6"' : '';
+
+      return `<div class="shrink-0 hidden sm:block" title="4-week trend">
+        <svg class="inline-block overflow-visible ${strokeColor}" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
+          <polyline points="${pointsStr}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ${dash} />
+        </svg>
+      </div>`;
+    }
+
     function renderChips(_totalFiltered?: number) {
       if (!chipsContainer) return;
       chipsContainer.innerHTML = '';
@@ -399,7 +532,12 @@ const initialItems = allEntries
       const chips: { label: string; reset: () => void }[] = [];
 
       if (state.type !== 'all') {
-        const typeLabel = state.type === 'mcp_server' ? 'MCP Servers' : 'Agent Skills';
+        const typeLabel =
+          state.type === 'mcp_server'
+            ? 'MCP Servers'
+            : state.type === 'agent_tool'
+            ? 'Agent Tools'
+            : 'Agent Skills';
         chips.push({
           label: `Type: ${typeLabel}`,
           reset: () => {
@@ -459,6 +597,16 @@ const initialItems = allEntries
         });
       }
 
+      if (!state.collapsePacks) {
+        chips.push({
+          label: 'Skill Packs: Expanded',
+          reset: () => {
+            state.collapsePacks = true;
+            if (collapsePacksCheckbox) collapsePacksCheckbox.checked = true;
+          },
+        });
+      }
+
       chips.forEach((chip) => {
         const btn = document.createElement('button');
         btn.type = 'button';
@@ -490,6 +638,7 @@ const initialItems = allEntries
       state.category = 'all';
       state.client = 'all';
       state.official = false;
+      state.collapsePacks = true;
       state.license = 'all';
       state.q = '';
       state.limit = state.pageSize;
@@ -498,6 +647,7 @@ const initialItems = allEntries
       if (categorySelect) categorySelect.value = 'all';
       if (clientSelect) clientSelect.value = 'all';
       if (officialCheckbox) officialCheckbox.checked = false;
+      if (collapsePacksCheckbox) collapsePacksCheckbox.checked = true;
       if (licenseSelect) licenseSelect.value = 'all';
       if (searchInput) searchInput.value = '';
 
@@ -512,6 +662,7 @@ const initialItems = allEntries
         if (state.type !== 'all' && item.type !== state.type) return false;
         if (state.category !== 'all' && !item.categories.includes(state.category)) return false;
         if (state.official && !item.official) return false;
+        if (state.collapsePacks && !qLower && item.type === 'agent_skill' && !item.isPrimary) return false;
         if (state.license !== 'all') {
           if (!item.license || !item.license.toLowerCase().includes(state.license.toLowerCase())) return false;
         }
@@ -519,6 +670,8 @@ const initialItems = allEntries
           const match =
             item.name.toLowerCase().includes(qLower) ||
             item.owner.toLowerCase().includes(qLower) ||
+            (item.repo && item.repo.toLowerCase().includes(qLower)) ||
+            (item.repoName && item.repoName.toLowerCase().includes(qLower)) ||
             item.summary.toLowerCase().includes(qLower) ||
             item.tagline.toLowerCase().includes(qLower);
           if (!match) return false;
@@ -527,7 +680,9 @@ const initialItems = allEntries
       });
 
       // 2. Sort
-      if (state.sort === 'popular') {
+      if (state.sort === 'trending') {
+        filtered.sort((a: any, b: any) => (b.trendingScore || 0) - (a.trendingScore || 0));
+      } else if (state.sort === 'popular') {
         filtered.sort((a: any, b: any) => (b.stars || 0) - (a.stars || 0));
       } else if (state.sort === 'updated') {
         filtered.sort((a: any, b: any) => (new Date(b.lastCommit).getTime() || 0) - (new Date(a.lastCommit).getTime() || 0));
@@ -540,7 +695,12 @@ const initialItems = allEntries
       // Update counters & chips
       const total = filtered.length;
       if (countEl) {
-        countEl.textContent = `Showing ${Math.min(state.limit, total)} of ${total} tools`;
+        if (state.collapsePacks && !qLower && (state.type === 'all' || state.type === 'agent_skill')) {
+          const totalAll = items.length;
+          countEl.textContent = `Showing ${Math.min(state.limit, total)} of ${total} repositories (${totalAll} total tools & skills)`;
+        } else {
+          countEl.textContent = `Showing ${Math.min(state.limit, total)} of ${total} tools & skills`;
+        }
       }
       renderChips(total);
 
@@ -563,28 +723,43 @@ const initialItems = allEntries
         if (gridContainer) gridContainer.classList.add('hidden');
         if (listContainer) {
           listContainer.classList.remove('hidden');
-          listContainer.innerHTML = visible.map((item: any) => `
+          listContainer.innerHTML = visible.map((item: any) => {
+            const hasDelta = item.starsDelta7d && item.starsDelta7d > 0;
+            const isPack = item.type === 'agent_skill' && item.packCount > 1;
+            const displayName = (isPack && !qLower && item.repoName) ? item.repoName : item.name;
+            const catLabel = categoryLabels[item.category] || item.category;
+            return `
             <a href="${item.href}" class="flex items-center justify-between p-3.5 hover:bg-slate-50 transition-colors group">
               <div class="flex items-center gap-3 min-w-0">
                 <img src="https://github.com/${item.owner}.png?size=40" alt="${item.owner}" class="w-8 h-8 rounded-lg bg-slate-50 border border-slate-200 object-cover shrink-0" loading="lazy" />
                 <div class="min-w-0">
                   <div class="flex items-center gap-2">
-                    <span class="font-semibold text-sm text-slate-900 group-hover:text-blue-600 truncate">${item.name}</span>
-                    <span class="text-[10px] px-1.5 py-0.5 rounded font-mono ${item.type === 'mcp_server' ? 'bg-blue-50 text-blue-700 border border-blue-200' : 'bg-teal-50 text-teal-700 border border-teal-200'}">
-                      ${item.type === 'mcp_server' ? 'MCP' : 'Skill'}
+                    <span class="font-semibold text-sm text-slate-900 group-hover:text-blue-600 truncate">${displayName}</span>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded font-mono ${
+                      item.type === 'mcp_server'
+                        ? 'bg-blue-50 text-blue-700 border border-blue-200'
+                        : item.type === 'agent_tool'
+                        ? 'bg-purple-50 text-purple-700 border border-purple-200'
+                        : 'bg-teal-50 text-teal-700 border border-teal-200'
+                    }">
+                      ${item.type === 'mcp_server' ? 'MCP' : item.type === 'agent_tool' ? 'Tool' : 'Skill'}
                     </span>
+                    ${isPack ? `<span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200 font-medium">📦 Pack (${item.packCount})</span>` : ''}
                     ${item.official ? '<span class="text-[10px] px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200 font-medium">Official</span>' : ''}
                   </div>
                   <p class="text-xs text-slate-500 truncate mt-0.5">${item.summary || item.tagline}</p>
                 </div>
               </div>
               <div class="flex items-center gap-4 text-xs text-slate-500 font-mono shrink-0 pl-3">
-                <span class="hidden sm:inline text-slate-500">${item.category}</span>
+                <span class="hidden sm:inline text-slate-500">${catLabel}</span>
                 <span class="text-slate-700">★ ${formatNumber(item.stars)}</span>
+                ${hasDelta ? `<span class="text-orange-700 font-medium">+${formatNumber(item.starsDelta7d)}/wk</span>` : ''}
+                ${renderSparklineSvg(item.sparkline4w, 40, 12)}
                 <span class="text-blue-600 font-medium group-hover:translate-x-0.5 transition-transform">&rarr;</span>
               </div>
             </a>
-          `).join('');
+          `;
+          }).join('');
         }
       } else {
         if (listContainer) listContainer.classList.add('hidden');
@@ -592,6 +767,24 @@ const initialItems = allEntries
           gridContainer.classList.remove('hidden');
           gridContainer.innerHTML = visible.map((item: any) => {
             const isMcp = item.type === 'mcp_server';
+            const isTool = item.type === 'agent_tool';
+            const badgeClass = isMcp
+              ? 'bg-blue-50 text-blue-700 border border-blue-200'
+              : isTool
+              ? 'bg-purple-50 text-purple-700 border border-purple-200'
+              : 'bg-teal-50 text-teal-700 border border-teal-200';
+            const badgeText = isMcp
+              ? 'MCP server'
+              : isTool
+              ? 'Agent tool'
+              : 'Agent skill';
+            const isPack = item.type === 'agent_skill' && item.packCount > 1;
+            const displayName = (isPack && !qLower && item.repoName) ? item.repoName : item.name;
+            const packSub = (isPack && item.packSkills && item.packSkills.length > 0)
+              ? `<p class="text-[11px] text-amber-800 font-normal truncate mt-0.5" title="${item.packSkills.join(', ')}">Includes: ${item.packSkills.slice(0, 3).join(', ')}${item.packSkills.length > 3 ? ` +${item.packSkills.length - 3} more` : ''}</p>`
+              : '';
+            const hasDelta = item.starsDelta7d && item.starsDelta7d > 0;
+            const catLabel = categoryLabels[item.category] || item.category;
             return `
               <a href="${item.href}" class="group flex flex-col justify-between p-5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 hover:shadow-xs transition-all duration-150 text-left">
                 <div>
@@ -599,21 +792,26 @@ const initialItems = allEntries
                     <div class="flex items-start gap-3 min-w-0">
                       <img src="https://github.com/${item.owner}.png?size=64" alt="${item.owner}" class="w-10 h-10 rounded-lg border border-slate-200 bg-slate-50 object-cover shrink-0" loading="lazy" />
                       <div class="min-w-0">
-                        <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors truncate">${item.name}</h3>
+                        <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors truncate">${displayName}</h3>
                         <p class="text-xs text-slate-500 font-mono truncate">${item.owner}</p>
+                        ${packSub}
                       </div>
                     </div>
-                    <span class="px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider rounded shrink-0 ${isMcp ? 'bg-blue-50 text-blue-700 border border-blue-200' : 'bg-teal-50 text-teal-700 border border-teal-200'}">
-                      ${isMcp ? 'MCP server' : 'Agent skill'}
-                    </span>
+                    <div class="flex flex-col items-end gap-1 shrink-0">
+                      <span class="px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider rounded shrink-0 ${badgeClass}">
+                        ${badgeText}
+                      </span>
+                      ${isPack ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-medium bg-amber-50 text-amber-800 border border-amber-200 inline-flex items-center gap-1"><span>📦</span><span>Pack (${item.packCount})</span></span>` : ''}
+                    </div>
                   </div>
                   <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed mb-4">${item.summary || item.tagline}</p>
                 </div>
-                <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-sans">
+                <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-sans gap-2">
                   <div class="flex items-center gap-1.5 truncate">
-                    <span class="text-slate-700 font-medium truncate">${item.category}</span>
+                    <span class="text-slate-700 font-medium truncate">${catLabel}</span>
                     <span class="text-slate-300">·</span>
                     <span class="text-slate-700 font-mono font-medium">★ ${formatNumber(item.stars)}</span>
+                    ${hasDelta ? `<span class="text-slate-300">·</span><span class="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded font-mono font-medium text-[11px] bg-orange-50 text-orange-700 border border-orange-200"><span>+${formatNumber(item.starsDelta7d)}</span><span class="text-[9px]">/wk</span></span>` : ''}
                     <span class="text-slate-300">·</span>
                     <span class="inline-flex items-center gap-1 text-slate-600">
                       <span class="w-1.5 h-1.5 rounded-full inline-block bg-emerald-500"></span>
@@ -621,6 +819,7 @@ const initialItems = allEntries
                     </span>
                     ${item.official ? '<span class="text-slate-300">·</span><span class="text-blue-700 bg-blue-50 border border-blue-200 font-medium px-1.5 py-0.2 rounded text-[10px]">Official</span>' : ''}
                   </div>
+                  ${renderSparklineSvg(item.sparkline4w)}
                 </div>
               </a>
             `;
@@ -647,6 +846,15 @@ const initialItems = allEntries
         applyFilterAndRender();
       });
     });
+
+    if (collapsePacksCheckbox) {
+      collapsePacksCheckbox.addEventListener('change', () => {
+        state.collapsePacks = collapsePacksCheckbox.checked;
+        state.limit = state.pageSize;
+        syncUrl();
+        applyFilterAndRender();
+      });
+    }
 
     if (categorySelect) {
       categorySelect.addEventListener('change', () => {

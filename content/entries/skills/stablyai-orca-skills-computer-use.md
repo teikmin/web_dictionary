@@ -6,7 +6,7 @@ tagline: "Drives the GUI of a visible local app window through `orca computer`:
   ap"
 summary: "Choose the executable once and reuse it for every later command:"
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 64
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
     embedded browser (`orca-cli`)."
   folder_path: skills/computer-use
   extra_files: []
+tags: []
 ---
 
 # Computer Use

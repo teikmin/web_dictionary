@@ -6,7 +6,7 @@ tagline: "Use this when fulfilling claude-mem observer jobs on Grok Bot: reply
 summary: Write only outbox/{id}.txt for inbox jobs, or return the XML as the
   chat-completions body.
 categories:
-  - databases
+  - agent-frameworks
 status: active
 quality_percentile: 71
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ skill:
     reply only skip_summary or one full observation XML, never prose."
   folder_path: claude-mem-grok-bot/skills/host-observer
   extra_files: []
+tags: []
 ---
 
 # Host observer (Grok Bot)

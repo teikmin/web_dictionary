@@ -6,7 +6,7 @@ tagline: Generate vector embeddings via 9Router /v1/embeddings using OpenAI /
   se
 summary: POST $NINEROUTERURL/v1/embeddings
 categories:
-  - security
+  - databases-memory
 status: active
 quality_percentile: 89
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ skill:
     RAG, semantic search, or to embed text.
   folder_path: skills/9router-embeddings
   extra_files: []
+tags:
+  - github
 ---
 
 # 9Router — Embeddings

@@ -7,7 +7,7 @@ summary: This is a TypeScript-based MCP server that provides chart generation
   capabilities. It allows you to create various types of charts through MCP
   tools. You can also use it in Dify.
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 44
 selection_reason: quality_percentile
@@ -40,6 +40,8 @@ launch:
     - "@antv/mcp-server-chart"
   env_vars: []
   confidence: manifest
+tags:
+  - typescript
 ---
 
 # MCP Server Chart 

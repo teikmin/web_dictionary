@@ -7,7 +7,7 @@ tagline: "Manage Telegram channel access — approve pairings, edit allowlists,
 summary: Manages access control for the Telegram channel. You never talk to
   Telegram — you just edit JSON; the channel server re-reads it.
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 99
 selection_reason: official_vendor
@@ -39,6 +39,7 @@ skill:
     who's allowed, or change policy for the Telegram channel.
   folder_path: external_plugins/telegram/skills/access
   extra_files: []
+tags: []
 ---
 
 # /telegram:access — Telegram Channel Access Management

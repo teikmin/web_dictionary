@@ -9,7 +9,7 @@ summary: '- Pin dtypes on load rather than letting pandas infer them, when you
   float}). Inference is usually right but silently wrong in a specific,
   dangero...'
 categories:
-  - databases
+  - media-creative
 status: active
 quality_percentile: 91
 selection_reason: quality_percentile
@@ -44,6 +44,8 @@ skill:
     never numbers you inferred or estimated.
   folder_path: backend/python/app/agents/agent_loop/skills/builtin_packs/data-analysis
   extra_files: []
+tags:
+  - python
 ---
 
 # Data analysis with pandas

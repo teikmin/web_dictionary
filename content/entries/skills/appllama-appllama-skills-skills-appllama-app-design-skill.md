@@ -8,7 +8,7 @@ summary: Never design a screen from imagination when you can study how top apps
   solved the same screen. Real, shipping, revenue-ranked apps encode thousands
   of hours of design iteration and A/B testing. Your first move on any...
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 33
 selection_reason: quality_percentile
@@ -54,6 +54,7 @@ skill:
     - references/native-controls.md
     - references/performance.md
     - references/simulator-loop.md
+tags: []
 ---
 
 # Appllama App Design Skill

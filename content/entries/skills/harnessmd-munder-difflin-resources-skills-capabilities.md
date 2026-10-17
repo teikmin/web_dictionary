@@ -7,7 +7,7 @@ tagline: |-
   avai
 summary: "The harness injects these env vars (use them; don't hard-code paths):"
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 80
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
     invoke them.
   folder_path: resources/skills/capabilities
   extra_files: []
+tags: []
 ---
 
 # Worker Capability Catalog

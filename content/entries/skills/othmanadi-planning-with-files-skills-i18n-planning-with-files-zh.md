@@ -9,7 +9,7 @@ summary: 1. 使用已安装的 scripts/resolve-plan-dir.sh（或 .ps1），结�
   如果显式选择器被拒绝，或会话隔离已启用且存在多个计划但没有
   PLANID，请修正固定关系，不要回退到另一项任务。只有没有适用的选择器或命名计划时，才使用项目根目录的旧文件。 3....
 categories:
-  - dev-tools
+  - databases-memory
 status: active
 quality_percentile: 70
 selection_reason: quality_percentile
@@ -53,6 +53,7 @@ skill:
     - scripts/inject-plan.py
     - scripts/inject-plan.sh
     - scripts/ledger-append.ps1
+tags: []
 ---
 
 # 文件规划系统

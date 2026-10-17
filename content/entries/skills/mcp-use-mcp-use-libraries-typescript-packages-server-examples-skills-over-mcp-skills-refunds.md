@@ -4,7 +4,7 @@ name: refunds
 tagline: Check refund eligibility and use the refund-order tool safely
 summary: Check refund eligibility and use the refund-order tool safely
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 95
 selection_reason: quality_percentile
@@ -36,6 +36,8 @@ skill:
   extra_files:
     - references/policy.md
     - templates/confirmation.md
+tags:
+  - typescript
 ---
 
 # Refund orders

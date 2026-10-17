@@ -5,7 +5,7 @@ tagline: AI-powered reverse engineering assistant that bridges IDA Pro with
   language models through MCP.
 summary: Simple MCP Server to allow vibe reversing in IDA Pro.
 categories:
-  - other
+  - security-auth
 status: active
 quality_percentile: 87
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ launch:
     - ida-pro-mcp
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # IDA Pro MCP

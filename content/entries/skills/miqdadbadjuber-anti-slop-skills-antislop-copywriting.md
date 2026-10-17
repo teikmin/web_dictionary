@@ -8,7 +8,7 @@ summary: "- Load together with antislop.md whenever the task is copy or text
   Delivery Gate) and the hard bans (R-02, R-15, R-16, R-17, R-18, R-36,
   R-38)..."
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     core."
   folder_path: skills/antislop-copywriting
   extra_files: []
+tags: []
 ---
 
 # antislop-copywriting

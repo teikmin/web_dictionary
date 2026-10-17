@@ -5,7 +5,7 @@ tagline: Open-source status page, incident response and uptime monitoring
 summary: The open-source status page, incident response and uptime monitoring
   platform. Learn more » Documentation · Website · Discord
 categories:
-  - other
+  - coding-agents
 status: active
 quality_percentile: 87
 selection_reason: quality_percentile
@@ -36,6 +36,8 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags:
+  - discord
 ---
 
 <p align="center" style="margin-top: 120px">

@@ -2,8 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConfigTabs from '../../components/ConfigTabs.astro';
-import StatusBadge from '../../components/StatusBadge.astro';
-import SignalStats from '../../components/SignalStats.astro';
+import DictionaryCard from '../../components/DictionaryCard.astro';
 import { formatStars } from '../../lib/entries';
 
 export async function getStaticPaths() {
@@ -21,10 +20,6 @@ const { Content, headings } = await render(entry);
 // Headings for table of contents
 const tocHeadings = headings ? headings.filter((h) => h.depth >= 2 && h.depth <= 3) : [];
 
-// Extract owner for avatar
-const [owner] = data.source.repo.split('/');
-const avatarUrl = `https://github.com/${owner}.png?size=80`;
-
 // Find related skills (Task C6)
 const allSkills = await getCollection('skills');
 const primaryCategory = data.categories[0] || 'other';
@@ -32,6 +27,12 @@ const relatedTools = allSkills
   .filter((e) => e.data.slug !== data.slug && e.data.categories.includes(primaryCategory))
   .sort((a, b) => (b.data.signals?.stars || 0) - (a.data.signals?.stars || 0))
   .slice(0, 4);
+
+// Skill Pack detection for monorepos (Step 5.3)
+const packSkills = allSkills
+  .filter((s) => s.data.source.repo === data.source.repo)
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+const isPack = packSkills.length > 1;
 
 // Format why listed in plain words (Task C5)
 function getWhyListedText(reason: string, percentile: number): string {
@@ -65,93 +66,10 @@ const upstreamSkillUrl = cleanSubpath
       <span class="text-slate-800 font-medium">{data.name}</span>
     </nav>
 
-    <!-- 1. Header (Avatar, name, owner, description, type tag, View on GitHub, Jump to install) -->
-    <header class="border-b border-slate-200 pb-8 mb-8">
-      <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
-        <div class="flex items-start gap-4">
-          <img
-            src={avatarUrl}
-            alt={`${owner} avatar`}
-            class="w-14 h-14 rounded-xl border border-slate-200 bg-slate-50 object-cover shrink-0 shadow-xs"
-            loading="lazy"
-          />
-          <div>
-            <div class="flex flex-wrap items-center gap-2.5 mb-1.5">
-              <span class="px-2 py-0.5 text-xs font-semibold uppercase tracking-wider rounded bg-teal-50 text-teal-700 border border-teal-200">
-                Agent Skill
-              </span>
-              <StatusBadge status={data.status} />
-              {data.source.official_vendor && (
-                <span class="px-2 py-0.5 text-xs font-semibold rounded bg-teal-50 text-teal-700 border border-teal-200 inline-flex items-center gap-1">
-                  Official
-                </span>
-              )}
-            </div>
-
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              {data.name}
-            </h1>
-
-            <p class="text-xs font-mono text-slate-500 mt-1">
-              from <a href={`https://github.com/${owner}`} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">{owner}</a>
-              <span class="text-slate-300">/</span>
-              <span class="text-slate-700">{data.source.repo.split('/')[1]}</span>
-              {cleanSubpath && (
-                <span class="text-slate-500"> ({cleanSubpath})</span>
-              )}
-            </p>
-
-            <p class="text-sm text-slate-600 mt-3 max-w-3xl leading-relaxed">
-              {data.summary || data.tagline || 'Agent capability and instructions skill.'}
-            </p>
-          </div>
-        </div>
-
-        <!-- Action Links -->
-        <div class="flex sm:flex-col items-stretch gap-2.5 shrink-0">
-          <a
-            href={upstreamSkillUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 text-xs font-medium text-slate-700 transition-colors shadow-xs"
-          >
-            <svg class="w-4 h-4 text-slate-500" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-            </svg>
-            <span>View Source</span>
-          </a>
-
-          <a
-            href="#install"
-            class="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-teal-50 border border-teal-200 hover:bg-teal-100 text-xs font-semibold text-teal-800 transition-colors shadow-xs"
-          >
-            <span>Jump to install</span>
-            <span>↓</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- 2. At-a-glance strip (stars, last commit, status, license, folder) -->
-      <div class="mt-6 flex flex-wrap items-center gap-4 text-xs text-slate-500 pt-4 border-t border-slate-200">
-        <SignalStats
-          stars={data.signals.stars}
-          lastCommit={data.signals.last_commit}
-          officialVendor={data.source.official_vendor}
-        />
-        {data.source.license && (
-          <span class="inline-flex items-center gap-1.5 font-mono text-slate-600">
-            <span class="text-slate-400">License:</span>
-            <span class="text-slate-800 font-medium">{data.source.license}</span>
-          </span>
-        )}
-        {cleanSubpath && (
-          <span class="inline-flex items-center gap-1.5 font-mono text-slate-600">
-            <span class="text-slate-400">Folder:</span>
-            <span class="text-teal-700">{cleanSubpath}</span>
-          </span>
-        )}
-      </div>
-    </header>
+    <!-- Unified Dictionary Entry Header -->
+    <div class="mb-10">
+      <DictionaryCard entry={entry} />
+    </div>
 
     <!-- 3. Language Note (Task C9, E3) -->
     {data.language && data.language !== 'en' && (
@@ -163,6 +81,50 @@ const upstreamSkillUrl = cleanSubpath
           <strong>Notice:</strong> This skill documentation is written primarily in {data.language === 'zh' ? 'Chinese' : data.language}. If you are browsing in English, automatic browser translation may assist.
         </p>
       </div>
+    )}
+
+    <!-- Skill Pack Drawer Table (Step 5.3 FIX-4) -->
+    {isPack && (
+      <section class="mb-10 p-5 sm:p-6 rounded-2xl bg-amber-50/60 border border-amber-200 shadow-xs" aria-label="Repository Skill Pack">
+        <div class="flex items-center justify-between pb-3 mb-4 border-b border-amber-200">
+          <div class="flex items-center gap-2.5">
+            <span class="text-xl">📦</span>
+            <div>
+              <h2 class="text-sm font-bold text-slate-900 tracking-tight">
+                Repository Skill Pack: {packSkills.length} Skills in this Repository
+              </h2>
+              <p class="text-xs text-slate-600 mt-0.5">
+                All skills packaged and maintained inside <code class="font-mono font-medium text-slate-800">{data.source.repo}</code>.
+              </p>
+            </div>
+          </div>
+          <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-100 text-amber-800 border border-amber-300 font-mono">
+            {packSkills.length} Skills
+          </span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+          {packSkills.map((s) => {
+            const isCurrent = s.data.slug === data.slug;
+            return (
+              <a
+                href={`/skills/${s.data.slug}`}
+                class:list={[
+                  'p-3 rounded-xl border text-xs transition-all flex flex-col justify-between',
+                  isCurrent
+                    ? 'bg-amber-100/90 border-amber-300 shadow-xs font-semibold text-slate-900 ring-1 ring-amber-300'
+                    : 'bg-white border-amber-200/80 hover:border-amber-300 hover:bg-white/90 text-slate-700'
+                ]}
+              >
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <span class="truncate font-mono">{s.data.name}</span>
+                  {isCurrent && <span class="text-[10px] uppercase font-bold text-amber-800 bg-amber-200/80 px-1 rounded">Current</span>}
+                </div>
+                <p class="text-[11px] text-slate-500 line-clamp-1">{s.data.tagline || s.data.summary || s.data.skill.description}</p>
+              </a>
+            );
+          })}
+        </div>
+      </section>
     )}
 
     <!-- Main Content Area: 3. SKILL.md Body + Sticky TOC on Wide Screens -->

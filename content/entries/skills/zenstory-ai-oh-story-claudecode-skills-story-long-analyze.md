@@ -4,7 +4,7 @@ name: story-long-analyze
 tagline: 长篇网文拆文。保留黄金三章、逐章摘要、剧情、情绪、节奏、角色、设定和文风接口，以连续章节块完成因果、双时间线、关系与三维节奏分析；兼容旧成果直接使用、按需增强和断点续跑。含可选三层灵感库管道（灵感库、跨书灵感聚合、更新灵感库）。触发方式：/story-long-analyze、/长篇拆文、「帮我拆这
 summary: 核心原则：机械边界只解析一次；原文按连续章节块读取一次；同次读取产生逐章事实和跨章观察；聚合阶段复用落盘结果，不重新阅读全文。
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     - references/stage1-golden-chapters.md
     - references/stage2-extraction.md
     - references/stage3-plot-rhythm.md
+tags: []
 ---
 
 # story-long-analyze：长篇网文拆文

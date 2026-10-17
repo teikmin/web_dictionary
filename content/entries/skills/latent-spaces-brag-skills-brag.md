@@ -9,7 +9,7 @@ summary: "Model check. If you are Claude Opus 5.5 and the invocation doesn't ask
   (--voice, which brag-slim doesn't do), switch to brag-slim: read /slim.md
   (th..."
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 62
 selection_reason: quality_percentile
@@ -53,6 +53,8 @@ skill:
     - assets/music/cues/happy-beats-business-moves-vol-12-by-ende-dot-app.music-cues.json
     - assets/music/cues/happy-beats-business-moves-vol-12-by-ende-dot-app.music-cues.md
     - assets/music/cues/happy-beats-business-moves-vol-9-by-ende-dot-app.music-cues.json
+tags:
+  - video
 ---
 
 # /brag

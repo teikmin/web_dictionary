@@ -8,7 +8,7 @@ summary: "imports: Other modules whose exported providers should be available in
   this module. providers: Services, tools, resources, or prompts that should be
   instantiated and managed by the DI container within this module. exp..."
 categories:
-  - other
+  - agent-frameworks
 status: active
 quality_percentile: 99
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     in the NitroStack SDK.
   folder_path: sample-apps/Rampd-AI-Onboarding-Offboarding-Orchestrator/skills/mcp-app-architecture
   extra_files: []
+tags: []
 ---
 
 ## When to Use

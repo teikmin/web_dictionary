@@ -7,7 +7,7 @@ tagline: Use this skill to build a multi-element Excel dashboard — Dashboard
 summary: "- macOS / Linux: curl -fsSL https://d.officecli.ai/install.sh | bash -
   Windows (PowerShell): irm https://d.officecli.ai/install.ps1 | iex"
 categories:
-  - dev-tools
+  - cloud-infra
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     10 rows (use xlsx)."
   folder_path: skills/officecli-data-dashboard
   extra_files: []
+tags: []
 ---
 
 # Data Dashboard (scene-layer on officecli-xlsx)

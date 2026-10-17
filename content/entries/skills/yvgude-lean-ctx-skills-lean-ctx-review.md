@@ -8,7 +8,7 @@ summary: Reads a Claude Code session transcript, so it applies to agents that
   write /.claude/projects//.jsonl. Other harnesses need their own extractor; the
   triage rules below are harness-independent.
 categories:
-  - security
+  - browser-web
 status: active
 quality_percentile: 73
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
   folder_path: skills/lean-ctx-review
   extra_files:
     - scripts/scan_session.py
+tags: []
 ---
 
 # lean-ctx session review

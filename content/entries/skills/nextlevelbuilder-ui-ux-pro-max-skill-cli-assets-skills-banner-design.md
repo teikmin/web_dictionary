@@ -9,7 +9,7 @@ summary: "- User requests banner, cover, or header design - Social media
   visual design - Event/print banner design - Creative asset generation for
   ca..."
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 77
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
   folder_path: cli/assets/skills/banner-design
   extra_files:
     - references/banner-sizes-and-styles.md
+tags: []
 ---
 
 # Banner Design - Multi-Format Creative Banner System

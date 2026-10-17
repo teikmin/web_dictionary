@@ -4,7 +4,7 @@ name: short-drama-develop
 tagline: 将中文小说、短剧或漫剧想法、梗概、改编材料、已有系列笔记或多集完整剧本发展成可追溯的改编方案、戏剧方向、创作简报、导演阐述、故事引擎与分集地图，并按题材与制作形态（画风）选择写法。用户提出“导入小说做短剧”“从多集整稿生成/补分集地图”“开发短剧/漫剧”“做故事设定/系列大纲/分集规划”“写导演阐述
 summary: 离线验证多集整稿的精确索引、切片和源文件变更检测：
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 67
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     - references/director-brief-craft.md
     - references/episode-design.md
     - references/genre-and-hook-playbook.md
+tags: []
 ---
 
 # 短剧开发

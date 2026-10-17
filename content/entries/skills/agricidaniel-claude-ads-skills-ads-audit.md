@@ -8,7 +8,7 @@ summary: 1. Read the main ads operating contract and thinking framework. 2.
   Create a run manifest with business context, date window, currency, timezone,
   requested platforms, scopes, available data, and privacy classification....
 categories:
-  - security
+  - productivity-ops
 status: active
 quality_percentile: 81
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
     spend audits, tracking audits, or prioritized opportunities and risks.
   folder_path: skills/ads-audit
   extra_files: []
+tags: []
 ---
 
 # Paid Advertising Audit

@@ -7,7 +7,7 @@ summary: This skill creates image-based PowerPoint decks from source material.
   Each slide is a complete 16:9 generated image. Final images are assembled into
   .pptx with scripts/assembleppt.py.
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 42
 selection_reason: quality_percentile
@@ -48,6 +48,7 @@ skill:
     - docs/style-library.md
     - docs/user-supplied-assets.md
     - docs/workflow-gates-and-progress.md
+tags: []
 ---
 
 # Codex PPT

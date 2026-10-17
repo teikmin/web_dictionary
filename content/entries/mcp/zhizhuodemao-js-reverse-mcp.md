@@ -6,7 +6,7 @@ tagline: AI Agent-first JS 逆向 MCP Server：有头 Chrome 调试、断点、�
 summary: AI-first / AI-native 的 JavaScript 逆向工程 MCP Server，让你的 AI 编码助手（如
   Claude、Cursor、Copilot）能够像分析师一样持续调试、定位、保存和复盘网页中的 JavaScript 行为。
 categories:
-  - browser-automation
+  - security-auth
 status: active
 quality_percentile: 47
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - js-reverse-mcp
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # JS Reverse MCP

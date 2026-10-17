@@ -9,7 +9,7 @@ summary: Before making design or code decisions, read and apply
   designing-data-intensive-applications.md only as a deeper reference when the
   mini rules are not enough for the...
 categories:
-  - dev-tools
+  - cloud-infra
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     - designing-data-intensive-applications.md
     - designing-data-intensive-applications.mini.md
     - designing-data-intensive-applications.nano.md
+tags: []
 ---
 
 # Designing Data-Intensive Applications Skill

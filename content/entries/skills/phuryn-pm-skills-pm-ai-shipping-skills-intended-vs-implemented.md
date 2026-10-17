@@ -8,7 +8,7 @@ summary: A linter scans code in a vacuum. It can tell you the code is internally
   consistent; it cannot tell you the code does what you meant, because it has no
   model of your intent. The highest-value security and correctness b...
 categories:
-  - ai-frameworks
+  - coding-agents
 status: active
 quality_percentile: 68
 selection_reason: quality_percentile
@@ -44,6 +44,8 @@ skill:
     codebase matches its own documentation.
   folder_path: pm-ai-shipping/skills/intended-vs-implemented
   extra_files: []
+tags:
+  - security
 ---
 
 # Intended vs. Implemented: Auditing the Gap

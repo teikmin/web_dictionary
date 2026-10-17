@@ -6,7 +6,7 @@ tagline: Provides cryptography attack techniques for CTF challenges. Use when
   prob
 summary: "Python packages (all platforms):"
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -50,6 +50,8 @@ skill:
     - lattice-and-lwe.md
     - modern-ciphers-2.md
     - modern-ciphers-3.md
+tags:
+  - python
 ---
 
 # CTF Cryptography

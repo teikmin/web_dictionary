@@ -9,7 +9,7 @@ summary: "Hard-won lesson behind this skill: writing SVG means placing
   eye (even a shrunk screenshot) misses collisions that are only a few pixels
   o..."
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 32
 selection_reason: quality_percentile
@@ -71,6 +71,7 @@ skill:
     - assets/template.html
     - references/flow-diagram-example.html
     - references/layout-patterns-guide.html
+tags: []
 ---
 
 # Interactive two-way HTML flow diagrams

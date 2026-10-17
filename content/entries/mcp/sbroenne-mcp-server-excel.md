@@ -7,7 +7,7 @@ summary: Automate real Microsoft Excel with AI. Excel MCP Server lets GitHub
   Copilot, Claude, ChatGPT, and other agents control Excel through
   natural-language requests—using either MCP or a token-efficient CLI.
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 33
 selection_reason: quality_percentile
@@ -36,6 +36,8 @@ launch:
   args: []
   env_vars: []
   confidence: none
+tags:
+  - github
 ---
 
 # ExcelMcp - MCP Server for Microsoft Excel

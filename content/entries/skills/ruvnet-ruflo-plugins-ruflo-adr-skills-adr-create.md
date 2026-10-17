@@ -7,7 +7,7 @@ summary: When a significant architectural decision needs to be recorded -- new
   technology adoption, API design choices, data model changes, infrastructure
   decisions, or any cross-cutting concern that affects multiple components.
 categories:
-  - databases
+  - cloud-infra
 status: active
 quality_percentile: 79
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
     and AgentDB registration
   folder_path: plugins/ruflo-adr/skills/adr-create
   extra_files: []
+tags: []
 ---
 
 # Create ADR

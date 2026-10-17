@@ -8,7 +8,7 @@ summary: "- Defining a new feature or product requirement - Writing user stories
   with acceptance criteria - Planning product work that needs a structured spec
   - Documenting business requirements before implementation"
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 90
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     agent.
   folder_path: plugins/agent-triforce/skills/feature-spec
   extra_files: []
+tags: []
 ---
 
 # Feature Spec

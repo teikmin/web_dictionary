@@ -18,7 +18,7 @@ export const claudeCodeAdapter: ClientAdapter = {
     let mcpCommand = '';
     let mcpSnippet = '';
 
-    if (!spec.command && !spec.remote_url) {
+    if (spec.confidence === 'none' || (!spec.command && !spec.remote_url)) {
       return {
         clientId: 'claude-code',
         clientName: 'Claude Code',

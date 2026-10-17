@@ -8,7 +8,7 @@ summary: Shell examples quote variant strings because > otherwise redirects
   output. Network examples below are illustrative and were checked against SDK
   0.9.0 contracts, without authenticated prediction/Atlas calls during this...
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 68
 selection_reason: quality_percentile
@@ -56,6 +56,7 @@ skill:
     - scripts/atlas_link.py
     - scripts/atlas_query.py
     - scripts/score_variants.py
+tags: []
 ---
 
 # AlphaGenome and the AlphaGenome Atlas

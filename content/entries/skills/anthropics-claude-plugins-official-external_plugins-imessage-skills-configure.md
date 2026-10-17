@@ -6,7 +6,7 @@ tagline: Check iMessage channel setup and review access policy. Use when the
   me,
 summary: "Arguments passed: $ARGUMENTS (unused — this skill only shows status)"
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 99
 selection_reason: official_vendor
@@ -38,6 +38,7 @@ skill:
     reach me," or wants to know why texts aren't reaching the assistant.
   folder_path: external_plugins/imessage/skills/configure
   extra_files: []
+tags: []
 ---
 
 # /imessage:configure — iMessage Channel Setup

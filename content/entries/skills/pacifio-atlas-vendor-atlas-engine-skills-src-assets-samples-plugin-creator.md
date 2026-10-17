@@ -7,7 +7,7 @@ summary: "--- name: plugin-creator description: Create and scaffold plugin
   optional plugin folders/files, valid manifest defaults, and
   personal-market..."
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 69
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     - scripts/read_marketplace_name.py
     - scripts/update_plugin_cachebuster.py
     - scripts/validate_plugin.py
+tags: []
 ---
 
 <!-- Modified by Atlas from upstream OpenAI Codex (Apache-2.0). See CONTEXT.md. -->

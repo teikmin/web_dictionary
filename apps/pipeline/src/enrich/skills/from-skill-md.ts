@@ -48,6 +48,9 @@ export async function extractSkillSpec(
       description,
       folder_path: subpath || '.',
       extra_files: extraFiles,
+      pack_total_skills: 1,
+      is_pack_primary: true,
+      clients: [],
     },
     rawBody,
   };

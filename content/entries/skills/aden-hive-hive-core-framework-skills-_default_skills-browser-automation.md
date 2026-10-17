@@ -9,7 +9,7 @@ summary: "The bridge attaches to the user's already-running Chrome via the
   and other agents' work, and the runtime — not you — owns the connection to
   i..."
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 97
 selection_reason: quality_percentile
@@ -48,6 +48,8 @@ skill:
     Beeline extension.
   folder_path: core/framework/skills/_default_skills/browser-automation
   extra_files: []
+tags:
+  - terminal
 ---
 
 # GCU Browser Automation

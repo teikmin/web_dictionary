@@ -4,7 +4,7 @@ name: story-deslop
 tagline: 网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、非模板化。触发方式：/story-deslop、/去AI味、「去AI味」「这篇太AI了」「网文去AI味」。
 summary: 你是网文润色专家。你的任务是把 AI 味浓重的网文文本改写自然，降低模板化、书面腔和过度工整感。
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     - scripts/author_memory_commit.py
     - scripts/check-ai-patterns.js
     - scripts/check-degeneration.js
+tags: []
 ---
 
 # story-deslop：网文去AI味

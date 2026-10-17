@@ -8,7 +8,7 @@ summary: 'Agent-agnostic: works under Claude Code, Codex, or OpenCode. Wherever
   this doc says "agent vision" or "agent browser tool", use whatever the host
   provides — native image reading, a browser MCP (playwright/chrome-devto...'
 categories:
-  - security
+  - browser-web
 status: active
 quality_percentile: 62
 selection_reason: quality_percentile
@@ -51,6 +51,8 @@ skill:
     - .github/workflows/ci.yml
     - .github/workflows/cli-publish.yml
     - .github/workflows/issue-triage.yml
+tags:
+  - playwright
 ---
 
 # img2threejs — Image to procedural Three.js

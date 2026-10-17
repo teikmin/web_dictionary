@@ -7,7 +7,7 @@ summary: "- Periodic codebase hygiene check - Before a release to ensure no dead
   code or unresolved debt - After a large refactoring to verify cleanliness -
   When onboarding to understand current code quality"
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 90
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
     and code quality issues. Delegates to the Centinela (QA) agent.
   folder_path: plugins/agent-triforce/skills/code-health
   extra_files: []
+tags: []
 ---
 
 # Code Health

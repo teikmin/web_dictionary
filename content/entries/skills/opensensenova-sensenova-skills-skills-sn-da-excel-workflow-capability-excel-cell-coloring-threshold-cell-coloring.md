@@ -4,7 +4,7 @@ name: large-file-conditional-formatting
 tagline: 根据Excel总行数自动切换Parquet加速读取，计算特定维度的时间序列平均值，并使用openpyxl输出带有条件格式（如低于均值标绿）和自定义样式的分析报告。
 summary: Step1 读取文件并统计所有 sheet 的行数，汇总后打印总行数，用于判断是否需要大文件加速。
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 44
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: 根据Excel总行数自动切换Parquet加速读取，计算特定维度的时间序列平均值，并使用openpyxl输出带有条件格式（如低于均值标绿）和自定义样式的分析报告。
   folder_path: skills/sn-da-excel-workflow/capability/excel-cell-coloring/threshold-cell-coloring
   extra_files: []
+tags: []
 ---
 
 ## Skill Steps

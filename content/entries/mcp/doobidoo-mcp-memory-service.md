@@ -8,7 +8,7 @@ summary: Open-source memory backend for AI agents — REST API, MCP, OAuth, CLI,
   dashboard. One self-hosted service, every transport. Agents store decisions,
   share causal knowledge graphs, and retrieve context in 5ms — without c...
 categories:
-  - databases
+  - databases-memory
 status: active
 quality_percentile: 82
 selection_reason: quality_percentile
@@ -41,6 +41,11 @@ launch:
     - mcp-memory-service
   env_vars: []
   confidence: manifest
+tags:
+  - langgraph
+  - autogen
+  - crewai
+  - memory
 ---
 
 # mcp-memory-service

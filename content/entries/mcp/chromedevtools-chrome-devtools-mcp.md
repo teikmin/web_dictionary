@@ -6,7 +6,7 @@ summary: "[Tool reference][tool-reference] | [Changelog][changelog] |
   [Contributing][contributing] | [Troubleshooting][troubleshooting] | [Design
   Principles][design-principles]"
 categories:
-  - browser-automation
+  - coding-agents
 status: active
 quality_percentile: 83
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - chrome-devtools-mcp@latest
   env_vars: []
   confidence: readme
+tags: []
 ---
 
 # Chrome DevTools for agents

@@ -9,7 +9,7 @@ summary: 'Read the canonical file completely and follow its routing on the
   user had said "apply the Hemingway voice": load
   ../sepia/references/voice-sk...'
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 34
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     Hemingway voice profile.
   folder_path: skills/sepia-hemingway
   extra_files: []
+tags: []
 ---
 
 # Sepia with the Hemingway voice

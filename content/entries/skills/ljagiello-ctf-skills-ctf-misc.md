@@ -6,7 +6,7 @@ tagline: Provides miscellaneous CTF challenge techniques for problems that do
   jail
 summary: "Python packages (all platforms):"
 categories:
-  - security
+  - other
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -53,6 +53,8 @@ skill:
     - games-and-vms-4.md
     - games-and-vms.md
     - linux-privesc.md
+tags:
+  - python
 ---
 
 # CTF Miscellaneous

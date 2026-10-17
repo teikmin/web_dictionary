@@ -6,7 +6,7 @@ tagline: "Use with the dstack skill for model-serving work when the image,
   proven. "
 summary: Find a working dstack service configuration for the requested model.
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 44
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     verifying the final dstack service with a model request.
   folder_path: skills/dstack-prototyping
   extra_files: []
+tags: []
 ---
 
 # dstack Prototyping

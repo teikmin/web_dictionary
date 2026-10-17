@@ -9,7 +9,7 @@ summary: "/reimagine-it is a Content-Derived Design engine. The shipped product
   numbers, links, emails, and colors already in the file, then generate a
   stan..."
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -61,6 +61,7 @@ skill:
     - references/domains/README.md
     - references/domains/artistic.md
     - references/domains/cinematic.md
+tags: []
 ---
 
 # /reimagine-it

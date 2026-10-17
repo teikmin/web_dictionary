@@ -8,7 +8,7 @@ summary: "This skill can be installed in several locations, so resolve its
   directory first. Set SKILLDIR to the directory containing this SKILL.md file,
   then run the commands below as written:"
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 34
 selection_reason: quality_percentile
@@ -47,6 +47,8 @@ skill:
     - package-lock.json
     - package.json
     - run.js
+tags:
+  - playwright
 ---
 
 # Playwright Browser Automation

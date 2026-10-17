@@ -7,7 +7,7 @@ summary: High-quality parsing through tree-sitter AST analysis across all 162
   languages, enhanced with Hybrid LSP semantic type resolution for Python,
   TypeScript / JavaScript / JSX / TSX, PHP, C#, Go, C, C++, Java, Kotlin, Rus...
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 92
 selection_reason: quality_percentile
@@ -36,6 +36,10 @@ launch:
   args: []
   env_vars: []
   confidence: none
+tags:
+  - python
+  - typescript
+  - memory
 ---
 
 # codebase-memory-mcp

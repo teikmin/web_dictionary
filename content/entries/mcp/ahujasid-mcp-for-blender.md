@@ -5,7 +5,7 @@ tagline: Community plugin to control Blender 3D with any LLM of your choice. Not
   affiliated with the official Blender Foundation.
 summary: Connect Blender to any LLM
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 86
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ launch:
     - mcp-for-blender
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <div align="center">

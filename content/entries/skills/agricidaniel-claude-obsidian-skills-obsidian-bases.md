@@ -8,7 +8,7 @@ summary: Answer design and syntax questions read-only. For a requested .base
   edit, resolve the user vault and use one inspected transaction; never write
   the file directly.
 categories:
-  - databases
+  - productivity-ops
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     lists, task trackers, filters, formulas, summaries, and .base file edits.
   folder_path: skills/obsidian-bases
   extra_files: []
+tags: []
 ---
 
 # Obsidian Bases

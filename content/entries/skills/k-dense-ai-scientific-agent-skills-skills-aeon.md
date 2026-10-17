@@ -9,7 +9,7 @@ summary: Aeon is a scikit-learn compatible Python toolkit for time series
   classification, regression, clustering, forecasting, anomaly detection,
   segmentation,...
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 68
 selection_reason: quality_percentile
@@ -55,6 +55,8 @@ skill:
     - references/regression.md
     - references/segmentation.md
     - references/similarity_search.md
+tags:
+  - python
 ---
 
 # Aeon Time Series Machine Learning

@@ -8,7 +8,7 @@ summary: Manages access control for the iMessage channel. All state lives in
   /.claude/channels/imessage/access.json. You never talk to iMessage — you just
   edit JSON; the channel server re-reads it.
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 99
 selection_reason: official_vendor
@@ -40,6 +40,7 @@ skill:
     who's allowed, or change policy for the iMessage channel.
   folder_path: external_plugins/imessage/skills/access
   extra_files: []
+tags: []
 ---
 
 # /imessage:access — iMessage Channel Access Management

@@ -7,7 +7,7 @@ tagline: "Fetch normalized stock sentiment across Reddit, X.com, financial news,
 summary: This skill is read-only. It is designed for research questions that are
   easier to answer with normalized sentiment signals than with raw social feeds.
 categories:
-  - productivity
+  - domain-research
 status: active
 quality_percentile: 38
 selection_reason: quality_percentile
@@ -46,6 +46,9 @@ skill:
   extra_files:
     - README.md
     - references/api_reference.md
+tags:
+  - research
+  - finance
 ---
 
 # Finance Sentiment Skill

@@ -7,7 +7,7 @@ summary: This skill is not a signal for the current Claude to implement
   directly. Use it only after the human explicitly asks for delegation to
   another Claude Code process or session.
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 34
 selection_reason: quality_percentile
@@ -49,6 +49,7 @@ skill:
     - references/review-and-land.md
     - references/writing-the-brief.md
     - scripts/relay.mjs
+tags: []
 ---
 
 # Claude Delegate

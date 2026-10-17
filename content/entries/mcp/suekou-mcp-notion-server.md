@@ -7,7 +7,7 @@ summary: This server targets the Notion API 2026-03-11 and uses the current
   structured tool results, and optional MCP Apps for interactive Notion
   workflows.
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 30
 selection_reason: quality_percentile
@@ -40,6 +40,8 @@ launch:
     - "@suekou/mcp-notion-server"
   env_vars: []
   confidence: manifest
+tags:
+  - notion
 ---
 
 # Notion MCP Server

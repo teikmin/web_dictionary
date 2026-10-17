@@ -6,7 +6,7 @@ tagline: Full-site blog health assessment scanning all blog files for quality
   readi
 summary: "Scan the project for all blog content files:"
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 54
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
     all blogs".
   folder_path: skills/blog-audit
   extra_files: []
+tags: []
 ---
 
 # Blog Audit: Full-Site Health Assessment

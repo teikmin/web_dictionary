@@ -8,7 +8,7 @@ summary: This guide covers essential PDF processing operations using Python
   libraries and command-line tools. For advanced features, JavaScript libraries,
   and detailed examples, see REFERENCE.md. If you need to fill out a PDF...
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -54,6 +54,9 @@ skill:
     - scripts/extract_form_field_info.py
     - scripts/extract_form_structure.py
     - scripts/fill_fillable_fields.py
+tags:
+  - pdf
+  - python
 ---
 
 # PDF Processing Guide

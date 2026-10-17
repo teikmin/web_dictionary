@@ -6,7 +6,7 @@ tagline: 当用户询问 AgentDock 是什么、如何使用、配置在哪里、
   Deskto
 summary: 回答使用用户当前语言；命令、路径和配置键保持原样。
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 58
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     - references/linux.md
     - references/macos.md
     - references/windows.md
+tags: []
 ---
 
 # AgentDock User Guide

@@ -8,7 +8,7 @@ summary: A simple yet powerful Python client for interacting with Model Context
   Protocol (MCP) servers using Ollama, allowing you to harness local LLMs for
   advanced tool execution. English | 简体中文 | Español
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 57
 selection_reason: quality_percentile
@@ -41,6 +41,8 @@ launch:
     - mcp-client-for-ollama
   env_vars: []
   confidence: manifest
+tags:
+  - python
 ---
 
 <p align="center">

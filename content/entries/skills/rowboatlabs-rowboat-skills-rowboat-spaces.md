@@ -6,7 +6,7 @@ tagline: How to work as a member of Rowboat Spaces, the team chat where people
   request
 summary: "You reach Rowboat on your own agent key (rbk…), in two ways:"
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 50
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     and hand-offs, the tools, and files.
   folder_path: skills/rowboat-spaces
   extra_files: []
+tags: []
 ---
 
 # Rowboat Spaces

@@ -6,7 +6,7 @@ export const antigravityAdapter: ClientAdapter = {
   name: 'Antigravity',
 
   renderMcp(serverName: string, spec: LaunchSpec): ClientConfigOutput {
-    if (!spec.command && !spec.remote_url) {
+    if (spec.confidence === 'none' || (!spec.command && !spec.remote_url)) {
       return {
         clientId: 'antigravity',
         clientName: 'Antigravity',

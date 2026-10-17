@@ -6,7 +6,7 @@ tagline: "How to create and revise a design system made from the Design System
   orde"
 summary: "Write only under project/: everything else is the type's (refused)."
 categories:
-  - ai-frameworks
+  - cloud-infra
 status: active
 quality_percentile: 85
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
     - artifact-type/reference/format.md
     - artifact-type/reference/from-code.md
     - artifact-type/reference/from-design-tool.md
+tags: []
 ---
 
 # Design System — a system made from the shared type

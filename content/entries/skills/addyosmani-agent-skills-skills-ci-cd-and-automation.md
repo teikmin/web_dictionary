@@ -9,7 +9,7 @@ summary: Automate quality gates so that no change reaches production without
   mechanism for every other skill — it catches what humans and agents miss,
   and...
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 71
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     configure test runners in CI, or establish deployment strategies.
   folder_path: skills/ci-cd-and-automation
   extra_files: []
+tags: []
 ---
 
 # CI/CD and Automation

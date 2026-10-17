@@ -7,7 +7,7 @@ summary: $ARGUMENTS should be a markdown or plain-text config file path (.md,
   .txt, .yaml, .json, .toml, .ini, .csv, .log, …), folder path, html file path,
   or URL.
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
     address the returned annotations.
   folder_path: apps/kiro-cli/skills/plannotator-annotate
   extra_files: []
+tags: []
 ---
 
 # Plannotator Annotate (Kiro)

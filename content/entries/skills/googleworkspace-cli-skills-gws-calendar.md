@@ -6,7 +6,7 @@ summary: "- delete — Deletes an access control rule. - get — Returns an acce
   control rule. - insert — Creates an access control rule. - list — Returns the
   rules in the access control list for the calendar. - patch — Updates a..."
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 55
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
   description: "Google Calendar: Manage calendars and events."
   folder_path: skills/gws-calendar
   extra_files: []
+tags: []
 ---
 
 # calendar (v3)

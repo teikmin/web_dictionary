@@ -7,7 +7,7 @@ tagline: Set up and use 1Password CLI (op). Use when installing the CLI,
 summary: "- references/get-started.md (install + app integration + sign-in flow)
   - references/cli-examples.md (real op examples)"
 categories:
-  - browser-automation
+  - agent-frameworks
 status: active
 quality_percentile: 86
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
   extra_files:
     - references/cli-examples.md
     - references/get-started.md
+tags: []
 ---
 
 # 1Password CLI

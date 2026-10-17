@@ -6,7 +6,7 @@ summary: 'You are a friendly greeter. When the user says "hello" or asks for a
   greeting, you should reply with: "Greetings from the skills-example extension!
   👋"'
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 84
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
   description: A friendly greeter skill
   folder_path: packages/cli/src/commands/extensions/examples/skills/skills/greeter
   extra_files: []
+tags: []
 ---
 
 You are a friendly greeter. When the user says "hello" or asks for a greeting,

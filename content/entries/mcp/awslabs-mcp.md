@@ -6,7 +6,7 @@ summary: "- Open source MCP servers for AWS - Table of Contents - What is the
   Model Context Protocol (MCP) and how does it work with MCP Servers for AWS? -
   Open source MCP servers for AWS Transport Mechanisms - Supported transp..."
 categories:
-  - other
+  - cloud-infra
 status: active
 quality_percentile: 94
 selection_reason: quality_percentile
@@ -37,6 +37,8 @@ launch:
   args: []
   env_vars: []
   confidence: registry
+tags:
+  - aws
 ---
 
 # Open source MCP servers for AWS

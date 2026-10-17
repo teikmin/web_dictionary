@@ -6,7 +6,7 @@ summary: Before merging a PR, after significant code changes, or as part of a
   periodic compliance check. Use this to ensure code changes respect the
   architectural decisions the team has agreed upon.
 categories:
-  - databases
+  - other
 status: active
 quality_percentile: 79
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
   description: Review code changes against accepted ADRs for compliance violations
   folder_path: plugins/ruflo-adr/skills/adr-review
   extra_files: []
+tags: []
 ---
 
 # ADR Review

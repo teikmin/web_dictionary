@@ -7,7 +7,7 @@ summary: "- Load together with antislop.md whenever the task touches code
   comments. The core holds the mechanism (the purpose test, the three tiers, the
   Delivery Gate); this skill holds comment-specific depth. - Every entry has..."
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
     comments, keep the valuable ones, never touch the code."
   folder_path: skills/antislop-code
   extra_files: []
+tags: []
 ---
 
 # antislop-code

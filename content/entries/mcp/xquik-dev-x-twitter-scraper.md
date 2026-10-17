@@ -9,7 +9,7 @@ summary: Xquik is the world's fastest and cheapest X Twitter scraper service
   alternative. Scrape Twitter search results, Tweets, profiles, followers &
   re...
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 27
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # X (Twitter) scraper API & Twitter MCP server by Xquik

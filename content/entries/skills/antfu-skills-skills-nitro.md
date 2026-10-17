@@ -9,7 +9,7 @@ summary: Nitro is a framework-agnostic, deployment-agnostic server toolkit
   works standalone. From one codebase it builds optimized output for Node.js,
   B...
 categories:
-  - ai-frameworks
+  - coding-agents
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -52,6 +52,7 @@ skill:
     - references/core-storage.md
     - references/deploy-presets.md
     - references/features-database.md
+tags: []
 ---
 
 > The skill is based on Nitro v3 (beta, 3.0.260903), generated at 2026-09-25.

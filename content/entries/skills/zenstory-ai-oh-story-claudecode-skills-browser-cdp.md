@@ -7,7 +7,7 @@ tagline: "Use this skill when you need to control a Chrome browser via CDP
 summary: "- macOS / Linux / Windows（实验性），已安装 Google Chrome - Node.js 20+ -
   agent-browser 已安装：npm install -g agent-browser"
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
   folder_path: skills/browser-cdp
   extra_files:
     - scripts/setup-cdp-chrome.js
+tags: []
 ---
 
 # Browser CDP 操作工具

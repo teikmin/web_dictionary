@@ -7,7 +7,7 @@ summary: "- Landing cold in a repo or subsystem — \"what's here, how is it
   concept in your own words - A change is proposed — what breaks, who calls
   it,..."
 categories:
-  - dev-tools
+  - domain-research
 status: active
 quality_percentile: 53
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ skill:
   description: Use ripwire CLI to map a repo before reading it.
   folder_path: skills/hermes/ripwire-repo-map
   extra_files: []
+tags: []
 ---
 
 # ripwire — deterministic repo map before reading code

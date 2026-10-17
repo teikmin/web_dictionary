@@ -8,7 +8,7 @@ summary: "1. Read {{KIRODIR}}/steering/roadmap.md 2. Parse the ## Specs
   - Dependencies for each feature - Completion status ([x] = done, [ ] =
   pendi..."
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     features in roadmap.md using parallel sub-agent dispatch by dependency wave.
   folder_path: tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-spec-batch
   extra_files: []
+tags: []
 ---
 
 # Spec Batch

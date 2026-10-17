@@ -7,7 +7,7 @@ tagline: Local-first code intelligence graph for MCP and CLI. Builds a
 summary: A local code knowledge graph that gives AI coding tools precise review
   context over MCP. English | 简体中文 | 日本語 | 한국어 | हिन्दी
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 84
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ launch:
     - code-review-graph
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <h1 align="center">code-review-graph</h1>

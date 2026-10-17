@@ -4,7 +4,7 @@ name: artifact_demo
 tagline: Demo skill that writes an output file and persists it as an artifact.
 summary: This skill is used by the examples/agui/server/skillartifacts demo.
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 82
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: Demo skill that writes an output file and persists it as an artifact.
   folder_path: examples/agui/server/skill_artifacts/skills/artifact_demo
   extra_files: []
+tags: []
 ---
 
 This skill is used by the `examples/agui/server/skill_artifacts` demo.

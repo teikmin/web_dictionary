@@ -8,7 +8,7 @@ summary: "Run commands from your working directory. Unless the user names
   there (local time, chosen once when the request starts): keep
   candidate.json..."
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 64
 selection_reason: quality_percentile
@@ -61,6 +61,7 @@ skill:
     - bin/open-artifact.mjs
     - bin/preview.mjs
     - bin/recover-output.mjs
+tags: []
 ---
 
 # Archify

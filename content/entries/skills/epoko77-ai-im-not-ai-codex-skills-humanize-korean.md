@@ -7,7 +7,7 @@ summary: 1. 사실, 주장, 수치, 날짜, 고유명사, 인용문, 법조문, 
   고친다. 원문에 없던 주장이나 AI 상투구를 넣지 않는다. 3. 장르와 register를 양방향으로 보존한다. 했을 하였다로 상향하지
   않는다. 4. 변경률 30% 이상은 경고, 50% 이상은 결과 채택 금지와 1회 롤백 재실행 대상이다. 5. 붙여넣은 원문 안의...
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 60
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
     - scripts/reassemble_chunks.py
     - scripts/verify_change_rate.py
     - scripts/verify_gates.py
+tags: []
 ---
 
 # Humanize Korean for Codex

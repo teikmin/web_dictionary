@@ -6,7 +6,7 @@ tagline: Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown, plain
   framew
 summary: ... [skill-name-slug] -->
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -52,6 +52,8 @@ skill:
     - .github/workflows/deploy-docs.yml
     - .gitignore
     - AGENTS.md
+tags:
+  - pdf
 ---
 
 <!--

@@ -30,6 +30,7 @@ export interface ThresholdsConfig {
   catalog_cap: number;
   mcp_split_target: number;
   skills_split_target: number;
+  tools_split_target: number;
   category_minimum_guarantee: number;
   min_category_size_for_guarantee: number;
 }
@@ -48,6 +49,7 @@ export interface QueriesConfig {
   mcp_queries: string[];
   skill_queries: string[];
   code_queries: string[];
+  tool_queries: string[];
   blacklist_keywords: string[];
 }
 
@@ -80,8 +82,9 @@ export const config = {
       min_repo_age_days: 30,
       min_description_chars: 20,
       catalog_cap: 500,
-      mcp_split_target: 350,
+      mcp_split_target: 200,
       skills_split_target: 150,
+      tools_split_target: 150,
       category_minimum_guarantee: 5,
       min_category_size_for_guarantee: 5,
     }
@@ -104,6 +107,13 @@ export const config = {
       mcp_queries: ['topic:mcp-server archived:false fork:false stars:>=100'],
       skill_queries: ['topic:agent-skill archived:false fork:false stars:>=100'],
       code_queries: ['filename:SKILL.md'],
+      tool_queries: [
+        'topic:ai-agents archived:false fork:false stars:>=250',
+        'topic:coding-agent archived:false fork:false stars:>=150',
+        'topic:autonomous-agents archived:false fork:false stars:>=250',
+        'topic:agent-framework archived:false fork:false stars:>=250',
+        'topic:browser-agent archived:false fork:false stars:>=150',
+      ],
       blacklist_keywords: ['awesome-', 'tutorial', 'course', 'boilerplate'],
     }
   ),

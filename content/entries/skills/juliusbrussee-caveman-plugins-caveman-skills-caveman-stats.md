@@ -9,7 +9,7 @@ summary: In Claude Code, src/hooks/caveman-mode-tracker.js runs
   hookSpecificOutput.additionalContext. Print that report verbatim inside a
   fenced code...
 categories:
-  - security
+  - agent-frameworks
 status: active
 quality_percentile: 56
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
     Trigger: /caveman-stats.
   folder_path: plugins/caveman/skills/caveman-stats
   extra_files: []
+tags: []
 ---
 
 In Claude Code, `src/hooks/caveman-mode-tracker.js` runs `src/hooks/caveman-stats.js` on `/caveman-stats` and supplies its report through `hookSpecificOutput.additionalContext`. Print that report verbatim inside a fenced code block, as the hook instructs. Do not calculate or add numbers yourself.

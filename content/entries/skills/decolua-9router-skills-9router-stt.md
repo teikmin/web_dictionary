@@ -7,7 +7,7 @@ tagline: Speech-to-text via 9Router /v1/audio/transcriptions using OpenAI
 summary: model = STT model ID (e.g. openai/whisper-1, groq/whisper-large-v3,
   deepgram/nova-3, gemini/gemini-2.5-flash).
 categories:
-  - security
+  - media-creative
 status: active
 quality_percentile: 89
 selection_reason: quality_percentile
@@ -40,6 +40,8 @@ skill:
     or get subtitles from audio files.
   folder_path: skills/9router-stt
   extra_files: []
+tags:
+  - audio
 ---
 
 # 9Router — Speech-to-Text

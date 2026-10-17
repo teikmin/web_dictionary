@@ -8,7 +8,7 @@ summary: For another repository or worktree, pass its path relative to this
   session or an absolute path, e.g. /plannotator-review ../feature-worktree.
   Quote paths containing spaces. Supply a target, not prose; feedback names t...
 categories:
-  - dev-tools
+  - browser-web
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     that comes back.
   folder_path: apps/skills/claude/plannotator-review
   extra_files: []
+tags: []
 ---
 
 # Plannotator Review

@@ -8,7 +8,7 @@ summary: "Expected output: a placement/network exclusion list (sites, apps,
   list, a reference to the audience exclusion set consumed from
   audience-segme..."
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 48
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     品牌安全/排除位置/否定受众列表
   folder_path: ad/activate/placement-exclusion-manager
   extra_files: []
+tags: []
 ---
 
 # Placement Exclusion Manager

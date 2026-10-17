@@ -7,7 +7,7 @@ summary: 1. Reject malformed repository identifiers before any request. 2.
   Retrieve only the latest published release and identify its tag, title, date,
   and URL. 3. State clearly when a repository has no published release or i...
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -50,6 +50,8 @@ skill:
     - evals/github-release-briefing.eval.md
     - evals/golden/anthropic-sdk-python/input.txt
     - evals/golden/flask/input.txt
+tags:
+  - github
 ---
 
 # /github-release-briefing-skill

@@ -8,7 +8,7 @@ summary: 1. Create a writer role that produces the requested deliverable. 2.
   Create a separate reviewer role. Give it the original request and the latest
   draft. On later reviews, also give it the previous required feedback so...
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 82
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     explicit quality criteria.
   folder_path: examples/dynamicworkflow/skills/skills/quality-loop
   extra_files: []
+tags: []
 ---
 
 # Bounded Quality Loop

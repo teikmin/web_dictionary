@@ -6,7 +6,7 @@ tagline: The open-source AI research workbench for scientific research and agent
 summary: AI research workbench for reproducible science — open-source,
   local-first, and model-agnostic.
 categories:
-  - dev-tools
+  - domain-research
 status: active
 quality_percentile: 79
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ launch:
     - open-science
   env_vars: []
   confidence: manifest
+tags:
+  - research
 ---
 
 <h1 align="center">AIPOCH Open-Science</h1>

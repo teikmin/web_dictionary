@@ -6,7 +6,7 @@ summary: "1. Determine the project directory and data directory: - If $ARGUMENTS
   contains a path, use that as the project directory - Otherwise, use the
   current working directory - Prefer the legacy .understand-anything/ data d..."
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 71
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ skill:
     knowledge graph
   folder_path: understand-anything-plugin/skills/understand-dashboard
   extra_files: []
+tags: []
 ---
 
 # /understand-dashboard

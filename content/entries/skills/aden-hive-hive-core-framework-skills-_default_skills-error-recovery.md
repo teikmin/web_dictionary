@@ -7,7 +7,7 @@ summary: 1. Diagnose — classify the failure as transient (network blip, rate
   limit, timeout) or structural (wrong selector, missing auth, invalid schema,
   permission denied).
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 97
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
     instead of blindly retrying or giving up.
   folder_path: core/framework/skills/_default_skills/error-recovery
   extra_files: []
+tags: []
 ---
 
 ## Operational Protocol: Error Recovery

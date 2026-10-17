@@ -9,7 +9,7 @@ summary: "Don't free-hand it — read references/generate-and-refresh.md and
   OVERVIEW.md (empty sourcecommit) → generate (survey → overview → architecture
   →..."
 categories:
-  - productivity
+  - coding-agents
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -49,6 +49,7 @@ skill:
   extra_files:
     - plugin.json
     - references/generate-and-refresh.md
+tags: []
 ---
 
 # Codebase Wiki pack — how to work here

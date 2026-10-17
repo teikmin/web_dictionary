@@ -8,7 +8,7 @@ summary: "The user watches your build live — the editor follows the file you'r
   writing, and the knowledge graph assembles on screen as pages get linked. No
   view management on your part; just author well: every page carries its..."
 categories:
-  - productivity
+  - coding-agents
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -49,6 +49,7 @@ skill:
     - consolidate/SKILL.md
     - plugin.json
     - research/SKILL.md
+tags: []
 ---
 
 # Knowledge Base pack — how to work here

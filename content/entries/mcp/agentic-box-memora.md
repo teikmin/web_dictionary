@@ -5,7 +5,7 @@ tagline: Give your AI agents persistent, collective memory — with deduplicatin
   absorb, supersession lineage, semantic search, and a graph UI. Speaks MCP.
 summary: '"You never truly know the value of a moment until it becomes a memory."'
 categories:
-  - databases
+  - browser-web
 status: active
 quality_percentile: 37
 selection_reason: quality_percentile
@@ -38,6 +38,8 @@ launch:
     - memora-mcp
   env_vars: []
   confidence: manifest
+tags:
+  - memory
 ---
 
 <h1 align="center"><img src="https://raw.githubusercontent.com/agentic-box/memora/main/media/memora_new.gif" width="60" alt="Memora Logo" align="absmiddle"> Memora</h1>

@@ -5,7 +5,7 @@ tagline: A search-first, profile-aware reverse-engineering workspace for AI
   agents — 735 tools across 36 domains in one MCP server.
 summary: A search-first, profile-aware reverse-engineering workspace for AI agents.
 categories:
-  - browser-automation
+  - security-auth
 status: active
 quality_percentile: 93
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ launch:
     - "@jshookmcp/jshook"
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <div align="center">

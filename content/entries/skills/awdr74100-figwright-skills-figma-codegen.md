@@ -8,7 +8,7 @@ summary: '- The user pastes a Figma URL/selection and asks for code ("code
   this", "build this component"). - The user wants to extend an existing
   component to match a Figma frame.'
 categories:
-  - other
+  - media-creative
 status: active
 quality_percentile: 37
 selection_reason: quality_percentile
@@ -52,6 +52,7 @@ skill:
     - references/responsive.md
     - references/stylesheets.md
     - references/verify.md
+tags: []
 ---
 
 # figma-codegen

@@ -8,7 +8,7 @@ summary: "- Overview - Project Principles - MCP Authorization Compatibility -
   (Skill) - Method 1 — Smithery - Method 2 — uvx - Method 3 — uv - Method 4
   —..."
 categories:
-  - dev-tools
+  - domain-research
 status: active
 quality_percentile: 40
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ launch:
     - paper-search-mcp
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # Paper Search MCP

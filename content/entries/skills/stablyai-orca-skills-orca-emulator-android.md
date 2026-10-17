@@ -5,7 +5,7 @@ tagline: Android device and emulator control from inside Orca over adb, with the
   live device view in Orca's emulator pane. Use when driving an adb-connected em
 summary: "Choose the executable once and reuse it for every later command:"
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 64
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     simulator use the iOS emulator skill; build the APK with Gradle first."
   folder_path: skills/orca-emulator-android
   extra_files: []
+tags: []
 ---
 
 # Orca Emulator (Android)

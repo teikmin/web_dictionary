@@ -8,7 +8,7 @@ summary: Nothing here is specific to one orchestrating agent. The loop needs
   only the ability to run a shell command and read a file, so any comparable
   agent can drive it. It is designed for and run on Claude Code; treat other...
 categories:
-  - productivity
+  - coding-agents
 status: active
 quality_percentile: 34
 selection_reason: quality_percentile
@@ -50,6 +50,7 @@ skill:
     - references/review-and-land.md
     - references/writing-the-brief.md
     - scripts/relay.mjs
+tags: []
 ---
 
 # Antigravity Delegate

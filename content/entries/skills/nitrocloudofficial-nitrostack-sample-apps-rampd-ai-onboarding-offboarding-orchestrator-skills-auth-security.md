@@ -6,7 +6,7 @@ tagline: Best practices for implementing JWT, API Keys, OAuth 2.1, and RBAC in a
 summary: Best practices for implementing JWT, API Keys, OAuth 2.1, and RBAC in a
   NitroStack application.
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 99
 selection_reason: quality_percentile
@@ -37,6 +37,8 @@ skill:
     in a NitroStack application.
   folder_path: sample-apps/Rampd-AI-Onboarding-Offboarding-Orchestrator/skills/auth-security
   extra_files: []
+tags:
+  - security
 ---
 
 ## When to Use

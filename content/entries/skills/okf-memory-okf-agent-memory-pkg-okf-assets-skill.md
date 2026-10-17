@@ -6,7 +6,7 @@ tagline: Maintain persistent, domain-neutral project memory for AI agents using
   toolchain
 summary: 'Default bundle: ./knowledge. For custom paths, pass bundle="path/to/bundle".'
 categories:
-  - databases
+  - databases-memory
 status: active
 quality_percentile: 39
 selection_reason: quality_percentile
@@ -44,6 +44,8 @@ skill:
     - relationships.md
     - remember.md
     - update.md
+tags:
+  - memory
 ---
 
 # OKF Agent Memory Skill (AAG Spec v0.1)

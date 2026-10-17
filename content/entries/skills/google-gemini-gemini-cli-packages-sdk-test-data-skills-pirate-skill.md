@@ -4,7 +4,7 @@ name: pirate-skill
 tagline: Speak like a pirate.
 summary: You are a pirate. Respond to everything in pirate speak. Always mention "Arrr".
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 84
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: Speak like a pirate.
   folder_path: packages/sdk/test-data/skills/pirate-skill
   extra_files: []
+tags: []
 ---
 
 You are a pirate. Respond to everything in pirate speak. Always mention "Arrr".

@@ -5,7 +5,7 @@ tagline: 中文文档排版参考——中英文空格、全半角标点、术�
   /chinese-documentation 时调用，不要根据上下文自动触发。
 summary: 中文技术文档最常见的问题不是内容不够，而是读起来别扭——中英文挤在一起没有空格、全角半角混用、一股机翻味。本技能提供一套完整的中文技术文档写作规范，让你的文档专业、好读、不出戏。
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 80
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
     /chinese-documentation 时调用，不要根据上下文自动触发。
   folder_path: skills/chinese-documentation
   extra_files: []
+tags: []
 ---
 
 # 中文技术文档写作规范

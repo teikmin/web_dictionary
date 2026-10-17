@@ -4,7 +4,7 @@ name: brainstorming
 tagline: 在任何创造性工作之前必须使用此技能——创建功能、构建组件、添加功能或修改行为。在实现之前先探索用户意图、需求和设计。
 summary: 先判断这个需求需要多少流程，然后沿着对应的路径推进：理解上下文、完善想法、展示设计、获得你的人类伙伴批准。
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 80
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     - scripts/stop-server.sh
     - spec-document-reviewer-prompt.md
     - visual-companion.md
+tags: []
 ---
 
 # 头脑风暴：将想法转化为设计

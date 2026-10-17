@@ -9,7 +9,7 @@ summary: Context+ is an MCP server designed for developers who demand 99%
   Obsidian-style linking, Context+ turns a massive codebase into a searchable,
   hiera...
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 12
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ launch:
     - contextplus
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # Context+

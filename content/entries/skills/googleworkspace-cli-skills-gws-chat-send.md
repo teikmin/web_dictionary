@@ -4,7 +4,7 @@ name: gws-chat-send
 tagline: "Google Chat: Send a message to a space."
 summary: Send a message to a space
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 55
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: "Google Chat: Send a message to a space."
   folder_path: skills/gws-chat-send
   extra_files: []
+tags: []
 ---
 
 # chat +send

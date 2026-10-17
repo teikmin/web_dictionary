@@ -7,7 +7,7 @@ summary: "- Marketing presentations and pitch decks - Data-driven slides with
   Chart.js - Strategic slide design with layout patterns - Copywriting-optimized
   presentation content"
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 77
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
     - references/html-template.md
     - references/layout-patterns.md
     - references/slide-strategies.md
+tags: []
 ---
 
 # Slides

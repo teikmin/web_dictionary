@@ -8,7 +8,7 @@ summary: 1. Read the main ads operating contract and thinking framework. 2.
   Collect objective, conversion definition, account and campaign age, geography,
   date window, timezone, currency, spend, targets, and available data sou...
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 81
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
     pages, AdServices, or Apple app-install campaigns.
   folder_path: skills/ads-apple
   extra_files: []
+tags: []
 ---
 
 # Apple Ads Audit

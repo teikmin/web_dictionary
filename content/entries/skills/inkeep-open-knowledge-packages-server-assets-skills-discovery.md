@@ -7,7 +7,7 @@ summary: This skill covers discovery, install, and opening OpenKnowledge files â
   including single files that are not part of a project (see Opening a file
   outside a project below). It does not carry the in-project read/write r...
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
     (for example `.claude/skills/open-knowledge/`) whenever `ok init` runs.
   folder_path: packages/server/assets/skills/discovery
   extra_files: []
+tags: []
 ---
 
 # OpenKnowledge â€” what it is and how to install it

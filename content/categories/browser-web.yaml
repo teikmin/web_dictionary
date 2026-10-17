@@ -1,0 +1,17 @@
+id: browser-web
+name: Browser & Web Search
+tagline: Headless browser automation, scrapers, and web search MCPs
+description: Browser automation engines, Playwright/Puppeteer wrappers, web scrapers, and real-time search APIs.
+icon: globe
+keywords:
+  - browser
+  - playwright
+  - puppeteer
+  - cdp
+  - scrape
+  - scraper
+  - crawl
+  - firecrawl
+  - tavily
+  - brave-search
+  - serp

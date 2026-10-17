@@ -6,7 +6,7 @@ tagline: "Use when receiving code review feedback (especially if unclear or
   review "
 summary: "Code review requires three distinct practices:"
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 32
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     - references/code-review-reception.md
     - references/requesting-code-review.md
     - references/verification-before-completion.md
+tags: []
 ---
 
 # Code Review

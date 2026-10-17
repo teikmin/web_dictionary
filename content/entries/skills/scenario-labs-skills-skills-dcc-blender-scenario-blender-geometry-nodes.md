@@ -8,7 +8,7 @@ summary: "REQUIRED BACKGROUND: scenario-blender-expert (execution channel,
   review loop, 5.2 API changes). Hair node groups (Interpolate, Clump, Curl,
   Hair Dynamics grooms): scenario-blender-hair."
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 51
 selection_reason: quality_percentile
@@ -49,6 +49,7 @@ skill:
     - references/procedures.md
     - references/sources.md
     - scripts/bx_gn.py
+tags: []
 ---
 
 # Blender Geometry Nodes (procedural systems and simulations)

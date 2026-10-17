@@ -6,7 +6,7 @@ tagline: Model-agnostic agent-skills platform with a harness-free canonical
   tonsofskills.com
 summary: Intent Solutions is a Claude Partner Network Select Services Partner.
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 79
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - claude-code-plugins-monorepo
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # Tons of Skills

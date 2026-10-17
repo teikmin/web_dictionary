@@ -8,7 +8,7 @@ summary: "Audit the whole repo like the senior developer who just inherited it
   and will be paged when it breaks. Order of importance: correct, safe, holds
   under load, tested, fast, lean. Lean still matters: every extra line mus..."
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 57
 selection_reason: quality_percentile
@@ -43,6 +43,8 @@ skill:
     "find bloat", "what can I delete", /ponytail-audit.
   folder_path: skills/ponytail-audit
   extra_files: []
+tags:
+  - security
 ---
 
 Audit the whole repo like the senior developer who just inherited it and

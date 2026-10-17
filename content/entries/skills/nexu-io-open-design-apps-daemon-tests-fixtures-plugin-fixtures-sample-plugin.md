@@ -6,7 +6,7 @@ tagline: Phase 1 sample plugin synthesizing a SKILL.md frontmatter for
 summary: 1. Acknowledge the user's brief via the discovery question form atom.
   2. Use TodoWrite to plan the brief. 3. Emit the brief as a deck artifact.
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
   folder_path: apps/daemon/tests/fixtures/plugin-fixtures/sample-plugin
   extra_files:
     - open-design.json
+tags: []
 ---
 
 # Sample Plugin

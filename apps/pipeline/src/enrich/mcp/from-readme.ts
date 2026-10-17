@@ -1,5 +1,6 @@
 import type { LaunchSpec, EnvVar } from '@web-db/schema';
 import { fetchFileContent } from '../../sources/github-contents.js';
+import { hasPlaceholder } from './placeholder.js';
 
 export async function extractFromReadme(
   owner: string,
@@ -11,17 +12,6 @@ export async function extractFromReadme(
 
   const content = await fetchFileContent(owner, repo, readmePath);
   if (!content) return null;
-
-function hasPlaceholder(str: string): boolean {
-  return (
-    /path\/to/i.test(str) ||
-    /\{\{.*?\}\}/.test(str) ||
-    /<.*?>/.test(str) ||
-    /your[-_]/i.test(str) ||
-    /ipaddress/i.test(str) ||
-    str.includes('...')
-  );
-}
 
   // 1. Check for JSON code blocks containing mcpServers
   const jsonBlocks = content.match(/```(?:json)?\s*([\s\S]*?)\s*```/g);

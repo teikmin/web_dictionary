@@ -4,7 +4,7 @@ name: official-skill
 tagline: Agent skill from krillinai/OpenCreator
 summary: Agent skill from krillinai/OpenCreator
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: Agent skill from krillinai/OpenCreator
   folder_path: packages/writing-templates/templates/official/insight/skill
   extra_files: []
+tags: []
 ---
 
 # 深度洞察写作规则

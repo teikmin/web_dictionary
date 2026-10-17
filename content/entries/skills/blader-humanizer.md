@@ -11,7 +11,7 @@ summary: A language model writes whatever is most likely to come next, so by
   subjects. A human writer chooses for one reader and one subject, so their
   choic...
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 50
 selection_reason: quality_percentile
@@ -62,6 +62,7 @@ skill:
     - AGENTS.md
     - CHANGELOG.md
     - LICENSE
+tags: []
 ---
 
 # Humanizer: remove AI writing patterns

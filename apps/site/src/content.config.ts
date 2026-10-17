@@ -3,7 +3,13 @@ import { glob } from 'astro/loaders';
 import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'yaml';
-import { McpEntrySchema, SkillEntrySchema, ClientSchema, CategorySchema } from '@web-db/schema';
+import {
+  McpEntrySchema,
+  SkillEntrySchema,
+  ToolEntrySchema,
+  ClientSchema,
+  CategorySchema,
+} from '@web-db/schema';
 
 export const collections = {
   mcp: defineCollection({
@@ -20,6 +26,14 @@ export const collections = {
       base: '../../content/entries/skills',
     }),
     schema: SkillEntrySchema,
+  }),
+
+  tools: defineCollection({
+    loader: glob({
+      pattern: '**/*.md',
+      base: '../../content/entries/tools',
+    }),
+    schema: ToolEntrySchema,
   }),
 
   clients: defineCollection({

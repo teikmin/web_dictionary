@@ -8,7 +8,7 @@ summary: "- Load together with antislop.md whenever the task is UI or visual
   Delivery Gate); this skill holds UI-specific depth. - Every entry has the
   s..."
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     interface: color, layout, components, motion. Load with the core."
   folder_path: skills/antislop-ui
   extra_files: []
+tags: []
 ---
 
 # antislop-ui

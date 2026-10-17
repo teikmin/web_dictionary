@@ -4,7 +4,7 @@ name: "true"
 tagline: A name that YAML reads as a boolean rather than a string
 summary: A name that YAML reads as a boolean rather than a string
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 39
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: A name that YAML reads as a boolean rather than a string
   folder_path: tests/stubs/skills/personal/name-not-a-string
   extra_files: []
+tags: []
 ---
 
 # Name Not A String

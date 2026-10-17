@@ -5,7 +5,7 @@ tagline: Collect the Slack conversation data from Slackdump Archive format.
 summary: Use the "Slackdump" MCP if it is available. It is read-only and
   supports all type of Slackdump archives.
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 37
 selection_reason: quality_percentile
@@ -35,6 +35,8 @@ skill:
   description: Collect the Slack conversation data from Slackdump Archive format.
   folder_path: cmd/slackdump/internal/mcp/assets/skills/slackdump
   extra_files: []
+tags:
+  - slack
 ---
 
 ## Accessing the Slackdump Data

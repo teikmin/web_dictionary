@@ -8,7 +8,7 @@ summary: "Scenario 1: Acquiring a Suspect Laptop Hard Drive Connect the drive
   via a Tableau T35u hardware write-blocker, identify as /dev/sdb, use dcfldd
   with SHA-256 hashing, split into 4GB segments for DVD archival, verify ha..."
 categories:
-  - security
+  - cloud-infra
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     - LICENSE
     - references/api-reference.md
     - scripts/agent.py
+tags: []
 ---
 
 # Acquiring Disk Image with dd and dcfldd

@@ -8,7 +8,7 @@ summary: "- Brand voice definition and content tone guidance - Visual identity
   standards and style guide development - Messaging framework creation - Brand
   consistency review and audit - Asset organization, naming, and approval..."
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 77
 selection_reason: quality_percentile
@@ -50,6 +50,7 @@ skill:
     - references/typography-specifications.md
     - references/update.md
     - references/visual-identity.md
+tags: []
 ---
 
 # Brand

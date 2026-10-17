@@ -6,7 +6,7 @@ summary: A comprehensive Model Context Protocol (MCP) server that enables AI
   assistants to interact with Home Assistant. Using natural language, control
   smart home devices, query states, execute services and manage your automa...
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 58
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - ha-mcp
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 > **Breaking change (v7.3.0):** `ha_config_set_yaml` has been moved to [beta](https://github.com/homeassistant-ai/ha-mcp/blob/master/docs/beta.md).

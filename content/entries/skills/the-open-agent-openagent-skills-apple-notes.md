@@ -8,7 +8,7 @@ summary: "- Install (Homebrew): brew tap antoniorodr/memo && brew install
   antoniorodr/memo/memo - Manual (pip): pip install . (after cloning the repo) -
   macOS-only; if prompted, grant Automation access to Notes.app."
 categories:
-  - browser-automation
+  - productivity-ops
 status: active
 quality_percentile: 86
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     add a note, list notes, search notes, or manage note folders.
   folder_path: skills/apple-notes
   extra_files: []
+tags: []
 ---
 
 # Apple Notes CLI

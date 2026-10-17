@@ -6,7 +6,7 @@ tagline: "Linear ticket work through Orca's CLI. Use when working from a linked
   moving "
 summary: "Choose the executable once and reuse it for every later command:"
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 64
 selection_reason: quality_percentile
@@ -41,6 +41,8 @@ skill:
     for `orca-linear`; kept so existing installs converge.
   folder_path: skills/linear-tickets
   extra_files: []
+tags:
+  - linear
 ---
 
 # Linear Tickets (Legacy Name)

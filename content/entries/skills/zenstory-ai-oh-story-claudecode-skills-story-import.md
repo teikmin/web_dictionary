@@ -9,7 +9,7 @@ summary: "- {导入书名}：用户自己已经写到一半或已经完本、现
   可以复用拆解管道分析 {导入书名}，但不得把 {导入书名} 登记为主/副对标，不得把 拆文库/{导入书名}/ 或项目 设定/ 复制进 对标/。 -
   用户没有明..."
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -51,6 +51,7 @@ skill:
     - references/outline-reverse-rules.md
     - references/outline-reverse.md
     - references/state-tracking.md
+tags: []
 ---
 
 # story-import：逆向导入已有小说

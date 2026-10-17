@@ -8,7 +8,7 @@ summary: Reuse an existing explicit choice for these harnesses and this scope
   from the user's onboarding context; do not ask again. Existing rules are
   configuration, not evidence of consent to expand their scope. Preserve them...
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 56
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     approval prompts, or apply a selected rig/seat permission policy.
   folder_path: packages/daemon/assets/plugins/openrig-core/skills/applying-a-permission-policy
   extra_files: []
+tags: []
 ---
 
 # Applying a permission policy

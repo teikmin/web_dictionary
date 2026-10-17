@@ -7,7 +7,7 @@ summary: A Model Context Protocol (MCP) server that brings Firecrawl to
   MCP-compatible AI agents — search, scrape, and interact with the live web for
   clean, agent-ready context.
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 91
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <div align="center">

@@ -8,7 +8,7 @@ summary: Before writing code, run the odoo-workflow skill if it is installed
   (trace the real source, Context Brief with file:line, definition of done);
   install it alongside this pack.
 categories:
-  - dev-tools
+  - browser-web
 status: active
 quality_percentile: 32
 selection_reason: quality_percentile
@@ -57,6 +57,8 @@ skill:
     - references/odoo-17-development-guide.md
     - references/odoo-17-field-guide.md
     - references/odoo-17-manifest-guide.md
+tags:
+  - python
 ---
 
 # Odoo 17 Skill - Master Index

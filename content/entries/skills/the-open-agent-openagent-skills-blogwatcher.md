@@ -4,7 +4,7 @@ name: blogwatcher
 tagline: Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI.
 summary: "- Go: go install github.com/Hyaxia/blogwatcher/cmd/blogwatcher@latest"
 categories:
-  - browser-automation
+  - coding-agents
 status: active
 quality_percentile: 86
 selection_reason: quality_percentile
@@ -34,6 +34,8 @@ skill:
   description: Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI.
   folder_path: skills/blogwatcher
   extra_files: []
+tags:
+  - github
 ---
 
 # blogwatcher

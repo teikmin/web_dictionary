@@ -5,7 +5,7 @@ tagline: Use when an agent needs to build or operate the embedded KrillinAI CLI,
   choose a supported command, or interpret its JSON, manifest, subtitle, dubbing
 summary: "Build both KrillinAI binaries through the repository script:"
 categories:
-  - productivity
+  - coding-agents
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
   folder_path: skills/krillinai-cli
   extra_files:
     - references/cli-contract.md
+tags: []
 ---
 
 # KrillinAI CLI

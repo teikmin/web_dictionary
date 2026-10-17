@@ -4,7 +4,7 @@ name: excel-conditional-comparison-and-large-file-processing
 tagline: 对比Excel多表中的特定系数并对异常值进行颜色标记。
 summary: Step1 提取不同Sheet中特定维度（如“B1层”）的数值，并进行跨表逻辑对比。
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 44
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: 对比Excel多表中的特定系数并对异常值进行颜色标记。
   folder_path: skills/sn-da-excel-workflow/capability/excel-cell-coloring/duplicate-value-coloring
   extra_files: []
+tags: []
 ---
 
 # excel-conditional-comparison-and-large-file-processing

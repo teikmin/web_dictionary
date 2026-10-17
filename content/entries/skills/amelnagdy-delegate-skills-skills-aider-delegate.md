@@ -7,7 +7,7 @@ tagline: "Delegate a coding task to Aider (`aider`) as a background implementer,
 summary: The loop needs only a shell command and file access, so any comparable
   orchestrator can drive it.
 categories:
-  - productivity
+  - agent-frameworks
 status: active
 quality_percentile: 34
 selection_reason: quality_percentile
@@ -52,6 +52,7 @@ skill:
     - references/review-and-land.md
     - references/writing-the-brief.md
     - scripts/relay.mjs
+tags: []
 ---
 
 # Aider Delegate

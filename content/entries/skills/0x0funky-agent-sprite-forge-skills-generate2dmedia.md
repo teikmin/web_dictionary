@@ -8,7 +8,7 @@ summary: "- Any Forge skill (or its pipeline script) needs a generated image,
   reference edit or image-to-video clip. - Once per session, to see which routes
   work here (forgedoctor.py). - The user asks to configure an API key, t..."
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 49
 selection_reason: quality_percentile
@@ -60,6 +60,8 @@ skill:
     - references/provider-survey.md
     - references/route-media.md
     - references/schemas/common.schema.json
+tags:
+  - video
 ---
 
 # Generate 2D Media

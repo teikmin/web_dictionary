@@ -4,7 +4,7 @@ name: no-description
 tagline: Agent skill from olimorris/codecompanion.nvim
 summary: Agent skill from olimorris/codecompanion.nvim
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 39
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: Agent skill from olimorris/codecompanion.nvim
   folder_path: tests/stubs/skills/personal/no-description
   extra_files: []
+tags: []
 ---
 
 # No Description

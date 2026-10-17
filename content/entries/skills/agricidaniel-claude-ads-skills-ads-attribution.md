@@ -8,7 +8,7 @@ summary: Do not assume one platform is ground truth, add incompatible reports
   together, or recommend an attribution model without the operator's decision
   context.
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 81
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     Singular, or cross-platform discrepancies.
   folder_path: skills/ads-attribution
   extra_files: []
+tags: []
 ---
 
 # Attribution Audit

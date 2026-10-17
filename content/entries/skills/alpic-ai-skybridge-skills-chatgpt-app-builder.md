@@ -11,7 +11,7 @@ summary: "⚠️ The plugin is consumed by two users at once: the human and the
   the LLM sees its state. Internalize this before writing code: the view is
   y..."
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 53
 selection_reason: quality_percentile
@@ -59,6 +59,7 @@ skill:
     - evals/state-and-context.json
     - evals/ui-guidelines.json
     - evals/update-existing.json
+tags: []
 ---
 
 # Creating Plugins For LLMs

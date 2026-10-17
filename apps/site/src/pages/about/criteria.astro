@@ -96,11 +96,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <span>Layer 2: Type Check &amp; Verifiable Evidence</span>
         </h2>
         <p class="text-sm text-slate-600 leading-relaxed mb-4">
-          A repo claiming to be an MCP server or Agent Skill is never trusted by topic alone. Our engine inspects git trees for verifiable evidence:
+          A repo claiming to be an MCP server, Agent Skill, or Developer Tool is never trusted by topic alone. Our engine inspects git trees for verifiable evidence:
         </p>
-        <ul class="list-disc pl-5 space-y-2 text-xs leading-relaxed text-slate-700">
-          <li><strong class="text-slate-900">MCP Servers:</strong> Must have SDK dependency (<code class="bg-blue-50 text-blue-700 border border-blue-200 px-1 py-0.5 rounded font-mono">@modelcontextprotocol/sdk</code>, Python <code class="bg-blue-50 text-blue-700 border border-blue-200 px-1 py-0.5 rounded font-mono">mcp</code>), manifest entry point, or presence in the official MCP Registry.</li>
-          <li><strong class="text-slate-900">Agent Skills:</strong> Must contain physical <code class="bg-teal-50 text-teal-700 border border-teal-200 px-1 py-0.5 rounded font-mono">SKILL.md</code> files with valid YAML frontmatter specifying instructions, tools, and actions.</li>
+        <ul class="list-disc pl-5 space-y-2.5 text-xs leading-relaxed text-slate-700">
+          <li><strong class="text-slate-900">1. MCP Servers (`mcp_server`):</strong> Must have verifiable SDK dependency (<code class="bg-blue-50 text-blue-700 border border-blue-200 px-1 py-0.5 rounded font-mono">@modelcontextprotocol/sdk</code>, Python <code class="bg-blue-50 text-blue-700 border border-blue-200 px-1 py-0.5 rounded font-mono">mcp</code> / <code class="bg-blue-50 text-blue-700 border border-blue-200 px-1 py-0.5 rounded font-mono">fastmcp</code>, Go/Rust SDKs), manifest entry points, or presence in the official MCP Registry.</li>
+          <li><strong class="text-slate-900">2. Agent Skills (`agent_skill`):</strong> Must contain physical <code class="bg-teal-50 text-teal-700 border border-teal-200 px-1 py-0.5 rounded font-mono">SKILL.md</code> files with valid YAML frontmatter specifying procedural instructions and tooling. Sibling skills within monorepos are aggregated into clean Skill Packs.</li>
+          <li><strong class="text-slate-900">3. Agent Tools &amp; Repos (`agent_tool`):</strong> Standalone autonomous agent frameworks, terminal CLIs, browser harnesses, and AI developer engines (<code class="bg-purple-50 text-purple-700 border border-purple-200 px-1 py-0.5 rounded font-mono">topic:ai-agents</code>, <code class="bg-purple-50 text-purple-700 border border-purple-200 px-1 py-0.5 rounded font-mono">topic:coding-agent</code>) with executable install targets (<code class="font-mono text-slate-800">npx</code>, <code class="font-mono text-slate-800">uvx</code>, <code class="font-mono text-slate-800">pip install</code>, <code class="font-mono text-slate-800">brew</code>, <code class="font-mono text-slate-800">git clone</code>).</li>
         </ul>
       </div>
 
@@ -128,6 +129,35 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <li>&bull; Star burst anomaly (&gt;80% of stars in under 48h)</li>
               <li>&bull; Commit activity check (avoids zero-code star farms)</li>
               <li>&bull; Issue ratio check (abnormally low issue activity)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2.5">
+          <span class="w-7 h-7 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center text-orange-700 text-sm font-mono font-bold">4</span>
+          <span>Layer 4: Weekly Trend Velocity &amp; Momentum Radar</span>
+        </h2>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+          Unlike all-time leaderboards where 100k-star giants remain permanently frozen at the top, our Weekly Trend Radar measures real 7-day developer velocity (&Delta;S<sub>7d</sub>) computed from historical Git snapshots in <code class="font-mono text-slate-800 bg-slate-100 px-1 py-0.5 rounded">data/signals/</code>.
+        </p>
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs text-xs space-y-3">
+          <div>
+            <span class="font-bold text-slate-900 text-sm block mb-1">Breakout Velocity Formula</span>
+            <code class="block p-3 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-800 overflow-x-auto">
+              TrendingScore = &Delta;S<sub>7d</sub> &times; (1 + min(2.0, &Delta;S<sub>7d</sub> / max(S<sub>t-1</sub>, 250)))
+            </code>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            This formula rewards both absolute star volume (&Delta;S<sub>7d</sub>) and percentage growth velocity (&Delta;S<sub>7d</sub> / S<sub>t-1</sub>), giving rising newcomers a fair chance to compete against massive incumbents.
+          </p>
+          <div class="pt-2 border-t border-slate-100">
+            <span class="font-bold text-slate-900 block mb-1">Anti-Sybil &amp; Isolation Safeguards:</span>
+            <ul class="list-disc pl-5 space-y-1 text-slate-600">
+              <li><strong>Non-Negative Clamping:</strong> &Delta;S<sub>7d</sub> = max(0, S<sub>t</sub> - S<sub>t-1</sub>) prevents star revocation glitches from corrupting ranks.</li>
+              <li><strong>Synthetic Age Velocity Quarantine:</strong> Genuinely new repos without historical baseline data are quarantined from dominating the weekly top 25 until 7 days of real velocity have been observed.</li>
+              <li><strong>Monorepo Sub-Skill Quarantine:</strong> Only primary repository entries (<code class="font-mono">is_pack_primary === true</code>) qualify for leaderboard ranking, preventing multi-skill repos from filling all 25 top spots.</li>
             </ul>
           </div>
         </div>

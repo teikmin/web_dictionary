@@ -9,7 +9,7 @@ summary: "1. Inspect the repo: git status, current branch, remotes, default
   rules. 2. Compute the merge base against the target branch and record the
   e..."
 categories:
-  - ai-frameworks
+  - coding-agents
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -46,6 +46,9 @@ skill:
     - references/pr-body.md
     - references/visual-evidence.md
     - scripts/upload-github-attachment.sh
+tags:
+  - github
+  - git
 ---
 
 # Create Pull Request

@@ -6,7 +6,7 @@ tagline: Manage Sub2API admin APIs for accounts, redeem codes, groups, proxies,
   upda
 summary: For all commands and payload examples, read references/admin-cli.md.
 categories:
-  - other
+  - coding-agents
 status: active
 quality_percentile: 93
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
     - agents/openai.yaml
     - references/admin-cli.md
     - scripts/sub2api-admin.js
+tags: []
 ---
 
 # Sub2API Admin

@@ -8,7 +8,7 @@ summary: "Target: the most recent completed piece of work in this conversation,
   or whatever the user names (a diff, a directory, a branch, another agent's
   report pasted in)."
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 44
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
   folder_path: skills/fable-judge
   extra_files:
     - agents/openai.yaml
+tags: []
 ---
 
 # fable-judge

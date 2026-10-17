@@ -8,7 +8,7 @@ summary: This is a different failure mode from staleness (an ADR that changed
   but whose stored record didn't) — that's convergence, adr-index's job. This is
   reaping — the source of truth (the ADR file) is gone, so the derived...
 categories:
-  - databases
+  - other
 status: active
 quality_percentile: 79
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     (scripts/reindex.mjs). Use when adr-index alone leaves stale rows behind.
   folder_path: plugins/ruflo-adr/skills/adr-reindex
   extra_files: []
+tags: []
 ---
 
 # ADR Reindex

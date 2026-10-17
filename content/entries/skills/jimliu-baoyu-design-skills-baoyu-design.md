@@ -8,7 +8,7 @@ summary: 1. Load the methodology. Read system-prompt.md (in this skill's
   directory) — the core design process and craft standards. Follow it for the
   whole job.
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -61,6 +61,7 @@ skill:
     - agents/gen-pptx/package-lock.json
     - agents/gen-pptx/package.json
     - agents/gen-pptx/src/browser/capture-editable.ts
+tags: []
 ---
 
 # Design

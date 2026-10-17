@@ -7,7 +7,7 @@ tagline: "Cloud architecture diagrams in both directions: AI prompt or JSON to
 summary: Professional cloud architecture diagrams in official AWS, Azure and GCP
   style, from a description in Claude or ChatGPT or from your Terraform
 categories:
-  - dev-tools
+  - cloud-infra
 status: active
 quality_percentile: 55
 selection_reason: quality_percentile
@@ -40,6 +40,8 @@ launch:
     - terravision
   env_vars: []
   confidence: manifest
+tags:
+  - aws
 ---
 
 # <img src="https://raw.githubusercontent.com/patrickchugh/terravision/main/images/logo/terravision-icon.svg" alt="" width="48" height="48"> TerraVision

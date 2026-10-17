@@ -7,7 +7,7 @@ summary: "n8n-MCP serves as a bridge between n8n's workflow automation platform
   and AI models, enabling them to understand and work with n8n nodes
   effectively. It provides structured access to:"
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 97
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ launch:
     - n8n-mcp
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # n8n-MCP

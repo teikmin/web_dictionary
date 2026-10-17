@@ -8,7 +8,7 @@ export const codexAdapter: ClientAdapter = {
   renderMcp(serverName: string, spec: LaunchSpec): ClientConfigOutput {
     let mcpSnippet = '';
 
-    if (!spec.command && !spec.remote_url) {
+    if (spec.confidence === 'none' || (!spec.command && !spec.remote_url)) {
       return {
         clientId: 'codex',
         clientName: 'Codex',

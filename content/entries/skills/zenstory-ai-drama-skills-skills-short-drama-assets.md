@@ -5,7 +5,7 @@ tagline: 从短剧剧本拆出人物/造型、地点/视图、道具/状态和�
 summary: "- 身份：换一个就不再是同一个人、地或物； - 变体：身份不变，但服装、伤势、时段、天气、开合或持有状态改变； -
   镜头瞬态：姿势、视线、左右手、站位和相机角度，由分镜拥有； - 故事语义：知识、目标、关系和情绪由写作/开发拥有，只引用可见后果。"
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 67
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
     - examples/minimal/characters.jsonl
     - examples/minimal/looks.jsonl
     - references/asset-review-checklist.md
+tags: []
 ---
 
 # 短剧资产拆解

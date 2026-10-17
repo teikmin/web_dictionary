@@ -5,7 +5,7 @@ tagline: "AI Berkshire skill: 段永平问答：以他的方式思考. Source: s
 summary: This skill is generated from skills/dyp-ask.md so Claude Code and Codex
   users share one canonical workflow.
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 95
 selection_reason: quality_percentile
@@ -35,6 +35,7 @@ skill:
   description: "AI Berkshire skill: 段永平问答：以他的方式思考. Source: skills/dyp-ask.md."
   folder_path: codex-skills/dyp-ask
   extra_files: []
+tags: []
 ---
 
 ## Codex adapter note

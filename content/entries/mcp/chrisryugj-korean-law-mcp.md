@@ -6,7 +6,7 @@ tagline: 법제처 국가법령정보를 LLM에서 바로 조회하는 MCP 서�
 summary: "바로 쓰기: Claude.ai 커넥터에 https://mcp.gomdori.app/law?oc=본인키 한 줄, Claude
   Code는 플러그인 두 줄 → 설치 및 사용법"
 categories:
-  - ai-frameworks
+  - domain-research
 status: active
 quality_percentile: 93
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # Korean Law MCP

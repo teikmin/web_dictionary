@@ -8,7 +8,7 @@ summary: "1. Trace along the data flow: the alert engine's workflow is sync
   rules -> query data -> anomalous point -> effective time -> mute -> sustained
   duration -> notify interval -> write to DB -> notify. Diagnose in this sa..."
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 83
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
     ops-troubleshooting). Only supported on Release 22 and above.
   folder_path: aiagent/skill/embedded/builtin/alert-rule-troubleshoot
   extra_files: []
+tags: []
 ---
 
 # Nightingale (n9e) Alert Rule Troubleshooting Expert

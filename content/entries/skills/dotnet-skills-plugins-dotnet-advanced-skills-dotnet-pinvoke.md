@@ -8,7 +8,7 @@ summary: This skill covers both DllImport (available since .NET Framework 1.0)
   and LibraryImport (source-generated, .NET 7+). When targeting .NET Framework,
   always use DllImport. When targeting .NET 7+, prefer LibraryImport fo...
 categories:
-  - dev-tools
+  - databases-memory
 status: active
 quality_percentile: 49
 selection_reason: quality_percentile
@@ -48,6 +48,8 @@ skill:
   extra_files:
     - references/diagnostics.md
     - references/type-mapping.md
+tags:
+  - memory
 ---
 
 # .NET P/Invoke

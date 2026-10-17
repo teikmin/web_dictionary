@@ -7,7 +7,7 @@ summary: "- Main results pass /result-to-claim with claimsupported = yes or
   partial - User explicitly requests ablation planning - /auto-review-loop
   reviewer identifies missing ablations"
 categories:
-  - ai-frameworks
+  - domain-research
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
     partial) and ablation studies are needed for paper submission.
   folder_path: skills/ablation-planner
   extra_files: []
+tags: []
 ---
 
 # Ablation Planner

@@ -7,7 +7,7 @@ summary: Your job is not to generate generic website mockups. Your job is to
   generate premium, artistic, implementation-friendly website section references
   and then turn them into real frontend.
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 64
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     readable, and visible on a small laptop.
   folder_path: skills/image-to-code-skill
   extra_files: []
+tags: []
 ---
 
 # CORE DIRECTIVE: IMAGE-FIRST WEBSITE DESIGN TO CODE

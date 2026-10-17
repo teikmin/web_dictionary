@@ -8,7 +8,7 @@ summary: "- After receiving a code review from Centinela (QA) - When a review
   report has findings that need to be addressed - Fixing critical and warning
   issues before re-verification"
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 90
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     re-verification. Delegates to the Forja (Dev) agent.
   folder_path: plugins/agent-triforce/skills/review-findings
   extra_files: []
+tags: []
 ---
 
 # Review Findings

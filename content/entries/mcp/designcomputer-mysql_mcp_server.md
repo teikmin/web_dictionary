@@ -6,7 +6,7 @@ tagline: A Model Context Protocol (MCP) server that enables secure interaction
 summary: Add --scope project after mcp add to keep the registration in the
   current workspace. See Autohand Code for current CLI details.
 categories:
-  - databases
+  - databases-memory
 status: active
 quality_percentile: 33
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - mysql_mcp_server
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # MySQL MCP Server

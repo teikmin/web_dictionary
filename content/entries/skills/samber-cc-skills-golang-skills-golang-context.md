@@ -8,7 +8,7 @@ summary: context.Context is Go's mechanism for propagating cancellation signals,
   deadlines, and request-scoped values across API boundaries and between
   goroutines. Think of it as the "session" of a request — it ties together e...
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
     - references/cancellation.md
     - references/http-services.md
     - references/values-tracing.md
+tags: []
 ---
 
 > **Community default.** A company skill that explicitly supersedes `samber/cc-skills-golang@golang-context` skill takes precedence.

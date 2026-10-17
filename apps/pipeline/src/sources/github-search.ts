@@ -35,6 +35,7 @@ export async function searchRepositories(query: string, maxPages = 3): Promise<C
           createdAt: item.created_at,
           pushedAt: item.pushed_at || item.created_at,
           license: item.license?.spdx_id || null,
+          language: item.language || null,
           topics: item.topics || [],
           defaultBranch: item.default_branch || 'main',
         });

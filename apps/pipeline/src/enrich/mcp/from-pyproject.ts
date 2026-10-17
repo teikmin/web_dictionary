@@ -1,5 +1,6 @@
 import type { LaunchSpec } from '@web-db/schema';
 import { fetchFileContent } from '../../sources/github-contents.js';
+import { hasPlaceholder } from './placeholder.js';
 
 export async function extractFromPyproject(
   owner: string,
@@ -17,6 +18,15 @@ export async function extractFromPyproject(
   if (!nameMatch || !nameMatch[1]) return null;
 
   const packageName = nameMatch[1];
+  if (hasPlaceholder(packageName)) {
+    return {
+      transport: 'stdio',
+      args: [],
+      env_vars: [],
+      confidence: 'none',
+    };
+  }
+
   return {
     transport: 'stdio',
     command: 'uvx',

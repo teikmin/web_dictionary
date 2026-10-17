@@ -6,7 +6,7 @@ summary: The same path on every platform. If $XDGCONFIGHOME is set to an
   absolute path, it's $XDGCONFIGHOME/atlas/config.toml instead — check that
   variable before assuming.
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 69
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
   description: Inspect and safely update Atlas user preferences through Atlas's config.toml.
   folder_path: src-tauri/resources/skills/atlas-self-configure
   extra_files: []
+tags: []
 ---
 
 # Atlas self-configure

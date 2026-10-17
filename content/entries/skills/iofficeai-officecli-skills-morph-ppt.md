@@ -7,7 +7,7 @@ tagline: Use this skill when the user wants a .pptx with smooth cross-slide
 summary: When the pptx base rules cover it, the text here says → see pptx v2 §X.
   Read skills/officecli-pptx/SKILL.md first if you have not.
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -56,6 +56,7 @@ skill:
     - reference/styles/bw--brutalist-raw/style.md
     - reference/styles/bw--mono-line/build.sh
     - reference/styles/bw--mono-line/bw__mono_line.pptx
+tags: []
 ---
 
 # OfficeCLI Morph-PPT Skill

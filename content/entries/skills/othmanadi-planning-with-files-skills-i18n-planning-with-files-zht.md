@@ -9,7 +9,7 @@ summary: 1. 使用已安裝的 scripts/resolve-plan-dir.sh（或 .ps1），配�
   若明確選擇器被拒絕，或工作階段隔離已啟用且有多個計畫卻沒有
   PLANID，請修正釘選，不要退回另一項任務。只有沒有適用的選擇器或具名計畫時，才使用專案根目錄的舊檔案。 3. 執行 g...
 categories:
-  - dev-tools
+  - databases-memory
 status: active
 quality_percentile: 70
 selection_reason: quality_percentile
@@ -53,6 +53,7 @@ skill:
     - scripts/inject-plan.py
     - scripts/inject-plan.sh
     - scripts/ledger-append.ps1
+tags: []
 ---
 
 # 檔案規劃系統

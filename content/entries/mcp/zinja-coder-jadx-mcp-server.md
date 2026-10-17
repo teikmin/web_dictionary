@@ -6,7 +6,7 @@ summary: ⚡ Fully automated MCP server built to communicate with JADX-AI-MCP
   Plugin to analyze Android APKs using LLMs like Claude — uncover
   vulnerabilities, parse manifests, and reverse engineer effortlessly.
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 42
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - jadx-mcp-server
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <div align="center">

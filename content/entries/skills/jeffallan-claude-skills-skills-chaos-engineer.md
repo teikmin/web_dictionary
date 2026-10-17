@@ -8,7 +8,7 @@ summary: "- Designing and executing chaos experiments - Implementing failure
   injection frameworks (Chaos Monkey, Litmus, etc.) - Planning and conducting
   game day exercises - Building blast radius controls and safety mechanisms..."
 categories:
-  - other
+  - media-creative
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -49,6 +49,7 @@ skill:
     - references/game-days.md
     - references/infrastructure-chaos.md
     - references/kubernetes-chaos.md
+tags: []
 ---
 
 # Chaos Engineer

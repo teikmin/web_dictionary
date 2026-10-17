@@ -7,7 +7,7 @@ summary: Discover inspiration. Create images and videos with the latest AI
   models. Open-source MCP tools for ChatGPT, Claude, Cursor, OpenClaw and other
   AI assistants.
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 72
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ launch:
     - meigen
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <h1 align="center">MeiGen AI Design MCP</h1>

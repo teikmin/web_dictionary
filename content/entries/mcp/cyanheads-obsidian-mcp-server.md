@@ -7,7 +7,7 @@ summary: obsidian-mcp-server Read, write, search, and surgically edit Obsidian
   vault notes, tags, and frontmatter via MCP. STDIO or Streamable HTTP. 14 Tools
   • 3 Resources
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 51
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ launch:
     - obsidian-mcp-server
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <div align="center">

@@ -7,7 +7,7 @@ tagline: "The most compatible MCP CLI client. Supports: tools, resources,
 summary: mcpc is a command-line client for the Model Context Protocol (MCP) that
   maps every MCP operation to an intuitive shell command.
 categories:
-  - security
+  - agent-frameworks
 status: active
 quality_percentile: 47
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ launch:
     - "@apify/mcpc"
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # mcpc — a universal MCP CLI client

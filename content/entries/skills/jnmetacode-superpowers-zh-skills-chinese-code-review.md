@@ -6,7 +6,7 @@ tagline: 中文 review 沟通参考——话术模板、分级标注（必须修
 summary: 国内团队做 Code Review
   常遇到两个极端：要么过度客气导致关键问题被放过，要么照搬西方直白风格让同事下不来台。本技能帮你找到平衡点——既不回避问题，又让人愿意接受反馈。
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 80
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ skill:
     /chinese-code-review 时调用，不要根据上下文自动触发。
   folder_path: skills/chinese-code-review
   extra_files: []
+tags: []
 ---
 
 # 中文代码审查规范

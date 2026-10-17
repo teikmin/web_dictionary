@@ -7,7 +7,7 @@ summary: "- Choose what becomes part of your wiki. Review generated answers and
   check their citations before saving them as published pages. - Approve pages
   together. Review a batch of generated pages and publish the ones you c..."
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 65
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ launch:
     - llm-wiki-compiler
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # llmwiki

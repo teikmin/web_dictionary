@@ -7,7 +7,7 @@ summary: 1. Set the Bash working directory to the exact project the user named
   and set a finite timeout, normally 10 minutes. 2. Check availability with
   command -v claude. If it is missing, stop and ask the user to install Cla...
 categories:
-  - productivity
+  - coding-agents
 status: active
 quality_percentile: 70
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     Claude Code or compare its result with another coding agent.
   folder_path: resources/code-cli-skills/code-mate-claude-code
   extra_files: []
+tags: []
 ---
 
 # Claude Code

@@ -12,7 +12,7 @@ summary: This guide covers pgvector setup and tuning—not embedding model
   Requires pgvector 0.8.0+ for all features (halfvec, binaryquantize, iterative
   scan).
 categories:
-  - databases
+  - browser-web
 status: active
 quality_percentile: 43
 selection_reason: quality_percentile
@@ -69,6 +69,7 @@ skill:
     performance tuning.
   folder_path: skills/pgvector-semantic-search
   extra_files: []
+tags: []
 ---
 
 # pgvector for Semantic Search

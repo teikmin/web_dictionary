@@ -7,7 +7,7 @@ tagline: Google Ads MCP server + Meta Ads MCP (Facebook Ads MCP) + Google
 summary: "Skip the setup: use the hosted Ryze MCP (no developer token, no Google
   Cloud project, approval-gated writes)."
 categories:
-  - security
+  - productivity-ops
 status: active
 quality_percentile: 73
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # Google Ads MCP + Meta Ads MCP (Facebook Ads MCP) + GA4: one hosted MCP server for Claude, ChatGPT and Cursor

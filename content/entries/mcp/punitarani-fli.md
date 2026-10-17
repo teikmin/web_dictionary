@@ -4,7 +4,7 @@ name: fli
 tagline: Google Flights MCP, CLI and Python Library
 summary: "The MCP server provides two main tools:"
 categories:
-  - dev-tools
+  - domain-research
 status: active
 quality_percentile: 48
 selection_reason: quality_percentile
@@ -37,6 +37,8 @@ launch:
     - flights
   env_vars: []
   confidence: manifest
+tags:
+  - python
 ---
 
 # 🛫 Fli - Flight Search MCP Server and Library

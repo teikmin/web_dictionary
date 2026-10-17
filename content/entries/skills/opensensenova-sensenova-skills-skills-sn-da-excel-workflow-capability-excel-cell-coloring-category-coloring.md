@@ -4,7 +4,7 @@ name: large-file-parquet-analysis-and-highlight
 tagline: 当Excel文件总行数超过1万行时，通过转换为Parquet格式提升读取性能，提取目标指标并计算最大值，最后将结果输出为Excel并对特定行进行高亮标注。
 summary: Step2 当总行数 ≥ 1万时，读取已转换为 Parquet 格式的数据文件，通过行列匹配提取目标指标数据，并找出最大值及其对应分类。
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 44
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: 当Excel文件总行数超过1万行时，通过转换为Parquet格式提升读取性能，提取目标指标并计算最大值，最后将结果输出为Excel并对特定行进行高亮标注。
   folder_path: skills/sn-da-excel-workflow/capability/excel-cell-coloring/category-coloring
   extra_files: []
+tags: []
 ---
 
 # Skill Steps

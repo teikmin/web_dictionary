@@ -8,7 +8,7 @@ summary: Pair this skill with appllama-app-design-skill for every
   design/implementation step — this skill tells you what to study; that one
   tells you how to build.
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 33
 selection_reason: quality_percentile
@@ -49,6 +49,8 @@ skill:
     - references/build-from-scratch.md
     - references/improve-a-screen.md
     - references/research-methods.md
+tags:
+  - research
 ---
 
 # Appllama Usage Skill

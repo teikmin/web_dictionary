@@ -6,7 +6,7 @@ tagline: "Klavis AI:  MCP integration platforms that let AI agents use tools
 summary: "- 📖 Documentation - 💬 Discord Community - 🐛 Report Issues - 🌐
   Klavis AI Website"
 categories:
-  - productivity
+  - coding-agents
 status: active
 quality_percentile: 18
 selection_reason: quality_percentile
@@ -37,6 +37,8 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags:
+  - discord
 ---
 
 <div align="center">

@@ -9,7 +9,7 @@ summary: 1. Read the active DESIGN.md (injected above). Lean into the typography
   tokens — long-form is 70% type, 20% image, 10% chrome. 2. Pick the topic from
   the brief and write a real article — at least 600 words across 4–6...
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
   folder_path: design-templates/blog-post
   extra_files:
     - example.html
+tags: []
 ---
 
 # Blog Post Skill

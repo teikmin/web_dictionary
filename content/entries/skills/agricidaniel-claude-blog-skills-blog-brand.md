@@ -7,7 +7,7 @@ tagline: Establish durable brand and voice context for cross-skill consumption.
 summary: "- BRAND.md: who the audience is, what the brand stands for, what to
   never say - VOICE.md: how the brand sounds, structurally and lexically"
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 54
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     "establish editorial brand", "brand guidelines for blog".
   folder_path: skills/blog-brand
   extra_files: []
+tags: []
 ---
 
 # Blog Brand: Durable Editorial Context

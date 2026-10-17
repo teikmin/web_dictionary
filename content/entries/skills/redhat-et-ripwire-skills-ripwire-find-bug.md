@@ -8,7 +8,7 @@ summary: = repo root. Calls are warm after the first parse — chain freely. Pic
   the branch that matches what you already know; each converges on the same
   evidence trail (relevance × maintenance pain × blast radius), so you can...
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 53
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
     focused read is enough.
   folder_path: skills/ripwire-find-bug
   extra_files: []
+tags: []
 ---
 
 # Find the bug with ripwire

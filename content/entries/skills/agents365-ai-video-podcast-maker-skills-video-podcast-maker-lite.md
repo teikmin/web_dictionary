@@ -9,7 +9,7 @@ summary: 1. Locate the Remotion project — the directory containing both
   directory first; if it is not there, ask the user for the project path. Do
   NOT...
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 36
 selection_reason: quality_percentile
@@ -46,6 +46,8 @@ skill:
   extra_files:
     - references/pronunciation.md
     - scripts/tts.py
+tags:
+  - video
 ---
 
 # Video Podcast Maker Lite

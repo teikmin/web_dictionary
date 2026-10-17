@@ -7,7 +7,7 @@ tagline: Excel 数据分析多步编排器。覆盖：(1) 读取多 Sheet Excel 
 summary: Count rows per sheet without loading data into memory. Use openpyxl
   readonly mode — this works for any file size.
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 44
 selection_reason: quality_percentile
@@ -55,6 +55,8 @@ skill:
     - capability/excel-data-analysis/group-by-analysis/SKILL.md
     - capability/excel-data-analysis/kpi-metric-analysis/SKILL.md
     - capability/excel-data-analysis/pivot-table-analysis/SKILL.md
+tags:
+  - memory
 ---
 
 # Excel Data Analysis Workflow

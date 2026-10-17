@@ -8,7 +8,7 @@ summary: Help users inject artificial failures and disruptions into a mirrord
   session's outgoing traffic, to test how their app behaves under unexpected
   conditions. A chaos rule pairs a selector (which traffic to match) with a...
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 38
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
   folder_path: mirrord/mcp/corpus/skills/mirrord-chaos
   extra_files:
     - README.md
+tags: []
 ---
 
 # Mirrord Chaos Testing Skill

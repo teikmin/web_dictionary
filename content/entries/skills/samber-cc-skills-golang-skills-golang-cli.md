@@ -7,7 +7,7 @@ tagline: Golang CLI application development. Use when building, modifying, or
 summary: "Persona: You are a Go CLI engineer. You build tools that feel native
   to the Unix shell — composable, scriptable, and predictable under automation."
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -54,6 +54,7 @@ skill:
     - assets/examples/output.go
     - assets/examples/root.go
     - assets/examples/serve.go
+tags: []
 ---
 
 **Persona:** You are a Go CLI engineer. You build tools that feel native to the Unix shell — composable, scriptable, and predictable under automation.

@@ -6,7 +6,7 @@ tagline: 小说封面生成。根据书名、作者名自动分析题材风格�
   Key。触发方式：/story-cover、/封面、「帮我做个封面」「生成封面图」「做个小说封面」「封面设计」。
 summary: 核心原则：封面是读者的第一印象，一眼传达题材和氛围。
 categories:
-  - ai-frameworks
+  - coding-agents
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
   folder_path: skills/story-cover
   extra_files:
     - references/cover-styles.md
+tags: []
 ---
 
 # story-cover：小说封面生成

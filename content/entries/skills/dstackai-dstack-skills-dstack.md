@@ -7,7 +7,7 @@ tagline: >
 summary: dstack provisions and orchestrates workloads across GPU clouds,
   Kubernetes, and on-prem via fleets.
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 44
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ skill:
     orchestration across GPU clouds, Kubernetes, and on-prem clusters.
   folder_path: skills/dstack
   extra_files: []
+tags:
+  - kubernetes
 ---
 
 # dstack

@@ -7,7 +7,7 @@ summary: '【模板: 小红书图文卡片】 - 输出 N 张连续卡片, 每张
   张以内最佳); 一张卡只承载一个核心观点。 - 第一张是封面: 巨大的标题 + 1 行副标题 + 一个吸引人的标签 (类似 "干货预警" /
   "建议收藏")。...'
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 69
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
   extra_files:
     - example.html
     - example.md
+tags: []
 ---
 
 【模板: 小红书图文卡片】

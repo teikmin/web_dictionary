@@ -5,7 +5,7 @@ tagline: A bridge between Streamable HTTP and stdio MCP transports
 summary: "The mcp-proxy is a tool that lets you switch between server
   transports. There are two supported modes:"
 categories:
-  - other
+  - agent-frameworks
 status: active
 quality_percentile: 66
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ launch:
     - mcp-proxy
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # mcp-proxy

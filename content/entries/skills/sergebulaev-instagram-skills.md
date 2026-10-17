@@ -8,7 +8,7 @@ summary: "- Writing a caption (hook in the first 125 chars, body, CTA) -> use
   ig-caption-writer - Planning a carousel slide by slide (hook slide to payoff
   slide) -> use ig-carousel-planner - Reverse-engineering the hook from a..."
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -54,6 +54,7 @@ skill:
     - .codex-marketplace/instagram-skills/SKILL.md
     - .codex-marketplace/instagram-skills/assets/hero.png
     - .codex-marketplace/instagram-skills/assets/icon.svg
+tags: []
 ---
 
 # Instagram Marketing Skills

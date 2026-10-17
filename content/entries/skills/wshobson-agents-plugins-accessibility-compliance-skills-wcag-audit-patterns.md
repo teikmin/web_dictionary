@@ -8,7 +8,7 @@ summary: "- Conducting accessibility audits - Fixing WCAG violations -
   Implementing accessible components - Preparing for accessibility lawsuits -
   Meeting ADA/Section 508 requirements - Achieving VPAT compliance"
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 92
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
   folder_path: plugins/accessibility-compliance/skills/wcag-audit-patterns
   extra_files:
     - references/details.md
+tags: []
 ---
 
 # WCAG Audit Patterns

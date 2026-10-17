@@ -6,7 +6,7 @@ tagline: "TalkToFigma: MCP integration between AI Agent (Cursor, Claude Code,
   design"
 summary: https://github.com/user-attachments/assets/129a14d2-ed73-470f-9a4c-2240b2a4885c
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 37
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ launch:
     - cursor-talk-to-figma-mcp
   env_vars: []
   confidence: manifest
+tags:
+  - github
 ---
 
 # Talk to Figma MCP

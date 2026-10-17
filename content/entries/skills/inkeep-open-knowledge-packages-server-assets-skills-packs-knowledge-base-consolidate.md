@@ -8,7 +8,7 @@ summary: Promote existing research on a topic into a canonical article under
   articles/. Canonical, not provisional — the output is the source of truth for
   future agents, not a snapshot of uncertainty.
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -45,6 +45,8 @@ skill:
     is the sibling `research-with-sources` skill.
   folder_path: packages/server/assets/skills/packs/knowledge-base/consolidate
   extra_files: []
+tags:
+  - research
 ---
 
 # Consolidate — promote research into a canonical article

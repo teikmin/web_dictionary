@@ -8,7 +8,7 @@ summary: "- Decomposing a feature for parallel implementation - Establishing
   between parallel work streams - Choosing integration strategies (vertical
   sli..."
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 92
 selection_reason: quality_percentile
@@ -48,6 +48,7 @@ skill:
   extra_files:
     - references/file-ownership.md
     - references/merge-strategies.md
+tags: []
 ---
 
 # Parallel Feature Development

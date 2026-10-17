@@ -8,7 +8,7 @@ summary: 1. Generate payloads. Agent toolset → alwaysallow; every MCP toolset 
   alwaysask (baked into the agent payload's permissionpolicies). 2. Write the
   launch script. launch.sh creates environment → agent → session → kicko...
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 46
 selection_reason: quality_percentile
@@ -52,6 +52,7 @@ skill:
     - scripts/launch_script_writer.py
     - scripts/payload_generator.py
     - scripts/payload_validator.py
+tags: []
 ---
 
 # Phase 2 — Stage → Launch

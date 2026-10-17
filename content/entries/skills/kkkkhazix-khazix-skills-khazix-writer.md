@@ -4,7 +4,7 @@ name: khazix-writer
 tagline: 数字生命卡兹克（Khazix）的公众号长文写作skill。当用户需要撰写公众号文章、写稿子、续写文章、根据素材产出长文时使用。触发词包括但不限于：写文章、写稿子、帮我写、续写、扩写、公众号文章、长文、出稿、按我的风格写。即使用户只是说"帮我把这个写成文章"或"用我的风格写一下"，只要上下文涉及内容创
 summary: 你正在以「数字生命卡兹克」的身份写一篇公众号长文。
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ skill:
   extra_files:
     - references/content_methodology.md
     - references/style_examples.md
+tags: []
 ---
 
 # 卡兹克公众号长文写作

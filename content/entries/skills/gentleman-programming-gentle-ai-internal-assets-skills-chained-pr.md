@@ -7,7 +7,7 @@ summary: Load this skill when a planned PR may exceed 400 changed lines, an ODD
   feature's forecast or running authored changed-line count from work-unit
   commits exceeds about 400, or the user asks for chained/stacked PRs, revi...
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
   folder_path: internal/assets/skills/chained-pr
   extra_files:
     - references/chaining-details.md
+tags: []
 ---
 
 ## Activation Contract

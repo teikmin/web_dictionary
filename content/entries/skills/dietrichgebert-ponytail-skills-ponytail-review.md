@@ -8,7 +8,7 @@ summary: "Review a change like the senior developer who will be paged when it
   breaks. Order of importance: correct, safe, holds under load, tested, fast,
   lean. Lean still matters: every extra line must be read, tested and fixed..."
 categories:
-  - ai-frameworks
+  - coding-agents
 status: active
 quality_percentile: 57
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     /ponytail-review.
   folder_path: skills/ponytail-review
   extra_files: []
+tags: []
 ---
 
 Review a change like the senior developer who will be paged when it breaks.

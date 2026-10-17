@@ -6,7 +6,7 @@ tagline: Fetches URLs and PDFs, then summarizes or returns clean Markdown. Use
   l
 summary: Fetch any URL or local PDF.
 categories:
-  - other
+  - media-creative
 status: active
 quality_percentile: 50
 selection_reason: quality_percentile
@@ -43,6 +43,8 @@ skill:
     - scripts/fetch_feishu.py
     - scripts/fetch_local.py
     - scripts/fetch_weixin.py
+tags:
+  - pdf
 ---
 
 # Read: Read Any URL or PDF

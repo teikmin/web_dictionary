@@ -8,7 +8,7 @@ summary: Manages access control for the Discord channel. All state lives in
   /.claude/channels/discord/access.json. You never talk to Discord — you just
   edit JSON; the channel server re-reads it.
 categories:
-  - other
+  - productivity-ops
 status: active
 quality_percentile: 99
 selection_reason: official_vendor
@@ -40,6 +40,8 @@ skill:
     who's allowed, or change policy for the Discord channel.
   folder_path: external_plugins/discord/skills/access
   extra_files: []
+tags:
+  - discord
 ---
 
 # /discord:access — Discord Channel Access Management

@@ -5,7 +5,7 @@ tagline: An AI agent skill that turns "start + days" into a road trip you can
   actually drive.
 summary: A road trip plan, checked before you drive.
 categories:
-  - ai-frameworks
+  - domain-research
 status: active
 quality_percentile: 9
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ launch:
     - roadtrip-navigator-mcp
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <div align="center">

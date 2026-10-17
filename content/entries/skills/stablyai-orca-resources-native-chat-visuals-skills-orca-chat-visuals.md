@@ -8,7 +8,7 @@ summary: "- Save it in the folder named by ORCACHATVISUALSDIR (printenv
   you can't write there, skip the visual. - One complete HTML file per visual,
   d..."
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 64
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     is set.
   folder_path: resources/native-chat-visuals/skills/orca-chat-visuals
   extra_files: []
+tags: []
 ---
 
 # Inline visuals in an Orca chat

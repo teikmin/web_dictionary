@@ -7,7 +7,7 @@ tagline: Convert Claude Code or Codex into the most intelligent Deep Research
 summary: "The Most Powerful Deep Research Harness: a deep research skill for
   Claude Code and OpenAI Codex"
 categories:
-  - ai-frameworks
+  - browser-web
 status: active
 quality_percentile: 54
 selection_reason: quality_percentile
@@ -40,6 +40,8 @@ launch:
     - hyperresearch
   env_vars: []
   confidence: manifest
+tags:
+  - research
 ---
 
 <img width="1280" height="400" alt="hyperresearch-readme-hero-1280x400" src="https://github.com/user-attachments/assets/320680fc-bc56-4eac-9ec2-7ec46d4bde98" />

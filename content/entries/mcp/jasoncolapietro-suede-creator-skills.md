@@ -6,7 +6,7 @@ tagline: "Open-source AI skills for SEO, AI search visibility, conversion copy,
   Code "
 summary: Install · The skills · Docs site · Skill catalog · Blog · MCP · @johnnysuede
 categories:
-  - productivity
+  - browser-web
 status: active
 quality_percentile: 16
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - skills
   env_vars: []
   confidence: readme
+tags: []
 ---
 
 <div align="center">

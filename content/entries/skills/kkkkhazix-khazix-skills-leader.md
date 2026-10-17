@@ -8,7 +8,7 @@ summary: 1 调研。自己能查的一律不问。有代码库就实测：命令
   echo 占位的假绿灯、没被 import 的文件从覆盖率报告里消失——都是真坑）。行业知识能联网就查，查不到标「假设，未验证」。摸不到环境就把自测写成任务
   0。
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
   extra_files:
     - references/anatomy.md
     - references/style.md
+tags: []
 ---
 
 # 领导 · 你出想法，我出任务书

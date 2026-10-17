@@ -8,7 +8,7 @@ summary: The Shadow Credentials technique abuses the msDS-KeyCredentialLink
   attribute of Active Directory user and computer objects. This attribute stores
   raw public keys ("Key Credentials") used by Windows Hello for Business...
 categories:
-  - security
+  - other
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
     - references/api-reference.md
     - references/standards.md
     - scripts/agent.py
+tags: []
 ---
 
 # Abusing Shadow Credentials for Privilege Escalation

@@ -1,0 +1,273 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sparkline from '../components/Sparkline.astro';
+import {
+  getAllWeeklyDiffs,
+  getEntryHref,
+  formatStarDelta,
+} from '../lib/trending';
+import { formatStars } from '../lib/entries';
+
+const diffs = getAllWeeklyDiffs();
+const latestDiff = diffs[0] || {
+  week: '2026-W42',
+  generated_at: new Date().toISOString(),
+  added: [],
+  removed: [],
+  surging: [],
+  summary: {
+    week: '2026-W42',
+    generated_at: new Date().toISOString(),
+    added_count: 0,
+    removed_count: 0,
+    surging_count: 0,
+    total_stars_gained: 0,
+  },
+};
+
+function getPillarBadge(type: string) {
+  if (type === 'mcp_server') {
+    return { label: 'MCP', class: 'bg-blue-50 text-blue-700 border-blue-200' };
+  }
+  if (type === 'agent_tool') {
+    return { label: 'Tool', class: 'bg-purple-50 text-purple-700 border-purple-200' };
+  }
+  return { label: 'Skill', class: 'bg-teal-50 text-teal-700 border-teal-200' };
+}
+---
+
+<BaseLayout
+  title={`Ecosystem Changelog (${latestDiff.week}) — AI Tools Hub`}
+  description={`Weekly ecosystem diff for ${latestDiff.week}: +${latestDiff.summary.added_count} newly discovered tools, ${latestDiff.summary.surging_count} surging repositories, and +${latestDiff.summary.total_stars_gained.toLocaleString()} stars gained.`}
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-pagefind-body>
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-slate-500 mb-4" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-slate-900 transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-slate-900 font-semibold">Changelog</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <header class="border-b border-slate-200 pb-8 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-xs font-semibold border border-indigo-200 bg-indigo-50 text-indigo-700 mb-3">
+            <span>📦</span>
+            <span>Automated Weekly Diff</span>
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Ecosystem Changelog &amp; Pipeline Diffs
+          </h1>
+          <p class="mt-2 text-sm text-slate-600 max-w-2xl leading-relaxed">
+            Transparent record of every tool added, surged, or archived during our weekly Monday automated pipeline runs.
+          </p>
+        </div>
+
+        <!-- Issue selector / week pill -->
+        <div class="shrink-0 flex items-center gap-2 text-xs">
+          <span class="text-slate-500 font-medium">Issue:</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900 text-white font-mono font-bold shadow-xs">
+            {latestDiff.week}
+          </span>
+        </div>
+      </div>
+
+      <!-- Ecosystem Momentum Metrics Strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
+        <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-xs">
+          <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wider">Newly Discovered</span>
+          <span class="text-xl font-extrabold text-blue-600">+{latestDiff.summary.added_count}</span>
+          <span class="block text-[10px] text-slate-400 mt-0.5">Passed Layer 1–3 gates</span>
+        </div>
+        <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-xs">
+          <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wider">Surging Fast</span>
+          <span class="text-xl font-extrabold text-emerald-600">{latestDiff.summary.surging_count}</span>
+          <span class="block text-[10px] text-slate-400 mt-0.5">High velocity score</span>
+        </div>
+        <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-xs">
+          <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wider">Weekly Stars Gained</span>
+          <span class="text-xl font-extrabold text-slate-900">+{latestDiff.summary.total_stars_gained.toLocaleString()} ★</span>
+          <span class="block text-[10px] text-slate-400 mt-0.5">Across tracked repos</span>
+        </div>
+        <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-xs">
+          <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wider">Pruned / Archived</span>
+          <span class="text-xl font-extrabold text-slate-600">-{latestDiff.summary.removed_count}</span>
+          <span class="block text-[10px] text-slate-400 mt-0.5">Archived to data/archive</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content Sections -->
+    <div class="space-y-10">
+      <!-- Section 1: Surging Tools -->
+      {latestDiff.surging.length > 0 && (
+        <section>
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <span>⚡</span>
+              <span>Top Surging Repositories This Issue</span>
+              <span class="text-xs font-normal text-slate-500">({latestDiff.surging.length} tools)</span>
+            </h2>
+            <a href="/trending" class="text-xs font-semibold text-blue-600 hover:underline">
+              View Full Leaderboard &rarr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {latestDiff.surging.slice(0, 9).map((item) => {
+              const badge = getPillarBadge(item.type);
+              const href = getEntryHref(item);
+              return (
+                <a
+                  href={href}
+                  class="group p-4 rounded-xl border border-slate-200 bg-white hover:border-slate-300 hover:shadow-xs transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-1.5">
+                      <span class={`text-[10px] font-semibold px-2 py-0.5 rounded-full border ${badge.class}`}>
+                        {badge.label}
+                      </span>
+                      <span class="text-xs font-bold text-emerald-600 font-mono">
+                        {formatStarDelta(item.stars_delta_7d)}
+                      </span>
+                    </div>
+                    <div class="font-bold text-sm text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-1">
+                      {item.name}
+                    </div>
+                    <div class="text-[11px] font-mono text-slate-500 line-clamp-1 mt-0.5">
+                      {item.repo}
+                    </div>
+                    <p class="text-xs text-slate-600 line-clamp-2 mt-2 leading-relaxed">
+                      {item.tagline || 'No description provided.'}
+                    </p>
+                  </div>
+
+                  <div class="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+                    <span>★ {formatStars(item.stars)}</span>
+                    {item.sparkline_4w && item.sparkline_4w.length >= 2 && (
+                      <Sparkline points={item.sparkline_4w} width={50} height={16} />
+                    )}
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      <!-- Section 2: Newly Added Tools -->
+      <section>
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+            <span>🆕</span>
+            <span>Newly Discovered &amp; Verified</span>
+            <span class="text-xs font-normal text-slate-500">({latestDiff.added.length} total entries)</span>
+          </h2>
+          <a href="/catalog" class="text-xs font-semibold text-blue-600 hover:underline">
+            Explore In Catalog &rarr;
+          </a>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-xs">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase text-[10px] tracking-wider">
+              <tr>
+                <th class="p-3">Tool / Skill</th>
+                <th class="p-3">Type</th>
+                <th class="p-3">Upstream Repository</th>
+                <th class="p-3 text-right">Stars</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 font-mono">
+              {latestDiff.added.slice(0, 30).map((item) => {
+                const badge = getPillarBadge(item.type);
+                const href = getEntryHref(item);
+                return (
+                  <tr class="hover:bg-slate-50/80 transition-colors">
+                    <td class="p-3 font-semibold text-slate-900 font-sans">
+                      <a href={href} class="hover:text-blue-600 transition-colors">
+                        {item.name}
+                      </a>
+                    </td>
+                    <td class="p-3">
+                      <span class={`text-[10px] font-semibold px-2 py-0.5 rounded-full border ${badge.class} font-sans`}>
+                        {badge.label}
+                      </span>
+                    </td>
+                    <td class="p-3 text-slate-600">
+                      <a
+                        href={`https://github.com/${item.repo}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:underline"
+                      >
+                        {item.repo}
+                      </a>
+                    </td>
+                    <td class="p-3 text-right text-slate-700 font-semibold">
+                      ★ {formatStars(item.stars)}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          {latestDiff.added.length > 30 && (
+            <div class="p-3 bg-slate-50 text-center text-xs text-slate-500 border-t border-slate-200">
+              Showing first 30 of {latestDiff.added.length} newly added entries. <a href="/catalog" class="text-blue-600 hover:underline font-semibold">Search all {latestDiff.added.length} in Catalog &rarr;</a>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <!-- Section 3: Pruned & Archived -->
+      {latestDiff.removed.length > 0 && (
+        <section>
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <span>📦</span>
+              <span>Archived &amp; Stale Entries</span>
+              <span class="text-xs font-normal text-slate-500">({latestDiff.removed.length} entries retired)</span>
+            </h2>
+            <span class="text-xs text-slate-400">Preserved in data/archive/pruned</span>
+          </div>
+
+          <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-600 leading-relaxed">
+            <p class="mb-3">
+              Under our <strong>SG-1 automated pruning safeguards</strong>, entries that are deleted upstream, archived on GitHub, or fall below metadata quality gates are retired from the public catalog to keep search results high-signal.
+            </p>
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              {latestDiff.removed.slice(0, 20).map((item) => (
+                <span class="px-2 py-0.5 rounded bg-white border border-slate-200 text-slate-700">
+                  {item.name}
+                </span>
+              ))}
+              {latestDiff.removed.length > 20 && (
+                <span class="px-2 py-0.5 rounded bg-slate-200 text-slate-600">
+                  +{latestDiff.removed.length - 20} more
+                </span>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <!-- Past Weekly Diffs Archive -->
+      {diffs.length > 1 && (
+        <section class="pt-6 border-t border-slate-200">
+          <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-3 text-slate-500">
+            Historical Diff Snapshots
+          </h2>
+          <div class="flex flex-wrap gap-2 text-xs">
+            {diffs.map((d) => (
+              <span class={`px-3 py-1.5 rounded-lg border font-mono font-medium ${d.week === latestDiff.week ? 'bg-blue-50 border-blue-200 text-blue-700' : 'bg-white border-slate-200 text-slate-700'}`}>
+                {d.week} (+{d.summary.added_count} / -{d.summary.removed_count})
+              </span>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+  </div>
+</BaseLayout>

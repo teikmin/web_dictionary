@@ -9,7 +9,7 @@ summary: 1. Establish the operator's objective, business model, active
   authority. 2. Classify supplied pages, exports, screenshots, API responses,
   a...
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 81
 selection_reason: quality_percentile
@@ -57,6 +57,7 @@ skill:
     - references/budget-allocation.md
     - references/compliance-requirements.md
     - references/compliance.md
+tags: []
 ---
 
 # Claude Ads

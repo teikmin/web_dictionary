@@ -8,7 +8,7 @@ summary: "1. Navigate: agent-browser open 2. Snapshot: agent-browser snapshot -i
   (returns elements with refs like @e1, @e2) 3. Interact using refs from the
   snapshot 4. Re-snapshot after navigation or significant DOM changes"
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 99
 selection_reason: quality_percentile
@@ -41,6 +41,8 @@ skill:
     explicitly asks.
   folder_path: container/skills/agent-browser
   extra_files: []
+tags:
+  - research
 ---
 
 # Browser Automation with agent-browser

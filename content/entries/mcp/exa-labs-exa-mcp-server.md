@@ -5,7 +5,7 @@ tagline: Exa MCP for web search and web crawling!
 summary: Connect AI agents to Exa for web search, content fetching, and
   multi-step research.
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 54
 selection_reason: quality_percentile
@@ -36,6 +36,8 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags:
+  - research
 ---
 
 <h1 align="center">

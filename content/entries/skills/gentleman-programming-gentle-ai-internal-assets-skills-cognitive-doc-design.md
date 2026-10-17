@@ -6,7 +6,7 @@ tagline: "Design docs that reduce cognitive load. Trigger: writing guides,
 summary: Load this skill when creating or editing documentation that people need
   to understand quickly, retain, or use during review.
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ skill:
     READMEs, RFCs, onboarding, architecture, or review-facing docs."
   folder_path: internal/assets/skills/cognitive-doc-design
   extra_files: []
+tags: []
 ---
 
 ## When to Use

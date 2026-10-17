@@ -6,7 +6,7 @@ tagline: Guidelines and patterns for defining Tools, Resources, and Prompts in a
 summary: "Use the following universal decoder pattern to parse either format
   into a Node Buffer:"
 categories:
-  - other
+  - agent-frameworks
 status: active
 quality_percentile: 99
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
     caching, rate-limiting, and base64 file uploads.
   folder_path: sample-apps/Rampd-AI-Onboarding-Offboarding-Orchestrator/skills/tools-resources-prompts
   extra_files: []
+tags: []
 ---
 
 ## When to Use

@@ -9,6 +9,7 @@ import { evaluateLayer2TypeCheck } from '../stages/3-type-check.js';
 import { evaluateLayer3Scoring } from '../stages/4-score.js';
 import { runStage6Selection } from '../stages/6-select.js';
 import { runStage7Enrich } from '../stages/7-enrich.js';
+import { runStage8Trends } from '../stages/8-trends.js';
 import { runStage9Write } from '../stages/9-write.js';
 
 function getWeekString(date = new Date()): string {
@@ -50,13 +51,24 @@ async function main() {
   // 6. Enrich
   const { enrichedEntries } = await runStage7Enrich(decisions);
 
-  // 7. Write to Git content collections
-  const { writtenMcp, writtenSkills } = await runStage9Write(enrichedEntries, weekStr);
+  // 7. Trends & Velocity Engine (Stage 8)
+  const { trendingData, diffData } = await runStage8Trends(enrichedEntries, weekStr);
+
+  // 8. Write to Git content collections (Stage 9)
+  const { writtenMcp, writtenSkills, writtenTools } = await runStage9Write(enrichedEntries, weekStr, {
+    trendingData,
+    diffData,
+  });
 
   const endTime = new Date();
   logger.info('========================================================');
   logger.info(`PRODUCTION RUN COMPLETE in ${((endTime.getTime() - startTime.getTime()) / 1000).toFixed(1)}s!`);
-  logger.info(`Catalog updated: ${writtenMcp} MCP servers, ${writtenSkills} Agent Skills written to content/entries/.`);
+  logger.info(
+    `Catalog updated: ${writtenMcp} MCP servers, ${writtenSkills} Agent Skills, ${writtenTools} Agent Tools written to content/entries/.`
+  );
+  logger.info(
+    `Trending Leaderboard: Top 25 overall compiled, ${trendingData.breakout_new.length} breakout tools identified.`
+  );
   logger.info('========================================================');
 }
 

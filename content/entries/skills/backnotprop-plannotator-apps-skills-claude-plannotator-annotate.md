@@ -5,7 +5,7 @@ tagline: Open Plannotator's annotation UI for a markdown file, HTML file, URL,
   or folder and then respond to the returned annotations.
 summary: "!plannotator annotate $ARGUMENTS"
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
     URL, or folder and then respond to the returned annotations.
   folder_path: apps/skills/claude/plannotator-annotate
   extra_files: []
+tags: []
 ---
 
 # Plannotator Annotate

@@ -6,7 +6,7 @@ tagline: 'Use this skill whenever the user wants to create, read, edit, or
   "Word doc",'
 summary: A .docx file is a ZIP archive containing XML files.
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -56,6 +56,7 @@ skill:
     - scripts/office/pack.py
     - scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd
     - scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd
+tags: []
 ---
 
 # DOCX creation, editing, and analysis

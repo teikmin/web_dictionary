@@ -8,7 +8,7 @@ summary: The instruction that triggered this welcome may name a channel addendum
   file (e.g. /app/skills/welcome/addenda/slack.md). If it does, read that file
   first and follow it — it adjusts this welcome for the channel you ar...
 categories:
-  - security
+  - productivity-ops
 status: active
 quality_percentile: 99
 selection_reason: quality_percentile
@@ -40,6 +40,8 @@ skill:
     brief overview of what you can do.
   folder_path: container/skills/welcome
   extra_files: []
+tags:
+  - slack
 ---
 
 # /welcome — Channel Onboarding (Updated)

@@ -4,7 +4,7 @@ name: oh-my-claudecode
 tagline: Teams-first Multi-agent orchestration for Claude Code
 summary: English | 한국어 | 中文 | 日本語 | Español | Tiếng Việt | Português
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 70
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ launch:
     - oh-my-claude-sisyphus
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 English | [한국어](https://github.com/Yeachan-Heo/oh-my-claudecode/blob/main/README.ko.md) | [中文](https://github.com/Yeachan-Heo/oh-my-claudecode/blob/main/README.zh.md) | [日本語](https://github.com/Yeachan-Heo/oh-my-claudecode/blob/main/README.ja.md) | [Español](https://github.com/Yeachan-Heo/oh-my-claudecode/blob/main/README.es.md) | [Tiếng Việt](https://github.com/Yeachan-Heo/oh-my-claudecode/blob/main/README.vi.md) | [Português](https://github.com/Yeachan-Heo/oh-my-claudecode/blob/main/README.pt.md)

@@ -8,7 +8,7 @@ summary: The Agent panel driving ComfyUI end to end. It reads what is installed
   locally, wires the graph, frees VRAM, and runs the render. Watch the 76s demo
   &rarr;
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 57
 selection_reason: quality_percentile
@@ -41,6 +41,9 @@ launch:
     - comfyui-mcp
   env_vars: []
   confidence: manifest
+tags:
+  - audio
+  - video
 ---
 
 # comfyui-mcp — drive ComfyUI with ANY LLM

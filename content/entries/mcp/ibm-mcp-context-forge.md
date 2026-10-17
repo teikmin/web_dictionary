@@ -8,7 +8,7 @@ summary: ContextForge is an open source registry and proxy that federates tools,
   agents, and APIs into one clean endpoint for your AI clients. It provides
   centralized governance, discovery, and observability across your AI inf...
 categories:
-  - security
+  - agent-frameworks
 status: active
 quality_percentile: 96
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ launch:
     - mcp-contextforge-gateway
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # ContextForge

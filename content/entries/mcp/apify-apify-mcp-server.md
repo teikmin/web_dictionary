@@ -7,7 +7,7 @@ summary: The Apify Model Context Protocol (MCP) server at mcp.apify.com enables
   your AI agents to extract data from social media, search engines, maps,
   e-commerce sites, and any other website using thousands of ready-made scra...
 categories:
-  - productivity
+  - browser-web
 status: active
 quality_percentile: 74
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <h1 align="center">

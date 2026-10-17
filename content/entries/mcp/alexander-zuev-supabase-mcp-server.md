@@ -8,7 +8,7 @@ summary: Query MCP is an open-source MCP server that lets your IDE safely run
   SQL, manage schema changes, call the Supabase Management API, and use Auth
   Admin SDK — all with built-in safety controls.
 categories:
-  - databases
+  - databases-memory
 status: active
 quality_percentile: 19
 selection_reason: quality_percentile
@@ -41,6 +41,8 @@ launch:
     - supabase-mcp-server
   env_vars: []
   confidence: manifest
+tags:
+  - supabase
 ---
 
 # Query | MCP server for Supabase

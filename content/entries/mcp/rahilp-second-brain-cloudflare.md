@@ -7,7 +7,7 @@ tagline: One memory layer, every AI tool. Store anything once — recall it in
 summary: Private memory for you. Shared memory for your team. Available to every
   MCP-compatible AI tool you use.
 categories:
-  - other
+  - cloud-infra
 status: active
 quality_percentile: 51
 selection_reason: quality_percentile
@@ -40,6 +40,9 @@ launch:
     - second-brain
   env_vars: []
   confidence: manifest
+tags:
+  - cloudflare
+  - memory
 ---
 
 <p align="center">

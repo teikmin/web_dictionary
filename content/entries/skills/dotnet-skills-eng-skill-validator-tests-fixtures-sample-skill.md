@@ -4,7 +4,7 @@ name: sample-skill
 tagline: A sample skill for testing the validator. Helps with greeting generation.
 summary: A sample skill for testing the validator. Helps with greeting generation.
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 49
 selection_reason: quality_percentile
@@ -35,6 +35,7 @@ skill:
   folder_path: eng/skill-validator/tests/fixtures/sample-skill
   extra_files:
     - tests/eval.yaml
+tags: []
 ---
 
 # Sample Skill

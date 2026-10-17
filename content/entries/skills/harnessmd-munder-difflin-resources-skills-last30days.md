@@ -7,7 +7,7 @@ tagline: |-
 summary: "Get the concrete date range for a rolling 30-day window ending today
   by running the bundled resolver:"
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 80
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
     recent activity).
   folder_path: resources/skills/last30Days
   extra_files: []
+tags: []
 ---
 
 ## /last30Days

@@ -9,7 +9,7 @@ summary: "- Palette: cobalt #0758bc, deep night #083d86, ivory #fffaf0,
   New Roman; system sans and monospace for body and coordinates. No fonts are
   d..."
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
     - example.html
     - open-design.json
     - references/checklist.md
+tags: []
 ---
 
 # Aster Atelier

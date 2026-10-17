@@ -6,7 +6,7 @@ tagline: A Model Context Protocol (MCP) server and CLI that provides tools for
 summary: A Model Context Protocol (MCP) server and CLI that provides tools for
   agent use when working on iOS and macOS projects.
 categories:
-  - dev-tools
+  - cloud-infra
 status: active
 quality_percentile: 66
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - mobilebuildmcp
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 A Model Context Protocol (MCP) server and CLI that provides tools for agent use when working on iOS and macOS projects.

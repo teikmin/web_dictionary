@@ -1,5 +1,6 @@
 import type { LaunchSpec } from '@web-db/schema';
 import { fetchFileContent } from '../../sources/github-contents.js';
+import { hasPlaceholder } from './placeholder.js';
 
 export async function extractFromServerJson(
   owner: string,
@@ -19,9 +20,20 @@ export async function extractFromServerJson(
         const server = data.server || data;
 
         if (server.remotes && server.remotes.length > 0 && server.remotes[0].url) {
+          const remoteUrl = server.remotes[0].url;
+          if (hasPlaceholder(remoteUrl)) {
+            return {
+              transport: 'http',
+              remote_url: undefined,
+              command: undefined,
+              args: [],
+              env_vars: [],
+              confidence: 'none',
+            };
+          }
           return {
             transport: 'http',
-            remote_url: server.remotes[0].url,
+            remote_url: remoteUrl,
             args: [],
             env_vars: [],
             confidence: 'manifest',
@@ -33,12 +45,11 @@ export async function extractFromServerJson(
           const rawArgs = Array.isArray(server.args) ? server.args.map(String) : [];
 
           // Reject template placeholders
-          const hasPlaceholder =
-            rawCommand.includes('{{') ||
-            rawCommand.includes('/path/') ||
-            rawArgs.some((a: string) => a.includes('{{') || a.includes('/path/') || a.includes('IPADDRESS'));
+          const commandHasPlaceholder =
+            hasPlaceholder(rawCommand) ||
+            rawArgs.some((a: string) => hasPlaceholder(a));
 
-          if (!hasPlaceholder) {
+          if (!commandHasPlaceholder) {
             return {
               transport: server.transport || 'stdio',
               command: rawCommand,
@@ -56,9 +67,9 @@ export async function extractFromServerJson(
         }
 
         // npm package name declared in manifest
-        if (server.name && !server.name.includes('{{')) {
+        if (server.name && !hasPlaceholder(server.name)) {
           // Verify it's a valid package name, not a registry ID or template
-          if (!server.name.startsWith('io.github.') && !server.name.includes('/mcp-server-{{')) {
+          if (!server.name.startsWith('io.github.') && !server.name.includes('/mcp-server-')) {
             return {
               transport: 'stdio',
               command: 'npx',

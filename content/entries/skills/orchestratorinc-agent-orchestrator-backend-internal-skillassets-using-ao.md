@@ -8,7 +8,7 @@ summary: "- Most read commands accept --json for machine-readable output. - -p /
   --project scopes session subcommand lookups to one project. - Session and
   project ids are shown by ao session ls and ao project ls. - To refer to..."
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 81
 selection_reason: quality_percentile
@@ -52,6 +52,7 @@ skill:
     - commands/project.md
     - commands/render.md
     - commands/report.md
+tags: []
 ---
 
 # AO CLI Catalog

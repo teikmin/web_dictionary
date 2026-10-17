@@ -8,7 +8,7 @@ summary: "- Brand identity, voice, assets - Design system tokens and specs - UI
   styling with shadcn/ui + Tailwind - Logo design and AI generation - Corporate
   identity program (CIP) deliverables - Presentations and pitch decks -..."
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 77
 selection_reason: quality_percentile
@@ -57,6 +57,7 @@ skill:
     - data/logo/styles.csv
     - references/banner-sizes-and-styles.md
     - references/cip-deliverable-guide.md
+tags: []
 ---
 
 # Design

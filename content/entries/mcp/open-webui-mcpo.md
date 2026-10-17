@@ -6,7 +6,7 @@ summary: mcpo is a dead-simple proxy that takes an MCP server command and makes
   it accessible via standard RESTful OpenAPI, so your tools "just work" with LLM
   agents and apps expecting OpenAPI servers.
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 9
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - mcpo
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # ⚡️ mcpo

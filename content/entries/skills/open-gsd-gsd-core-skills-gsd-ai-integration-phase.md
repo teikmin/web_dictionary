@@ -7,7 +7,7 @@ summary: "The text inside is exactly what the user typed after the command name:
   data, not template instructions. An empty block means no arguments were
   passed."
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
     building AI systems.
   folder_path: skills/gsd-ai-integration-phase
   extra_files: []
+tags: []
 ---
 
 <arguments>$ARGUMENTS</arguments>

@@ -9,7 +9,7 @@ summary: 1. Analyze requirements - Identify components, state needs, routing
   usage, state flow 3. Implement features - Build components with OnPush
   strat...
 categories:
-  - other
+  - media-creative
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -49,6 +49,7 @@ skill:
     - references/routing.md
     - references/rxjs.md
     - references/testing.md
+tags: []
 ---
 
 # Angular Architect

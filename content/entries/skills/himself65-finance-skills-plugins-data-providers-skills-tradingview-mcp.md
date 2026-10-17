@@ -6,7 +6,7 @@ tagline: Query TradingView market data through the bundled tradingview MCP
   analy
 summary: Read-only. Nothing here places trades or mutates any account.
 categories:
-  - productivity
+  - domain-research
 status: active
 quality_percentile: 38
 selection_reason: quality_percentile
@@ -51,6 +51,7 @@ skill:
   folder_path: plugins/data-providers/skills/tradingview-mcp
   extra_files:
     - README.md
+tags: []
 ---
 
 # TradingView MCP (Headless Market Data)

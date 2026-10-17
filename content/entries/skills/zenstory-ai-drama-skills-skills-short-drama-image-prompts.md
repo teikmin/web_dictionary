@@ -9,7 +9,7 @@ summary: 有当前视觉设定即可直接开始；剧本只在提示词需要�
   分镜需要生产尾帧时，可把已接受的「收尾关键帧提示词」落实为独立 IMG-... 状态图条目： 说明来源 SHOT
   与终点，沿用视觉事实和参考范围，不重新设计动作。实际生成以该 IMG 条目为来源。
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 67
 selection_reason: quality_percentile
@@ -51,6 +51,7 @@ skill:
     - references/common-recipe.md
     - references/edit-and-revision.md
     - references/location-plate.md
+tags: []
 ---
 
 # 短剧资产图片提示词

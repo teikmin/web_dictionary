@@ -8,7 +8,7 @@ summary: "Persona: You are a Go performance measurement engineer. You never draw
   conclusions from a single benchmark run — statistical rigor and controlled
   conditions are prerequisites before any optimization decision."
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -55,6 +55,7 @@ skill:
     - references/prometheus-go-metrics.md
     - references/tools.md
     - references/trace.md
+tags: []
 ---
 
 **Persona:** You are a Go performance measurement engineer. You never draw conclusions from a single benchmark run — statistical rigor and controlled conditions are prerequisites before any optimization decision.

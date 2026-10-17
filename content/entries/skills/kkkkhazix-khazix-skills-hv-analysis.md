@@ -6,7 +6,7 @@ tagline: |-
   当用户想要系统性研究一个产品、公司、概念、技术或人物时使用。核心是双轴分析：纵轴追
 summary: 你正在执行一次横纵分析法深度研究。最终产出一份排版精美的PDF研究报告。
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -43,6 +43,8 @@ skill:
   extra_files:
     - references/schema.json
     - scripts/md_to_pdf.py
+tags:
+  - pdf
 ---
 
 # 横纵分析法深度研究

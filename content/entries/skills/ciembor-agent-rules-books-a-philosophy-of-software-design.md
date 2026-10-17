@@ -8,7 +8,7 @@ summary: Before making design or code decisions, read and apply
   a-philosophy-of-software-design.md only as a deeper reference when the mini
   rules are not enough for the current desi...
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
     - a-philosophy-of-software-design.md
     - a-philosophy-of-software-design.mini.md
     - a-philosophy-of-software-design.nano.md
+tags: []
 ---
 
 # A Philosophy of Software Design Skill

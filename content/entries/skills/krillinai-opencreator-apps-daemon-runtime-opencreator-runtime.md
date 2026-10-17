@@ -4,7 +4,7 @@ name: opencreator-runtime
 tagline: OpenCreator 内部 Creator Agent 的稳定运行规则，仅由应用自动安装和激活。
 summary: OpenCreator 内部 Creator Agent 的稳定运行规则，仅由应用自动安装和激活。
 categories:
-  - productivity
+  - agent-frameworks
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -35,6 +35,7 @@ skill:
   folder_path: apps/daemon/runtime/opencreator-runtime
   extra_files:
     - manifest.json
+tags: []
 ---
 
 # OpenCreator Runtime

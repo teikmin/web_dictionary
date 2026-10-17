@@ -5,7 +5,7 @@ tagline: How to fill and revise a canvas made from the Design (canvas) appifact 
 summary: "Write only under project/: a file elsewhere never shows; the type's
   files are refused."
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 85
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     - artifact-type/reference/print.md
     - artifact-type/reference/questions.md
     - artifact-type/reference/view-state.md
+tags: []
 ---
 
 # Design

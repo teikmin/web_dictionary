@@ -10,7 +10,7 @@ tagline: >-
 summary: 'Prerequisites: Tables already identified as hypertable candidates (use
   companion "find-hypertable-candidates" skill if needed).'
 categories:
-  - databases
+  - databases-memory
 status: active
 quality_percentile: 43
 selection_reason: quality_percentile
@@ -69,6 +69,8 @@ skill:
     vs blue-green), and performance validation queries.
   folder_path: skills/migrate-postgres-tables-to-hypertables
   extra_files: []
+tags:
+  - postgres
 ---
 
 # PostgreSQL to TimescaleDB Hypertable Migration

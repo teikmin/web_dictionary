@@ -7,7 +7,7 @@ tagline: Preview, validate, and bake bone-rotation edits on AnimSequences with
 summary: Covers the profile → preview → validate → bake workflow for safe bone
   edits with correct bone-space handling and constraint validation.
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 51
 selection_reason: quality_percentile
@@ -50,6 +50,7 @@ skill:
     - scripts/preview_validate_bake.txt
     - scripts/safe_discovery.txt
     - workflows.md
+tags: []
 ---
 
 > 🧠 **Brains complement:** IF an `unreal-engine-skills-manager` tool (external MCP) exists in this session, call it with `{action: "load", skill: "animation-system"}` for UE domain knowledge on this topic — correct APIs, architecture, best practices — and treat it as the rubric for any review / "best practices" question. If no such tool is available (e.g. running under Claude Code or Codex without that MCP), skip this line entirely and proceed with this skill alone — do NOT attempt the call.

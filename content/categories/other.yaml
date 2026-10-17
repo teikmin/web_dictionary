@@ -1,9 +1,6 @@
 id: other
-name: Specialized & Miscellaneous
-tagline: Specialized domain servers and creative agent tools
-description: Unique tools, creative media generators, niche APIs, and domain-specific MCP servers and agent skills.
-icon: sparkler
-keywords:
-  - other
-  - misc
-  - special
+name: Other Utilities
+tagline: General agent utilities and miscellaneous toolkits
+description: General-purpose toolkits and utilities not classified under specific domain pillars.
+icon: box
+keywords: []

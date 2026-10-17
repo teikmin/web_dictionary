@@ -8,7 +8,7 @@ summary: At the start of an audit, a threat model, or an architecture review,
   when the code is unfamiliar. Also when an earlier pass produced findings
   nobody could judge, because no one had mapped out how the system fits toget...
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 55
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     - resources/ANALYSIS_FORMAT.md
     - resources/DOMAIN_NOTES.md
     - resources/FUNCTION_MICRO_ANALYSIS_EXAMPLE.md
+tags: []
 ---
 
 # Audit Context Building

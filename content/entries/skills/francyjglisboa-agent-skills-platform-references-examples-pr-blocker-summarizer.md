@@ -7,7 +7,7 @@ tagline: Summarizes open pull requests into a blockers-first standup digest.
 summary: A bundled example skill — small but real, used to demonstrate the
   creator's validation, pipeline, and eval-rollout machinery.
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -49,6 +49,7 @@ skill:
     - evals/golden/case-2/expected.json
     - evals/golden/case-2/input.json
     - evals/golden/case-3/expected.json
+tags: []
 ---
 
 # PR Blocker Summarizer

@@ -6,7 +6,7 @@ tagline: "Live SEO data via DataForSEO MCP server: SERP analysis, keyword
   analysis, co"
 summary: "This skill requires the DataForSEO extension to be installed:"
 categories:
-  - productivity
+  - browser-web
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -45,6 +45,8 @@ skill:
     - LICENSE.txt
     - references/cost-tiers.md
     - references/tool-catalog.md
+tags:
+  - research
 ---
 
 # DataForSEO: Live SEO Data (Extension)

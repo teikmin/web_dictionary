@@ -9,7 +9,7 @@ summary: "- Development release tracked by this skill: 26.12 (VERSION:
   Current package metadata targets Python 3.11-3.14 and pandas >=3.0.0,<3.1.0.
   Th..."
 categories:
-  - dev-tools
+  - databases-memory
 status: active
 quality_percentile: 54
 selection_reason: quality_percentile
@@ -51,6 +51,8 @@ skill:
     - evals/files/cudf-groupby-agg/code/groupby_analysis.py
     - evals/files/cudf-multi-join/code/generate_data.py
     - evals/files/cudf-multi-join/code/multi_join.py
+tags:
+  - python
 ---
 
 # cuDF & dask-cuDF Implementer's Guide

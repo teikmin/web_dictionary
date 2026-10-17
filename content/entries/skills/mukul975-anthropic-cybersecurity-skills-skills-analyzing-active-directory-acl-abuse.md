@@ -7,7 +7,7 @@ summary: Active Directory Access Control Lists (ACLs) define permissions on AD
   objects through Discretionary Access Control Lists (DACLs) containing Access
   Control Entries (ACEs). Misconfigured ACEs can grant non-privileged us...
 categories:
-  - security
+  - productivity-ops
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     - LICENSE
     - references/api-reference.md
     - scripts/agent.py
+tags: []
 ---
 
 # Analyzing Active Directory ACL Abuse

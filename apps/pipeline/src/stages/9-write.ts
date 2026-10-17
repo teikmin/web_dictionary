@@ -4,83 +4,68 @@ import yaml from 'yaml';
 import { config } from '../lib/config.js';
 import { logger } from '../lib/logger.js';
 import { generateSlug } from '../lib/slug.js';
+import { classifyCategoryAndTags } from '../classify/categories.js';
 import type { EnrichedEntry } from './7-enrich.js';
-import type { McpEntry, SkillEntry } from '@web-db/schema';
+import type { McpEntry, SkillEntry, ToolEntry } from '@web-db/schema';
 
-function assignCategory(name: string, desc: string, topics: string[], skillName?: string): string[] {
-  const text = `${name} ${desc} ${topics.join(' ')} ${skillName || ''}`.toLowerCase();
+import type { TrendingReport, DiffReport } from './8-trends.js';
 
-  // 1. Databases & Storage
-  if (/\b(database|postgres|postgresql|mysql|sqlite|redis|sql|supabase|qdrant|chroma|milvus|mongodb|neo4j|dynamodb|elasticsearch|vector|orm|prisma|convex|faiss|lance|knowledge-graph|graph-rag|s3|minio|storage)\b/i.test(text)) {
-    return ['databases'];
-  }
-
-  // 2. Browser & Web Scraping (strict: no bare 'web' or 'http')
-  if (/\b(browser|playwright|puppeteer|selenium|headless|scrape|scraper|scraping|crawl|crawler|crawling|spider|web-search|web-extract)\b/i.test(text)) {
-    return ['browser-automation'];
-  }
-
-  // 3. Security, Auth, Identity
-  if (/\b(security|pentest|cve|vulnerability|vulnerabilities|auth|authentication|oauth|crypto|cryptography|audit|sandbox|credential|credentials|secret|secrets|token|firewall|ssl|tls|cert)\b/i.test(text)) {
-    return ['security'];
-  }
-
-  // 4. Productivity, Communication & Workflows
-  if (/\b(slack|discord|telegram|imessage|email|gmail|notion|calendar|jira|linear|trello|todoist|airtable|sheets|office365|google-workspace|workspace|productivity|reminder|task|meeting|notes|todo|project-management|workflow|n8n|zapier|crm|marketing|sales|finance|social|post|resume|pdf|document)\b/i.test(text)) {
-    return ['productivity'];
-  }
-
-  // 5. Developer Tools & Code Utilities (strict: no bare 'tool' or 'dev')
-  if (/\b(git|github|gitlab|terminal|shell|cli|docker|kubernetes|k8s|profiler|debugger|linter|ci-cd|compiler|cargo|npm|pnpm|pip|editor|ide|filesystem|linux|macos|bash|zsh|powershell|ast|ast-grep|code-analysis|documentation|code-search|codebase|sdk|devtools|coding|programming)\b/i.test(text)) {
-    return ['dev-tools'];
-  }
-
-  // 6. AI Frameworks, Autonomous Research & Orchestration (strict: no bare 'agent')
-  if (/\b(langchain|langgraph|autogen|crewai|llamaindex|semantic-kernel|dify|open-webui|swarm|multi-player|multi-agent|orchestrat|rag|inference|model-serving|ollama|vllm|evals|benchmark|copilot|research|experiment|prompt|agent|llm)\b/i.test(text)) {
-    return ['ai-frameworks'];
-  }
-
-  return ['other'];
+export interface WriteStageOptions {
+  forcePrune?: boolean;
+  rootDir?: string;
+  totalStarsGained?: number;
+  totalNewEntries?: number;
+  trendingData?: TrendingReport;
+  diffData?: DiffReport;
 }
 
 export async function runStage9Write(
   enrichedEntries: EnrichedEntry[],
-  weekStr: string
-): Promise<{ writtenMcp: number; writtenSkills: number }> {
+  weekStr: string,
+  options?: WriteStageOptions
+): Promise<{ writtenMcp: number; writtenSkills: number; writtenTools: number; prunedCount: number }> {
   logger.stage(6, 'Stage 9: Write Content Entries & Signal Snapshots to Git');
 
-  const contentDir = path.join(config.rootDir, 'content/entries');
+  const rootDir = options?.rootDir || config.rootDir;
+  const contentDir = path.join(rootDir, 'content/entries');
   const mcpDir = path.join(contentDir, 'mcp');
   const skillsDir = path.join(contentDir, 'skills');
-  const signalsDir = path.join(config.rootDir, 'data/signals', weekStr.slice(0, 4));
+  const toolsDir = path.join(contentDir, 'tools');
+  const signalsDir = path.join(rootDir, 'data/signals', weekStr.slice(0, 4));
 
   fs.mkdirSync(mcpDir, { recursive: true });
   fs.mkdirSync(skillsDir, { recursive: true });
+  fs.mkdirSync(toolsDir, { recursive: true });
   fs.mkdirSync(signalsDir, { recursive: true });
 
   let writtenMcp = 0;
   let writtenSkills = 0;
+  let writtenTools = 0;
   const signalSnapshots: Record<string, unknown> = {};
 
   const nowIso = new Date().toISOString();
 
   const writtenMcpSlugs = new Set<string>();
   const writtenSkillSlugs = new Set<string>();
+  const writtenToolSlugs = new Set<string>();
 
   for (const item of enrichedEntries) {
     const { repo, layer2, layer3, selectionReason } = item.decision;
     const isOfficialVendor = selectionReason === 'official_vendor';
     const isMcp = layer2?.detectedType === 'mcp_server';
-    const subpath = isMcp ? '' : item.skillSpec?.folder_path || layer2?.subpaths?.[0] || '';
-    const slug = generateSlug(repo.owner, repo.name, isMcp ? undefined : subpath);
-    const categories = assignCategory(
-      repo.name,
-      repo.description || '',
-      repo.topics,
-      item.skillSpec?.skill_name
-    );
+    const isTool = layer2?.detectedType === 'agent_tool';
+    const isSkill = layer2?.detectedType === 'agent_skill';
+    const subpath = isSkill ? item.skillSpec?.folder_path || layer2?.subpaths?.[0] || '' : '';
+    const slug = generateSlug(repo.owner, repo.name, isSkill ? subpath : undefined);
+    const { categories, tags } = classifyCategoryAndTags({
+      name: repo.name,
+      desc: repo.description || '',
+      topics: repo.topics,
+      skillName: item.skillSpec?.skill_name,
+      subpath,
+    });
 
-    const targetDir = isMcp ? mcpDir : skillsDir;
+    const targetDir = isMcp ? mcpDir : isTool ? toolsDir : skillsDir;
     const filePath = path.join(targetDir, `${slug}.md`);
 
     // Cross-run memory: preserve original first_seen date if already exists on disk
@@ -97,10 +82,10 @@ export async function runStage9Write(
       }
     }
 
-    const title = isMcp ? repo.name : item.skillSpec?.skill_name || repo.name;
-    const tagline = isMcp
-      ? (repo.description || '').slice(0, 150)
-      : (item.skillSpec?.description || repo.description || '').slice(0, 150);
+    const title = isSkill ? item.skillSpec?.skill_name || repo.name : repo.name;
+    const tagline = isSkill
+      ? (item.skillSpec?.description || repo.description || '').slice(0, 150)
+      : (repo.description || '').slice(0, 150);
 
     // B7: Handle body and failure fallback retention
     let body = item.readmeBody || '';
@@ -136,6 +121,7 @@ export async function runStage9Write(
       tagline,
       summary: item.summary || tagline,
       categories,
+      tags,
       status: 'active' as const,
       quality_percentile: layer3?.percentileRank || 0,
       selection_reason: selectionReason || 'quality_percentile',
@@ -154,6 +140,13 @@ export async function runStage9Write(
         last_commit: repo.pushedAt,
         weekly_downloads: undefined,
         contributors: undefined,
+        stars_delta_7d: item.trendMetrics?.stars_delta_7d ?? 0,
+        stars_growth_pct: item.trendMetrics?.stars_growth_pct ?? 0,
+        trending_score: item.trendMetrics?.trending_score ?? 0,
+        rank_current: item.trendMetrics?.rank_current,
+        rank_delta: item.trendMetrics?.rank_delta,
+        velocity_source: item.trendMetrics?.velocity_source ?? 'snapshot_delta',
+        sparkline_4w: item.trendMetrics?.sparkline_4w ?? [repo.stars],
       },
       language: item.language || 'en',
       needs_keys: item.needsKeys || false,
@@ -168,6 +161,8 @@ export async function runStage9Write(
       pushedAt: repo.pushedAt,
       compositeScore: layer3?.compositeScore,
       percentile: layer3?.percentileRank,
+      trendingScore: item.trendMetrics?.trending_score ?? 0,
+      rank: item.trendMetrics?.rank_current,
     };
 
     if (isMcp && item.launchSpec) {
@@ -181,7 +176,7 @@ export async function runStage9Write(
       fs.writeFileSync(filePath, mdContent, 'utf8');
       writtenMcp++;
       writtenMcpSlugs.add(`${slug}.md`);
-    } else if (!isMcp && item.skillSpec) {
+    } else if (isSkill && item.skillSpec) {
       const entry: SkillEntry = {
         ...baseData,
         type: 'agent_skill',
@@ -192,35 +187,105 @@ export async function runStage9Write(
       fs.writeFileSync(filePath, mdContent, 'utf8');
       writtenSkills++;
       writtenSkillSlugs.add(`${slug}.md`);
+    } else if (isTool && item.toolSpec) {
+      const entry: ToolEntry = {
+        ...baseData,
+        type: 'agent_tool',
+        tool: item.toolSpec,
+      };
+
+      const mdContent = `---\n${yaml.stringify(entry)}---\n\n${body}\n`;
+      fs.writeFileSync(filePath, mdContent, 'utf8');
+      writtenTools++;
+      writtenToolSlugs.add(`${slug}.md`);
     }
   }
 
-  // Pruning: remove stale entries that no longer qualify
+  // SG-1: Safe pruning: require --force-prune and max 5% deletion circuit breaker
+  const forcePrune = options?.forcePrune ?? process.argv.includes('--force-prune');
   let prunedCount = 0;
-  for (const file of fs.readdirSync(mcpDir)) {
-    if (file.endsWith('.md') && !writtenMcpSlugs.has(file)) {
-      fs.unlinkSync(path.join(mcpDir, file));
-      prunedCount++;
+
+  const existingMcpFiles = fs.readdirSync(mcpDir).filter((file) => file.endsWith('.md'));
+  const existingSkillFiles = fs.readdirSync(skillsDir).filter((file) => file.endsWith('.md'));
+  const existingToolFiles = fs.readdirSync(toolsDir).filter((file) => file.endsWith('.md'));
+  const totalExisting =
+    existingMcpFiles.length + existingSkillFiles.length + existingToolFiles.length;
+
+  const mcpToPrune = existingMcpFiles.filter((file) => !writtenMcpSlugs.has(file));
+  const skillsToPrune = existingSkillFiles.filter((file) => !writtenSkillSlugs.has(file));
+  const toolsToPrune = existingToolFiles.filter((file) => !writtenToolSlugs.has(file));
+  const candidatePruneCount = mcpToPrune.length + skillsToPrune.length + toolsToPrune.length;
+
+  if (candidatePruneCount > 0) {
+    if (!forcePrune) {
+      logger.warn(
+        `[SG-1 Safeguard] Pruning skipped: ${candidatePruneCount} stale files identified, but automated pruning is disabled by default. Pass --force-prune to unlink.`
+      );
+    } else {
+      // 5% deletion circuit breaker
+      const maxAllowedPrune = Math.ceil(totalExisting * 0.05);
+      if (totalExisting > 0 && candidatePruneCount > maxAllowedPrune) {
+        throw new Error(
+          `[CIRCUIT BREAKER ACTIVATED] Attempted to prune ${candidatePruneCount}/${totalExisting} entries (${((candidatePruneCount / totalExisting) * 100).toFixed(1)}%), exceeding the 5% maximum threshold (${maxAllowedPrune}). Aborting pruning to prevent catalog wipeout.`
+        );
+      }
+
+      // Archive pruned files before deletion
+      const archiveDir = path.join(rootDir, 'data/archive/pruned', weekStr);
+      fs.mkdirSync(archiveDir, { recursive: true });
+
+      for (const file of mcpToPrune) {
+        fs.copyFileSync(path.join(mcpDir, file), path.join(archiveDir, file));
+        fs.unlinkSync(path.join(mcpDir, file));
+        prunedCount++;
+      }
+      for (const file of skillsToPrune) {
+        fs.copyFileSync(path.join(skillsDir, file), path.join(archiveDir, file));
+        fs.unlinkSync(path.join(skillsDir, file));
+        prunedCount++;
+      }
+      for (const file of toolsToPrune) {
+        fs.copyFileSync(path.join(toolsDir, file), path.join(archiveDir, file));
+        fs.unlinkSync(path.join(toolsDir, file));
+        prunedCount++;
+      }
+      logger.info(
+        `[SG-1] Pruned and archived ${prunedCount} stale catalog files to ${path.relative(rootDir, archiveDir)}.`
+      );
     }
-  }
-  for (const file of fs.readdirSync(skillsDir)) {
-    if (file.endsWith('.md') && !writtenSkillSlugs.has(file)) {
-      fs.unlinkSync(path.join(skillsDir, file));
-      prunedCount++;
-    }
-  }
-  if (prunedCount > 0) {
-    logger.info(`Pruned ${prunedCount} stale catalog files that no longer qualify.`);
   }
 
   // Write weekly signals snapshot
   const signalFile = path.join(signalsDir, `${weekStr}.json`);
   fs.writeFileSync(signalFile, JSON.stringify(signalSnapshots, null, 2), 'utf8');
 
-  // Persist cross-run state (Task A5, D8)
-  const stateDir = path.join(config.rootDir, 'data/state');
+  // Emit weekly trending and diff artifacts if provided
+  const runsDir = path.join(rootDir, 'data/runs', weekStr);
+  if (options?.trendingData || options?.diffData) {
+    fs.mkdirSync(runsDir, { recursive: true });
+    if (options.trendingData) {
+      const trendingFile = path.join(runsDir, 'trending.json');
+      fs.writeFileSync(trendingFile, JSON.stringify(options.trendingData, null, 2), 'utf8');
+      logger.info(`Saved trending leaderboard to ${trendingFile}`);
+    }
+    if (options.diffData) {
+      const diffFile = path.join(runsDir, 'diff.json');
+      fs.writeFileSync(diffFile, JSON.stringify(options.diffData, null, 2), 'utf8');
+      logger.info(`Saved weekly diff to ${diffFile}`);
+    }
+  }
+
+  // Persist cross-run state (Task A5, D8, Phase 3 ecosystem totals)
+  const stateDir = path.join(rootDir, 'data/state');
   fs.mkdirSync(stateDir, { recursive: true });
   const stateFile = path.join(stateDir, 'catalog-state.json');
+  const totalStarsGained =
+    options?.totalStarsGained ??
+    enrichedEntries.reduce((sum, e) => sum + (e.trendMetrics?.stars_delta_7d ?? 0), 0);
+  const totalNewEntries =
+    options?.totalNewEntries ??
+    enrichedEntries.filter((e) => e.trendMetrics?.velocity_source === 'age_velocity').length;
+
   fs.writeFileSync(
     stateFile,
     JSON.stringify(
@@ -229,7 +294,10 @@ export async function runStage9Write(
         week: weekStr,
         total_mcp: writtenMcp,
         total_skills: writtenSkills,
-        total_entries: writtenMcp + writtenSkills,
+        total_tools: writtenTools,
+        total_entries: writtenMcp + writtenSkills + writtenTools,
+        total_stars_gained: totalStarsGained,
+        total_new_entries: totalNewEntries,
       },
       null,
       2
@@ -238,10 +306,10 @@ export async function runStage9Write(
   );
 
   logger.info(
-    `Stage 9 Complete: Written ${writtenMcp} MCP entries and ${writtenSkills} Skill entries to content/entries/.`
+    `Stage 9 Complete: Written ${writtenMcp} MCP entries, ${writtenSkills} Skill entries, and ${writtenTools} Tool entries to content/entries/.`
   );
   logger.info(`Saved signal snapshots to ${signalFile}`);
   logger.info(`Saved catalog state to ${stateFile}`);
 
-  return { writtenMcp, writtenSkills };
+  return { writtenMcp, writtenSkills, writtenTools, prunedCount };
 }

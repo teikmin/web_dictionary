@@ -8,7 +8,7 @@ summary: Recurring work contains tacit knowledge that people recognize more
   easily than they can document upfront. Infer that knowledge from the supplied
   material, confirm the result in plain language, build autonomously, and...
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -58,6 +58,7 @@ skill:
     - .agents/skills/live-weather-briefing-skill/evals/golden/new-york/input.txt
     - .agents/skills/live-weather-briefing-skill/evals/golden/sao-paulo/input.txt
     - .agents/skills/live-weather-briefing-skill/evals/golden/tokyo/input.txt
+tags: []
 ---
 
 # /agent-skills-platform — Turn Existing Work Into a Reusable Skill

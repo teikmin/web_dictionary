@@ -1,23 +1,25 @@
-# AI Tools Hub — MCP & Agent Skills Registry
+# AI Tools Web Dictionary & Weekly Trend Radar
 
 [![CI](https://github.com/teikmin/web_dictionary/actions/workflows/ci.yml/badge.svg)](https://github.com/teikmin/web_dictionary/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](LICENSE-DATA)
 
-A high-signal, zero-database catalog of Model Context Protocol (MCP) servers and Agent Skills with **1-click launch configurations** tailored for **Claude Code**, **OpenAI Codex**, and **Google Antigravity**.
+An authoritative, zero-database Web Dictionary and Weekly Velocity Radar for the AI agent ecosystem across **3 Pillars**:
+1. **MCP Servers (`/mcp`):** Standardized Model Context Protocol servers with 1-click launch configs for **Claude Code**, **OpenAI Codex**, and **Google Antigravity**.
+2. **Agent Skills (`/skills`):** Reusable task instruction sets and prompts packaged in `SKILL.md` format, organized as deduplicated **Skill Packs**.
+3. **Agent Tools & Repos (`/tools`):** Autonomous agent frameworks, coding assistants, desktop harnesses, and developer CLIs with quickstart commands.
 
 ---
 
 ## 🌟 Key Highlights
 
-- **Git-Backed Source of Truth:** No runtime database (Supabase is retired). The catalog lives in clean Markdown with YAML frontmatter under `content/entries/` and weekly signal snapshots in `data/signals/`.
-- **Automated 3-Layer Selection Engine:**
-  - **Layer 1 (Hard Gates G1–G9):** $\ge 100$ stars, non-fork, non-archived, recently pushed ($< 180$d), OSI license, spam protection.
-  - **Layer 2 (Type Check):** Physical verification via recursive Git trees (`@modelcontextprotocol/sdk`, Python `mcp`, or `SKILL.md`).
-  - **Layer 3 (Quality Scoring):** Composite score weighting stars, velocity, commit recency, contributor breadth, with anti-fake-star defense.
-- **1-Click Launch Configs:** Pre-formatted configs for Claude Code (`claude mcp add` / `.mcp.json`), OpenAI Codex (`.codex/config.json`), and Google Antigravity (`.gemini/mcp_servers.json`).
-- **Blazing Fast Static Site:** Built with **Astro 5** and **Tailwind CSS**. Prerenders hundreds of static pages in seconds.
-- **Static Search via Pagefind:** Zero external search APIs or indexing bills. Instant client-side search across all tools, descriptions, and commands.
+- **The 3 Pillars of AI Tooling:** Complete coverage of MCP servers, Agent skills, and standalone Agent developer tools under a unified, strictly-typed schema.
+- **Weekly Trend & Velocity Radar (`/trending`):** Week-over-week GitHub star velocity engine computing 7-day deltas ($\Delta S_{7\text{d}}$), breakout newcomers ($\le 60$ days old), historical snapshot issues (`/trending/2026-Wxx`), and zero-JS inline SVG sparklines.
+- **RSS 2.0 Feed (`/rss.xml`):** Instant RSS distribution of weekly top trending tools and fresh ecosystem discoveries.
+- **Standardized 6-Line Dictionary Definition Box:** Every entry page leads with an authoritative definition (What it is, Pillar & Runtime, Category & Tags, Auth & Cost, Target Interface / Compatible Clients, and Weekly Trend Telemetry) backed by a 4-tier deterministic fallback hierarchy.
+- **Monorepo Skill Packs:** Multi-skill repositories collapse into single representative cards in `/catalog` with `📦 Pack of N skills` badges, accompanied by interactive repository skill drawers.
+- **9 Balanced Dictionary Categories:** Balanced taxonomy (`coding-agents`, `browser-web`, `databases-memory`, `agent-frameworks`, `productivity-ops`, `cloud-infra`, `media-creative`, `security-auth`, `domain-research`) preventing category over-concentration.
+- **100% Static & Zero-Maintenance:** Git-backed Markdown (`content/entries/`) and JSON time series (`data/signals/`). Built with **Astro 5**, styled with **Tailwind CSS**, and searchable in $<10\text{ms}$ offline via **Pagefind**.
 
 ---
 
@@ -26,22 +28,25 @@ A high-signal, zero-database catalog of Model Context Protocol (MCP) servers and
 ```text
 .
 ├── apps/
-│   ├── pipeline/            # Discovery, scoring, enrichment & catalog writer
-│   └── site/                # Astro 5 static site + Pagefind search UI
+│   ├── pipeline/            # Discovery, scoring, Stage 8 trends, enrichment & catalog writer
+│   └── site/                # Astro 5 static site (/trending, /tools, /mcp, /skills, /rss.xml)
 ├── packages/
-│   ├── schema/              # Shared Zod schemas (Entry, LaunchSpec, SkillSpec, Client, Category)
+│   ├── schema/              # Shared Zod schemas (Entry, LaunchSpec, SkillSpec, ToolSpec, TrendingReport)
 │   └── renderers/           # Multi-client config adapters (Claude Code, Codex, Antigravity)
 ├── content/
 │   ├── clients/             # Supported AI agent client definitions (*.yaml)
-│   ├── categories/          # Catalog vertical taxonomy (*.yaml)
+│   ├── categories/          # 9 balanced Dictionary categories (*.yaml)
 │   └── entries/
 │       ├── mcp/             # MCP servers (*.md)
-│       └── skills/          # Agent skills (*.md)
+│       ├── skills/          # Agent skills (*.md)
+│       └── tools/           # Autonomous agent tools & repos (*.md)
 ├── data/
-│   ├── runs/                # Weekly audit reports & decision logs
-│   ├── signals/             # Weekly signal snapshot time series (*.json)
-│   └── overrides/           # Manual curation overrides (blocklist, pins, vendors)
-├── docs/                    # Architecture documents & quality criteria
+│   ├── archive/pruned/      # Safe historical archive of pruned entries (SG-1)
+│   ├── overrides/           # Manual curation overrides (blocklist, pins, vendors)
+│   ├── runs/                # Weekly trend boards (trending.json) and diffs (diff.json)
+│   ├── signals/             # Weekly signal snapshot time series (YYYY-Wxx.json)
+│   └── state/               # Catalog totals and slug alias registry (slug-aliases.json)
+├── docs/                    # Architecture documents, v3 plans & audit reports
 └── .github/workflows/       # CI verification, weekly cron pipeline & deployment
 ```
 
@@ -51,7 +56,7 @@ A high-signal, zero-database catalog of Model Context Protocol (MCP) servers and
 
 ### Prerequisites
 - **Node.js** `v22` or `v24` (see [`.nvmrc`](.nvmrc))
-- **pnpm** `v12.9.1` or newer
+- **pnpm** `v9` or newer
 
 ### Setup
 
@@ -75,8 +80,8 @@ cp .env.example .env
 | `pnpm run site:dev` | Start local Astro development server with hot reload |
 | `pnpm run site:build` | Build production static site into `dist/` and generate Pagefind search index |
 | `pnpm run pipeline:report` | Run pipeline dry-run and generate audit report in `data/runs/<week>/report.md` |
-| `pnpm run pipeline:run` | Run production pipeline and update `content/entries/` and `data/signals/` |
-| `pnpm test` | Run Vitest snapshot and unit tests in `packages/renderers` |
+| `pnpm run pipeline:run` | Run production pipeline and update `content/entries/`, `data/signals/`, and `data/runs/` |
+| `pnpm test` | Run all 94 Vitest unit and hermetic pipeline tests |
 | `pnpm run typecheck` | Typecheck all workspace packages (`schema`, `renderers`, `pipeline`, `site`) |
 
 ---
@@ -94,7 +99,7 @@ cp .env.example .env
 ## 🔄 CI / CD Automation
 
 - **`ci.yml`:** Runs on every pull request and push to `main`: verifies typechecking, executes Vitest tests, and confirms static site generation.
-- **`pipeline.yml`:** Runs weekly at 02:00 UTC every Monday: automatically discovers new tools, applies gates and scoring, enriches launch configs, and commits updates to `content/` and `data/`.
+- **`pipeline.yml`:** Runs weekly at 02:00 UTC every Monday: automatically discovers new tools, applies gates and scoring, computes weekly trends, enriches launch configs, and commits updates to `content/` and `data/`.
 - **`deploy.yml`:** Builds the static site and deploys `apps/site/dist/` to GitHub Pages / Cloudflare Pages.
 
 ---
@@ -103,14 +108,14 @@ cp .env.example .env
 
 All architectural guidelines and reference specs are available in [`docs/`](docs/):
 
-- [`01_ARCHITECTURE.md`](docs/01_ARCHITECTURE.md): Architecture overview, client adapters, and system topology.
+- [`01_ARCHITECTURE.md`](docs/01_ARCHITECTURE.md): Complete v3 architecture overview, 3-pillar schema, and velocity engine.
 - [`02_REPO_QUALITY_CRITERIA.md`](docs/02_REPO_QUALITY_CRITERIA.md): Hard gates (G1–G9), type check, scoring formulas, and anti-fake star heuristics.
 - [`03_GROWTH_AND_SEO.md`](docs/03_GROWTH_AND_SEO.md): Programmatic SEO, 1-click config hooks, and growth timeline.
 - [`04_FUTURE_ROADMAP.md`](docs/04_FUTURE_ROADMAP.md): Deferred scope, non-goals, and future ideas parking lot.
 - [`05_FOLDER_STRUCTURE.md`](docs/05_FOLDER_STRUCTURE.md): Detailed workspace structure, content schemas, and folder ownership rules.
-- [`06_CATALOG_RELIABILITY_FIX_PLAN.md`](docs/06_CATALOG_RELIABILITY_FIX_PLAN.md): Completed root-cause fix plan for type detection, genuine skills extraction, and honest confidence labels.
-- [`06_FRONTEND_UX_REVIEW.md`](docs/06_FRONTEND_UX_REVIEW.md): Completed frontend redesign direction and execution plan (Phases A–E).
 - [`07_CHECKPOINT_STATUS.md`](docs/07_CHECKPOINT_STATUS.md): Current system state, monorepo metrics, verified client paths, and production catalog health report.
+- [`08_PRODUCT_AND_ARCHITECTURE_REVIEW.md`](docs/08_PRODUCT_AND_ARCHITECTURE_REVIEW.md): Deep architectural audit and technical critique.
+- [`09_V3_WEB_DICTIONARY_AND_TRENDING_PLAN.md`](docs/09_V3_WEB_DICTIONARY_AND_TRENDING_PLAN.md): Authoritative v3 execution plan with verified completion records across all 5 phases.
 
 ---
 

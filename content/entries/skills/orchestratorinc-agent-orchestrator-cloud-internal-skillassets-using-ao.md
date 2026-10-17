@@ -8,7 +8,7 @@ summary: "- ao list --json prints machine-readable output; --all includes
   terminated workers (hidden by default). - --agent is an alias for --harness on
   ao spawn. - Session ids are UUIDs shown by ao list. - Every session runs i..."
 categories:
-  - dev-tools
+  - cloud-infra
 status: active
 quality_percentile: 81
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
   extra_files:
     - commands/orchestration.md
     - commands/pull-requests.md
+tags: []
 ---
 
 # AO Cloud CLI Catalog

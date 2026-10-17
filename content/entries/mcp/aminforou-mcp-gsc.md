@@ -6,7 +6,7 @@ summary: Property Management - See all your GSC properties in one place - Get
   verification details and ownership information - Add or remove properties from
   your account
 categories:
-  - other
+  - browser-web
 status: active
 quality_percentile: 33
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - mcp-search-console
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # Google Search Console MCP Server for SEOs

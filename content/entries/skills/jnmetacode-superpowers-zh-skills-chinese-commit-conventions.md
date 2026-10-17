@@ -6,7 +6,7 @@ tagline: "中文 commit 与 changelog 配置参考——Conventional Commits
   /chinese-commit-conventions "
 summary: 基于 Conventional Commits 1.0.0 规范，针对中文团队的实际使用习惯进行适配。
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 80
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
     /chinese-commit-conventions 时调用，不要根据上下文自动触发。
   folder_path: skills/chinese-commit-conventions
   extra_files: []
+tags: []
 ---
 
 # 中文 Git 提交规范

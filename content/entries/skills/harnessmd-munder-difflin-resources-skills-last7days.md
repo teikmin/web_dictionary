@@ -7,7 +7,7 @@ tagline: |-
 summary: "Get the concrete date range for a rolling 7-day window ending today by
   running the bundled resolver:"
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 80
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
     network. Use before a "last 7 days" / trailing-week task.
   folder_path: resources/skills/last7Days
   extra_files: []
+tags: []
 ---
 
 ## /last7Days

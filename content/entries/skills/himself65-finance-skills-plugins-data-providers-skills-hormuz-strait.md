@@ -7,7 +7,7 @@ tagline: "Check the live status of the Strait of Hormuz from the Hormuz Strait
 summary: This skill is read-only. It fetches public dashboard data — no
   authentication required.
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 38
 selection_reason: quality_percentile
@@ -48,6 +48,7 @@ skill:
   extra_files:
     - README.md
     - references/api_schema.md
+tags: []
 ---
 
 # Hormuz Strait Monitor Skill

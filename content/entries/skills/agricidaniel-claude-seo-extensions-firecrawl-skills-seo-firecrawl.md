@@ -8,7 +8,7 @@ summary: "Check availability: Before using any Firecrawl tool, verify the MCP
   server is connected by checking if firecrawlscrape or any Firecrawl tool is
   available. If tools are not available, inform the user the extension is n..."
 categories:
-  - productivity
+  - browser-web
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
   folder_path: extensions/firecrawl/skills/seo-firecrawl
   extra_files:
     - LICENSE.txt
+tags: []
 ---
 
 # Firecrawl Extension for Claude SEO

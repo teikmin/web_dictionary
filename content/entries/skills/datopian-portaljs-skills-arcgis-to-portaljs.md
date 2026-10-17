@@ -8,7 +8,7 @@ summary: Migrate an entire ArcGIS Hub open-data site into a PortalJS Arc portal
   in one pass. Every Hub site is machine-readable — a DCAT-US catalog at
   /data.json, with every dataset backed by an ArcGIS REST FeatureService — so...
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
   extra_files:
     - references/reference.md
     - references/sync-and-cutover.md
+tags: []
 ---
 
 # ArcGIS Hub → PortalJS

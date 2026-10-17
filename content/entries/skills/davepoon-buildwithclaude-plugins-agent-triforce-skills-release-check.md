@@ -7,7 +7,7 @@ tagline: Pre-release verification checklist. Validates features, tests, docs,
 summary: "- Before any release to production - Before tagging a version - As a
   final quality gate after all features are implemented and reviewed"
 categories:
-  - dev-tools
+  - security-auth
 status: active
 quality_percentile: 90
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ skill:
     Centinela (QA) agent.
   folder_path: plugins/agent-triforce/skills/release-check
   extra_files: []
+tags:
+  - security
 ---
 
 # Release Check

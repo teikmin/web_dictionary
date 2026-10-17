@@ -9,7 +9,7 @@ summary: Real-time global intelligence across 30+ domains with 139 MCP tools, a
   enterprise-grade semantic search across accumulated intelligence. All data
   comes f...
 categories:
-  - other
+  - databases-memory
 status: active
 quality_percentile: 64
 selection_reason: quality_percentile
@@ -42,6 +42,8 @@ launch:
     - world-intel-mcp
   env_vars: []
   confidence: manifest
+tags:
+  - qdrant
 ---
 
 ![Phoenix Intelligence Dashboard](https://raw.githubusercontent.com/marc-shade/world-intel-mcp/main/docs/dashboard.png)

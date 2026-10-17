@@ -8,7 +8,7 @@ summary: Help users discover, install, and start using NVIDIA skills that may
   not be installed yet. Treat this skill as a stable NVIDIA capability detector
   and catalog router, not as a mirror of every external skill's trigger...
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 54
 selection_reason: quality_percentile
@@ -50,6 +50,7 @@ skill:
     - references/taxonomy-routing.md
     - skill-card.md
     - skill.oms.sig
+tags: []
 ---
 
 # NVIDIA Skill Finder

@@ -8,7 +8,7 @@ summary: 1. 解析用户意图，映射到脚本子命令： - "整理素材" / 
   "标记" → tag - "找之前的" / "搜索历史" / "之前做的" → search - "素材列表" / "看看有什么" → list -
   "素材统计" / "产出报告" → report - （检索前若索引可能过期，先跑一次 scan；search/list 在索引缺失时会自动扫描）
 categories:
-  - productivity
+  - browser-web
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
   extra_files:
     - EASEL-META.md
     - scripts/assets.py
+tags: []
 ---
 
 # 素材管理器

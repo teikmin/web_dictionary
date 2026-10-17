@@ -6,7 +6,7 @@ tagline: Create, analyze, proofread, and modify Office documents (.docx, .xlsx,
   inspect
 summary: "If officecli is not installed:"
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -49,6 +49,7 @@ skill:
     - CONTRIBUTING.zh.md
     - LICENSE
     - NOTICE
+tags: []
 ---
 
 # officecli

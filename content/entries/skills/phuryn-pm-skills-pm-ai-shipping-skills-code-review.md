@@ -9,7 +9,7 @@ summary: "Most review output is noise: a list of things that look wrong,
   opposite — a small number of findings, each with a required behaviour, a
   feasible t..."
 categories:
-  - ai-frameworks
+  - coding-agents
 status: active
 quality_percentile: 68
 selection_reason: quality_percentile
@@ -46,6 +46,8 @@ skill:
     - references/correctness-taxonomy.md
     - references/performance-review.md
     - references/security-review.md
+tags:
+  - security
 ---
 
 # Code Review

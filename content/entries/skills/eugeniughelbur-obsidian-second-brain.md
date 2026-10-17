@@ -6,7 +6,7 @@ tagline: "Operate any Obsidian vault as a living, self-rewriting second brain
   cont"
 summary: "Try these methods in order. Use the first one available:"
 categories:
-  - databases
+  - productivity-ops
 status: active
 quality_percentile: 60
 selection_reason: quality_percentile
@@ -63,6 +63,7 @@ skill:
     - .github/ISSUE_TEMPLATE/feature_request.yml
     - .github/PULL_REQUEST_TEMPLATE.md
     - .github/dependabot.yml
+tags: []
 ---
 
 # Obsidian Second Brain

@@ -7,7 +7,7 @@ summary: 1. 在润色句子前先明确完整的研究故事：任务、技术�
   新术语先定义再复用，全文保持术语、符号和概念边界一致。 5. 摘要和引言中的每个重要主张都必须对应实验、数据或来源证据；没有证据时减弱或删除主张。 6.
   完成章节后执行反向提纲，...
 categories:
-  - productivity
+  - domain-research
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ skill:
   extra_files:
     - review.md
     - topics.md
+tags:
+  - research
 ---
 
 # Research Paper Writing

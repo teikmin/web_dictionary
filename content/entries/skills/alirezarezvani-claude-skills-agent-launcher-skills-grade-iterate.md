@@ -7,7 +7,7 @@ tagline: Phase 3 of building a Claude Managed Agent — the bounded grade→iter
 summary: See ../../references/loops-and-workflows.md and the outcome section of
   ../../references/cma-primitives.md.
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 46
 selection_reason: quality_percentile
@@ -52,6 +52,7 @@ skill:
     - scripts/eval_scaffold.py
     - scripts/outcome_builder.py
     - scripts/verdict_reader.py
+tags: []
 ---
 
 # Phase 3 — Grade → Iterate (the bounded loop)

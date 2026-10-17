@@ -6,7 +6,7 @@ tagline: >
   Use for /ponytail-help, "ponytail help", "how do I use ponytail".
 summary: Level sticks until changed or session end.
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 57
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
     Use for /ponytail-help, "ponytail help", "how do I use ponytail".
   folder_path: skills/ponytail-help
   extra_files: []
+tags: []
 ---
 
 # Ponytail Help

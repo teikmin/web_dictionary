@@ -9,7 +9,7 @@ summary: "The free Ryze MCP connector (https://connector.get-ryze.ai/mcp).
   https://connector.get-ryze.ai/mcp. claude.ai / Desktop / Cursor: add it as a
   custom connector with the..."
 categories:
-  - security
+  - agent-frameworks
 status: active
 quality_percentile: 74
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
     keywords", or "why do they outrank us".
   folder_path: skills/competitor-gap
   extra_files: []
+tags: []
 ---
 
 # Competitor Gap

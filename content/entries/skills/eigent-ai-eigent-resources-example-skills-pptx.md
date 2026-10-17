@@ -6,7 +6,7 @@ tagline: "Use this skill any time a .pptx file is involved in any way — as
   presenta"
 summary: Read editing.md for full details.
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -55,6 +55,7 @@ skill:
     - scripts/office/helpers/merge_runs.py
     - scripts/office/helpers/simplify_redlines.py
     - scripts/office/pack.py
+tags: []
 ---
 
 # PPTX Skill

@@ -7,7 +7,7 @@ summary: Design stable, well-documented interfaces that are hard to misuse. Good
   interfaces make the right thing easy and the wrong thing hard. This applies to
   REST APIs, GraphQL schemas, module boundaries, component props, an...
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 71
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     boundaries between frontend and backend.
   folder_path: skills/api-and-interface-design
   extra_files: []
+tags: []
 ---
 
 # API and Interface Design

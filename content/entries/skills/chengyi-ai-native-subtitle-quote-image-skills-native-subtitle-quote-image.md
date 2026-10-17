@@ -5,7 +5,7 @@ tagline: 将本地视频或用户有权处理的在线视频，经过来源获�
   或保留画面原比例的视频字幕长图。支持两种明确分开的输出：保留画面内已烧录字幕的原生字幕模式，以及把已审核的时间点与台词绘制到真实视频帧上的脚本字幕模式。用户要求原生字幕截图、字
 summary: 如果用户没有明确指定模式，先用用户当前使用的语言询问，并简短说明两种选择。中文提问可直接使用：
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
     - scripts/check_environment.py
     - scripts/check_update.py
     - scripts/native_subtitle_stitch.py
+tags: []
 ---
 
 # 视频字幕拼图

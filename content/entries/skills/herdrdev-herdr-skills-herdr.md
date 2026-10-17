@@ -7,7 +7,7 @@ tagline: Control Herdr, a terminal multiplexer for coding agents. Use only when
 summary: "Before issuing any control command, verify that this agent is running
   inside a Herdr-managed pane:"
 categories:
-  - productivity
+  - coding-agents
 status: active
 quality_percentile: 46
 selection_reason: quality_percentile
@@ -41,6 +41,8 @@ skill:
     or parallel work. Requires HERDR_ENV=1.
   folder_path: skills/herdr
   extra_files: []
+tags:
+  - terminal
 ---
 
 # Herdr

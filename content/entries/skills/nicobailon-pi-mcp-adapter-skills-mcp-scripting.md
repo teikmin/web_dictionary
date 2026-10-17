@@ -6,7 +6,7 @@ tagline: Read before writing mcpScript code. Covers tool discovery, the shape of
 summary: "Only what the script emits, logs, or returns enters the conversation,
   so keep intermediate data in variables and return a small result:"
 categories:
-  - security
+  - other
 status: active
 quality_percentile: 81
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
   folder_path: skills/mcp-scripting
   extra_files:
     - references/jev.md
+tags: []
 ---
 
 # MCP scripting

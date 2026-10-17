@@ -8,7 +8,7 @@ summary: "- Structured Thinking Framework: Organizes thoughts through standard
   Conclusion), with warnings (or, in --strict-stages mode, rejection) when a
   thou..."
 categories:
-  - databases
+  - agent-frameworks
 status: active
 quality_percentile: 43
 selection_reason: quality_percentile
@@ -41,6 +41,8 @@ launch:
     - mcp-sequential-thinking
   env_vars: []
   confidence: manifest
+tags:
+  - research
 ---
 
 # Sequential Thinking MCP Server

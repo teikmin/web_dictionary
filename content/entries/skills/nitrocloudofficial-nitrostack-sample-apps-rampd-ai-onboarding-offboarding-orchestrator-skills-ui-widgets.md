@@ -8,7 +8,7 @@ summary: Best practices for linking tools to interactive frontend widgets using
   @Widget and @nitrostack/widgets SDK (including state sync, tool calling,
   display modes, media queries, and chat actions).
 categories:
-  - other
+  - agent-frameworks
 status: active
 quality_percentile: 99
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     calling, display modes, media queries, and chat actions).
   folder_path: sample-apps/Rampd-AI-Onboarding-Offboarding-Orchestrator/skills/ui-widgets
   extra_files: []
+tags: []
 ---
 
 ## When to Use

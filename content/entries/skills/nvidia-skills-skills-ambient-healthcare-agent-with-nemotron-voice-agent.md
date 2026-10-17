@@ -8,7 +8,7 @@ summary: Customize src/examples/generic/ in a user-selected NVIDIA Nemotron
   Voice Agent (NVA) checkout. Use this skill for appointment making, five-field
   patient intake, or a developer-defined healthcare workflow that fits one...
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 54
 selection_reason: quality_percentile
@@ -50,6 +50,7 @@ skill:
     - references/appointment-making/database/schema.sql
     - references/appointment-making/database/seed.py
     - references/appointment-making/database/seed_data/appointment_types.jsonl
+tags: []
 ---
 
 # Ambient Healthcare Agent with Nemotron Voice Agent

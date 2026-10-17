@@ -1,5 +1,6 @@
 import type { LaunchSpec } from '@web-db/schema';
 import { fetchFileContent } from '../../sources/github-contents.js';
+import { hasPlaceholder } from './placeholder.js';
 
 export async function extractFromPackageJson(
   owner: string,
@@ -25,6 +26,15 @@ export async function extractFromPackageJson(
       pkg.keywords?.includes('mcp-server');
 
     if (!isMcp) return null;
+
+    if (hasPlaceholder(pkgName)) {
+      return {
+        transport: 'stdio',
+        args: [],
+        env_vars: [],
+        confidence: 'none',
+      };
+    }
 
     return {
       transport: 'stdio',

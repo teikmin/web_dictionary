@@ -6,7 +6,7 @@ tagline: Dive is an open-source MCP Host Desktop Application that seamlessly
 summary: Dive is an open-source MCP Host Desktop Application that seamlessly
   integrates with any LLMs supporting function calling capabilities. ✨
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 18
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - dive
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <div align="center">

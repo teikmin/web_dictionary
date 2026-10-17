@@ -6,7 +6,7 @@ tagline: >
   支持两种输入方式：用户提供完整内容和图片/图片URL，直接发布；或提供网页URL，自动提取内容和图片。 用户说"发长文"时使用长文模式，否则默认图文模式。
 summary: '- 上传图文（默认）：图片 + 短文，适合日常分享 - 写长文：长篇文章 + 排版模板选择，适合深度内容。用户明确说"发长文"时使用'
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 87
 selection_reason: quality_percentile
@@ -48,6 +48,7 @@ skill:
     - scripts/image_downloader.py
     - scripts/publish_pipeline.py
     - scripts/title.txt
+tags: []
 ---
 
 # 小红书内容发布

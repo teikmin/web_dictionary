@@ -9,7 +9,7 @@ summary: "- Organizing a multi-dimensional code review - Deciding which review
   Calibrating severity ratings consistently - Producing a consolidated
   review..."
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 92
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
   folder_path: plugins/agent-teams/skills/multi-reviewer-patterns
   extra_files:
     - references/review-dimensions.md
+tags: []
 ---
 
 # Multi-Reviewer Patterns

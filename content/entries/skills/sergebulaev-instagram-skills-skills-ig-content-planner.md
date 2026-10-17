@@ -8,7 +8,7 @@ summary: '- User asks "plan my week on Instagram" or "what should I post this
   week" - User wants to escape ad-hoc posting and establish a rhythm - Before a
   launch week (the plan aligns a product pillar)'
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
   extra_files:
     - references/example-week.md
     - references/pillars-framework.md
+tags: []
 ---
 
 # Instagram Content Planner

@@ -9,7 +9,7 @@ summary: Read the diff and find the problems. Review, audit, triage, and
   authorization still in force for the same task. Done means the requested
   revie...
 categories:
-  - other
+  - productivity-ops
 status: active
 quality_percentile: 50
 selection_reason: quality_percentile
@@ -51,6 +51,7 @@ skill:
     - references/project-context.md
     - references/public-reply.md
     - references/release-surfaces.md
+tags: []
 ---
 
 # Check: Review Before You Ship

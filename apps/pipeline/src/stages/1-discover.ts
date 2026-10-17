@@ -25,7 +25,17 @@ export async function runStage1Discover(): Promise<CandidateRepo[]> {
     }
   }
 
-  // 3. SKILL.md Code Searches
+  // 3. Agent Tool Topic Searches
+  if (config.queries.tool_queries) {
+    for (const q of config.queries.tool_queries) {
+      const repos = await searchRepositories(q, 3);
+      for (const r of repos) {
+        candidatesMap.set(r.fullName.toLowerCase(), r);
+      }
+    }
+  }
+
+  // 4. SKILL.md Code Searches
   for (const q of config.queries.code_queries) {
     const repos = await searchSkillCodeFiles(q, 2);
     for (const r of repos) {
@@ -33,7 +43,7 @@ export async function runStage1Discover(): Promise<CandidateRepo[]> {
     }
   }
 
-  // 4. Official MCP Registry
+  // 5. Official MCP Registry
   const registryServers = await fetchMcpRegistry();
   logger.info(`Discovered ${registryServers.length} servers from official MCP Registry`);
   // Registry servers that have GitHub repo URLs are already tracked or can be linked

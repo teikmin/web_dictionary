@@ -8,7 +8,7 @@ summary: "Presets offer two things: a toolkit that streamlines model inference
   optimization using agents, and a portable format that deploys the final preset
   to any cloud, Kubernetes cluster, or bare-metal fleet. A preset holds..."
 categories:
-  - dev-tools
+  - cloud-infra
 status: active
 quality_percentile: 44
 selection_reason: quality_percentile
@@ -42,6 +42,8 @@ skill:
     or manage existing presets, not for deploying or serving a model.
   folder_path: skills/dstack-presets
   extra_files: []
+tags:
+  - kubernetes
 ---
 
 # dstack Presets

@@ -8,7 +8,7 @@ summary: "Audit the current project's agent setup and AI coding maintainability
   against this framework: agent config → instruction surfaces → tools/runtime →
   verifiers → maintainability"
 categories:
-  - other
+  - agent-frameworks
 status: active
 quality_percentile: 50
 selection_reason: quality_percentile
@@ -50,6 +50,7 @@ skill:
     - scripts/check-agent-context.sh
     - scripts/check-doc-refs.sh
     - scripts/check-maintainability.sh
+tags: []
 ---
 
 # Health: Agent-Assisted Engineering Health

@@ -5,7 +5,7 @@ tagline: Bulk port forwarding Kubernetes services for local development.
 summary: Documentation | Getting Started | User Guide | API Reference | MCP (AI
   Integration)
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 40
 selection_reason: quality_percentile
@@ -34,6 +34,8 @@ launch:
   args: []
   env_vars: []
   confidence: none
+tags:
+  - kubernetes
 ---
 
 # kubefwd (Kube Forward)

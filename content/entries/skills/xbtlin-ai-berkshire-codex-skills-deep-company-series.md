@@ -6,7 +6,7 @@ tagline: "AI Berkshire skill: 看懂XX公司（深度公司系列）：3-8 篇�
 summary: This skill is generated from skills/deep-company-series.md so Claude
   Code and Codex users share one canonical workflow.
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 95
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ skill:
     skills/deep-company-series.md."
   folder_path: codex-skills/deep-company-series
   extra_files: []
+tags: []
 ---
 
 ## Codex adapter note

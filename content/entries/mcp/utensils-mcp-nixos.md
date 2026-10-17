@@ -5,7 +5,7 @@ tagline: MCP-NixOS - Model Context Protocol Server for NixOS resources
 summary: 🚨 No Nix/NixOS Required! Works on any system - Windows, macOS, Linux.
   You're just querying APIs.
 categories:
-  - ai-frameworks
+  - cloud-infra
 status: active
 quality_percentile: 22
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ launch:
     - mcp-nixos
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # MCP-NixOS - Because Your AI Shouldn't Hallucinate Package Names

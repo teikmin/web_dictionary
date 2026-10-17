@@ -7,7 +7,7 @@ tagline: Entry point for new work. Determines the best action path or work
 summary: Gather only metadata to determine the action path. Do NOT read full
   file contents yet.
 categories:
-  - dev-tools
+  - databases-memory
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     or no spec needed) and refines ideas through structured dialogue.
   folder_path: tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-discovery
   extra_files: []
+tags: []
 ---
 
 # Discovery

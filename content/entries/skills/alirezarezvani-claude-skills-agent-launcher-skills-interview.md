@@ -6,7 +6,7 @@ tagline: Phase 1 of building a Claude Managed Agent — interview the founder
   primitives t
 summary: See ../../references/interview-to-config.md for the full mapping.
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 46
 selection_reason: quality_percentile
@@ -51,6 +51,7 @@ skill:
     - scripts/build_sheet_builder.py
     - scripts/interview_planner.py
     - scripts/primitives_validator.py
+tags: []
 ---
 
 # Phase 1 — Interview → Plan

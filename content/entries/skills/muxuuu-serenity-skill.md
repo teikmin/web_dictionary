@@ -8,7 +8,7 @@ summary: This is an independent interpretation of public research material, not
   an official Serenity product. See method sources when attribution or the
   method's origin matters.
 categories:
-  - ai-frameworks
+  - domain-research
 status: active
 quality_percentile: 68
 selection_reason: quality_percentile
@@ -53,6 +53,8 @@ skill:
     - assets/research-prompt-pack.md
     - assets/thesis-template.md
     - evals/test-cases.md
+tags:
+  - research
 ---
 
 # Serenity.skill

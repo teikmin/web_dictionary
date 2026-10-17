@@ -9,7 +9,7 @@ summary: "- A lot to read in → route to a real agent in the topology that
   implementers who have been on a project over time. An agent that already
   unders..."
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 56
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     subagents."
   folder_path: packages/daemon/assets/plugins/openrig-core/skills/delegating-work
   extra_files: []
+tags: []
 ---
 
 # Delegating work — who should do this task?

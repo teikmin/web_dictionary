@@ -8,7 +8,7 @@ summary: 'Enter this skill: - "how to install / how to deploy / how to start
   categraf" - "run categraf on Docker / Kubernetes / Windows / Linux" - "how to
   register categraf as a systemd service / start on boot" - "report categr...'
 categories:
-  - ai-frameworks
+  - cloud-infra
 status: active
 quality_percentile: 83
 selection_reason: quality_percentile
@@ -46,6 +46,9 @@ skill:
     snippets.'
   folder_path: aiagent/skill/embedded/builtin/categraf-deploy-guide
   extra_files: []
+tags:
+  - docker
+  - kubernetes
 ---
 
 # Categraf Deployment Guide

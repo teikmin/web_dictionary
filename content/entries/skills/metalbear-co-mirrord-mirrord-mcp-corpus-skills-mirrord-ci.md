@@ -8,7 +8,7 @@ summary: "Help users integrate mirrord into CI pipelines for testing against
   real Kubernetes environments: - Configure CI runners to connect to Kubernetes
   clusters - Set up mirrord ci start/stop commands in CI workflows - Gener..."
 categories:
-  - dev-tools
+  - cloud-infra
 status: active
 quality_percentile: 38
 selection_reason: quality_percentile
@@ -43,6 +43,8 @@ skill:
   extra_files:
     - README.md
     - references/troubleshooting.md
+tags:
+  - kubernetes
 ---
 
 # Mirrord CI Skill

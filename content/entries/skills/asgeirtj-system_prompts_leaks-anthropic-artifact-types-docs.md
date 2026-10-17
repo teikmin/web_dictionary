@@ -8,7 +8,7 @@ summary: "A doc keeps its content — title, tabs, blocks, comments, who can edi
   — in the Claude Docs service, keyed by the artifact's own id. There is no
   instance file to write, fill in or publish. In particular:"
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 85
 selection_reason: quality_percentile
@@ -48,6 +48,7 @@ skill:
     relay)."
   folder_path: Anthropic/artifact-types/docs
   extra_files: []
+tags: []
 ---
 
 # Claude Docs — the shared type

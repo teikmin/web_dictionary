@@ -6,7 +6,7 @@ tagline: Provides AI and machine learning techniques for CTF challenges. Use
   extracti
 summary: "Python packages (all platforms):"
 categories:
-  - security
+  - agent-frameworks
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -43,6 +43,8 @@ skill:
     - adversarial-ml.md
     - llm-attacks.md
     - model-attacks.md
+tags:
+  - python
 ---
 
 # CTF AI/ML

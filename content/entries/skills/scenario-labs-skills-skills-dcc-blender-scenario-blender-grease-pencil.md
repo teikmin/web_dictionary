@@ -9,7 +9,7 @@ summary: "REQUIRED BACKGROUND: scenario-blender-expert (execution channel,
   scenario-blender-previs-storyboard. Mesh animation principles:
   scenario-blender-anim..."
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 51
 selection_reason: quality_percentile
@@ -50,6 +50,8 @@ skill:
     - references/procedures.md
     - references/sources.md
     - scripts/bx_gp.py
+tags:
+  - python
 ---
 
 # Grease Pencil (v3, Blender 5.2)

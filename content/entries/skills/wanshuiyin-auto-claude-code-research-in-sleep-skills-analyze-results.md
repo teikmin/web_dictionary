@@ -8,7 +8,7 @@ summary: Analyze ML experiment results, compute statistics, generate comparison
   tables and insights. Use when user says "analyze results", "compare", or needs
   to interpret experimental data.
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     "compare", or needs to interpret experimental data.
   folder_path: skills/analyze-results
   extra_files: []
+tags: []
 ---
 
 # Analyze Experiment Results

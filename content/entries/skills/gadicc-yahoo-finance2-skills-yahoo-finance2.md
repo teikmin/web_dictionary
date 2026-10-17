@@ -6,7 +6,7 @@ tagline: Use when building with the yahoo-finance2 TypeScript/Deno/npm library,
   th
 summary: "Use this skill when a task involves yahoo-finance2, including:"
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 36
 selection_reason: quality_percentile
@@ -39,6 +39,9 @@ skill:
     schemas, cached fixtures, and npm/JSR build output.
   folder_path: skills/yahoo-finance2
   extra_files: []
+tags:
+  - typescript
+  - finance
 ---
 
 # yahoo-finance2

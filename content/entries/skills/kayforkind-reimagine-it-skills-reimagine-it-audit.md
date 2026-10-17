@@ -7,7 +7,7 @@ tagline: Design Health — runs 19 deterministic quality checks on HTML output.
 summary: "Runs npx reimagine-it audit — 19 checks across 6 categories
   (src/audit.js; Python scripts/audit.py is the CI mirror):"
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -43,6 +43,8 @@ skill:
     Content-Derived Design suite.
   folder_path: skills/reimagine-it/audit
   extra_files: []
+tags:
+  - python
 ---
 
 # /reimagine-it audit

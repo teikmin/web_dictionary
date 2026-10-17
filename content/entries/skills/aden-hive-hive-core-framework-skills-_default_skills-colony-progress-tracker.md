@@ -7,7 +7,7 @@ summary: "Applies when your spawn message has dbpath: and colonyid: fields. The
   DB is your durable working memory — tells you what's done, what to skip, which
   SOP gates you owe."
 categories:
-  - ai-frameworks
+  - databases-memory
 status: active
 quality_percentile: 97
 selection_reason: quality_percentile
@@ -39,6 +39,9 @@ skill:
     field.
   folder_path: core/framework/skills/_default_skills/colony-progress-tracker
   extra_files: []
+tags:
+  - sqlite
+  - memory
 ---
 
 ## Operational Protocol: Colony Progress Tracker

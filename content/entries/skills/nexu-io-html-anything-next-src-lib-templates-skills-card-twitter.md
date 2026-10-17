@@ -6,7 +6,7 @@ summary: '【模板: Twitter 分享卡】 - 容器 w-[1600px] h-[900px], 暗色 
   hero 金句 (text-6xl, font-semibold, 限 2-3 行)。 - 下方作者署名 + 头像占位 + handle。 - 左上角小标签
   (类型: "Insight" / "Data" / "Quote")。 - 右下角品牌水印。 - 整张卡片有微妙的纹理 (grid 网格...'
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 69
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
   extra_files:
     - example.html
     - example.md
+tags: []
 ---
 
 【模板: Twitter 分享卡】

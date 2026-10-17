@@ -8,7 +8,7 @@ summary: "Cavecrew = three subagent presets that answer in ultracave voice (tool
   runs: one status line in, one out; nothing between routine calls). Same job as
   Anthropic defaults (Explore, edit-style agents, reviewer); differen..."
 categories:
-  - security
+  - coding-agents
 status: active
 quality_percentile: 56
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
     main context lasts longer.
   folder_path: plugins/caveman/skills/cavecrew
   extra_files: []
+tags: []
 ---
 
 Cavecrew = three subagent presets that answer in ultracave voice (tool runs: one status line in, one out; nothing between routine calls). Same job as Anthropic defaults (`Explore`, edit-style agents, reviewer); difference is the tool-result they return is compressed, so main context shrinks per delegation.

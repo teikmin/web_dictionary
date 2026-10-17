@@ -8,7 +8,7 @@ summary: This repository is essentially an LLM chat desktop application based on
   MCP. It also represents a bold experiment in creating a complete project using
   AI. Many components within the project have been directly converte...
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 6
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ launch:
     - tuui
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # <img src="https://cdn.jsdelivr.net/gh/AI-QL/tuui@main/buildAssets/icons/icon.png" alt="Logo" width="24"/> TUUI - Local AI Playground with MCP

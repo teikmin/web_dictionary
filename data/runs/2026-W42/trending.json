@@ -1,0 +1,1481 @@
+{
+  "week": "2026-W42",
+  "generated_at": "2026-10-17T14:42:58.193Z",
+  "summary": {
+    "week": "2026-W42",
+    "generated_at": "2026-10-17T14:42:58.193Z",
+    "total_new_tools": 287,
+    "total_stars_gained": 477222,
+    "total_active_entries": 690
+  },
+  "top25_overall": [
+    {
+      "slug": "morluto-rea",
+      "name": "rea",
+      "type": "agent_tool",
+      "categories": [
+        "security-auth"
+      ],
+      "stars": 196748,
+      "stars_delta_7d": 183853,
+      "stars_growth_pct": 1425.8,
+      "trending_score": 551559,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        12895,
+        196748
+      ],
+      "tagline": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "repo": "morluto/rea",
+      "is_pack_primary": true,
+      "created_at": "2026-04-14T00:51:32Z",
+      "pushed_at": "2026-10-13T16:25:01Z",
+      "rank_current": 1,
+      "rank_delta": null
+    },
+    {
+      "slug": "cathrynlavery-diagram-design-skills-diagram-design",
+      "name": "diagram-design",
+      "type": "agent_skill",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 53703,
+      "stars_delta_7d": 9049,
+      "stars_growth_pct": 20.3,
+      "trending_score": 10882.75,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        44654,
+        53703
+      ],
+      "tagline": "Create branded architecture, architecture delta, IT current-state, flowchart, sequence, state machine, ER/data model, timeline, swimlane, quadrant, radar/spider, polar chart (polar/radial lollipop), loop/flywheel, nested, tree, org chart, layer stack, exploded axonometric, axonometric plan, Venn, pyramid/funnel, treemap and marimekko, heatmap, bar and dumbbell, waterfall, line (slopegraph, ridgeline, streamgraph, bump), Gantt and scatter charts (bubble, beeswarm), high-level, process, medallion, data flow, DP integration, DP security matrix, Sankey, fishbone, Wardley map, kanban, user journey, service blueprint, deployment, dependency graph, UML class, story map, or database schema diagrams as HTML/SVG/PNG, with .drawio, Mermaid, and .excalidraw import, plus lifecycle phase maps, block decomposition trees, and onboarding guidance.",
+      "repo": "cathrynlavery/diagram-design",
+      "created_at": "2026-04-16T18:01:16Z",
+      "pushed_at": "2026-10-13T14:57:55Z",
+      "rank_current": 1,
+      "rank_delta": null
+    },
+    {
+      "slug": "dietrichgebert-ponytail-skills-ponytail-audit",
+      "name": "ponytail-audit",
+      "type": "agent_skill",
+      "categories": [
+        "security-auth"
+      ],
+      "stars": 162479,
+      "stars_delta_7d": 5108,
+      "stars_growth_pct": 3.2,
+      "trending_score": 5273.8,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        157371,
+        162479
+      ],
+      "tagline": "Quality audit of a whole repo: bugs, security holes, what breaks under real load, risky code without tests, slow paths, and what to delete, merge or split. Ranked, each finding explained in plain English. One-shot report, changes nothing. Use for \"audit this codebase\", \"review the whole repo\", \"find bloat\", \"what can I delete\", /ponytail-audit.\n",
+      "repo": "DietrichGebert/ponytail",
+      "created_at": "2026-06-12T00:52:37Z",
+      "pushed_at": "2026-10-13T01:46:28Z",
+      "rank_current": 2,
+      "rank_delta": null
+    },
+    {
+      "slug": "stablyai-orca-resources-native-chat-visuals-skills-orca-chat-visuals",
+      "name": "orca-chat-visuals",
+      "type": "agent_skill",
+      "categories": [
+        "coding-agents"
+      ],
+      "stars": 91386,
+      "stars_delta_7d": 4425,
+      "stars_growth_pct": 5.1,
+      "trending_score": 4650.17,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        86961,
+        91386
+      ],
+      "tagline": "Show a chart, diagram, table, report or mockup inline in this Orca chat as an HTML page. Use when a visual would help the user understand your answer. Only available when the ORCA_CHAT_VISUALS_DIR environment variable is set.",
+      "repo": "stablyai/orca",
+      "created_at": "2026-03-17T03:28:57Z",
+      "pushed_at": "2026-10-13T16:24:00Z",
+      "rank_current": 7,
+      "rank_delta": null
+    },
+    {
+      "slug": "panniantong-agent-reach",
+      "name": "Agent-Reach",
+      "type": "agent_tool",
+      "categories": [
+        "browser-web"
+      ],
+      "stars": 96891,
+      "stars_delta_7d": 3836,
+      "stars_growth_pct": 4.1,
+      "trending_score": 3994.13,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        93055,
+        96891
+      ],
+      "tagline": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "repo": "Panniantong/Agent-Reach",
+      "is_pack_primary": true,
+      "created_at": "2026-02-24T02:10:24Z",
+      "pushed_at": "2026-10-08T08:31:08Z",
+      "rank_current": 2,
+      "rank_delta": null
+    },
+    {
+      "slug": "affaan-m-ecc-docs-es-skills-api-design",
+      "name": "api-design",
+      "type": "agent_skill",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 278380,
+      "stars_delta_7d": 3682,
+      "stars_growth_pct": 1.3,
+      "trending_score": 3731.35,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        274698,
+        278380
+      ],
+      "tagline": "Patrones de diseño REST API incluyendo nomenclatura de recursos, códigos de estado, paginación, filtrado, respuestas de error, versionado y rate limiting para APIs de producción.",
+      "repo": "affaan-m/ECC",
+      "created_at": "2026-01-18T00:51:51Z",
+      "pushed_at": "2026-10-12T14:45:46Z",
+      "rank_current": 12,
+      "rank_delta": null
+    },
+    {
+      "slug": "addyosmani-agent-skills-skills-api-and-interface-design",
+      "name": "api-and-interface-design",
+      "type": "agent_skill",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 106053,
+      "stars_delta_7d": 3525,
+      "stars_growth_pct": 3.4,
+      "trending_score": 3646.19,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        102528,
+        106053
+      ],
+      "tagline": "Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when creating REST or GraphQL endpoints, defining type contracts between modules, or establishing boundaries between frontend and backend.",
+      "repo": "addyosmani/agent-skills",
+      "created_at": "2026-02-15T20:20:26Z",
+      "pushed_at": "2026-10-10T08:28:49Z",
+      "rank_current": 17,
+      "rank_delta": null
+    },
+    {
+      "slug": "thedotmack-claude-mem-claude-mem-cursor-skills-agent-cost-report",
+      "name": "Agent Cost Report",
+      "type": "agent_skill",
+      "categories": [
+        "databases-memory"
+      ],
+      "stars": 100334,
+      "stars_delta_7d": 2815,
+      "stars_growth_pct": 2.9,
+      "trending_score": 2896.26,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        97519,
+        100334
+      ],
+      "tagline": "Believable agent cost report for any period, default the last 7 full days PT, not counting today. Measured tokens from Claude Code transcripts priced at OpenRouter list prices (ESTIMATED), measured provider spend when a sanctioned source exists, note-taker cost separate, Timing-style HTML/PDF plus report.json, line-items.csv, evidence.json.",
+      "repo": "thedotmack/claude-mem",
+      "created_at": "2025-08-31T20:50:03Z",
+      "pushed_at": "2026-10-13T07:33:53Z",
+      "rank_current": 22,
+      "rank_delta": null
+    },
+    {
+      "slug": "alibaba-open-code-review-plugins-open-code-review-skills-open-code-review",
+      "name": "open-code-review",
+      "type": "agent_skill",
+      "categories": [
+        "coding-agents"
+      ],
+      "stars": 46827,
+      "stars_delta_7d": 2633,
+      "stars_growth_pct": 6,
+      "trending_score": 2789.87,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        44194,
+        46827
+      ],
+      "tagline": "Performs AI-powered code review on Git changes using the `ocr` CLI from alibaba/open-code-review. Use when the user asks to review code, review a pull request, review staged/unstaged changes, review a commit, or compare branches for code quality issues. Produces line-level review comments and can automatically apply fixes when requested. With appropriate review rules, can detect various types of issues including bugs, security vulnerabilities, performance problems, and code quality concerns.\n",
+      "repo": "alibaba/open-code-review",
+      "created_at": "2026-05-18T02:16:36Z",
+      "pushed_at": "2026-10-13T13:47:09Z",
+      "rank_current": 27,
+      "rank_delta": null
+    },
+    {
+      "slug": "diegosouzapw-omniroute",
+      "name": "OmniRoute",
+      "type": "agent_tool",
+      "categories": [
+        "agent-frameworks"
+      ],
+      "stars": 76033,
+      "stars_delta_7d": 2184,
+      "stars_growth_pct": 3,
+      "trending_score": 2248.59,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        73849,
+        76033
+      ],
+      "tagline": "Never stop coding. Free MIT AI gateway: one endpoint, 359 providers (150+ free), 1200+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by hundreds of contributors",
+      "repo": "diegosouzapw/OmniRoute",
+      "is_pack_primary": true,
+      "created_at": "2026-02-13T12:38:31Z",
+      "pushed_at": "2026-10-13T16:20:19Z",
+      "rank_current": 3,
+      "rank_delta": null
+    },
+    {
+      "slug": "mvschwarz-openrig-packages-daemon-assets-plugins-openrig-core-skills-agent-operated-software",
+      "name": "agent-operated-software",
+      "type": "agent_skill",
+      "categories": [
+        "agent-frameworks"
+      ],
+      "stars": 7377,
+      "stars_delta_7d": 1710,
+      "stars_growth_pct": 30.2,
+      "trending_score": 2225.99,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        5667,
+        7377
+      ],
+      "tagline": "Use when designing, building, operating, or diagnosing an ongoing application whose live backend or control loop includes OpenRig agents, including applications with a Markdown, YAML, or JSON agent control plane or a thin surface over specialist agent roles.",
+      "repo": "mvschwarz/openrig",
+      "created_at": "2026-04-01T06:22:40Z",
+      "pushed_at": "2026-10-13T16:24:21Z",
+      "rank_current": 31,
+      "rank_delta": null
+    },
+    {
+      "slug": "leonxlnx-taste-skill-skills-brandkit",
+      "name": "brandkit",
+      "type": "agent_skill",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 95459,
+      "stars_delta_7d": 2036,
+      "stars_growth_pct": 2.2,
+      "trending_score": 2080.37,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        93423,
+        95459
+      ],
+      "tagline": "Premium brand-kit image generation skill for creating high-end brand-guidelines boards, logo systems, identity decks, and visual-world presentations. Trained for minimalist, cinematic, editorial, dark-tech, luxury, cultural, security, gaming, developer-tool, and consumer-app brand systems. Optimized for intentional logo concepting, refined composition, sparse typography, strong symbolic meaning, premium mockups, art-directed imagery, and flexible grid layouts.",
+      "repo": "Leonxlnx/taste-skill",
+      "created_at": "2026-02-19T21:44:05Z",
+      "pushed_at": "2026-10-13T15:01:01Z",
+      "rank_current": 36,
+      "rank_delta": null
+    },
+    {
+      "slug": "blader-humanizer",
+      "name": "humanizer",
+      "type": "agent_skill",
+      "categories": [
+        "other"
+      ],
+      "stars": 56481,
+      "stars_delta_7d": 1891,
+      "stars_growth_pct": 3.5,
+      "trending_score": 1956.5,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        54590,
+        56481
+      ],
+      "tagline": "Rewrite AI-sounding text so it reads like the writer without changing what it says.\nUse when editing or reviewing prose for AI tells: not-X-but-Y contrasts, one-line\nclosers, staged openers, forced triads, dashes everywhere, inflated claims, sales\nlanguage, stock AI words, bold labels, or filler. Based on Wikipedia's \"Signs of AI writing.\"\n",
+      "repo": "blader/humanizer",
+      "created_at": "2026-01-18T05:30:15Z",
+      "pushed_at": "2026-09-28T05:55:12Z",
+      "rank_current": 41,
+      "rank_delta": null
+    },
+    {
+      "slug": "nextlevelbuilder-ui-ux-pro-max-skill-cli-assets-skills-banner-design",
+      "name": "banner-design",
+      "type": "agent_skill",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 135424,
+      "stars_delta_7d": 1652,
+      "stars_growth_pct": 1.2,
+      "trending_score": 1672.4,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        133772,
+        135424
+      ],
+      "tagline": "Design banners for social media, ads, website heroes, creative assets, and print. Multiple art direction options with optional generated or supplied visuals. Actions: design, create, generate banner. Platforms: Facebook, Twitter/X, LinkedIn, YouTube, Instagram, Google Display, website hero, print. Styles: minimalist, gradient, bold typography, photo-based, illustrated, geometric, retro, glassmorphism, 3D, neon, duotone, editorial, collage.",
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "created_at": "2025-11-30T11:36:31Z",
+      "pushed_at": "2026-10-12T11:08:03Z",
+      "rank_current": 42,
+      "rank_delta": null
+    },
+    {
+      "slug": "graphify-labs-graphify",
+      "name": "graphify",
+      "type": "agent_tool",
+      "categories": [
+        "coding-agents"
+      ],
+      "stars": 126101,
+      "stars_delta_7d": 1515,
+      "stars_growth_pct": 1.2,
+      "trending_score": 1533.42,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        124586,
+        126101
+      ],
+      "tagline": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "repo": "Graphify-Labs/graphify",
+      "is_pack_primary": true,
+      "created_at": "2026-04-03T15:49:07Z",
+      "pushed_at": "2026-10-13T10:43:52Z",
+      "rank_current": 4,
+      "rank_delta": null
+    },
+    {
+      "slug": "nousresearch-hermes-agent",
+      "name": "hermes-agent",
+      "type": "agent_tool",
+      "categories": [
+        "domain-research"
+      ],
+      "stars": 253381,
+      "stars_delta_7d": 1522,
+      "stars_growth_pct": 0.6,
+      "trending_score": 1531.2,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        251859,
+        253381
+      ],
+      "tagline": "The agent that grows with you",
+      "repo": "NousResearch/hermes-agent",
+      "is_pack_primary": true,
+      "created_at": "2025-07-22T22:22:28Z",
+      "pushed_at": "2026-10-13T16:25:31Z",
+      "rank_current": 5,
+      "rank_delta": null
+    },
+    {
+      "slug": "d4vinci-scrapling",
+      "name": "Scrapling",
+      "type": "agent_tool",
+      "categories": [
+        "browser-web"
+      ],
+      "stars": 87256,
+      "stars_delta_7d": 1132,
+      "stars_growth_pct": 1.3,
+      "trending_score": 1146.88,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        86124,
+        87256
+      ],
+      "tagline": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+      "repo": "D4Vinci/Scrapling",
+      "is_pack_primary": true,
+      "created_at": "2024-10-13T20:29:53Z",
+      "pushed_at": "2026-10-12T22:39:15Z",
+      "rank_current": 6,
+      "rank_delta": null
+    },
+    {
+      "slug": "nexu-io-open-design-apps-daemon-tests-fixtures-plugin-fixtures-sample-plugin",
+      "name": "sample-plugin",
+      "type": "agent_skill",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 100908,
+      "stars_delta_7d": 1069,
+      "stars_growth_pct": 1.1,
+      "trending_score": 1080.45,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        99839,
+        100908
+      ],
+      "tagline": "Phase 1 sample plugin synthesizing a SKILL.md frontmatter for backwards-compat tests.",
+      "repo": "nexu-io/open-design",
+      "created_at": "2026-04-28T04:25:20Z",
+      "pushed_at": "2026-10-13T16:25:04Z",
+      "rank_current": 47,
+      "rank_delta": null
+    },
+    {
+      "slug": "apify-apify-mcp-server",
+      "name": "apify-mcp-server",
+      "type": "mcp_server",
+      "categories": [
+        "browser-web"
+      ],
+      "stars": 10958,
+      "stars_delta_7d": 971,
+      "stars_growth_pct": 9.7,
+      "trending_score": 1065.41,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        9987,
+        10958
+      ],
+      "tagline": "The Apify MCP server enables your AI agents to extract data from social media, search engines, maps, e-commerce sites, or any other website using thousands of ready-made scrapers, crawlers, and automation tools available on the Apify Store.",
+      "repo": "apify/apify-mcp-server",
+      "is_pack_primary": true,
+      "created_at": "2025-01-02T15:43:09Z",
+      "pushed_at": "2026-10-13T16:15:14Z",
+      "rank_current": 1,
+      "rank_delta": null
+    },
+    {
+      "slug": "juliusbrussee-caveman-plugins-caveman-skills-cavecrew",
+      "name": "cavecrew",
+      "type": "agent_skill",
+      "categories": [
+        "agent-frameworks"
+      ],
+      "stars": 111405,
+      "stars_delta_7d": 1039,
+      "stars_growth_pct": 0.9,
+      "trending_score": 1048.78,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        110366,
+        111405
+      ],
+      "tagline": "When to delegate to `cavecrew-investigator` (locate code), `cavecrew-builder` (1-2 file edit) or `cavecrew-reviewer` (diff review) instead of working inline or using `Explore`. Their output is compressed, so main context lasts longer.\n",
+      "repo": "JuliusBrussee/caveman",
+      "created_at": "2026-04-04T10:03:00Z",
+      "pushed_at": "2026-10-13T16:22:44Z",
+      "rank_current": 52,
+      "rank_delta": null
+    },
+    {
+      "slug": "herdrdev-herdr-skills-herdr",
+      "name": "herdr",
+      "type": "agent_skill",
+      "categories": [
+        "coding-agents"
+      ],
+      "stars": 43772,
+      "stars_delta_7d": 995,
+      "stars_growth_pct": 2.3,
+      "trending_score": 1018.14,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        42777,
+        43772
+      ],
+      "tagline": "Control Herdr, a terminal multiplexer for coding agents. Use only when the user explicitly mentions Herdr or asks to use Herdr to inspect or control panes, tabs, workspaces, commands, or another agent. Do not use merely because a task could benefit from a background terminal, delegation, or parallel work. Requires HERDR_ENV=1.",
+      "repo": "herdrdev/herdr",
+      "created_at": "2026-03-27T17:54:33Z",
+      "pushed_at": "2026-10-13T16:00:58Z",
+      "rank_current": 57,
+      "rank_delta": null
+    },
+    {
+      "slug": "bethington-ghidra-mcp",
+      "name": "ghidra-mcp",
+      "type": "mcp_server",
+      "categories": [
+        "security-auth"
+      ],
+      "stars": 5559,
+      "stars_delta_7d": 857,
+      "stars_growth_pct": 18.2,
+      "trending_score": 1013.2,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        4702,
+        5559
+      ],
+      "tagline": "Ghidra MCP Server — 200+ MCP tools for AI-powered reverse engineering. GUI plugin + headless server, lazy tool loading, convention enforcement, batch operations, Ghidra Server integration, and Docker deployment.",
+      "repo": "bethington/ghidra-mcp",
+      "is_pack_primary": true,
+      "created_at": "2025-08-30T06:40:03Z",
+      "pushed_at": "2026-10-13T14:37:36Z",
+      "rank_current": 2,
+      "rank_delta": null
+    },
+    {
+      "slug": "genspark-ai-genoffice-skills-genoffice",
+      "name": "genoffice",
+      "type": "agent_skill",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 9558,
+      "stars_delta_7d": 716,
+      "stars_growth_pct": 8.1,
+      "trending_score": 773.98,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        8842,
+        9558
+      ],
+      "tagline": "Create, convert, read and edit Office documents locally with GenOffice's command line. Build a new presentation (pptx) from a brief through a checked outline, per-page spec and render pipeline, a new spreadsheet (xlsx) from CSV or JSON data with formulas, a new Word document (docx) from Markdown or HTML, or a PDF; convert between pdf, docx, xlsx, pptx, md, html and csv; read the structure and text of an existing file (including the user's own docx / xlsx / pptx as source material) and apply structured edits to it. Use whenever the user asks for a slide deck, presentation, spreadsheet, workbook, report, Word document or any real Office file, a format conversion, a rewrite of part of an existing document, or wants the result opened in the GenOffice editor. Documents are processed locally; only search, image and media send the query or the referenced file to the provider configured in GenOffice.",
+      "repo": "genspark-ai/genoffice",
+      "created_at": "2026-07-31T09:40:58Z",
+      "pushed_at": "2026-10-13T15:10:17Z",
+      "rank_current": 58,
+      "rank_delta": null
+    },
+    {
+      "slug": "virgiliojr94-book-to-skill",
+      "name": "book-to-skill",
+      "type": "agent_skill",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 34751,
+      "stars_delta_7d": 702,
+      "stars_growth_pct": 2.1,
+      "trending_score": 716.47,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        34049,
+        34751
+      ],
+      "tagline": "Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown, plain text, RTF, MOBI/AZW with Calibre) into structured agent skills, extracting frameworks, mental models, principles, techniques, and anti-patterns. Use when the user wants to study a document through GitHub Copilot CLI, Amp, Claude Code, Hermes Agent, OpenCode, or OpenClaw, apply an author's frameworks while working, or build a reusable knowledge base from a file.",
+      "repo": "virgiliojr94/book-to-skill",
+      "created_at": "2026-05-01T02:09:39Z",
+      "pushed_at": "2026-10-12T00:30:58Z",
+      "rank_current": 59,
+      "rank_delta": null
+    },
+    {
+      "slug": "topoteretes-cognee-examples-demos-feedback-skill_feedback_loop-skills-diff-risk-explainer",
+      "name": "diff-risk-explainer",
+      "type": "agent_skill",
+      "categories": [
+        "databases-memory"
+      ],
+      "stars": 32175,
+      "stars_delta_7d": 635,
+      "stars_growth_pct": 2,
+      "trending_score": 647.78,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        31540,
+        32175
+      ],
+      "tagline": "Use to briefly explain small code diffs.",
+      "repo": "topoteretes/cognee",
+      "created_at": "2023-08-16T16:16:33Z",
+      "pushed_at": "2026-10-13T16:25:20Z",
+      "rank_current": 60,
+      "rank_delta": null
+    }
+  ],
+  "breakout_new": [
+    {
+      "slug": "nateherkai-scroll-craft-plugins-nateherk-design-skills-scroll-craft",
+      "name": "scroll-craft",
+      "type": "agent_skill",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 3334,
+      "stars_delta_7d": 356,
+      "stars_growth_pct": 12,
+      "trending_score": 398.56,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        2978,
+        3334
+      ],
+      "tagline": "Build premium scroll-driven landing pages for service, product, food, and drink brands. Plan the visitor journey, page grammar, emotional peak, and bespoke signature move. Create dimensional heroes with independent visual planes, restrained motion, and separate mobile composition. Use supplied photos and footage or generate photoreal assets through kie.ai, write semantic HTML, and verify desktop, mobile, and reduced-motion scroll states visually. Use for \"scrollcraft\", \"scroll craft\", \"layered hero\", \"premium hero\", \"cinematic hero\", \"scrollytelling\", \"scroll animation site\", \"a site where scrolling plays a video\", \"Apple-style landing page\", \"3D scroll world\", \"interactive landing page\", \"make my brand a scroll experience\", \"this looks like a template\", or requests for a distinctive website that feels like an experience rather than a document.\n",
+      "repo": "nateherkai/scroll-craft",
+      "created_at": "2026-08-22T15:25:08Z",
+      "pushed_at": "2026-09-30T13:31:42Z",
+      "rank_current": 83,
+      "rank_delta": null
+    },
+    {
+      "slug": "ryze-ai-adgent-open-seo-mcp-skills-skills-ai-visibility",
+      "name": "ai-visibility",
+      "type": "agent_skill",
+      "categories": [
+        "domain-research"
+      ],
+      "stars": 5240,
+      "stars_delta_7d": 717,
+      "stars_growth_pct": 0,
+      "trending_score": 359,
+      "velocity_source": "age_velocity",
+      "sparkline_4w": [
+        5240
+      ],
+      "tagline": "Measure real AI-engine visibility — traffic from ChatGPT, Perplexity, Claude, Gemini and which pages they cite — from actual GA4 referral data, not prompt sampling. Use when asked \"AI visibility\", \"GEO/AEO check\", \"do LLMs cite us\", \"traffic from ChatGPT\", or \"how do we show up in AI search\".",
+      "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
+      "created_at": "2026-08-29T23:37:01Z",
+      "pushed_at": "2026-10-13T03:37:44Z"
+    },
+    {
+      "slug": "xiaoduoya-codex-with-chatgpt",
+      "name": "codex-with-chatgpt",
+      "type": "mcp_server",
+      "categories": [
+        "security-auth"
+      ],
+      "stars": 7345,
+      "stars_delta_7d": 250,
+      "stars_growth_pct": 3.5,
+      "trending_score": 258.81,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        7095,
+        7345
+      ],
+      "tagline": "ChatGPT thinks. Codex works. Use ChatGPT as the planning brain while keeping the Codex harness.",
+      "repo": "XiaoDuoYa/codex-with-chatgpt",
+      "is_pack_primary": true,
+      "created_at": "2026-08-28T12:57:24Z",
+      "pushed_at": "2026-10-01T05:19:24Z",
+      "rank_current": 9,
+      "rank_delta": null
+    },
+    {
+      "slug": "zju-real-easel-skills-builtin-ai-image-gen",
+      "name": "ai-image-gen",
+      "type": "agent_skill",
+      "categories": [
+        "productivity-ops"
+      ],
+      "stars": 3567,
+      "stars_delta_7d": 466,
+      "stars_growth_pct": 0,
+      "trending_score": 233,
+      "velocity_source": "age_velocity",
+      "sparkline_4w": [
+        3567
+      ],
+      "tagline": "通用 AI 生图：文生图 / 图生图 / 图像变体。当用户说 AI 生图、AI 画图、文生图、图生图、生成图片、生成配图、图像生成、AI 出图、AI 作图、换图、改图、图像编辑、给我画一张、生成一张图 时使用。支持 OpenAI 兼容 API 与 apimart 异步 API，用户自备 API key。",
+      "repo": "ZJU-REAL/Easel",
+      "created_at": "2026-08-28T02:22:27Z",
+      "pushed_at": "2026-10-12T11:58:39Z"
+    },
+    {
+      "slug": "nanako0129-sepia-skills-sepia-hemingway",
+      "name": "sepia-hemingway",
+      "type": "agent_skill",
+      "categories": [
+        "coding-agents"
+      ],
+      "stars": 3151,
+      "stars_delta_7d": 399,
+      "stars_growth_pct": 0,
+      "trending_score": 200,
+      "velocity_source": "age_velocity",
+      "sparkline_4w": [
+        3151
+      ],
+      "tagline": "Use when a user asks to write or revise fiction in the Hemingway manner, or asks for strong de-AI on a story; applies Sepia's built-in Hemingway voice profile.",
+      "repo": "Nanako0129/sepia",
+      "created_at": "2026-08-28T05:56:49Z",
+      "pushed_at": "2026-10-09T15:16:26Z"
+    },
+    {
+      "slug": "duty1g-x64dbg-mcp-server",
+      "name": "x64dbg-mcp-server",
+      "type": "agent_skill",
+      "categories": [
+        "security-auth"
+      ],
+      "stars": 2484,
+      "stars_delta_7d": 292,
+      "stars_growth_pct": 0,
+      "trending_score": 146,
+      "velocity_source": "age_velocity",
+      "sparkline_4w": [
+        2484
+      ],
+      "tagline": "Agent skill from duty1g/x64dbg-mcp-server",
+      "repo": "duty1g/x64dbg-mcp-server",
+      "created_at": "2026-08-22T14:28:41Z",
+      "pushed_at": "2026-10-12T08:49:17Z"
+    },
+    {
+      "slug": "okf-memory-okf-agent-memory-pkg-okf-assets-skill",
+      "name": "okf-agent-memory",
+      "type": "agent_skill",
+      "categories": [
+        "databases-memory"
+      ],
+      "stars": 771,
+      "stars_delta_7d": 122,
+      "stars_growth_pct": 0,
+      "trending_score": 61,
+      "velocity_source": "age_velocity",
+      "sparkline_4w": [
+        771
+      ],
+      "tagline": "Maintain persistent, domain-neutral project memory for AI agents using Open Knowledge Format (OKF) v0.2 bundles and the deterministic okf Go toolchain. Use whenever project knowledge, decisions, runbooks, research, client notes, or domain discoveries must survive conversational resets.",
+      "repo": "okf-memory/okf-agent-memory",
+      "created_at": "2026-09-05T21:26:04Z",
+      "pushed_at": "2026-10-12T10:08:28Z"
+    },
+    {
+      "slug": "kayforkind-reimagine-it-skills-reimagine-it",
+      "name": "reimagine-it",
+      "type": "agent_skill",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 207,
+      "stars_delta_7d": 22,
+      "stars_growth_pct": 0,
+      "trending_score": 11,
+      "velocity_source": "age_velocity",
+      "sparkline_4w": [
+        207
+      ],
+      "tagline": "Content-Derived Design — reads existing HTML and writes a stronger standalone page from headings, facts, names, dates, numbers, links, emails, and colors already in that file. CLI: npx reimagine-it --auto -i page.html -o out.html; also variations, lock, and audit. Use when the user says /reimagine-it, \"reimagine it\", \"reinvent this\", \"redesign this page\", \"make an infographic\", wants a content-aware redesign or a visual leap instead of a mood board.   All 17 tokens: webpage, infographic, svg, 3js, simulation, artistic, cinematic, dashboard, photography, landing, editorial, gradient, showcase, motion, glass, lookbook, particles — plus leftover words as a brief. Also /reimagine-it audit for quality checks. The agent runs the CLI; it does not hand-author the page. Installed via npx skills add Kayforkind/reimagine-it or plugin marketplace. Not /better. Not a mood board. Does not ingest PDF, PPTX, or DOCX.",
+      "repo": "Kayforkind/reimagine-it",
+      "created_at": "2026-08-19T02:12:07Z",
+      "pushed_at": "2026-10-10T14:17:43Z"
+    }
+  ],
+  "top10_mcp": [
+    {
+      "slug": "apify-apify-mcp-server",
+      "name": "apify-mcp-server",
+      "type": "mcp_server",
+      "categories": [
+        "browser-web"
+      ],
+      "stars": 10958,
+      "stars_delta_7d": 971,
+      "stars_growth_pct": 9.7,
+      "trending_score": 1065.41,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        9987,
+        10958
+      ],
+      "tagline": "The Apify MCP server enables your AI agents to extract data from social media, search engines, maps, e-commerce sites, or any other website using thousands of ready-made scrapers, crawlers, and automation tools available on the Apify Store.",
+      "repo": "apify/apify-mcp-server",
+      "is_pack_primary": true,
+      "created_at": "2025-01-02T15:43:09Z",
+      "pushed_at": "2026-10-13T16:15:14Z",
+      "rank_current": 1,
+      "rank_delta": null
+    },
+    {
+      "slug": "bethington-ghidra-mcp",
+      "name": "ghidra-mcp",
+      "type": "mcp_server",
+      "categories": [
+        "security-auth"
+      ],
+      "stars": 5559,
+      "stars_delta_7d": 857,
+      "stars_growth_pct": 18.2,
+      "trending_score": 1013.2,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        4702,
+        5559
+      ],
+      "tagline": "Ghidra MCP Server — 200+ MCP tools for AI-powered reverse engineering. GUI plugin + headless server, lazy tool loading, convention enforcement, batch operations, Ghidra Server integration, and Docker deployment.",
+      "repo": "bethington/ghidra-mcp",
+      "is_pack_primary": true,
+      "created_at": "2025-08-30T06:40:03Z",
+      "pushed_at": "2026-10-13T14:37:36Z",
+      "rank_current": 2,
+      "rank_delta": null
+    },
+    {
+      "slug": "irinabuht12-oss-google-ads-meta-ads-mcp",
+      "name": "google-ads-meta-ads-mcp",
+      "type": "mcp_server",
+      "categories": [
+        "productivity-ops"
+      ],
+      "stars": 4710,
+      "stars_delta_7d": 510,
+      "stars_growth_pct": 12.1,
+      "trending_score": 571.93,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        4200,
+        4710
+      ],
+      "tagline": "Google Ads MCP server + Meta Ads MCP (Facebook Ads MCP) + Google Analytics MCP (GA4) + Search Console in one hosted remote MCP for Claude, ChatGPT, Cursor & n8n: OAuth login, no API keys, approval-gated writes, 7-day free trial. By Ryze AI.",
+      "repo": "irinabuht12-oss/google-ads-meta-ads-mcp",
+      "is_pack_primary": true,
+      "created_at": "2026-04-06T04:41:14Z",
+      "pushed_at": "2026-10-12T06:10:55Z",
+      "rank_current": 3,
+      "rank_delta": null
+    },
+    {
+      "slug": "deusdata-codebase-memory-mcp",
+      "name": "codebase-memory-mcp",
+      "type": "mcp_server",
+      "categories": [
+        "coding-agents"
+      ],
+      "stars": 46502,
+      "stars_delta_7d": 535,
+      "stars_growth_pct": 1.2,
+      "trending_score": 541.23,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        45967,
+        46502
+      ],
+      "tagline": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+      "repo": "DeusData/codebase-memory-mcp",
+      "is_pack_primary": true,
+      "created_at": "2026-02-24T22:01:00Z",
+      "pushed_at": "2026-10-13T04:18:43Z",
+      "rank_current": 4,
+      "rank_delta": null
+    },
+    {
+      "slug": "ahujasid-mcp-for-blender",
+      "name": "mcp-for-blender",
+      "type": "mcp_server",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 30632,
+      "stars_delta_7d": 459,
+      "stars_growth_pct": 1.5,
+      "trending_score": 465.98,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        30173,
+        30632
+      ],
+      "tagline": "Community plugin to control Blender 3D with any LLM of your choice. Not affiliated with the official Blender Foundation.",
+      "repo": "ahujasid/mcp-for-blender",
+      "is_pack_primary": true,
+      "created_at": "2025-03-07T09:58:58Z",
+      "pushed_at": "2026-10-06T15:08:04Z",
+      "rank_current": 5,
+      "rank_delta": null
+    },
+    {
+      "slug": "marc-shade-world-intel-mcp",
+      "name": "world-intel-mcp",
+      "type": "mcp_server",
+      "categories": [
+        "security-auth"
+      ],
+      "stars": 941,
+      "stars_delta_7d": 284,
+      "stars_growth_pct": 43.2,
+      "trending_score": 406.76,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        657,
+        941
+      ],
+      "tagline": "139-tool MCP server for real-time global intelligence from free public APIs: markets, SEC filings, conflict, military, aircraft-cohort early warning, refugee and migration flows, cyber, climate, news, and 30+ domains. Cited AI situation briefs, geofences with change detection, live SSE dashboard. MIT, no paid API keys.",
+      "repo": "marc-shade/world-intel-mcp",
+      "is_pack_primary": true,
+      "created_at": "2025-11-29T16:49:53Z",
+      "pushed_at": "2026-10-12T19:11:43Z",
+      "rank_current": 6,
+      "rank_delta": null
+    },
+    {
+      "slug": "chromedevtools-chrome-devtools-mcp",
+      "name": "chrome-devtools-mcp",
+      "type": "mcp_server",
+      "categories": [
+        "browser-web"
+      ],
+      "stars": 53450,
+      "stars_delta_7d": 378,
+      "stars_growth_pct": 0.7,
+      "trending_score": 380.69,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        53072,
+        53450
+      ],
+      "tagline": "Chrome DevTools for coding agents",
+      "repo": "ChromeDevTools/chrome-devtools-mcp",
+      "is_pack_primary": true,
+      "created_at": "2025-09-11T10:39:55Z",
+      "pushed_at": "2026-10-13T16:08:03Z",
+      "rank_current": 7,
+      "rank_delta": null
+    },
+    {
+      "slug": "mrexodia-ida-pro-mcp",
+      "name": "ida-pro-mcp",
+      "type": "mcp_server",
+      "categories": [
+        "security-auth"
+      ],
+      "stars": 12770,
+      "stars_delta_7d": 265,
+      "stars_growth_pct": 2.1,
+      "trending_score": 270.62,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        12505,
+        12770
+      ],
+      "tagline": "AI-powered reverse engineering assistant that bridges IDA Pro with language models through MCP.",
+      "repo": "mrexodia/ida-pro-mcp",
+      "is_pack_primary": true,
+      "created_at": "2025-03-25T22:23:41Z",
+      "pushed_at": "2026-09-26T15:42:10Z",
+      "rank_current": 8,
+      "rank_delta": null
+    },
+    {
+      "slug": "xiaoduoya-codex-with-chatgpt",
+      "name": "codex-with-chatgpt",
+      "type": "mcp_server",
+      "categories": [
+        "security-auth"
+      ],
+      "stars": 7345,
+      "stars_delta_7d": 250,
+      "stars_growth_pct": 3.5,
+      "trending_score": 258.81,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        7095,
+        7345
+      ],
+      "tagline": "ChatGPT thinks. Codex works. Use ChatGPT as the planning brain while keeping the Codex harness.",
+      "repo": "XiaoDuoYa/codex-with-chatgpt",
+      "is_pack_primary": true,
+      "created_at": "2026-08-28T12:57:24Z",
+      "pushed_at": "2026-10-01T05:19:24Z",
+      "rank_current": 9,
+      "rank_delta": null
+    },
+    {
+      "slug": "upstash-context7",
+      "name": "context7",
+      "type": "mcp_server",
+      "categories": [
+        "coding-agents"
+      ],
+      "stars": 62986,
+      "stars_delta_7d": 222,
+      "stars_growth_pct": 0.4,
+      "trending_score": 222.79,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        62764,
+        62986
+      ],
+      "tagline": "Context7 Platform -- Up-to-date code documentation for LLMs and AI code editors",
+      "repo": "upstash/context7",
+      "is_pack_primary": true,
+      "created_at": "2025-03-26T23:40:39Z",
+      "pushed_at": "2026-10-13T15:06:04Z",
+      "rank_current": 10,
+      "rank_delta": null
+    }
+  ],
+  "top10_skills": [
+    {
+      "slug": "cathrynlavery-diagram-design-skills-diagram-design",
+      "name": "diagram-design",
+      "type": "agent_skill",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 53703,
+      "stars_delta_7d": 9049,
+      "stars_growth_pct": 20.3,
+      "trending_score": 10882.75,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        44654,
+        53703
+      ],
+      "tagline": "Create branded architecture, architecture delta, IT current-state, flowchart, sequence, state machine, ER/data model, timeline, swimlane, quadrant, radar/spider, polar chart (polar/radial lollipop), loop/flywheel, nested, tree, org chart, layer stack, exploded axonometric, axonometric plan, Venn, pyramid/funnel, treemap and marimekko, heatmap, bar and dumbbell, waterfall, line (slopegraph, ridgeline, streamgraph, bump), Gantt and scatter charts (bubble, beeswarm), high-level, process, medallion, data flow, DP integration, DP security matrix, Sankey, fishbone, Wardley map, kanban, user journey, service blueprint, deployment, dependency graph, UML class, story map, or database schema diagrams as HTML/SVG/PNG, with .drawio, Mermaid, and .excalidraw import, plus lifecycle phase maps, block decomposition trees, and onboarding guidance.",
+      "repo": "cathrynlavery/diagram-design",
+      "created_at": "2026-04-16T18:01:16Z",
+      "pushed_at": "2026-10-13T14:57:55Z",
+      "rank_current": 1,
+      "rank_delta": null
+    },
+    {
+      "slug": "dietrichgebert-ponytail-skills-ponytail-audit",
+      "name": "ponytail-audit",
+      "type": "agent_skill",
+      "categories": [
+        "security-auth"
+      ],
+      "stars": 162479,
+      "stars_delta_7d": 5108,
+      "stars_growth_pct": 3.2,
+      "trending_score": 5273.8,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        157371,
+        162479
+      ],
+      "tagline": "Quality audit of a whole repo: bugs, security holes, what breaks under real load, risky code without tests, slow paths, and what to delete, merge or split. Ranked, each finding explained in plain English. One-shot report, changes nothing. Use for \"audit this codebase\", \"review the whole repo\", \"find bloat\", \"what can I delete\", /ponytail-audit.\n",
+      "repo": "DietrichGebert/ponytail",
+      "created_at": "2026-06-12T00:52:37Z",
+      "pushed_at": "2026-10-13T01:46:28Z",
+      "rank_current": 2,
+      "rank_delta": null
+    },
+    {
+      "slug": "stablyai-orca-resources-native-chat-visuals-skills-orca-chat-visuals",
+      "name": "orca-chat-visuals",
+      "type": "agent_skill",
+      "categories": [
+        "coding-agents"
+      ],
+      "stars": 91386,
+      "stars_delta_7d": 4425,
+      "stars_growth_pct": 5.1,
+      "trending_score": 4650.17,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        86961,
+        91386
+      ],
+      "tagline": "Show a chart, diagram, table, report or mockup inline in this Orca chat as an HTML page. Use when a visual would help the user understand your answer. Only available when the ORCA_CHAT_VISUALS_DIR environment variable is set.",
+      "repo": "stablyai/orca",
+      "created_at": "2026-03-17T03:28:57Z",
+      "pushed_at": "2026-10-13T16:24:00Z",
+      "rank_current": 7,
+      "rank_delta": null
+    },
+    {
+      "slug": "affaan-m-ecc-docs-es-skills-api-design",
+      "name": "api-design",
+      "type": "agent_skill",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 278380,
+      "stars_delta_7d": 3682,
+      "stars_growth_pct": 1.3,
+      "trending_score": 3731.35,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        274698,
+        278380
+      ],
+      "tagline": "Patrones de diseño REST API incluyendo nomenclatura de recursos, códigos de estado, paginación, filtrado, respuestas de error, versionado y rate limiting para APIs de producción.",
+      "repo": "affaan-m/ECC",
+      "created_at": "2026-01-18T00:51:51Z",
+      "pushed_at": "2026-10-12T14:45:46Z",
+      "rank_current": 12,
+      "rank_delta": null
+    },
+    {
+      "slug": "addyosmani-agent-skills-skills-api-and-interface-design",
+      "name": "api-and-interface-design",
+      "type": "agent_skill",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 106053,
+      "stars_delta_7d": 3525,
+      "stars_growth_pct": 3.4,
+      "trending_score": 3646.19,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        102528,
+        106053
+      ],
+      "tagline": "Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when creating REST or GraphQL endpoints, defining type contracts between modules, or establishing boundaries between frontend and backend.",
+      "repo": "addyosmani/agent-skills",
+      "created_at": "2026-02-15T20:20:26Z",
+      "pushed_at": "2026-10-10T08:28:49Z",
+      "rank_current": 17,
+      "rank_delta": null
+    },
+    {
+      "slug": "thedotmack-claude-mem-claude-mem-cursor-skills-agent-cost-report",
+      "name": "Agent Cost Report",
+      "type": "agent_skill",
+      "categories": [
+        "databases-memory"
+      ],
+      "stars": 100334,
+      "stars_delta_7d": 2815,
+      "stars_growth_pct": 2.9,
+      "trending_score": 2896.26,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        97519,
+        100334
+      ],
+      "tagline": "Believable agent cost report for any period, default the last 7 full days PT, not counting today. Measured tokens from Claude Code transcripts priced at OpenRouter list prices (ESTIMATED), measured provider spend when a sanctioned source exists, note-taker cost separate, Timing-style HTML/PDF plus report.json, line-items.csv, evidence.json.",
+      "repo": "thedotmack/claude-mem",
+      "created_at": "2025-08-31T20:50:03Z",
+      "pushed_at": "2026-10-13T07:33:53Z",
+      "rank_current": 22,
+      "rank_delta": null
+    },
+    {
+      "slug": "alibaba-open-code-review-plugins-open-code-review-skills-open-code-review",
+      "name": "open-code-review",
+      "type": "agent_skill",
+      "categories": [
+        "coding-agents"
+      ],
+      "stars": 46827,
+      "stars_delta_7d": 2633,
+      "stars_growth_pct": 6,
+      "trending_score": 2789.87,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        44194,
+        46827
+      ],
+      "tagline": "Performs AI-powered code review on Git changes using the `ocr` CLI from alibaba/open-code-review. Use when the user asks to review code, review a pull request, review staged/unstaged changes, review a commit, or compare branches for code quality issues. Produces line-level review comments and can automatically apply fixes when requested. With appropriate review rules, can detect various types of issues including bugs, security vulnerabilities, performance problems, and code quality concerns.\n",
+      "repo": "alibaba/open-code-review",
+      "created_at": "2026-05-18T02:16:36Z",
+      "pushed_at": "2026-10-13T13:47:09Z",
+      "rank_current": 27,
+      "rank_delta": null
+    },
+    {
+      "slug": "mvschwarz-openrig-packages-daemon-assets-plugins-openrig-core-skills-agent-operated-software",
+      "name": "agent-operated-software",
+      "type": "agent_skill",
+      "categories": [
+        "agent-frameworks"
+      ],
+      "stars": 7377,
+      "stars_delta_7d": 1710,
+      "stars_growth_pct": 30.2,
+      "trending_score": 2225.99,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        5667,
+        7377
+      ],
+      "tagline": "Use when designing, building, operating, or diagnosing an ongoing application whose live backend or control loop includes OpenRig agents, including applications with a Markdown, YAML, or JSON agent control plane or a thin surface over specialist agent roles.",
+      "repo": "mvschwarz/openrig",
+      "created_at": "2026-04-01T06:22:40Z",
+      "pushed_at": "2026-10-13T16:24:21Z",
+      "rank_current": 31,
+      "rank_delta": null
+    },
+    {
+      "slug": "leonxlnx-taste-skill-skills-brandkit",
+      "name": "brandkit",
+      "type": "agent_skill",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 95459,
+      "stars_delta_7d": 2036,
+      "stars_growth_pct": 2.2,
+      "trending_score": 2080.37,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        93423,
+        95459
+      ],
+      "tagline": "Premium brand-kit image generation skill for creating high-end brand-guidelines boards, logo systems, identity decks, and visual-world presentations. Trained for minimalist, cinematic, editorial, dark-tech, luxury, cultural, security, gaming, developer-tool, and consumer-app brand systems. Optimized for intentional logo concepting, refined composition, sparse typography, strong symbolic meaning, premium mockups, art-directed imagery, and flexible grid layouts.",
+      "repo": "Leonxlnx/taste-skill",
+      "created_at": "2026-02-19T21:44:05Z",
+      "pushed_at": "2026-10-13T15:01:01Z",
+      "rank_current": 36,
+      "rank_delta": null
+    },
+    {
+      "slug": "blader-humanizer",
+      "name": "humanizer",
+      "type": "agent_skill",
+      "categories": [
+        "other"
+      ],
+      "stars": 56481,
+      "stars_delta_7d": 1891,
+      "stars_growth_pct": 3.5,
+      "trending_score": 1956.5,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        54590,
+        56481
+      ],
+      "tagline": "Rewrite AI-sounding text so it reads like the writer without changing what it says.\nUse when editing or reviewing prose for AI tells: not-X-but-Y contrasts, one-line\nclosers, staged openers, forced triads, dashes everywhere, inflated claims, sales\nlanguage, stock AI words, bold labels, or filler. Based on Wikipedia's \"Signs of AI writing.\"\n",
+      "repo": "blader/humanizer",
+      "created_at": "2026-01-18T05:30:15Z",
+      "pushed_at": "2026-09-28T05:55:12Z",
+      "rank_current": 41,
+      "rank_delta": null
+    }
+  ],
+  "top10_tools": [
+    {
+      "slug": "morluto-rea",
+      "name": "rea",
+      "type": "agent_tool",
+      "categories": [
+        "security-auth"
+      ],
+      "stars": 196748,
+      "stars_delta_7d": 183853,
+      "stars_growth_pct": 1425.8,
+      "trending_score": 551559,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        12895,
+        196748
+      ],
+      "tagline": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "repo": "morluto/rea",
+      "is_pack_primary": true,
+      "created_at": "2026-04-14T00:51:32Z",
+      "pushed_at": "2026-10-13T16:25:01Z",
+      "rank_current": 1,
+      "rank_delta": null
+    },
+    {
+      "slug": "panniantong-agent-reach",
+      "name": "Agent-Reach",
+      "type": "agent_tool",
+      "categories": [
+        "browser-web"
+      ],
+      "stars": 96891,
+      "stars_delta_7d": 3836,
+      "stars_growth_pct": 4.1,
+      "trending_score": 3994.13,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        93055,
+        96891
+      ],
+      "tagline": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "repo": "Panniantong/Agent-Reach",
+      "is_pack_primary": true,
+      "created_at": "2026-02-24T02:10:24Z",
+      "pushed_at": "2026-10-08T08:31:08Z",
+      "rank_current": 2,
+      "rank_delta": null
+    },
+    {
+      "slug": "diegosouzapw-omniroute",
+      "name": "OmniRoute",
+      "type": "agent_tool",
+      "categories": [
+        "agent-frameworks"
+      ],
+      "stars": 76033,
+      "stars_delta_7d": 2184,
+      "stars_growth_pct": 3,
+      "trending_score": 2248.59,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        73849,
+        76033
+      ],
+      "tagline": "Never stop coding. Free MIT AI gateway: one endpoint, 359 providers (150+ free), 1200+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by hundreds of contributors",
+      "repo": "diegosouzapw/OmniRoute",
+      "is_pack_primary": true,
+      "created_at": "2026-02-13T12:38:31Z",
+      "pushed_at": "2026-10-13T16:20:19Z",
+      "rank_current": 3,
+      "rank_delta": null
+    },
+    {
+      "slug": "graphify-labs-graphify",
+      "name": "graphify",
+      "type": "agent_tool",
+      "categories": [
+        "coding-agents"
+      ],
+      "stars": 126101,
+      "stars_delta_7d": 1515,
+      "stars_growth_pct": 1.2,
+      "trending_score": 1533.42,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        124586,
+        126101
+      ],
+      "tagline": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "repo": "Graphify-Labs/graphify",
+      "is_pack_primary": true,
+      "created_at": "2026-04-03T15:49:07Z",
+      "pushed_at": "2026-10-13T10:43:52Z",
+      "rank_current": 4,
+      "rank_delta": null
+    },
+    {
+      "slug": "nousresearch-hermes-agent",
+      "name": "hermes-agent",
+      "type": "agent_tool",
+      "categories": [
+        "domain-research"
+      ],
+      "stars": 253381,
+      "stars_delta_7d": 1522,
+      "stars_growth_pct": 0.6,
+      "trending_score": 1531.2,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        251859,
+        253381
+      ],
+      "tagline": "The agent that grows with you",
+      "repo": "NousResearch/hermes-agent",
+      "is_pack_primary": true,
+      "created_at": "2025-07-22T22:22:28Z",
+      "pushed_at": "2026-10-13T16:25:31Z",
+      "rank_current": 5,
+      "rank_delta": null
+    },
+    {
+      "slug": "d4vinci-scrapling",
+      "name": "Scrapling",
+      "type": "agent_tool",
+      "categories": [
+        "browser-web"
+      ],
+      "stars": 87256,
+      "stars_delta_7d": 1132,
+      "stars_growth_pct": 1.3,
+      "trending_score": 1146.88,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        86124,
+        87256
+      ],
+      "tagline": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+      "repo": "D4Vinci/Scrapling",
+      "is_pack_primary": true,
+      "created_at": "2024-10-13T20:29:53Z",
+      "pushed_at": "2026-10-12T22:39:15Z",
+      "rank_current": 6,
+      "rank_delta": null
+    },
+    {
+      "slug": "headroomlabs-ai-headroom",
+      "name": "headroom",
+      "type": "agent_tool",
+      "categories": [
+        "agent-frameworks"
+      ],
+      "stars": 75189,
+      "stars_delta_7d": 615,
+      "stars_growth_pct": 0.8,
+      "trending_score": 620.07,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        74574,
+        75189
+      ],
+      "tagline": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
+      "repo": "headroomlabs-ai/headroom",
+      "is_pack_primary": true,
+      "created_at": "2026-01-07T19:58:51Z",
+      "pushed_at": "2026-10-13T02:36:25Z",
+      "rank_current": 7,
+      "rank_delta": null
+    },
+    {
+      "slug": "nvidia-skillspector",
+      "name": "SkillSpector",
+      "type": "agent_tool",
+      "categories": [
+        "security-auth"
+      ],
+      "stars": 20114,
+      "stars_delta_7d": 491,
+      "stars_growth_pct": 2.5,
+      "trending_score": 503.29,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        19623,
+        20114
+      ],
+      "tagline": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
+      "repo": "NVIDIA/SkillSpector",
+      "is_pack_primary": true,
+      "created_at": "2026-03-21T00:28:43Z",
+      "pushed_at": "2026-10-13T09:07:51Z",
+      "rank_current": 8,
+      "rank_delta": null
+    },
+    {
+      "slug": "koala73-worldmonitor",
+      "name": "worldmonitor",
+      "type": "agent_tool",
+      "categories": [
+        "cloud-infra"
+      ],
+      "stars": 88374,
+      "stars_delta_7d": 402,
+      "stars_growth_pct": 0.5,
+      "trending_score": 403.84,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        87972,
+        88374
+      ],
+      "tagline": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+      "repo": "koala73/worldmonitor",
+      "is_pack_primary": true,
+      "created_at": "2026-01-08T17:26:06Z",
+      "pushed_at": "2026-10-13T16:25:20Z",
+      "rank_current": 9,
+      "rank_delta": null
+    },
+    {
+      "slug": "reactive-resume-reactive-resume",
+      "name": "reactive-resume",
+      "type": "agent_tool",
+      "categories": [
+        "media-creative"
+      ],
+      "stars": 44233,
+      "stars_delta_7d": 284,
+      "stars_growth_pct": 0.6,
+      "trending_score": 285.84,
+      "velocity_source": "snapshot_delta",
+      "sparkline_4w": [
+        43949,
+        44233
+      ],
+      "tagline": "A one-of-a-kind resume builder that keeps your privacy in mind. Completely secure, customizable, portable, open-source and free forever. Try it out today!",
+      "repo": "reactive-resume/reactive-resume",
+      "is_pack_primary": true,
+      "created_at": "2020-03-25T14:08:22Z",
+      "pushed_at": "2026-10-13T15:56:33Z",
+      "rank_current": 10,
+      "rank_delta": null
+    }
+  ]
+}

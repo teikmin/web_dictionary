@@ -8,7 +8,7 @@ summary: "The knowledge graph JSON has this structure: - project — {name,
   each has {id, type, name, filePath?, summary, tags[], complexity,
   languageNote..."
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 71
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     code using a knowledge graph
   folder_path: understand-anything-plugin/skills/understand-chat
   extra_files: []
+tags: []
 ---
 
 # /understand-chat

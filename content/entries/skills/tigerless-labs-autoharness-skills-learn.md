@@ -6,7 +6,7 @@ summary: "1. Identify class-level, reusable lessons: corrected approaches,
   non-trivial techniques, durable user preferences. Skip one-off narratives and
   environment-specific failures. 2. Compare first: read the injected skill i..."
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 56
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
   description: Use when users /learn, save, remember, or distill lessons.
   folder_path: skills/learn
   extra_files: []
+tags: []
 ---
 
 # Learn: distill this session into the skill library

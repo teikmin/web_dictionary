@@ -8,7 +8,7 @@ summary: Resolve the directory containing this file as SKILLROOT. Use
   ${CLAUDESKILLDIR} in Claude Code or the absolute directory in Codex's loaded
   skill metadata. Do not assume cwd or a previous shell variable persists.
 categories:
-  - productivity
+  - databases-memory
 status: active
 quality_percentile: 39
 selection_reason: quality_percentile
@@ -51,6 +51,7 @@ skill:
     - .nojekyll
     - .npmignore
     - CHANGELOG.md
+tags: []
 ---
 
 # Fireworks Tech Graph

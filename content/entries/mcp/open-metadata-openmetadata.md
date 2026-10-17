@@ -7,7 +7,7 @@ tagline: The Open Context Layer for Data and AI ,  OpenMetadata is the open
 summary: The largest and fastest-growing open-source project for AI context,
   data cataloging, and metadata management.
 categories:
-  - other
+  - databases-memory
 status: active
 quality_percentile: 96
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # OpenMetadata

@@ -7,7 +7,7 @@ summary: "- list — Retrieves a list of activities for a specific customer's
   Drive application. For more information, see the guides for administrator
   a..."
 categories:
-  - productivity
+  - agent-frameworks
 status: active
 quality_percentile: 55
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ skill:
   description: "Google Workspace Admin SDK: Audit logs and usage reports."
   folder_path: skills/gws-admin-reports
   extra_files: []
+tags: []
 ---
 
 # admin-reports (reports_v1)

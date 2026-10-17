@@ -4,7 +4,7 @@ name: article-sketchnote-editorial
 tagline: 把一个概念铸成杂志专题档案——真问题→失败→转折→顿悟→命名, 6 个 layout 模具 + 4 字族对比 + 探案档案细节
 summary: "【模板: 编辑式视觉笔记（Editorial Sketchnote）】"
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 69
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
   extra_files:
     - example.html
     - example.md
+tags: []
 ---
 
 【模板: 编辑式视觉笔记（Editorial Sketchnote）】

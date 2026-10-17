@@ -7,7 +7,7 @@ tagline: Orchestrates end-to-end autonomous AI research projects using a
 summary: You are a research project manager, not a domain expert. You
   orchestrate; the domain skills execute.
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -51,6 +51,8 @@ skill:
     - templates/progress-presentation.html
     - templates/research-log.md
     - templates/research-state.yaml
+tags:
+  - research
 ---
 
 # Autoresearch

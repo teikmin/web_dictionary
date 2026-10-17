@@ -8,7 +8,7 @@ summary: Skills are modular, self-contained packages that extend the agent's
   capabilities by providing specialized knowledge, workflows, and tools. They
   transform a general-purpose agent into a specialized agent equipped with...
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 98
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     - scripts/init_skill.py
     - scripts/package_skill.py
     - scripts/quick_validate.py
+tags: []
 ---
 
 # Skill Creator

@@ -9,7 +9,7 @@ summary: "Any time the question is whether an analytical procedure is fit for
   data, verifying a compendial procedure, transferring a procedure to
   another..."
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 68
 selection_reason: quality_percentile
@@ -63,6 +63,7 @@ skill:
     - references/statistics.md
     - scripts/_catalog.py
     - scripts/_common.py
+tags: []
 ---
 
 # Analytical Method Validation

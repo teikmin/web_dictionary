@@ -1,8 +1,9 @@
 import { z } from 'zod';
 import { LaunchSpecSchema } from './launch-spec.js';
 import { SkillSpecSchema } from './skill-spec.js';
+import { ToolSpecSchema } from './tool-spec.js';
 
-export const EntryTypeSchema = z.enum(['mcp_server', 'agent_skill']);
+export const EntryTypeSchema = z.enum(['mcp_server', 'agent_skill', 'agent_tool']);
 export type EntryType = z.infer<typeof EntryTypeSchema>;
 
 export const EntryStatusSchema = z.enum(['active', 'slowing', 'dormant', 'archived']);
@@ -29,6 +30,13 @@ export const LatestSignalsSchema = z.object({
   last_commit: DateOrString.optional(),
   weekly_downloads: z.number().optional(),
   contributors: z.number().optional(),
+  stars_delta_7d: z.number().default(0),
+  stars_growth_pct: z.number().default(0),
+  trending_score: z.number().default(0),
+  rank_current: z.number().optional(),
+  rank_delta: z.number().nullable().optional(),
+  velocity_source: z.enum(['snapshot_delta', 'age_velocity']).default('snapshot_delta'),
+  sparkline_4w: z.array(z.number()).default([]),
 });
 export type LatestSignals = z.infer<typeof LatestSignalsSchema>;
 
@@ -48,6 +56,7 @@ export const BaseEntrySchema = z.object({
   tagline: z.string().default(''),
   summary: z.string().optional(),
   categories: z.array(z.string()).default([]),
+  tags: z.array(z.string()).default([]),
   status: EntryStatusSchema.default('active'),
   quality_percentile: z.number().min(0).max(100).default(0),
   selection_reason: z.string().default('threshold'),
@@ -73,5 +82,15 @@ export const SkillEntrySchema = BaseEntrySchema.extend({
 });
 export type SkillEntry = z.infer<typeof SkillEntrySchema>;
 
-export const EntrySchema = z.discriminatedUnion('type', [McpEntrySchema, SkillEntrySchema]);
+export const ToolEntrySchema = BaseEntrySchema.extend({
+  type: z.literal('agent_tool'),
+  tool: ToolSpecSchema,
+});
+export type ToolEntry = z.infer<typeof ToolEntrySchema>;
+
+export const EntrySchema = z.discriminatedUnion('type', [
+  McpEntrySchema,
+  SkillEntrySchema,
+  ToolEntrySchema,
+]);
 export type Entry = z.infer<typeof EntrySchema>;

@@ -7,7 +7,7 @@ tagline: "[OBSOLETO - usar continuous-learning-v2] Extractor de skill por hook
 summary: Evalúa automáticamente las sesiones de Claude Code al terminar para
   extraer patrones reutilizables que pueden guardarse como skills aprendidos.
 categories:
-  - security
+  - agent-frameworks
 status: active
 quality_percentile: 96
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     extracción de patrones a continuous-learning-v2."
   folder_path: docs/es/skills/continuous-learning
   extra_files: []
+tags: []
 ---
 
 # Skill de Aprendizaje Continuo - OBSOLETO

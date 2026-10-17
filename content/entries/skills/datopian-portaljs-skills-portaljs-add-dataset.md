@@ -9,7 +9,7 @@ summary: "Register a dataset in a PortalJS (portaljs-catalog) portal. The skill
   catalog — and routes the underlying bytes by source first, then size: a
   loc..."
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
   folder_path: skills/portaljs-add-dataset
   extra_files:
     - references/reference.md
+tags: []
 ---
 
 # PortalJS — Add Dataset

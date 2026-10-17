@@ -7,7 +7,7 @@ summary: "Flag priority: --quick / --duo set the mode. --full / --triad /
   --members / --profile set the panel. --models overrides auto-routing.
   --no-auto-route, --dry-route, and --chairman are additive."
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 50
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     problems.
   folder_path: skills/council
   extra_files: []
+tags: []
 ---
 
 # /council — Council of High Intelligence

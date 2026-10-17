@@ -9,7 +9,7 @@ summary: "What you produce: an interview brief, a page grammar, a
   score, one signature move, generated assets, one real HTML page on a
   token-driven design..."
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 49
 selection_reason: quality_percentile
@@ -61,6 +61,7 @@ skill:
     - references/feel.md
     - references/hero-depth.md
     - references/taste.md
+tags: []
 ---
 
 # scroll-craft

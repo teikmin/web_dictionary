@@ -9,7 +9,7 @@ summary: "- Load together with antislop.md whenever the task is mobile or
   three tiers, the Delivery Gate); this skill holds mobile-layout depth. -
   Ever..."
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     with the core."
   folder_path: skills/antislop-layoutmobile
   extra_files: []
+tags: []
 ---
 
 # antislop-layoutmobile

@@ -7,7 +7,7 @@ tagline: "How to work in a Personal CRM project (the `entity-vault` starter
 summary: "Every dossier in people/, companies/, and concepts/ has two parts,
   split by an explicit --- timeline --- separator:"
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
   folder_path: packages/server/assets/skills/packs/entity-vault
   extra_files:
     - plugin.json
+tags: []
 ---
 
 # Personal CRM (GBrain-compatible) — how to work here

@@ -7,7 +7,7 @@ summary: Identify the connected company with paperclipconnection. Locate the
   task by its durable ID or paperclipsearchtasks, then use paperclipreadtask,
   papercliplistdeliverables and paperclipreaddocument to inspect progress a...
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 96
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
     user-requested feedback with human attribution.
   folder_path: integrations/assistant-plugins/claude/paperclip/skills/follow-up-results
   extra_files: []
+tags: []
 ---
 
 Identify the connected company with `paperclip_connection`. Locate the task by its durable ID or `paperclip_search_tasks`, then use `paperclip_read_task`, `paperclip_list_deliverables` and `paperclip_read_document` to inspect progress and actual outputs. Do not rely on memory of another conversation or equate task creation with completion.

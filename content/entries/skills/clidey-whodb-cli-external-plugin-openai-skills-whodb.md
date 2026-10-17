@@ -8,7 +8,7 @@ summary: "whodb mcp serve exposes hosted platform tools. Sign in to each
   discover saved hosts and accounts, then whodbplatformorgs with workspace:
   {host}..."
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 34
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     - agents/openai.yaml
     - assets/whodb-small.svg
     - assets/whodb.png
+tags: []
 ---
 
 # WhoDB

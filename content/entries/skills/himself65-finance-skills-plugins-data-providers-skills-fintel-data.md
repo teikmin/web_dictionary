@@ -5,7 +5,7 @@ tagline: Query Fintel (fintel.io) institutional market data through its REST API
   or official MCP server. Use this skill whenever the user mentions Fintel or as
 summary: "Fintel exposes two surfaces backed by the same data contract:"
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 38
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
   extra_files:
     - README.md
     - references/api-reference.md
+tags: []
 ---
 
 # Fintel Data Skill

@@ -6,7 +6,7 @@ tagline: Convenciones de codificación base entre proyectos para nomenclatura,
   fronte
 summary: Este skill es el suelo compartido, no el manual detallado de frameworks.
 categories:
-  - security
+  - coding-agents
 status: active
 quality_percentile: 96
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
     Usar skills de frontend o backend para patrones específicos de frameworks.
   folder_path: docs/es/skills/coding-standards
   extra_files: []
+tags: []
 ---
 
 # Estándares de Codificación y Buenas Prácticas

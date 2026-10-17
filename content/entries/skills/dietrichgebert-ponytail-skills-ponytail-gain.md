@@ -9,7 +9,7 @@ summary: "The figures are the published agentic benchmark of Ponytail 5:
   in a real FastAPI + React repo, bug fixes, security and privacy cases,
   small..."
 categories:
-  - ai-frameworks
+  - security-auth
 status: active
 quality_percentile: 57
 selection_reason: quality_percentile
@@ -42,6 +42,8 @@ skill:
     "ponytail impact".
   folder_path: skills/ponytail-gain
   extra_files: []
+tags:
+  - security
 ---
 
 # Ponytail Gain

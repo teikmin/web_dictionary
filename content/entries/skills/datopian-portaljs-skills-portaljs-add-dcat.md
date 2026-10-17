@@ -8,7 +8,7 @@ summary: Turn an existing PortalJS (portaljs-catalog) portal into a harvestable
   data catalog. PortalJS is Frictionless-native — a dataset is a Data Package
   (see portaljs-define-schema) — and DCAT is the serialization + harvest...
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
   folder_path: skills/portaljs-add-dcat
   extra_files:
     - references/reference.md
+tags: []
 ---
 
 # PortalJS — Add DCAT

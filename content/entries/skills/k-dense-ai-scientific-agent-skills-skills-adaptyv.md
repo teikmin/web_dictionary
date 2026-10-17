@@ -8,7 +8,7 @@ summary: "Reviewed against the deployed OpenAPI schema (info.version: 0.0.2) and
   official SDK 0.1.0 at commit cdf207819ed5a58e0c127453626d2bce125c8064. The
   schema version alone does not identify all changes. See the endpoint re..."
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 68
 selection_reason: quality_percentile
@@ -44,6 +44,8 @@ skill:
   folder_path: skills/adaptyv
   extra_files:
     - references/api-endpoints.md
+tags:
+  - python
 ---
 
 # Adaptyv Bio Foundry API

@@ -7,7 +7,7 @@ tagline: "WAHA - WhatsApp HTTP API (REST API) that you can configure in a click!
 summary: WAHA - WhatsApp HTTP API (REST API) that you can install on your own
   server and run in less than 5 minutes!
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 98
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ launch:
     - waha
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # WAHA

@@ -5,7 +5,7 @@ tagline: Open Plannotator on the latest rendered assistant message and use the
   returned annotations to revise that message or continue.
 summary: "!plannotator annotate-last $ARGUMENTS"
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
     the returned annotations to revise that message or continue.
   folder_path: apps/skills/claude/plannotator-last
   extra_files: []
+tags: []
 ---
 
 # Plannotator Last

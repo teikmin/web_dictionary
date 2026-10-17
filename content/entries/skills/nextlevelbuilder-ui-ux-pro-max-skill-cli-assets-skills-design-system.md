@@ -8,7 +8,7 @@ summary: "- Design token creation - Component state definitions - CSS variable
   systems - Spacing/typography scales - Design-to-code handoff - Tailwind theme
   configuration - Slide/presentation generation"
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 77
 selection_reason: quality_percentile
@@ -51,6 +51,7 @@ skill:
     - data/slide-typography.csv
     - references/component-specs.md
     - references/component-tokens.md
+tags: []
 ---
 
 # Design System

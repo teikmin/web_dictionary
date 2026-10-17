@@ -6,7 +6,7 @@ tagline: AI 视频生成：文生视频 / 图生视频 / 数字人首帧驱动�
   短视频、让图片动起
 summary: 先选 provider 并在 .env 填对应 key，然后 check 离线校验：
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -41,6 +41,8 @@ skill:
   folder_path: skills/builtin/ai-video-gen
   extra_files:
     - EASEL-META.md
+tags:
+  - video
 ---
 
 # AI 视频生成

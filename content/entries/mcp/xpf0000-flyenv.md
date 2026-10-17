@@ -6,7 +6,7 @@ tagline: Native local development environment for Windows, macOS & Linux. A
   databas
 summary: Run Your Complete Local Development Stack Natively
 categories:
-  - databases
+  - cloud-infra
 status: active
 quality_percentile: 78
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - FlyEnv
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # FlyEnv

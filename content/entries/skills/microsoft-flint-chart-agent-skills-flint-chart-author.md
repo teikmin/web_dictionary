@@ -9,7 +9,7 @@ summary: "Your output is the spec: the chartspec and semantictypes of a
   resulting input to assembleVegaLite, assembleECharts, or assembleChartjs to
   get..."
 categories:
-  - other
+  - agent-frameworks
 status: active
 quality_percentile: 94
 selection_reason: official_vendor
@@ -44,6 +44,7 @@ skill:
     after compiling from Flint."
   folder_path: agent-skills/flint-chart-author
   extra_files: []
+tags: []
 ---
 
 # flint-chart: authoring and using a chart spec

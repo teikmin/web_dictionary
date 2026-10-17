@@ -4,7 +4,7 @@ name: mcp-brasil
 tagline: MCP Server para 70 APIs públicas brasileiras
 summary: MCP Server para 70 fontes de dados públicas brasileiras
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 43
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ launch:
     - mcp-brasil
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <div align="center">

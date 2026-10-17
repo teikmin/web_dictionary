@@ -6,7 +6,7 @@ tagline: Operate Orca-managed worktrees, folder contexts, terminals, repos,
   brows
 summary: "Choose the executable once and reuse it for every later command:"
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 64
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     a CLI, filesystem, or API cannot do.
   folder_path: skills/orca-cli
   extra_files: []
+tags: []
 ---
 
 # Orca CLI

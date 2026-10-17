@@ -5,7 +5,7 @@ tagline: Write a deterministic OK file to out/ok.txt.
 summary: Overview This skill writes the text "OK" to a stable output file so
   downstream steps can validate it.
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 82
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
   folder_path: examples/evaluation/skill/skills/write-ok
   extra_files:
     - scripts/write_ok.sh
+tags: []
 ---
 
 Overview

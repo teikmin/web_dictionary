@@ -7,7 +7,7 @@ tagline: Use this skill whenever the user asks for a chart, graph, plot, or
 summary: "Pick the chart type from the question being asked, not from habit — a
   bar chart is not the universal default:"
 categories:
-  - databases
+  - other
 status: active
 quality_percentile: 91
 selection_reason: quality_percentile
@@ -41,6 +41,8 @@ skill:
     library to reach for. Pair with data-analysis for the underlying data prep.
   folder_path: backend/python/app/agents/agent_loop/skills/builtin_packs/data-visualization
   extra_files: []
+tags:
+  - python
 ---
 
 # Data visualization

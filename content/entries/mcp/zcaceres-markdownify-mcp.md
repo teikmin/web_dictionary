@@ -6,7 +6,7 @@ summary: Markdownify is a Model Context Protocol (MCP) server that converts
   various file types and web content to Markdown format. It provides a set of
   tools to transform PDFs, images, audio files, web pages, and more into eas...
 categories:
-  - other
+  - media-creative
 status: active
 quality_percentile: 52
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ launch:
     - mcp-markdownify-server
   env_vars: []
   confidence: manifest
+tags:
+  - audio
 ---
 
 # Markdownify MCP Server

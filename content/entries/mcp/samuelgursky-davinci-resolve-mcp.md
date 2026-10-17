@@ -6,7 +6,7 @@ summary: A Model Context Protocol (MCP) server that lets AI assistants control
   DaVinci Resolve Studio through the official Scripting API. It provides full
   API coverage plus guarded workflow helpers for editing, media pool orga...
 categories:
-  - other
+  - productivity-ops
 status: active
 quality_percentile: 59
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - davinci-resolve-mcp
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # DaVinci Resolve MCP Server

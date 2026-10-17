@@ -5,7 +5,7 @@ tagline: "Control Ableton Live with any LLM: create tracks, arrange clips &
   compose music via MCP"
 summary: Connect Ableton Live to Claude AI
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 72
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ launch:
     - ableton-mcp
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <div align="center">

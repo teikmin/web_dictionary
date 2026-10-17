@@ -7,7 +7,7 @@ tagline: "AI image generation for SEO assets: OG/social preview images, blog
 summary: This extension is built on Claude Banana, the standalone AI image
   generation skill for Claude Code.
 categories:
-  - productivity
+  - browser-web
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
   folder_path: extensions/banana/skills/seo-image-gen
   extra_files:
     - LICENSE.txt
+tags: []
 ---
 
 # SEO Image Gen: AI Image Generation for SEO Assets (Extension)

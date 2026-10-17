@@ -9,7 +9,7 @@ summary: "- The user explicitly asks for code-drawn art: a PixelSpec or SVG
   autotile set, a code-made layout, stylized parallax or ambient loops. -
   rout..."
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 49
 selection_reason: quality_percentile
@@ -59,6 +59,7 @@ skill:
     - examples/plate-effects.json
     - examples/potion-icons.svg
     - examples/slash.fx.json
+tags: []
 ---
 
 # Code Art 2D

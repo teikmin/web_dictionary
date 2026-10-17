@@ -8,7 +8,7 @@ summary: "The official Model Context Protocol (MCP) server for Atlassian: a
   cloud-hosted bridge that gives your AI tools secure, real-time access to Jira,
   Confluence, Jira Service Management, Bitbucket, Compass, Loom, and the w..."
 categories:
-  - security
+  - agent-frameworks
 status: active
 quality_percentile: 57
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags:
+  - jira
 ---
 
 <p align="center">

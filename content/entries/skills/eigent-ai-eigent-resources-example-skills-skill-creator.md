@@ -9,7 +9,7 @@ summary: Skills are modular, self-contained packages that extend agent
   of them as "onboarding guides" for specific domains or tasks—they transform
   a...
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
     - scripts/init_skill.py
     - scripts/package_skill.py
     - scripts/quick_validate.py
+tags: []
 ---
 
 # Skill Creator

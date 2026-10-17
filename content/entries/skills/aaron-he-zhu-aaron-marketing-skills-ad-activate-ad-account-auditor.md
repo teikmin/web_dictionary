@@ -9,7 +9,7 @@ summary: "- Before launching, materially increasing spend, or changing a risky
   placements, claims, or wasted spend are in doubt. - When the user requests
   a..."
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 48
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
   folder_path: ad/activate/ad-account-auditor
   extra_files:
     - references/auditor-runtime.md
+tags: []
 ---
 
 # Ad Account Auditor

@@ -7,7 +7,7 @@ tagline: "Calibrate a new dataset from live RTSP camera streams via the
 summary: "Activate this skill when the user wants to calibrate from live RTSP
   camera streams. Typical prompts:"
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 54
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
     - scripts/run_rtsp_calibration.py
     - skill-card.md
     - skill.oms.sig
+tags: []
 ---
 
 # Skill: Calibrate from RTSP Streams

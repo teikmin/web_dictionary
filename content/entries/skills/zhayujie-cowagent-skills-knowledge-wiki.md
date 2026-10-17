@@ -8,7 +8,7 @@ summary: "1. Read and understand the source material 2. Extract key facts,
   insights, and structured knowledge 3. Determine the appropriate subdirectory:
   - Read knowledge/index.md to see existing categories - If a matching categ..."
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 98
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     asks about the knowledge base.
   folder_path: skills/knowledge-wiki
   extra_files: []
+tags: []
 ---
 
 # Knowledge Wiki

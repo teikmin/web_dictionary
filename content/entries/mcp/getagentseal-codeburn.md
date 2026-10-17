@@ -6,7 +6,7 @@ tagline: "Free, local tool to track AI coding token usage and cost across 37
   project, "
 summary: See where your AI spend goes.
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - codeburn
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <table align="center">

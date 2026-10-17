@@ -6,7 +6,7 @@ tagline: Set up the Discord channel — save the bot token and review access
   Discord, ask
 summary: "Arguments passed: $ARGUMENTS"
 categories:
-  - other
+  - productivity-ops
 status: active
 quality_percentile: 99
 selection_reason: official_vendor
@@ -39,6 +39,8 @@ skill:
     check channel status.
   folder_path: external_plugins/discord/skills/configure
   extra_files: []
+tags:
+  - discord
 ---
 
 # /discord:configure — Discord Channel Setup

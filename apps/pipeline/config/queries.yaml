@@ -12,6 +12,13 @@ skill_queries:
 code_queries:
   - "filename:SKILL.md"
 
+tool_queries:
+  - "topic:ai-agents archived:false fork:false stars:>=250"
+  - "topic:coding-agent archived:false fork:false stars:>=150"
+  - "topic:autonomous-agents archived:false fork:false stars:>=250"
+  - "topic:agent-framework archived:false fork:false stars:>=250"
+  - "topic:browser-agent archived:false fork:false stars:>=150"
+
 # Educational / demo keyword blacklist for Gate G9
 blacklist_keywords:
   - "awesome-"

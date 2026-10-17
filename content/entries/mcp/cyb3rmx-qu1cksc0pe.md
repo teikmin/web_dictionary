@@ -7,7 +7,7 @@ summary: "You can get: - What DLL files are used. - Functions and APIs. -
   (Dangerous/Special/Info). - MITRE ATT&CK mappings (Windows + Linux static
   a..."
 categories:
-  - security
+  - cloud-infra
 status: active
 quality_percentile: 40
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ launch:
       secret: true
       description: Environment variable for SC0PE_MCP_TRANSPORT
   confidence: readme
+tags: []
 ---
 
 # Qu1cksc0pe

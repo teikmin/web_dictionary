@@ -6,7 +6,7 @@ tagline: Persistente dateibasierte Planung für mehrstufige Arbeit mit
   Datenträger; Lebenszyk
 summary: "Bevor du fortfährst, ermittle das Planverzeichnis, das diese Aufgabe besitzt:"
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 70
 selection_reason: quality_percentile
@@ -56,6 +56,7 @@ skill:
     - scripts/inject-plan.py
     - scripts/inject-plan.sh
     - scripts/ledger-append.ps1
+tags: []
 ---
 
 # Dateiplanungssystem

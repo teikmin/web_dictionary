@@ -45,6 +45,7 @@ skill:
     - .github/workflows/deploy.yml
     - .github/workflows/link-check.yml
     - .gitignore
+tags: []
 ---
 
 # BREAK 知识库 Skill

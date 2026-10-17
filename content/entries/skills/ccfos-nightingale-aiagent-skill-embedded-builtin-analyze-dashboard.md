@@ -8,7 +8,7 @@ summary: "The core tool is getdashboarddata: it performs data fetching and
   statistical pre-screening on the server side (four deterministic detections —
   MAD outliers, sudden changes, trends, year-over-year comparison — plus per..."
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 83
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
     creating a dashboard (create-dashboard).
   folder_path: aiagent/skill/embedded/builtin/analyze-dashboard
   extra_files: []
+tags: []
 ---
 
 # Skill: Nightingale (N9E) Analyze Dashboard

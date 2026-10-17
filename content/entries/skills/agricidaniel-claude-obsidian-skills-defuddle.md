@@ -7,7 +7,7 @@ tagline: "Plan and, with explicit network consent, use an optional external
 summary: "Resolve the installed product root from this skill's own location,
   never from the selected vault or process working directory:"
 categories:
-  - databases
+  - media-creative
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     page, or preparing a web source for later wiki ingestion.
   folder_path: skills/defuddle
   extra_files: []
+tags: []
 ---
 
 # Defuddle

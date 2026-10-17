@@ -9,7 +9,7 @@ summary: These database-only MCP tools require the database module enabled
   resources, use the WhoDB skill and discover available whodbplatform tools
   in...
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 34
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     relationships.
   folder_path: cli/external-plugin/whodb/skills/schema-designer
   extra_files: []
+tags: []
 ---
 
 # Schema Designer

@@ -6,7 +6,7 @@ summary: "- Repository Management: Browse and query code, search files, analyze
   commits, and understand project structure across any repository you have
   access to. - Issue & PR Automation: Create, update, and manage issues and..."
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 98
 selection_reason: official_vendor
@@ -37,6 +37,8 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags:
+  - github
 ---
 
 # GitHub MCP Server

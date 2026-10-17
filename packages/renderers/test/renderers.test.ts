@@ -114,4 +114,22 @@ describe('Client Config Renderers', () => {
     expect(rendered['codex'].mcpSnippet).toBe('');
     expect(rendered['antigravity'].mcpSnippet).toBe('');
   });
+
+  it('renders empty commands and snippets when confidence is none even if command or remote_url was set', () => {
+    const spec: LaunchSpec = {
+      transport: 'http',
+      remote_url: 'https://{openmetadata_host}/mcp',
+      command: 'npx placeholder',
+      args: ['-y', 'broken'],
+      env_vars: [],
+      confidence: 'none',
+    };
+
+    const rendered = renderMcpForAllClients('openmetadata', spec);
+
+    expect(rendered['claude-code'].mcpCommand).toBe('');
+    expect(rendered['claude-code'].mcpSnippet).toBe('');
+    expect(rendered['codex'].mcpSnippet).toBe('');
+    expect(rendered['antigravity'].mcpSnippet).toBe('');
+  });
 });

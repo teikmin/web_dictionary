@@ -8,7 +8,7 @@ summary: "This skill keeps that picture alive across compactions. Before
   between things that already exist on disk. After compacting, you re-enter the
   wo..."
 categories:
-  - dev-tools
+  - domain-research
 status: active
 quality_percentile: 56
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     - scripts/restore-from-jsonl.mjs
     - templates/compact-instruction.md
     - templates/post-compact-restore-instruction.md
+tags: []
 ---
 
 # Claude Compaction Restore

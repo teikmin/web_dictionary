@@ -8,7 +8,7 @@ summary: "- Animating a character or creature: every action comes from one
   master: idle breathing, walks, runs, attacks, casts, hair, capes,
   creatures...."
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 49
 selection_reason: quality_percentile
@@ -60,6 +60,8 @@ skill:
     - references/prompt-rules.md
     - references/runtime/forge-runtime.mjs
     - references/runtime/packed-alpha-webgl.mjs
+tags:
+  - video
 ---
 
 # Video to 2D Animation

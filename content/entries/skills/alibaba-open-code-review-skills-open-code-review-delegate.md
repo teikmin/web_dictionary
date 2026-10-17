@@ -8,7 +8,7 @@ summary: "This outputs: - mode (workspace / range / commit) - from / to / commit
   / mergebase — ref metadata for constructing git commands - Reviewable file
   list — paths, status, insertions/deletions - Excluded files — with excl..."
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 60
 selection_reason: quality_percentile
@@ -43,6 +43,9 @@ skill:
     own LLM capabilities.
   folder_path: skills/open-code-review-delegate
   extra_files: []
+tags:
+  - git
+  - ocr
 ---
 
 # Open Code Review — Delegation Mode

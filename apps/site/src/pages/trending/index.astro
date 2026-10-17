@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TrendingBoard from '../../components/TrendingBoard.astro';
+import { getLatestTrendingReport, getAvailableTrendingWeeks } from '../../lib/trending';
+
+const report = getLatestTrendingReport();
+const allWeeks = getAvailableTrendingWeeks();
+
+const title = `🔥 AI Agent Weekly Trending Leaderboard — ${report.week} | AI Tools Hub`;
+const description = `Discover the fastest-growing MCP servers, agent skills, and AI developer tools for ${report.week}. Ranked by 7-day star velocity and momentum.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <TrendingBoard report={report} allWeeks={allWeeks} isArchive={false} />
+</BaseLayout>

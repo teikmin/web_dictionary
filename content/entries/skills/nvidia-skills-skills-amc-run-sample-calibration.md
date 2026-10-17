@@ -7,7 +7,7 @@ tagline: Run end-to-end calibration on the shipped sample dataset
 summary: "Activate this skill when the user wants to sanity-check a running AMC
   stack with the bundled sample dataset. Typical prompts:"
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 54
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
     - scripts/run_sample_calibration.py
     - skill-card.md
     - skill.oms.sig
+tags: []
 ---
 
 # Skill: Calibrate Sample Dataset

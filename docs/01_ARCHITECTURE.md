@@ -1,63 +1,53 @@
-# 01. Project Architecture (v2)
+# 01. Project Architecture (v3)
 
-> **Status:** Finalized & Active (2026-10-07).  
+> **Status:** Finalized & Active (October 2026).  
 > **Source of Truth:** Git (`content/entries/*`).  
-> **Companion Document:** [02_REPO_QUALITY_CRITERIA.md](file:///c:/teikmin/exploring/web_database/docs/02_REPO_QUALITY_CRITERIA.md) (Automated selection rules).  
-> **Supersedes:** Legacy v1 design documents (`01_PROJECT_OVERVIEW.md`, `02_DATABASE_SCHEMA.sql`, `03_INGESTION_AND_VERIFICATION.md`, and `06_ARCHITECTURE_REDESIGN.md`).
+> **Companion Documents:** [02_REPO_QUALITY_CRITERIA.md](file:///c:/teikmin/exploring/web_database/docs/02_REPO_QUALITY_CRITERIA.md), [08_PRODUCT_AND_ARCHITECTURE_REVIEW.md](file:///c:/teikmin/exploring/web_database/docs/08_PRODUCT_AND_ARCHITECTURE_REVIEW.md), [09_V3_WEB_DICTIONARY_AND_TRENDING_PLAN.md](file:///c:/teikmin/exploring/web_database/docs/09_V3_WEB_DICTIONARY_AND_TRENDING_PLAN.md).  
+> **Supersedes:** Legacy v1 and v2 catalog specifications.
 
 ---
 
 ## 1. Executive Summary & Vision
 
-**Working Title:** AI Tools Hub / MCP & Agent Registry  
+**Working Title:** AI Tools Web Dictionary & Weekly Trend Radar  
 **Founder:** Teh Teik Min  
-**Core Purpose:** A personal-first knowledge repository and developer utility built to discover, filter, and reference high-quality AI tools across the rapidly evolving ecosystem. 
+**Core Purpose:** An authoritative, zero-maintenance, Git-backed dictionary and velocity radar designed to reference, define, and track the fastest-growing AI agent tools across the entire ecosystem.
 
-While built primarily for personal productivity and learning, it is published openly as a high-signal public directory for developers building with AI agents.
-
-### The Problem
-The AI tooling ecosystem is expanding exponentially. Developers are constantly adopting Model Context Protocol (MCP) servers, agent skills, and workflow configs. However:
-- Discovery is fragmented across GitHub topics, Reddit threads, and individual READMEs.
-- Low-quality, abandoned, or star-farmed repositories overwhelm search results.
-- Configuring tools in different clients (**Claude Code**, **Codex**, **Antigravity**) requires manual, error-prone JSON and TOML edits.
-
-### The Solution
-A zero-database, Git-backed static web catalog powered by an automated TypeScript pipeline:
-1. **Curated automatically:** Scrapes wide, verifies file evidence, filters with strict quality gates ($\ge 100$ stars), and publishes narrow.
-2. **1-Click Launch Configs:** Renders copy-ready launch snippets tailored specifically for **Claude Code**, **Codex**, and **Antigravity**.
-3. **Zero Maintenance Infra:** Completely serverless. Git is the database, Astro is the renderer, Pagefind is the search engine, and GitHub Actions is the pipeline.
+### The 3 Pillars of AI Tooling
+1. **MCP Servers (`mcp_server`):** Headless Model Context Protocol servers providing structured database, filesystem, browser automation, and API integrations.
+2. **Agent Skills (`agent_skill`):** Reusable task instruction sets and prompts in `SKILL.md` format, packaged into repository **Skill Packs**.
+3. **Agent Tools & Repos (`agent_tool`):** Standalone autonomous coding agents, desktop harnesses, and developer frameworks with quickstart install commands.
 
 ---
 
-## 2. Finalized Decisions Log
+## 2. Finalized Decisions Log (v3.0)
 
 | # | Question | Decision |
 |---|---|---|
-| 1 | **Source of truth** | **Git** (structured Markdown files in the repo; no runtime database) |
-| 2 | **v1 Scope** | **MCP servers + agent skills** |
-| 3 | **Target clients** | **Antigravity, Codex, Claude Code** |
-| 4 | **Private notes** | **None.** Everything in the repo is public |
-| 5 | **Triage interface** | **Not needed.** Selection is 100% automated by rule |
-| 6 | **Pipeline language** | **TypeScript** (shares config renderers with the Astro site) |
-| 7 | **Curation model** | **Automatic, rule-based** quality selection (no manual review queues) |
-| 8 | **Star minimum** | **$\ge 100$ stars** for both MCP servers and skills (official vendors exempt) |
-| 9 | **Catalog size target** | **$\sim 500$ entries cap** in v1 |
-| 10 | **Submissions** | **Out of scope for v1.** No community submission UI |
+| 1 | **Source of truth** | **Git** (structured Markdown in `content/entries/`; zero runtime SQL/Supabase) |
+| 2 | **Ecosystem Scope** | **3 Pillars:** MCP Servers, Agent Skills, and Agent Tools & Repos |
+| 3 | **Velocity & Trends** | **Weekly Velocity Engine (`/trending`)**: computes 7-day star delta $\Delta S_{7\text{d}}$, breakout tools ($\le 60$d), and SVG sparklines |
+| 4 | **Distribution** | **Web + RSS 2.0 (`/rss.xml`)** for weekly updates and discoveries |
+| 5 | **Target clients** | **Claude Code, OpenAI Codex, Google Antigravity** |
+| 6 | **Detail Page UX** | **6-Line Standardized Dictionary Definition Box** with 4-tier deterministic fallback |
+| 7 | **Skill Monorepos** | **Skill Packs**: grouped by repository in `/catalog` with expandable drawer |
+| 8 | **Category Taxonomy** | **9 Balanced Categories** with dynamic scoring classifier |
+| 9 | **Pipeline Safety** | **SG-1 Circuit Breaker**: automated pruning requires explicit `--force-prune` with 5% max deletion limit |
+| 10 | **Static Search** | **Pagefind offline search** (<10ms latency, zero API costs) |
 
 ---
 
-## 3. Why the Architecture was Redesigned (v1 vs v2)
+## 3. Architecture Evolution (v1 $\to$ v2 $\to$ v3)
 
-A prototype dry run of the initial topic-scraping pipeline produced **3,478 records across 3,110 repos**, with a **median star count of 1**. Over 40% received a "Healthy" badge due to circular metrics.
+| Dimension | Legacy Prototype (v1) | Catalog Snippets (v2) | Web Dictionary & Radar (v3) |
+|---|---|---|---|
+| **Pillars Supported** | Unstructured scrapers | 2 types (MCP, Skills) | **3 Pillars (`mcp_server`, `agent_skill`, `agent_tool`)** |
+| **Identity & Scope** | Raw GitHub topic search | Config snippet generator | **AI Tools Web Dictionary & Weekly Trend Board** |
+| **Trend Telemetry** | None | Star sort only | **Piecewise Weekly Velocity Engine + Breakout Newcomers** |
+| **Categories** | 100+ messy tags | 7 categories (68% in 1 cat) | **9 balanced categories (<25% max each)** |
+| **Monorepo Skills** | 1-per-repo or flooded | 538 duplicate skills | **Deduplicated Skill Packs with drawer tables** |
+| **Detail Experience** | Raw README | Read-first 60KB README | **6-Line Dictionary Definition Card + README** |
 
-| Issue in v1 | Root Cause | v2 Redesign Solution |
-|---|---|---|
-| **High noise catalog** | Scraped everything matching topics | Three-layer filter with a hard $\ge 100$ star gate ([02_REPO_QUALITY_CRITERIA.md](file:///c:/teikmin/exploring/web_database/docs/02_REPO_QUALITY_CRITERIA.md)) |
-| **Volatile listings** | Search sorted by `updated` | Search sorted by `stars`; curated entries ranked by quality percentile |
-| **Misclassified types** | Inferred type from loose topic tags | **File evidence required** (`@modelcontextprotocol/sdk`, `server.json`, `SKILL.md`) |
-| **Monorepo collisions** | Assumed 1 repository = 1 resource | Decoupled **Source** (repo) from **Entry** (subfolder/tool) |
-| **No 1-click config model** | No schema for client configuration | Unified `LAUNCH_SPEC` rendered into client-specific formats at build time |
-| **Database overhead** | Supabase PostgreSQL runtime instance | **Git as database**; Astro Content Collections with static build validation |
 
 ---
 

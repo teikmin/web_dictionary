@@ -7,7 +7,7 @@ summary: '- User explicitly mentions "reminder" or "Reminders app" - Creating
   personal to-dos with due dates that sync to iOS - Managing Apple Reminders
   lists - User wants tasks to appear in their iPhone/iPad Reminders app'
 categories:
-  - browser-automation
+  - coding-agents
 status: active
 quality_percentile: 86
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
     complete, delete). Supports lists, date filters, and JSON/plain output.
   folder_path: skills/apple-reminders
   extra_files: []
+tags: []
 ---
 
 # Apple Reminders CLI (remindctl)

@@ -7,7 +7,7 @@ tagline: Analyze A/B test results with statistical significance, sample size
 summary: Evaluate A/B test results with statistical rigor and translate findings
   into clear product decisions.
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 68
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     interpreting split test data, or deciding whether to ship a variant.
   folder_path: pm-data-analytics/skills/ab-test-analysis
   extra_files: []
+tags: []
 ---
 
 ## A/B Test Analysis

@@ -55,22 +55,30 @@ Astro reads this folder directly as Content Collections. Every file here becomes
 ```text
 content/
 ├── entries/                         🤖 Pipeline-owned
-│   ├── mcp/
+│   ├── mcp/                         Model Context Protocol servers
 │   │   ├── stripe-agent-toolkit.md
 │   │   ├── modelcontextprotocol-servers-filesystem.md   ← monorepo sub-entry
-│   │   └── …                        (~350 files)
-│   └── skills/
-│       ├── anthropics-skills-pdf.md                     ← one entry per SKILL.md folder
-│       └── …                        (~150 files)
+│   │   └── …                        (124 files)
+│   ├── skills/                      Reusable instruction sets & Skill Packs
+│   │   ├── anthropics-skills-pdf.md                     ← one entry per SKILL.md folder
+│   │   └── …                        (566 files)
+│   └── tools/                       Autonomous agent apps, harnesses & frameworks
+│       ├── assafelovic-gpt-researcher.md
+│       └── …                        (standalone agent tools)
 ├── clients/                         ✍️ Human-owned
 │   ├── claude-code.yaml
 │   ├── codex.yaml
 │   └── antigravity.yaml
-├── categories/                      ✍️ Human-owned
-│   ├── databases.yaml
-│   ├── browser-automation.yaml
-│   ├── dev-tools.yaml
-│   └── …                            (fixed list of ~8–12, plus other.yaml)
+├── categories/                      ✍️ Human-owned (9 balanced taxonomy definitions)
+│   ├── coding-agents.yaml
+│   ├── browser-web.yaml
+│   ├── databases-memory.yaml
+│   ├── agent-frameworks.yaml
+│   ├── productivity-ops.yaml
+│   ├── cloud-infra.yaml
+│   ├── media-creative.yaml
+│   ├── security-auth.yaml
+│   └── domain-research.yaml
 └── pages/                           ✍️ Human-owned
     ├── about.md
     └── criteria.md                  Public version of 02_REPO_QUALITY_CRITERIA.md
@@ -81,28 +89,17 @@ content/
 | Rule | Convention |
 |---|---|
 | **File name = slug** | Lowercase, hyphenated: `<owner>-<repo>` for single-tool repos, `<owner>-<repo>-<subfolder>` for monorepo sub-entries |
-| **Slug is permanent** | Once published, a slug never changes (keeps URLs stable). If a repo is renamed, the `source.repo` field changes, not the slug |
+| **Slug is permanent** | Once published, a slug never changes (keeps URLs stable). Historical slug mutations are mapped in `data/state/slug-aliases.json` |
 | **Format** | Markdown with structured frontmatter. The frontmatter holds all structured data and signals |
 | **Sanitized README Body** | Below frontmatter, the body contains the sanitized upstream README / `SKILL.md` (capped at ~60KB, badge rows stripped, relative links rewritten to absolute URLs, script/event handlers purged) with upstream source link and license attribution to enable read-first discovery |
 
-### 4.2 Entry frontmatter fields (MCP entry)
+### 4.2 Entry frontmatter fields
 
-| Group | Fields |
-|---|---|
-| Identity | `slug`, `type`, `name`, `tagline`, `categories` |
-| Source | `source.repo`, `source.subpath`, `source.homepage`, `source.package` (npm/PyPI name), `source.official_vendor`, `source.license` |
-| Selection | `status` (active / slowing / dormant / archived), `quality_percentile`, `selection_reason`, `first_seen`, `last_updated` |
-| Launch spec | `launch.transport`, `launch.command`, `launch.args`, `launch.env_vars` (name, required, secret, description), `launch.remote_url`, `launch.confidence` |
-| Signals (latest) | `signals.stars`, `signals.last_commit`, `signals.weekly_downloads`, `signals.contributors` (a copy of the latest snapshot so pages don't need to load history) |
-
-**Skill entries** swap the launch spec group for: `skill.name`, `skill.description`, `skill.folder_path`, `skill.extra_files`.
-
-### 4.3 Client and category files
-
-| File | Contents |
-|---|---|
-| `clients/*.yaml` | Display name, logo path, docs link, MCP config format id, MCP config file location(s), skills install location(s), "last checked against official docs" date |
-| `categories/*.yaml` | Display name, description, sort order, plus **matching rules** (topics and keywords) the pipeline uses to assign entries automatically |
+| Pillar | Frontmatter Group | Spec Schema |
+|---|---|---|
+| **MCP Server** (`mcp_server`) | Identity, Source, Selection, Launch Spec, Latest Signals | `McpEntrySchema` (`LaunchSpecSchema`) |
+| **Agent Skill** (`agent_skill`) | Identity, Source, Selection, Skill Spec (`is_pack_primary`, `pack_total_skills`, `pack_slug`), Signals | `SkillEntrySchema` (`SkillSpecSchema`) |
+| **Agent Tool** (`agent_tool`) | Identity, Source, Selection, Tool Spec (`subcategory`, `runtime`, `execution_mode`, `install_command`, optional `mcp_launch`), Signals | `ToolEntrySchema` (`ToolSpecSchema`) |
 
 ---
 
@@ -110,6 +107,8 @@ content/
 
 ```text
 data/
+├── archive/
+│   └── pruned/                      🤖 Pipeline-owned historical deletions (SG-1 safeguard)
 ├── overrides/                       ✍️ Human-owned (optional; work fine empty)
 │   ├── block.yaml                   Never publish these repos (+ reason)
 │   └── pin.yaml                     Always publish these repos (+ reason)
@@ -118,6 +117,17 @@ data/
 │   └── awesome-lists.yaml           Curated lists used as a trust signal
 ├── signals/                         🤖 Pipeline-owned
 │   └── 2026/
+│       ├── 2026-W41.json
+│       └── 2026-W42.json
+├── runs/                            🤖 Weekly trend artifacts
+│   └── 2026-W42/
+│       ├── trending.json            Weekly trending leaderboard & velocity rankings
+│       ├── diff.json                Weekly additions, removals, and surging tools
+│       └── report.md                Dry-run audit logs
+└── state/                           🤖 Persistent cross-run telemetry
+    ├── catalog-state.json           Ecosystem totals, counts, and generation timestamps
+    └── slug-aliases.json            Persistent map of past slug renames (SG-4)
+```
 │       ├── 2026-W41.json            One file per week: raw signals for every catalog entry
 │       └── …
 ├── runs/                            🤖 Pipeline-owned

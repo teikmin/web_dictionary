@@ -8,7 +8,7 @@ summary: "Every deliberate ponytail shortcut is marked with a shortcut: comment
   naming its ceiling and upgrade path (older code may say ponytail:). This
   collects them into one ledger so a deferral can't quietly become permanent."
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 57
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     ponytail defer", "list the shortcuts", /ponytail-debt.
   folder_path: skills/ponytail-debt
   extra_files: []
+tags: []
 ---
 
 Every deliberate ponytail shortcut is marked with a `shortcut:` comment naming

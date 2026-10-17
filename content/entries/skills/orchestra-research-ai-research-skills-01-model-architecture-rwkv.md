@@ -7,7 +7,7 @@ tagline: "RNN+Transformer hybrid with O(n) inference. Linear time, infinite
 summary: RWKV (RwaKuv) combines Transformer parallelization (training) with RNN
   efficiency (inference).
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -43,6 +43,8 @@ skill:
     - references/architecture-details.md
     - references/rwkv7.md
     - references/state-management.md
+tags:
+  - linear
 ---
 
 # RWKV - Receptance Weighted Key Value

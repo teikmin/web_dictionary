@@ -8,7 +8,7 @@ summary: 只在维护者主动调用本 skill，且当前会话已经提供授�
   把连接细节、凭据、源名称和私有卡片留在维护者指定的隔离工作区；不得写入本 skill、
   公开技能树、公共候选或评测夹具。没有授权或无法确认只读时停止来源读取，只能用合成材料演练流程。
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 67
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     - references/promotion-ledger.md
     - references/prompt-production-learning.md
     - references/synthesis-and-promotion.md
+tags: []
 ---
 
 # 短剧 Know-how 学习

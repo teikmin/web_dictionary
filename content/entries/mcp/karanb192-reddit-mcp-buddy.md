@@ -7,7 +7,7 @@ summary: A Model Context Protocol (MCP) server that enables Claude Desktop and
   other AI assistants to browse Reddit, search posts, and analyze user activity.
   Clean, fast, and actually works - browse subreddits with no API keys...
 categories:
-  - ai-frameworks
+  - browser-web
 status: active
 quality_percentile: 26
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ launch:
     - reddit-mcp-buddy
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # <img src="https://raw.githubusercontent.com/karanb192/reddit-mcp-buddy/main/assets/reddit-mcp-buddy-icon-white-background.png" width="48" align="center"/> Reddit MCP Buddy

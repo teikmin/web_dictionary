@@ -6,7 +6,7 @@ tagline: 审查、安装、配置、验证、更新和移除 AgentDock Skill 时
 summary: AgentDock 的 managed Skill 只有“当前内容”，没有独立版本选择、activate 或 rollback。更新同名
   managed Skill 等价于审查新内容后原子替换当前目录；相同 contentdigest 为 no-op。
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 58
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
   folder_path: core-skills/skill-installation
   extra_files:
     - references/skill-security-review.md
+tags: []
 ---
 
 # Skill Installation

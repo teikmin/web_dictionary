@@ -5,7 +5,7 @@ tagline: Open Plannotator's browser-based code review UI and address the
   returned feedback.
 summary: "You may append one directory or PR URL:"
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
     returned feedback.
   folder_path: apps/kiro-cli/skills/plannotator-review
   extra_files: []
+tags: []
 ---
 
 # Plannotator Review (Kiro)

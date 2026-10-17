@@ -7,7 +7,7 @@ tagline: Use this skill when designing, generating an MVP blueprint for,
 summary: "Canonical source: DenisSergeevitch/agents-best-practices, branch main.
   Installed copies are snapshots, not guaranteed-current guidance."
 categories:
-  - ai-frameworks
+  - coding-agents
 status: active
 quality_percentile: 55
 selection_reason: quality_percentile
@@ -58,6 +58,7 @@ skill:
     - references/agent-legibility-feedback-loops.md
     - references/agentic-loop.md
     - references/always-on-agents.md
+tags: []
 ---
 
 # Agents Best Practices

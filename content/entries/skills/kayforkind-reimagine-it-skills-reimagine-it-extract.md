@@ -8,7 +8,7 @@ summary: "The redesign is only as honest as its extraction. This verb emits
   exactly what the engine reads, as JSON, without generating anything: title,
   profile, density, derived palette, anchors, proper nouns, headings, dates,..."
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
     Content-Derived Design suite.'
   folder_path: skills/reimagine-it/extract
   extra_files: []
+tags: []
 ---
 
 # /reimagine-it extract

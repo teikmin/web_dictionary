@@ -10,7 +10,7 @@ summary: "audioKind, audioModel, audioDuration (seconds), and (for speech)
   an instruction to ask: infer a safe default when possible, and emit a
   clari..."
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -45,6 +45,8 @@ skill:
   folder_path: design-templates/audio-jingle
   extra_files:
     - example.html
+tags:
+  - audio
 ---
 
 # Audio Jingle Skill

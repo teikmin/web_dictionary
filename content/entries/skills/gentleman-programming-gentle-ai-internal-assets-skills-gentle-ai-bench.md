@@ -8,7 +8,7 @@ summary: Load when touching bench/ in gentle-ai, adding or changing a journey,
   changing a product semantic a journey might pin, or diagnosing a bench failure
   in CI's Unit Tests job.
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     journeys; go test ./bench never proves driven execution."
   folder_path: internal/assets/skills/gentle-ai-bench
   extra_files: []
+tags: []
 ---
 
 ## Activation Contract

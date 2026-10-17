@@ -7,7 +7,7 @@ tagline: Create branded architecture, architecture delta, IT current-state,
 summary: Forty-five visual types. Semantic patterns describe behavior; type
   references describe layout.
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -58,6 +58,7 @@ skill:
     - assets/example-axonometric-plan-campus-dark.html
     - assets/example-axonometric-plan-campus-full.html
     - assets/example-axonometric-plan-campus.html
+tags: []
 ---
 
 # Diagram Design

@@ -9,7 +9,7 @@ summary: "Gemini and Grok are equally strong: both follow detailed prompts
   left/right. Use whichever key is set; with both, assetgen.py defaults to
   Gemini..."
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 50
 selection_reason: quality_percentile
@@ -50,6 +50,7 @@ skill:
     - tools/grid_slice.py
     - tools/rembg_matting.py
     - tools/requirements.txt
+tags: []
 ---
 
 # Asset Generator

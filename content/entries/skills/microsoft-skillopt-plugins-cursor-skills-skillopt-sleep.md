@@ -8,7 +8,7 @@ summary: This plugin has no session-end hook and no MCP server. Run the cycle
   only when the user asks, or install a schedule only when the user explicitly
   requests one.
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 98
 selection_reason: official_vendor
@@ -43,6 +43,7 @@ skill:
     CLI backend.
   folder_path: plugins/cursor/skills/skillopt-sleep
   extra_files: []
+tags: []
 ---
 
 # SkillOpt-Sleep for Cursor

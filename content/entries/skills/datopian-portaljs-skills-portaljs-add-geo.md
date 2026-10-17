@@ -8,7 +8,7 @@ summary: Turn one geospatial upload into a dual-tier PortalJS dataset entirely
   zero-backend bet end-to-end. From a single source the skill derives two
   serve...
 categories:
-  - dev-tools
+  - domain-research
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
   folder_path: skills/portaljs-add-geo
   extra_files:
     - references/reference.md
+tags: []
 ---
 
 # PortalJS — Add Geo

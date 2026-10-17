@@ -8,7 +8,7 @@ summary: 1. Analyze domain — Understand business requirements, data models, an
   client needs 2. Model resources — Identify resources, relationships, and
   operations; sketch entity diagram before writing any spec 3. Design endpo...
 categories:
-  - other
+  - agent-frameworks
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
     - references/pagination.md
     - references/rest-patterns.md
     - references/versioning.md
+tags: []
 ---
 
 # API Designer

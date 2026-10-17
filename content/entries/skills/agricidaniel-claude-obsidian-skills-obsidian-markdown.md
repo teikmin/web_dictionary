@@ -7,7 +7,7 @@ tagline: "Explain, draft, or validate Obsidian Flavored Markdown syntax:
 summary: "Resolve the installed product root from this skill's own location, not
   from the vault or current working directory:"
 categories:
-  - databases
+  - productivity-ops
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     vault operations."
   folder_path: skills/obsidian-markdown
   extra_files: []
+tags: []
 ---
 
 # Obsidian Flavored Markdown

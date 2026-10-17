@@ -9,7 +9,7 @@ summary: "- Diseñar nuevos endpoints de API - Revisar contratos de API
   de errores para APIs - Planificar la estrategia de versionado de API -
   Constru..."
 categories:
-  - security
+  - media-creative
 status: active
 quality_percentile: 96
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     rate limiting para APIs de producción.
   folder_path: docs/es/skills/api-design
   extra_files: []
+tags: []
 ---
 
 # Patrones de Diseño de API

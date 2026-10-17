@@ -1,0 +1,18 @@
+id: productivity-ops
+name: Productivity & Workspace
+tagline: Slack, Notion, Google Workspace, Jira, email, and task management
+description: Connectors for workspace tools, messaging platforms, project trackers, calendar sync, and business operations.
+icon: briefcase
+keywords:
+  - slack
+  - discord
+  - telegram
+  - notion
+  - gmail
+  - calendar
+  - google-workspace
+  - jira
+  - linear
+  - airtable
+  - n8n
+  - zapier

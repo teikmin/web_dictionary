@@ -6,7 +6,7 @@ tagline: Fetch brand SVG logos and cloud architecture icons (AWS, Azure, GCP)
   mar
 summary: "Trigger on requests like:"
 categories:
-  - dev-tools
+  - cloud-infra
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ skill:
     brand or cloud service. Returns ready-to-use CDN URLs or raw SVG markup.
   folder_path: skills/thesvg
   extra_files: []
+tags:
+  - aws
 ---
 
 # theSVG agent skill

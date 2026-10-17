@@ -4,7 +4,7 @@ name: diff-risk-explainer
 tagline: Use to briefly explain small code diffs.
 summary: Use to briefly explain small code diffs.
 categories:
-  - databases
+  - other
 status: active
 quality_percentile: 68
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: Use to briefly explain small code diffs.
   folder_path: examples/demos/feedback/skill_feedback_loop/skills/diff-risk-explainer
   extra_files: []
+tags: []
 ---
 
 # diff-risk-explainer

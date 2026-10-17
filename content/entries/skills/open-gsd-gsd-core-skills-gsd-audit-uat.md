@@ -6,7 +6,7 @@ summary: Scan all phases for pending, skipped, blocked, and humanneeded UAT
   items. Cross-reference against codebase to detect stale documentation. Produce
   prioritized human test plan.
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
   description: Cross-phase audit of all outstanding UAT and verification items
   folder_path: skills/gsd-audit-uat
   extra_files: []
+tags: []
 ---
 
 <objective>

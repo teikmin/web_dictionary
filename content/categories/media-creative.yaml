@@ -1,0 +1,18 @@
+id: media-creative
+name: Media, Docs & Creative
+tagline: Document parsing, image/audio/video generation, and diagramming
+description: PDF/office document parsers, generative media tools, Mermaid/SVG diagramming, speech synthesis, and OCR.
+icon: image
+keywords:
+  - pdf
+  - docx
+  - xlsx
+  - pptx
+  - mermaid
+  - diagram
+  - image-generation
+  - video
+  - audio
+  - tts
+  - ocr
+  - markdown

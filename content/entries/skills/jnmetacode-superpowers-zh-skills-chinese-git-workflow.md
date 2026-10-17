@@ -6,7 +6,7 @@ tagline: 国内 Git 平台配置参考——Gitee、Coding.net、极狐 GitLab�
 summary: 国内团队用 Git 经常踩的坑：GitHub 访问不稳定、CI/CD 方案照搬国外水土不服、commit message
   中英混杂没有规范。本技能提供一套完整适配国内平台和团队习惯的 Git 工作流。
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 80
 selection_reason: quality_percentile
@@ -37,6 +37,9 @@ skill:
     接入差异与镜像同步配置。仅在用户显式 /chinese-git-workflow 时调用，不要根据上下文自动触发。
   folder_path: skills/chinese-git-workflow
   extra_files: []
+tags:
+  - github
+  - git
 ---
 
 # 国内 Git 工作流规范

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CatalogView from '../../components/CatalogView.astro';
+import { getAllTools } from '../../lib/entries';
+
+const agentTools = await getAllTools();
+---
+
+<BaseLayout
+  title="All AI Agent Tools & Repositories — AI Tools Hub"
+  description={`Browse ${agentTools.length} autonomous AI agent tools, coding agents, browser harnesses, and multi-agent frameworks.`}
+>
+  <CatalogView
+    initialType="agent_tool"
+    pageTitle="All Agent Tools & Repos"
+    pageDescription={`Browse ${agentTools.length} standalone AI agent tools, frameworks, and CLIs with installation quickstarts and runtime details.`}
+  />
+</BaseLayout>

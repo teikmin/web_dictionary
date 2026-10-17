@@ -4,7 +4,7 @@ name: excel-outlier-detection-and-highlighting
 tagline: 识别 Excel 中的超限数值与错误单元格并进行高亮标注。
 summary: Step1 使用正则表达式提取限值，并结合上下文逻辑识别总传热系数超限的行。
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 44
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: 识别 Excel 中的超限数值与错误单元格并进行高亮标注。
   folder_path: skills/sn-da-excel-workflow/capability/excel-cell-coloring/outlier-coloring
   extra_files: []
+tags: []
 ---
 
 # Outlier_Coloring

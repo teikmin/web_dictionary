@@ -7,7 +7,7 @@ tagline: |-
 summary: "Get the concrete date range for the previous full calendar month by
   running the bundled resolver:"
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 80
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     summaries).
   folder_path: resources/skills/lastMonth
   extra_files: []
+tags: []
 ---
 
 ## /lastMonth

@@ -6,7 +6,7 @@ tagline: Dolt-powered issue tracker for multi-session work with dependencies and
 summary: 'Decision test: "Will I need this context in 2 weeks?" YES = bd, NO =
   TodoWrite.'
 categories:
-  - dev-tools
+  - databases-memory
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -52,6 +52,8 @@ skill:
     - commands/comments.md
     - commands/compact.md
     - commands/create.md
+tags:
+  - memory
 ---
 
 # Beads - Persistent Task Memory for AI Agents

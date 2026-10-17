@@ -6,7 +6,7 @@ tagline: Smallest personal narrated-explainer-video pipeline (spoken narration
   defau
 summary: "What makes this work regardless of tool choice — the three invariants:"
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 36
 selection_reason: quality_percentile
@@ -46,6 +46,9 @@ skill:
   folder_path: skills/video-podcast-maker-nano
   extra_files:
     - AGENTS.template.md
+tags:
+  - audio
+  - video
 ---
 
 # Video Podcast Maker Nano

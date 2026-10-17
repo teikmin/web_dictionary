@@ -9,7 +9,7 @@ summary: "- Auditing a repository's GitHub Actions workflows for AI agent
   Gemini CLI, or OpenAI Codex - Checking whether attacker-controlled input can
   re..."
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 55
 selection_reason: quality_percentile
@@ -56,6 +56,9 @@ skill:
     - references/vector-c-cli-data-fetch.md
     - references/vector-d-pr-target-checkout.md
     - references/vector-e-error-log-injection.md
+tags:
+  - github
+  - security
 ---
 
 # Agentic Actions Auditor

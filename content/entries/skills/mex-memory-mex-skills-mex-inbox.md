@@ -8,7 +8,7 @@ summary: "- Create one knowledge.create or knowledge.update change per draft,
   for an existing kind: architecture, component, convention, decision, pattern,
   or guide. - Existing Spec workflows also support spec.create and spec.u..."
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 36
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
   extra_files:
     - agents/openai.yaml
     - references/cli-workflows.md
+tags: []
 ---
 
 # MEX Inbox

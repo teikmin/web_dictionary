@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TrendingBoard from '../../components/TrendingBoard.astro';
+import { getAvailableTrendingWeeks, getTrendingReport } from '../../lib/trending';
+
+export async function getStaticPaths() {
+  const weeks = getAvailableTrendingWeeks();
+  return weeks.map((week) => {
+    const report = getTrendingReport(week);
+    return {
+      params: { week },
+      props: { week, report, allWeeks: weeks },
+    };
+  });
+}
+
+interface Props {
+  week: string;
+  report: ReturnType<typeof getTrendingReport>;
+  allWeeks: string[];
+}
+
+const { week, report, allWeeks } = Astro.props;
+
+const isArchive = week !== allWeeks[0];
+const title = isArchive
+  ? `📅 AI Agent Weekly Leaderboard — ${week} Archive | AI Tools Hub`
+  : `🔥 AI Agent Weekly Trending Leaderboard — ${week} | AI Tools Hub`;
+const description = isArchive
+  ? `Historical weekly trending snapshot for ${week}. Track star velocity, top MCP servers, skills, and breakout tools.`
+  : `Discover the fastest-growing MCP servers, agent skills, and AI developer tools for ${week}. Ranked by 7-day star velocity and momentum.`;
+---
+
+<BaseLayout title={title} description={description} indexed={false}>
+  <!-- Pagefind ignore container to prevent historical snapshots from polluting live search (Req 1.2) -->
+  <div data-pagefind-ignore>
+    <TrendingBoard report={report} allWeeks={allWeeks} isArchive={isArchive} />
+  </div>
+</BaseLayout>

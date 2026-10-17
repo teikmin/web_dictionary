@@ -8,7 +8,7 @@ summary: "- Run extensions/bing-webmaster/install.sh or install.ps1. - A Bing
   Webmaster Tools API key. - Optional: an IndexNow host key (32+ chars)
   published at the URL declared as INDEXNOWKEYLOCATION."
 categories:
-  - productivity
+  - browser-web
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     data, and IndexNow URL submission first-class.
   folder_path: extensions/bing-webmaster/skills/seo-bing
   extra_files: []
+tags: []
 ---
 
 # seo-bing

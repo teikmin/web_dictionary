@@ -6,7 +6,7 @@ tagline: "Knowledge and governance closeout: reconcile project docs, rule files
   what "
 summary: 一次洁癖收尾只有在相关事实面都得到明确状态后才算完成：
 categories:
-  - dev-tools
+  - databases-memory
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -57,6 +57,8 @@ skill:
     - evals/fixtures/eval-1-routine-dev-sync/workspace/taskflow/README.md
     - evals/fixtures/eval-1-routine-dev-sync/workspace/taskflow/docs/architecture.md
     - evals/fixtures/eval-1-routine-dev-sync/workspace/taskflow/package.json
+tags:
+  - memory
 ---
 
 # 洁癖 — Knowledge and Governance Closeout

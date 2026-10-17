@@ -7,7 +7,7 @@ summary: 中文 — ChatGPT 付费订阅的网页版额度大量闲置，Codex �
   Review。本项目把"思考"交给你已付费的网页版 ChatGPT， Codex 只负责执行。不用 API Key、不搞逆向代理——官方网页 + 只读
   MCP 桥接。
 categories:
-  - security
+  - agent-frameworks
 status: active
 quality_percentile: 77
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ launch:
     - codex-with-chatgpt
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # Codex with ChatGPT

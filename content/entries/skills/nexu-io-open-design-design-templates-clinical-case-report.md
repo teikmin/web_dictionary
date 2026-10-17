@@ -8,7 +8,7 @@ tagline: |-
 summary: "A single-page HTML case report (index.html). Content varies by format
   (see references/case-formats.md — selected in Step 0):"
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 76
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
     - examples/example-stemi.html
     - references/case-formats.md
     - references/checklist.md
+tags: []
 ---
 
 # Clinical Case Report Skill

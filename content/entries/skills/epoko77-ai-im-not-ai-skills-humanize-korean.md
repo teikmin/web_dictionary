@@ -6,7 +6,7 @@ tagline: AI(ChatGPT·Claude·Gemini 등)가 쓴 한글 텍스트를 "사람이 �
   탐지
 summary: 작업 시작 시 가장 먼저 다음 한 줄을 사용자에게 출력한다.
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 60
 selection_reason: quality_percentile
@@ -55,6 +55,7 @@ skill:
     - references/metrics_v2.py
     - references/quick-rules.footer.md
     - references/quick-rules.header.md
+tags: []
 ---
 
 # Humanize Korean — AI 한글 티 제거 오케스트레이터 (v2.3)

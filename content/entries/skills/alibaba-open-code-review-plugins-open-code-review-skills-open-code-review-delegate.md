@@ -8,7 +8,7 @@ summary: A skill for performing AI code review where OCR provides deterministic
   engineering (file filtering, rule resolution) and the host agent performs the
   actual review using its own intelligence and tools.
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 60
 selection_reason: quality_percentile
@@ -43,6 +43,8 @@ skill:
     own LLM capabilities.
   folder_path: plugins/open-code-review/skills/open-code-review-delegate
   extra_files: []
+tags:
+  - ocr
 ---
 
 # Open Code Review — Delegation Mode

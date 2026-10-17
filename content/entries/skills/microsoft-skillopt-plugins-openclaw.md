@@ -7,7 +7,7 @@ summary: Do not run or schedule the files unchanged. Several scripts and the
   sample configuration preserve assumptions from the contributor's original
   machine, and parts of the wrapper have not yet been ported to the current s...
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 98
 selection_reason: official_vendor
@@ -48,6 +48,7 @@ skill:
     - tests/devops-tasks.json
     - tests/research-cron-tasks.json
     - tests/wiki-tasks.json
+tags: []
 ---
 
 # SkillOpt-Sleep OpenClaw reference adaptation

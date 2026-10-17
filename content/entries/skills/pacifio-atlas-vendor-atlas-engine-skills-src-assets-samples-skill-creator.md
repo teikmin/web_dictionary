@@ -6,7 +6,7 @@ summary: "--- name: skill-creator description: Create or update a Atlas Agent
   skill with appropriately scoped instructions and any needed supporting
   resources. metadata: short-description: Create or update a skill ---"
 categories:
-  - dev-tools
+  - databases-memory
 status: active
 quality_percentile: 69
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     - scripts/generate_openai_yaml.py
     - scripts/init_skill.py
     - scripts/quick_validate.py
+tags: []
 ---
 
 <!-- Modified by Atlas from upstream OpenAI Codex (Apache-2.0). See CONTEXT.md. -->

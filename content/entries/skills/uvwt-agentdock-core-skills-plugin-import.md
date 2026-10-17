@@ -7,7 +7,7 @@ summary: pluginmanage 直接接受本地目录或 ZIP，并自动识别 AgentDoc
   Plugin 格式；OpenAI/Claude 的兼容性转换由 Core 在审核前完成，不需要模型手工改写 manifest 或重新打包。这个 Skill
   只负责远程来源发现/固定/获取，以及 Core 尚不认识的其他格式。最终包的安全校验、规范化摘要、review token、安装事务和运行时激...
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 58
 selection_reason: quality_percentile
@@ -39,6 +39,9 @@ skill:
   folder_path: core-skills/plugin-import
   extra_files:
     - references/portable-plugin.md
+tags:
+  - github
+  - git
 ---
 
 # Plugin Import

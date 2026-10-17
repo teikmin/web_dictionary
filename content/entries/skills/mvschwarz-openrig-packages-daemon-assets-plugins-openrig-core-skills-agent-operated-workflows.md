@@ -8,7 +8,7 @@ summary: "- AI-enabled software: application code owns the control loop and
   calls a model as one capability. - Agent-Operated Workflow: an agent owns one
   bounded procedure with a start and stop condition. - Agent-Operated Softw..."
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 56
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     judgment or ordinary code should own a procedure's control loop.
   folder_path: packages/daemon/assets/plugins/openrig-core/skills/agent-operated-workflows
   extra_files: []
+tags: []
 ---
 
 # Agent-Operated Workflows

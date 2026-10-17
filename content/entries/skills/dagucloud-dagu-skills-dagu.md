@@ -8,7 +8,7 @@ summary: "- Prefer type: graph for new DAGs. It supports both sequential flow
   via depends: and parallel flow. - Use an Agent DAG (type: agent) only when the
   step order cannot be written down in advance and an LLM must choose it..."
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 73
 selection_reason: quality_percentile
@@ -48,6 +48,7 @@ skill:
     - references/file-dependencies.md
     - references/harnesses.md
     - references/steptypes.md
+tags: []
 ---
 
 # DAG Authoring

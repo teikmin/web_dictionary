@@ -8,7 +8,7 @@ summary: Identify the connected person and company with paperclipconnection.
   requested outcome. Resolve ambiguity about team, scope or assignee with the
   us...
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 96
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     durable task reference and clear execution expectations.
   folder_path: integrations/assistant-plugins/openai/paperclip/skills/delegate-work
   extra_files: []
+tags: []
 ---
 
 Identify the connected person and company with `paperclip_connection`. List agents and, if relevant, projects. Select the agent suited to the requested outcome. Resolve ambiguity about team, scope or assignee with the user before creating work. Report paused or unavailable agents; do not promise they will run.

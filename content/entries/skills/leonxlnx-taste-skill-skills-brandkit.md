@@ -7,7 +7,7 @@ tagline: "Premium brand-kit image generation skill for creating high-end
 summary: Your job is to generate premium brand-kit images that feel like they
   came from a serious identity studio.
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 64
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
     imagery, and flexible grid layouts.
   folder_path: skills/brandkit
   extra_files: []
+tags: []
 ---
 
 # BRANDKIT IMAGE GENERATION SKILL

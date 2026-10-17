@@ -6,7 +6,7 @@ summary: "- Bear app installed and running - For some operations (add-text,
   tags, open-note --selected), a Bear app token (stored in
   /.config/grizzly/token)"
 categories:
-  - browser-automation
+  - productivity-ops
 status: active
 quality_percentile: 86
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
   description: Create, search, and manage Bear notes via grizzly CLI.
   folder_path: skills/bear-notes
   extra_files: []
+tags: []
 ---
 
 # Bear Notes

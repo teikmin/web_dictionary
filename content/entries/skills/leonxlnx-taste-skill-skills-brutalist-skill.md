@@ -7,7 +7,7 @@ tagline: Raw mechanical interfaces fusing Swiss typographic print with military
 summary: "CRITICAL: Choose ONE substrate palette per project and use it
   consistently. Never mix light and dark substrates within the same interface."
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 64
 selection_reason: quality_percentile
@@ -41,6 +41,8 @@ skill:
     blueprints.
   folder_path: skills/brutalist-skill
   extra_files: []
+tags:
+  - terminal
 ---
 
 # SKILL: Industrial Brutalism & Tactical Telemetry UI

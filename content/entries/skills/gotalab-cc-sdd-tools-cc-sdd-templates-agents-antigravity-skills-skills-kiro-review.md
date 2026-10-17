@@ -8,7 +8,7 @@ summary: "Boundary terminology continuity: - discovery identifies Boundary
   Candidates - design fixes Boundary Commitments - tasks constrain execution
   with Boundary: - review rejects concrete Boundary Violations"
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
   folder_path: tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-review
   extra_files:
     - agents/openai.yaml
+tags: []
 ---
 
 # kiro-review

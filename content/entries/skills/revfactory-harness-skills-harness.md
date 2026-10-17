@@ -7,7 +7,7 @@ summary: 1. 에이전트 정의는 프로젝트/.claude/agents/에, 스킬은 �
   에이전트에는 누가 일하는지를, 스킬에는 그 일을 어떻게 하는지를 적는다. 2. 작업 흐름에 따라 실행 모드를 고른다. 순서와 반복 조건을
   코드로 정할 수 있으면 워크플로로 조율한다. 같은 전문가와 피드백을 주고받아야 하면 지속형 에이전트를 쓴다. 결과를 한 번만 받으면...
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 69
 selection_reason: quality_percentile
@@ -50,6 +50,7 @@ skill:
     - references/team-examples.md
     - references/team-patterns.md
     - references/workflow-recipes.md
+tags: []
 ---
 
 # Harness v2 — 에이전트 팀과 스킬 설계

@@ -6,7 +6,7 @@ tagline: Proactively extract critical values from tool results into working
 summary: You operate under a finite context window. Older tool results WILL be
   pruned. Extract what you need while it's still in context.
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 97
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ skill:
     notes before automatic context pruning destroys them.
   folder_path: core/framework/skills/_default_skills/context-preservation
   extra_files: []
+tags: []
 ---
 
 ## Operational Protocol: Context Preservation

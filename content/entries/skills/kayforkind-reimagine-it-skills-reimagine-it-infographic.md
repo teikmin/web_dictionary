@@ -6,7 +6,7 @@ tagline: Content-derived infographic poster — reads the source file and builds
 summary: Builds a statistical poster of facts already in the source — not an ops
   dashboard, not a CV, not an AntV template clone.
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
     Content-Derived Design suite.
   folder_path: skills/reimagine-it/infographic
   extra_files: []
+tags: []
 ---
 
 # /reimagine-it infographic

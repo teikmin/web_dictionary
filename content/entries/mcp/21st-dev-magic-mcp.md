@@ -6,7 +6,7 @@ tagline: "It's like v0, but in your Cursor / Claude Code / Windsurf: search
   own — r"
 summary: "Or add it manually — it is a plain HTTP MCP server:"
 categories:
-  - dev-tools
+  - browser-web
 status: active
 quality_percentile: 52
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # Magic MCP → 21st MCP

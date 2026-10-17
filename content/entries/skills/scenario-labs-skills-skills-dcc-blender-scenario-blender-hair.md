@@ -7,7 +7,7 @@ tagline: "Use when grooming hair or fur in Blender with hair curves, such as a
 summary: "REQUIRED BACKGROUND: scenario-blender-expert (execution channel,
   review loop, 5.2 API changes)."
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 51
 selection_reason: quality_percentile
@@ -48,6 +48,7 @@ skill:
     - references/procedures.md
     - references/sources.md
     - scripts/bx_hair.py
+tags: []
 ---
 
 # Hair and fur grooming (hair curves, Blender 5.2)

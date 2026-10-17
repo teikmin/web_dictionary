@@ -8,7 +8,7 @@ summary: Start with this skill's core workflow. Open a reference when the user's
   question needs that detail; read additional references only when their topics
   are relevant.
 categories:
-  - productivity
+  - browser-web
 status: active
 quality_percentile: 84
 selection_reason: quality_percentile
@@ -61,6 +61,7 @@ skill:
     - references/okf.md
     - references/platform-ranking-factors.md
     - references/positioning-and-consensus.md
+tags: []
 ---
 
 # AI SEO

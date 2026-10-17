@@ -8,7 +8,7 @@ summary: A local MCP server for agent literature work. The differentiator is
   original-LaTeX section reads, BibTeX from arXiv metadata, and topic watches.
   Papers stay on disk. The working loop is paper ID → outline → one sectio...
 categories:
-  - ai-frameworks
+  - domain-research
 status: active
 quality_percentile: 40
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ launch:
     - arxiv-mcp-server
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # arxiv-mcp-server

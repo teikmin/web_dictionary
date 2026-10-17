@@ -5,7 +5,7 @@ tagline: 制作 PPT、演示文稿、幻灯片、汇报材料时使用。Dashi P
   演示,支持导出 PPTX / PDF 文件。
 summary: 如果脚本有输出,把输出内容附在最终回复末尾提醒用户更新;如果脚本无输出或检查失败,保持静默,不要提版本检查。
 categories:
-  - browser-automation
+  - media-creative
 status: active
 quality_percentile: 42
 selection_reason: quality_percentile
@@ -46,6 +46,8 @@ skill:
     - project/.npmrc
     - project/assets/skill/dashi-ppt-favicon.png
     - project/assets/social-icons/bilibili.svg
+tags:
+  - pdf
 ---
 
 # Dashi PPT

@@ -9,7 +9,7 @@ summary: "- Testing a C# concept, API, or language feature with a quick
   - Building a small utility from one entry-point file and a few helper .cs
   files"
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 49
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
     integration.
   folder_path: plugins/dotnet-advanced/skills/csharp-scripts
   extra_files: []
+tags: []
 ---
 
 # File-Based C# Apps

@@ -7,7 +7,7 @@ summary: "- A character, creature, prop, item, icon or FX is needed as a master
   still, a sheet or clips. - Frames already exist (generated, painted,
   code-drawn) and need clips, palettes or an engine export."
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 49
 selection_reason: quality_percentile
@@ -59,6 +59,7 @@ skill:
     - references/modes.md
     - references/palette-and-pixels.md
     - references/processing.md
+tags: []
 ---
 
 # Generate 2D Sprite

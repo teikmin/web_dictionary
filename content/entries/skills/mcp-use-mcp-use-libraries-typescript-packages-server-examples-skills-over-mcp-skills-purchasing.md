@@ -4,7 +4,7 @@ name: purchasing
 tagline: Create approved purchase orders with the create-purchase-order tool
 summary: Create approved purchase orders with the create-purchase-order tool
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 95
 selection_reason: quality_percentile
@@ -36,6 +36,8 @@ skill:
   extra_files:
     - references/approval-policy.md
     - templates/purchase-order.md
+tags:
+  - typescript
 ---
 
 # Purchasing

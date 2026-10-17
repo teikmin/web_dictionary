@@ -8,7 +8,7 @@ summary: "- Implementer reports BLOCKED - Reviewer rejection repeats after
   remediation - Validation fails unexpectedly - A task appears to conflict with
   runtime or platform reality - The same failure survives more than one atte..."
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
   folder_path: tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-debug
   extra_files:
     - agents/openai.yaml
+tags: []
 ---
 
 # kiro-debug

@@ -8,7 +8,7 @@ summary: "Megacave is caveman in Classical Chinese. 文言文: subjects omitted 
   recoverable, verb before object, particles (之, 乃, 為, 其, 則, 故, 以) instead of
   connective phrases. Fewer characters on screen. Token savings are small..."
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 56
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     until "stop caveman" or "normal mode".
   folder_path: plugins/caveman/skills/megacave
   extra_files: []
+tags: []
 ---
 
 # megacave

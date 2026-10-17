@@ -8,7 +8,7 @@ summary: Inspired by Anthropic's launch-your-agent reference skill (Apache-2.0).
   This is an independent re-implementation; CMA semantics come from
   ../../references/cma-primitives.md.
 categories:
-  - productivity
+  - agent-frameworks
 status: active
 quality_percentile: 46
 selection_reason: quality_percentile
@@ -55,6 +55,7 @@ skill:
     - scripts/goal_router.py
     - scripts/goal_state.py
     - scripts/loop_compiler.py
+tags: []
 ---
 
 # agent-launcher — Domain Orchestrator

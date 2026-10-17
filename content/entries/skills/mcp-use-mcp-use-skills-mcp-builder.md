@@ -8,7 +8,7 @@ summary: 1. Inspect package.json, the server entry, exported tool refs,
   a new stable project with create-mcp-use-app@latest and the appropriate
   temp...
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 95
 selection_reason: quality_percentile
@@ -49,6 +49,8 @@ skill:
     - references/skills-over-mcp.md
     - references/verification.md
     - references/views.md
+tags:
+  - typescript
 ---
 
 # Build with mcp-use

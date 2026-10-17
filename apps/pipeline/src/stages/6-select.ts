@@ -14,10 +14,12 @@ export function runStage6Selection(scoredCandidates: ScoredCandidate[]): Candida
   // Group by type
   const mcpCandidates = eligible.filter((c) => c.layer2.detectedType === 'mcp_server');
   const skillCandidates = eligible.filter((c) => c.layer2.detectedType === 'agent_skill');
+  const toolCandidates = eligible.filter((c) => c.layer2.detectedType === 'agent_tool');
 
   // Sort each group by composite score descending
   mcpCandidates.sort((a, b) => b.layer3.compositeScore - a.layer3.compositeScore);
   skillCandidates.sort((a, b) => b.layer3.compositeScore - a.layer3.compositeScore);
+  toolCandidates.sort((a, b) => b.layer3.compositeScore - a.layer3.compositeScore);
 
   const selectedSet = new Set<string>();
 
@@ -28,7 +30,7 @@ export function runStage6Selection(scoredCandidates: ScoredCandidate[]): Candida
     }
   }
 
-  // 2. Select MCP up to mcp_split_target (350)
+  // 2. Select MCP up to mcp_split_target (200)
   let mcpSelected = 0;
   for (const c of mcpCandidates) {
     if (mcpSelected >= config.thresholds.mcp_split_target) break;
@@ -42,6 +44,14 @@ export function runStage6Selection(scoredCandidates: ScoredCandidate[]): Candida
     if (skillsSelected >= config.thresholds.skills_split_target) break;
     selectedSet.add(c.repo.fullName.toLowerCase());
     skillsSelected++;
+  }
+
+  // 4. Select Tools up to tools_split_target (150)
+  let toolsSelected = 0;
+  for (const c of toolCandidates) {
+    if (toolsSelected >= (config.thresholds.tools_split_target || 150)) break;
+    selectedSet.add(c.repo.fullName.toLowerCase());
+    toolsSelected++;
   }
 
   // 4. Build CandidateDecision for every discovered candidate
@@ -70,7 +80,7 @@ export function runStage6Selection(scoredCandidates: ScoredCandidate[]): Candida
 
   const totalSelected = Array.from(selectedSet).length;
   logger.info(
-    `Stage 4 Complete: Selected ${totalSelected} repositories (${mcpSelected} MCP, ${skillsSelected} Skills).`
+    `Stage 4 Complete: Selected ${totalSelected} repositories (${mcpSelected} MCP, ${skillsSelected} Skills, ${toolsSelected} Tools).`
   );
 
   return decisions;

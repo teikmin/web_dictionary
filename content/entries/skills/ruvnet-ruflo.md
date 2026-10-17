@@ -6,7 +6,7 @@ tagline: Ruflo is a multi-agent orchestration platform for AI coding agents
   when t
 summary: "Suggest ruflo when the task involves any of:"
 categories:
-  - databases
+  - agent-frameworks
 status: active
 quality_percentile: 79
 selection_reason: quality_percentile
@@ -52,6 +52,7 @@ skill:
     - .agents/skills/agent-arch-system-design/SKILL.md
     - .agents/skills/agent-architecture/SKILL.md
     - .agents/skills/agent-authentication/SKILL.md
+tags: []
 ---
 
 # Ruflo

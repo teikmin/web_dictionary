@@ -7,7 +7,7 @@ summary: "- A feature spec has been approved and is ready for implementation -
   You need architecture design, code, and tests for a defined feature -
   Translating product requirements into working software"
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 90
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     agent.
   folder_path: plugins/agent-triforce/skills/implement-feature
   extra_files: []
+tags: []
 ---
 
 # Implement Feature

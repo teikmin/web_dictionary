@@ -8,7 +8,7 @@ summary: "- If a knowledge graph already exists (.ua/knowledge-graph.json, or
   the legacy .understand-anything/knowledge-graph.json when that directory is
   present), derives domain knowledge from it (cheap, no file scanning) - If..."
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 71
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
   folder_path: understand-anything-plugin/skills/understand-domain
   extra_files:
     - extract-domain-context.py
+tags: []
 ---
 
 # /understand-domain

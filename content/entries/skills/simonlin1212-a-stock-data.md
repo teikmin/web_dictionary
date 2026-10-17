@@ -6,7 +6,7 @@ summary: 十五层数据架构，87 个能力端点（82 主端点 + 5 备胎）
   实测，V3.9 新增的 25 个入口于 2026-09-20
   实测；旧端点的验证日期见各章节。覆盖主板/创业板/科创板/ST，北交所覆盖依端点而异；已有备胎的数据可按「备用源速查」降级。
 categories:
-  - productivity
+  - domain-research
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     - assets/bmc-qr.png
     - assets/bmc-sponsor.png
     - docs/source-integration-v3.8.0.md
+tags: []
 ---
 
 > 📦 项目主页：https://github.com/simonlin1212/a-stock-data — 更新、反馈、支持作者

@@ -6,7 +6,7 @@ summary: "--- name: invisible-playwright description: Use the Dot's browser
   identities for any task on a website or search on the web: which identity to
   use, opening and closing one, and when a plain download is simpler than a..."
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 94
 selection_reason: quality_percentile
@@ -36,6 +36,8 @@ skill:
   description: Agent skill from feder-cr/invisible_dots
   folder_path: invisible_engine_dots/skills/invisible-playwright
   extra_files: []
+tags:
+  - playwright
 ---
 
 ---

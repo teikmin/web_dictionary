@@ -1,0 +1,654 @@
+---
+import type { TrendingReport } from '@web-db/schema';
+import Sparkline from './Sparkline.astro';
+import { formatStars, formatTimeAgo } from '../lib/entries';
+import { getEntryHref, getCategoryLabel } from '../lib/trending';
+
+interface Props {
+  report: TrendingReport;
+  allWeeks: string[];
+  isArchive?: boolean;
+}
+
+const { report, allWeeks, isArchive = false } = Astro.props;
+
+const latestWeek = allWeeks[0] || report.week;
+
+function getOwner(repo: string): string {
+  return repo.split('/')[0] || '';
+}
+
+function getAvatarUrl(repo: string): string {
+  const owner = getOwner(repo);
+  return `https://github.com/${owner}.png?size=64`;
+}
+
+function getPillarBadge(type: string) {
+  if (type === 'mcp_server') {
+    return { label: 'MCP Server', class: 'bg-blue-50 text-blue-700 border-blue-200' };
+  }
+  if (type === 'agent_tool') {
+    return { label: 'Agent Tool', class: 'bg-purple-50 text-purple-700 border-purple-200' };
+  }
+  return { label: 'Agent Skill', class: 'bg-teal-50 text-teal-700 border-teal-200' };
+}
+---
+
+<div data-trending-board class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <!-- Top Navigation & Breadcrumb -->
+  <nav class="flex items-center gap-2 text-xs text-slate-500 mb-4" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-slate-900 transition-colors">Home</a>
+    <span>/</span>
+    <a href="/trending" class={isArchive ? "hover:text-slate-900 transition-colors" : "text-slate-900 font-semibold"}>Trending</a>
+    {isArchive && (
+      <>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">{report.week}</span>
+      </>
+    )}
+  </nav>
+
+  <!-- Archived Notice Banner -->
+  {isArchive && (
+    <div class="mb-6 p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+      <div class="flex items-center gap-2.5">
+        <span class="text-base">📅</span>
+        <div>
+          <strong class="font-semibold">Archived Snapshot:</strong> You are viewing historical weekly data for <code class="font-mono font-bold bg-amber-100 px-1 py-0.5 rounded">{report.week}</code>.
+        </div>
+      </div>
+      <a
+        href="/trending"
+        class="inline-flex items-center gap-1 font-semibold text-amber-800 hover:text-amber-950 underline underline-offset-2 shrink-0"
+      >
+        <span>View Latest Issue ({latestWeek})</span>
+        <span>&rarr;</span>
+      </a>
+    </div>
+  )}
+
+  <!-- Header Banner -->
+  <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-slate-200 mb-8">
+    <div class="max-w-2xl">
+      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-xs font-semibold mb-3">
+        <span>🔥</span>
+        <span>Weekly Trend &amp; Velocity Radar</span>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+        AI Agent Weekly Trending Board
+      </h1>
+      <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+        Live pulse of fastest-growing MCP servers, agent skills, and AI developer tools.
+        Ranked by 7-day star velocity and momentum deltas.
+      </p>
+    </div>
+
+    <!-- Week Selector Dropdown -->
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
+      <label for="week-select" class="text-xs font-medium text-slate-500">
+        Browse Issue:
+      </label>
+      <div class="relative">
+        <select
+          id="week-select"
+          class="appearance-none bg-white border border-slate-300 text-slate-800 text-xs font-medium rounded-lg px-3.5 py-2 pr-8 shadow-sm hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+          aria-label="Select weekly trending issue"
+        >
+          {allWeeks.map((w) => (
+            <option
+              value={w === latestWeek ? '/trending' : `/trending/${w}`}
+              selected={w === report.week}
+            >
+              {w} {w === latestWeek ? '(Latest)' : ''}
+            </option>
+          ))}
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-400">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ecosystem Metric Highlights -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8">
+    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+      <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider mb-1">Weekly Star Growth</div>
+      <div class="text-xl sm:text-2xl font-bold font-mono text-emerald-600">
+        +{report.summary.total_stars_gained.toLocaleString()} ★
+      </div>
+      <div class="text-[11px] text-slate-400 mt-1">across all tracked tools</div>
+    </div>
+
+    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+      <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider mb-1">Newcomers &amp; Fast-Movers</div>
+      <div class="text-xl sm:text-2xl font-bold text-slate-900">
+        {report.summary.total_new_tools}
+      </div>
+      <div class="text-[11px] text-slate-400 mt-1">first-seen or high velocity</div>
+    </div>
+
+    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+      <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider mb-1">Total Active Directory</div>
+      <div class="text-xl sm:text-2xl font-bold text-slate-900">
+        {report.summary.total_active_entries}
+      </div>
+      <div class="text-[11px] text-slate-400 mt-1">curated MCP, skills &amp; tools</div>
+    </div>
+
+    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+      <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider mb-1">Issue Week</div>
+      <div class="text-xl sm:text-2xl font-bold font-mono text-blue-600">
+        {report.week}
+      </div>
+      <div class="text-[11px] text-slate-400 mt-1">
+        Snapshot {new Date(report.generated_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs Navigation (Hot, Breakout, Pillars) -->
+  <div class="border-b border-slate-200 mb-6">
+    <div class="flex items-center gap-2 sm:gap-6 overflow-x-auto no-scrollbar" role="tablist" aria-label="Trending leaderboard sections">
+      <button
+        type="button"
+        id="tab-btn-hot"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-hot"
+        class="tab-trigger flex items-center gap-2 py-3 px-1 border-b-2 border-blue-600 text-sm font-semibold text-blue-600 transition-colors whitespace-nowrap cursor-pointer"
+      >
+        <span>🔥 Hot This Week</span>
+        <span class="tab-count px-2 py-0.5 rounded-full text-xs bg-blue-50 text-blue-700 font-mono font-medium">
+          {report.top25_overall.length}
+        </span>
+      </button>
+
+      <button
+        type="button"
+        id="tab-btn-breakout"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-breakout"
+        class="tab-trigger flex items-center gap-2 py-3 px-1 border-b-2 border-transparent text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors whitespace-nowrap cursor-pointer"
+      >
+        <span>🚀 Breakout New Tools</span>
+        <span class="tab-count px-2 py-0.5 rounded-full text-xs bg-slate-100 text-slate-600 font-mono font-medium">
+          {report.breakout_new.length}
+        </span>
+      </button>
+
+      <button
+        type="button"
+        id="tab-btn-pillars"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-pillars"
+        class="tab-trigger flex items-center gap-2 py-3 px-1 border-b-2 border-transparent text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors whitespace-nowrap cursor-pointer"
+      >
+        <span>🏆 Top 10 by Pillar</span>
+        <span class="tab-count px-2 py-0.5 rounded-full text-xs bg-slate-100 text-slate-600 font-mono font-medium">
+          3 Pillars
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- TAB 1: HOT THIS WEEK (Top 25 Overall) -->
+  <div id="panel-hot" role="tabpanel" aria-labelledby="tab-btn-hot" class="tab-panel space-y-3">
+    {report.top25_overall.length === 0 ? (
+      <div class="p-12 text-center bg-white rounded-xl border border-slate-200 text-slate-500 text-sm">
+        No leaderboard items recorded for this week yet.
+      </div>
+    ) : (
+      report.top25_overall.map((item, index) => {
+        const rank = index + 1;
+        const owner = getOwner(item.repo);
+        const avatar = getAvatarUrl(item.repo);
+        const href = getEntryHref(item);
+        const pillar = getPillarBadge(item.type);
+        const categoryLabel = getCategoryLabel(item.categories[0]);
+
+        return (
+          <div class="group flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 sm:p-5 rounded-xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-xs transition-all duration-150">
+            <!-- Left: Rank + Icon + Name + Description -->
+            <div class="flex items-start gap-3 sm:gap-4 min-w-0 flex-1">
+              <!-- Rank Number & Delta Badge -->
+              <div class="flex flex-col items-center justify-center w-10 sm:w-12 shrink-0 pt-0.5">
+                <span class="text-base sm:text-lg font-bold font-mono text-slate-800 group-hover:text-blue-600 transition-colors">
+                  #{rank}
+                </span>
+
+                {item.rank_delta !== null && item.rank_delta !== undefined ? (
+                  item.rank_delta > 0 ? (
+                    <span class="inline-flex items-center text-[10px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded px-1 py-0.5">
+                      ▲ {item.rank_delta}
+                    </span>
+                  ) : item.rank_delta < 0 ? (
+                    <span class="inline-flex items-center text-[10px] font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded px-1 py-0.5">
+                      ▼ {Math.abs(item.rank_delta)}
+                    </span>
+                  ) : (
+                    <span class="inline-flex items-center text-[10px] font-semibold text-slate-500 bg-slate-50 border border-slate-200 rounded px-1 py-0.5">
+                      –
+                    </span>
+                  )
+                ) : (
+                  <span class="inline-flex items-center text-[9px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-200 rounded px-1 py-0.5">
+                    NEW
+                  </span>
+                )}
+              </div>
+
+              <!-- Avatar -->
+              <img
+                src={avatar}
+                alt={`${owner} avatar`}
+                class="w-10 h-10 rounded-lg border border-slate-200 bg-slate-50 object-cover shrink-0 mt-0.5"
+                loading="lazy"
+              />
+
+              <!-- Title, Metadata, Tagline -->
+              <div class="min-w-0 flex-1">
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <a
+                    href={href}
+                    class="text-base font-semibold text-slate-900 hover:text-blue-600 transition-colors truncate"
+                  >
+                    {item.name}
+                  </a>
+
+                  <!-- Pillar Badge -->
+                  <span class:list={['px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded border', pillar.class]}>
+                    {pillar.label}
+                  </span>
+
+                  <!-- Category Badge -->
+                  <span class="px-2 py-0.5 text-[10px] font-medium text-slate-600 bg-slate-100 rounded">
+                    {categoryLabel}
+                  </span>
+                </div>
+
+                <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-2">
+                  {item.tagline || 'Open tool integration.'}
+                </p>
+
+                <div class="flex items-center gap-2 text-[11px] text-slate-500 font-mono">
+                  <span>{item.repo}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Weekly Velocity + Sparkline + Total Stars -->
+            <div class="flex items-center justify-between md:justify-end gap-5 pt-3 md:pt-0 border-t md:border-t-0 border-slate-100 shrink-0">
+              <!-- Weekly Gain & Growth Pct -->
+              <div class="text-left md:text-right">
+                <div class="text-sm font-bold font-mono text-emerald-600">
+                  +{item.stars_delta_7d.toLocaleString()} ★
+                </div>
+                <div class="flex items-center md:justify-end gap-1.5 text-[11px] text-slate-500 font-sans">
+                  <span>this week</span>
+                  {item.stars_growth_pct > 0 && (
+                    <span class="text-emerald-700 font-medium">({item.stars_growth_pct.toFixed(1)}%)</span>
+                  )}
+                </div>
+              </div>
+
+              <!-- Sparkline -->
+              <div class="flex flex-col items-end">
+                <Sparkline points={item.sparkline_4w} width={76} height={22} showPoints={true} />
+                <span class="text-[10px] text-slate-400 font-mono mt-0.5">4-wk trend</span>
+              </div>
+
+              <!-- Total Stars -->
+              <div class="text-right w-16">
+                <div class="text-sm font-semibold font-mono text-slate-800">
+                  ★ {formatStars(item.stars)}
+                </div>
+                <div class="text-[10px] text-slate-400">total stars</div>
+              </div>
+            </div>
+          </div>
+        );
+      })
+    )}
+  </div>
+
+  <!-- TAB 2: BREAKOUT NEW TOOLS (< 60 Days Old or Newly Added) -->
+  <div id="panel-breakout" role="tabpanel" aria-labelledby="tab-btn-breakout" class="tab-panel hidden space-y-3">
+    <div class="mb-4 p-4 rounded-xl bg-purple-50 border border-purple-200 text-xs text-purple-900 flex items-center gap-2.5">
+      <span class="text-base">🚀</span>
+      <div>
+        <strong>Breakout Spotlight:</strong> Repositories created in the last 60 days showing surging adoption and star acceleration this week.
+      </div>
+    </div>
+
+    {report.breakout_new.length === 0 ? (
+      <div class="p-12 text-center bg-white rounded-xl border border-slate-200 text-slate-500 text-sm">
+        No newly created breakout repositories identified for this week.
+      </div>
+    ) : (
+      report.breakout_new.map((item, index) => {
+        const owner = getOwner(item.repo);
+        const avatar = getAvatarUrl(item.repo);
+        const href = getEntryHref(item);
+        const pillar = getPillarBadge(item.type);
+        const categoryLabel = getCategoryLabel(item.categories[0]);
+
+        return (
+          <div class="group flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 sm:p-5 rounded-xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-xs transition-all duration-150">
+            <!-- Left: Rank + Info -->
+            <div class="flex items-start gap-3 sm:gap-4 min-w-0 flex-1">
+              <div class="flex flex-col items-center justify-center w-10 sm:w-12 shrink-0 pt-0.5">
+                <span class="text-base sm:text-lg font-bold font-mono text-purple-700">
+                  #{index + 1}
+                </span>
+                <span class="text-[9px] font-bold uppercase tracking-wider text-purple-700 bg-purple-50 border border-purple-200 rounded px-1 py-0.5 mt-0.5">
+                  NEW
+                </span>
+              </div>
+
+              <img
+                src={avatar}
+                alt={`${owner} avatar`}
+                class="w-10 h-10 rounded-lg border border-slate-200 bg-slate-50 object-cover shrink-0 mt-0.5"
+                loading="lazy"
+              />
+
+              <div class="min-w-0 flex-1">
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <a
+                    href={href}
+                    class="text-base font-semibold text-slate-900 hover:text-blue-600 transition-colors truncate"
+                  >
+                    {item.name}
+                  </a>
+
+                  <span class:list={['px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded border', pillar.class]}>
+                    {pillar.label}
+                  </span>
+
+                  <span class="px-2 py-0.5 text-[10px] font-medium text-slate-600 bg-slate-100 rounded">
+                    {categoryLabel}
+                  </span>
+
+                  {item.created_at && (
+                    <span class="px-2 py-0.5 text-[10px] font-semibold text-amber-800 bg-amber-50 border border-amber-200 rounded">
+                      Created {formatTimeAgo(item.created_at)}
+                    </span>
+                  )}
+                </div>
+
+                <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-2">
+                  {item.tagline || 'Open tool integration.'}
+                </p>
+
+                <div class="text-[11px] text-slate-500 font-mono">
+                  {item.repo}
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Weekly Velocity + Sparkline + Total Stars -->
+            <div class="flex items-center justify-between md:justify-end gap-5 pt-3 md:pt-0 border-t md:border-t-0 border-slate-100 shrink-0">
+              <div class="text-left md:text-right">
+                <div class="text-sm font-bold font-mono text-emerald-600">
+                  +{item.stars_delta_7d.toLocaleString()} ★
+                </div>
+                <div class="text-[11px] text-slate-500 font-sans">
+                  this week
+                </div>
+              </div>
+
+              <div class="flex flex-col items-end">
+                <Sparkline points={item.sparkline_4w} width={76} height={22} showPoints={true} />
+                <span class="text-[10px] text-slate-400 font-mono mt-0.5">4-wk trend</span>
+              </div>
+
+              <div class="text-right w-16">
+                <div class="text-sm font-semibold font-mono text-slate-800">
+                  ★ {formatStars(item.stars)}
+                </div>
+                <div class="text-[10px] text-slate-400">total stars</div>
+              </div>
+            </div>
+          </div>
+        );
+      })
+    )}
+  </div>
+
+  <!-- TAB 3: TOP 10 BY PILLAR (3 Columns: MCP, Skills, Tools) -->
+  <div id="panel-pillars" role="tabpanel" aria-labelledby="tab-btn-pillars" class="tab-panel hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Pillar 1: MCP Servers -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+        <div class="p-4 border-b border-slate-100 bg-blue-50/50 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-base">🔌</span>
+            <h3 class="text-sm font-bold text-slate-900">Top MCP Servers</h3>
+          </div>
+          <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-100 text-blue-800 font-mono">
+            Top {report.top10_mcp.length}
+          </span>
+        </div>
+
+        <div class="divide-y divide-slate-100 flex-1">
+          {report.top10_mcp.length === 0 ? (
+            <div class="p-8 text-center text-xs text-slate-400">No MCP servers tracked.</div>
+          ) : (
+            report.top10_mcp.map((item, idx) => (
+              <div class="p-3.5 flex items-center justify-between gap-3 hover:bg-slate-50 transition-colors">
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span class="text-xs font-bold font-mono text-slate-400 w-5 shrink-0 text-center">
+                    #{idx + 1}
+                  </span>
+                  <div class="min-w-0">
+                    <a
+                      href={getEntryHref(item)}
+                      class="text-xs font-semibold text-slate-900 hover:text-blue-600 transition-colors truncate block"
+                    >
+                      {item.name}
+                    </a>
+                    <span class="text-[10px] text-slate-400 font-mono truncate block">
+                      {item.repo}
+                    </span>
+                  </div>
+                </div>
+
+                <div class="text-right shrink-0">
+                  <div class="text-xs font-bold font-mono text-emerald-600">
+                    +{item.stars_delta_7d.toLocaleString()} ★
+                  </div>
+                  <div class="text-[10px] text-slate-400 font-mono">
+                    ★ {formatStars(item.stars)}
+                  </div>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
+
+      <!-- Pillar 2: Agent Skills -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+        <div class="p-4 border-b border-slate-100 bg-teal-50/50 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-base">🧠</span>
+            <h3 class="text-sm font-bold text-slate-900">Top Agent Skills</h3>
+          </div>
+          <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-teal-100 text-teal-800 font-mono">
+            Top {report.top10_skills.length}
+          </span>
+        </div>
+
+        <div class="divide-y divide-slate-100 flex-1">
+          {report.top10_skills.length === 0 ? (
+            <div class="p-8 text-center text-xs text-slate-400">No agent skills tracked.</div>
+          ) : (
+            report.top10_skills.map((item, idx) => (
+              <div class="p-3.5 flex items-center justify-between gap-3 hover:bg-slate-50 transition-colors">
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span class="text-xs font-bold font-mono text-slate-400 w-5 shrink-0 text-center">
+                    #{idx + 1}
+                  </span>
+                  <div class="min-w-0">
+                    <a
+                      href={getEntryHref(item)}
+                      class="text-xs font-semibold text-slate-900 hover:text-blue-600 transition-colors truncate block"
+                    >
+                      {item.name}
+                    </a>
+                    <span class="text-[10px] text-slate-400 font-mono truncate block">
+                      {item.repo}
+                    </span>
+                  </div>
+                </div>
+
+                <div class="text-right shrink-0">
+                  <div class="text-xs font-bold font-mono text-emerald-600">
+                    +{item.stars_delta_7d.toLocaleString()} ★
+                  </div>
+                  <div class="text-[10px] text-slate-400 font-mono">
+                    ★ {formatStars(item.stars)}
+                  </div>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
+
+      <!-- Pillar 3: Agent Tools & Repos -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+        <div class="p-4 border-b border-slate-100 bg-purple-50/50 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-base">🛠️</span>
+            <h3 class="text-sm font-bold text-slate-900">Top Agent Tools</h3>
+          </div>
+          <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-purple-100 text-purple-800 font-mono">
+            Top {report.top10_tools.length}
+          </span>
+        </div>
+
+        <div class="divide-y divide-slate-100 flex-1">
+          {report.top10_tools.length === 0 ? (
+            <div class="p-8 text-center text-xs text-slate-400">No agent tools tracked yet.</div>
+          ) : (
+            report.top10_tools.map((item, idx) => (
+              <div class="p-3.5 flex items-center justify-between gap-3 hover:bg-slate-50 transition-colors">
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span class="text-xs font-bold font-mono text-slate-400 w-5 shrink-0 text-center">
+                    #{idx + 1}
+                  </span>
+                  <div class="min-w-0">
+                    <a
+                      href={getEntryHref(item)}
+                      class="text-xs font-semibold text-slate-900 hover:text-blue-600 transition-colors truncate block"
+                    >
+                      {item.name}
+                    </a>
+                    <span class="text-[10px] text-slate-400 font-mono truncate block">
+                      {item.repo}
+                    </span>
+                  </div>
+                </div>
+
+                <div class="text-right shrink-0">
+                  <div class="text-xs font-bold font-mono text-emerald-600">
+                    +{item.stars_delta_7d.toLocaleString()} ★
+                  </div>
+                  <div class="text-[10px] text-slate-400 font-mono">
+                    ★ {formatStars(item.stars)}
+                  </div>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function setupTrendingTabs() {
+    const container = document.querySelector('[data-trending-board]') as HTMLElement | null;
+    if (!container || container.dataset.tabsInitialized === 'true') {
+      return;
+    }
+    container.dataset.tabsInitialized = 'true';
+
+    const tabs = [
+      { id: 'hot', btn: document.getElementById('tab-btn-hot'), panel: document.getElementById('panel-hot') },
+      { id: 'breakout', btn: document.getElementById('tab-btn-breakout'), panel: document.getElementById('panel-breakout') },
+      { id: 'pillars', btn: document.getElementById('tab-btn-pillars'), panel: document.getElementById('panel-pillars') },
+    ];
+
+    function activateTab(tabId: string) {
+      tabs.forEach((tab) => {
+        if (!tab.btn || !tab.panel) return;
+        const isActive = tab.id === tabId;
+        const badge = tab.btn.querySelector('.tab-count');
+
+        if (isActive) {
+          tab.btn.classList.add('border-blue-600', 'text-blue-600', 'font-semibold');
+          tab.btn.classList.remove('border-transparent', 'text-slate-500', 'font-medium');
+          tab.btn.setAttribute('aria-selected', 'true');
+          tab.panel.classList.remove('hidden');
+
+          if (badge) {
+            badge.classList.add('bg-blue-50', 'text-blue-700');
+            badge.classList.remove('bg-slate-100', 'text-slate-600');
+          }
+        } else {
+          tab.btn.classList.remove('border-blue-600', 'text-blue-600', 'font-semibold');
+          tab.btn.classList.add('border-transparent', 'text-slate-500', 'font-medium');
+          tab.btn.setAttribute('aria-selected', 'false');
+          tab.panel.classList.add('hidden');
+
+          if (badge) {
+            badge.classList.remove('bg-blue-50', 'text-blue-700');
+            badge.classList.add('bg-slate-100', 'text-slate-600');
+          }
+        }
+      });
+    }
+
+    tabs.forEach((tab) => {
+      if (tab.btn) {
+        tab.btn.addEventListener('click', () => {
+          activateTab(tab.id);
+          if (history.replaceState) {
+            history.replaceState(null, '', `#${tab.id}`);
+          }
+        });
+      }
+    });
+
+    function syncFromHash() {
+      const hash = window.location.hash.replace('#', '');
+      if (['hot', 'breakout', 'pillars'].includes(hash)) {
+        activateTab(hash);
+      }
+    }
+
+    window.addEventListener('hashchange', syncFromHash);
+    syncFromHash();
+
+    // Week selector dropdown change
+    const weekSelect = document.getElementById('week-select') as HTMLSelectElement | null;
+    if (weekSelect) {
+      weekSelect.addEventListener('change', () => {
+        if (weekSelect.value) {
+          window.location.href = weekSelect.value;
+        }
+      });
+    }
+  }
+
+  setupTrendingTabs();
+  document.addEventListener('astro:page-load', setupTrendingTabs);
+</script>

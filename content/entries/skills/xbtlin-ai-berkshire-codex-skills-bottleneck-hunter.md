@@ -6,7 +6,7 @@ tagline: "AI Berkshire skill: 供应链瓶颈猎手：AI驱动的全球产业链
 summary: This skill is generated from skills/bottleneck-hunter.md so Claude Code
   and Codex users share one canonical workflow.
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 95
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ skill:
     skills/bottleneck-hunter.md."
   folder_path: codex-skills/bottleneck-hunter
   extra_files: []
+tags: []
 ---
 
 ## Codex adapter note

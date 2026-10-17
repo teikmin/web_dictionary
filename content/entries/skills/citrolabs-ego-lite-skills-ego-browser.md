@@ -5,7 +5,7 @@ tagline: When you need a browser, read this Skill by default. Use it to open and
   operate websites, fill forms, click buttons, take screenshots, extract page da
 summary: "Run JavaScript through a heredoc:"
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 56
 selection_reason: quality_percentile
@@ -53,6 +53,7 @@ skill:
     - learnings/google/notes/overview.md
     - learnings/google/tools/search-extract.js
     - learnings/x-com/browser-tools/extract-post.js
+tags: []
 ---
 
 # ego-browser

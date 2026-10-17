@@ -9,7 +9,7 @@ summary: "1. Identify the prose that readers will see. 2. Protect non-prose
   names, and exact values - formulas, citations, and text the user asks to
   quot..."
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 69
 selection_reason: quality_percentile
@@ -56,6 +56,7 @@ skill:
     - scripts/inspect_text.py
     - scripts/score_stylometry.py
     - scripts/text_unicode.py
+tags: []
 ---
 
 # Clean user-facing text

@@ -7,7 +7,7 @@ summary: "【模板: 杂志文章】 - 顶部 hero: 大标题 (text-5xl/6xl) + �
   dark:text-neutral-300。 - H2 / H3 标题用 serif 字体, 让正文与标题有视觉对比。 - 引用块使用左侧粗
   accent..."
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 69
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
   extra_files:
     - example.html
     - example.md
+tags: []
 ---
 
 【模板: 杂志文章】

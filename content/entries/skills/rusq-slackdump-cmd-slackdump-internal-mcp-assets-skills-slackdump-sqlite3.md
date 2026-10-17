@@ -6,7 +6,7 @@ tagline: Guidance for querying a Slackdump SQLite3 database directly via the
 summary: Use this skill when the Slackdump MCP and SQLite MCP are both
   unavailable and you must fall back to the sqlite3 command-line tool.
 categories:
-  - productivity
+  - databases-memory
 status: active
 quality_percentile: 37
 selection_reason: quality_percentile
@@ -37,6 +37,8 @@ skill:
     sqlite3 CLI.
   folder_path: cmd/slackdump/internal/mcp/assets/skills/slackdump-sqlite3
   extra_files: []
+tags:
+  - sqlite
 ---
 
 ## Querying Slackdump database with sqlite3

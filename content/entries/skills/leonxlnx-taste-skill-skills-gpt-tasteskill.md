@@ -8,7 +8,7 @@ summary: Your goal is to aggressively break these defaults. Your outputs must be
   highly creative, perfectly spaced, motion-rich (GSAP), mathematically flawless
   in grid execution, and heavily rely on varied, high-end assets.
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 64
 selection_reason: quality_percentile
@@ -42,6 +42,8 @@ skill:
     massive section spacing.
   folder_path: skills/gpt-tasteskill
   extra_files: []
+tags:
+  - python
 ---
 
 # CORE DIRECTIVE: AWWWARDS-LEVEL DESIGN ENGINEERING

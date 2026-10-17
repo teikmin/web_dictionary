@@ -8,7 +8,7 @@ summary: Use Chrome DevTools MCP to give your agent eyes into the browser. This
   bridges the gap between static code analysis and live browser execution — the
   agent can see what the user sees, inspect the DOM, read console logs...
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 71
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
     chrome-devtools MCP server to be configured.
   folder_path: skills/browser-testing-with-devtools
   extra_files: []
+tags: []
 ---
 
 # Browser Testing with DevTools

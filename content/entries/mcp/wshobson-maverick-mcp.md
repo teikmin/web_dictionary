@@ -9,7 +9,7 @@ summary: MaverickMCP is an open-source stock market MCP server for stock
   assistant to Yahoo Finance data through yfinance, with no API key required for
   co...
 categories:
-  - productivity
+  - domain-research
 status: active
 quality_percentile: 81
 selection_reason: quality_percentile
@@ -40,6 +40,9 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags:
+  - python
+  - finance
 ---
 
 <!-- mcp-name: io.github.wshobson/maverick-mcp -->

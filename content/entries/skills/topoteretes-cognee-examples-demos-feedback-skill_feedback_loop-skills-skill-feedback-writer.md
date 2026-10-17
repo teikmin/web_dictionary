@@ -7,7 +7,7 @@ summary: Focus on improving pr-comment-evaluator unless diff-risk-explainer
   defective if it judges tone only or fails to compare the reviewer comment
   agains...
 categories:
-  - databases
+  - agent-frameworks
 status: active
 quality_percentile: 68
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ skill:
   description: Use to identify missing instructions in another skill based on its output.
   folder_path: examples/demos/feedback/skill_feedback_loop/skills/skill-feedback-writer
   extra_files: []
+tags: []
 ---
 
 # skill-feedback-writer

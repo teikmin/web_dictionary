@@ -6,7 +6,7 @@ tagline: 把 AI
   CSS、
 summary: 确定性流水线需要 Python 3.10+、Pillow、ffmpeg 和 ffprobe：
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 36
 selection_reason: quality_percentile
@@ -48,6 +48,8 @@ skill:
     - assets/chroma-video-renderer.ts
     - assets/demo/oil-motion-demo.mp4
     - assets/interactive-motion.ts
+tags:
+  - python
 ---
 
 # Oil Motion

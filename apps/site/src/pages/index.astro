@@ -2,235 +2,518 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EntryCard from '../components/EntryCard.astro';
 import SearchBox from '../components/SearchBox.astro';
-import { getAllEntries, getAllMcp, getAllSkills, getCatalogState } from '../lib/entries';
+import Sparkline from '../components/Sparkline.astro';
+import { getAllEntries, getAllMcp, getAllSkills, getAllTools, getCatalogState, formatStars } from '../lib/entries';
+import { getLatestTrendingReport, getEntryHref, formatStarDelta } from '../lib/trending';
 import { getCollection } from 'astro:content';
 
-const [allEntries, mcpServers, agentSkills, categories, clients] = await Promise.all([
+const [allEntries, mcpServers, agentSkills, agentTools, categories, clients] = await Promise.all([
   getAllEntries(),
   getAllMcp(),
   getAllSkills(),
+  getAllTools(),
   getCollection('categories'),
   getCollection('clients'),
 ]);
 
 const catalogState = getCatalogState();
+const trendingReport = getLatestTrendingReport();
 
-// Row 1: Most Popular (by stars)
-const popularRow = [...allEntries]
+// Calculate monorepo Skill Packs counts and names
+const repoSkillCounts = new Map<string, number>();
+const repoSkillNames = new Map<string, string[]>();
+const repoPrimarySkillSlug = new Map<string, string>();
+
+for (const e of agentSkills) {
+  const repo = e.data.source.repo;
+  repoSkillCounts.set(repo, (repoSkillCounts.get(repo) || 0) + 1);
+
+  const names = repoSkillNames.get(repo) || [];
+  names.push(e.data.name);
+  repoSkillNames.set(repo, names);
+
+  const isExplicitPrimary = e.data.skill?.is_pack_primary === true;
+  if (!repoPrimarySkillSlug.has(repo) || isExplicitPrimary) {
+    repoPrimarySkillSlug.set(repo, e.data.slug);
+  }
+}
+
+// Helper to filter primary entries to prevent multi-skill duplication in featured showcases
+const primaryEntries = allEntries.filter((e) => {
+  if (e.data.type === 'agent_skill') {
+    return repoPrimarySkillSlug.get(e.data.source.repo) === e.data.slug;
+  }
+  return true;
+});
+
+// Row 1: Most Popular (top 6 by stars)
+const popularRow = [...primaryEntries]
   .sort((a, b) => (b.data.signals?.stars || 0) - (a.data.signals?.stars || 0))
-  .slice(0, 4);
+  .slice(0, 6);
 
-// Row 2: Recently Updated (by last commit)
-const updatedRow = [...allEntries]
+// Row 2: Recently Updated (top 6 by last commit)
+const updatedRow = [...primaryEntries]
   .sort((a, b) => (new Date(b.data.signals?.last_commit || 0).getTime()) - (new Date(a.data.signals?.last_commit || 0).getTime()))
-  .slice(0, 4);
+  .slice(0, 6);
 
-// Row 3: Official Vendor Tools
-const officialRow = [...allEntries]
-  .filter((e) => e.data.source?.official_vendor)
+// Row 3: Official Vendors (top 6 official by stars)
+const officialRow = [...primaryEntries]
+  .filter((e) => e.data.source?.official_vendor === true)
   .sort((a, b) => (b.data.signals?.stars || 0) - (a.data.signals?.stars || 0))
-  .slice(0, 4);
+  .slice(0, 6);
 
-// Row 4: Newest Added (by first_seen)
-const newestRow = [...allEntries]
-  .sort((a, b) => (new Date(b.data.first_seen).getTime()) - (new Date(a.data.first_seen).getTime()))
-  .slice(0, 4);
-
-// Calculate category counts
+// Category counts
 const categoryCounts: Record<string, number> = {};
 for (const e of allEntries) {
   for (const cat of e.data.categories) {
     categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
   }
 }
+
+function getPillarBadge(type: string) {
+  if (type === 'mcp_server') {
+    return { label: 'MCP', class: 'bg-blue-50 text-blue-700 border-blue-200' };
+  }
+  if (type === 'agent_tool') {
+    return { label: 'Tool', class: 'bg-purple-50 text-purple-700 border-purple-200' };
+  }
+  return { label: 'Skill', class: 'bg-teal-50 text-teal-700 border-teal-200' };
+}
+
+// Top 10 Leaderboard preview items
+const topTrendingItems = trendingReport.top25_overall.slice(0, 10).map((item, idx) => {
+  const delta = item.rank_delta ?? null;
+  const isUp = delta !== null && delta > 0;
+  const isDown = delta !== null && delta < 0;
+  return {
+    ...item,
+    rank: idx + 1,
+    isTop3: idx < 3,
+    badge: getPillarBadge(item.type),
+    href: getEntryHref(item),
+    rankDelta: delta,
+    isUp,
+    isDown,
+    rankText: delta === null ? 'NEW' : isUp ? `▲${delta}` : isDown ? `▼${Math.abs(delta)}` : '-',
+    rankColorClass: delta === null ? 'text-blue-600' : isUp ? 'text-emerald-600' : isDown ? 'text-rose-500' : 'text-slate-400',
+  };
+});
+
+// Breakout Newcomers preview items (top 4)
+const breakoutNewItems = trendingReport.breakout_new.slice(0, 4).map((item) => ({
+  ...item,
+  badge: getPillarBadge(item.type),
+  href: getEntryHref(item),
+  owner: item.repo.split('/')[0],
+}));
 ---
 
 <BaseLayout>
-  <!-- Browse Hub Top Section (§5.2) -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10">
-    <!-- Short intro banner only, no marketing hero (§5.2 item 2) -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-8 border-b border-slate-200">
-      <div>
-        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-          Browse AI Agent Tools &amp; Skills
-        </h1>
-        <p class="text-xs text-slate-600 mt-1">
-          Open catalog of <strong>{allEntries.length} tools</strong> ({mcpServers.length} MCP servers, {agentSkills.length} agent skills). Refreshed on {catalogState.formattedDate}.
-        </p>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 space-y-12">
+    <!-- ========================================================================= -->
+    <!-- ZONE 1: COMPACT DICTIONARY HERO WITH UNIFIED SEARCH & PILLAR STAT PILLS   -->
+    <!-- ========================================================================= -->
+    <header class="border-b border-slate-200 pb-8 text-center sm:text-left">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-6">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-semibold mb-3">
+            <span>📖</span>
+            <span>Web Dictionary &amp; Weekly Trend Radar</span>
+            <span class="text-slate-300">·</span>
+            <span class="text-blue-700 font-mono font-bold">{trendingReport.week}</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            The AI Tools Web Dictionary
+          </h1>
+          <p class="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl">
+            Curated definitions, installation quickstarts, and verified weekly velocity across <strong class="text-slate-900 font-semibold">{allEntries.length} tools</strong>:
+            Model Context Protocol servers, reusable Agent Skills, and autonomous AI developer tools. Refreshed on {catalogState.formattedDate}.
+          </p>
+        </div>
+
+        <!-- AI Harnesses Quick Nav -->
+        <div class="flex flex-wrap items-center gap-2 lg:self-center shrink-0">
+          <span class="text-xs text-slate-500 font-medium mr-1">Harnesses:</span>
+          {clients.map((c) => (
+            <a
+              href={`/client/${c.data.id}`}
+              class="px-2.5 py-1 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-xs font-medium text-slate-700 hover:text-slate-900 transition-colors shadow-xs"
+            >
+              {c.data.name}
+            </a>
+          ))}
+        </div>
       </div>
 
-      <!-- Quick Client Switcher -->
-      <div class="flex items-center gap-2">
-        <span class="text-xs text-slate-500 font-medium hidden sm:inline">Clients:</span>
-        {clients.map((c) => (
-          <a
-            href={`/client/${c.data.id}`}
-            class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-xs text-slate-700 hover:text-slate-900 transition-colors shadow-xs"
-          >
-            {c.data.name}
-          </a>
-        ))}
+      <!-- Instant Dictionary Search Bar -->
+      <div class="max-w-3xl mb-4">
+        <SearchBox />
       </div>
-    </div>
 
-    <!-- Search Box (always visible) -->
-    <div class="mb-10 max-w-3xl">
-      <SearchBox />
-    </div>
-
-    <!-- 1. Browse by Type (§5.2 item 4) -->
-    <div class="mb-12">
-      <h2 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">
-        Browse by Type
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Compact Pillar Stat Pills & Quick Navigation -->
+      <div class="flex flex-wrap items-center gap-2.5 pt-1 text-xs">
+        <span class="text-slate-400 font-medium">Quick browse:</span>
         <a
           href="/catalog?type=mcp_server"
-          class="p-6 rounded-2xl border border-blue-200 bg-blue-50/40 hover:bg-blue-50/70 hover:border-blue-300 transition-all group shadow-xs"
+          class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-blue-200 bg-blue-50/70 hover:bg-blue-100 text-blue-700 font-medium transition-colors"
         >
-          <div class="flex items-center justify-between mb-2">
-            <span class="px-2.5 py-0.5 rounded text-xs font-semibold uppercase tracking-wider bg-blue-100/80 text-blue-800 border border-blue-200">
-              MCP Servers
-            </span>
-            <span class="font-mono text-sm text-blue-600 font-bold group-hover:translate-x-1 transition-transform">
-              {mcpServers.length} servers &rarr;
-            </span>
-          </div>
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            Standardized servers exposing databases, browser automation, filesystem access, and API integrations via Model Context Protocol.
-          </p>
+          <span>🔌</span>
+          <span>{mcpServers.length} MCP Servers</span>
         </a>
-
         <a
           href="/catalog?type=agent_skill"
-          class="p-6 rounded-2xl border border-teal-200 bg-teal-50/40 hover:bg-teal-50/70 hover:border-teal-300 transition-all group shadow-xs"
+          class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-teal-200 bg-teal-50/70 hover:bg-teal-100 text-teal-700 font-medium transition-colors"
         >
-          <div class="flex items-center justify-between mb-2">
-            <span class="px-2.5 py-0.5 rounded text-xs font-semibold uppercase tracking-wider bg-teal-100/80 text-teal-800 border border-teal-200">
-              Agent Skills
-            </span>
-            <span class="font-mono text-sm text-teal-700 font-bold group-hover:translate-x-1 transition-transform">
-              {agentSkills.length} skills &rarr;
-            </span>
+          <span>🧠</span>
+          <span>{agentSkills.length} Agent Skills</span>
+        </a>
+        <a
+          href="/tools"
+          class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-purple-200 bg-purple-50/70 hover:bg-purple-100 text-purple-700 font-medium transition-colors"
+        >
+          <span>🛠️</span>
+          <span>{agentTools.length} Agent Tools</span>
+        </a>
+        <span class="text-slate-300 hidden sm:inline">·</span>
+        <a
+          href="/catalog"
+          class="inline-flex items-center gap-1 text-blue-600 hover:underline font-medium text-xs ml-auto"
+        >
+          <span>Explore all {allEntries.length} catalog tools</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- ========================================================================= -->
+    <!-- ZONE 2: 2-COLUMN SPLIT RADAR & DIRECTORY (Left 7 cols / Right 5 cols)     -->
+    <!-- ========================================================================= -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- --------------------------------------------------------------------- -->
+      <!-- LEFT COLUMN (7 COLS): 🔥 HOT THIS WEEK (TOP 10 LEADERBOARD)          -->
+      <!-- --------------------------------------------------------------------- -->
+      <section class="lg:col-span-7 space-y-4" aria-label="Hot This Week Leaderboard">
+        <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-[11px] font-semibold mb-1">
+              <span>🔥</span>
+              <span>Weekly Velocity Radar</span>
+              <span class="font-mono font-bold">({trendingReport.week})</span>
+            </div>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
+              Hot This Week Leaderboard
+            </h2>
           </div>
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            Composable skills and task instructions packaged in SKILL.md specs for Claude Code, OpenAI Codex, and Google Antigravity.
-          </p>
-        </a>
-      </div>
-    </div>
+          <a
+            href="/trending"
+            class="text-xs font-semibold text-blue-600 hover:text-blue-800 hover:underline inline-flex items-center gap-1"
+          >
+            <span>Full top 25</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
 
-    <!-- 2. Browse by Category (§5.2 item 3) -->
-    <div class="mb-14">
-      <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xs font-bold text-slate-500 uppercase tracking-wider">
-          Browse by Category
-        </h2>
-        <a href="/catalog" class="text-xs font-semibold text-blue-600 hover:underline">
-          View all categories in catalog &rarr;
-        </a>
-      </div>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3.5">
-        {categories.map((cat) => {
-          const count = categoryCounts[cat.data.id] || 0;
-          return (
+        <!-- Scannable Top 10 Table -->
+        <div class="rounded-xl border border-slate-200 bg-white shadow-xs overflow-hidden divide-y divide-slate-100">
+          {topTrendingItems.map((item) => (
             <a
-              href={`/catalog?category=${cat.data.id}`}
-              class="p-4 rounded-xl border border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50/80 transition-all group shadow-xs"
+              href={item.href}
+              class="flex items-center justify-between p-3 sm:p-3.5 hover:bg-slate-50 transition-colors group text-left"
             >
-              <div class="flex items-center justify-between mb-1">
-                <span class="font-semibold text-sm text-slate-900 group-hover:text-blue-600 transition-colors">
-                  {cat.data.name}
-                </span>
-                <span class="text-xs font-mono text-slate-500 font-medium">
-                  {count}
+              <!-- Left: Rank + Avatar + Details -->
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="flex flex-col items-center justify-center w-7 shrink-0 text-center">
+                  <span class:list={['font-mono text-xs font-bold', item.isTop3 ? 'text-orange-600' : 'text-slate-600']}>
+                    #{item.rank}
+                  </span>
+                  <span class:list={['text-[8px] font-mono font-semibold', item.rankColorClass]}>
+                    {item.rankText}
+                  </span>
+                </div>
+
+                <img
+                  src={`https://github.com/${item.repo.split('/')[0]}.png?size=40`}
+                  alt={item.repo.split('/')[0]}
+                  class="w-8 h-8 rounded-lg border border-slate-200 bg-slate-50 object-cover shrink-0"
+                  loading="lazy"
+                />
+
+                <div class="min-w-0">
+                  <div class="flex items-center gap-1.5 flex-wrap">
+                    <span class="font-semibold text-sm text-slate-900 group-hover:text-blue-600 transition-colors truncate">
+                      {item.name}
+                    </span>
+                    <span class:list={['px-1.5 py-0.2 rounded text-[10px] font-semibold uppercase tracking-wider border shrink-0', item.badge.class]}>
+                      {item.badge.label}
+                    </span>
+                  </div>
+                  <p class="text-xs text-slate-500 truncate max-w-sm sm:max-w-md">
+                    {item.tagline || item.repo}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Right: Weekly Star Gain + Sparkline -->
+              <div class="flex items-center gap-3 sm:gap-4 shrink-0 pl-3">
+                <div class="text-right">
+                  <div class="font-mono text-xs font-bold text-orange-600">
+                    {formatStarDelta(item.stars_delta_7d)}
+                  </div>
+                  <div class="text-[10px] font-mono text-slate-400">
+                    ★ {formatStars(item.stars)}
+                  </div>
+                </div>
+
+                <div class="hidden sm:block" title="4-week trajectory">
+                  <Sparkline points={item.sparkline_4w} width={44} height={14} strokeWidth={1.5} />
+                </div>
+
+                <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform text-xs">
+                  &rarr;
                 </span>
               </div>
-              <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">
-                {cat.data.description}
-              </p>
             </a>
-          );
-        })}
-      </div>
-    </div>
-
-    <!-- 3. Rows (§5.2 item 5): Popular, Recently Updated, Official, New -->
-    <div class="space-y-12 pt-4 border-t border-slate-200">
-      <!-- Most Popular Row -->
-      <div>
-        <div class="flex items-center justify-between mb-4">
-          <div>
-            <h2 class="text-lg font-bold text-slate-900">Most Popular</h2>
-            <p class="text-xs text-slate-500">Widely adopted tools ranked by GitHub community stars</p>
-          </div>
-          <a href="/catalog?sort=popular" class="text-xs font-semibold text-blue-600 hover:underline">
-            See all popular &rarr;
-          </a>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {popularRow.map((entry) => (
-            <EntryCard entry={entry} />
           ))}
         </div>
-      </div>
 
-      <!-- Recently Updated Row -->
-      <div>
-        <div class="flex items-center justify-between mb-4">
-          <div>
-            <h2 class="text-lg font-bold text-slate-900">Recently Updated</h2>
-            <p class="text-xs text-slate-500">Actively maintained tools with fresh repository commits</p>
-          </div>
-          <a href="/catalog?sort=updated" class="text-xs font-semibold text-blue-600 hover:underline">
-            See all recently updated &rarr;
+        <div class="text-center pt-1">
+          <a
+            href="/trending"
+            class="text-xs text-slate-500 hover:text-blue-600 font-medium inline-flex items-center gap-1"
+          >
+            <span>View historical weekly rankings &amp; pillar top 10s</span>
+            <span>&rarr;</span>
           </a>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {updatedRow.map((entry) => (
-            <EntryCard entry={entry} />
-          ))}
-        </div>
-      </div>
+      </section>
 
-      <!-- Official Vendors Row -->
-      {officialRow.length > 0 && (
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <div>
-              <h2 class="text-lg font-bold text-slate-900">Official Vendor Tools</h2>
-              <p class="text-xs text-slate-500">Servers published and supported directly by primary platform providers</p>
+      <!-- --------------------------------------------------------------------- -->
+      <!-- RIGHT COLUMN (5 COLS): 🚀 BREAKOUT NEWCOMERS & 📂 CATEGORIES BROWSER  -->
+      <!-- --------------------------------------------------------------------- -->
+      <div class="lg:col-span-5 space-y-8">
+        <!-- Box 1: Breakout New Repos -->
+        {breakoutNewItems.length > 0 && (
+          <section class="space-y-3" aria-label="Breakout New Tools">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+              <div class="flex items-center gap-2">
+                <span class="text-base">🚀</span>
+                <h2 class="text-sm font-bold text-slate-900 tracking-tight uppercase tracking-wider">
+                  Breakout New Tools (&le;60d)
+                </h2>
+              </div>
+              <a href="/trending" class="text-xs font-semibold text-blue-600 hover:underline">
+                View all &rarr;
+              </a>
             </div>
-            <a href="/catalog?official=true" class="text-xs font-semibold text-blue-600 hover:underline">
-              See all official tools &rarr;
+
+            <div class="space-y-2.5">
+              {breakoutNewItems.map((item) => (
+                <a
+                  href={item.href}
+                  class="p-3 rounded-xl border border-purple-100 bg-purple-50/20 hover:border-purple-300 hover:bg-purple-50/40 transition-all flex items-center justify-between group text-left"
+                >
+                  <div class="flex items-center gap-2.5 min-w-0">
+                    <img
+                      src={`https://github.com/${item.owner}.png?size=40`}
+                      alt={item.owner}
+                      class="w-7 h-7 rounded-lg border border-slate-200 bg-slate-50 object-cover shrink-0"
+                      loading="lazy"
+                    />
+                    <div class="min-w-0">
+                      <div class="flex items-center gap-1.5 truncate">
+                        <span class="text-xs font-semibold text-slate-900 group-hover:text-purple-700 truncate">
+                          {item.name}
+                        </span>
+                        <span class:list={['px-1 py-0.2 rounded text-[9px] font-semibold uppercase tracking-wider border shrink-0', item.badge.class]}>
+                          {item.badge.label}
+                        </span>
+                      </div>
+                      <p class="text-[11px] text-slate-500 font-mono truncate">{item.repo}</p>
+                    </div>
+                  </div>
+
+                  <div class="text-right shrink-0 pl-2">
+                    <div class="font-mono text-xs font-bold text-orange-600">
+                      {formatStarDelta(item.stars_delta_7d)}
+                    </div>
+                    <div class="text-[10px] text-slate-400 font-mono">
+                      ★ {formatStars(item.stars)}
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Box 2: Browse 9 Categories (Compact 2-col Grid) -->
+        <section class="space-y-3" aria-label="Browse by Category">
+          <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+            <div class="flex items-center gap-2">
+              <span class="text-base">📂</span>
+              <h2 class="text-sm font-bold text-slate-900 tracking-tight uppercase tracking-wider">
+                9 Knowledge Domains
+              </h2>
+            </div>
+            <a href="/catalog" class="text-xs font-semibold text-blue-600 hover:underline">
+              Catalog &rarr;
             </a>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {officialRow.map((entry) => (
-              <EntryCard entry={entry} />
-            ))}
-          </div>
-        </div>
-      )}
 
-      <!-- Newest Added Row -->
-      <div>
-        <div class="flex items-center justify-between mb-4">
-          <div>
-            <h2 class="text-lg font-bold text-slate-900">Newest Added</h2>
-            <p class="text-xs text-slate-500">Tools and skills newly joined to the directory catalog</p>
+          <div class="grid grid-cols-2 gap-2">
+            {categories.map((cat) => {
+              const count = categoryCounts[cat.data.id] || 0;
+              return (
+                <a
+                  href={`/catalog?category=${cat.data.id}`}
+                  class="p-2.5 rounded-xl border border-slate-200 bg-white hover:border-blue-300 hover:bg-blue-50/30 transition-all group flex items-center justify-between text-left"
+                >
+                  <span class="text-xs font-medium text-slate-800 group-hover:text-blue-600 truncate mr-2">
+                    {cat.data.name}
+                  </span>
+                  <span class="text-[11px] font-mono text-slate-400 font-medium bg-slate-50 px-1.5 py-0.5 rounded border border-slate-100 shrink-0">
+                    {count}
+                  </span>
+                </a>
+              );
+            })}
           </div>
-          <a href="/catalog?sort=newest" class="text-xs font-semibold text-blue-600 hover:underline">
-            See all newest &rarr;
-          </a>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {newestRow.map((entry) => (
-            <EntryCard entry={entry} />
-          ))}
-        </div>
+        </section>
       </div>
     </div>
+
+    <!-- ========================================================================= -->
+    <!-- ZONE 3: FEATURED DICTIONARY SHOWCASE (3-COL TABBED GRID)                   -->
+    <!-- ========================================================================= -->
+    <section class="space-y-6 pt-6 border-t border-slate-200" aria-label="Featured Tools">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900 tracking-tight">
+            Featured Tools &amp; Repositories
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">
+            Explore curated tools across popular adoption, recent maintenance, and official vendors
+          </p>
+        </div>
+
+        <!-- Tab Toggle Buttons -->
+        <div class="inline-flex rounded-lg border border-slate-200 bg-slate-50 p-1 text-xs self-start sm:self-auto shadow-xs" role="tablist">
+          <button
+            type="button"
+            id="tab-btn-popular"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-popular"
+            class="px-3 py-1.5 rounded-md font-semibold text-slate-900 bg-white shadow-xs transition-all cursor-pointer tab-trigger"
+            data-tab="popular"
+          >
+            ⭐ Most Popular
+          </button>
+          <button
+            type="button"
+            id="tab-btn-updated"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-updated"
+            class="px-3 py-1.5 rounded-md font-medium text-slate-600 hover:text-slate-900 transition-all cursor-pointer tab-trigger"
+            data-tab="updated"
+          >
+            ⚡ Recently Updated
+          </button>
+          <button
+            type="button"
+            id="tab-btn-official"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-official"
+            class="px-3 py-1.5 rounded-md font-medium text-slate-600 hover:text-slate-900 transition-all cursor-pointer tab-trigger"
+            data-tab="official"
+          >
+            🏛️ Official Vendors
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab Panel 1: Most Popular (3 Columns) -->
+      <div id="panel-popular" role="tabpanel" class="tab-panel grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {popularRow.map((entry) => (
+          <EntryCard
+            entry={entry}
+            packSkillsCount={repoSkillCounts.get(entry.data.source.repo)}
+            packSkillNames={repoSkillNames.get(entry.data.source.repo)}
+          />
+        ))}
+      </div>
+
+      <!-- Tab Panel 2: Recently Updated (3 Columns, hidden by default) -->
+      <div id="panel-updated" role="tabpanel" class="tab-panel hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {updatedRow.map((entry) => (
+          <EntryCard
+            entry={entry}
+            packSkillsCount={repoSkillCounts.get(entry.data.source.repo)}
+            packSkillNames={repoSkillNames.get(entry.data.source.repo)}
+          />
+        ))}
+      </div>
+
+      <!-- Tab Panel 3: Official Vendors (3 Columns, hidden by default) -->
+      <div id="panel-official" role="tabpanel" class="tab-panel hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {officialRow.map((entry) => (
+          <EntryCard
+            entry={entry}
+            packSkillsCount={repoSkillCounts.get(entry.data.source.repo)}
+            packSkillNames={repoSkillNames.get(entry.data.source.repo)}
+          />
+        ))}
+      </div>
+
+      <div class="text-center pt-2">
+        <a
+          href="/catalog"
+          class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 hover:border-slate-300 text-xs font-semibold text-slate-700 shadow-xs transition-colors"
+        >
+          <span>Browse all {allEntries.length} tools &amp; skills in Catalog</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </section>
   </div>
+
+  <script>
+    function setupHomeTabs() {
+      const triggers = document.querySelectorAll<HTMLButtonElement>('.tab-trigger');
+      const panels = document.querySelectorAll<HTMLElement>('.tab-panel');
+
+      triggers.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const targetTab = btn.getAttribute('data-tab');
+
+          // Update buttons
+          triggers.forEach((t) => {
+            const isTarget = t === btn;
+            t.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+            if (isTarget) {
+              t.classList.add('bg-white', 'text-slate-900', 'shadow-xs', 'font-semibold');
+              t.classList.remove('font-medium', 'text-slate-600');
+            } else {
+              t.classList.remove('bg-white', 'text-slate-900', 'shadow-xs', 'font-semibold');
+              t.classList.add('font-medium', 'text-slate-600');
+            }
+          });
+
+          // Update panels
+          panels.forEach((p) => {
+            if (p.id === `panel-${targetTab}`) {
+              p.classList.remove('hidden');
+            } else {
+              p.classList.add('hidden');
+            }
+          });
+        });
+      });
+    }
+
+    setupHomeTabs();
+    document.addEventListener('astro:page-load', setupHomeTabs);
+  </script>
 </BaseLayout>

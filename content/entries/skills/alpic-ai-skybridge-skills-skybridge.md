@@ -8,7 +8,7 @@ summary: "⚠️ The app is consumed by two users at once: the human and the AI
   Assistant LLM. They collaborate through the view—the human interacts with it,
   the LLM sees its state. Internalize this before writing code: the view is..."
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 53
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
   folder_path: skills/skybridge
   extra_files:
     - references
+tags: []
 ---
 
 # Creating Plugins For LLMs

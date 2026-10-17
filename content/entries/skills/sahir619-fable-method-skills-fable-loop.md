@@ -8,7 +8,7 @@ summary: "Gate first. Trivial per the method's triviality gate: just do it,
   verify with the one obvious check, report in two sentences. No stages, no
   subagents. Everything else runs the four stages below in order."
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 44
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
   folder_path: skills/fable-loop
   extra_files:
     - agents/openai.yaml
+tags: []
 ---
 
 # The Fable Loop

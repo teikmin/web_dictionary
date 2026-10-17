@@ -8,7 +8,7 @@ summary: "Whatever the tone, it should feel like a modern, slick, polished
   launch video: nothing on screen or in the soundtrack that doesn't earn its
   place."
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 62
 selection_reason: quality_percentile
@@ -44,6 +44,8 @@ skill:
     off here on Opus 5.5.
   folder_path: skills/brag-slim
   extra_files: []
+tags:
+  - video
 ---
 
 # /brag-slim

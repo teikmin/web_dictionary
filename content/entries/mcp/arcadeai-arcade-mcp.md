@@ -5,7 +5,7 @@ tagline: "MCP Server Framework and Tool Development library for building custom
   capabilities into agents. "
 summary: Open-source Python framework for building MCP servers and tools.
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 52
 selection_reason: quality_percentile
@@ -38,6 +38,8 @@ launch:
     - arcade-mcp
   env_vars: []
   confidence: manifest
+tags:
+  - python
 ---
 
 <div align="center">

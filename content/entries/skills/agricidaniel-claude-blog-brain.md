@@ -6,7 +6,7 @@ tagline: Scaffold and operate Claude Blog Brain, a source-cited Obsidian brain
   Googl
 summary: "Source checkout equivalent:"
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 54
 selection_reason: quality_percentile
@@ -70,6 +70,7 @@ skill:
     - .github/workflows/ci.yml
     - .gitignore
     - .obsidian/graph.json
+tags: []
 ---
 
 # Claude Blog Brain

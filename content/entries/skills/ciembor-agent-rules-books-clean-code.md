@@ -8,7 +8,7 @@ summary: Before making design or code decisions, read and apply
   clean-code.mini.md. Use clean-code.md only as a deeper reference when the mini
   rules are not enough for the current code-quality tradeoff.
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
     - clean-code.md
     - clean-code.mini.md
     - clean-code.nano.md
+tags: []
 ---
 
 # Clean Code Skill

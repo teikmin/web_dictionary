@@ -9,7 +9,7 @@ summary: "It synthesizes three ideas: - SkillOpt — the skill/memory doc is
   held-out gate; rejected edits are recorded in the run report for review. -
   Cla..."
 categories:
-  - ai-frameworks
+  - databases-memory
 status: active
 quality_percentile: 98
 selection_reason: official_vendor
@@ -46,6 +46,8 @@ skill:
     consolidate validated CLAUDE.md/SKILL.md behind a held-out gate."
   folder_path: plugins/claude-code/skills/skillopt-sleep
   extra_files: []
+tags:
+  - memory
 ---
 
 # SkillOpt-Sleep: usage-driven self-evolution for a local Claude agent

@@ -7,7 +7,7 @@ tagline: 3D Morph PPT — extends morph-ppt with GLB model insertion,
 summary: "- macOS / Linux: curl -fsSL https://d.officecli.ai/install.sh | bash -
   Windows (PowerShell): irm https://d.officecli.ai/install.ps1 | iex"
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     system.
   folder_path: skills/morph-ppt-3d
   extra_files: []
+tags: []
 ---
 
 # Morph PPT — 3D Extension

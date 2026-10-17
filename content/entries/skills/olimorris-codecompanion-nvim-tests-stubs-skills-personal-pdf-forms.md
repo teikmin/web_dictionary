@@ -4,7 +4,7 @@ name: pdf-forms
 tagline: Fill and inspect PDF forms
 summary: Fill and inspect PDF forms
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 39
 selection_reason: quality_percentile
@@ -34,6 +34,8 @@ skill:
   description: Fill and inspect PDF forms
   folder_path: tests/stubs/skills/personal/pdf-forms
   extra_files: []
+tags:
+  - pdf
 ---
 
 # PDF Forms

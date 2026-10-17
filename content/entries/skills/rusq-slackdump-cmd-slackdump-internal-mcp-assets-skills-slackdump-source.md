@@ -4,7 +4,7 @@ name: slackdump-source
 tagline: Explains the different Slackdump sources structure.
 summary: Databases were introduced in Slackdump version 3.1.
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 37
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: Explains the different Slackdump sources structure.
   folder_path: cmd/slackdump/internal/mcp/assets/skills/slackdump-source
   extra_files: []
+tags: []
 ---
 
 ### Notes about source structure

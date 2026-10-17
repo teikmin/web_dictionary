@@ -9,7 +9,7 @@ summary: "1. Infer the useful session state: a concise summary, current
   next actions, and relevant decisions, files, code, commits, or external
   links...."
 categories:
-  - databases
+  - databases-memory
 status: active
 quality_percentile: 36
 selection_reason: quality_percentile
@@ -48,6 +48,9 @@ skill:
   extra_files:
     - agents/openai.yaml
     - references/cli-workflows.md
+tags:
+  - git
+  - memory
 ---
 
 # MEX Relay

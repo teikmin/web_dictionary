@@ -8,7 +8,7 @@ summary: AI agents write code fast, but they leave no durable record of intent â
   what the system is supposed to do, who is allowed to do what, where the
   secrets live, which rules are actually verified. Without that record, no...
 categories:
-  - ai-frameworks
+  - coding-agents
 status: active
 quality_percentile: 68
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
     planning test coverage, or preparing for a security or performance audit."
   folder_path: pm-ai-shipping/skills/shipping-artifacts
   extra_files: []
+tags: []
 ---
 
 # Shipping Artifacts: The Docs That Make AI-Built Code Reviewable

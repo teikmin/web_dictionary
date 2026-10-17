@@ -6,7 +6,7 @@ tagline: "تخطيط مستمر قائم على الملفات لعمل وكلا
   وتحقن خطافات "
 summary: "قبل المتابعة، حدّد دليل الخطة الذي تملكه هذه المهمة:"
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 70
 selection_reason: quality_percentile
@@ -54,6 +54,7 @@ skill:
     - scripts/inject-plan.py
     - scripts/inject-plan.sh
     - scripts/ledger-append.ps1
+tags: []
 ---
 
 # نظام تخطيط الملفات

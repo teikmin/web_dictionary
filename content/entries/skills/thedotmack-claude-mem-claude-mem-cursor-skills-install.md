@@ -6,7 +6,7 @@ tagline: "Use this when setting up claude-mem on Cursor: local or remote worker,
 summary: Starts the local worker. Hooks already ship with this plugin. MCP
   claude-mem-local talks to it.
 categories:
-  - databases
+  - agent-frameworks
 status: active
 quality_percentile: 71
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ skill:
     worker, local host-login observer or remote cmem.ai inference."
   folder_path: claude-mem-cursor/skills/install
   extra_files: []
+tags: []
 ---
 
 # Install claude-mem on Cursor

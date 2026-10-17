@@ -1,5 +1,6 @@
 import type { LaunchSpec } from '@web-db/schema';
 import { fetchMcpRegistry, type McpRegistryServer } from '../../sources/mcp-registry.js';
+import { hasPlaceholder } from './placeholder.js';
 
 let cachedRegistryList: McpRegistryServer[] | null = null;
 
@@ -32,6 +33,16 @@ export async function extractFromRegistry(
   const remoteUrl = s.remoteUrl || s.remotes?.[0]?.url;
 
   if (remoteUrl) {
+    if (hasPlaceholder(remoteUrl)) {
+      return {
+        transport: 'http',
+        remote_url: undefined,
+        command: undefined,
+        args: [],
+        env_vars: [],
+        confidence: 'none',
+      };
+    }
     return {
       transport: 'http',
       remote_url: remoteUrl,
@@ -41,10 +52,20 @@ export async function extractFromRegistry(
     };
   }
 
+  const pkgName = String(s.name || '');
+  if (hasPlaceholder(pkgName)) {
+    return {
+      transport: 'stdio',
+      args: [],
+      env_vars: [],
+      confidence: 'none',
+    };
+  }
+
   return {
     transport: 'stdio',
     command: 'npx',
-    args: ['-y', s.name],
+    args: ['-y', pkgName],
     env_vars: [],
     confidence: 'registry',
   };

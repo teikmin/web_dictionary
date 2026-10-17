@@ -7,7 +7,7 @@ summary: 1. search(query) — index with IDs 2. timeline(anchor=ID) — nearby
   context 3. getobservations(ids=[...]) — full details for those IDs only 4.
   gettooluses(ids=[...]) — the ORIGINAL toolinput / toolresponse for specific...
 categories:
-  - databases
+  - browser-web
 status: active
 quality_percentile: 71
 selection_reason: quality_percentile
@@ -38,6 +38,8 @@ skill:
     this?", "how did we do X last time?", or wants work from previous sessions.
   folder_path: claude-mem-cursor/skills/mem-search
   extra_files: []
+tags:
+  - memory
 ---
 
 # mem-search

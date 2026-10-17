@@ -8,7 +8,7 @@ summary: make codex open! Universal provider proxy for OpenAI Codex, Claude
   Code, Claude Desktop &amp; Grok Build Two commands, and every one of them runs
   any LLM you point it at.
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 62
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ launch:
     - "@bitkyc08/opencodex"
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <p align="center">

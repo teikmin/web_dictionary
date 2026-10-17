@@ -6,7 +6,7 @@ tagline: Perform cohort analysis on user engagement data — retention curves,
   reten
 summary: "Example 1: Upload CSV Data"
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 68
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     churn patterns, or identifying engagement trends.
   folder_path: pm-data-analytics/skills/cohort-analysis
   extra_files: []
+tags: []
 ---
 
 # Cohort Analysis & Retention Explorer

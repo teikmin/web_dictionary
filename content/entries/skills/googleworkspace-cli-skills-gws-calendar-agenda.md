@@ -4,7 +4,7 @@ name: gws-calendar-agenda
 tagline: "Google Calendar: Show upcoming events across all calendars."
 summary: Show upcoming events across all calendars
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 55
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: "Google Calendar: Show upcoming events across all calendars."
   folder_path: skills/gws-calendar-agenda
   extra_files: []
+tags: []
 ---
 
 # calendar +agenda

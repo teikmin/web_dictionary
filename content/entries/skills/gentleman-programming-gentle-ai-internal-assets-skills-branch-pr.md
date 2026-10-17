@@ -6,7 +6,7 @@ tagline: "Create Gentle AI pull requests with issue-first checks. Trigger:
 summary: "Use this skill when: - Creating a pull request for any change -
   Preparing a branch for submission - Helping a contributor open a PR"
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ skill:
     creating, opening, or preparing PRs for review."
   folder_path: internal/assets/skills/branch-pr
   extra_files: []
+tags: []
 ---
 
 ## When to Use

@@ -7,7 +7,7 @@ summary: 1. Extract the decision or question, the relevant constraints, and the
   output format from the user's request. 2. Choose two to four independent
   analysis angles that cover different evidence or reasoning needs. Give ev...
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 82
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
     independent perspectives followed by a single evidence-based synthesis.
   folder_path: examples/dynamicworkflow/skills/skills/fanout-analysis
   extra_files: []
+tags: []
 ---
 
 # Parallel Analysis and Synthesis

@@ -1,0 +1,18 @@
+id: coding-agents
+name: Coding & Dev Agents
+tagline: CLI coding agents, IDE harnesses, PR review agents, and code graph tools
+description: Autonomous coding agents, code review bots, terminal harnesses, AST code intelligence, and IDE developer tools.
+icon: terminal
+keywords:
+  - coding-agent
+  - code-review
+  - ast
+  - code-graph
+  - debugger
+  - compiler
+  - git
+  - github
+  - terminal
+  - shell
+  - cli
+  - ide

@@ -8,7 +8,7 @@ summary: Before making design or code decisions, read and apply
   reference when the mini rules are not enough for the current architectural
   tradeoff.
 categories:
-  - dev-tools
+  - cloud-infra
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
     - clean-architecture.md
     - clean-architecture.mini.md
     - clean-architecture.nano.md
+tags: []
 ---
 
 # Clean Architecture Skill

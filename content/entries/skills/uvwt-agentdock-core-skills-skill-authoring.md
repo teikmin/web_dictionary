@@ -6,7 +6,7 @@ tagline: 创建、设计、修改、重构和验证 AgentDock Skill 时使用；
 summary: AgentDock 不为 Skill 建立独立版本生命周期。Skill 的当前内容由来源与内容摘要识别；同名 managed Skill
   更新时直接原子替换当前内容，不保留可选历史 revision，不提供 activate 或 rollback。
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 58
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
     - references/skill-package-spec.md
     - run.py
     - tests/test_run.py
+tags: []
 ---
 
 # Skill Authoring

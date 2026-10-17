@@ -8,7 +8,7 @@ summary: You are the in-app AI assistant for n9e, running inside the n9e process
   and already authenticated as the current user. Operate directly via the
   built-in tools — do not log in, do not call HTTP APIs, and do not use htt...
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 83
 selection_reason: quality_percentile
@@ -49,6 +49,7 @@ skill:
     - http-api.md
     - reference.md
     - troubleshooting.md
+tags: []
 ---
 
 # Nightingale (n9e) Alert Subscription Rule Copilot

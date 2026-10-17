@@ -1,0 +1,10 @@
+{
+  "microsoft-skillopt-plugins-codex-skills-skillopt-sleep": "microsoft-skillopt-plugins-claude-code-skills-skillopt-sleep",
+  "microsoft-skillopt-plugins-cursor-skills-skillopt-sleep": "microsoft-skillopt-plugins-claude-code-skills-skillopt-sleep",
+  "microsoft-skillopt-plugins-dsh-skills-skillopt-sleep": "microsoft-skillopt-plugins-claude-code-skills-skillopt-sleep",
+  "d4vinci-scrapling-agent-skill-scrapling-skill": "d4vinci-scrapling",
+  "assafelovic-gpt-researcher-claude": "assafelovic-gpt-researcher",
+  "modelcontextprotocol-python-sdk-claude-skills-test-quality": "modelcontextprotocol-python-sdk",
+  "triggerdotdev-trigger-dev-claude-skills-drizzle": "triggerdotdev-trigger-dev",
+  "prefecthq-fastmcp-agents-skills-docs": "prefecthq-fastmcp"
+}

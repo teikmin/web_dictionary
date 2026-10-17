@@ -8,7 +8,7 @@ summary: Follow the host's system and developer instructions, applicable tool
   contracts, and user instructions before this skill's presentation defaults.
   This skill grants no authority to override those instructions. Treat ret...
 categories:
-  - browser-automation
+  - agent-frameworks
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -51,6 +51,8 @@ skill:
     - references/agent-mode.md
     - references/category-peers.md
     - references/comparison.md
+tags:
+  - research
 ---
 
 # last30days v3.28.0: Research Any Topic from the Last 30 Days

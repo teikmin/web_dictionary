@@ -6,7 +6,7 @@ tagline: "Zotero MCP: Connects your Zotero research library with Claude and
   summaries,"
 summary: "Zotero MCP: Chat with your Research Library in Claude, ChatGPT, and more"
 categories:
-  - ai-frameworks
+  - domain-research
 status: active
 quality_percentile: 74
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ launch:
     - zotero-mcp-server
   env_vars: []
   confidence: manifest
+tags:
+  - research
 ---
 
 <!-- mcp-name: io.github.54yyyu/zotero-mcp -->

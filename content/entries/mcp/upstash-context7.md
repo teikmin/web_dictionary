@@ -5,7 +5,7 @@ tagline: Context7 Platform -- Up-to-date code documentation for LLMs and AI code
 summary: "LLMs rely on outdated or generic information about the libraries you
   use. You get:"
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 83
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 ![Cover](https://github.com/upstash/context7/blob/master/public/cover.png?raw=true)

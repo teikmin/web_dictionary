@@ -7,7 +7,7 @@ summary: "@cablate/mcp-google-map turns Google Maps Platform into 18 read-only
   agent tools and three focused Skills. An agent can find real places, verify
   routes, compare options, build practical itineraries, or audit local sea..."
 categories:
-  - dev-tools
+  - domain-research
 status: active
 quality_percentile: 49
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ launch:
     - "@cablate/mcp-google-map"
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # Google Maps for AI agents

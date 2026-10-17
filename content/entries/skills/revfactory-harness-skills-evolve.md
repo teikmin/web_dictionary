@@ -7,7 +7,7 @@ summary: 1. .claude/agents/, .claude/skills/, CLAUDE.md(변경 이력 테이블)
   저장소라면 하네스 파일들의 변경 이력을 조회한다 (git log --oneline -- .claude/ CLAUDE.md) — 초기 구성
   대비 무엇이 언제 왜 바뀌었는지 파악 3. workspace/가 있으면 최근 실행의 중간 산출물을 훑어 실제 실행 흔적을 확인...
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 69
 selection_reason: quality_percentile
@@ -40,6 +40,8 @@ skill:
     바탕으로 한 개선 요청 시 반드시 이 스킬을 사용. 하네스 신규 구축·구조 재설계·에이전트 추가는 harness 스킬이 담당.
   folder_path: skills/evolve
   extra_files: []
+tags:
+  - git
 ---
 
 # Harness Evolve — 하네스 진화 메커니즘

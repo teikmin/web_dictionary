@@ -8,7 +8,7 @@ summary: "Check for product marketing context first: If
   legacy product-marketing-context.md filename, in older setups), read it before
   asking question..."
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 84
 selection_reason: quality_percentile
@@ -54,6 +54,7 @@ skill:
     - references/event-library.md
     - references/ga4-implementation.md
     - references/gtm-implementation.md
+tags: []
 ---
 
 # Analytics Tracking

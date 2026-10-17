@@ -15,6 +15,7 @@ export const CandidateRepoSchema = z.object({
   createdAt: z.string(),
   pushedAt: z.string(),
   license: z.string().nullable().optional(),
+  language: z.string().nullable().optional(),
   topics: z.array(z.string()).default([]),
   defaultBranch: z.string().default('main'),
 });
@@ -46,6 +47,7 @@ export const TypeEvidenceKindSchema = z.enum([
   'mcp_registry_listing',
   'skill_md_file',
   'plugin_manifest',
+  'tool_manifest',
   'none',
 ]);
 export type TypeEvidenceKind = z.infer<typeof TypeEvidenceKindSchema>;

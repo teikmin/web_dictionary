@@ -7,7 +7,7 @@ summary: '- User says "write me an Instagram caption about X" - User has a
   single image or a Reel and needs the caption around it - User wants a sharper
   hook for a draft they already have - User wants a caption that auto-publis...'
 categories:
-  - productivity
+  - agent-frameworks
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
   folder_path: skills/ig-caption-writer
   extra_files:
     - references/caption-checklist.md
+tags: []
 ---
 
 # Instagram Caption Writer

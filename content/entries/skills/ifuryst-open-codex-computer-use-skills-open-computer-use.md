@@ -8,7 +8,7 @@ summary: Open Computer Use exposes Computer Use as a local CLI and stdio MCP
   server. It is not Codex.app-specific; adapt the commands and MCP config to the
   agent runtime you are operating in.
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 65
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     - references/installation.md
     - references/troubleshooting.md
     - references/usage.md
+tags: []
 ---
 
 # Open Computer Use

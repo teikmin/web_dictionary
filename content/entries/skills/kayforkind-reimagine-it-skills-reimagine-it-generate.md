@@ -8,7 +8,7 @@ summary: The source file is the brief. The engine reads headings, facts, names,
   dates, numbers, links, emails, and hex colors already in the HTML, derives a
   palette and motif from them, and writes a stronger standalone page. S...
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     reimagine-it Content-Derived Design suite.'
   folder_path: skills/reimagine-it/generate
   extra_files: []
+tags: []
 ---
 
 # /reimagine-it generate

@@ -8,7 +8,7 @@ summary: "The Windows Data Protection API (DPAPI) is the operating system's
   built-in symmetric-encryption service that applications use to protect secrets
   at rest: saved RDP and Windows Credential Manager credentials, web and W..."
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
     - references/api-reference.md
     - references/standards.md
     - scripts/agent.py
+tags: []
 ---
 
 # Abusing DPAPI for Credential Access

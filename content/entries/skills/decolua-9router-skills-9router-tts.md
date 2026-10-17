@@ -6,7 +6,7 @@ tagline: Text-to-speech via 9Router /v1/audio/speech using OpenAI / ElevenLabs /
 summary: model field in /v1/audio/speech = voice ID directly (e.g.
   edge-tts/vi-VN-HoaiMyNeural, el/, or openai/tts-1 model+default voice).
 categories:
-  - security
+  - media-creative
 status: active
 quality_percentile: 89
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ skill:
     voiceover, narrate, or read text aloud.
   folder_path: skills/9router-tts
   extra_files: []
+tags:
+  - audio
 ---
 
 # 9Router — Text-to-Speech

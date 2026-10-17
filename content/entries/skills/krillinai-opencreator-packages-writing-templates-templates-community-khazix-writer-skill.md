@@ -6,7 +6,7 @@ summary: "- 对新事物保持真实好奇，从「这件事哪里有意思」�
   讲人话，允许明确表达判断和不确定性，避免滴水不漏但没有温度的报告腔。 - 真诚优先。产品有缺点就写缺点，不懂就承认不懂，不用不存在的细节增强戏剧性。 -
   观点必须是作者真的相信并愿意表达的，不能为了流量强行制造立场。"
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -38,6 +38,7 @@ skill:
   extra_files:
     - review.md
     - topics.md
+tags: []
 ---
 
 # 卡兹克公众号长文写作

@@ -5,7 +5,7 @@ tagline: "AI Berkshire skill: 财报精读：一手资料深度解读. Source: s
 summary: This skill is generated from skills/earnings-review.md so Claude Code
   and Codex users share one canonical workflow.
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 95
 selection_reason: quality_percentile
@@ -35,6 +35,7 @@ skill:
   description: "AI Berkshire skill: 财报精读：一手资料深度解读. Source: skills/earnings-review.md."
   folder_path: codex-skills/earnings-review
   extra_files: []
+tags: []
 ---
 
 ## Codex adapter note

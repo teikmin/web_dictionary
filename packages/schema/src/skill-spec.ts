@@ -5,6 +5,10 @@ export const SkillSpecSchema = z.object({
   description: z.string(),
   folder_path: z.string(),
   extra_files: z.array(z.string()).default([]),
+  pack_slug: z.string().optional(),
+  pack_total_skills: z.number().default(1),
+  is_pack_primary: z.boolean().default(true),
+  clients: z.array(z.string()).default([]),
 });
 
 export type SkillSpec = z.infer<typeof SkillSpecSchema>;

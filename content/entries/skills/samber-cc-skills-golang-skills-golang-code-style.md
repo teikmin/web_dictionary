@@ -9,7 +9,7 @@ summary: 'Orchestration mode: Fan out the sub-agents described in the
   concern, when reviewing code style across a large codebase, and merge their
   fi...'
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
   extra_files:
     - evals/evals.json
     - references/details.md
+tags: []
 ---
 
 **Orchestration mode:** Fan out the sub-agents described in the "Parallelizing Code Style Reviews" section, each covering an independent style concern, when reviewing code style across a large codebase, and merge their findings. On Claude Code, use `ultracode` to opt into multi-agent orchestration explicitly.

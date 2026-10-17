@@ -7,7 +7,7 @@ tagline: "Use when: creating, translating, refining, reviewing, or validating a
 summary: Read these before authoring. When prose and source disagree, the
   TypeScript contract is authoritative.
 categories:
-  - other
+  - productivity-ops
 status: active
 quality_percentile: 94
 selection_reason: official_vendor
@@ -41,6 +41,8 @@ skill:
     without inventing fields or changing chart semantics."
   folder_path: agent-skills/flint-theme-author
   extra_files: []
+tags:
+  - typescript
 ---
 
 # Flint ThemeSpec authoring

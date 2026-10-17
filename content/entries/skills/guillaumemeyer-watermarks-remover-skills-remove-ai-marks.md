@@ -8,7 +8,7 @@ summary: "- references/mark-classes.md — Unicode / sampling / C2PA / container
   - references/vendor-notes.md — Claude, Gemini/SynthID, OpenAI, open-LLM -
   references/removal-matrix.md — which layer when - references/ethics.md —..."
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 69
 selection_reason: quality_percentile
@@ -52,6 +52,7 @@ skill:
     - references/markdiffusion.md
     - references/removal-matrix.md
     - references/vendor-notes.md
+tags: []
 ---
 
 # Remove AI marks

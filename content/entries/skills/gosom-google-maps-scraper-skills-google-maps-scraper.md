@@ -8,7 +8,7 @@ summary: Resolve the directory containing this file as SKILLDIR. Run bundled
   scripts from that directory; do not assume the current directory is the
   repository checkout.
 categories:
-  - browser-automation
+  - browser-web
 status: active
 quality_percentile: 60
 selection_reason: quality_percentile
@@ -53,6 +53,7 @@ skill:
     - scripts/configure-proxy.sh
     - scripts/ensure-latest.sh
     - scripts/helpers_test.sh
+tags: []
 ---
 
 # Google Maps Scraper

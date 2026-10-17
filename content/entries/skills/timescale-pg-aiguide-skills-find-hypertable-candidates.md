@@ -12,7 +12,7 @@ summary: "Performance gains: 90%+ compression, fast time-based queries, improved
   materialization (dashboards, reports, analytics), automatic data
   management..."
 categories:
-  - databases
+  - databases-memory
 status: active
 quality_percentile: 43
 selection_reason: quality_percentile
@@ -68,6 +68,7 @@ skill:
     recognition for IoT, events, transactions, and sequential data.
   folder_path: skills/find-hypertable-candidates
   extra_files: []
+tags: []
 ---
 
 # PostgreSQL Hypertable Candidate Analysis

@@ -8,7 +8,7 @@ summary: TradingView MCP server — real-time market data, technical indicators,
   screeners, and backtesting for Claude, ChatGPT, Cursor, Copilot, and any MCP
   client. Stocks, crypto, forex & futures across global exchanges. Backt...
 categories:
-  - security
+  - domain-research
 status: active
 quality_percentile: 86
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # TradingView MCP Market Data & Technical Analysis for AI Assistants

@@ -8,7 +8,7 @@ summary: "This skill is read-only and market-data only. It reads Hyperliquid's
   fully public info API for analysis: market tables, funding, order book, and
   candles. It does NOT read individual accounts, place/modify/cancel order..."
 categories:
-  - productivity
+  - domain-research
 status: active
 quality_percentile: 38
 selection_reason: quality_percentile
@@ -49,6 +49,7 @@ skill:
   extra_files:
     - README.md
     - references/commands.md
+tags: []
 ---
 
 # Hyperliquid Reader (Read-Only)

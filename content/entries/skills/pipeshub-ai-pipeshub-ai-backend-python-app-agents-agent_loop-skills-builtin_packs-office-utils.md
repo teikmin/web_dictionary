@@ -8,7 +8,7 @@ summary: "A .docx or .pptx file is a ZIP archive containing a tree of XML parts
   (word/document.xml, ppt/slides/slide1.xml, relationship files, content-type
   manifests, ...). Editing it directly means: unpack the ZIP, edit the XM..."
 categories:
-  - databases
+  - media-creative
 status: active
 quality_percentile: 91
 selection_reason: quality_percentile
@@ -46,6 +46,8 @@ skill:
   extra_files:
     - scripts/pack.py
     - scripts/unpack.py
+tags:
+  - python
 ---
 
 # Office Open XML utilities

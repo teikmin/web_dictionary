@@ -9,7 +9,7 @@ summary: "Reference documents (paths from repo root): -
   skills/blog/references/eeat-signals.md: E-E-A-T evaluation criteria -
   skills/blog/references/ai-slop-de..."
 categories:
-  - productivity
+  - browser-web
 status: active
 quality_percentile: 54
 selection_reason: quality_percentile
@@ -49,6 +49,7 @@ skill:
     review", "rate this blog", "blog health check".
   folder_path: skills/blog-analyze
   extra_files: []
+tags: []
 ---
 
 # Blog Analyzer: Quality Audit & Scoring

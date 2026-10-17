@@ -8,7 +8,8 @@ min_description_chars: 20
 
 # Catalog Sizing (Cap, NOT a quota)
 catalog_cap: 500
-mcp_split_target: 350
+mcp_split_target: 200
 skills_split_target: 150
+tools_split_target: 150
 category_minimum_guarantee: 5
 min_category_size_for_guarantee: 5

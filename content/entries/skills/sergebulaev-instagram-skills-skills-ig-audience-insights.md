@@ -9,7 +9,7 @@ summary: "One honest limit: Instagram caps and cookie-gates who liked or
   reliably available for other accounts. The signal here is niche post
   performance +..."
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     ig-caption-writer)."
   folder_path: skills/ig-audience-insights
   extra_files: []
+tags: []
 ---
 
 # Instagram Audience Insights

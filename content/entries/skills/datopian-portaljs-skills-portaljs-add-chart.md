@@ -8,7 +8,7 @@ summary: Add a visualization to a dataset's showcase in a PortalJS portal. The
   skill installs recharts (added directly — never @portaljs/components), writes
   a reusable client-side Chart component into components/, and renders...
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 75
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
   folder_path: skills/portaljs-add-chart
   extra_files:
     - references/reference.md
+tags: []
 ---
 
 # PortalJS — Add Chart

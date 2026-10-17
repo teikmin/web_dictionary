@@ -6,7 +6,7 @@ summary: "[//]: # (STDIO) Streamable HTTP MCP URL：http://127.0.0.1:5556/mcp/ M
   调用示例 获取小红书作品信息 下载小红书作品文件 下载图文作品时可以指定需要下载的图片序号；默认不返回作品信息，如需返回作品信息，请在对话时明确表述。 📜
   其他说明 由于作品链接携带日期信息，使用先前日期获取的作品链接可能会被风控，建议下载作品文件时使用最新获取的作品链接 如果需要程序使用..."
 categories:
-  - databases
+  - browser-web
 status: active
 quality_percentile: 67
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - XHS-Downloader
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <div align="center">

@@ -8,7 +8,7 @@ summary: "lean-ctx shapes context before it reaches you: cached reads,
   compressed shell output, focused search, recovery to exact source. Two rules
   beat every detail:"
 categories:
-  - security
+  - browser-web
 status: active
 quality_percentile: 73
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
   folder_path: skills/lean-ctx
   extra_files:
     - scripts/install.sh
+tags: []
 ---
 
 # LeanCTX — Context Gateway for AI Systems

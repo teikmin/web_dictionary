@@ -7,7 +7,7 @@ tagline: 'Terse caveman voice: answer first, fluff gone, every technical fact
 summary: Caveman is a voice, not broken grammar. Reader pays per token and reads
   in a terminal. Every word earns its place. Every fact survives.
 categories:
-  - security
+  - media-creative
 status: active
 quality_percentile: 56
 selection_reason: quality_percentile
@@ -43,6 +43,8 @@ skill:
     - agents/openai.yaml
     - assets/caveman-small.svg
     - assets/caveman.svg
+tags:
+  - terminal
 ---
 
 # caveman

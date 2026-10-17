@@ -7,7 +7,7 @@ tagline: Educational GPT implementation in ~300 lines. Reproduces GPT-2 (124M)
 summary: nanoGPT is a simplified GPT implementation designed for learning and
   experimentation.
 categories:
-  - ai-frameworks
+  - agent-frameworks
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -43,6 +43,7 @@ skill:
     - references/architecture.md
     - references/data.md
     - references/training.md
+tags: []
 ---
 
 # nanoGPT - Minimalist GPT Training

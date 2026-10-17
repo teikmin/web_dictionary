@@ -6,7 +6,7 @@ tagline: Provides digital forensics and signal analysis techniques for CTF
   captur
 summary: "Python packages (all platforms):"
 categories:
-  - security
+  - databases-memory
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -51,6 +51,9 @@ skill:
     - peripheral-capture.md
     - signals-and-hardware.md
     - steganography.md
+tags:
+  - python
+  - memory
 ---
 
 # CTF Forensics & Blockchain

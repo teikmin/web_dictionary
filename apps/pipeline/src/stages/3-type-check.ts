@@ -7,7 +7,7 @@ export interface TypeCheckedCandidate extends GateCheckedCandidate {
   layer2: Layer2Evaluation;
 }
 
-async function checkSingleCandidate(c: GateCheckedCandidate): Promise<TypeCheckedCandidate> {
+export async function checkSingleCandidate(c: GateCheckedCandidate): Promise<TypeCheckedCandidate> {
   if (!c.layer1.passed) {
     return {
       ...c,
@@ -21,58 +21,168 @@ async function checkSingleCandidate(c: GateCheckedCandidate): Promise<TypeChecke
 
   const { paths } = await fetchRepoTree(c.repo.owner, c.repo.name, c.repo.defaultBranch);
 
-  // 1. Check for MCP Server Evidence FIRST
-  // 1a. Package manifest SDK check: package.json
-  const packageJsonPath = paths.find((p) => p === 'package.json');
-  if (packageJsonPath) {
-    const content = await fetchFileContent(c.repo.owner, c.repo.name, packageJsonPath);
-    if (content) {
-      try {
-        const pkg = JSON.parse(content);
-        const deps = { ...pkg.dependencies, ...pkg.peerDependencies };
-        if (deps && deps['@modelcontextprotocol/sdk']) {
-          return {
-            ...c,
-            layer2: {
-              detectedType: 'mcp_server',
-              evidenceKind: 'mcp_sdk_dependency',
-              details: 'Strict dependency on @modelcontextprotocol/sdk in package.json',
-              subpaths: [],
-            },
-          };
-        }
-      } catch {
-        // invalid package.json
-      }
-    }
-  }
+  const repoNameLower = c.repo.name.toLowerCase();
+  const repoDescLower = (c.repo.description || '').toLowerCase();
+  const repoTopics = (c.repo.topics || []).map((t) => t.toLowerCase());
 
-  // 1b. Python manifests: pyproject.toml / requirements.txt
-  const pythonManifest = paths.find((p) => p === 'pyproject.toml' || p === 'requirements.txt');
-  if (pythonManifest) {
-    const content = await fetchFileContent(c.repo.owner, c.repo.name, pythonManifest);
-    if (content) {
-      const isPyproject = pythonManifest === 'pyproject.toml';
-      const mcpDepRegex = isPyproject
-        ? /["']\s*(?:mcp|fastmcp)(?:\[[^\]]*\])?(?:\s*[>=<~!\s"']|$)/i
-        : /^(?:mcp|fastmcp)(?:\[[^\]]*\])?(?:\s*[>=<~!]|$)/im;
+  const hasToolManifest = paths.some(
+    (p) =>
+      p === 'package.json' ||
+      p === 'pyproject.toml' ||
+      p === 'requirements.txt' ||
+      p === 'setup.py' ||
+      p === 'Cargo.toml' ||
+      p === 'go.mod' ||
+      p === 'Dockerfile' ||
+      p === 'docker-compose.yml'
+  );
 
-      if (mcpDepRegex.test(content)) {
-        return {
-          ...c,
-          layer2: {
-            detectedType: 'mcp_server',
-            evidenceKind: 'mcp_sdk_dependency',
-            details: `Strict dependency on mcp/fastmcp in ${pythonManifest}`,
-            subpaths: [],
-          },
-        };
-      }
-    }
-  }
+  const agentKeywords = [
+    'ai-agents',
+    'ai-agent',
+    'agent',
+    'agents',
+    'autonomous-agents',
+    'coding-agent',
+    'agent-framework',
+    'browser-agent',
+    'llm',
+    'rag',
+    'scraper',
+    'workflow',
+    'orchestrator',
+    'assistant',
+    'copilot',
+  ];
 
-  // 1c. MCP Server Evidence: server.json manifest conforming to MCP schema
+  const matchesAgentTopicOrDesc =
+    repoTopics.some((t) => agentKeywords.some((k) => t.includes(k))) ||
+    agentKeywords.some((k) => repoDescLower.includes(k)) ||
+    agentKeywords.some((k) => repoNameLower.includes(k));
+
+  const knownStandaloneTools = new Set([
+    'gpt-researcher',
+    'ui-tars-desktop',
+    'ui-tars',
+    'scrapling',
+    'trigger.dev',
+    'trigger-dev',
+    'fastmcp',
+    'hermes-agent',
+    'rea',
+    'graphify',
+    'agent-reach',
+    'worldmonitor',
+    'omniroute',
+    'headroom',
+    'nanobot',
+    'reactive-resume',
+    'aionui',
+    'editor',
+    'maxkb',
+    'douyin_tiktok_download_api',
+    'skillspector',
+    'claudian',
+    'cc-haha',
+    'hexstrike-ai',
+    'omnigent',
+    'upsonic',
+    'deepchat',
+    'semble',
+    'code-graph-rag',
+    'fast-agent',
+    'dbhub',
+    'obsidian-wiki',
+    'ddgs',
+    'super-agent-party',
+    'kordoc',
+    'aisoc',
+    'paperbanana',
+    'webclaw',
+    'assetopsbench',
+    'openchatcut',
+    'boss-agent-cli',
+    'solidworks-automation-skill',
+    'anymd',
+    'openrath',
+    'octocode',
+    'iai-personal-memory-engine',
+    'memorix',
+    'unbrowse',
+    'hippo-memory',
+    'fofamap',
+    'cyrene-agent',
+  ]);
+  const knownStandaloneRepos = new Set([
+    'assafelovic/gpt-researcher',
+    'bytedance/ui-tars-desktop',
+    'd4vinci/scrapling',
+    'triggerdotdev/trigger.dev',
+    'modelcontextprotocol/python-sdk',
+    'modelcontextprotocol/typescript-sdk',
+    'prefecthq/fastmcp',
+    'nousresearch/hermes-agent',
+    'morluto/rea',
+    'graphify-labs/graphify',
+    'panniantong/agent-reach',
+    'koala73/worldmonitor',
+    'diegosouzapw/omniroute',
+    'headroomlabs-ai/headroom',
+    'hkuds/nanobot',
+    'reactive-resume/reactive-resume',
+    'iofficeai/aionui',
+    'pascalorg/editor',
+    '1panel-dev/maxkb',
+    'evil0ctal/douyin_tiktok_download_api',
+    'nvidia/skillspector',
+    'yishentu/claudian',
+    'nanmicoder/cc-haha',
+    '0x4m4/hexstrike-ai',
+    'omnigent-ai/omnigent',
+    'upsonic/upsonic',
+    'thinkinaixyz/deepchat',
+    'minishlab/semble',
+    'vitali87/code-graph-rag',
+    'evalstate/fast-agent',
+    'bytebase/dbhub',
+    'ar9av/obsidian-wiki',
+    'deedy5/ddgs',
+    'heshengtao/super-agent-party',
+    'chrisryugj/kordoc',
+    'beenuar/aisoc',
+    'llmsresearch/paperbanana',
+    '0xmassi/webclaw',
+    'ibm/assetopsbench',
+    '0xsline/openchatcut',
+    'can4hou6joeng4/boss-agent-cli',
+    'wzyn20051216/solidworks-automation-skill',
+    'sylphxai/anymd',
+    'rath-team/openrath',
+    'bgauryy/octocode',
+    'codeabra/iai-personal-memory-engine',
+    'avids2/memorix',
+    'unbrowse-ai/unbrowse',
+    'kitfunso/hippo-memory',
+    'asaotomo/fofamap',
+    'playa-cyrene/cyrene-agent',
+  ]);
+
+  const isMcpSdkOrHarness =
+    repoNameLower.endsWith('-sdk') ||
+    repoNameLower === 'fastmcp' ||
+    repoNameLower.includes('mcp-sdk') ||
+    c.repo.fullName.toLowerCase() === 'modelcontextprotocol/python-sdk' ||
+    c.repo.fullName.toLowerCase() === 'modelcontextprotocol/typescript-sdk' ||
+    c.repo.fullName.toLowerCase() === 'prefecthq/fastmcp';
+
+  const isStandaloneAgentToolOrSdk =
+    isMcpSdkOrHarness ||
+    knownStandaloneTools.has(repoNameLower) ||
+    knownStandaloneRepos.has(c.repo.fullName.toLowerCase());
+
+  // 1. Check for MCP Server Manifest (server.json)
   const serverJsonPath = paths.find((p) => p === 'server.json' || p.endsWith('/server.json'));
+  let hasValidServerJson = false;
   if (serverJsonPath) {
     const content = await fetchFileContent(c.repo.owner, c.repo.name, serverJsonPath);
     if (content) {
@@ -83,15 +193,7 @@ async function checkSingleCandidate(c: GateCheckedCandidate): Promise<TypeChecke
           parsed.mcpServers ||
           (parsed.name && (parsed.command || parsed.remotes || parsed.version))
         ) {
-          return {
-            ...c,
-            layer2: {
-              detectedType: 'mcp_server',
-              evidenceKind: 'mcp_server_manifest',
-              details: `Valid MCP server.json manifest at ${serverJsonPath}`,
-              subpaths: [],
-            },
-          };
+          hasValidServerJson = true;
         }
       } catch {
         // invalid JSON
@@ -99,7 +201,95 @@ async function checkSingleCandidate(c: GateCheckedCandidate): Promise<TypeChecke
     }
   }
 
-  // 2. Check for Agent Skills (Public SKILL.md files only - skip internal dev scripts)
+  // 2. Check for MCP Dependency in manifests
+  let hasMcpDependency = false;
+  let mcpDepDetails = '';
+
+  const packageJsonPath = paths.find((p) => p === 'package.json');
+  if (packageJsonPath) {
+    const content = await fetchFileContent(c.repo.owner, c.repo.name, packageJsonPath);
+    if (content) {
+      try {
+        const pkg = JSON.parse(content);
+        const deps = { ...pkg.dependencies, ...pkg.peerDependencies };
+        if (deps && deps['@modelcontextprotocol/sdk']) {
+          hasMcpDependency = true;
+          mcpDepDetails = 'Strict dependency on @modelcontextprotocol/sdk in package.json';
+        }
+      } catch {
+        // invalid package.json
+      }
+    }
+  }
+
+  if (!hasMcpDependency) {
+    const pythonManifest = paths.find((p) => p === 'pyproject.toml' || p === 'requirements.txt');
+    if (pythonManifest) {
+      const content = await fetchFileContent(c.repo.owner, c.repo.name, pythonManifest);
+      if (content) {
+        const isPyproject = pythonManifest === 'pyproject.toml';
+        const mcpDepRegex = isPyproject
+          ? /["']\s*(?:mcp|fastmcp)(?:\[[^\]]*\])?(?:\s*[>=<~!\s"']|$)/i
+          : /^(?:mcp|fastmcp)(?:\[[^\]]*\])?(?:\s*[>=<~!]|$)/im;
+
+        if (mcpDepRegex.test(content)) {
+          hasMcpDependency = true;
+          mcpDepDetails = `Strict dependency on mcp/fastmcp in ${pythonManifest}`;
+        }
+      }
+    }
+  }
+
+  // 3. Classify Standalone Agent Tools / SDKs with MCP support vs Pure MCP servers
+  if (isStandaloneAgentToolOrSdk && (hasToolManifest || hasMcpDependency || hasValidServerJson)) {
+    return {
+      ...c,
+      layer2: {
+        detectedType: 'agent_tool',
+        evidenceKind: 'tool_manifest',
+        details: `Standalone AI tool, framework, or MCP SDK (${c.repo.name})`,
+        subpaths: [],
+      },
+    };
+  }
+
+  const isDedicatedMcpServer =
+    !isStandaloneAgentToolOrSdk &&
+    (/(?:^|[-_])mcp(?:[-_]|$)/i.test(repoNameLower) ||
+      repoNameLower.startsWith('mcp-') ||
+      repoNameLower.endsWith('-mcp') ||
+      repoTopics.includes('mcp-server') ||
+      repoTopics.includes('model-context-protocol') ||
+      /(?:mcp|model context protocol)\s+server/i.test(repoDescLower));
+
+  if (hasValidServerJson || hasMcpDependency) {
+    if (isDedicatedMcpServer || (hasValidServerJson && !isStandaloneAgentToolOrSdk)) {
+      return {
+        ...c,
+        layer2: {
+          detectedType: 'mcp_server',
+          evidenceKind: hasValidServerJson ? 'mcp_server_manifest' : 'mcp_sdk_dependency',
+          details: hasValidServerJson
+            ? `Valid MCP server.json manifest at ${serverJsonPath}`
+            : mcpDepDetails,
+          subpaths: [],
+        },
+      };
+    }
+
+    // Has MCP dependency or server.json, but repo is a general AI framework/CLI/app
+    return {
+      ...c,
+      layer2: {
+        detectedType: 'agent_tool',
+        evidenceKind: 'tool_manifest',
+        details: `Standalone AI tool/framework with MCP integration (${c.repo.name})`,
+        subpaths: [],
+      },
+    };
+  }
+
+  // 4. Check for Agent Skills (Public SKILL.md files only - skip internal dev scripts)
   const publicSkillPaths = paths.filter((p) => {
     const isSkillMd = p.endsWith('/SKILL.md') || p === 'SKILL.md';
     if (!isSkillMd) return false;
@@ -123,13 +313,26 @@ async function checkSingleCandidate(c: GateCheckedCandidate): Promise<TypeChecke
     };
   }
 
+  // 5. Check for Standalone Agent Tools / CLIs / Repos
+  if (hasToolManifest && (matchesAgentTopicOrDesc || isStandaloneAgentToolOrSdk)) {
+    return {
+      ...c,
+      layer2: {
+        detectedType: 'agent_tool',
+        evidenceKind: 'tool_manifest',
+        details: `Executable AI agent manifest detected in ${c.repo.name}`,
+        subpaths: [],
+      },
+    };
+  }
+
   // No verified file evidence found
   return {
     ...c,
     layer2: {
       detectedType: null,
       evidenceKind: 'none',
-      details: 'No valid MCP SDK, server.json, or public SKILL.md file evidence detected',
+      details: 'No valid MCP server, public SKILL.md, or AI agent tool manifest detected',
       subpaths: [],
     },
   };

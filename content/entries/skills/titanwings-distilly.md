@@ -6,7 +6,7 @@ tagline: Set up the owner profile so a personal agent knows who it works for
   celebr
 summary: Read only the flow file the request needs, then follow it.
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 70
 selection_reason: quality_percentile
@@ -48,6 +48,7 @@ skill:
     - .gitignore
     - .npmrc
     - CITATION.cff
+tags: []
 ---
 
 > **Language**: These instructions are written in English. Detect the user's language from their first message and reply to the user in that language throughout.

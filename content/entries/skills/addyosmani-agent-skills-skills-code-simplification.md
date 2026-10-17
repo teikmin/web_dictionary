@@ -8,7 +8,7 @@ summary: "Simplify code by reducing complexity while preserving exact behavior.
   The goal is not fewer lines — it's code that is easier to read, understand,
   modify, and debug. Every simplification must pass a simple test: \"Would..."
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 71
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ skill:
     accumulated unnecessary complexity.
   folder_path: skills/code-simplification
   extra_files: []
+tags: []
 ---
 
 # Code Simplification

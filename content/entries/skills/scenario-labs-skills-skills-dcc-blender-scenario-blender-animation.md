@@ -8,7 +8,7 @@ summary: "REQUIRED BACKGROUND: scenario-blender-expert (execution channel,
   review loop, 5.2 API changes). Shot planning, cameras and animatics belong to
   scenario-blender-previs-storyboard; building the rig to scenario-blender-r..."
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 51
 selection_reason: quality_percentile
@@ -49,6 +49,8 @@ skill:
     - references/procedures.md
     - references/sources.md
     - scripts/bx_anim.py
+tags:
+  - python
 ---
 
 # Blender animation (character and object)

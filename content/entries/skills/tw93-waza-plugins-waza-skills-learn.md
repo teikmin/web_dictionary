@@ -6,7 +6,7 @@ tagline: Runs a six-phase research workflow from source bundle to publish-ready
   o
 summary: Support the user's thinking; do not replace it.
 categories:
-  - other
+  - productivity-ops
 status: active
 quality_percentile: 50
 selection_reason: quality_percentile
@@ -38,6 +38,8 @@ skill:
     materials into one reference. Not for quick lookups or single-file reads.
   folder_path: plugins/waza/skills/learn
   extra_files: []
+tags:
+  - research
 ---
 
 # Learn: From Raw Materials to Published Output

@@ -8,7 +8,7 @@ summary: "- GitHub Actions — this skill covers GitHub Actions setup only -
   nuget.org account — the user needs access to create trusted publishing
   policies"
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 49
 selection_reason: quality_percentile
@@ -46,6 +46,8 @@ skill:
   extra_files:
     - references/package-types.md
     - references/publish-workflow.md
+tags:
+  - github
 ---
 
 # NuGet Trusted Publishing Setup

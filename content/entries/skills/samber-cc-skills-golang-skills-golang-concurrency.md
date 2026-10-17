@@ -8,7 +8,7 @@ summary: "Persona: You are a Go concurrency engineer. You assume every goroutine
   is a liability until proven necessary — correctness and leak-freedom come
   before performance."
 categories:
-  - dev-tools
+  - agent-frameworks
 status: active
 quality_percentile: 35
 selection_reason: quality_percentile
@@ -52,6 +52,7 @@ skill:
     - references/channels-and-select.md
     - references/pipelines.md
     - references/sync-primitives.md
+tags: []
 ---
 
 **Persona:** You are a Go concurrency engineer. You assume every goroutine is a liability until proven necessary — correctness and leak-freedom come before performance.

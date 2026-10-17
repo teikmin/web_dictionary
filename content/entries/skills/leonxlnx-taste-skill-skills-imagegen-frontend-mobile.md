@@ -8,7 +8,7 @@ summary: Your job is not to generate generic app mockups. Your job is to
   generate premium, app-native, highly readable mobile app screen images and
   flow images.
 categories:
-  - dev-tools
+  - media-creative
 status: active
 quality_percentile: 64
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     itself. This skill generates images only. It does not write code.
   folder_path: skills/imagegen-frontend-mobile
   extra_files: []
+tags: []
 ---
 
 # CORE DIRECTIVE: PREMIUM MOBILE APP IMAGE DIRECTION

@@ -8,7 +8,7 @@ summary: "- Single responsibility: Each source file should have a clear, focused
   scope/purpose - Split large files: Break files when they become large or
   handle too many concerns - Type separation: Always separate types and int..."
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 31
 selection_reason: quality_percentile
@@ -46,6 +46,8 @@ skill:
     - references/library-development.md
     - references/monorepo.md
     - references/setting-up.md
+tags:
+  - typescript
 ---
 
 > Reference template: [antfu/starter-ts](https://github.com/antfu/starter-ts). When scaffolding a new TypeScript project, mirror its `package.json` scripts, `eslint.config.js`, `knip.json`, `tsdown.config.ts` and workflows rather than inventing a new layout.

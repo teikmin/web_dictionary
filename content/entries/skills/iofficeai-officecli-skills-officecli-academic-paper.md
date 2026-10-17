@@ -7,7 +7,7 @@ tagline: "Use this skill to build academic-style .docx output: journal /
 summary: When the docx base rules cover it, the text here says → see docx v2 §X.
   Read docx v2 first if you have not.
 categories:
-  - dev-tools
+  - domain-research
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
     single .docx."
   folder_path: skills/officecli-academic-paper
   extra_files: []
+tags: []
 ---
 
 # OfficeCLI Academic Paper Skill

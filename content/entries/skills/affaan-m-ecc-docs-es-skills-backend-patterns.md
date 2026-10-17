@@ -9,7 +9,7 @@ summary: "- Diseñar endpoints de API REST o GraphQL - Implementar capas de
   (N+1, indexación, connection pooling) - Agregar caché (Redis, en memoria,
   hea..."
 categories:
-  - security
+  - databases-memory
 status: active
 quality_percentile: 96
 selection_reason: quality_percentile
@@ -41,6 +41,8 @@ skill:
     y rutas API de Next.js.
   folder_path: docs/es/skills/backend-patterns
   extra_files: []
+tags:
+  - redis
 ---
 
 # Patrones de Desarrollo Backend

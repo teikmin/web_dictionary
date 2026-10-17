@@ -8,7 +8,7 @@ summary: "Expected output: a conversion value-model spec (per-conversion value +
   net-value/margin adjustment + rule logic), a static-vs-dynamic value-rule
   decision, proxy values for non-revenue actions with a stated derivation,..."
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 48
 selection_reason: quality_percentile
@@ -48,6 +48,7 @@ skill:
     ad-account-auditor. 付费广告转化价值建模/利润出价/价值规则QA
   folder_path: ad/activate/conversion-value-mapper
   extra_files: []
+tags: []
 ---
 
 # Conversion Value Mapper

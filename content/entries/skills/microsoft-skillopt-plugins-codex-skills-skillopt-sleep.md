@@ -8,7 +8,7 @@ summary: The current shared engine does not write AGENTS.md. For a Codex-visible
   result, always select a Codex skill explicitly with --target-skill-path (for
   example .agents/skills//SKILL.md). If project CLAUDE.md is not a des...
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 98
 selection_reason: official_vendor
@@ -44,6 +44,7 @@ skill:
     validated memory + skills behind a held-out gate."
   folder_path: plugins/codex/skills/skillopt-sleep
   extra_files: []
+tags: []
 ---
 
 # SkillOpt-Sleep: usage-driven self-evolution for a local Codex agent

@@ -9,7 +9,7 @@ summary: "- A playable map, level, room set, tilemap, terrain or prop kit, with
   backdrop, or an HD-2D plate with lights and motion. - Map data must be
   valid..."
 categories:
-  - productivity
+  - domain-research
 status: active
 quality_percentile: 49
 selection_reason: quality_percentile
@@ -60,6 +60,7 @@ skill:
     - references/map-strategies.md
     - references/parallax-backgrounds.md
     - references/prop-pack-contract.md
+tags: []
 ---
 
 # Generate 2D Map

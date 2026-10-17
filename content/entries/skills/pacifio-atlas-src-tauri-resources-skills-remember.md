@@ -7,7 +7,7 @@ tagline: "Save the decisions, facts, dead ends and architecture this
 summary: "Use the memoryremember tool from the atlasmemory MCP server, one call
   per item, with kind set to:"
 categories:
-  - dev-tools
+  - databases-memory
 status: active
 quality_percentile: 69
 selection_reason: quality_percentile
@@ -39,6 +39,8 @@ skill:
     future sessions can build on them.
   folder_path: src-tauri/resources/skills/remember
   extra_files: []
+tags:
+  - memory
 ---
 
 # Remember

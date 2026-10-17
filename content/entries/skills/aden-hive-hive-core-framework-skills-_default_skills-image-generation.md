@@ -8,7 +8,7 @@ summary: Defaults are deliberately cheap and fast. quality is locked to low —
   medium and high are disabled for cost control, and any request for a higher
   tier is automatically forced to low. Only raise n when the user explicit...
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 97
 selection_reason: quality_percentile
@@ -47,6 +47,7 @@ skill:
     moderation).
   folder_path: core/framework/skills/_default_skills/image-generation
   extra_files: []
+tags: []
 ---
 
 # Image generation

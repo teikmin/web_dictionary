@@ -8,7 +8,7 @@ summary: DTG Base is a custom abstract model (dtgbase.DTGBase) that provides
   common utility methods for Odoo development. It's designed to be inherited by
   other models to gain access to helpful utilities.
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 32
 selection_reason: quality_percentile
@@ -44,6 +44,7 @@ skill:
     - CLAUDE.md
     - README.md
     - odoo-18-dtg-base-guide.md
+tags: []
 ---
 
 # DTG Base Skill

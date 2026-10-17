@@ -8,7 +8,7 @@ summary: v2.1 agrega instintos con alcance de proyecto — los patrones de React
   se quedan en tu proyecto React, las convenciones de Python se quedan en tu
   proyecto Python, y los patrones universales (como "siempre validar la en...
 categories:
-  - security
+  - agent-frameworks
 status: active
 quality_percentile: 96
 selection_reason: quality_percentile
@@ -41,6 +41,8 @@ skill:
     proyecto para prevenir contaminación entre proyectos.
   folder_path: docs/es/skills/continuous-learning-v2
   extra_files: []
+tags:
+  - python
 ---
 
 # Aprendizaje Continuo v2.1 - Arquitectura Basada en Instintos

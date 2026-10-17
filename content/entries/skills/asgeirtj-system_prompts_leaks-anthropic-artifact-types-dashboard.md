@@ -8,7 +8,7 @@ summary: "What the person asks for is what you build; the defaults apply only to
   what they left unsaid. Whatever the page's own code can draw or do is allowed:
   any chart, control or interaction. A chart they named is the one yo..."
 categories:
-  - ai-frameworks
+  - other
 status: active
 quality_percentile: 85
 selection_reason: quality_percentile
@@ -46,6 +46,7 @@ skill:
     - artifact-type/reference/design-defaults.md
     - artifact-type/reference/exporting.md
     - artifact-type/reference/features.md
+tags: []
 ---
 
 # Dashboard — the shared type

@@ -4,7 +4,7 @@ name: skills-house-style
 tagline: Lua conventions from the project directory
 summary: Lua conventions from the project directory
 categories:
-  - dev-tools
+  - coding-agents
 status: active
 quality_percentile: 39
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: Lua conventions from the project directory
   folder_path: tests/stubs/skills/project/house-style
   extra_files: []
+tags: []
 ---
 
 # House Style

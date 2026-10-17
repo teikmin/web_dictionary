@@ -8,7 +8,7 @@ summary: "Check for product marketing context first: If
   legacy product-marketing-context.md filename, in older setups), read it before
   asking question..."
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 84
 selection_reason: quality_percentile
@@ -59,6 +59,7 @@ skill:
     - references/creative-research-automation.md
     - references/google-ads-audit-checklist.md
     - references/google-search-playbook.md
+tags: []
 ---
 
 # Paid Ads

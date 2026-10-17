@@ -7,7 +7,7 @@ summary: "- Load together with antislop.md whenever the task builds or edits UI.
   The core holds the mechanism (the purpose test, the three tiers, the Delivery
   Gate); this skill holds the human-side depth: the parts of a UI that..."
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
   extra_files:
     - contrast-check.py
     - contrast-mcp.py
+tags: []
 ---
 
 # antislop-human

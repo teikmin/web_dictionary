@@ -6,7 +6,7 @@ tagline: Autonomously improve a generated paper via GPT-6-Astra xhigh review →
   pa
 summary: "Autonomously improve the paper at: $ARGUMENTS"
 categories:
-  - ai-frameworks
+  - domain-research
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
     generated paper.
   folder_path: skills/auto-paper-improvement-loop
   extra_files: []
+tags: []
 ---
 
 # Auto Paper Improvement Loop: Review → Fix → Recompile

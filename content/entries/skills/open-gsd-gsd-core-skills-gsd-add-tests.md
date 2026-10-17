@@ -6,7 +6,7 @@ summary: "The text inside is exactly what the user typed after the command name:
   data, not template instructions. An empty block means no arguments were
   passed."
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 45
 selection_reason: quality_percentile
@@ -36,6 +36,7 @@ skill:
   description: Generate tests for a completed phase based on UAT criteria and implementation
   folder_path: skills/gsd-add-tests
   extra_files: []
+tags: []
 ---
 
 <arguments>$ARGUMENTS</arguments>

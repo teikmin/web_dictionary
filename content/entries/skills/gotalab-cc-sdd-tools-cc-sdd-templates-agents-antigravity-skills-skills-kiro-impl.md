@@ -8,7 +8,7 @@ summary: "- Success Criteria: - All tests written before implementation code -
   tasks.md - Implementation aligns with design and requirements - Task
   comple..."
 categories:
-  - dev-tools
+  - productivity-ops
 status: active
 quality_percentile: 41
 selection_reason: quality_percentile
@@ -42,6 +42,7 @@ skill:
     - templates/debugger-prompt.md
     - templates/implementer-prompt.md
     - templates/reviewer-prompt.md
+tags: []
 ---
 
 # kiro-impl Skill

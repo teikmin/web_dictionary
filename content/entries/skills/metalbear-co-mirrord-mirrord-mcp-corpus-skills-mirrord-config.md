@@ -9,7 +9,7 @@ summary: "Generate and validate mirrord.json configuration files: - Generate
   configs against schema - Fix invalid configurations with explanations -
   Expl..."
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 38
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
   extra_files:
     - README.md
     - references/fs-mode-internals.md
+tags: []
 ---
 
 # Mirrord Configuration Skill

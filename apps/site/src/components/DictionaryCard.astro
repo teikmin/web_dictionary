@@ -1,0 +1,437 @@
+---
+import Sparkline from './Sparkline.astro';
+import StatusBadge from './StatusBadge.astro';
+import { formatStars } from '../lib/entries';
+
+interface Props {
+  entry: {
+    data: {
+      slug: string;
+      type: 'mcp_server' | 'agent_skill' | 'agent_tool';
+      name: string;
+      tagline?: string;
+      summary?: string;
+      categories: string[];
+      tags?: string[];
+      needs_keys?: boolean;
+      status?: 'active' | 'slowing' | 'dormant' | 'archived';
+      prerequisites?: string[];
+      signals: {
+        stars: number;
+        last_commit?: string;
+        stars_delta_7d?: number;
+        stars_growth_pct?: number;
+        trending_score?: number;
+        rank_current?: number;
+        rank_delta?: number | null;
+        velocity_source?: string;
+        sparkline_4w?: number[];
+      };
+      source: {
+        repo: string;
+        official_vendor?: boolean;
+        license?: string;
+      };
+      launch?: {
+        transport?: 'stdio' | 'http';
+        command?: string;
+        args?: string[];
+        env?: Record<string, string>;
+      };
+      skill?: {
+        skill_name: string;
+        description: string;
+        folder_path: string;
+        pack_slug?: string;
+        pack_total_skills?: number;
+        is_pack_primary?: boolean;
+        clients?: string[];
+      };
+      tool?: {
+        subcategory?: string;
+        install_command?: string;
+        runtime?: string;
+        execution_mode?: string;
+        has_mcp_support?: boolean;
+      };
+    };
+  };
+  class?: string;
+}
+
+const { entry, class: className = '' } = Astro.props;
+const data = entry.data;
+
+const [owner, repoName] = data.source.repo.split('/');
+const avatarUrl = `https://github.com/${owner}.png?size=80`;
+
+const categoryNames: Record<string, string> = {
+  'coding-agents': 'Coding & Dev',
+  'browser-web': 'Browser & Web',
+  'databases-memory': 'Databases & Memory',
+  'agent-frameworks': 'Frameworks',
+  'productivity-ops': 'Productivity',
+  'cloud-infra': 'Cloud & DevOps',
+  'media-creative': 'Media & Creative',
+  'security-auth': 'Security',
+  'domain-research': 'Research & Domain',
+  'other': 'Other Utilities',
+};
+
+const subcategoryLabels: Record<string, string> = {
+  coding_agent: 'Coding Agent',
+  agent_framework: 'Agent Framework',
+  browser_agent: 'Browser Agent',
+  memory_rag: 'Memory & RAG',
+  eval_observability: 'Eval & Observability',
+  sdk_harness: 'SDK & Harness',
+  desktop_ui: 'Desktop UI',
+  other: 'Agent Tool',
+};
+
+const primaryCategory = data.categories?.[0] || 'other';
+const categoryLabel = categoryNames[primaryCategory] || primaryCategory;
+const subcategoryLabel = data.tool?.subcategory ? subcategoryLabels[data.tool.subcategory] || 'Agent Tool' : undefined;
+
+// 4-Tier Deterministic Synthesis Algorithm for Line 1 (ADD-5)
+function getDefinitionSentence(): string {
+  // Tier 2: Sanitized Tagline
+  const tagline = (data.tagline || '').trim();
+  if (tagline.length >= 35) {
+    const asciiMatches = tagline.match(/[\x20-\x7E]/g);
+    const asciiRatio = (asciiMatches ? asciiMatches.length : 0) / tagline.length;
+    const hasBadTokens = /[⚠️|\[!|```]/.test(tagline) || tagline.includes('>-') || tagline.includes('http:') || tagline.includes('https:');
+    if (asciiRatio >= 0.8 && !hasBadTokens) {
+      return tagline.endsWith('.') ? tagline : `${tagline}.`;
+    }
+  }
+
+  // Tier 3: Sanitized Summary
+  const summary = (data.summary || '').trim();
+  if (summary.length >= 30) {
+    const asciiMatches = summary.match(/[\x20-\x7E]/g);
+    const asciiRatio = (asciiMatches ? asciiMatches.length : 0) / summary.length;
+    const isMultilingualTable = summary.includes('English') && summary.includes('|');
+    const hasBadPatterns = /(?:warning:|disclaimer:|the plugin is consumed|npm install|pip install|git clone|uvx |npx )/i.test(summary);
+    const hasBadTokens = summary.includes('>-') || summary.includes('|') || summary.includes('```');
+    if (asciiRatio >= 0.75 && !isMultilingualTable && !hasBadPatterns && !hasBadTokens) {
+      const clean = summary.replace(/\s+/g, ' ').trim();
+      return clean.endsWith('.') ? clean : `${clean}.`;
+    }
+  }
+
+  // Tier 4: Structured Semantic Fallback
+  if (data.type === 'mcp_server') {
+    const transport = data.launch?.transport === 'http' ? 'remote HTTP/SSE' : 'local stdio';
+    return `${data.name} is an open-source MCP server providing ${categoryLabel.toLowerCase()} integration via ${transport}.`;
+  }
+  if (data.type === 'agent_skill') {
+    return `${data.name} is an agent skill for ${categoryLabel.toLowerCase()} workflows compatible with Claude Code, Codex, and Antigravity.`;
+  }
+  const toolSubcat = subcategoryLabel || 'agent tool';
+  return `${data.name} is an open-source ${toolSubcat.toLowerCase()} application and framework for AI agent developers.`;
+}
+
+const definitionSentence = getDefinitionSentence();
+
+// Line 2: Pillar & Runtime
+const pillarLabel =
+  data.type === 'mcp_server'
+    ? 'MCP Server'
+    : data.type === 'agent_tool'
+    ? (subcategoryLabel || 'Agent Tool')
+    : 'Agent Skill';
+
+const pillarBadgeClass =
+  data.type === 'mcp_server'
+    ? 'bg-blue-50 text-blue-700 border-blue-200'
+    : data.type === 'agent_tool'
+    ? 'bg-purple-50 text-purple-700 border-purple-200'
+    : 'bg-teal-50 text-teal-700 border-teal-200';
+
+const runtimeDisplay =
+  data.type === 'agent_tool'
+    ? `${(data.tool?.runtime || 'Native').toUpperCase()} · ${data.tool?.execution_mode === 'cloud' ? 'Cloud Hosted' : data.tool?.execution_mode === 'hybrid' ? 'Hybrid Execution' : 'Local CLI'}`
+    : data.type === 'mcp_server'
+    ? (data.prerequisites && data.prerequisites.length > 0 ? data.prerequisites[0] : (data.launch?.transport === 'http' ? 'HTTP Remote Server' : 'Node.js / stdio Server'))
+    : 'Markdown Spec (SKILL.md) · Reusable Workflow';
+
+// Line 3: Category & Tags
+const rawTags = data.tags && data.tags.length > 0 ? data.tags : [primaryCategory, data.type.replace('_', '-')];
+const normalizedTags = rawTags.slice(0, 4).map((t) => (t.startsWith('#') ? t : `#${t}`));
+
+// Line 4: Auth & Cost
+const authDisplay = data.needs_keys ? 'Requires API Key' : 'No API Key Required';
+const licenseDisplay = data.source?.license ? `Open Source (${data.source.license})` : 'Open Source';
+const executionDisplay =
+  data.type === 'agent_tool'
+    ? (data.tool?.execution_mode === 'cloud' ? 'Cloud Execution' : data.tool?.execution_mode === 'hybrid' ? 'Hybrid Execution' : 'Local Terminal Execution')
+    : data.type === 'mcp_server'
+    ? 'Local Stdio / Process RPC'
+    : 'Client LLM Context Execution';
+
+// Line 5: Compatible Clients / Target Interface
+const interfaceLabel = data.type === 'agent_tool' ? 'Target Interface' : 'Compatible Clients';
+const interfaceValue =
+  data.type === 'agent_tool'
+    ? `Standalone CLI · ${(data.tool?.runtime || 'Local').toUpperCase()} Runtime · Developer Terminal`
+    : 'Claude Code · OpenAI Codex · Google Antigravity';
+
+// Line 6: Trend Telemetry
+const hasTrendingScore = (data.signals?.trending_score || 0) > 0;
+const rankCurrent = data.signals?.rank_current;
+const deltaStars = data.signals?.stars_delta_7d || 0;
+const sparklinePoints = data.signals?.sparkline_4w || [];
+
+// Quick 1-Line Install Command
+let quickCmd = '';
+if (data.type === 'mcp_server') {
+  if (data.launch?.command) {
+    quickCmd = `${data.launch.command}${data.launch.args && data.launch.args.length > 0 ? ' ' + data.launch.args.join(' ') : ''}`;
+  } else {
+    quickCmd = `npx -y ${data.slug}`;
+  }
+} else if (data.type === 'agent_skill') {
+  const folder = data.skill?.folder_path ? ` --path ${data.skill.folder_path}` : '';
+  quickCmd = `npx skills add https://github.com/${data.source.repo}${folder}`;
+} else {
+  quickCmd = data.tool?.install_command || `git clone https://github.com/${data.source.repo}.git`;
+}
+
+const upstreamUrl =
+  data.type === 'agent_skill' && data.skill?.folder_path
+    ? `https://github.com/${data.source.repo}/tree/main/${data.skill.folder_path}`
+    : `https://github.com/${data.source.repo}`;
+---
+
+<header
+  class:list={[
+    'rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50/70 via-white to-slate-50/40 p-6 sm:p-7 shadow-xs space-y-6',
+    className,
+  ]}
+>
+  <!-- Top Identity & Action Header Row -->
+  <div class="flex flex-col md:flex-row md:items-start justify-between gap-6 pb-6 border-b border-slate-200/80">
+    <!-- Left: Avatar + Title + Badges + Subtitle -->
+    <div class="flex items-start gap-4">
+      <img
+        src={avatarUrl}
+        alt={`${owner} avatar`}
+        class="w-14 h-14 rounded-xl border border-slate-200 bg-slate-50 object-cover shrink-0 shadow-xs"
+        loading="lazy"
+      />
+      <div>
+        <div class="flex flex-wrap items-center gap-2 mb-1.5">
+          <span class:list={['px-2 py-0.5 text-xs font-semibold uppercase tracking-wider rounded border', pillarBadgeClass]}>
+            {pillarLabel}
+          </span>
+          <StatusBadge status={data.status} />
+          {data.source.official_vendor && (
+            <span class="px-2 py-0.5 text-xs font-semibold rounded bg-blue-50 text-blue-700 border border-blue-200 inline-flex items-center gap-1">
+              Official
+            </span>
+          )}
+          {data.tool?.has_mcp_support && (
+            <span class="px-2 py-0.5 text-xs font-semibold rounded bg-blue-50 text-blue-700 border border-blue-200 inline-flex items-center gap-1">
+              🔌 MCP Support
+            </span>
+          )}
+        </div>
+
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          {data.name}
+        </h1>
+
+        <p class="text-xs font-mono text-slate-500 mt-1">
+          by <a href={`https://github.com/${owner}`} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">{owner}</a>
+          <span class="text-slate-300">/</span>
+          <span class="text-slate-700">{repoName}</span>
+          {data.skill?.folder_path && (
+            <span class="text-slate-400"> ({data.skill.folder_path})</span>
+          )}
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: Action Buttons -->
+    <div class="flex sm:flex-col items-stretch gap-2.5 shrink-0">
+      <a
+        href={upstreamUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 text-xs font-medium text-slate-700 transition-colors shadow-xs"
+      >
+        <svg class="w-4 h-4 text-slate-500" fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+        </svg>
+        <span>View on GitHub</span>
+      </a>
+
+      <a
+        href="#install"
+        class="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-blue-50 border border-blue-200 hover:bg-blue-100 text-xs font-semibold text-blue-700 transition-colors shadow-xs"
+      >
+        <span>Jump to install</span>
+        <span>↓</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 1-Line Quick Install Command Bar -->
+  <div class="bg-slate-900 rounded-xl p-3 sm:p-3.5 border border-slate-800 flex items-center justify-between gap-3 text-xs font-mono shadow-xs">
+    <div class="flex items-center gap-2 min-w-0 text-slate-300">
+      <span class="text-slate-500 select-none">$</span>
+      <code class="text-emerald-400 truncate select-all">{quickCmd}</code>
+    </div>
+    <button
+      type="button"
+      class="quick-copy-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-[11px] font-sans font-medium transition-colors shrink-0 cursor-pointer flex items-center gap-1"
+      data-cmd={quickCmd}
+      title="Copy command"
+    >
+      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+      </svg>
+      <span class="btn-label">Copy</span>
+    </button>
+  </div>
+
+  <!-- 6-Line Standardized Definition Grid -->
+  <dl class="space-y-3 text-xs leading-relaxed pt-2">
+    <!-- Line 1: What It Is -->
+    <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+      <dt class="w-36 shrink-0 font-mono text-[11px] font-semibold text-slate-700 uppercase tracking-wider">
+        What It Is:
+      </dt>
+      <dd class="flex-1 text-slate-900 font-medium leading-relaxed">
+        {definitionSentence}
+      </dd>
+    </div>
+
+    <!-- Line 2: Pillar & Runtime -->
+    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+      <dt class="w-36 shrink-0 font-mono text-[11px] font-semibold text-slate-700 uppercase tracking-wider">
+        Pillar &amp; Runtime:
+      </dt>
+      <dd class="flex-1 flex flex-wrap items-center gap-2">
+        <span class:list={['px-2 py-0.5 rounded text-[11px] font-semibold uppercase tracking-wider border shrink-0', pillarBadgeClass]}>
+          {pillarLabel}
+        </span>
+        <span class="text-slate-400">·</span>
+        <span class="font-mono text-slate-700 font-medium">
+          {runtimeDisplay}
+        </span>
+      </dd>
+    </div>
+
+    <!-- Line 3: Category & Tags -->
+    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+      <dt class="w-36 shrink-0 font-mono text-[11px] font-semibold text-slate-700 uppercase tracking-wider">
+        Category &amp; Tags:
+      </dt>
+      <dd class="flex-1 flex flex-wrap items-center gap-1.5">
+        <span class="font-semibold text-slate-800">
+          {categoryLabel}
+        </span>
+        <span class="text-slate-300">·</span>
+        {normalizedTags.map((t) => (
+          <span class="px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 font-mono text-[10px]">
+            {t}
+          </span>
+        ))}
+      </dd>
+    </div>
+
+    <!-- Line 4: Auth & Cost -->
+    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+      <dt class="w-36 shrink-0 font-mono text-[11px] font-semibold text-slate-700 uppercase tracking-wider">
+        Auth &amp; Cost:
+      </dt>
+      <dd class="flex-1 flex flex-wrap items-center gap-2 text-slate-700">
+        <span class="font-medium">{executionDisplay}</span>
+        <span class="text-slate-300">·</span>
+        <span class="font-medium">{licenseDisplay}</span>
+        <span class="text-slate-300">·</span>
+        <span class={data.needs_keys ? 'text-amber-700 font-semibold' : 'text-emerald-700 font-semibold'}>
+          {authDisplay}
+        </span>
+      </dd>
+    </div>
+
+    <!-- Line 5: Target Interface / Compatible Clients -->
+    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+      <dt class="w-36 shrink-0 font-mono text-[11px] font-semibold text-slate-700 uppercase tracking-wider">
+        {interfaceLabel}:
+      </dt>
+      <dd class="flex-1 text-slate-800 font-mono">
+        {interfaceValue}
+      </dd>
+    </div>
+
+    <!-- Line 6: Trend Status & Momentum -->
+    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 pt-2 border-t border-slate-100">
+      <dt class="w-36 shrink-0 font-mono text-[11px] font-semibold text-slate-700 uppercase tracking-wider">
+        Trend Status:
+      </dt>
+      <dd class="flex-1 flex flex-wrap items-center gap-3">
+        {hasTrendingScore ? (
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-lg bg-orange-50 border border-orange-200 text-orange-800 font-semibold text-xs shadow-xs">
+            <span>🔥</span>
+            <span>#{rankCurrent ?? 'Top'} Trending</span>
+            {deltaStars > 0 && (
+              <span class="font-mono text-orange-700 font-bold">
+                (+{deltaStars.toLocaleString()} ★ this week)
+              </span>
+            )}
+          </div>
+        ) : (
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-medium">
+            <span>🌱</span>
+            <span>Active Tracking (★ {formatStars(data.signals?.stars || 0)} total)</span>
+          </div>
+        )}
+
+        <!-- 4-Week SVG Sparkline -->
+        <div class="flex items-center gap-1.5 pl-1" title="4-week star trend trajectory">
+          <span class="text-[10px] font-mono text-slate-500 uppercase">4w trend:</span>
+          <Sparkline
+            points={sparklinePoints}
+            width={72}
+            height={20}
+            strokeWidth={1.75}
+            showPoints={true}
+          />
+        </div>
+      </dd>
+    </div>
+  </dl>
+</header>
+
+<script>
+  function setupCopyButtons() {
+    document.querySelectorAll<HTMLButtonElement>('.quick-copy-btn').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const cmd = btn.getAttribute('data-cmd');
+        if (!cmd) return;
+        try {
+          await navigator.clipboard.writeText(cmd);
+          const label = btn.querySelector('.btn-label');
+          if (label) {
+            const original = label.textContent;
+            label.textContent = 'Copied!';
+            btn.classList.add('bg-emerald-800', 'text-white');
+            setTimeout(() => {
+              label.textContent = original;
+              btn.classList.remove('bg-emerald-800', 'text-white');
+            }, 2000);
+          }
+        } catch {
+          // Clipboard write failed fallback
+        }
+      });
+    });
+  }
+
+  setupCopyButtons();
+  document.addEventListener('astro:page-load', setupCopyButtons);
+</script>

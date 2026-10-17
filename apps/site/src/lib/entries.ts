@@ -2,7 +2,8 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 
 export type McpCollectionItem = CollectionEntry<'mcp'>;
 export type SkillCollectionItem = CollectionEntry<'skills'>;
-export type AnyCollectionItem = McpCollectionItem | SkillCollectionItem;
+export type ToolCollectionItem = CollectionEntry<'tools'>;
+export type AnyCollectionItem = McpCollectionItem | SkillCollectionItem | ToolCollectionItem;
 
 export async function getAllMcp(): Promise<McpCollectionItem[]> {
   const items = await getCollection('mcp');
@@ -14,9 +15,14 @@ export async function getAllSkills(): Promise<SkillCollectionItem[]> {
   return items.sort((a, b) => (b.data.signals.stars || 0) - (a.data.signals.stars || 0));
 }
 
+export async function getAllTools(): Promise<ToolCollectionItem[]> {
+  const items = await getCollection('tools');
+  return items.sort((a, b) => (b.data.signals.stars || 0) - (a.data.signals.stars || 0));
+}
+
 export async function getAllEntries(): Promise<AnyCollectionItem[]> {
-  const [mcp, skills] = await Promise.all([getAllMcp(), getAllSkills()]);
-  return [...mcp, ...skills].sort((a, b) => (b.data.signals.stars || 0) - (a.data.signals.stars || 0));
+  const [mcp, skills, tools] = await Promise.all([getAllMcp(), getAllSkills(), getAllTools()]);
+  return [...mcp, ...skills, ...tools].sort((a, b) => (b.data.signals.stars || 0) - (a.data.signals.stars || 0));
 }
 
 export async function getEntriesByCategory(categoryId: string): Promise<AnyCollectionItem[]> {
@@ -34,6 +40,7 @@ export function formatStars(count?: number): string {
 export function formatTimeAgo(isoString?: string): string {
   if (!isoString) return 'recently';
   const date = new Date(isoString);
+  if (Number.isNaN(date.getTime())) return 'recently';
   const now = new Date();
   const diffMs = now.getTime() - date.getTime();
   const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));

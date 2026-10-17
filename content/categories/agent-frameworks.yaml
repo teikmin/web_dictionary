@@ -1,0 +1,17 @@
+id: agent-frameworks
+name: Orchestration & Frameworks
+tagline: Multi-agent coordination runtimes, workflow graphs, and MCP gateways
+description: Multi-agent orchestration engines, directed workflow graphs, gateway proxies, and agent runtimes.
+icon: cpu
+keywords:
+  - langgraph
+  - langchain
+  - autogen
+  - crewai
+  - llamaindex
+  - fastmcp
+  - mcp-gateway
+  - swarm
+  - multi-agent
+  - orchestrator
+  - dify

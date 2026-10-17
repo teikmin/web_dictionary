@@ -7,7 +7,7 @@ summary: "An open-source Model Context Protocol (MCP) server that lets Claude,
   Cursor, VS Code Copilot, Codex and other AI clients create, read and edit
   Excel files: charts, PivotTables, formulas, tables and more. It is built o..."
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 78
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ launch:
     - excel-mcp-server
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <!-- mcp-name: io.github.haris-musa/excel-mcp-server -->

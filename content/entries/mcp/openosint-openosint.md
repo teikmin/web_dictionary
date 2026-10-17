@@ -6,7 +6,7 @@ tagline: AI-powered OSINT agent with interactive REPL, MCP server, and CLI. 20
   resear
 summary: "mcp-name: io.github.OpenOSINT/openosint"
 categories:
-  - security
+  - coding-agents
 status: active
 quality_percentile: 77
 selection_reason: quality_percentile
@@ -39,6 +39,9 @@ launch:
     - openosint
   env_vars: []
   confidence: manifest
+tags:
+  - github
+  - security
 ---
 
 mcp-name: io.github.OpenOSINT/openosint

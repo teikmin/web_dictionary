@@ -8,7 +8,7 @@ summary: "Never open your own GUI Blender window to test things on the user's
   machine: windows steal focus and pile up. Live work goes through the user's
   already-running Blender; everything else runs headless, one Blender proce..."
 categories:
-  - ai-frameworks
+  - media-creative
 status: active
 quality_percentile: 51
 selection_reason: quality_percentile
@@ -49,6 +49,8 @@ skill:
     - scripts/bx_audit.py
     - scripts/bx_gui.py
     - scripts/bx_review.py
+tags:
+  - python
 ---
 
 # Blender expert (router and agent protocol)

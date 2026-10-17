@@ -8,7 +8,7 @@ summary: Full natural language control over Google Calendar, Drive, Gmail, Docs,
   Sheets, Slides, Forms, Tasks, Contacts, and Chat through all MCP clients, AI
   assistants and developer tools. Includes a full featured CLI & Code...
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 100
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ launch:
     - workspace-mcp
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <!-- mcp-name: io.github.taylorwilsdon/workspace-mcp -->

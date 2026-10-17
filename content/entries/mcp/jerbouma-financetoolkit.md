@@ -6,7 +6,7 @@ summary: While browsing a variety of websites, I repeatedly observed significant
   fluctuations in the same financial metric among different sources. Similarly,
   the reported financial statements often didn't line up, and there w...
 categories:
-  - productivity
+  - domain-research
 status: active
 quality_percentile: 48
 selection_reason: quality_percentile
@@ -37,6 +37,7 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 <!-- mcp-name: io.github.JerBouma/financetoolkit -->

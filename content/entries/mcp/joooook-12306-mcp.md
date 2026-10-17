@@ -6,7 +6,7 @@ summary: A 12306 ticket search server based on the Model Context Protocol (MCP).
   The server provides a simple API interface that allows users to search for
   12306 tickets.
 categories:
-  - other
+  - browser-web
 status: active
 quality_percentile: 30
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ launch:
     - 12306-mcp
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # <div align="center">12306-mcp</div>

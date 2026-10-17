@@ -7,7 +7,7 @@ tagline: State-space model with O(n) complexity vs Transformers' O(n²). 5×
 summary: Mamba is a state-space model architecture achieving O(n) linear
   complexity for sequence modeling.
 categories:
-  - ai-frameworks
+  - productivity-ops
 status: active
 quality_percentile: 61
 selection_reason: quality_percentile
@@ -43,6 +43,8 @@ skill:
     - references/architecture-details.md
     - references/benchmarks.md
     - references/training-guide.md
+tags:
+  - linear
 ---
 
 # Mamba - Selective State Space Models

@@ -7,7 +7,7 @@ tagline: 通用 AI 生图：文生图 / 图生图 / 图像变体。当用户说 
 summary: 调用共享脚本 skills/shared/scripts/aiimage.py（纯标准库，无第三方依赖）。 本 SKILL
   不索要、不回显、不写入、不提交任何真实 API key —— key 只存在于用户自己的 .env。
 categories:
-  - productivity
+  - other
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -40,6 +40,7 @@ skill:
   folder_path: skills/builtin/ai-image-gen
   extra_files:
     - EASEL-META.md
+tags: []
 ---
 
 # ai-image-gen Skill

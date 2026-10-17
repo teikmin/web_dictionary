@@ -5,7 +5,7 @@ tagline: "Google Calendar: Create a new event."
 summary: "- Use RFC3339 format for times (e.g. 2026-06-17T09:00:00-07:00). - The
   --meet flag automatically adds a Google Meet link to the event."
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 55
 selection_reason: quality_percentile
@@ -35,6 +35,7 @@ skill:
   description: "Google Calendar: Create a new event."
   folder_path: skills/gws-calendar-insert
   extra_files: []
+tags: []
 ---
 
 # calendar +insert

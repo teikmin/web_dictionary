@@ -8,7 +8,7 @@ summary: "Expected output: a ready-to-import creative set (RSA
   note to the destination URL, plus the standard handoff summary for
   memory/ad/ad-creative-..."
 categories:
-  - productivity
+  - productivity-ops
 status: active
 quality_percentile: 48
 selection_reason: quality_percentile
@@ -45,6 +45,8 @@ skill:
   extra_files:
     - references/ad-format-specs.md
     - references/angle-matrix.md
+tags:
+  - memory
 ---
 
 # Ad Creative Builder

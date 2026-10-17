@@ -8,7 +8,7 @@ summary: A production-ready Model Context Protocol (MCP) server that bridges
   Ghidra's powerful reverse engineering capabilities with modern AI tools and
   automation frameworks. 209 MCP tools, battle-tested AI workflows, and the...
 categories:
-  - browser-automation
+  - security-auth
 status: active
 quality_percentile: 66
 selection_reason: quality_percentile
@@ -41,6 +41,7 @@ launch:
     - ghidra-mcp-bridge
   env_vars: []
   confidence: manifest
+tags: []
 ---
 
 # Ghidra MCP Server

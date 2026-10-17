@@ -8,7 +8,7 @@ summary: 🎉 v0.3.4 is out — the summary stays small as your project ages,
   commits are filed under the code they change, and stale warnings no longer
   depend on your time zone. See what changed →
 categories:
-  - dev-tools
+  - databases-memory
 status: active
 quality_percentile: 22
 selection_reason: quality_percentile
@@ -41,6 +41,8 @@ launch:
     - projectmem
   env_vars: []
   confidence: manifest
+tags:
+  - memory
 ---
 
 <!-- mcp-name: io.github.riponcm/projectmem -->

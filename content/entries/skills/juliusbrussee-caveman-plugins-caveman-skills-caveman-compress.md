@@ -8,7 +8,7 @@ summary: Compress natural language files (CLAUDE.md, todos, preferences) into
   caveman-speak to reduce input tokens. Compressed version overwrites original.
   Human-readable backup saved as .original.md, but NOT beside the source...
 categories:
-  - security
+  - databases-memory
 status: active
 quality_percentile: 56
 selection_reason: quality_percentile
@@ -47,6 +47,8 @@ skill:
     - scripts/compress.py
     - scripts/detect.py
     - scripts/validate.py
+tags:
+  - memory
 ---
 
 # Caveman Compress

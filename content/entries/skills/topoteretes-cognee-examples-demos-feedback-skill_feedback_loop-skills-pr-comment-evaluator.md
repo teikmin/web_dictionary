@@ -4,7 +4,7 @@ name: pr-comment-evaluator
 tagline: Use to judge whether a PR review comment sounds polite.
 summary: Use to judge whether a PR review comment sounds polite.
 categories:
-  - databases
+  - other
 status: active
 quality_percentile: 68
 selection_reason: quality_percentile
@@ -34,6 +34,7 @@ skill:
   description: Use to judge whether a PR review comment sounds polite.
   folder_path: examples/demos/feedback/skill_feedback_loop/skills/pr-comment-evaluator
   extra_files: []
+tags: []
 ---
 
 # pr-comment-evaluator

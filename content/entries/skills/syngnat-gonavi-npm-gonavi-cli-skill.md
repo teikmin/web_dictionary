@@ -8,7 +8,7 @@ summary: "Download the matching gonavi-cli${VERSION}${goos}${arch} archive and
   gonavi-cli${VERSION}checksums.txt file from a GoNavi GitHub Release, verify
   the SHA256 checksum, extract the archive, then run:"
 categories:
-  - databases
+  - coding-agents
 status: active
 quality_percentile: 65
 selection_reason: quality_percentile
@@ -48,6 +48,8 @@ skill:
   folder_path: npm/gonavi-cli/skill
   extra_files:
     - references/connection-config.md
+tags:
+  - github
 ---
 
 # GoNavi CLI

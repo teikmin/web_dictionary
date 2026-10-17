@@ -7,7 +7,7 @@ tagline: 查询 AIHOT（aihot.news）的中文 AI 资讯。用户问今天或最
 summary: 1. 按下表选地址。表里没有的问题，先读使用说明 https://aihot.news/api/v1/agent（同一会话读一次即可）：它列出
   AIHOT 目前能查的全部内容和参数，以它为准。
 categories:
-  - dev-tools
+  - other
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -45,6 +45,7 @@ skill:
     - agents/openai.yaml
     - install.sh
     - manifest.sha256
+tags: []
 ---
 
 # AIHOT

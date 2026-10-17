@@ -1,0 +1,20 @@
+id: databases-memory
+name: Databases & Agent Memory
+tagline: SQL/NoSQL engines, vector retrieval layers, and long-term agent memory
+description: Database connectors, vector search databases, knowledge graphs, and long-term memory architectures.
+icon: database
+keywords:
+  - postgres
+  - mysql
+  - sqlite
+  - supabase
+  - redis
+  - mongodb
+  - neo4j
+  - qdrant
+  - milvus
+  - chroma
+  - mem0
+  - zep
+  - knowledge-graph
+  - vector-db

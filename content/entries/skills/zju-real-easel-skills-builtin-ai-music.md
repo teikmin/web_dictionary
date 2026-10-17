@@ -5,7 +5,7 @@ tagline: AI 音乐 / BGM 生成：给短视频、社媒内容生成原创背景�
   / Suno 类第三方 API）文生音乐，异步提交→轮询→下载，产物可再裁剪/归一化或加到视频。当用户说“AI 音乐”“AI 配乐”“生成 BGM”“背景音
 summary: 边界：本 SKILL 只做背景音乐 / 配乐。要人声口播 / 旁白 / 朗读用 tts-voiceover。
 categories:
-  - productivity
+  - media-creative
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
@@ -39,6 +39,7 @@ skill:
   folder_path: skills/builtin/ai-music
   extra_files:
     - EASEL-META.md
+tags: []
 ---
 
 # AI 音乐 / BGM 生成（AI Music）

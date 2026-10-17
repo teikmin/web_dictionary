@@ -8,7 +8,7 @@ summary: "- When an organization in the Defense Industrial Base (DIB) stores,
   processes, or transmits Controlled Unclassified Information (CUI) under a DoD
   contract. - When a contract includes DFARS 252.204-7012 (safeguarding/i..."
 categories:
-  - security
+  - security-auth
 status: active
 quality_percentile: 63
 selection_reason: quality_percentile
@@ -54,6 +54,8 @@ skill:
     - assets/template.md
     - references/standards.md
     - scripts/process.py
+tags:
+  - security
 ---
 
 # Achieving CMMC Level 2 Compliance
