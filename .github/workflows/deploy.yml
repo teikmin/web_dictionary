@@ -44,11 +44,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
       - name: Build Astro Site & Pagefind Search Index
         run: pnpm run site:build
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+        env:
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3

@@ -23,6 +23,7 @@ const { class: className = '' } = Astro.props;
           showSubResults: true,
           showImages: false,
           resetStyles: false,
+          bundlePath: `${import.meta.env.BASE_URL}pagefind/`,
         });
       }
     }
@@ -32,11 +33,11 @@ const { class: className = '' } = Astro.props;
     } else {
       const link = document.createElement('link');
       link.rel = 'stylesheet';
-      link.href = '/pagefind/pagefind-ui.css';
+      link.href = `${import.meta.env.BASE_URL}pagefind/pagefind-ui.css`;
       document.head.appendChild(link);
 
       const script = document.createElement('script');
-      script.src = '/pagefind/pagefind-ui.js';
+      script.src = `${import.meta.env.BASE_URL}pagefind/pagefind-ui.js`;
       script.onload = mount;
       document.body.appendChild(script);
     }
