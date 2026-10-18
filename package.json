@@ -10,7 +10,7 @@
     "site:dev": "pnpm --filter @web-db/site run dev",
     "site:build": "pnpm run build:packages && pnpm --filter @web-db/site run build",
     "test": "pnpm run build:packages && pnpm -r run test",
-    "typecheck": "pnpm -r run typecheck"
+    "typecheck": "pnpm run build:packages && pnpm -r run typecheck"
   },
   "devDependencies": {
     "typescript": "^5.8.2"

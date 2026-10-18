@@ -20,7 +20,7 @@ export const codexAdapter: ClientAdapter = {
       mcpSnippet = `[mcp_servers.${serverName}]\nurl = "${spec.remote_url}"\ntransport = "http"\n`;
     } else {
       const cmd = spec.command || 'npx';
-      const argsFormatted = spec.args.map((a) => JSON.stringify(a)).join(', ');
+      const argsFormatted = spec.args.map((a: string) => JSON.stringify(a)).join(', ');
 
       mcpSnippet = `[mcp_servers.${serverName}]\ncommand = "${cmd}"\nargs = [${argsFormatted}]\n`;
 
