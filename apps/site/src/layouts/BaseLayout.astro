@@ -222,7 +222,23 @@ const categories = [
     <script>
       declare const PagefindUI: any;
 
+      function rewriteInternalLinks() {
+        const rawBase = import.meta.env.BASE_URL;
+        if (rawBase && rawBase !== '/') {
+          const base = rawBase.replace(/\/$/, '');
+          document.querySelectorAll('a[href^="/"]').forEach((el) => {
+            const a = el as HTMLAnchorElement;
+            const href = a.getAttribute('href');
+            if (href && href.startsWith('/') && !href.startsWith('//') && !href.startsWith(base)) {
+              a.setAttribute('href', base + href);
+            }
+          });
+        }
+      }
+
       function setupHeaderAndSearch() {
+        rewriteInternalLinks();
+
         // Dropdown toggle logic (Task E4)
         document.querySelectorAll('.dropdown-container').forEach((container) => {
           const btn = container.querySelector<HTMLButtonElement>('.dropdown-btn');
