@@ -7,19 +7,33 @@ tagline: "It's like v0, but in your Cursor / Claude Code / Windsurf: search
 summary: "Or add it manually — it is a plain HTTP MCP server:"
 categories:
   - browser-web
+tags:
+  - 21st
+  - claude
+  - cursor
+  - model-context-protocol
 status: active
-quality_percentile: 52
+quality_percentile: 51
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: 21st-dev/magic-mcp
   official_vendor: false
   license: ISC
 signals:
-  stars: 6003
+  stars: 6109
   last_commit: 2026-09-09T20:38:22Z
+  stars_delta_7d: 106
+  stars_growth_pct: 1.8
+  trending_score: 107.87
+  rank_current: 13
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 6003
+    - 6109
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +42,7 @@ readme_source:
   repo: 21st-dev/magic-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:06.044Z
+  fetched_at: 2026-10-19T07:33:31.437Z
   truncated: false
 type: mcp_server
 launch:
@@ -37,7 +51,6 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # Magic MCP → 21st MCP

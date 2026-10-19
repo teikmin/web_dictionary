@@ -5,20 +5,35 @@ tagline: Bulk port forwarding Kubernetes services for local development.
 summary: Documentation | Getting Started | User Guide | API Reference | MCP (AI
   Integration)
 categories:
-  - coding-agents
+  - cloud-infra
+tags:
+  - api-rest
+  - developer-tools
+  - devops
+  - devops-tools
 status: active
-quality_percentile: 40
+quality_percentile: 43
 selection_reason: quality_percentile
 first_seen: 2018-08-05T22:05:58
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: txn2/kubefwd
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 4176
-  last_commit: 2026-10-06T22:36:34Z
+  stars: 4177
+  last_commit: 2026-10-17T00:58:24Z
+  stars_delta_7d: 1
+  stars_growth_pct: 0
+  trending_score: 1
+  rank_current: 82
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 4173
+    - 4176
+    - 4177
 language: en
 needs_keys: false
 prerequisites: []
@@ -26,7 +41,7 @@ readme_source:
   repo: txn2/kubefwd
   path: README.md
   branch: master
-  fetched_at: 2026-10-14T14:54:59.256Z
+  fetched_at: 2026-10-19T07:32:30.541Z
   truncated: false
 type: mcp_server
 launch:
@@ -34,8 +49,6 @@ launch:
   args: []
   env_vars: []
   confidence: none
-tags:
-  - kubernetes
 ---
 
 # kubefwd (Kube Forward)

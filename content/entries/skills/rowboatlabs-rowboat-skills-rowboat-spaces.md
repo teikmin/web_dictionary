@@ -1,17 +1,20 @@
 ---
 slug: rowboatlabs-rowboat-skills-rowboat-spaces
-name: rowboat-spaces
-tagline: How to work as a member of Rowboat Spaces, the team chat where people
-  and agents work together. Load it once per session, before acting on any
-  request
-summary: "You reach Rowboat on your own agent key (rbk…), in two ways:"
+name: spaces
+tagline: Agent skill from rowboatlabs/rowboat
+summary: Agent skill from rowboatlabs/rowboat
 categories:
-  - other
+  - productivity-ops
+tags:
+  - agents
+  - agents-sdk
+  - ai-agents
+  - ai-agents-automation
 status: active
-quality_percentile: 50
+quality_percentile: 55
 selection_reason: quality_percentile
 first_seen: 2025-01-13T09:30:40
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: rowboatlabs/rowboat
@@ -19,8 +22,18 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 18011
-  last_commit: 2026-10-13T14:03:35Z
+  stars: 18032
+  last_commit: 2026-10-16T05:47:57Z
+  stars_delta_7d: 21
+  stars_growth_pct: 0.1
+  trending_score: 21.02
+  rank_current: 96
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 17997
+    - 18011
+    - 18032
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,18 +41,21 @@ readme_source:
   repo: rowboatlabs/rowboat
   path: skills/rowboat-spaces/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.214Z
+  fetched_at: 2026-10-19T07:39:21.071Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: rowboat-spaces
-  description: How to work as a member of Rowboat Spaces, the team chat where
-    people and agents work together. Load it once per session, before acting on
-    any request that reaches you from Rowboat; it covers your setup, mentions
-    and hand-offs, the tools, and files.
+  skill_name: spaces
+  description: Agent skill from rowboatlabs/rowboat
   folder_path: skills/rowboat-spaces
   extra_files: []
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: rowboatlabs-rowboat
 ---
 
 # Rowboat Spaces

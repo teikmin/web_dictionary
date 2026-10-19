@@ -1,19 +1,20 @@
 ---
 slug: muxuuu-serenity-skill
 name: serenity-skill
-tagline: Research technology and advanced-manufacturing investments using
-  Serenity-inspired supply-chain bottleneck analysis. Use for theme scans,
-  company thes
-summary: This is an independent interpretation of public research material, not
-  an official Serenity product. See method sources when attribution or the
-  method's origin matters.
+tagline: Agent skill from muxuuu/serenity-skill
+summary: Agent skill from muxuuu/serenity-skill
 categories:
   - domain-research
+tags:
+  - agent-skills
+  - ai-agents
+  - claude-code
+  - codex
 status: active
-quality_percentile: 68
+quality_percentile: 63
 selection_reason: quality_percentile
 first_seen: 2026-05-04T06:24:37
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: muxuuu/serenity-skill
@@ -21,8 +22,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 4083
+  stars: 4114
   last_commit: 2026-10-11T06:10:53Z
+  stars_delta_7d: 31
+  stars_growth_pct: 0.8
+  trending_score: 31.24
+  rank_current: 92
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 4054
+    - 4083
+    - 4114
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,17 +41,12 @@ readme_source:
   repo: muxuuu/serenity-skill
   path: SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.533Z
+  fetched_at: 2026-10-19T07:40:38.205Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: serenity-skill
-  description: Research technology and advanced-manufacturing investments using
-    Serenity-inspired supply-chain bottleneck analysis. Use for theme scans,
-    company thesis challenges, candidate comparisons, or learning this method.
-    Prioritize A-shares unless another market is requested. Return research
-    priorities, dated evidence, profit implications, and conditions that would
-    change the judgment.
+  description: Agent skill from muxuuu/serenity-skill
   folder_path: .
   extra_files:
     - .gitignore
@@ -53,8 +59,13 @@ skill:
     - assets/research-prompt-pack.md
     - assets/thesis-template.md
     - evals/test-cases.md
-tags:
-  - research
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: muxuuu-serenity-skill
 ---
 
 # Serenity.skill

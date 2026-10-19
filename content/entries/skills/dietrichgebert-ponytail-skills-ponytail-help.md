@@ -1,17 +1,22 @@
 ---
 slug: dietrichgebert-ponytail-skills-ponytail-help
-name: ponytail-help
+name: help
 tagline: >
   Quick reference for ponytail levels, skills and commands. One-shot display.
   Use for /ponytail-help, "ponytail help", "how do I use ponytail".
 summary: Level sticks until changed or session end.
 categories:
-  - other
+  - coding-agents
+tags:
+  - agent-skills
+  - ai-agents
+  - claude
+  - claude-code
 status: active
-quality_percentile: 57
+quality_percentile: 60
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: DietrichGebert/ponytail
@@ -19,8 +24,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 162479
-  last_commit: 2026-10-13T01:46:28Z
+  stars: 167294
+  last_commit: 2026-10-18T01:55:14Z
+  stars_delta_7d: 4815
+  stars_growth_pct: 3
+  trending_score: 4957.69
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 157371
+    - 162479
+    - 167294
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,17 +41,23 @@ readme_source:
   repo: DietrichGebert/ponytail
   path: skills/ponytail-help/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.945Z
+  fetched_at: 2026-10-19T07:36:33.448Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: ponytail-help
+  skill_name: help
   description: >
     Quick reference for ponytail levels, skills and commands. One-shot display.
     Use for /ponytail-help, "ponytail help", "how do I use ponytail".
   folder_path: skills/ponytail-help
   extra_files: []
-tags: []
+  pack_total_skills: 6
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: dietrichgebert-ponytail
 ---
 
 # Ponytail Help
@@ -74,6 +93,12 @@ slash-command forms above (OpenCode ships all six as slash commands).
 
 Say "stop ponytail" or "normal mode". Resume anytime with `/ponytail`.
 `/ponytail off` also works.
+
+## Band (Claude Code)
+
+`/ponytail band` hides the band above the prompt, the same command brings it back.
+`/ponytail band on` and `/ponytail band off` set it directly. The level stays.
+`/ponytail band import` adds your past Claude Code sessions (cost, agent time, tokens) to the board.
 
 ## Configure Default Mode
 

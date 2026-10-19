@@ -1,6 +1,6 @@
 ---
 slug: google-gemini-gemini-cli-packages-core-src-skills-builtin-antigravity-support
-name: antigravity-support
+name: support
 tagline: "Use when the user asks questions, seeks help, or requests instructions
   related to installing, setting up, or migrating to Antigravity CLI. This skill
   "
@@ -10,11 +10,16 @@ summary: Antigravity CLI is a next-generation terminal interface for
   (TUI)...
 categories:
   - coding-agents
+tags:
+  - ai-agents
+  - cli
+  - gemini
+  - gemini-api
 status: active
-quality_percentile: 84
+quality_percentile: 83
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: google-gemini/gemini-cli
@@ -22,8 +27,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 107310
-  last_commit: 2026-10-13T01:36:44Z
+  stars: 107446
+  last_commit: 2026-10-19T01:34:29Z
+  stars_delta_7d: 136
+  stars_growth_pct: 0.1
+  trending_score: 136.17
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 107245
+    - 107310
+    - 107446
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,19 +44,22 @@ readme_source:
   repo: google-gemini/gemini-cli
   path: packages/core/src/skills/builtin/antigravity-support/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:54:53.392Z
+  fetched_at: 2026-10-19T07:31:32.021Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: antigravity-support
+  skill_name: support
   description: Use when the user asks questions, seeks help, or requests
     instructions related to installing, setting up, or migrating to Antigravity
     CLI. This skill provides the latest up to date details, requirements, and
     commands sourced from the official Antigravity CLI documentation.
   folder_path: packages/core/src/skills/builtin/antigravity-support
   extra_files: []
-tags:
-  - terminal
+  pack_total_skills: 4
+  is_pack_primary: false
+  clients:
+    - antigravity
+  pack_slug: google-gemini-gemini-cli
 ---
 
 # Antigravity CLI Support

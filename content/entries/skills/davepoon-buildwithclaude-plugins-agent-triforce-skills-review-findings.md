@@ -8,12 +8,17 @@ summary: "- After receiving a code review from Centinela (QA) - When a review
   report has findings that need to be addressed - Fixing critical and warning
   issues before re-verification"
 categories:
-  - other
+  - agent-frameworks
+tags:
+  - claude
+  - claude-code
+  - claude-code-commands
+  - claude-skills
 status: active
-quality_percentile: 90
+quality_percentile: 93
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: davepoon/buildwithclaude
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 3631
-  last_commit: 2026-10-13T07:52:46Z
+  stars: 3650
+  last_commit: 2026-10-18T23:51:10Z
+  stars_delta_7d: 19
+  stars_growth_pct: 0.5
+  trending_score: 19.1
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3604
+    - 3631
+    - 3650
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,7 +43,7 @@ readme_source:
   repo: davepoon/buildwithclaude
   path: plugins/agent-triforce/skills/review-findings/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:01.004Z
+  fetched_at: 2026-10-19T07:33:26.854Z
   truncated: false
 type: agent_skill
 skill:
@@ -40,7 +53,13 @@ skill:
     re-verification. Delegates to the Forja (Dev) agent.
   folder_path: plugins/agent-triforce/skills/review-findings
   extra_files: []
-tags: []
+  pack_total_skills: 400
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: davepoon-buildwithclaude
 ---
 
 # Review Findings

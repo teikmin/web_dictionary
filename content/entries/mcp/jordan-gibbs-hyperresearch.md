@@ -7,20 +7,34 @@ tagline: Convert Claude Code or Codex into the most intelligent Deep Research
 summary: "The Most Powerful Deep Research Harness: a deep research skill for
   Claude Code and OpenAI Codex"
 categories:
-  - browser-web
+  - domain-research
+tags:
+  - agents
+  - agentskills
+  - citations
+  - claude-code
 status: active
-quality_percentile: 54
+quality_percentile: 52
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: jordan-gibbs/hyperresearch
   official_vendor: false
   license: MIT
 signals:
-  stars: 3850
+  stars: 3882
   last_commit: 2026-10-10T22:36:54Z
+  stars_delta_7d: 32
+  stars_growth_pct: 0.8
+  trending_score: 32.27
+  rank_current: 33
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3850
+    - 3882
 language: en
 needs_keys: false
 prerequisites:
@@ -30,7 +44,7 @@ readme_source:
   repo: jordan-gibbs/hyperresearch
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:59.940Z
+  fetched_at: 2026-10-19T07:32:30.830Z
   truncated: false
 type: mcp_server
 launch:
@@ -40,8 +54,6 @@ launch:
     - hyperresearch
   env_vars: []
   confidence: manifest
-tags:
-  - research
 ---
 
 <img width="1280" height="400" alt="hyperresearch-readme-hero-1280x400" src="https://github.com/user-attachments/assets/320680fc-bc56-4eac-9ec2-7ec46d4bde98" />

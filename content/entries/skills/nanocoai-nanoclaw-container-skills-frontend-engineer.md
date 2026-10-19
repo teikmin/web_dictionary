@@ -8,12 +8,17 @@ summary: Never say "done" until you have visually verified the result in a real
   browser. Screenshots are your proof. If you can't take a screenshot, you're
   not done.
 categories:
-  - browser-web
+  - productivity-ops
+tags:
+  - ai-agents
+  - ai-assistant
+  - claude-code
+  - claude-skills
 status: active
 quality_percentile: 99
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: nanocoai/nanoclaw
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 30935
-  last_commit: 2026-10-13T15:17:20Z
+  stars: 30966
+  last_commit: 2026-10-18T13:44:15Z
+  stars_delta_7d: 31
+  stars_growth_pct: 0.1
+  trending_score: 31.03
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 30890
+    - 30935
+    - 30966
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,7 +43,7 @@ readme_source:
   repo: nanocoai/nanoclaw
   path: container/skills/frontend-engineer/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:14.633Z
+  fetched_at: 2026-10-19T07:37:41.464Z
   truncated: false
 type: agent_skill
 skill:
@@ -41,7 +54,13 @@ skill:
     Pairs with a deployment skill such as vercel-cli, where one is installed.
   folder_path: container/skills/frontend-engineer
   extra_files: []
-tags: []
+  pack_total_skills: 4
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: nanocoai-nanoclaw
 ---
 
 # Frontend Engineer

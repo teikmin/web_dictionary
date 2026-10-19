@@ -1,50 +1,57 @@
 ---
 slug: nvidia-skillspector
-type: agent_tool
 name: SkillSpector
 tagline: Security scanner for AI agent skills. Detect vulnerabilities, malicious
   patterns, security risks, prompt injection, data exfiltration, and supply-chai
-summary: AI agent skills (used by Claude Code, Codex CLI, Gemini CLI, etc.)
-  execute with implicit trust and minimal vetting. In the 31,132-skill analyzed
-  subset of the research dataset, 26.1% of skills contain vulnerabilities...
+summary: Security scanner for AI agent skills. Detect vulnerabilities, malicious
+  patterns, security risks, prompt injection, data exfiltration, and
+  supply-chain risks in Claude Code, Codex, and MCP skills before you install
+  them.
 categories:
   - security-auth
 tags:
-  - research
-  - security
+  - agent-security
+  - agent-skills
+  - agentic-ai
+  - ai-security
 status: active
 quality_percentile: 89
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: NVIDIA/SkillSpector
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 20114
-  last_commit: 2026-10-13T09:07:51Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 20514
+  last_commit: 2026-10-19T07:01:16Z
+  stars_delta_7d: 400
+  stars_growth_pct: 2
+  trending_score: 407.95
+  rank_current: 8
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 19623
+    - 20114
+    - 20514
 language: en
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - multi
 readme_source:
   repo: NVIDIA/SkillSpector
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.188Z
+  fetched_at: 2026-10-19T07:39:21.137Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: eval_observability
+  subcategory: agent_framework
   install_command: pip install skillspector
-  runtime: python
+  runtime: multi
   execution_mode: local
   has_mcp_support: true
   mcp_launch:

@@ -1,17 +1,22 @@
 ---
 slug: othmanadi-planning-with-files-skills-i18n-planning-with-files-de
-name: planning-with-files-de
+name: de
 tagline: Persistente dateibasierte Planung für mehrstufige Arbeit mit
   KI-Agenten. Hält task_plan.md, findings.md und progress.md auf dem
   Datenträger; Lebenszyk
 summary: "Bevor du fortfährst, ermittle das Planverzeichnis, das diese Aufgabe besitzt:"
 categories:
-  - other
+  - agent-frameworks
+tags:
+  - agent-skills
+  - autonomous-agents
+  - claude
+  - claude-code
 status: active
-quality_percentile: 70
+quality_percentile: 72
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: OthmanAdi/planning-with-files
@@ -19,8 +24,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 27430
-  last_commit: 2026-10-12T08:07:36Z
+  stars: 27522
+  last_commit: 2026-10-17T21:51:12Z
+  stars_delta_7d: 92
+  stars_growth_pct: 0.3
+  trending_score: 92.31
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 27320
+    - 27430
+    - 27522
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,11 +41,11 @@ readme_source:
   repo: OthmanAdi/planning-with-files
   path: skills/i18n/planning-with-files-de/SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:14.635Z
+  fetched_at: 2026-10-19T07:37:41.715Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: planning-with-files-de
+  skill_name: de
   description: Persistente dateibasierte Planung für mehrstufige Arbeit mit
     KI-Agenten. Hält task_plan.md, findings.md und progress.md auf dem
     Datenträger; Lebenszyklus-Hooks speisen ausgewählten Planungskontext des
@@ -56,7 +69,13 @@ skill:
     - scripts/inject-plan.py
     - scripts/inject-plan.sh
     - scripts/ledger-append.ps1
-tags: []
+  pack_total_skills: 6
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: othmanadi-planning-with-files
 ---
 
 # Dateiplanungssystem

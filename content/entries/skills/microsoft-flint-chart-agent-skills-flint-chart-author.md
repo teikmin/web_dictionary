@@ -1,6 +1,6 @@
 ---
 slug: microsoft-flint-chart-agent-skills-flint-chart-author
-name: flint-chart-author
+name: author
 tagline: "Use when: the user asks to make or render charts with flint-chart,
   visualize tabular data, generate a ChartAssemblyInput, validate/render through
   MCP,"
@@ -9,12 +9,16 @@ summary: "Your output is the spec: the chartspec and semantictypes of a
   resulting input to assembleVegaLite, assembleECharts, or assembleChartjs to
   get..."
 categories:
-  - agent-frameworks
+  - other
+tags:
+  - ai-agents
+  - charting-library
+  - data-visualization
 status: active
-quality_percentile: 94
+quality_percentile: 93
 selection_reason: official_vendor
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: microsoft/flint-chart
@@ -22,8 +26,18 @@ source:
   official_vendor: true
   license: MIT
 signals:
-  stars: 4367
-  last_commit: 2026-10-13T06:27:25Z
+  stars: 4380
+  last_commit: 2026-10-18T17:03:16Z
+  stars_delta_7d: 13
+  stars_growth_pct: 0.3
+  trending_score: 13.04
+  rank_current: 101
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 4345
+    - 4367
+    - 4380
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,11 +45,11 @@ readme_source:
   repo: microsoft/flint-chart
   path: agent-skills/flint-chart-author/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:54:58.208Z
+  fetched_at: 2026-10-19T07:32:30.698Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: flint-chart-author
+  skill_name: author
   description: "Use when: the user asks to make or render charts with flint-chart,
     visualize tabular data, generate a ChartAssemblyInput, validate/render
     through MCP, or add Flint to a JS/TS project. Author the semantic spec,
@@ -44,7 +58,13 @@ skill:
     after compiling from Flint."
   folder_path: agent-skills/flint-chart-author
   extra_files: []
-tags: []
+  pack_total_skills: 2
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: microsoft-flint-chart
 ---
 
 # flint-chart: authoring and using a chart spec

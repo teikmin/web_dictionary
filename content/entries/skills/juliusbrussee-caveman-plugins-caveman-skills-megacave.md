@@ -8,12 +8,17 @@ summary: "Megacave is caveman in Classical Chinese. 文言文: subjects omitted 
   recoverable, verb before object, particles (之, 乃, 為, 其, 則, 故, 以) instead of
   connective phrases. Fewer characters on screen. Token savings are small..."
 categories:
-  - security-auth
+  - agent-frameworks
+tags:
+  - anthropic
+  - caveman
+  - claude
+  - claude-code
 status: active
-quality_percentile: 56
+quality_percentile: 60
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: JuliusBrussee/caveman
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 111405
-  last_commit: 2026-10-13T16:22:44Z
+  stars: 113528
+  last_commit: 2026-10-18T07:42:47Z
+  stars_delta_7d: 2123
+  stars_growth_pct: 1.9
+  trending_score: 2163.46
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 110366
+    - 111405
+    - 113528
 language: zh
 needs_keys: false
 prerequisites: []
@@ -30,7 +43,7 @@ readme_source:
   repo: JuliusBrussee/caveman
   path: plugins/caveman/skills/megacave/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.956Z
+  fetched_at: 2026-10-19T07:36:36.823Z
   truncated: false
 type: agent_skill
 skill:
@@ -41,7 +54,13 @@ skill:
     until "stop caveman" or "normal mode".
   folder_path: plugins/caveman/skills/megacave
   extra_files: []
-tags: []
+  pack_total_skills: 22
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: juliusbrussee-caveman
 ---
 
 # megacave

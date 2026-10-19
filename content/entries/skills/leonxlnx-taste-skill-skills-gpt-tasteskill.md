@@ -1,19 +1,23 @@
 ---
 slug: leonxlnx-taste-skill-skills-gpt-tasteskill
 name: gpt-taste
-tagline: Elite UX/UI & Advanced GSAP Motion Engineer. Enforces Python-driven
-  true randomization for layout variance, strict AIDA page structure, wide
-  editorial
+tagline: "Classic skill for GPT and Codex, opt-in: it runs only when called by
+  name. Layout variance, a strict AIDA page structure and GSAP scroll motion."
 summary: Your goal is to aggressively break these defaults. Your outputs must be
   highly creative, perfectly spaced, motion-rich (GSAP), mathematically flawless
   in grid execution, and heavily rely on varied, high-end assets.
 categories:
-  - media-creative
+  - cloud-infra
+tags:
+  - agent-skills
+  - ai-agents
+  - anti-slop
+  - claude-code
 status: active
-quality_percentile: 64
+quality_percentile: 67
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Leonxlnx/taste-skill
@@ -21,8 +25,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 95459
-  last_commit: 2026-10-13T15:01:01Z
+  stars: 99005
+  last_commit: 2026-10-19T05:47:12Z
+  stars_delta_7d: 3546
+  stars_growth_pct: 3.7
+  trending_score: 3677.72
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 93423
+    - 95459
+    - 99005
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,20 +42,24 @@ readme_source:
   repo: Leonxlnx/taste-skill
   path: skills/gpt-tasteskill/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.941Z
+  fetched_at: 2026-10-19T07:36:41.103Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: gpt-taste
-  description: Elite UX/UI & Advanced GSAP Motion Engineer. Enforces Python-driven
-    true randomization for layout variance, strict AIDA page structure, wide
-    editorial typography (bans 6-line wraps), gapless bento grids, strict GSAP
-    ScrollTriggers (pinning, stacking, scrubbing), inline micro-images, and
-    massive section spacing.
+  description: "Classic skill for GPT and Codex, opt-in: it runs only when called
+    by name. Layout variance, a strict AIDA page structure and GSAP scroll
+    motion."
   folder_path: skills/gpt-tasteskill
-  extra_files: []
-tags:
-  - python
+  extra_files:
+    - agents/openai.yaml
+  pack_total_skills: 13
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: leonxlnx-taste-skill
 ---
 
 # CORE DIRECTIVE: AWWWARDS-LEVEL DESIGN ENGINEERING

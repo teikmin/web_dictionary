@@ -1,16 +1,20 @@
 ---
 slug: zju-real-easel-skills-builtin-ai-music
 name: ai-music
-tagline: AI 音乐 / BGM 生成：给短视频、社媒内容生成原创背景音乐 / 配乐 / 纯音乐。通过可插拔 provider（阿里 DashScope
-  / Suno 类第三方 API）文生音乐，异步提交→轮询→下载，产物可再裁剪/归一化或加到视频。当用户说“AI 音乐”“AI 配乐”“生成 BGM”“背景音
-summary: 边界：本 SKILL 只做背景音乐 / 配乐。要人声口播 / 旁白 / 朗读用 tts-voiceover。
+tagline: Agent skill from ZJU-REAL/Easel
+summary: Agent skill from ZJU-REAL/Easel
 categories:
   - media-creative
+tags:
+  - content-automation
+  - content-creation
+  - content-generation
+  - openclaw
 status: active
-quality_percentile: 88
+quality_percentile: 92
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: ZJU-REAL/Easel
@@ -18,28 +22,38 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 3567
-  last_commit: 2026-10-12T11:58:39Z
-language: zh
+  stars: 3844
+  last_commit: 2026-10-18T10:45:50Z
+  stars_delta_7d: 277
+  stars_growth_pct: 7.8
+  trending_score: 298.51
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3567
+    - 3844
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: ZJU-REAL/Easel
   path: skills/builtin/ai-music/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.448Z
+  fetched_at: 2026-10-19T07:39:51.002Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: ai-music
-  description: AI 音乐 / BGM 生成：给短视频、社媒内容生成原创背景音乐 / 配乐 / 纯音乐。通过可插拔 provider（阿里
-    DashScope / Suno 类第三方 API）文生音乐，异步提交→轮询→下载，产物可再裁剪/归一化或加到视频。当用户说“AI 音乐”“AI
-    配乐”“生成 BGM”“背景音乐”“原创音乐”“AI 作曲”“纯音乐”“给视频配乐”“做首曲子”时使用。与 tts-voiceover
-    的区别：tts-voiceover 生成人声口播/旁白，ai-music 生成背景音乐/配乐（无人声或带演唱）。
+  description: Agent skill from ZJU-REAL/Easel
   folder_path: skills/builtin/ai-music
   extra_files:
     - EASEL-META.md
-tags: []
+  pack_total_skills: 114
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: zju-real-easel
 ---
 
 # AI 音乐 / BGM 生成（AI Music）

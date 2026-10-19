@@ -7,19 +7,32 @@ summary: Property Management - See all your GSC properties in one place - Get
   your account
 categories:
   - browser-web
+tags:
+  - claude
+  - google-search-console
+  - seo
 status: active
-quality_percentile: 33
+quality_percentile: 35
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: AminForou/mcp-gsc
   official_vendor: false
   license: MIT
 signals:
-  stars: 1915
+  stars: 1979
   last_commit: 2026-09-15T16:54:24Z
+  stars_delta_7d: 64
+  stars_growth_pct: 3.3
+  trending_score: 66.14
+  rank_current: 19
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1915
+    - 1979
 language: en
 needs_keys: false
 prerequisites:
@@ -29,7 +42,7 @@ readme_source:
   repo: AminForou/mcp-gsc
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:04.091Z
+  fetched_at: 2026-10-19T07:33:31.079Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,7 +52,6 @@ launch:
     - mcp-search-console
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # Google Search Console MCP Server for SEOs

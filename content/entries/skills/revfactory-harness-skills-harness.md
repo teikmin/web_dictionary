@@ -1,18 +1,20 @@
 ---
 slug: revfactory-harness-skills-harness
 name: harness
-tagline: 프로젝트에 맞는 하네스를 설계하고, 전문 에이전트와 각 에이전트가 사용할 스킬을 만든다. 사용자가 '하네스 구성해줘', '하네스
-  구축해줘', '하네스 설계', '하네스 엔지니어링', '에이전트 팀 만들어줘'라고 요청할 때 사용한다. 새로운 분야나 프로젝트의 자동화 체계
-summary: 1. 에이전트 정의는 프로젝트/.claude/agents/에, 스킬은 프로젝트/.claude/skills/에 만든다.
-  에이전트에는 누가 일하는지를, 스킬에는 그 일을 어떻게 하는지를 적는다. 2. 작업 흐름에 따라 실행 모드를 고른다. 순서와 반복 조건을
-  코드로 정할 수 있으면 워크플로로 조율한다. 같은 전문가와 피드백을 주고받아야 하면 지속형 에이전트를 쓴다. 결과를 한 번만 받으면...
+tagline: Agent skill from revfactory/harness
+summary: Agent skill from revfactory/harness
 categories:
   - agent-frameworks
+tags:
+  - claude-code
+  - claude-code-plugin
+  - harness
+  - harness-engineering
 status: active
-quality_percentile: 69
+quality_percentile: 65
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: revfactory/harness
@@ -20,8 +22,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 9168
+  stars: 9204
   last_commit: 2026-09-28T05:19:20Z
+  stars_delta_7d: 36
+  stars_growth_pct: 0.4
+  trending_score: 36.14
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 9131
+    - 9168
+    - 9204
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,16 +39,12 @@ readme_source:
   repo: revfactory/harness
   path: skills/harness/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.390Z
+  fetched_at: 2026-10-19T07:39:30.584Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: harness
-  description: 프로젝트에 맞는 하네스를 설계하고, 전문 에이전트와 각 에이전트가 사용할 스킬을 만든다. 사용자가 '하네스 구성해줘',
-    '하네스 구축해줘', '하네스 설계', '하네스 엔지니어링', '에이전트 팀 만들어줘'라고 요청할 때 사용한다. 새로운 분야나 프로젝트의
-    자동화 체계를 구축하거나 기존 하네스를 재구성·확장할 때도 사용한다. '하네스 점검', '하네스 감사', '하네스 현황',
-    '에이전트/스킬 동기화'처럼 기존 하네스를 운영하거나 유지 보수하는 요청에도 사용한다. 실행 결과를 회고하고 피드백을 반영하는 작업에는
-    harness:evolve 스킬을 사용한다.
+  description: Agent skill from revfactory/harness
   folder_path: skills/harness
   extra_files:
     - references/execution-modes.md
@@ -50,7 +56,13 @@ skill:
     - references/team-examples.md
     - references/team-patterns.md
     - references/workflow-recipes.md
-tags: []
+  pack_total_skills: 2
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: revfactory-harness
 ---
 
 # Harness v2 — 에이전트 팀과 스킬 설계

@@ -1,20 +1,17 @@
 ---
 slug: dotnet-skills-plugins-dotnet-advanced-skills-csharp-scripts
 name: csharp-scripts
-tagline: "Run file-based C# apps with the .NET CLI when the user explicitly
-  wants C#/.NET code without creating a project. Use for C# language/API
-  experiments, "
-summary: "- Testing a C# concept, API, or language feature with a quick
-  file-based app - Prototyping logic before integrating it into a larger project
-  - Building a small utility from one entry-point file and a few helper .cs
-  files"
+tagline: Agent skill from dotnet/skills
+summary: Agent skill from dotnet/skills
 categories:
-  - coding-agents
+  - other
+tags:
+  - agent-skills
 status: active
-quality_percentile: 49
+quality_percentile: 54
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: dotnet/skills
@@ -22,8 +19,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 5617
-  last_commit: 2026-10-13T16:25:34Z
+  stars: 5669
+  last_commit: 2026-10-19T07:23:49Z
+  stars_delta_7d: 52
+  stars_growth_pct: 0.9
+  trending_score: 52.48
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 5571
+    - 5617
+    - 5669
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,21 +36,21 @@ readme_source:
   repo: dotnet/skills
   path: plugins/dotnet-advanced/skills/csharp-scripts/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.149Z
+  fetched_at: 2026-10-19T07:40:38.125Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: csharp-scripts
-  description: Run file-based C# apps with the .NET CLI when the user explicitly
-    wants C#/.NET code without creating a project. Use for C# language/API
-    experiments, one-file C# apps, small multi-file C# apps composed with
-    `#:include`/`#:exclude`, or C# file-based apps linked with `#:ref`. Do not
-    use for language-agnostic throwaway scripts, generic computations,
-    Python/PowerShell-style automation, full projects, or existing app
-    integration.
+  description: Agent skill from dotnet/skills
   folder_path: plugins/dotnet-advanced/skills/csharp-scripts
   extra_files: []
-tags: []
+  pack_total_skills: 107
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: dotnet-skills
 ---
 
 # File-Based C# Apps

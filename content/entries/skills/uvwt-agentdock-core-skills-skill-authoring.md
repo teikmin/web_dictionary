@@ -1,17 +1,22 @@
 ---
 slug: uvwt-agentdock-core-skills-skill-authoring
-name: skill-authoring
+name: authoring
 tagline: 创建、设计、修改、重构和验证 AgentDock Skill 时使用；负责 Agent Skills 兼容的
   SKILL.md、可移植核心、引用、辅助脚本、测试、安全边界和本地真实验证。
 summary: AgentDock 不为 Skill 建立独立版本生命周期。Skill 的当前内容由来源与内容摘要识别；同名 managed Skill
   更新时直接原子替换当前内容，不保留可选历史 revision，不提供 activate 或 rollback。
 categories:
-  - other
+  - cloud-infra
+tags:
+  - agent-skills
+  - ai-agents
+  - automation
+  - devops
 status: active
-quality_percentile: 58
+quality_percentile: 61
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: uvwt/agentdock
@@ -19,8 +24,15 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 1234
-  last_commit: 2026-10-13T16:25:31Z
+  stars: 1253
+  last_commit: 2026-10-18T06:58:34Z
+  stars_delta_7d: 19
+  stars_growth_pct: 1.5
+  trending_score: 19.29
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1234
+    - 1253
 language: zh
 needs_keys: false
 prerequisites: []
@@ -28,11 +40,11 @@ readme_source:
   repo: uvwt/agentdock
   path: core-skills/skill-authoring/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:08.435Z
+  fetched_at: 2026-10-19T07:33:43.462Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: skill-authoring
+  skill_name: authoring
   description: 创建、设计、修改、重构和验证 AgentDock Skill 时使用；负责 Agent Skills 兼容的
     SKILL.md、可移植核心、引用、辅助脚本、测试、安全边界和本地真实验证。
   folder_path: core-skills/skill-authoring
@@ -40,7 +52,13 @@ skill:
     - references/skill-package-spec.md
     - run.py
     - tests/test_run.py
-tags: []
+  pack_total_skills: 4
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: uvwt-agentdock
 ---
 
 # Skill Authoring

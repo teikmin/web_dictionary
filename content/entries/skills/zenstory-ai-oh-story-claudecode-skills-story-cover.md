@@ -1,17 +1,20 @@
 ---
 slug: zenstory-ai-oh-story-claudecode-skills-story-cover
 name: story-cover
-tagline: 小说封面生成。根据书名、作者名自动分析题材风格，调用 GPT-Image-2 生成含标题和署名的专业级网文封面；Codex CLI
-  优先使用内置 ImageGen，无需单独 API
-  Key。触发方式：/story-cover、/封面、「帮我做个封面」「生成封面图」「做个小说封面」「封面设计」。
-summary: 核心原则：封面是读者的第一印象，一眼传达题材和氛围。
+tagline: Agent skill from zenstory-ai/oh-story-claudecode
+summary: Agent skill from zenstory-ai/oh-story-claudecode
 categories:
-  - coding-agents
+  - productivity-ops
+tags:
+  - agent-skills
+  - ai-agent
+  - ai-novel-writing
+  - ai-writing
 status: active
-quality_percentile: 76
+quality_percentile: 81
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: zenstory-ai/oh-story-claudecode
@@ -19,27 +22,40 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 7517
-  last_commit: 2026-10-10T11:50:41Z
-language: zh
+  stars: 7737
+  last_commit: 2026-10-18T01:05:23Z
+  stars_delta_7d: 220
+  stars_growth_pct: 2.9
+  trending_score: 226.44
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 7340
+    - 7517
+    - 7737
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: zenstory-ai/oh-story-claudecode
   path: skills/story-cover/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.394Z
+  fetched_at: 2026-10-19T07:39:37.264Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: story-cover
-  description: 小说封面生成。根据书名、作者名自动分析题材风格，调用 GPT-Image-2 生成含标题和署名的专业级网文封面；Codex CLI
-    优先使用内置 ImageGen，无需单独 API
-    Key。触发方式：/story-cover、/封面、「帮我做个封面」「生成封面图」「做个小说封面」「封面设计」。
+  description: Agent skill from zenstory-ai/oh-story-claudecode
   folder_path: skills/story-cover
   extra_files:
+    - references/api-fallback.md
     - references/cover-styles.md
-tags: []
+  pack_total_skills: 13
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: zenstory-ai-oh-story-claudecode
 ---
 
 # story-cover：小说封面生成
@@ -48,7 +64,6 @@ tags: []
 **核心原则：封面是读者的第一印象，一眼传达题材和氛围。**
 
 ---
-
 ## 生成通路
 
 - **Codex 内置（优先）**：当前 Codex CLI 会话可调用 `$imagegen` / `image_gen` 时，直接生成并落盘；计入 Codex 通用用量，无需 `OPENAI_API_KEY` 或 `GPT_IMAGE_API_KEY`，也不运行 `curl`。`story-cover` 自行调用工具，不让用户另开命令。
@@ -67,7 +82,6 @@ tags: []
 | `REF_IMAGE` | | — | 参考图本地路径或 URL；内置通路先把图片载入会话，API 回退走 `images/edits` 图生图 |
 
 ---
-
 ## 生成流程
 
 ### Step 1：收集信息
@@ -358,7 +372,6 @@ fi
 ```
 
 ---
-
 ## 参考资料
 
 | 文件 | 何时加载 |
@@ -366,7 +379,6 @@ fi
 | [references/cover-styles.md](https://github.com/zenstory-ai/oh-story-claudecode/blob/main/skills/story-cover/references/cover-styles.md) | 题材→视觉风格映射、平台风格详情、提示词模板 |
 
 ---
-
 ## 语言
 
 - 跟随用户的语言回复，用户用什么语言就用什么语言回复

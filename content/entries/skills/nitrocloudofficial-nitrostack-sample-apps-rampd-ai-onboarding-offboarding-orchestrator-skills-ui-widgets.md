@@ -1,6 +1,6 @@
 ---
 slug: nitrocloudofficial-nitrostack-sample-apps-rampd-ai-onboarding-offboarding-orchestrator-skills-ui-widgets
-name: nitrostack-ui-widgets
+name: ui-widgets
 tagline: Best practices for linking tools to interactive frontend widgets using
   @Widget and @nitrostack/widgets SDK (including state sync, tool calling,
   displa
@@ -9,11 +9,16 @@ summary: Best practices for linking tools to interactive frontend widgets using
   display modes, media queries, and chat actions).
 categories:
   - agent-frameworks
+tags:
+  - agentic-ai
+  - chatgpt
+  - chatgpt-apps
+  - claude
 status: active
 quality_percentile: 99
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: nitrocloudofficial/nitrostack
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 2462
-  last_commit: 2026-10-13T12:55:47Z
+  stars: 2536
+  last_commit: 2026-10-18T15:38:39Z
+  stars_delta_7d: 74
+  stars_growth_pct: 3
+  trending_score: 76.22
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2465
+    - 2462
+    - 2536
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,17 +43,23 @@ readme_source:
   repo: nitrocloudofficial/nitrostack
   path: sample-apps/Rampd-AI-Onboarding-Offboarding-Orchestrator/skills/ui-widgets/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:01.826Z
+  fetched_at: 2026-10-19T07:33:30.911Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: nitrostack-ui-widgets
+  skill_name: ui-widgets
   description: Best practices for linking tools to interactive frontend widgets
     using @Widget and @nitrostack/widgets SDK (including state sync, tool
     calling, display modes, media queries, and chat actions).
   folder_path: sample-apps/Rampd-AI-Onboarding-Offboarding-Orchestrator/skills/ui-widgets
   extra_files: []
-tags: []
+  pack_total_skills: 5
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: nitrocloudofficial-nitrostack
 ---
 
 ## When to Use

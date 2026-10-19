@@ -1,20 +1,18 @@
 ---
 slug: microsoft-skillopt-plugins-claude-code-skills-skillopt-sleep
-name: skillopt-sleep
-tagline: Use when the user wants their Claude agent to self-improve from past
-  usage, asks about a nightly/offline 'sleep' or 'dream' cycle, memory/skill
-  consol
-summary: "It synthesizes three ideas: - SkillOpt — the skill/memory doc is
-  trainable text; bounded add/delete/replace edits; accepted only through a
-  held-out gate; rejected edits are recorded in the run report for review. -
-  Cla..."
+name: sleep
+tagline: Agent skill from microsoft/SkillOpt
+summary: Agent skill from microsoft/SkillOpt
 categories:
-  - databases-memory
+  - other
+tags:
+  - agent-skills
+  - self-evolving-agents
 status: active
 quality_percentile: 98
 selection_reason: official_vendor
 first_seen: 2026-05-08T06:41:01
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: microsoft/SkillOpt
@@ -22,8 +20,18 @@ source:
   official_vendor: true
   license: MIT
 signals:
-  stars: 18302
-  last_commit: 2026-10-06T17:42:32Z
+  stars: 18547
+  last_commit: 2026-10-18T17:03:51Z
+  stars_delta_7d: 245
+  stars_growth_pct: 1.3
+  trending_score: 248.28
+  rank_current: 43
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 18098
+    - 18302
+    - 18547
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,23 +39,22 @@ readme_source:
   repo: microsoft/SkillOpt
   path: plugins/claude-code/skills/skillopt-sleep/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.061Z
+  fetched_at: 2026-10-19T07:40:23.574Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: skillopt-sleep
-  description: "Use when the user wants their Claude agent to self-improve from
-    past usage, asks about a nightly/offline 'sleep' or 'dream' cycle,
-    memory/skill consolidation, or says things like 'make my agent better the
-    more I use it', 'review my past sessions', 'learn my preferences',
-    'consolidate what you learned', 'run the sleep cycle', or wants to schedule
-    background self-optimization. Drives the skillopt_sleep engine: harvest past
-    sessions -> mine recurring tasks -> replay through a selected backend ->
-    consolidate validated CLAUDE.md/SKILL.md behind a held-out gate."
+  skill_name: sleep
+  description: Agent skill from microsoft/SkillOpt
   folder_path: plugins/claude-code/skills/skillopt-sleep
   extra_files: []
-tags:
-  - memory
+  pack_total_skills: 2
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - cursor
+    - antigravity
+  pack_slug: microsoft-skillopt
 ---
 
 # SkillOpt-Sleep: usage-driven self-evolution for a local Claude agent

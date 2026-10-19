@@ -1,18 +1,20 @@
 ---
 slug: 0xnyk-council-of-high-intelligence-skills-council
-name: skills-council
-tagline: Convene the Council of High Intelligence — multi-persona deliberation
-  with historical thinkers for deeper analysis of complex problems.
-summary: "Flag priority: --quick / --duo set the mode. --full / --triad /
-  --members / --profile set the panel. --models overrides auto-routing.
-  --no-auto-route, --dry-route, and --chairman are additive."
+name: council
+tagline: Agent skill from 0xNyk/council-of-high-intelligence
+summary: Agent skill from 0xNyk/council-of-high-intelligence
 categories:
   - agent-frameworks
+tags:
+  - ai-agents
+  - claude-code
+  - codex
+  - decision-making
 status: active
-quality_percentile: 50
+quality_percentile: 59
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: 0xNyk/council-of-high-intelligence
@@ -20,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 4622
-  last_commit: 2026-10-12T05:38:28Z
+  stars: 4672
+  last_commit: 2026-10-19T05:29:20Z
+  stars_delta_7d: 50
+  stars_growth_pct: 1.1
+  trending_score: 50.54
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 4550
+    - 4622
+    - 4672
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,17 +39,21 @@ readme_source:
   repo: 0xNyk/council-of-high-intelligence
   path: skills/council/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.448Z
+  fetched_at: 2026-10-19T07:39:42.741Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: skills-council
-  description: Convene the Council of High Intelligence — multi-persona
-    deliberation with historical thinkers for deeper analysis of complex
-    problems.
+  skill_name: council
+  description: Agent skill from 0xNyk/council-of-high-intelligence
   folder_path: skills/council
   extra_files: []
-tags: []
+  pack_total_skills: 2
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: 0xnyk-council-of-high-intelligence
 ---
 
 # /council — Council of High Intelligence
@@ -106,7 +120,6 @@ This skill is distributed two ways, so council assets live in one of two roots. 
 Every later reference to a `~/.claude/...` council path means "the resolved asset root" — substitute the plugin paths when running from a marketplace install.
 
 ---
-
 ## The 18 Council Members
 
 | Agent | Figure | Domain | Model | Polarity |
@@ -221,7 +234,6 @@ All 18 members with the domain triads above.
 - `stability` → Ada + Feynman + Aurelius
 
 ---
-
 ## Coordinator Execution Sequence
 
 Follow these steps in order. Do NOT skip steps or merge rounds.
@@ -625,7 +637,6 @@ Best-effort fields (write `~unknown` if not available):
 This block is intentionally not a sub-section of the verdict — it's session telemetry appended below a separator. Reasoning: keeps it cheap to grep, future-easy to redirect to a log file, and avoids polluting the auditable decision artifact with infra noise. Phase 2 (benchmarking harness) and Phase 3 (cost/quality sweet spots) build on this same schema once 5–10 real sessions have been collected.
 
 ---
-
 ## Quick Mode Sequence (`--quick`)
 
 Fast 2-round deliberation for simpler questions. No cross-examination.
@@ -700,7 +711,6 @@ no option.
 Dispatch synthesis to the Chairman selected via STEP 1.7 (auto-selected per `--chairman` / config / detected-providers; if no Chairman selection was performed for `--quick`, perform the same algorithm now). Use the Quick Verdict template below. Same fallback rule as STEP 7.
 
 ---
-
 ## Duo Mode Sequence (`--duo`)
 
 Two-member dialectic for rapid opposing perspectives.
@@ -768,7 +778,6 @@ Final statement. 50 words maximum. State your position. No new arguments.
 Dispatch synthesis to the Chairman selected via STEP 1.7. In duo mode the Chairman must NOT be either of the two duo members (hard constraint — Chairman audits, not participates). Use the Duo Verdict template below. Same fallback rule as STEP 7.
 
 ---
-
 ## Output Templates
 
 ### Council Verdict (Full Mode)
@@ -833,7 +842,6 @@ If no seat carried 1.5× (ambiguous match), say so. If split, show both options 
 After acting on this verdict, revisit: Was this verdict useful? Was the recommended action taken? What happened? {This section is a prompt for the user, not filled by the council.}
 
 ---
-
 ### Session Metadata
 ```
 schema_version: 1
@@ -895,7 +903,6 @@ fallbacks_triggered: <list of "member→provider/model" entries, or "none">
 After acting on this verdict, revisit: Was this useful? What happened?
 
 ---
-
 ### Session Metadata
 ```
 schema_version: 1
@@ -952,7 +959,6 @@ fallbacks_triggered: <list or "none">
 After deciding, revisit: Which perspective proved more useful? What happened?
 
 ---
-
 ### Session Metadata
 ```
 schema_version: 1
@@ -971,7 +977,6 @@ fallbacks_triggered: <list or "none">
 ```
 
 ---
-
 ## Example Usage
 
 **Full mode:**

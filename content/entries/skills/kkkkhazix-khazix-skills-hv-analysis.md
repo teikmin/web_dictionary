@@ -1,17 +1,20 @@
 ---
 slug: kkkkhazix-khazix-skills-hv-analysis
 name: hv-analysis
-tagline: |-
-  横纵分析法（Horizontal-Vertical Analysis）深度研究Skill。由数字生命卡兹克提出，融合了索绪尔的历时-共时分析、社会科学的纵向-横截面研究设计、商学院案例研究法与竞争战略分析的核心思想。
-  当用户想要系统性研究一个产品、公司、概念、技术或人物时使用。核心是双轴分析：纵轴追
-summary: 你正在执行一次横纵分析法深度研究。最终产出一份排版精美的PDF研究报告。
+tagline: Agent skill from KKKKhazix/khazix-skills
+summary: Agent skill from KKKKhazix/khazix-skills
 categories:
-  - media-creative
+  - coding-agents
+tags:
+  - agent-skills
+  - ai-agents
+  - claude
+  - claude-code
 status: active
-quality_percentile: 63
+quality_percentile: 60
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: KKKKhazix/khazix-skills
@@ -19,32 +22,40 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 21368
+  stars: 21498
   last_commit: 2026-10-01T13:15:32Z
-language: zh
+  stars_delta_7d: 130
+  stars_growth_pct: 0.6
+  trending_score: 130.79
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 21220
+    - 21368
+    - 21498
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: KKKKhazix/khazix-skills
   path: hv-analysis/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:14.636Z
+  fetched_at: 2026-10-19T07:39:21.385Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: hv-analysis
-  description: |
-    横纵分析法（Horizontal-Vertical Analysis）深度研究Skill。由数字生命卡兹克提出，融合了索绪尔的历时-共时分析、社会科学的纵向-横截面研究设计、商学院案例研究法与竞争战略分析的核心思想。
-    当用户想要系统性研究一个产品、公司、概念、技术或人物时使用。核心是双轴分析：纵轴追踪从诞生到当下的完整生命历程（以叙事故事呈现），横轴在当下时间截面上与竞品/同类进行系统性横向对比，最后交叉两条轴产出独到洞察。最终产出一份排版精美的PDF研究报告。
-    触发词包括但不限于：横纵分析、研究一下、帮我分析、深度研究、做个研究、调研一下、竞品分析、帮我看看这个东西怎么样、这个产品/公司/概念是怎么回事、帮我摸清楚、帮我搞懂、帮我做个deep research。
-    即使用户只是说"帮我了解一下XX"或"XX是什么来头"，只要上下文暗示需要系统性的深度研究（而非简单的概念解释），都应该触发。也适用于用户丢来一个产品名、公司名、技术名词说"帮我研究一下这个"的场景。
-    不要用于简单的名词解释（用户只是问"XX是什么"）、不要用于公众号写作（那个用khazix-writer）、不要用于纯标题摘要生成（用wechat-title）。
+  description: Agent skill from KKKKhazix/khazix-skills
   folder_path: hv-analysis
   extra_files:
     - references/schema.json
     - scripts/md_to_pdf.py
-tags:
-  - pdf
+  pack_total_skills: 6
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: kkkkhazix-khazix-skills
 ---
 
 # 横纵分析法深度研究
@@ -70,7 +81,6 @@ tags:
 4. **特别关注点**（可选）：有没有特别想深入的方向？
 
 ---
-
 ## 第一步：联网信息收集
 
 这个方法论的质量完全取决于信息的丰富度和准确性。**必须联网搜索**，不能仅靠已有知识。研究报告的价值在于深度和完整度，所以信息收集阶段宁可多搜，不要因为信息不够导致后面的分析浮于表面。
@@ -120,7 +130,6 @@ prompt要描述目标（"获取""调研""了解"），不要用暗示具体手�
 信息不够就再补搜。不要凑合。
 
 ---
-
 ## 第二步：纵向分析（Diachronic / Longitudinal）
 
 沿时间轴，完整还原研究对象从诞生到现在的发展全貌。这是报告的主体部分，篇幅应该最重。
@@ -142,7 +151,6 @@ prompt要描述目标（"获取""调研""了解"），不要用暗示具体手�
 6000-15000字。历史越长、节点越多的对象靠近上限，新生事物靠近下限。核心原则是把故事讲完整、讲透，每个关键节点都值得展开，不要为了压缩而跳过重要细节。宁可写长写细，也不要蜻蜓点水。
 
 ---
-
 ## 第三步：横向分析（Synchronic / Cross-sectional）
 
 以当前时间点为切面，将研究对象与同赛道的竞品/同类进行全面对比。
@@ -174,7 +182,6 @@ prompt要描述目标（"获取""调研""了解"），不要用暗示具体手�
 3000-10000字。场景A控制在3000字左右，场景C每个主要竞品至少展开1500字以上的独立分析，不要一笔带过。
 
 ---
-
 ## 第四步：横纵交汇洞察
 
 这是整篇报告的精华段。把纵向发展脉络和横向竞争格局结合起来，给出综合性的、新的判断。不要写成前面内容的缩写版。
@@ -192,7 +199,6 @@ prompt要描述目标（"获取""调研""了解"），不要用暗示具体手�
 1500-3000字。
 
 ---
-
 ## 写作风格
 
 这不是一份冷冰冰的咨询报告，而是一篇让人能从头读到尾的深度研究。写作风格需要在「研究报告的严谨」和「卡兹克的可读性」之间找到平衡点。
@@ -239,7 +245,6 @@ prompt要描述目标（"获取""调研""了解"），不要用暗示具体手�
 避免咨询公司式的套话和空洞概括。用具体的细节和例子代替概括性陈述。比如不要写「该公司在这一阶段实现了快速增长」，而要写「从2024年中期的1000万美元ARR到2025年底的10亿美元，增长曲线几乎是垂直的」。
 
 ---
-
 ## 第五步：生成PDF报告
 
 报告写完后，使用本Skill自带的 `scripts/md_to_pdf.py` 脚本将Markdown转为排版精美的PDF。
@@ -315,7 +320,6 @@ prompt要描述目标（"获取""调研""了解"），不要用暗示具体手�
 PDF文件命名为 `[研究对象名称]_横纵分析报告.pdf`，保存到用户的工作目录中。
 
 ---
-
 ## 不同研究对象类型的适配
 
 核心原则不变（纵向追时间深度，横向追同期广度），但侧重点不同：
@@ -329,7 +333,6 @@ PDF文件命名为 `[研究对象名称]_横纵分析报告.pdf`，保存到用�
 **研究人物时**：纵轴重点关注个人经历、职业轨迹、关键决策、成长曲线、公开言论变化；横轴重点关注与同领域其他人物的对比（做事方式、风格、成就、影响力、路线选择差异）。
 
 ---
-
 ## 篇幅总览
 
 | 部分 | 字数范围 | 说明 |
@@ -340,7 +343,6 @@ PDF文件命名为 `[研究对象名称]_横纵分析报告.pdf`，保存到用�
 | **全文总计** | **10,000 - 30,000字** | 不要怕长，深度和完整度是价值所在 |
 
 ---
-
 ## 质检清单
 
 交付前自检：

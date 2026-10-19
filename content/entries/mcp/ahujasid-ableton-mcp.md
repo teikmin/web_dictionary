@@ -6,19 +6,34 @@ tagline: "Control Ableton Live with any LLM: create tracks, arrange clips &
 summary: Connect Ableton Live to Claude AI
 categories:
   - media-creative
+tags:
+  - ableton
+  - claude
+  - daw
+  - generative-ai
 status: active
-quality_percentile: 72
+quality_percentile: 68
 selection_reason: quality_percentile
 first_seen: 2025-03-19T17:00:09
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: ahujasid/ableton-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 3177
+  stars: 3207
   last_commit: 2026-09-22T10:37:13Z
+  stars_delta_7d: 30
+  stars_growth_pct: 0.9
+  trending_score: 30.28
+  rank_current: 35
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3148
+    - 3177
+    - 3207
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +43,7 @@ readme_source:
   repo: ahujasid/ableton-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:06.116Z
+  fetched_at: 2026-10-19T07:33:39.587Z
   truncated: false
 type: mcp_server
 launch:
@@ -38,7 +53,6 @@ launch:
     - ableton-mcp
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 <div align="center">

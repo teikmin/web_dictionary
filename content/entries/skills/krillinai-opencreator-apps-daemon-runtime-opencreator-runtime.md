@@ -1,15 +1,20 @@
 ---
 slug: krillinai-opencreator-apps-daemon-runtime-opencreator-runtime
-name: opencreator-runtime
-tagline: OpenCreator 内部 Creator Agent 的稳定运行规则，仅由应用自动安装和激活。
-summary: OpenCreator 内部 Creator Agent 的稳定运行规则，仅由应用自动安装和激活。
+name: runtime
+tagline: Agent skill from krillinai/OpenCreator
+summary: Agent skill from krillinai/OpenCreator
 categories:
-  - agent-frameworks
+  - media-creative
+tags:
+  - agent-skills
+  - codex-cli
+  - deskop-app
+  - dubbing
 status: active
-quality_percentile: 75
+quality_percentile: 76
 selection_reason: quality_percentile
 first_seen: 2024-12-17T01:59:22
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: krillinai/OpenCreator
@@ -17,25 +22,41 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 12884
-  last_commit: 2026-10-13T09:45:23Z
-language: zh
+  stars: 13701
+  last_commit: 2026-10-19T01:37:37Z
+  stars_delta_7d: 817
+  stars_growth_pct: 6.3
+  trending_score: 868.81
+  rank_current: 22
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 12614
+    - 12884
+    - 13701
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: krillinai/OpenCreator
   path: apps/daemon/runtime/opencreator-runtime/SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:18.111Z
+  fetched_at: 2026-10-19T07:40:24.227Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: opencreator-runtime
-  description: OpenCreator 内部 Creator Agent 的稳定运行规则，仅由应用自动安装和激活。
+  skill_name: runtime
+  description: Agent skill from krillinai/OpenCreator
   folder_path: apps/daemon/runtime/opencreator-runtime
   extra_files:
     - manifest.json
-tags: []
+  pack_total_skills: 9
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: krillinai-opencreator
 ---
 
 # OpenCreator Runtime

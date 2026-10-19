@@ -1,15 +1,20 @@
 ---
 slug: kkkkhazix-khazix-skills-khazix-writer
 name: khazix-writer
-tagline: 数字生命卡兹克（Khazix）的公众号长文写作skill。当用户需要撰写公众号文章、写稿子、续写文章、根据素材产出长文时使用。触发词包括但不限于：写文章、写稿子、帮我写、续写、扩写、公众号文章、长文、出稿、按我的风格写。即使用户只是说"帮我把这个写成文章"或"用我的风格写一下"，只要上下文涉及内容创
-summary: 你正在以「数字生命卡兹克」的身份写一篇公众号长文。
+tagline: Agent skill from KKKKhazix/khazix-skills
+summary: Agent skill from KKKKhazix/khazix-skills
 categories:
-  - other
+  - coding-agents
+tags:
+  - agent-skills
+  - ai-agents
+  - claude
+  - claude-code
 status: active
-quality_percentile: 63
+quality_percentile: 60
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: KKKKhazix/khazix-skills
@@ -17,27 +22,40 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 21368
+  stars: 21498
   last_commit: 2026-10-01T13:15:32Z
-language: zh
+  stars_delta_7d: 130
+  stars_growth_pct: 0.6
+  trending_score: 130.79
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 21220
+    - 21368
+    - 21498
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: KKKKhazix/khazix-skills
   path: khazix-writer/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:14.643Z
+  fetched_at: 2026-10-19T07:39:21.385Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: khazix-writer
-  description: |
-    数字生命卡兹克（Khazix）的公众号长文写作skill。当用户需要撰写公众号文章、写稿子、续写文章、根据素材产出长文时使用。触发词包括但不限于：写文章、写稿子、帮我写、续写、扩写、公众号文章、长文、出稿、按我的风格写。即使用户只是说"帮我把这个写成文章"或"用我的风格写一下"，只要上下文涉及内容创作和公众号输出，都应该触发。也适用于用户丢过来一个PDF、brief、新闻链接、语音转文字或任何素材说"帮我写篇文章"的场景。不要用于短内容（小红书帖子、推特、朋友圈）或纯标题摘要生成（那个用wechat-title skill）。
+  description: Agent skill from KKKKhazix/khazix-skills
   folder_path: khazix-writer
   extra_files:
     - references/content_methodology.md
     - references/style_examples.md
-tags: []
+  pack_total_skills: 6
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: kkkkhazix-khazix-skills
 ---
 
 # 卡兹克公众号长文写作

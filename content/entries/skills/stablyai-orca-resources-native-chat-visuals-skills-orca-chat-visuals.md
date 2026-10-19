@@ -1,19 +1,24 @@
 ---
 slug: stablyai-orca-resources-native-chat-visuals-skills-orca-chat-visuals
-name: orca-chat-visuals
+name: chat-visuals
 tagline: Show a chart, diagram, table, report or mockup inline in this Orca chat
   as an HTML page. Use when a visual would help the user understand your answer.
-summary: "- Save it in the folder named by ORCACHATVISUALSDIR (printenv
-  ORCACHATVISUALSDIR; in PowerShell $env:ORCACHATVISUALSDIR). If it's unset or
-  you can't write there, skip the visual. - One complete HTML file per visual,
-  d..."
+summary: "- Save it in the folder named by ORCACHATSCRATCHDIR (printenv
+  ORCACHATSCRATCHDIR; in PowerShell $env:ORCACHATSCRATCHDIR). If it's unset or
+  you can't write there, skip the visual. This folder is temporary: Orca may
+  rem..."
 categories:
-  - media-creative
+  - agent-frameworks
+tags:
+  - ade
+  - agent-ide
+  - ai-agents
+  - automation
 status: active
-quality_percentile: 64
+quality_percentile: 67
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: stablyai/orca
@@ -21,8 +26,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 91386
-  last_commit: 2026-10-13T16:24:00Z
+  stars: 97177
+  last_commit: 2026-10-19T07:28:54Z
+  stars_delta_7d: 5791
+  stars_growth_pct: 6.3
+  trending_score: 6157.97
+  rank_current: 2
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 86961
+    - 91386
+    - 97177
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,18 +45,24 @@ readme_source:
   repo: stablyai/orca
   path: resources/native-chat-visuals/skills/orca-chat-visuals/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.924Z
+  fetched_at: 2026-10-19T07:36:40.961Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: orca-chat-visuals
+  skill_name: chat-visuals
   description: Show a chart, diagram, table, report or mockup inline in this Orca
     chat as an HTML page. Use when a visual would help the user understand your
-    answer. Only available when the ORCA_CHAT_VISUALS_DIR environment variable
+    answer. Only available when the ORCA_CHAT_SCRATCH_DIR environment variable
     is set.
   folder_path: resources/native-chat-visuals/skills/orca-chat-visuals
   extra_files: []
-tags: []
+  pack_total_skills: 11
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: stablyai-orca
 ---
 
 # Inline visuals in an Orca chat
@@ -50,8 +71,10 @@ clearer.
 
 ## Writing the page
 
-- Save it in the folder named by `ORCA_CHAT_VISUALS_DIR` (`printenv ORCA_CHAT_VISUALS_DIR`; in
-  PowerShell `$env:ORCA_CHAT_VISUALS_DIR`). If it's unset or you can't write there, skip the visual.
+- Save it in the folder named by `ORCA_CHAT_SCRATCH_DIR` (`printenv ORCA_CHAT_SCRATCH_DIR`; in
+  PowerShell `$env:ORCA_CHAT_SCRATCH_DIR`). If it's unset or you can't write there, skip the visual.
+  This folder is temporary: Orca may remove it after 30 days without chat activity or changes.
+  Save files meant to last in the workspace.
 - One complete HTML file per visual, directly in that folder, under 512 KB, with a new file name
   each time (e.g. `latency-by-region-7c1e.html`): letters, digits, `.`, `_`, `-`, ending in `.html`.
 - Inline your styles, scripts and data. Libraries and fonts may load only from cdn.jsdelivr.net,

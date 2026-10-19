@@ -7,12 +7,17 @@ summary: '- User explicitly mentions "reminder" or "Reminders app" - Creating
   personal to-dos with due dates that sync to iOS - Managing Apple Reminders
   lists - User wants tasks to appear in their iPhone/iPad Reminders app'
 categories:
-  - coding-agents
+  - agent-frameworks
+tags:
+  - agentic
+  - agentic-ai
+  - agi
+  - chatbot
 status: active
 quality_percentile: 86
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: the-open-agent/openagent
@@ -20,8 +25,15 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 5688
-  last_commit: 2026-10-13T12:41:03Z
+  stars: 5698
+  last_commit: 2026-10-19T07:21:22Z
+  stars_delta_7d: 10
+  stars_growth_pct: 0.2
+  trending_score: 10.02
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 5688
+    - 5698
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,7 +41,7 @@ readme_source:
   repo: the-open-agent/openagent
   path: skills/apple-reminders/SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:05.709Z
+  fetched_at: 2026-10-19T07:33:39.288Z
   truncated: false
 type: agent_skill
 skill:
@@ -38,7 +50,13 @@ skill:
     complete, delete). Supports lists, date filters, and JSON/plain output.
   folder_path: skills/apple-reminders
   extra_files: []
-tags: []
+  pack_total_skills: 54
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: the-open-agent-openagent
 ---
 
 # Apple Reminders CLI (remindctl)

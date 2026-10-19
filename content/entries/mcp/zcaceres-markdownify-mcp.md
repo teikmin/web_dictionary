@@ -7,19 +7,34 @@ summary: Markdownify is a Model Context Protocol (MCP) server that converts
   tools to transform PDFs, images, audio files, web pages, and more into eas...
 categories:
   - media-creative
+tags:
+  - anthropic
+  - anthropic-ai
+  - anthropic-claude
+  - markdown
 status: active
-quality_percentile: 52
+quality_percentile: 51
 selection_reason: quality_percentile
 first_seen: 2024-12-18T21:14:52
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: zcaceres/markdownify-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 2998
+  stars: 2997
   last_commit: 2026-09-25T05:23:14Z
+  stars_delta_7d: 0
+  stars_growth_pct: 0
+  trending_score: 0
+  rank_current: 87
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3001
+    - 2998
+    - 2997
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +43,7 @@ readme_source:
   repo: zcaceres/markdownify-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:06.051Z
+  fetched_at: 2026-10-19T07:33:39.534Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,8 +54,6 @@ launch:
     - mcp-markdownify-server
   env_vars: []
   confidence: manifest
-tags:
-  - audio
 ---
 
 # Markdownify MCP Server

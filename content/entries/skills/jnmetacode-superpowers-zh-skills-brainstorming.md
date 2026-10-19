@@ -1,15 +1,20 @@
 ---
 slug: jnmetacode-superpowers-zh-skills-brainstorming
 name: brainstorming
-tagline: 在任何创造性工作之前必须使用此技能——创建功能、构建组件、添加功能或修改行为。在实现之前先探索用户意图、需求和设计。
-summary: 先判断这个需求需要多少流程，然后沿着对应的路径推进：理解上下文、完善想法、展示设计、获得你的人类伙伴批准。
+tagline: Agent skill from jnMetaCode/superpowers-zh
+summary: Agent skill from jnMetaCode/superpowers-zh
 categories:
-  - other
+  - coding-agents
+tags:
+  - agent-skills
+  - agentic-coding
+  - ai-coding
+  - chinese
 status: active
-quality_percentile: 80
+quality_percentile: 88
 selection_reason: quality_percentile
 first_seen: 2026-03-20T00:12:39
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: jnMetaCode/superpowers-zh
@@ -17,31 +22,47 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 8305
-  last_commit: 2026-10-08T06:45:46Z
-language: zh
+  stars: 8344
+  last_commit: 2026-10-19T04:47:10Z
+  stars_delta_7d: 39
+  stars_growth_pct: 0.5
+  trending_score: 39.18
+  rank_current: 87
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 8267
+    - 8305
+    - 8344
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: jnMetaCode/superpowers-zh
   path: skills/brainstorming/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.383Z
+  fetched_at: 2026-10-19T07:39:37.712Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: brainstorming
-  description: 在任何创造性工作之前必须使用此技能——创建功能、构建组件、添加功能或修改行为。在实现之前先探索用户意图、需求和设计。
+  description: Agent skill from jnMetaCode/superpowers-zh
   folder_path: skills/brainstorming
   extra_files:
+    - builder-check-prompt.md
     - scripts/frame-template.html
     - scripts/helper.js
     - scripts/server.cjs
     - scripts/start-server.sh
     - scripts/stop-server.sh
-    - spec-document-reviewer-prompt.md
     - visual-companion.md
-tags: []
+  pack_total_skills: 21
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: jnmetacode-superpowers-zh
 ---
 
 # 头脑风暴：将想法转化为设计

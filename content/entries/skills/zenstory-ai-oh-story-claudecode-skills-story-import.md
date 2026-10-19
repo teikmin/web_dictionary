@@ -1,20 +1,20 @@
 ---
 slug: zenstory-ai-oh-story-claudecode-skills-story-import
 name: story-import
-tagline: 逆向导入已有小说。将已写好的小说（半成品或完本）反向解析为标准项目目录结构，兼容 story-long-write /
-  story-short-write 后续写作流程；内部复用 story-long-analyze / story-short-analyze
-  的拆解管道，按篇幅自动分流。触发方式：
-summary: "- {导入书名}：用户自己已经写到一半或已经完本、现在要重建为工程的小说；它的分析源固定为 拆文库/{导入书名}/。 -
-  {对标书名}：用户另行选择的外部参考作品；它必须是独立拆解产物，来源固定为 拆文库/{对标书名}/，且不得指向本次导入源。 - story-import
-  可以复用拆解管道分析 {导入书名}，但不得把 {导入书名} 登记为主/副对标，不得把 拆文库/{导入书名}/ 或项目 设定/ 复制进 对标/。 -
-  用户没有明..."
+tagline: Agent skill from zenstory-ai/oh-story-claudecode
+summary: Agent skill from zenstory-ai/oh-story-claudecode
 categories:
-  - other
+  - productivity-ops
+tags:
+  - agent-skills
+  - ai-agent
+  - ai-novel-writing
+  - ai-writing
 status: active
-quality_percentile: 76
+quality_percentile: 81
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: zenstory-ai/oh-story-claudecode
@@ -22,36 +22,48 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 7517
-  last_commit: 2026-10-10T11:50:41Z
-language: zh
+  stars: 7737
+  last_commit: 2026-10-18T01:05:23Z
+  stars_delta_7d: 220
+  stars_growth_pct: 2.9
+  trending_score: 226.44
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 7340
+    - 7517
+    - 7737
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: zenstory-ai/oh-story-claudecode
   path: skills/story-import/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.410Z
+  fetched_at: 2026-10-19T07:39:37.264Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: story-import
-  description: 逆向导入已有小说。将已写好的小说（半成品或完本）反向解析为标准项目目录结构，兼容 story-long-write /
-    story-short-write 后续写作流程；内部复用 story-long-analyze / story-short-analyze
-    的拆解管道，按篇幅自动分流。触发方式：/story-import、「导入小说」「反向解析」「导入」「把我的书导进来」。
+  description: Agent skill from zenstory-ai/oh-story-claudecode
   folder_path: skills/story-import
   extra_files:
+    - references/benchmark-sync.md
     - references/character-state-reverse.md
     - references/deep-analysis.md
-    - references/format-and-structure.md
     - references/import-report.md
     - references/import-special-cases.md
     - references/import-tracking.md
     - references/length-routing.md
     - references/outline-reverse-rules.md
     - references/outline-reverse.md
-    - references/state-tracking.md
-tags: []
+    - references/structure-mapping-long.md
+  pack_total_skills: 13
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: zenstory-ai-oh-story-claudecode
 ---
 
 # story-import：逆向导入已有小说
@@ -88,7 +100,6 @@ tags: []
 **导入续写入口顺序**：用户只问流程时先答结论再收原文——推荐先 `/story-setup`，新开对话 `/story-import`，导完 `/story-long-write 日更`；也可直接导入，缺环境时 Step 4 给选择。导入过的书、旧版追踪的书、超过 200 章的书按 [import-special-cases.md](https://github.com/zenstory-ai/oh-story-claudecode/blob/main/skills/story-import/references/import-special-cases.md) 处理。
 
 ---
-
 ## Phase 1：确认来源与范围
 
 ### Step 1：确认意图
@@ -141,7 +152,6 @@ tags: []
 ```
 
 ---
-
 ## Phase 2：深度分析
 
 读 [deep-analysis.md](https://github.com/zenstory-ai/oh-story-claudecode/blob/main/skills/story-import/references/deep-analysis.md)，按导入记录的篇幅与写作环境进入对应拆解管道，自动跑完本次需要的范围，不把拆书中途的停靠询问甩给作者。完成后勾进度。
@@ -159,7 +169,6 @@ tags: []
 读 [import-report.md](https://github.com/zenstory-ai/oh-story-claudecode/blob/main/skills/story-import/references/import-report.md)：自检、按模板向作者汇报、设置 `.active-book`。
 
 ---
-
 ## 流程衔接
 
 | 时机 | 跳转到 | 命令 |

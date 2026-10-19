@@ -8,11 +8,16 @@ summary: Forty-five visual types. Semantic patterns describe behavior; type
   references describe layout.
 categories:
   - media-creative
+tags:
+  - agent-skills
+  - claude-code
+  - codex
+  - data-visualization
 status: active
-quality_percentile: 63
+quality_percentile: 66
 selection_reason: quality_percentile
 first_seen: 2026-04-16T18:01:16
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: cathrynlavery/diagram-design
@@ -20,8 +25,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 53703
-  last_commit: 2026-10-13T14:57:55Z
+  stars: 57952
+  last_commit: 2026-10-16T19:42:46Z
+  stars_delta_7d: 4249
+  stars_growth_pct: 7.9
+  trending_score: 4585.18
+  rank_current: 6
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 44654
+    - 53703
+    - 57952
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,7 +44,7 @@ readme_source:
   repo: cathrynlavery/diagram-design
   path: skills/diagram-design/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:12.495Z
+  fetched_at: 2026-10-19T07:37:14.830Z
   truncated: false
 type: agent_skill
 skill:
@@ -48,6 +63,9 @@ skill:
     decomposition trees, and onboarding guidance.
   folder_path: skills/diagram-design
   extra_files:
+    - assets/example-architecture-containment-dark.html
+    - assets/example-architecture-containment-full.html
+    - assets/example-architecture-containment.html
     - assets/example-architecture-dark.html
     - assets/example-architecture-delta-dark.html
     - assets/example-architecture-delta-full.html
@@ -55,10 +73,13 @@ skill:
     - assets/example-architecture-full.html
     - assets/example-architecture.html
     - assets/example-axonometric-plan-campus-animated.html
-    - assets/example-axonometric-plan-campus-dark.html
-    - assets/example-axonometric-plan-campus-full.html
-    - assets/example-axonometric-plan-campus.html
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: cathrynlavery-diagram-design
 ---
 
 # Diagram Design
@@ -107,7 +128,7 @@ Use for any of the 45 visual types (§3) when a reader will learn more from a vi
 
 **Don't use for:**
 
-- Quick unicode diagrams → use **wiretext**.
+- Quick unicode diagrams → a separate plain-text tool such as wiretext. This skill doesn't ship one.
 - Lists of things → table or bullets.
 - Attribute-only before/after → table; topology changes → Architecture delta.
 - One-shape "diagrams" → just write the sentence.
@@ -138,7 +159,7 @@ The pattern owns semantic primitives and its tighter budget; the type owns layou
 
 | If you're showing… | Use | Reference |
 |---|---|---|
-| Components + connections in one system snapshot | **Architecture** | [type-architecture.md](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/references/type-architecture.md) |
+| Components + connections in one snapshot; nested admin vs traffic scopes | **Architecture** | [type-architecture.md](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/references/type-architecture.md) |
 | Structural change between synchronized Before / After topologies, with a Changes ledger | **Architecture delta** | [type-architecture-delta.md](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/references/type-architecture-delta.md) |
 | Legacy IT landscape by phase or department; shows the *before* state | **IT current-state** | [type-it-state.md](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/references/type-it-state.md) |
 | Decision logic with branches | **Flowchart** | [type-flowchart.md](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/references/type-flowchart.md) |
@@ -443,6 +464,6 @@ Every diagram is an accessible figure by default (long form: [primitives-core.md
 
 ### Exporting to PNG / SVG
 
-When the user asks to export, save, rasterize, or convert a generated diagram to `.png` or `.svg`, load [`references/export.md`](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/references/export.md) and follow the procedure there. For the SVG half, prefer the packaged helper `scripts/export_svg.py` (it carries class-based CSS into the fragment and namespaces `<defs>` IDs so exports stay inline-safe). Both formats deliver the diagram only (the `<svg>` node) — editorial wrappers like cards and headers are dropped by design. Export is **manual** — never produce export files unprompted.
+When the user asks to export, save, rasterize, or convert a generated diagram to `.png` or `.svg`, load [`references/export.md`](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/references/export.md) and follow the procedure there. Run the packaged helpers `scripts/export_svg.py` and `scripts/export_png.py`; the reference owns their arguments and availability checks. Both formats deliver the diagram only (the `<svg>` node) — editorial wrappers like cards and headers are dropped by design. Export is **manual** — never produce export files unprompted.
 
 For an imported diagram, pixel dimensions come from the `viewBox` × scale factor, so its size decision belongs to §11, not to export. For any diagram that needs an exact frame (an OG card or a slide image), see [`export.md` § Sizing the export](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/references/export.md).

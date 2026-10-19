@@ -1,0 +1,101 @@
+---
+slug: asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-make-a-doc
+name: make-a-doc
+tagline: Page-style document, printable out of the box
+summary: 'Flowing pages — text that pours onto standard sheets (Letter/A4) and
+  breaks wherever needed: reports, memos, letters, papers, guides. START by
+  calling copystartercomponent with kind: "docpage.js", then write the whole...'
+categories:
+  - cloud-infra
+tags:
+  - ai-agents
+  - ai-prompts
+  - anthropic
+  - chatbot
+status: active
+quality_percentile: 85
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: asgeirtj/system_prompts_leaks
+  subpath: Anthropic/claude-design/skills/make-a-doc
+  official_vendor: false
+  license: CC0-1.0
+signals:
+  stars: 69880
+  last_commit: 2026-10-16T08:29:42Z
+  stars_delta_7d: 885
+  stars_growth_pct: 0
+  trending_score: 0
+  velocity_source: age_velocity
+  sparkline_4w:
+    - 69880
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: asgeirtj/system_prompts_leaks
+  path: Anthropic/claude-design/skills/make-a-doc/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:37:14.483Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: make-a-doc
+  description: Page-style document, printable out of the box
+  folder_path: Anthropic/claude-design/skills/make-a-doc
+  extra_files: []
+  pack_total_skills: 205
+  is_pack_primary: false
+  clients:
+    - claude-code
+  pack_slug: asgeirtj-system_prompts_leaks
+---
+
+# Make a doc
+Create a document (resume, one-pager, memo, letter, report, guide,
+paper). First decide which of two shapes the user wants — they export
+completely differently:
+
+**Flowing pages** — text that pours onto standard sheets (Letter/A4)
+and breaks wherever needed: reports, memos, letters, papers, guides.
+START by calling `copy_starter_component` with
+`kind: "doc_page.js"`, then write the whole document as normal
+flowing HTML inside `<doc-page size="letter" margin="0.75in">`.
+The component owns the sheet, the desk background, and all print
+geometry — do NOT write your own `@page` rule, body background,
+page-card divs, `break-after: page` fake sheets, or
+`break-inside: avoid` on items inside multi-column grids (a grid only
+breaks between rows, so a kept row that doesn't fit leaves a blank band).
+
+Print rules for flowing pages: multi-column text uses CSS columns
+(`column-count` + `column-gap`; `column-span: all` on a heading
+that spans; `hyphens: auto` in narrow columns — it needs `lang`
+on the html element), never side-by-side
+flex/grid columns — only real CSS columns flow and break across pages.
+Use `break-before: page` on anything that must start a new page (a
+chapter, an appendix); add custom kept-together blocks (callouts, stat
+tiles, cards) to a `break-inside: avoid` rule and keep each shorter
+than a page — the component already keeps headings with their content,
+keeps figures/code/table rows whole, and suppresses orphans and widows
+(extend `orphans: 3; widows: 3` to custom text blocks). Long tables
+get a `<thead>` so the header repeats on every page. No
+`position: fixed`/`sticky` and no viewport units in content —
+fixed elements stamp every printed page (running headers/footers go in
+the component's slots) and `100vh` mis-sizes at print.
+
+**Fixed sheet** — a design that must fill exactly one page of fixed
+dimensions: poster, infographic, social graphic, certificate. No
+starter component — build it at its true pixel size with an explicit
+px `width` (and `height` if fixed) on the top-level element; the
+export sizes the PDF page to it automatically. Do not write any
+`@page` rule for it.
+
+Styling (both shapes): body type 14–16px with generous line-height
+(1.55–1.7); clear heading hierarchy; restrained palette. Tables get a
+header row and hairline borders; figures and code blocks each carry a
+short caption. Open with the document's own h1 as the first body
+element (use any header-shaped first line of pasted content as that h1
+rather than rendering it as a separate masthead).

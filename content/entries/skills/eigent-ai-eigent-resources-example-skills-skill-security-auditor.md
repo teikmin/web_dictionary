@@ -1,20 +1,20 @@
 ---
 slug: eigent-ai-eigent-resources-example-skills-skill-security-auditor
-name: skill-security-auditor
-tagline: "Security auditing for code, configs, and infrastructure. Use when the
-  user wants to audit or improve security: scan for vulnerabilities (SQL
-  injection"
-summary: This guide covers security auditing workflows for source code,
-  dependencies, and configurations. For detailed vulnerability patterns and
-  detection rules, see references/vulnerability-patterns.md. For secrets
-  detection...
+name: security-auditor
+tagline: Agent skill from eigent-ai/eigent
+summary: Agent skill from eigent-ai/eigent
 categories:
-  - security-auth
+  - agent-frameworks
+tags:
+  - agent-framework
+  - agent-skills
+  - agentic-ai
+  - agentic-workflow
 status: active
-quality_percentile: 75
+quality_percentile: 77
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: eigent-ai/eigent
@@ -22,8 +22,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 15514
-  last_commit: 2026-10-13T12:26:39Z
+  stars: 15599
+  last_commit: 2026-10-17T21:07:58Z
+  stars_delta_7d: 85
+  stars_growth_pct: 0.5
+  trending_score: 85.47
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 15467
+    - 15514
+    - 15599
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,19 +39,12 @@ readme_source:
   repo: eigent-ai/eigent
   path: resources/example-skills/skill-security-auditor/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.094Z
+  fetched_at: 2026-10-19T07:40:23.640Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: skill-security-auditor
-  description: 'Security auditing for code, configs, and infrastructure. Use when
-    the user wants to audit or improve security: scan for vulnerabilities (SQL
-    injection, XSS, command injection, path traversal), detect hardcoded secrets
-    and credentials, review auth and authorization, check dependencies for known
-    CVEs, audit config files for insecure defaults, or generate security
-    reports. Trigger on "security audit", "vulnerability scan", "code review for
-    security", "find secrets", "check for vulnerabilities", "OWASP", "CVE", or
-    questions about code security.'
+  skill_name: security-auditor
+  description: Agent skill from eigent-ai/eigent
   folder_path: resources/example-skills/skill-security-auditor
   extra_files:
     - LICENSE.txt
@@ -51,8 +52,13 @@ skill:
     - references/vulnerability-patterns.md
     - scripts/scan_project.py
     - scripts/scan_secrets.py
-tags:
-  - security
+  pack_total_skills: 6
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: eigent-ai-eigent
 ---
 
 # Security Auditor Guide

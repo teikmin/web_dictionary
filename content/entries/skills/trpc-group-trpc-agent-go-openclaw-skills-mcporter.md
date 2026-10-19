@@ -1,0 +1,150 @@
+---
+slug: trpc-group-trpc-agent-go-openclaw-skills-mcporter
+name: mcporter
+tagline: Use the mcporter CLI to list, configure, auth, and call MCP
+  servers/tools directly (HTTP or stdio), including ad-hoc servers, config
+  edits, CLI/type g
+summary: In OpenClaw, treat mcporter as the execution substrate for MCP-backed
+  skills. When a user wants to keep an MCP capability for future work, prefer
+  creating or updating a skill that describes when to use the capability...
+categories:
+  - agent-frameworks
+tags:
+  - a2a
+  - a2a-protocol
+  - ag-ui
+  - agent-framework
+status: active
+quality_percentile: 82
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: trpc-group/trpc-agent-go
+  subpath: openclaw/skills/mcporter
+  official_vendor: false
+  license: Apache-2.0
+signals:
+  stars: 1870
+  last_commit: 2026-10-19T07:09:58Z
+  stars_delta_7d: 10
+  stars_growth_pct: 0.5
+  trending_score: 10.05
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1860
+    - 1870
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: trpc-group/trpc-agent-go
+  path: openclaw/skills/mcporter/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:33:53.717Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: mcporter
+  description: Use the mcporter CLI to list, configure, auth, and call MCP
+    servers/tools directly (HTTP or stdio), including ad-hoc servers, config
+    edits, CLI/type generation, and MCP-backed skills that need a durable
+    command path.
+  folder_path: openclaw/skills/mcporter
+  extra_files: []
+  pack_total_skills: 71
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: trpc-group-trpc-agent-go
+---
+
+# mcporter
+Use `mcporter` to work with MCP servers directly.
+
+In OpenClaw, treat `mcporter` as the execution substrate for MCP-backed
+skills. When a user wants to keep an MCP capability for future work, prefer
+creating or updating a skill that describes when to use the capability and
+stores the repeatable mcporter command path. Do not create a separate runtime
+registry when a skill can carry the durable behavior.
+
+Skill-first MCP shape
+
+- `SKILL.md`: triggers, workflow, constraints, examples, and recovery steps.
+- `mcp.json`: mcporter-native server config when the skill needs a dedicated
+  server definition.
+- `references/`: schemas, API notes, or longer operation guides.
+- `scripts/`: wrappers for fragile multi-step calls or post-processing.
+
+Credential handling
+
+- Keep shared, bundled, published, or repo-tracked skills free of raw secrets.
+  Reference environment variables, token helper commands, OAuth login state,
+  runtime config, or platform-managed credentials instead.
+- If the user explicitly provides a complete private MCP config or a
+  credential-bearing endpoint and asks to keep or use it, save it in a local
+  private config file such as skill-local `mcp.json` in a writable
+  user-managed skill root, or a dedicated user-managed private mcporter config
+  file. Keep it non-shared and excluded from source control and packaging. Set
+  file permissions to `0600` when possible. Do not ask the user to re-enter the
+  same value as an environment variable, and do not edit shell startup or
+  trusted env files just to persist it. Do not echo the secret value back in
+  CLI output, logs, or errors; redact or omit token and secret fields from
+  displayed tool results.
+- For bot-global OpenClaw MCP capabilities, prefer a local skill plus
+  skill-local `mcp.json`. Use `mcporter --config path/to/skill/mcp.json ...`
+  as the durable command path. Treat `~/.mcporter/mcporter.json` as an
+  interoperability copy when useful, not as the capability boundary. The
+  credential-bearing source of truth for a durable skill run is the explicit
+  `--config` file you pass.
+
+For a durable MCP skill, first inspect the server schema:
+
+```bash
+mcporter --config path/to/skill/mcp.json list <server> --schema --output json
+```
+
+Then call the selected tool with explicit arguments:
+
+```bash
+mcporter --config path/to/skill/mcp.json call <server.tool> key=value
+```
+
+Quick start
+
+- `mcporter list`
+- `mcporter list <server> --schema`
+- `mcporter call <server.tool> key=value`
+
+Call tools
+
+- Selector: `mcporter call linear.list_issues team=ENG limit:5`
+- Function syntax: `mcporter call "linear.create_issue(title: \"Bug\")"`
+- Full URL: `mcporter call https://api.example.com/mcp.fetch url:https://example.com`
+- Stdio: `mcporter call --stdio "bun run ./server.ts" scrape url=https://example.com`
+- JSON payload: `mcporter call <server.tool> --args '{"limit":5}'`
+
+Auth + config
+
+- OAuth: `mcporter auth <server | url> [--reset]`
+- Config: `mcporter config list|get|add|remove|import|login|logout`
+
+Daemon
+
+- `mcporter daemon start|status|stop|restart`
+
+Codegen
+
+- CLI: `mcporter generate-cli --server <name>` or `--command <url>`
+- Inspect: `mcporter inspect-cli <path> [--json]`
+- TS: `mcporter emit-ts <server> --mode client|types`
+
+Notes
+
+- Prefer explicit `--config` for skills. mcporter can also use its default
+  project or user config paths for local ad-hoc CLI work, but shared or
+  packaged skills and automation should always pass an explicit `--config`.
+- Prefer `--output json` for machine-readable results.

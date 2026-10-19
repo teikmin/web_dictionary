@@ -7,11 +7,13 @@ tagline: >
 summary: '- 上传图文（默认）：图片 + 短文，适合日常分享 - 写长文：长篇文章 + 排版模板选择，适合深度内容。用户明确说"发长文"时使用'
 categories:
   - other
+tags:
+  - xiaohongshu-mcp
 status: active
-quality_percentile: 87
+quality_percentile: 90
 selection_reason: quality_percentile
 first_seen: 2025-08-03T09:08:45
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: xpzouying/xiaohongshu-mcp
@@ -19,8 +21,18 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 16257
-  last_commit: 2026-10-12T04:56:03Z
+  stars: 16369
+  last_commit: 2026-10-19T04:45:17Z
+  stars_delta_7d: 112
+  stars_growth_pct: 0.7
+  trending_score: 112.77
+  rank_current: 65
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 16133
+    - 16257
+    - 16369
 language: zh
 needs_keys: false
 prerequisites: []
@@ -28,7 +40,7 @@ readme_source:
   repo: xpzouying/xiaohongshu-mcp
   path: skills/post-to-xhs/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:54:54.767Z
+  fetched_at: 2026-10-19T07:32:25.237Z
   truncated: false
 type: agent_skill
 skill:
@@ -48,7 +60,13 @@ skill:
     - scripts/image_downloader.py
     - scripts/publish_pipeline.py
     - scripts/title.txt
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: xpzouying-xiaohongshu-mcp
 ---
 
 # 小红书内容发布

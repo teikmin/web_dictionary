@@ -6,19 +6,34 @@ tagline: AI-powered reverse engineering assistant that bridges IDA Pro with
 summary: Simple MCP Server to allow vibe reversing in IDA Pro.
 categories:
   - security-auth
+tags:
+  - aiagent
+  - binary-analysis
+  - ida-plugin
+  - ida-pro
 status: active
 quality_percentile: 87
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: mrexodia/ida-pro-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 12770
+  stars: 13005
   last_commit: 2026-09-26T15:42:10Z
+  stars_delta_7d: 235
+  stars_growth_pct: 1.8
+  trending_score: 239.32
+  rank_current: 8
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 12505
+    - 12770
+    - 13005
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +43,7 @@ readme_source:
   repo: mrexodia/ida-pro-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:57.182Z
+  fetched_at: 2026-10-19T07:32:25.311Z
   truncated: false
 type: mcp_server
 launch:
@@ -38,7 +53,6 @@ launch:
     - ida-pro-mcp
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # IDA Pro MCP

@@ -1,17 +1,20 @@
 ---
 slug: jnmetacode-superpowers-zh-skills-chinese-code-review
 name: chinese-code-review
-tagline: 中文 review 沟通参考——话术模板、分级标注（必须修复/建议修改/仅供参考）、国内团队常见反模式应对。仅在用户显式
-  /chinese-code-review 时调用，不要根据上下文自动触发。
-summary: 国内团队做 Code Review
-  常遇到两个极端：要么过度客气导致关键问题被放过，要么照搬西方直白风格让同事下不来台。本技能帮你找到平衡点——既不回避问题，又让人愿意接受反馈。
+tagline: Agent skill from jnMetaCode/superpowers-zh
+summary: Agent skill from jnMetaCode/superpowers-zh
 categories:
   - coding-agents
+tags:
+  - agent-skills
+  - agentic-coding
+  - ai-coding
+  - chinese
 status: active
-quality_percentile: 80
+quality_percentile: 88
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: jnMetaCode/superpowers-zh
@@ -19,25 +22,38 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 8305
-  last_commit: 2026-10-08T06:45:46Z
-language: zh
+  stars: 8344
+  last_commit: 2026-10-19T04:47:10Z
+  stars_delta_7d: 39
+  stars_growth_pct: 0.5
+  trending_score: 39.18
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 8267
+    - 8305
+    - 8344
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: jnMetaCode/superpowers-zh
   path: skills/chinese-code-review/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.392Z
+  fetched_at: 2026-10-19T07:39:37.712Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: chinese-code-review
-  description: 中文 review 沟通参考——话术模板、分级标注（必须修复/建议修改/仅供参考）、国内团队常见反模式应对。仅在用户显式
-    /chinese-code-review 时调用，不要根据上下文自动触发。
+  description: Agent skill from jnMetaCode/superpowers-zh
   folder_path: skills/chinese-code-review
   extra_files: []
-tags: []
+  pack_total_skills: 21
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: jnmetacode-superpowers-zh
 ---
 
 # 中文代码审查规范

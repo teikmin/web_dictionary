@@ -1,20 +1,20 @@
 ---
 slug: jeffallan-claude-skills-skills-atlassian-mcp
 name: atlassian-mcp
-tagline: Integrates with Atlassian products to manage project tracking and
-  documentation via MCP protocol. Use when querying Jira issues with JQL
-  filters, crea
-summary: "- Querying Jira issues with JQL filters - Searching or creating
-  Confluence pages - Automating sprint workflows and backlog management -
-  Setting up MCP server authentication (OAuth/API tokens) - Syncing meeting
-  notes t..."
+tagline: Agent skill from Jeffallan/claude-skills
+summary: Agent skill from Jeffallan/claude-skills
 categories:
-  - productivity-ops
+  - other
+tags:
+  - ai-agents
+  - claude
+  - claude-code
+  - claude-marketplace
 status: active
-quality_percentile: 61
+quality_percentile: 77
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Jeffallan/claude-skills
@@ -22,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 11852
-  last_commit: 2026-10-03T15:49:55Z
+  stars: 11937
+  last_commit: 2026-10-16T16:29:21Z
+  stars_delta_7d: 85
+  stars_growth_pct: 0.7
+  trending_score: 85.61
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 11759
+    - 11852
+    - 11937
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,17 +39,12 @@ readme_source:
   repo: Jeffallan/claude-skills
   path: skills/atlassian-mcp/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.816Z
+  fetched_at: 2026-10-19T07:39:28.267Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: atlassian-mcp
-  description: Integrates with Atlassian products to manage project tracking and
-    documentation via MCP protocol. Use when querying Jira issues with JQL
-    filters, creating and updating tickets with custom fields, searching or
-    editing Confluence pages with CQL, managing sprints and backlogs, setting up
-    MCP server authentication, syncing documentation, or debugging Atlassian API
-    integrations.
+  description: Agent skill from Jeffallan/claude-skills
   folder_path: skills/atlassian-mcp
   extra_files:
     - references/authentication-patterns.md
@@ -49,8 +52,13 @@ skill:
     - references/confluence-operations.md
     - references/jira-queries.md
     - references/mcp-server-setup.md
-tags:
-  - jira
+  pack_total_skills: 67
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: jeffallan-claude-skills
 ---
 
 # Atlassian MCP Expert

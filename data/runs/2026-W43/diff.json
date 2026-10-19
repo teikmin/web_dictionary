@@ -1,0 +1,5464 @@
+{
+  "week": "2026-W43",
+  "generated_at": "2026-10-19T07:41:40.294Z",
+  "added": [
+    {
+      "slug": "dayuanjiang-next-ai-draw-io",
+      "name": "next-ai-draw-io",
+      "type": "mcp_server",
+      "stars": 36318,
+      "repo": "DayuanJiang/next-ai-draw-io"
+    },
+    {
+      "slug": "0xjacky-nginx-ui",
+      "name": "nginx-ui",
+      "type": "agent_tool",
+      "stars": 11644,
+      "repo": "0xJacky/nginx-ui"
+    },
+    {
+      "slug": "openbyteinc-quantdinger",
+      "name": "QuantDinger",
+      "type": "agent_tool",
+      "stars": 12908,
+      "repo": "OpenByteInc/QuantDinger"
+    },
+    {
+      "slug": "zipstack-unstract",
+      "name": "unstract",
+      "type": "agent_tool",
+      "stars": 7283,
+      "repo": "Zipstack/unstract"
+    },
+    {
+      "slug": "trailhq-trail-code",
+      "name": "Trail-Code",
+      "type": "agent_tool",
+      "stars": 10412,
+      "repo": "trailhq/Trail-Code"
+    },
+    {
+      "slug": "firerpa-lamda",
+      "name": "lamda",
+      "type": "agent_tool",
+      "stars": 8627,
+      "repo": "firerpa/lamda"
+    },
+    {
+      "slug": "lemonade-sdk-lemonade",
+      "name": "lemonade",
+      "type": "agent_tool",
+      "stars": 5930,
+      "repo": "lemonade-sdk/lemonade"
+    },
+    {
+      "slug": "tabularisdb-tabularis",
+      "name": "tabularis",
+      "type": "agent_tool",
+      "stars": 5236,
+      "repo": "TabularisDB/tabularis"
+    },
+    {
+      "slug": "huangjunsen0406-py-xiaozhi",
+      "name": "py-xiaozhi",
+      "type": "agent_tool",
+      "stars": 3517,
+      "repo": "huangjunsen0406/py-xiaozhi"
+    },
+    {
+      "slug": "777genius-agent-teams-ai",
+      "name": "agent-teams-ai",
+      "type": "agent_tool",
+      "stars": 2278,
+      "repo": "777genius/agent-teams-ai"
+    },
+    {
+      "slug": "zereight-gitlab-mcp",
+      "name": "gitlab-mcp",
+      "type": "mcp_server",
+      "stars": 2049,
+      "repo": "zereight/gitlab-mcp"
+    },
+    {
+      "slug": "oomol-lab-open-connector",
+      "name": "open-connector",
+      "type": "agent_tool",
+      "stars": 6047,
+      "repo": "oomol-lab/open-connector"
+    },
+    {
+      "slug": "ifuryst-open-computer-use-skills-open-computer-use",
+      "name": "open-computer-use",
+      "type": "agent_skill",
+      "stars": 2506,
+      "repo": "iFurySt/open-computer-use"
+    },
+    {
+      "slug": "codergamester-mcp-unity",
+      "name": "mcp-unity",
+      "type": "agent_tool",
+      "stars": 1936,
+      "repo": "CoderGamester/mcp-unity"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-benchmarking-benchmark-video-search",
+      "name": "benchmark-video-search",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-benchmarking-profile-vllm-performance",
+      "name": "profile-vllm-performance",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-benchmarking-rtvi-vlm-perf-testing",
+      "name": "rtvi-vlm-perf-testing",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-benchmarking-vss-benchmark-video-summarization",
+      "name": "vss-benchmark-video-summarization",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-benchmarking-vss-benchmark-vlm-qa",
+      "name": "vss-benchmark-vlm-qa",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-benchmarking-vss-evaluate-caption-accuracy",
+      "name": "vss-evaluate-caption-accuracy",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-deployment-rtvi-byom-porting",
+      "name": "rtvi-byom-porting",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-deployment-vss-deploy-dense-captioning",
+      "name": "vss-deploy-dense-captioning",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-deployment-vss-deploy-detection-tracking-2d",
+      "name": "vss-deploy-detection-tracking-2d",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-deployment-vss-deploy-detection-tracking-3d",
+      "name": "vss-deploy-detection-tracking-3d",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-deployment-vss-deploy-video-embedding",
+      "name": "vss-deploy-video-embedding",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-deployment-vss-deploy-warehouse-helm",
+      "name": "vss-deploy-warehouse-helm",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-deployment-vss-setup-behavior-analytics",
+      "name": "vss-setup-behavior-analytics",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-deployment-vss-setup-video-analytics-api",
+      "name": "vss-setup-video-analytics-api",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-operations-vss-ask-video",
+      "name": "vss-ask-video",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-operations-vss-generate-video-report-rag",
+      "name": "vss-generate-video-report-rag",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-operations-vss-generate-video-report",
+      "name": "vss-generate-video-report",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-operations-vss-manage-alerts",
+      "name": "vss-manage-alerts",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-operations-vss-manage-video-io-storage",
+      "name": "vss-manage-video-io-storage",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-operations-vss-query-analytics",
+      "name": "vss-query-analytics",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-operations-vss-search-archive",
+      "name": "vss-search-archive",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-operations-vss-summarize-video",
+      "name": "vss-summarize-video",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-tools-vss-generate-video-calibration",
+      "name": "vss-generate-video-calibration",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "nvidia-ai-blueprints-video-search-and-summarization-skills-vss-build-vision-ai",
+      "name": "vss-build-vision-ai",
+      "type": "agent_skill",
+      "stars": 1933,
+      "repo": "NVIDIA-AI-Blueprints/video-search-and-summarization"
+    },
+    {
+      "slug": "thclaws-thclaws",
+      "name": "thClaws",
+      "type": "agent_tool",
+      "stars": 1241,
+      "repo": "thClaws/thClaws"
+    },
+    {
+      "slug": "stackql-stackql",
+      "name": "stackql",
+      "type": "agent_tool",
+      "stars": 1069,
+      "repo": "stackql/stackql"
+    },
+    {
+      "slug": "anil-matcha-open-agent-connector",
+      "name": "open-agent-connector",
+      "type": "agent_tool",
+      "stars": 843,
+      "repo": "Anil-matcha/open-agent-connector"
+    },
+    {
+      "slug": "rekog-labs-mcp-nest",
+      "name": "MCP-Nest",
+      "type": "agent_tool",
+      "stars": 718,
+      "repo": "rekog-labs/MCP-Nest"
+    },
+    {
+      "slug": "hetpatel-11-adobe_premiere_pro_mcp-claude-plugins-premiere-pro-mcp-skills-edit-premiere-project",
+      "name": "edit-premiere-project",
+      "type": "agent_skill",
+      "stars": 721,
+      "repo": "hetpatel-11/Adobe_Premiere_Pro_MCP"
+    },
+    {
+      "slug": "hetpatel-11-adobe_premiere_pro_mcp-skills-premiere-pro-mcp",
+      "name": "premiere-pro-mcp",
+      "type": "agent_skill",
+      "stars": 721,
+      "repo": "hetpatel-11/Adobe_Premiere_Pro_MCP"
+    },
+    {
+      "slug": "farion1231-cc-switch",
+      "name": "cc-switch",
+      "type": "agent_tool",
+      "stars": 146073,
+      "repo": "farion1231/cc-switch"
+    },
+    {
+      "slug": "rtk-ai-rtk",
+      "name": "rtk",
+      "type": "agent_tool",
+      "stars": 83907,
+      "repo": "rtk-ai/rtk"
+    },
+    {
+      "slug": "career-ops-hq-career-ops",
+      "name": "career-ops",
+      "type": "agent_tool",
+      "stars": 75550,
+      "repo": "career-ops-hq/career-ops"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-anthropic-skills-deep-research",
+      "name": "deep-research",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-artifact-capabilities",
+      "name": "artifact-capabilities",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-artifact-design",
+      "name": "artifact-design",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-artifact-diagramming",
+      "name": "artifact-diagramming",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-batch",
+      "name": "batch",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-built-in-browser",
+      "name": "built-in-browser",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-chrome-browser",
+      "name": "chrome-browser",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-claude-api",
+      "name": "api",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-claude-in-chrome",
+      "name": "in-chrome",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-code-review",
+      "name": "code-review",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-computer-use",
+      "name": "computer-use",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-dataviz",
+      "name": "dataviz",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-debug",
+      "name": "debug",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-design-sync",
+      "name": "design-sync",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-design-sync-non-storybook",
+      "name": "non-storybook",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-design-sync-storybook",
+      "name": "storybook",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-docs",
+      "name": "docs",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-doctor",
+      "name": "doctor",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-docx",
+      "name": "docx",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-fewer-permission-prompts",
+      "name": "fewer-permission-prompts",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-google-workspace",
+      "name": "google-workspace",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-import-memory",
+      "name": "import-memory",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-init-new",
+      "name": "init",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-keybindings-help",
+      "name": "keybindings-help",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-loop",
+      "name": "loop",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-morning",
+      "name": "morning",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-pdf",
+      "name": "pdf",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-plugin-authoring",
+      "name": "plugin-authoring",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-pptx",
+      "name": "pptx",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-run-skill-generator",
+      "name": "run-skill-generator",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-run",
+      "name": "run",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-schedule",
+      "name": "schedule",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-security-review",
+      "name": "security-review",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-session-start-hook",
+      "name": "session-start-hook",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-simplify",
+      "name": "simplify",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-skill-creator",
+      "name": "creator",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-update-config",
+      "name": "update-config",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-verify",
+      "name": "verify",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-workflow-authoring",
+      "name": "workflow-authoring",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-code-skills-xlsx",
+      "name": "xlsx",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-cowork-setup-cowork",
+      "name": "setup-cowork",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-cowork-setup-writing-style",
+      "name": "setup-writing-style",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-3d-object",
+      "name": "3d-object",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-animated-video",
+      "name": "animated-video",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-claude-api-in-prototypes",
+      "name": "api-in-prototypes",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-create-design-system",
+      "name": "create-design-system",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-export-as-pptx-editable",
+      "name": "export-as-pptx-editable",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-export-as-pptx-screenshots",
+      "name": "export-as-pptx-screenshots",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-flier",
+      "name": "flier",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-frontend-design",
+      "name": "frontend-design",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-handoff-to-claude-code",
+      "name": "handoff-to-claude-code",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-hi-fi-design",
+      "name": "hi-fi-design",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-html-email",
+      "name": "html-email",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-interactive-prototype",
+      "name": "interactive-prototype",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-make-a-deck",
+      "name": "make-a-deck",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-make-a-doc",
+      "name": "make-a-doc",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-make-tweakable",
+      "name": "make-tweakable",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-maps-geography",
+      "name": "maps-geography",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-options",
+      "name": "options",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-save-as-pdf",
+      "name": "save-as-pdf",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-save-as-standalone-html",
+      "name": "save-as-standalone-html",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-web-research",
+      "name": "web-research",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-anthropic-claude-design-skills-wireframe",
+      "name": "wireframe",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-apple-healthkit",
+      "name": "apple_healthkit",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-artifacts-document",
+      "name": "artifact_document",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-artifacts-markdown",
+      "name": "artifact_markdown",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-artifacts-pdf",
+      "name": "artifact_pdf",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-artifacts-presentation",
+      "name": "artifact_presentation",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-artifacts-spreadsheet",
+      "name": "artifact_spreadsheet",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-artifacts-testing",
+      "name": "artifact_testing",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-asana",
+      "name": "asana",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-booking",
+      "name": "booking",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-box",
+      "name": "box",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-calendly",
+      "name": "calendly",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-canva",
+      "name": "canva",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-device-data",
+      "name": "device_data",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-dropbox",
+      "name": "dropbox",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-duffel",
+      "name": "duffel",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-evernote",
+      "name": "evernote",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-facebook-cli",
+      "name": "facebook_cli",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-figma",
+      "name": "figma",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-flightaware",
+      "name": "flightaware",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-forget",
+      "name": "forget",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-function-health",
+      "name": "function_health",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-generate_podcast",
+      "name": "generate_podcast",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-ghl",
+      "name": "ghl",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-github",
+      "name": "github",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-gmail",
+      "name": "gmail",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-goals",
+      "name": "goals",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-google-calendar",
+      "name": "google_calendar",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-google-contacts",
+      "name": "google_contacts",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-google-docs",
+      "name": "google_docs",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-google-drive",
+      "name": "google_drive",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-google-forms",
+      "name": "google_forms",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-google-health-connect",
+      "name": "google_health_connect",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-google-sheets",
+      "name": "google_sheets",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-google-slides",
+      "name": "google_slides",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-google-tasks",
+      "name": "google_tasks",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-granola",
+      "name": "granola",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-healthex",
+      "name": "healthex",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-image-search",
+      "name": "image_search",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-instagram-messages",
+      "name": "instagram_messages",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-instagram",
+      "name": "instagram",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-klaviyo",
+      "name": "klaviyo",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-linear",
+      "name": "linear",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-lovable",
+      "name": "lovable",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-magic-moment",
+      "name": "magic-moment",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-media-library",
+      "name": "media_library",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-messenger",
+      "name": "messenger_read",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-meta-ads",
+      "name": "meta_ads",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-meta-threads",
+      "name": "threads",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-muse-early-access",
+      "name": "muse_early_access",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-muse-feedback",
+      "name": "muse-feedback",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-muse_db",
+      "name": "muse_db",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-notion",
+      "name": "notion",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-opentable",
+      "name": "opentable",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-outlook-calendar",
+      "name": "outlook_calendar",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-outlook-contacts",
+      "name": "outlook_contacts",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-outlook-mail",
+      "name": "outlook_mail",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-peloton",
+      "name": "peloton",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-philips-hue",
+      "name": "philips_hue",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-places-search",
+      "name": "places_search",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-plaid",
+      "name": "plaid",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-printify",
+      "name": "printify",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-quickbooks",
+      "name": "quickbooks",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-replit",
+      "name": "replit",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-self-awareness",
+      "name": "self_awareness",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-share-ideas",
+      "name": "share_ideas",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-shopify",
+      "name": "shopify",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-shopping",
+      "name": "shopping",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-skill-creator",
+      "name": "skill_creator",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-slack",
+      "name": "slack",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-social-content-performance",
+      "name": "social_content_performance",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-spotify",
+      "name": "spotify",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-stripe",
+      "name": "stripe",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-subscription-status",
+      "name": "subscription_status",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-tailscale",
+      "name": "tailscale",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-tessie",
+      "name": "tessie",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-threads-messages",
+      "name": "threads_messages",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-ticketmaster",
+      "name": "ticketmaster",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-todoist",
+      "name": "todoist",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-travel-planning",
+      "name": "travel_planning",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-tts",
+      "name": "tts",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-vercel",
+      "name": "vercel",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-voice-calls",
+      "name": "voice_selector",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-voice-design",
+      "name": "voice_design",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-wearable-device-skills",
+      "name": "wearable_device_skills",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-wearables-comms",
+      "name": "wearables_comms",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-wide-research",
+      "name": "wide_research",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-withings",
+      "name": "withings",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-zapier",
+      "name": "zapier",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-agent-skills-zoom",
+      "name": "zoom",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-plugins-threejs-skills-threejs",
+      "name": "threejs",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-agents",
+      "name": "agents",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-browser-app-delivery",
+      "name": "browser-app-delivery",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-create-plugin",
+      "name": "create-plugin",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-create-skill",
+      "name": "create-skill",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-durable-test-collateral",
+      "name": "durable-test-collateral",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-fleet-manager",
+      "name": "fleet-manager",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-git",
+      "name": "git",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-greenfield-project-scaffolding",
+      "name": "greenfield-project-scaffolding",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-grill-and-record",
+      "name": "grill-and-record",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-grill",
+      "name": "grill",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-import",
+      "name": "import",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-manage-settings",
+      "name": "manage-settings",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-migrate",
+      "name": "migrate",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-plan",
+      "name": "plan",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-python-env",
+      "name": "python-env",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-read-session",
+      "name": "read-session",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-requirements-clarification",
+      "name": "requirements-clarification",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-resume-claude",
+      "name": "resume-claude",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-resume-codex",
+      "name": "resume-codex",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-table-fit",
+      "name": "table-fit",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-meta-muse-code-skills-taste",
+      "name": "taste",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-action-items",
+      "name": "action-items",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-docs-artifact",
+      "name": "docs-artifact",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-document-signing",
+      "name": "document-signing",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-documents",
+      "name": "documents",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-email",
+      "name": "email",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-faq",
+      "name": "faq",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-flights",
+      "name": "flights",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-food-ordering",
+      "name": "food-ordering",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-form-filling",
+      "name": "form-filling",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-library",
+      "name": "library",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-maintain-space",
+      "name": "maintain-space",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-manage-schedules",
+      "name": "manage-schedules",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-o-computer-personalization",
+      "name": "o-computer-personalization",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-organize-space",
+      "name": "organize-space",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-presentations",
+      "name": "presentations",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-remote-environments",
+      "name": "remote-environments",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-restaurant-booking",
+      "name": "restaurant-booking",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-restaurant-recommendations",
+      "name": "restaurant-recommendations",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-scheduling",
+      "name": "scheduling",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-secure-me",
+      "name": "secure-me",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-sheets-artifact",
+      "name": "sheets-artifact",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-sites",
+      "name": "sites",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-slides-artifact",
+      "name": "slides-artifact",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-software-engineering",
+      "name": "software-engineering",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-write-page",
+      "name": "write-page",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "asgeirtj-system_prompts_leaks-openai-dots-skills-writing-style",
+      "name": "writing-style",
+      "type": "agent_skill",
+      "stars": 69880,
+      "repo": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "slug": "jeecgboot-jeecgboot",
+      "name": "JeecgBoot",
+      "type": "agent_tool",
+      "stars": 48248,
+      "repo": "jeecgboot/JeecgBoot"
+    },
+    {
+      "slug": "jarrodwatts-claude-hud",
+      "name": "claude-hud",
+      "type": "agent_tool",
+      "stars": 28632,
+      "repo": "jarrodwatts/claude-hud"
+    },
+    {
+      "slug": "browser-use-browser-harness",
+      "name": "browser-harness",
+      "type": "agent_tool",
+      "stars": 18491,
+      "repo": "browser-use/browser-harness"
+    },
+    {
+      "slug": "jnmetacode-agency-agents-zh",
+      "name": "agency-agents-zh",
+      "type": "agent_tool",
+      "stars": 21355,
+      "repo": "jnMetaCode/agency-agents-zh"
+    },
+    {
+      "slug": "winfunc-opcode",
+      "name": "opcode",
+      "type": "agent_tool",
+      "stars": 22417,
+      "repo": "winfunc/opcode"
+    },
+    {
+      "slug": "slopus-happy",
+      "name": "happy",
+      "type": "agent_tool",
+      "stars": 24204,
+      "repo": "slopus/happy"
+    },
+    {
+      "slug": "frankbria-ralph-claude-code",
+      "name": "ralph-claude-code",
+      "type": "agent_tool",
+      "stars": 9705,
+      "repo": "frankbria/ralph-claude-code"
+    },
+    {
+      "slug": "tbphp-gpt-load",
+      "name": "gpt-load",
+      "type": "agent_tool",
+      "stars": 7149,
+      "repo": "tbphp/gpt-load"
+    },
+    {
+      "slug": "open-multi-agent-open-multi-agent",
+      "name": "open-multi-agent",
+      "type": "agent_tool",
+      "stars": 7005,
+      "repo": "open-multi-agent/open-multi-agent"
+    },
+    {
+      "slug": "wiltodelta-remove-ai-watermarks",
+      "name": "remove-ai-watermarks",
+      "type": "mcp_server",
+      "stars": 6054,
+      "repo": "wiltodelta/remove-ai-watermarks"
+    },
+    {
+      "slug": "alibaba-zvec",
+      "name": "zvec",
+      "type": "agent_tool",
+      "stars": 16126,
+      "repo": "alibaba/zvec"
+    },
+    {
+      "slug": "xixu-me-xget",
+      "name": "xget",
+      "type": "agent_tool",
+      "stars": 8194,
+      "repo": "xixu-me/xget"
+    },
+    {
+      "slug": "oldcircle-geo-sleuth-skills-geo-sleuth",
+      "name": "geo-sleuth",
+      "type": "agent_skill",
+      "stars": 3399,
+      "repo": "Oldcircle/geo-sleuth"
+    },
+    {
+      "slug": "alephaitech-workbuddyguide",
+      "name": "WorkBuddyGuide",
+      "type": "agent_tool",
+      "stars": 3516,
+      "repo": "AlephAITech/WorkBuddyGuide"
+    },
+    {
+      "slug": "microsoft-skill-recorder",
+      "name": "skill-recorder",
+      "type": "agent_tool",
+      "stars": 4245,
+      "repo": "microsoft/skill-recorder"
+    },
+    {
+      "slug": "browser-use-browser-use",
+      "name": "browser-use",
+      "type": "mcp_server",
+      "stars": 118460,
+      "repo": "browser-use/browser-use"
+    },
+    {
+      "slug": "unclecode-crawl4ai",
+      "name": "crawl4ai",
+      "type": "agent_tool",
+      "stars": 85806,
+      "repo": "unclecode/crawl4ai"
+    },
+    {
+      "slug": "infiniflow-ragflow",
+      "name": "ragflow",
+      "type": "agent_tool",
+      "stars": 92449,
+      "repo": "infiniflow/ragflow"
+    },
+    {
+      "slug": "deepseek-ai-deepseek-harness-packages-preset-agent-preset-skills-agent-experience",
+      "name": "agent-experience",
+      "type": "agent_skill",
+      "stars": 253669,
+      "repo": "deepseek-ai/deepseek-harness"
+    },
+    {
+      "slug": "deepseek-ai-deepseek-harness-packages-preset-agent-preset-skills-cordis-composition-reference",
+      "name": "cordis-composition-reference",
+      "type": "agent_skill",
+      "stars": 253669,
+      "repo": "deepseek-ai/deepseek-harness"
+    },
+    {
+      "slug": "deepseek-ai-deepseek-harness-packages-preset-agent-preset-skills-cordis-plugin-development",
+      "name": "cordis-plugin-development",
+      "type": "agent_skill",
+      "stars": 253669,
+      "repo": "deepseek-ai/deepseek-harness"
+    },
+    {
+      "slug": "deepseek-ai-deepseek-harness-packages-preset-agent-preset-skills-editing-cordis-compositions",
+      "name": "editing-cordis-compositions",
+      "type": "agent_skill",
+      "stars": 253669,
+      "repo": "deepseek-ai/deepseek-harness"
+    },
+    {
+      "slug": "deepseek-ai-deepseek-harness-packages-sandbox-sandbox-windows-acl-assets-diagnose-windows-sandbox-acl",
+      "name": "diagnose-windows-sandbox-acl",
+      "type": "agent_skill",
+      "stars": 253669,
+      "repo": "deepseek-ai/deepseek-harness"
+    },
+    {
+      "slug": "deepseek-ai-deepseek-harness-packages-skill-skill-office-assets-office-docx",
+      "name": "office-docx",
+      "type": "agent_skill",
+      "stars": 253669,
+      "repo": "deepseek-ai/deepseek-harness"
+    },
+    {
+      "slug": "deepseek-ai-deepseek-harness-packages-skill-skill-office-assets-office-export-pdf",
+      "name": "office-export-pdf",
+      "type": "agent_skill",
+      "stars": 253669,
+      "repo": "deepseek-ai/deepseek-harness"
+    },
+    {
+      "slug": "deepseek-ai-deepseek-harness-packages-skill-skill-office-assets-office-pptx",
+      "name": "office-pptx",
+      "type": "agent_skill",
+      "stars": 253669,
+      "repo": "deepseek-ai/deepseek-harness"
+    },
+    {
+      "slug": "deepseek-ai-deepseek-harness-packages-skill-skill-office-assets-office-recalculate",
+      "name": "office-recalculate",
+      "type": "agent_skill",
+      "stars": 253669,
+      "repo": "deepseek-ai/deepseek-harness"
+    },
+    {
+      "slug": "deepseek-ai-deepseek-harness-packages-skill-skill-office-assets-office-render",
+      "name": "office-render",
+      "type": "agent_skill",
+      "stars": 253669,
+      "repo": "deepseek-ai/deepseek-harness"
+    },
+    {
+      "slug": "deepseek-ai-deepseek-harness-packages-skill-skill-office-assets-office-xlsx",
+      "name": "office-xlsx",
+      "type": "agent_skill",
+      "stars": 253669,
+      "repo": "deepseek-ai/deepseek-harness"
+    },
+    {
+      "slug": "deepseek-ai-deepseek-harness-packages-skill-skill-office-assets-office",
+      "name": "office",
+      "type": "agent_skill",
+      "stars": 253669,
+      "repo": "deepseek-ai/deepseek-harness"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-academic-paper-review",
+      "name": "academic-paper-review",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-bootstrap",
+      "name": "bootstrap",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-chart-visualization",
+      "name": "chart-visualization",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-claude-to-deerflow",
+      "name": "to-deerflow",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-code-documentation",
+      "name": "code-documentation",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-consulting-analysis",
+      "name": "consulting-analysis",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-data-analysis",
+      "name": "data-analysis",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-deep-research",
+      "name": "deep-research",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-find-skills",
+      "name": "find-skills",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-frontend-design",
+      "name": "frontend-design",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-github-deep-research",
+      "name": "github-deep-research",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-image-generation",
+      "name": "image-generation",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-music-generation",
+      "name": "music-generation",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-newsletter-generation",
+      "name": "newsletter-generation",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-podcast-generation",
+      "name": "podcast-generation",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-ppt-generation",
+      "name": "ppt-generation",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-skill-creator",
+      "name": "creator",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-skill-reviewer",
+      "name": "reviewer",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-skill-reviewer-evals-fixtures-blocked",
+      "name": "blocked",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-skill-reviewer-evals-fixtures-needs-revision",
+      "name": "needs-revision",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-skill-reviewer-evals-fixtures-partial-package",
+      "name": "partial-package",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-skill-reviewer-evals-fixtures-prompt-injection",
+      "name": "prompt-injection",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-skill-reviewer-evals-fixtures-publish-candidate",
+      "name": "publish-candidate",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-skill-reviewer-evals-fixtures-zh-output",
+      "name": "zh-output",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-surprise-me",
+      "name": "surprise-me",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-systematic-literature-review",
+      "name": "systematic-literature-review",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-vercel-deploy",
+      "name": "vercel-deploy",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-video-generation",
+      "name": "video-generation",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "bytedance-deer-flow-skills-public-web-design-guidelines",
+      "name": "web-design-guidelines",
+      "type": "agent_skill",
+      "stars": 84103,
+      "repo": "bytedance/deer-flow"
+    },
+    {
+      "slug": "vectifyai-pageindex",
+      "name": "PageIndex",
+      "type": "agent_tool",
+      "stars": 39265,
+      "repo": "VectifyAI/PageIndex"
+    },
+    {
+      "slug": "thedaviddias-front-end-checklist",
+      "name": "Front-End-Checklist",
+      "type": "mcp_server",
+      "stars": 74506,
+      "repo": "thedaviddias/Front-End-Checklist"
+    },
+    {
+      "slug": "hkuds-deeptutor",
+      "name": "DeepTutor",
+      "type": "agent_tool",
+      "stars": 41692,
+      "repo": "HKUDS/DeepTutor"
+    },
+    {
+      "slug": "agentscope-ai-qwenpaw",
+      "name": "QwenPaw",
+      "type": "agent_tool",
+      "stars": 35842,
+      "repo": "agentscope-ai/QwenPaw"
+    },
+    {
+      "slug": "tinyhumansai-openhuman",
+      "name": "openhuman",
+      "type": "agent_tool",
+      "stars": 42157,
+      "repo": "tinyhumansai/openhuman"
+    },
+    {
+      "slug": "aaif-goose-goose",
+      "name": "goose",
+      "type": "agent_tool",
+      "stars": 55427,
+      "repo": "aaif-goose/goose"
+    },
+    {
+      "slug": "mintplex-labs-anything-llm",
+      "name": "anything-llm",
+      "type": "agent_tool",
+      "stars": 67297,
+      "repo": "Mintplex-Labs/anything-llm"
+    },
+    {
+      "slug": "crewaiinc-crewai-lib-crewai-tests-skills-fixtures-invalid-name",
+      "name": "invalid-name",
+      "type": "agent_skill",
+      "stars": 59856,
+      "repo": "crewAIInc/crewAI"
+    },
+    {
+      "slug": "crewaiinc-crewai-lib-crewai-tests-skills-fixtures-minimal-skill",
+      "name": "minimal-skill",
+      "type": "agent_skill",
+      "stars": 59856,
+      "repo": "crewAIInc/crewAI"
+    },
+    {
+      "slug": "crewaiinc-crewai-lib-crewai-tests-skills-fixtures-valid-skill",
+      "name": "valid-skill",
+      "type": "agent_skill",
+      "stars": 59856,
+      "repo": "crewAIInc/crewAI"
+    },
+    {
+      "slug": "agno-agi-agno-cookbook-02_agents-16_skills-sample_skills-code-review",
+      "name": "code-review",
+      "type": "agent_skill",
+      "stars": 42805,
+      "repo": "agno-agi/agno"
+    },
+    {
+      "slug": "agno-agi-agno-cookbook-02_agents-16_skills-sample_skills-git-workflow",
+      "name": "git-workflow",
+      "type": "agent_skill",
+      "stars": 42805,
+      "repo": "agno-agi/agno"
+    },
+    {
+      "slug": "agno-agi-agno-cookbook-05_agent_os-23_skills-sample_skills-system-info",
+      "name": "system-info",
+      "type": "agent_skill",
+      "stars": 42805,
+      "repo": "agno-agi/agno"
+    },
+    {
+      "slug": "agno-agi-agno-cookbook-frameworks-antigravity-example_agent-skills-haiku",
+      "name": "haiku",
+      "type": "agent_skill",
+      "stars": 42805,
+      "repo": "agno-agi/agno"
+    },
+    {
+      "slug": "agno-agi-agno-libs-agno-agno-company-skills-intake",
+      "name": "intake",
+      "type": "agent_skill",
+      "stars": 42805,
+      "repo": "agno-agi/agno"
+    },
+    {
+      "slug": "agno-agi-agno-libs-agno-agno-company-skills-refresh",
+      "name": "refresh",
+      "type": "agent_skill",
+      "stars": 42805,
+      "repo": "agno-agi/agno"
+    },
+    {
+      "slug": "agno-agi-agno-libs-agno-agno-company-skills-summary",
+      "name": "summary",
+      "type": "agent_skill",
+      "stars": 42805,
+      "repo": "agno-agi/agno"
+    },
+    {
+      "slug": "mem0ai-mem0-integrations-antigravity-plugin-skills-forget",
+      "name": "forget",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-integrations-antigravity-plugin-skills-pause",
+      "name": "pause",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-integrations-antigravity-plugin-skills-remember",
+      "name": "remember",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-integrations-antigravity-plugin-skills-resume",
+      "name": "resume",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-integrations-antigravity-plugin-skills-search",
+      "name": "search",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-integrations-antigravity-plugin-skills-status",
+      "name": "status",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-integrations-openclaw-skills-memory-triage",
+      "name": "memory-triage",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-integrations-opencode-plugin-opencode-skills-mem0-context-loader",
+      "name": "context-loader",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-integrations-opencode-plugin-opencode-skills-mem0-scope",
+      "name": "scope",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-integrations-opencode-plugin-opencode-skills-mem0-tour",
+      "name": "tour",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-skills-mem0-cli",
+      "name": "cli",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-skills-mem0-integrate",
+      "name": "integrate",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-skills-mem0-oss-to-platform",
+      "name": "oss-to-platform",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-skills-mem0-test-integration",
+      "name": "test-integration",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-skills-mem0-vercel-ai-sdk",
+      "name": "vercel-ai-sdk",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "mem0ai-mem0-skills-mem0",
+      "name": "mem0",
+      "type": "agent_skill",
+      "stars": 67421,
+      "repo": "mem0ai/mem0"
+    },
+    {
+      "slug": "composiohq-composio-skills-composio",
+      "name": "composio",
+      "type": "agent_skill",
+      "stars": 30635,
+      "repo": "ComposioHQ/composio"
+    },
+    {
+      "slug": "dapr-dapr",
+      "name": "dapr",
+      "type": "agent_tool",
+      "stars": 26155,
+      "repo": "dapr/dapr"
+    },
+    {
+      "slug": "chroma-core-chroma",
+      "name": "chroma",
+      "type": "agent_tool",
+      "stars": 29530,
+      "repo": "chroma-core/chroma"
+    },
+    {
+      "slug": "deepset-ai-haystack",
+      "name": "haystack",
+      "type": "agent_tool",
+      "stars": 26773,
+      "repo": "deepset-ai/haystack"
+    },
+    {
+      "slug": "cloakhq-cloakbrowser",
+      "name": "CloakBrowser",
+      "type": "agent_tool",
+      "stars": 32300,
+      "repo": "CloakHQ/CloakBrowser"
+    },
+    {
+      "slug": "bloopai-vibe-kanban",
+      "name": "vibe-kanban",
+      "type": "agent_tool",
+      "stars": 28389,
+      "repo": "BloopAI/vibe-kanban"
+    },
+    {
+      "slug": "vxcontrol-pentagi",
+      "name": "pentagi",
+      "type": "agent_tool",
+      "stars": 31207,
+      "repo": "vxcontrol/pentagi"
+    },
+    {
+      "slug": "alibaba-page-agent",
+      "name": "page-agent",
+      "type": "agent_tool",
+      "stars": 29496,
+      "repo": "alibaba/page-agent"
+    },
+    {
+      "slug": "kestra-io-kestra",
+      "name": "kestra",
+      "type": "agent_tool",
+      "stars": 29847,
+      "repo": "kestra-io/kestra"
+    },
+    {
+      "slug": "jackwener-opencli-skills-opencli-adapter-author",
+      "name": "adapter-author",
+      "type": "agent_skill",
+      "stars": 30421,
+      "repo": "jackwener/OpenCLI"
+    },
+    {
+      "slug": "jackwener-opencli-skills-opencli-autofix",
+      "name": "autofix",
+      "type": "agent_skill",
+      "stars": 30421,
+      "repo": "jackwener/OpenCLI"
+    },
+    {
+      "slug": "jackwener-opencli-skills-opencli-browser",
+      "name": "browser",
+      "type": "agent_skill",
+      "stars": 30421,
+      "repo": "jackwener/OpenCLI"
+    },
+    {
+      "slug": "jackwener-opencli-skills-opencli-usage",
+      "name": "usage",
+      "type": "agent_skill",
+      "stars": 30421,
+      "repo": "jackwener/OpenCLI"
+    },
+    {
+      "slug": "jackwener-opencli-skills-smart-search",
+      "name": "smart-search",
+      "type": "agent_skill",
+      "stars": 30421,
+      "repo": "jackwener/OpenCLI"
+    },
+    {
+      "slug": "nesquena-hermes-webui",
+      "name": "hermes-webui",
+      "type": "agent_tool",
+      "stars": 19028,
+      "repo": "nesquena/hermes-webui"
+    },
+    {
+      "slug": "google-adk-python",
+      "name": "adk-python",
+      "type": "agent_tool",
+      "stars": 21907,
+      "repo": "google/adk-python"
+    },
+    {
+      "slug": "browserbase-stagehand-packages-cli-skills-browse",
+      "name": "browse",
+      "type": "agent_skill",
+      "stars": 25731,
+      "repo": "browserbase/stagehand"
+    },
+    {
+      "slug": "browserbase-stagehand-packages-integrations-fx-skills-stagehand-facade",
+      "name": "facade",
+      "type": "agent_skill",
+      "stars": 25731,
+      "repo": "browserbase/stagehand"
+    },
+    {
+      "slug": "cft0808-edict",
+      "name": "edict",
+      "type": "agent_tool",
+      "stars": 17000,
+      "repo": "cft0808/edict"
+    },
+    {
+      "slug": "docmost-docmost",
+      "name": "docmost",
+      "type": "agent_tool",
+      "stars": 22026,
+      "repo": "docmost/docmost"
+    },
+    {
+      "slug": "nvidia-nemoclaw-skills-nemoclaw-user-guide",
+      "name": "user-guide",
+      "type": "agent_skill",
+      "stars": 22767,
+      "repo": "NVIDIA/NemoClaw"
+    },
+    {
+      "slug": "nvidia-nemoclaw-test-e2e-fixtures-hermes-skill-runtime",
+      "name": "hermes-skill-runtime",
+      "type": "agent_skill",
+      "stars": 22767,
+      "repo": "NVIDIA/NemoClaw"
+    },
+    {
+      "slug": "hummingbot-hummingbot",
+      "name": "hummingbot",
+      "type": "agent_tool",
+      "stars": 20573,
+      "repo": "hummingbot/hummingbot"
+    },
+    {
+      "slug": "hbai-ltd-toonflow-app-packages-mcp-skills-toonflow",
+      "name": "toonflow",
+      "type": "agent_skill",
+      "stars": 18170,
+      "repo": "HBAI-Ltd/Toonflow-app"
+    },
+    {
+      "slug": "hbai-ltd-toonflow-app-packages-skills-canvas",
+      "name": "canvas",
+      "type": "agent_skill",
+      "stars": 18170,
+      "repo": "HBAI-Ltd/Toonflow-app"
+    },
+    {
+      "slug": "hbai-ltd-toonflow-app-packages-skills-v118workflow",
+      "name": "v118workflow",
+      "type": "agent_skill",
+      "stars": 18170,
+      "repo": "HBAI-Ltd/Toonflow-app"
+    },
+    {
+      "slug": "hbai-ltd-toonflow-app-packages-skills-workflow",
+      "name": "workflow",
+      "type": "agent_skill",
+      "stars": 18170,
+      "repo": "HBAI-Ltd/Toonflow-app"
+    },
+    {
+      "slug": "hbai-ltd-toonflow-app-packages-teams-storyboardteam-skills-storyboard",
+      "name": "storyboard",
+      "type": "agent_skill",
+      "stars": 18170,
+      "repo": "HBAI-Ltd/Toonflow-app"
+    },
+    {
+      "slug": "ag-ui-protocol-ag-ui-sdks-dotnet-plugins-ag-ui-dotnet-skills-agui-dotnet-client-tools",
+      "name": "agui-dotnet-client-tools",
+      "type": "agent_skill",
+      "stars": 16674,
+      "repo": "ag-ui-protocol/ag-ui"
+    },
+    {
+      "slug": "ag-ui-protocol-ag-ui-sdks-dotnet-plugins-ag-ui-dotnet-skills-agui-dotnet-human-in-the-loop",
+      "name": "agui-dotnet-human-in-the-loop",
+      "type": "agent_skill",
+      "stars": 16674,
+      "repo": "ag-ui-protocol/ag-ui"
+    },
+    {
+      "slug": "ag-ui-protocol-ag-ui-sdks-dotnet-plugins-ag-ui-dotnet-skills-agui-dotnet-multimodal",
+      "name": "agui-dotnet-multimodal",
+      "type": "agent_skill",
+      "stars": 16674,
+      "repo": "ag-ui-protocol/ag-ui"
+    },
+    {
+      "slug": "ag-ui-protocol-ag-ui-sdks-dotnet-plugins-ag-ui-dotnet-skills-agui-dotnet-protobuf",
+      "name": "agui-dotnet-protobuf",
+      "type": "agent_skill",
+      "stars": 16674,
+      "repo": "ag-ui-protocol/ag-ui"
+    },
+    {
+      "slug": "ag-ui-protocol-ag-ui-sdks-dotnet-plugins-ag-ui-dotnet-skills-agui-dotnet-reasoning",
+      "name": "agui-dotnet-reasoning",
+      "type": "agent_skill",
+      "stars": 16674,
+      "repo": "ag-ui-protocol/ag-ui"
+    },
+    {
+      "slug": "ag-ui-protocol-ag-ui-sdks-dotnet-plugins-ag-ui-dotnet-skills-agui-dotnet-server-tools",
+      "name": "agui-dotnet-server-tools",
+      "type": "agent_skill",
+      "stars": 16674,
+      "repo": "ag-ui-protocol/ag-ui"
+    },
+    {
+      "slug": "ag-ui-protocol-ag-ui-sdks-dotnet-plugins-ag-ui-dotnet-skills-agui-dotnet-shared-state",
+      "name": "agui-dotnet-shared-state",
+      "type": "agent_skill",
+      "stars": 16674,
+      "repo": "ag-ui-protocol/ag-ui"
+    },
+    {
+      "slug": "ag-ui-protocol-ag-ui-sdks-dotnet-plugins-ag-ui-dotnet-skills-agui-dotnet-streaming-chat",
+      "name": "agui-dotnet-streaming-chat",
+      "type": "agent_skill",
+      "stars": 16674,
+      "repo": "ag-ui-protocol/ag-ui"
+    },
+    {
+      "slug": "ag-ui-protocol-ag-ui-sdks-dotnet-plugins-ag-ui-dotnet-skills-agui-dotnet-troubleshoot",
+      "name": "agui-dotnet-troubleshoot",
+      "type": "agent_skill",
+      "stars": 16674,
+      "repo": "ag-ui-protocol/ag-ui"
+    },
+    {
+      "slug": "ag-ui-protocol-ag-ui-skills-ag-ui-a2ui-integration",
+      "name": "a2ui-integration",
+      "type": "agent_skill",
+      "stars": 16674,
+      "repo": "ag-ui-protocol/ag-ui"
+    },
+    {
+      "slug": "earthtojake-text-to-cad-apps-web-skills-smui",
+      "name": "smui",
+      "type": "agent_skill",
+      "stars": 21538,
+      "repo": "earthtojake/text-to-cad"
+    },
+    {
+      "slug": "earthtojake-text-to-cad-skills-bambu-labs",
+      "name": "bambu-labs",
+      "type": "agent_skill",
+      "stars": 21538,
+      "repo": "earthtojake/text-to-cad"
+    },
+    {
+      "slug": "earthtojake-text-to-cad-skills-cad",
+      "name": "cad",
+      "type": "agent_skill",
+      "stars": 21538,
+      "repo": "earthtojake/text-to-cad"
+    },
+    {
+      "slug": "earthtojake-text-to-cad-skills-dfam-check",
+      "name": "dfam-check",
+      "type": "agent_skill",
+      "stars": 21538,
+      "repo": "earthtojake/text-to-cad"
+    },
+    {
+      "slug": "earthtojake-text-to-cad-skills-dfm",
+      "name": "dfm",
+      "type": "agent_skill",
+      "stars": 21538,
+      "repo": "earthtojake/text-to-cad"
+    },
+    {
+      "slug": "earthtojake-text-to-cad-skills-dxf",
+      "name": "dxf",
+      "type": "agent_skill",
+      "stars": 21538,
+      "repo": "earthtojake/text-to-cad"
+    },
+    {
+      "slug": "earthtojake-text-to-cad-skills-engineering-drawing",
+      "name": "engineering-drawing",
+      "type": "agent_skill",
+      "stars": 21538,
+      "repo": "earthtojake/text-to-cad"
+    },
+    {
+      "slug": "earthtojake-text-to-cad-skills-gcode",
+      "name": "gcode",
+      "type": "agent_skill",
+      "stars": 21538,
+      "repo": "earthtojake/text-to-cad"
+    },
+    {
+      "slug": "earthtojake-text-to-cad-skills-sdf",
+      "name": "sdf",
+      "type": "agent_skill",
+      "stars": 21538,
+      "repo": "earthtojake/text-to-cad"
+    },
+    {
+      "slug": "earthtojake-text-to-cad-skills-sendcutsend",
+      "name": "sendcutsend",
+      "type": "agent_skill",
+      "stars": 21538,
+      "repo": "earthtojake/text-to-cad"
+    },
+    {
+      "slug": "earthtojake-text-to-cad-skills-srdf",
+      "name": "srdf",
+      "type": "agent_skill",
+      "stars": 21538,
+      "repo": "earthtojake/text-to-cad"
+    },
+    {
+      "slug": "earthtojake-text-to-cad-skills-step-parts",
+      "name": "step-parts",
+      "type": "agent_skill",
+      "stars": 21538,
+      "repo": "earthtojake/text-to-cad"
+    },
+    {
+      "slug": "earthtojake-text-to-cad-skills-urdf",
+      "name": "urdf",
+      "type": "agent_skill",
+      "stars": 21538,
+      "repo": "earthtojake/text-to-cad"
+    },
+    {
+      "slug": "e2b-dev-e2b-skills-stripe-projects",
+      "name": "stripe-projects",
+      "type": "agent_skill",
+      "stars": 14439,
+      "repo": "e2b-dev/E2B"
+    },
+    {
+      "slug": "google-artemis",
+      "name": "artemis",
+      "type": "agent_tool",
+      "stars": 12663,
+      "repo": "google/artemis"
+    },
+    {
+      "slug": "browseros-ai-browseros",
+      "name": "BrowserOS",
+      "type": "mcp_server",
+      "stars": 13984,
+      "repo": "browseros-ai/BrowserOS"
+    },
+    {
+      "slug": "simular-ai-agent-s-integrations-openclaw",
+      "name": "openclaw",
+      "type": "agent_skill",
+      "stars": 12651,
+      "repo": "simular-ai/Agent-S"
+    },
+    {
+      "slug": "memtensor-memos",
+      "name": "MemOS",
+      "type": "agent_tool",
+      "stars": 11926,
+      "repo": "MemTensor/MemOS"
+    },
+    {
+      "slug": "insforge-insforge",
+      "name": "InsForge",
+      "type": "agent_tool",
+      "stars": 13147,
+      "repo": "InsForge/InsForge"
+    },
+    {
+      "slug": "nanobrowser-nanobrowser",
+      "name": "nanobrowser",
+      "type": "agent_tool",
+      "stars": 14121,
+      "repo": "nanobrowser/nanobrowser"
+    },
+    {
+      "slug": "xiaomimimo-mimo-code-packages-cli-test-fixture-skills-agents-sdk",
+      "name": "agents-sdk",
+      "type": "agent_skill",
+      "stars": 13688,
+      "repo": "XiaomiMiMo/MiMo-Code"
+    },
+    {
+      "slug": "xiaomimimo-mimo-code-packages-cli-test-fixture-skills-cloudflare",
+      "name": "cloudflare",
+      "type": "agent_skill",
+      "stars": 13688,
+      "repo": "XiaomiMiMo/MiMo-Code"
+    },
+    {
+      "slug": "xiaomimimo-mimo-code-packages-cli-test-fixture-skills-llm-endpoint-demo",
+      "name": "llm-endpoint-demo",
+      "type": "agent_skill",
+      "stars": 13688,
+      "repo": "XiaomiMiMo/MiMo-Code"
+    },
+    {
+      "slug": "neuml-txtai",
+      "name": "txtai",
+      "type": "agent_tool",
+      "stars": 13027,
+      "repo": "neuml/txtai"
+    },
+    {
+      "slug": "cocoindex-io-cocoindex-dev-agent-skills-cocoindex-diagrams",
+      "name": "diagrams",
+      "type": "agent_skill",
+      "stars": 11720,
+      "repo": "cocoindex-io/cocoindex"
+    },
+    {
+      "slug": "cocoindex-io-cocoindex-dev-agent-skills-target-connector",
+      "name": "target-connector",
+      "type": "agent_skill",
+      "stars": 11720,
+      "repo": "cocoindex-io/cocoindex"
+    },
+    {
+      "slug": "cocoindex-io-cocoindex-dev-agent-skills-upgrade-examples",
+      "name": "upgrade-examples",
+      "type": "agent_skill",
+      "stars": 11720,
+      "repo": "cocoindex-io/cocoindex"
+    },
+    {
+      "slug": "cocoindex-io-cocoindex-skills-cocoindex",
+      "name": "cocoindex",
+      "type": "agent_skill",
+      "stars": 11720,
+      "repo": "cocoindex-io/cocoindex"
+    },
+    {
+      "slug": "cloudflare-moltworker-skills-cloudflare-browser",
+      "name": "cloudflare-browser",
+      "type": "agent_skill",
+      "stars": 9949,
+      "repo": "cloudflare/moltworker"
+    },
+    {
+      "slug": "tencentcloud-octop",
+      "name": "Octop",
+      "type": "agent_tool",
+      "stars": 9981,
+      "repo": "TencentCloud/Octop"
+    },
+    {
+      "slug": "droidrun-mobilerun",
+      "name": "mobilerun",
+      "type": "mcp_server",
+      "stars": 9692,
+      "repo": "droidrun/mobilerun"
+    },
+    {
+      "slug": "strands-agents-harness-sdk",
+      "name": "harness-sdk",
+      "type": "agent_tool",
+      "stars": 8862,
+      "repo": "strands-agents/harness-sdk"
+    },
+    {
+      "slug": "bojieli-ai-agent-book",
+      "name": "ai-agent-book",
+      "type": "agent_tool",
+      "stars": 54876,
+      "repo": "bojieli/ai-agent-book"
+    },
+    {
+      "slug": "voltagent-voltagent-examples-with-workspace-workspace-skills-data-analysis",
+      "name": "data-analysis",
+      "type": "agent_skill",
+      "stars": 10832,
+      "repo": "VoltAgent/voltagent"
+    },
+    {
+      "slug": "voltagent-voltagent-examples-with-workspace-workspace-skills-playwright-cli",
+      "name": "playwright-cli",
+      "type": "agent_skill",
+      "stars": 10832,
+      "repo": "VoltAgent/voltagent"
+    },
+    {
+      "slug": "astrid-runtime-astrid",
+      "name": "astrid",
+      "type": "agent_tool",
+      "stars": 10282,
+      "repo": "astrid-runtime/astrid"
+    },
+    {
+      "slug": "esengine-deepseek-reasonix-examples-api-notes-kit-skills-api-notes",
+      "name": "api-notes",
+      "type": "agent_skill",
+      "stars": 35858,
+      "repo": "esengine/DeepSeek-Reasonix"
+    },
+    {
+      "slug": "esengine-deepseek-reasonix-examples-frontend-page-kit-skills-frontend-page",
+      "name": "frontend-page",
+      "type": "agent_skill",
+      "stars": 35858,
+      "repo": "esengine/DeepSeek-Reasonix"
+    },
+    {
+      "slug": "esengine-deepseek-reasonix-examples-issue-fix-kit-skills-issue-fix",
+      "name": "issue-fix",
+      "type": "agent_skill",
+      "stars": 35858,
+      "repo": "esengine/DeepSeek-Reasonix"
+    },
+    {
+      "slug": "esengine-deepseek-reasonix-examples-release-note-kit-skills-release-note",
+      "name": "release-note",
+      "type": "agent_skill",
+      "stars": 35858,
+      "repo": "esengine/DeepSeek-Reasonix"
+    },
+    {
+      "slug": "esengine-deepseek-reasonix-internal-ext-skill-builtincontent-reasonix-guide",
+      "name": "reasonix-guide",
+      "type": "agent_skill",
+      "stars": 35858,
+      "repo": "esengine/DeepSeek-Reasonix"
+    },
+    {
+      "slug": "openinterpreter-openinterpreter-codex-rs-skills-src-assets-samples-imagegen",
+      "name": "imagegen",
+      "type": "agent_skill",
+      "stars": 68602,
+      "repo": "openinterpreter/openinterpreter"
+    },
+    {
+      "slug": "openinterpreter-openinterpreter-codex-rs-skills-src-assets-samples-openai-docs",
+      "name": "openai-docs",
+      "type": "agent_skill",
+      "stars": 68602,
+      "repo": "openinterpreter/openinterpreter"
+    },
+    {
+      "slug": "openinterpreter-openinterpreter-codex-rs-skills-src-assets-samples-plugin-creator",
+      "name": "plugin-creator",
+      "type": "agent_skill",
+      "stars": 68602,
+      "repo": "openinterpreter/openinterpreter"
+    },
+    {
+      "slug": "openinterpreter-openinterpreter-codex-rs-skills-src-assets-samples-qa-testing",
+      "name": "qa-testing",
+      "type": "agent_skill",
+      "stars": 68602,
+      "repo": "openinterpreter/openinterpreter"
+    },
+    {
+      "slug": "openinterpreter-openinterpreter-codex-rs-skills-src-assets-samples-review-agent",
+      "name": "review-agent",
+      "type": "agent_skill",
+      "stars": 68602,
+      "repo": "openinterpreter/openinterpreter"
+    },
+    {
+      "slug": "openinterpreter-openinterpreter-codex-rs-skills-src-assets-samples-skill-creator",
+      "name": "creator",
+      "type": "agent_skill",
+      "stars": 68602,
+      "repo": "openinterpreter/openinterpreter"
+    },
+    {
+      "slug": "openinterpreter-openinterpreter-codex-rs-skills-src-assets-samples-skill-installer",
+      "name": "installer",
+      "type": "agent_skill",
+      "stars": 68602,
+      "repo": "openinterpreter/openinterpreter"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-plugins-rust-toolkit-skills-rust-check",
+      "name": "rust-check",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-batch",
+      "name": "batch",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-best-of-n",
+      "name": "best-of-n",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-contributor-onboarding",
+      "name": "contributor-onboarding",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-dataviz",
+      "name": "dataviz",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-debug",
+      "name": "debug",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-delegate",
+      "name": "delegate",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-dependency-update",
+      "name": "dependency-update",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-document",
+      "name": "document",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-documents",
+      "name": "documents",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-docx",
+      "name": "docx",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-feedback",
+      "name": "feedback",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-feishu",
+      "name": "feishu",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-fleet-manager",
+      "name": "fleet-manager",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-flights",
+      "name": "flights",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-forget",
+      "name": "forget",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-frontend-design",
+      "name": "frontend-design",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-github",
+      "name": "github",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-gmail",
+      "name": "gmail",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-goals",
+      "name": "goals",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-google-calendar",
+      "name": "google-calendar",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-handoff",
+      "name": "handoff",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-help",
+      "name": "help",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-image-search",
+      "name": "image-search",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-implement",
+      "name": "implement",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-interview",
+      "name": "interview",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-mcp-builder",
+      "name": "mcp-builder",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-mcp-discovery",
+      "name": "mcp-discovery",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-money",
+      "name": "money",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-pdf",
+      "name": "pdf",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-photos",
+      "name": "photos",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-plan",
+      "name": "plan",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-plugin-creator",
+      "name": "plugin-creator",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-podcast",
+      "name": "podcast",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-pptx",
+      "name": "pptx",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-presentations",
+      "name": "presentations",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-release",
+      "name": "release",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-research",
+      "name": "research",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-review",
+      "name": "review",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-security-review",
+      "name": "security-review",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-shopping",
+      "name": "shopping",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-simplify",
+      "name": "simplify",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-skill-creator",
+      "name": "creator",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-skill-installer",
+      "name": "installer",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-spotify",
+      "name": "spotify",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-spreadsheets",
+      "name": "spreadsheets",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-test",
+      "name": "test",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-tts",
+      "name": "tts",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-v4-best-practices",
+      "name": "v4-best-practices",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-verify",
+      "name": "verify",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-webapp-testing",
+      "name": "webapp-testing",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-assets-skills-xlsx",
+      "name": "xlsx",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-plugins-computer-use-skills-computer-use",
+      "name": "computer-use",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-plugins-computer-use-skills-recording",
+      "name": "recording",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-tests-fixtures-extension_host-native-dsh-composition-source-skills-receipt-check",
+      "name": "receipt-check",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-tests-fixtures-extension_host-raw-agent-presets-no-default-source-skills-a-preset-note",
+      "name": "preset-note",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-tests-fixtures-extension_host-raw-dsh-mcp-source-skills-mixed-check",
+      "name": "mixed-check",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-crates-tui-tests-fixtures-extension_host-skills-root-profiles-review-skills-quick-check",
+      "name": "quick-check",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-examples-plugins-hello-codewhale-skills-hello",
+      "name": "hello",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-skills-codew-release-qa-sweep",
+      "name": "codew-release-qa-sweep",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-skills-cw-dogfood",
+      "name": "cw-dogfood",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-skills-cw-gates",
+      "name": "cw-gates",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-skills-cw-handoff",
+      "name": "cw-handoff",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-skills-cw-land",
+      "name": "cw-land",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-skills-cw-orient",
+      "name": "cw-orient",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-skills-cw-slice",
+      "name": "cw-slice",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-skills-gh-assign-issues",
+      "name": "gh-assign-issues",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-skills-gh-close-issues",
+      "name": "gh-close-issues",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-skills-gh-compile-issues",
+      "name": "gh-compile-issues",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-skills-gh-credit-harvest",
+      "name": "gh-credit-harvest",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-skills-gh-file-issue",
+      "name": "gh-file-issue",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-skills-gh-find-prs",
+      "name": "gh-find-prs",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "codewhale-hq-codewhale-docs-skills-gh-treasure-hunt",
+      "name": "gh-treasure-hunt",
+      "type": "agent_skill",
+      "stars": 41101,
+      "repo": "codewhale-hq/Codewhale"
+    },
+    {
+      "slug": "rllm-org-rllm",
+      "name": "rllm",
+      "type": "agent_tool",
+      "stars": 5886,
+      "repo": "rllm-org/rllm"
+    },
+    {
+      "slug": "q00-ouroboros",
+      "name": "ouroboros",
+      "type": "mcp_server",
+      "stars": 6247,
+      "repo": "Q00/ouroboros"
+    },
+    {
+      "slug": "algorithmicsuperintelligence-openevolve",
+      "name": "openevolve",
+      "type": "agent_tool",
+      "stars": 7593,
+      "repo": "algorithmicsuperintelligence/openevolve"
+    },
+    {
+      "slug": "zeronsh-zeron",
+      "name": "zeron",
+      "type": "agent_tool",
+      "stars": 3301,
+      "repo": "zeronsh/zeron"
+    },
+    {
+      "slug": "1jehuang-jcode",
+      "name": "jcode",
+      "type": "agent_tool",
+      "stars": 21020,
+      "repo": "1jehuang/jcode"
+    },
+    {
+      "slug": "anus-dev-anus",
+      "name": "ANUS",
+      "type": "agent_tool",
+      "stars": 6549,
+      "repo": "anus-dev/ANUS"
+    },
+    {
+      "slug": "vastsa-pi-desktop",
+      "name": "PI-Desktop",
+      "type": "agent_tool",
+      "stars": 7006,
+      "repo": "vastsa/PI-Desktop"
+    },
+    {
+      "slug": "qwenlm-qwen-code",
+      "name": "qwen-code",
+      "type": "mcp_server",
+      "stars": 28570,
+      "repo": "QwenLM/qwen-code"
+    },
+    {
+      "slug": "cloudflare-vibesdk-worker-agents-think-skills-app-file-structure",
+      "name": "app-file-structure",
+      "type": "agent_skill",
+      "stars": 5411,
+      "repo": "cloudflare/vibesdk"
+    },
+    {
+      "slug": "cloudflare-vibesdk-worker-agents-think-skills-frontend-design-landing-page",
+      "name": "frontend-design-landing-page",
+      "type": "agent_skill",
+      "stars": 5411,
+      "repo": "cloudflare/vibesdk"
+    },
+    {
+      "slug": "cloudflare-vibesdk-worker-agents-think-skills-frontend-design-saas",
+      "name": "frontend-design-saas",
+      "type": "agent_skill",
+      "stars": 5411,
+      "repo": "cloudflare/vibesdk"
+    },
+    {
+      "slug": "cloudflare-vibesdk-worker-agents-think-skills-frontend-design",
+      "name": "frontend-design",
+      "type": "agent_skill",
+      "stars": 5411,
+      "repo": "cloudflare/vibesdk"
+    },
+    {
+      "slug": "google-agents-cli-skills-google-agents-cli-adk-code",
+      "name": "google-agents-cli-adk-code",
+      "type": "agent_skill",
+      "stars": 6099,
+      "repo": "google/agents-cli"
+    },
+    {
+      "slug": "google-agents-cli-skills-google-agents-cli-deploy",
+      "name": "google-agents-cli-deploy",
+      "type": "agent_skill",
+      "stars": 6099,
+      "repo": "google/agents-cli"
+    },
+    {
+      "slug": "google-agents-cli-skills-google-agents-cli-eval",
+      "name": "google-agents-cli-eval",
+      "type": "agent_skill",
+      "stars": 6099,
+      "repo": "google/agents-cli"
+    },
+    {
+      "slug": "google-agents-cli-skills-google-agents-cli-observability",
+      "name": "google-agents-cli-observability",
+      "type": "agent_skill",
+      "stars": 6099,
+      "repo": "google/agents-cli"
+    },
+    {
+      "slug": "google-agents-cli-skills-google-agents-cli-publish",
+      "name": "google-agents-cli-publish",
+      "type": "agent_skill",
+      "stars": 6099,
+      "repo": "google/agents-cli"
+    },
+    {
+      "slug": "google-agents-cli-skills-google-agents-cli-scaffold",
+      "name": "google-agents-cli-scaffold",
+      "type": "agent_skill",
+      "stars": 6099,
+      "repo": "google/agents-cli"
+    },
+    {
+      "slug": "google-agents-cli-skills-google-agents-cli-workflow",
+      "name": "google-agents-cli-workflow",
+      "type": "agent_skill",
+      "stars": 6099,
+      "repo": "google/agents-cli"
+    },
+    {
+      "slug": "teaql-teaql-agent-kit-skills-build-teaql-app",
+      "name": "build-teaql-app",
+      "type": "agent_skill",
+      "stars": 2818,
+      "repo": "teaql/teaql-agent-kit"
+    },
+    {
+      "slug": "he-yufeng-corecoder",
+      "name": "CoreCoder",
+      "type": "agent_tool",
+      "stars": 1847,
+      "repo": "he-yufeng/CoreCoder"
+    },
+    {
+      "slug": "opencoworkai-open-cowork",
+      "name": "open-cowork",
+      "type": "agent_tool",
+      "stars": 2219,
+      "repo": "OpenCoworkAI/open-cowork"
+    },
+    {
+      "slug": "inferstep-atlas",
+      "name": "ATLAS",
+      "type": "agent_tool",
+      "stars": 2108,
+      "repo": "inferstep/ATLAS"
+    },
+    {
+      "slug": "cocoindex-io-cocoindex-code",
+      "name": "cocoindex-code",
+      "type": "agent_tool",
+      "stars": 2926,
+      "repo": "cocoindex-io/cocoindex-code"
+    },
+    {
+      "slug": "twigpine-zero",
+      "name": "zero",
+      "type": "agent_tool",
+      "stars": 1737,
+      "repo": "Twigpine/zero"
+    },
+    {
+      "slug": "coderluii-holyclaude",
+      "name": "HolyClaude",
+      "type": "agent_tool",
+      "stars": 2584,
+      "repo": "CoderLuii/HolyClaude"
+    },
+    {
+      "slug": "openlit-openlit",
+      "name": "openlit",
+      "type": "agent_tool",
+      "stars": 2858,
+      "repo": "openlit/openlit"
+    },
+    {
+      "slug": "purpledoubled-locally-uncensored",
+      "name": "locally-uncensored",
+      "type": "agent_tool",
+      "stars": 2385,
+      "repo": "PurpleDoubleD/locally-uncensored"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-packages-extensions-animation-claude-plugin-skills-animation",
+      "name": "animation",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-packages-extensions-canvas-claude-plugin-skills-canvas",
+      "name": "canvas",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-packages-extensions-datamodellm-claude-plugin-skills-datamodellm",
+      "name": "datamodellm",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-packages-extensions-developer-claude-plugin-skills-git-commit",
+      "name": "git-commit",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-packages-extensions-excalidraw-claude-plugin-skills-excalidraw",
+      "name": "excalidraw",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-packages-extensions-extension-dev-kit-claude-plugin-skills-extension-development",
+      "name": "extension-development",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-packages-extensions-feedback-claude-plugin-skills-feedback-intake",
+      "name": "feedback-intake",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-packages-extensions-knowledge-claude-plugin-skills-setup",
+      "name": "setup",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-packages-extensions-knowledge-claude-plugin-skills-update",
+      "name": "update",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-packages-extensions-mockuplm-claude-plugin-skills-mockuplm",
+      "name": "mockuplm",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-packages-extensions-planning-claude-plugin-skills-planning",
+      "name": "planning",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-plugins-nimbalyst-wiki-skills-capture",
+      "name": "capture",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-plugins-nimbalyst-wiki-skills-connect",
+      "name": "connect",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-plugins-nimbalyst-wiki-skills-recall",
+      "name": "recall",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-plugins-nimbalyst-wiki-skills-start",
+      "name": "start",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "nimbalyst-nimbalyst-plugins-nimbalyst-wiki-skills-team",
+      "name": "team",
+      "type": "agent_skill",
+      "stars": 1931,
+      "repo": "nimbalyst/nimbalyst"
+    },
+    {
+      "slug": "0xk3vin-megamemory",
+      "name": "MegaMemory",
+      "type": "mcp_server",
+      "stars": 727,
+      "repo": "0xK3vin/MegaMemory"
+    },
+    {
+      "slug": "conardli-easy-agent",
+      "name": "easy-agent",
+      "type": "agent_tool",
+      "stars": 1016,
+      "repo": "ConardLi/easy-agent"
+    },
+    {
+      "slug": "vstorm-co-pydantic-deepagents",
+      "name": "pydantic-deepagents",
+      "type": "agent_tool",
+      "stars": 1103,
+      "repo": "vstorm-co/pydantic-deepagents"
+    },
+    {
+      "slug": "ref-tools-ref-tools-mcp",
+      "name": "ref-tools-mcp",
+      "type": "mcp_server",
+      "stars": 1183,
+      "repo": "ref-tools/ref-tools-mcp"
+    },
+    {
+      "slug": "cuga-project-cuga-agent",
+      "name": "cuga-agent",
+      "type": "agent_tool",
+      "stars": 1042,
+      "repo": "cuga-project/cuga-agent"
+    },
+    {
+      "slug": "razzant-ouroboros",
+      "name": "ouroboros",
+      "type": "agent_tool",
+      "stars": 1560,
+      "repo": "razzant/ouroboros"
+    },
+    {
+      "slug": "agentforce314-clawcodex",
+      "name": "clawcodex",
+      "type": "agent_tool",
+      "stars": 911,
+      "repo": "agentforce314/clawcodex"
+    },
+    {
+      "slug": "grinev-opencode-telegram-bot",
+      "name": "opencode-telegram-bot",
+      "type": "agent_tool",
+      "stars": 1266,
+      "repo": "grinev/opencode-telegram-bot"
+    },
+    {
+      "slug": "usewhale-whale",
+      "name": "Whale",
+      "type": "agent_tool",
+      "stars": 934,
+      "repo": "usewhale/Whale"
+    },
+    {
+      "slug": "jmfederico-pi-web-pi-packages-relays-skills-relay-runner",
+      "name": "relay-runner",
+      "type": "agent_skill",
+      "stars": 889,
+      "repo": "jmfederico/pi-web"
+    },
+    {
+      "slug": "jmfederico-pi-web-pi-packages-relays-skills-relay",
+      "name": "relay",
+      "type": "agent_skill",
+      "stars": 889,
+      "repo": "jmfederico/pi-web"
+    },
+    {
+      "slug": "gptme-gptme",
+      "name": "gptme",
+      "type": "agent_tool",
+      "stars": 4456,
+      "repo": "gptme/gptme"
+    },
+    {
+      "slug": "fosowl-agenticseek",
+      "name": "agenticSeek",
+      "type": "agent_tool",
+      "stars": 27509,
+      "repo": "Fosowl/agenticSeek"
+    },
+    {
+      "slug": "enderfga-claw-orchestrator",
+      "name": "claw-orchestrator",
+      "type": "mcp_server",
+      "stars": 595,
+      "repo": "Enderfga/claw-orchestrator"
+    },
+    {
+      "slug": "openwong2kim-wmux",
+      "name": "wmux",
+      "type": "mcp_server",
+      "stars": 431,
+      "repo": "openwong2kim/wmux"
+    },
+    {
+      "slug": "infobyte-faraday",
+      "name": "faraday",
+      "type": "agent_tool",
+      "stars": 6803,
+      "repo": "infobyte/faraday"
+    },
+    {
+      "slug": "netease-youdao-lobsterai",
+      "name": "LobsterAI",
+      "type": "agent_tool",
+      "stars": 6126,
+      "repo": "netease-youdao/LobsterAI"
+    },
+    {
+      "slug": "razzant-claudexor",
+      "name": "claudexor",
+      "type": "mcp_server",
+      "stars": 515,
+      "repo": "razzant/claudexor"
+    },
+    {
+      "slug": "fathah-hermes-desktop",
+      "name": "hermes-desktop",
+      "type": "agent_tool",
+      "stars": 14428,
+      "repo": "fathah/hermes-desktop"
+    },
+    {
+      "slug": "samugit83-redamon-skills-add-community-skill",
+      "name": "add-community-skill",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-add-partial-recon",
+      "name": "add-partial-recon",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-agentic-tool-integration",
+      "name": "agentic-tool-integration",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-builtin-agent-skill",
+      "name": "builtin-agent-skill",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-graph-db-writes",
+      "name": "graph-db-writes",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-llm-provider-integration",
+      "name": "llm-provider-integration",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-mcp-server-tools",
+      "name": "mcp-server-tools",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-orchestrator-container-spawn",
+      "name": "orchestrator-container-spawn",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-plugin-platform",
+      "name": "plugin-platform",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-priority-board-triage",
+      "name": "priority-board-triage",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-project-settings-cascade",
+      "name": "project-settings-cascade",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-recon-ai-enrichment",
+      "name": "recon-ai-enrichment",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-recon-tool-integration",
+      "name": "recon-tool-integration",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-redamon-testing",
+      "name": "testing",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-supply-chain-scan",
+      "name": "supply-chain-scan",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "samugit83-redamon-skills-traffic-capture",
+      "name": "traffic-capture",
+      "type": "agent_skill",
+      "stars": 3152,
+      "repo": "samugit83/redamon"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-examples-extensions-dynamic-resources",
+      "name": "dynamic-resources",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-src-core-extensions-builtin-imagegen-skill",
+      "name": "skill",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-collision-first-calendar",
+      "name": "calendar",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-consecutive-hyphens",
+      "name": "consecutive-hyphens",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-disable-model-invocation",
+      "name": "disable-model-invocation",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-invalid-name-chars",
+      "name": "invalid-name-chars",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-invalid-yaml",
+      "name": "invalid-yaml",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-long-name",
+      "name": "long-name",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-missing-description",
+      "name": "missing-description",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-multiline-description",
+      "name": "multiline-description",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-name-mismatch",
+      "name": "name-mismatch",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-nested-child-skill",
+      "name": "child-skill",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-no-frontmatter",
+      "name": "no-frontmatter",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-root-skill-preferred",
+      "name": "root-skill-preferred",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-root-skill-preferred-nested-child",
+      "name": "nested-child",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-unknown-field",
+      "name": "unknown-field",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-coding-agent-test-fixtures-skills-valid-skill",
+      "name": "valid-skill",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "code-yeongyu-senpi-packages-senpi-codemode-src-skill-bun-1-4",
+      "name": "bun-1-4",
+      "type": "agent_skill",
+      "stars": 484,
+      "repo": "code-yeongyu/senpi"
+    },
+    {
+      "slug": "mims-harvard-tooluniverse",
+      "name": "ToolUniverse",
+      "type": "mcp_server",
+      "stars": 1746,
+      "repo": "mims-harvard/ToolUniverse"
+    },
+    {
+      "slug": "ruvnet-metaharness",
+      "name": "metaharness",
+      "type": "agent_tool",
+      "stars": 707,
+      "repo": "ruvnet/metaharness"
+    },
+    {
+      "slug": "promptise-com-foundry",
+      "name": "Foundry",
+      "type": "agent_tool",
+      "stars": 874,
+      "repo": "promptise-com/Foundry"
+    },
+    {
+      "slug": "ghostwright-phantom",
+      "name": "phantom",
+      "type": "mcp_server",
+      "stars": 1485,
+      "repo": "ghostwright/phantom"
+    },
+    {
+      "slug": "intrect-io-openswarm",
+      "name": "OpenSwarm",
+      "type": "agent_tool",
+      "stars": 867,
+      "repo": "Intrect-io/OpenSwarm"
+    },
+    {
+      "slug": "strands-agents-tools",
+      "name": "tools",
+      "type": "agent_tool",
+      "stars": 1327,
+      "repo": "strands-agents/tools"
+    },
+    {
+      "slug": "maxmiksa-autonomous-company",
+      "name": "Autonomous-Company",
+      "type": "agent_tool",
+      "stars": 3145,
+      "repo": "MaxMiksa/Autonomous-Company"
+    },
+    {
+      "slug": "strands-agents-samples",
+      "name": "samples",
+      "type": "agent_tool",
+      "stars": 910,
+      "repo": "strands-agents/samples"
+    },
+    {
+      "slug": "open-mercato-cezar",
+      "name": "cezar",
+      "type": "agent_tool",
+      "stars": 722,
+      "repo": "open-mercato/cezar"
+    },
+    {
+      "slug": "wecoai-aideml",
+      "name": "aideml",
+      "type": "agent_tool",
+      "stars": 1583,
+      "repo": "WecoAI/aideml"
+    },
+    {
+      "slug": "pydantic-pydantic-ai",
+      "name": "pydantic-ai",
+      "type": "agent_tool",
+      "stars": 20721,
+      "repo": "pydantic/pydantic-ai"
+    },
+    {
+      "slug": "mario-andreschak-flujo",
+      "name": "FLUJO",
+      "type": "mcp_server",
+      "stars": 663,
+      "repo": "mario-andreschak/FLUJO"
+    },
+    {
+      "slug": "swarmclawai-swarmclaw",
+      "name": "swarmclaw",
+      "type": "mcp_server",
+      "stars": 692,
+      "repo": "swarmclawai/swarmclaw"
+    },
+    {
+      "slug": "evomap-evolver",
+      "name": "evolver",
+      "type": "agent_skill",
+      "stars": 8687,
+      "repo": "EvoMap/evolver"
+    },
+    {
+      "slug": "imkkingshuk-lockknife",
+      "name": "LockKnife",
+      "type": "agent_tool",
+      "stars": 548,
+      "repo": "ImKKingshuk/LockKnife"
+    },
+    {
+      "slug": "666ghj-bettafish",
+      "name": "BettaFish",
+      "type": "agent_tool",
+      "stars": 42461,
+      "repo": "666ghj/BettaFish"
+    },
+    {
+      "slug": "microsoft-agent-governance-toolkit",
+      "name": "agent-governance-toolkit",
+      "type": "mcp_server",
+      "stars": 6442,
+      "repo": "microsoft/agent-governance-toolkit"
+    },
+    {
+      "slug": "abilityai-trinity",
+      "name": "trinity",
+      "type": "mcp_server",
+      "stars": 676,
+      "repo": "Abilityai/trinity"
+    },
+    {
+      "slug": "microsoft-agent-framework-dotnet-samples-02-agents-agentskills-agent_step01_filebasedskills-skills-unit-converter",
+      "name": "unit-converter",
+      "type": "agent_skill",
+      "stars": 14200,
+      "repo": "microsoft/agent-framework"
+    },
+    {
+      "slug": "microsoft-agent-framework-dotnet-samples-02-agents-harness-buildyourownclaw-claw_step03_scalingcapabilities-skills-risk-scoring",
+      "name": "risk-scoring",
+      "type": "agent_skill",
+      "stars": 14200,
+      "repo": "microsoft/agent-framework"
+    },
+    {
+      "slug": "microsoft-agent-framework-dotnet-samples-02-agents-harness-buildyourownclaw-claw_step03_scalingcapabilities-skills-valuation",
+      "name": "valuation",
+      "type": "agent_skill",
+      "stars": 14200,
+      "repo": "microsoft/agent-framework"
+    },
+    {
+      "slug": "microsoft-agent-framework-dotnet-samples-02-agents-harness-harness_step04_codeexecution-skills-regex-tester",
+      "name": "regex-tester",
+      "type": "agent_skill",
+      "stars": 14200,
+      "repo": "microsoft/agent-framework"
+    },
+    {
+      "slug": "microsoft-agent-framework-dotnet-samples-04-hosting-foundryhostedagents-responses-hosted-agentskills-skills-escalation-policy",
+      "name": "escalation-policy",
+      "type": "agent_skill",
+      "stars": 14200,
+      "repo": "microsoft/agent-framework"
+    },
+    {
+      "slug": "microsoft-agent-framework-dotnet-samples-04-hosting-foundryhostedagents-responses-hosted-agentskills-skills-support-style",
+      "name": "support-style",
+      "type": "agent_skill",
+      "stars": 14200,
+      "repo": "microsoft/agent-framework"
+    },
+    {
+      "slug": "microsoft-agent-framework-python-samples-02-agents-skills-skill_filtering-skills-length-converter",
+      "name": "length-converter",
+      "type": "agent_skill",
+      "stars": 14200,
+      "repo": "microsoft/agent-framework"
+    },
+    {
+      "slug": "microsoft-agent-framework-python-samples-02-agents-skills-skill_filtering-skills-volume-converter",
+      "name": "volume-converter",
+      "type": "agent_skill",
+      "stars": 14200,
+      "repo": "microsoft/agent-framework"
+    },
+    {
+      "slug": "microsoft-agent-framework-python-scripts-sample_validation-skills-foundry-config-setup",
+      "name": "foundry-config-setup",
+      "type": "agent_skill",
+      "stars": 14200,
+      "repo": "microsoft/agent-framework"
+    },
+    {
+      "slug": "microsoft-agent-framework-python-scripts-sample_validation-skills-foundry-hosted-agent-validation",
+      "name": "foundry-hosted-agent-validation",
+      "type": "agent_skill",
+      "stars": 14200,
+      "repo": "microsoft/agent-framework"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java",
+      "name": "agentscope-java",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-core-src-test-resources-e2e-skills-data-report",
+      "name": "data-report",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-core-src-test-resources-e2e-skills-data-transform",
+      "name": "data-transform",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-core-src-test-resources-e2e-skills-git-changelog",
+      "name": "git-changelog",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-core-src-test-resources-e2e-skills-image-resize",
+      "name": "image-resize",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-core-src-test-resources-e2e-skills-log-parser",
+      "name": "log-parser",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-core-src-test-resources-test-skills-calculation-skill",
+      "name": "calculation-skill",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-core-src-test-resources-test-skills-writing-skill",
+      "name": "writing-skill",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-examples-agents-agentscope-codingagent-src-main-resources-workspace-templates-skills-apply-patch",
+      "name": "apply-patch",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-examples-agents-agentscope-codingagent-src-main-resources-workspace-templates-skills-code-search",
+      "name": "code-search",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-examples-agents-agentscope-codingagent-src-main-resources-workspace-templates-skills-git-checkpoint",
+      "name": "git-checkpoint",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-examples-agents-agentscope-codingagent-src-main-resources-workspace-templates-skills-verify-changes",
+      "name": "verify-changes",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-examples-agents-agentscope-dataagent-src-main-resources-shared-agents-data-agent-skills-chart-rendering",
+      "name": "chart-rendering",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-examples-agents-agentscope-dataagent-src-main-resources-shared-agents-data-agent-skills-sql-analysis",
+      "name": "sql-analysis",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-examples-agents-agentscope-paw-src-main-resources-scaffold-default-skills-example-skill",
+      "name": "example-skill",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-examples-agents-agentscope-paw-src-main-resources-templates-customer-support-skills-triage-ticket",
+      "name": "triage-ticket",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-examples-agents-agentscope-paw-src-main-resources-templates-research-assistant-skills-synthesize-report",
+      "name": "synthesize-report",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-examples-documentation-src-main-resources-skills-data-analysis",
+      "name": "data-analysis",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "agentscope-ai-agentscope-java-agentscope-examples-documentation-src-main-resources-skills-summarizer",
+      "name": "summarizer",
+      "type": "agent_skill",
+      "stars": 6038,
+      "repo": "agentscope-ai/agentscope-java"
+    },
+    {
+      "slug": "wanxingai-lightagent",
+      "name": "LightAgent",
+      "type": "agent_tool",
+      "stars": 1235,
+      "repo": "wanxingai/LightAgent"
+    },
+    {
+      "slug": "shenseanchen-waku-agent",
+      "name": "waku-agent",
+      "type": "agent_tool",
+      "stars": 2051,
+      "repo": "ShenSeanChen/waku-agent"
+    },
+    {
+      "slug": "ag2ai-ag2",
+      "name": "ag2",
+      "type": "agent_tool",
+      "stars": 5004,
+      "repo": "ag2ai/ag2"
+    },
+    {
+      "slug": "autonomous-ai-openharness",
+      "name": "openharness",
+      "type": "mcp_server",
+      "stars": 1316,
+      "repo": "autonomous-ai/openharness"
+    },
+    {
+      "slug": "daydreamsai-daydreams",
+      "name": "daydreams",
+      "type": "agent_tool",
+      "stars": 621,
+      "repo": "daydreamsai/daydreams"
+    },
+    {
+      "slug": "msoedov-agentic_security-integrations-claude-skills-pentest",
+      "name": "pentest",
+      "type": "agent_skill",
+      "stars": 2021,
+      "repo": "msoedov/agentic_security"
+    },
+    {
+      "slug": "kungfu-systems-kungfu-framework-core-src-python-kungfu-agent-skills-amp",
+      "name": "amp",
+      "type": "agent_skill",
+      "stars": 4531,
+      "repo": "kungfu-systems/kungfu"
+    },
+    {
+      "slug": "kungfu-systems-kungfu-framework-core-src-python-kungfu-agent-skills-claude",
+      "name": "claude",
+      "type": "agent_skill",
+      "stars": 4531,
+      "repo": "kungfu-systems/kungfu"
+    },
+    {
+      "slug": "kungfu-systems-kungfu-framework-core-src-python-kungfu-agent-skills-codex",
+      "name": "codex",
+      "type": "agent_skill",
+      "stars": 4531,
+      "repo": "kungfu-systems/kungfu"
+    },
+    {
+      "slug": "kungfu-systems-kungfu-framework-core-src-python-kungfu-agent-skills-opencode",
+      "name": "opencode",
+      "type": "agent_skill",
+      "stars": 4531,
+      "repo": "kungfu-systems/kungfu"
+    },
+    {
+      "slug": "kungfu-systems-kungfu-framework-skill-fixtures-minimal",
+      "name": "minimal",
+      "type": "agent_skill",
+      "stars": 4531,
+      "repo": "kungfu-systems/kungfu"
+    },
+    {
+      "slug": "kungfu-systems-kungfu-framework-skill-fixtures-runtime-audit-qualification",
+      "name": "runtime-audit-qualification",
+      "type": "agent_skill",
+      "stars": 4531,
+      "repo": "kungfu-systems/kungfu"
+    },
+    {
+      "slug": "kungfu-systems-kungfu-framework-skill-fixtures-with-frontmatter",
+      "name": "with-frontmatter",
+      "type": "agent_skill",
+      "stars": 4531,
+      "repo": "kungfu-systems/kungfu"
+    },
+    {
+      "slug": "lofcz-llmtornado-src-llmtornado-agents-samples-claude-skills-skills-research-synthesis-workflow",
+      "name": "research-synthesis-workflow",
+      "type": "agent_skill",
+      "stars": 647,
+      "repo": "lofcz/LLMTornado"
+    },
+    {
+      "slug": "lofcz-llmtornado-src-llmtornado-agents-samples-claude-skills-skills-skill-generator",
+      "name": "generator",
+      "type": "agent_skill",
+      "stars": 647,
+      "repo": "lofcz/LLMTornado"
+    },
+    {
+      "slug": "lofcz-llmtornado-src-llmtornado-demo-static-files-skills-ability-generator",
+      "name": "ability-generator",
+      "type": "agent_skill",
+      "stars": 647,
+      "repo": "lofcz/LLMTornado"
+    },
+    {
+      "slug": "lofcz-llmtornado-src-llmtornado-demo-static-files-skills-codebase-context-extractor",
+      "name": "codebase-context-extractor",
+      "type": "agent_skill",
+      "stars": 647,
+      "repo": "lofcz/LLMTornado"
+    },
+    {
+      "slug": "lofcz-llmtornado-src-llmtornado-demo-static-files-skills-company-product-context",
+      "name": "company-product-context",
+      "type": "agent_skill",
+      "stars": 647,
+      "repo": "lofcz/LLMTornado"
+    },
+    {
+      "slug": "lofcz-llmtornado-src-llmtornado-demo-static-files-skills-deep-researcher",
+      "name": "deep-researcher",
+      "type": "agent_skill",
+      "stars": 647,
+      "repo": "lofcz/LLMTornado"
+    },
+    {
+      "slug": "lofcz-llmtornado-src-llmtornado-demo-static-files-skills-llmtornado-tutorial-generator",
+      "name": "tutorial-generator",
+      "type": "agent_skill",
+      "stars": 647,
+      "repo": "lofcz/LLMTornado"
+    },
+    {
+      "slug": "lofcz-llmtornado-src-llmtornado-demo-static-files-skills-pdf-processor",
+      "name": "pdf-processor",
+      "type": "agent_skill",
+      "stars": 647,
+      "repo": "lofcz/LLMTornado"
+    },
+    {
+      "slug": "lofcz-llmtornado-src-llmtornado-demo-static-files-skills-skill-creator",
+      "name": "creator",
+      "type": "agent_skill",
+      "stars": 647,
+      "repo": "lofcz/LLMTornado"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-adversarial-review",
+      "name": "adversarial-review",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-ai-claim-checker",
+      "name": "ai-claim-checker",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-cue-omni-reader",
+      "name": "cue-omni-reader",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-daily-standup-journal",
+      "name": "daily-standup-journal",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-decision-matrix",
+      "name": "decision-matrix",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-diagram-maker",
+      "name": "diagram-maker",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-documentation-writer",
+      "name": "documentation-writer",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-exam-ready",
+      "name": "exam-ready",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-frontend-design",
+      "name": "frontend-design",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-ledger-tasks-yylo",
+      "name": "ledger-tasks-yylo",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-linkedin-post-formatter",
+      "name": "linkedin-post-formatter",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-meeting-note-summarizer",
+      "name": "meeting-note-summarizer",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-orca-replay",
+      "name": "orca-replay",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-plugin-scanner",
+      "name": "plugin-scanner",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-retrieval-practice-generator",
+      "name": "retrieval-practice-generator",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-sandbase",
+      "name": "sandbase",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-skillhub-cli",
+      "name": "cli",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-storytelling-advisor",
+      "name": "storytelling-advisor",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-study-strategy-selector",
+      "name": "study-strategy-selector",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-time-blocking-scheduler",
+      "name": "time-blocking-scheduler",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-triage-nda",
+      "name": "triage-nda",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-video-frames",
+      "name": "video-frames",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-weather",
+      "name": "weather",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "iflytek-skillhub-builtin-skills-skills-zero-slop",
+      "name": "zero-slop",
+      "type": "agent_skill",
+      "stars": 5249,
+      "repo": "iflytek/skillhub"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-agent-communication",
+      "name": "agent-communication",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-agent-management",
+      "name": "agent-management",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-agent-orchestration",
+      "name": "agent-orchestration",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-ai-devkit-setup",
+      "name": "setup",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-brainstorm",
+      "name": "brainstorm",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-changelog",
+      "name": "changelog",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-dev-commit",
+      "name": "dev-commit",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-dev-design",
+      "name": "dev-design",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-dev-implementation",
+      "name": "dev-implementation",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-dev-lifecycle",
+      "name": "dev-lifecycle",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-dev-planning",
+      "name": "dev-planning",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-dev-pr",
+      "name": "dev-pr",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-dev-requirements",
+      "name": "dev-requirements",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-dev-review",
+      "name": "dev-review",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-dev-testing",
+      "name": "dev-testing",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-dev-worktree",
+      "name": "dev-worktree",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-document-code",
+      "name": "document-code",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-memory",
+      "name": "memory",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-refactor",
+      "name": "refactor",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-remote-from-slack",
+      "name": "remote-from-slack",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-remote-from-telegram",
+      "name": "remote-from-telegram",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-security-review",
+      "name": "security-review",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-session-compact",
+      "name": "session-compact",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-simplify-implementation",
+      "name": "simplify-implementation",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-structured-debug",
+      "name": "structured-debug",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-task",
+      "name": "task",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-tdd",
+      "name": "tdd",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-technical-writer",
+      "name": "technical-writer",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codeaholicguy-ai-devkit-skills-verify",
+      "name": "verify",
+      "type": "agent_skill",
+      "stars": 1648,
+      "repo": "codeaholicguy/ai-devkit"
+    },
+    {
+      "slug": "codesoul-co-hypha",
+      "name": "Hypha",
+      "type": "mcp_server",
+      "stars": 448,
+      "repo": "CodeSoul-co/Hypha"
+    },
+    {
+      "slug": "jin-bo-agentao",
+      "name": "agentao",
+      "type": "mcp_server",
+      "stars": 309,
+      "repo": "jin-bo/agentao"
+    },
+    {
+      "slug": "fullselfbrowsing-fsb",
+      "name": "FSB",
+      "type": "mcp_server",
+      "stars": 196,
+      "repo": "fullselfbrowsing/FSB"
+    },
+    {
+      "slug": "ucsandman-dashclaw",
+      "name": "DashClaw",
+      "type": "mcp_server",
+      "stars": 313,
+      "repo": "ucsandman/DashClaw"
+    },
+    {
+      "slug": "microsoft-sico-backend-internal-embeddata-skills-android-tester",
+      "name": "android-tester",
+      "type": "agent_skill",
+      "stars": 283,
+      "repo": "microsoft/Sico"
+    },
+    {
+      "slug": "microsoft-sico-labs-agentstream-exgentic-misc-skills-add-agent",
+      "name": "add-agent",
+      "type": "agent_skill",
+      "stars": 283,
+      "repo": "microsoft/Sico"
+    },
+    {
+      "slug": "microsoft-sico-labs-agentstream-exgentic-misc-skills-add-benchmark",
+      "name": "add-benchmark",
+      "type": "agent_skill",
+      "stars": 283,
+      "repo": "microsoft/Sico"
+    }
+  ],
+  "removed": [
+    "0x0funky-agent-sprite-forge-skills-codeart2d",
+    "0x0funky-agent-sprite-forge-skills-generate2dmap",
+    "0x0funky-agent-sprite-forge-skills-generate2dmedia",
+    "0x0funky-agent-sprite-forge-skills-generate2dsprite",
+    "0x0funky-agent-sprite-forge-skills-video2dsprite",
+    "agents365-ai-video-podcast-maker-skills-video-podcast-maker",
+    "agents365-ai-video-podcast-maker-skills-video-podcast-maker-lite",
+    "agents365-ai-video-podcast-maker-skills-video-podcast-maker-nano",
+    "alirezarezvani-claude-skills-agent-launcher-skills-agent-launcher-orchestrator",
+    "alirezarezvani-claude-skills-agent-launcher-skills-grade-iterate",
+    "alirezarezvani-claude-skills-agent-launcher-skills-interview",
+    "alirezarezvani-claude-skills-agent-launcher-skills-run-without-you",
+    "alirezarezvani-claude-skills-agent-launcher-skills-stage-launch",
+    "amelnagdy-delegate-skills-skills-agy-delegate",
+    "amelnagdy-delegate-skills-skills-aider-delegate",
+    "amelnagdy-delegate-skills-skills-claude-delegate",
+    "amelnagdy-delegate-skills-skills-cline-delegate",
+    "amelnagdy-delegate-skills-skills-codex-delegate",
+    "antfu-skills-skills-antfu",
+    "antfu-skills-skills-antfu-create-pr",
+    "antfu-skills-skills-nitro",
+    "antfu-skills-skills-nuxt",
+    "antfu-skills-skills-pinia",
+    "appllama-appllama-skills-skills-appllama-app-design-skill",
+    "appllama-appllama-skills-skills-appllama-usage",
+    "asaotomo-fofamap",
+    "awdr74100-figwright-skills-figma-build",
+    "awdr74100-figwright-skills-figma-codegen",
+    "chengyi-ai-native-subtitle-quote-image-skills-native-subtitle-quote-image",
+    "chuspeeism-dashi-ppt-skill-skills-dashi-ppt",
+    "ciembor-agent-rules-books-a-philosophy-of-software-design",
+    "ciembor-agent-rules-books-clean-architecture",
+    "ciembor-agent-rules-books-clean-code",
+    "ciembor-agent-rules-books-code-complete",
+    "ciembor-agent-rules-books-designing-data-intensive-applications",
+    "clidey-whodb-cli-external-plugin-openai-skills-whodb",
+    "clidey-whodb-cli-external-plugin-whodb-skills-query-builder",
+    "clidey-whodb-cli-external-plugin-whodb-skills-schema-designer",
+    "clidey-whodb-cli-external-plugin-whodb-skills-whodb",
+    "clidey-whodb-cli-skills-query-builder",
+    "cyanheads-obsidian-mcp-server",
+    "datopian-portaljs-skills-arcgis-to-portaljs",
+    "datopian-portaljs-skills-portaljs-add-chart",
+    "datopian-portaljs-skills-portaljs-add-dataset",
+    "datopian-portaljs-skills-portaljs-add-dcat",
+    "datopian-portaljs-skills-portaljs-add-geo",
+    "deedy5-ddgs",
+    "dstackai-dstack-skills-dstack",
+    "dstackai-dstack-skills-dstack-presets",
+    "dstackai-dstack-skills-dstack-prototyping",
+    "francyjglisboa-agent-skills-platform",
+    "francyjglisboa-agent-skills-platform-references-examples-github-release-briefing-skill",
+    "francyjglisboa-agent-skills-platform-references-examples-live-weather-briefing-skill",
+    "francyjglisboa-agent-skills-platform-references-examples-pr-blocker-summarizer",
+    "francyjglisboa-agent-skills-platform-references-examples-stock-analyzer",
+    "gadicc-yahoo-finance2-skills-yahoo-finance2",
+    "gastownhall-beads-internal-templates-skills-beads",
+    "gastownhall-beads-plugins-beads-skills-beads",
+    "glincker-thesvg-skills-thesvg",
+    "gotalab-cc-sdd-tools-cc-sdd-templates-agents-antigravity-skills-skills-kiro-debug",
+    "gotalab-cc-sdd-tools-cc-sdd-templates-agents-antigravity-skills-skills-kiro-discovery",
+    "gotalab-cc-sdd-tools-cc-sdd-templates-agents-antigravity-skills-skills-kiro-impl",
+    "gotalab-cc-sdd-tools-cc-sdd-templates-agents-antigravity-skills-skills-kiro-review",
+    "gotalab-cc-sdd-tools-cc-sdd-templates-agents-antigravity-skills-skills-kiro-spec-batch",
+    "himself65-finance-skills-plugins-data-providers-skills-finance-sentiment",
+    "himself65-finance-skills-plugins-data-providers-skills-fintel-data",
+    "himself65-finance-skills-plugins-data-providers-skills-hormuz-strait",
+    "himself65-finance-skills-plugins-data-providers-skills-hyperliquid-reader",
+    "himself65-finance-skills-plugins-data-providers-skills-tradingview-mcp",
+    "ifuryst-open-codex-computer-use-skills-open-computer-use",
+    "inkeep-open-knowledge-packages-server-assets-skills-discovery",
+    "inkeep-open-knowledge-packages-server-assets-skills-packs-codebase-wiki",
+    "inkeep-open-knowledge-packages-server-assets-skills-packs-entity-vault",
+    "inkeep-open-knowledge-packages-server-assets-skills-packs-knowledge-base",
+    "inkeep-open-knowledge-packages-server-assets-skills-packs-knowledge-base-consolidate",
+    "jau123-meigen-ai-design-mcp",
+    "jdarmy-break",
+    "jimliu-baoyu-design-skills-baoyu-design",
+    "kayforkind-reimagine-it-skills-reimagine-it",
+    "kayforkind-reimagine-it-skills-reimagine-it-audit",
+    "kayforkind-reimagine-it-skills-reimagine-it-extract",
+    "kayforkind-reimagine-it-skills-reimagine-it-generate",
+    "kayforkind-reimagine-it-skills-reimagine-it-infographic",
+    "kitfunso-hippo-memory",
+    "lackeyjb-playwright-skill-skills-playwright-skill",
+    "mcp-brasil-mcp-brasil",
+    "metalbear-co-mirrord-mirrord-mcp-corpus-skills-mirrord-chaos",
+    "metalbear-co-mirrord-mirrord-mcp-corpus-skills-mirrord-ci",
+    "metalbear-co-mirrord-mirrord-mcp-corpus-skills-mirrord-config",
+    "metalbear-co-mirrord-mirrord-mcp-corpus-skills-mirrord-db-branching",
+    "metalbear-co-mirrord-mirrord-mcp-corpus-skills-mirrord-header-propagation",
+    "mex-memory-mex-skills-mex-inbox",
+    "mex-memory-mex-skills-mex-relay",
+    "nanako0129-sepia-skills-sepia-hemingway",
+    "nanako0129-sepia-skills-sepia-recreate",
+    "nanako0129-sepia-skills-sepia-refactor",
+    "nanako0129-sepia-skills-sepia-review",
+    "nanako0129-sepia-skills-sepia-write",
+    "nanmicoder-cc-haha",
+    "ningzimu-codex-ppt-skill-skills-codex-ppt",
+    "oil-oil-oil-motion",
+    "okf-memory-okf-agent-memory-pkg-okf-assets-skill",
+    "olimorris-codecompanion-nvim-tests-stubs-skills-personal-house-style",
+    "olimorris-codecompanion-nvim-tests-stubs-skills-personal-name-not-a-string",
+    "olimorris-codecompanion-nvim-tests-stubs-skills-personal-no-description",
+    "olimorris-codecompanion-nvim-tests-stubs-skills-personal-pdf-forms",
+    "olimorris-codecompanion-nvim-tests-stubs-skills-project-house-style",
+    "open-gsd-gsd-core-skills-gsd-add-tests",
+    "open-gsd-gsd-core-skills-gsd-ai-integration-phase",
+    "open-gsd-gsd-core-skills-gsd-audit-fix",
+    "open-gsd-gsd-core-skills-gsd-audit-milestone",
+    "open-gsd-gsd-core-skills-gsd-audit-uat",
+    "openagentplatform-dive",
+    "opensensenova-sensenova-skills-skills-sn-da-excel-workflow",
+    "opensensenova-sensenova-skills-skills-sn-da-excel-workflow-capability-excel-cell-coloring-category-coloring",
+    "opensensenova-sensenova-skills-skills-sn-da-excel-workflow-capability-excel-cell-coloring-duplicate-value-coloring",
+    "opensensenova-sensenova-skills-skills-sn-da-excel-workflow-capability-excel-cell-coloring-outlier-coloring",
+    "opensensenova-sensenova-skills-skills-sn-da-excel-workflow-capability-excel-cell-coloring-threshold-cell-coloring",
+    "playa-cyrene-cyrene-agent",
+    "rath-team-openrath",
+    "rusq-slackdump-cmd-slackdump-internal-mcp-assets-skills-slackdump",
+    "rusq-slackdump-cmd-slackdump-internal-mcp-assets-skills-slackdump-source",
+    "rusq-slackdump-cmd-slackdump-internal-mcp-assets-skills-slackdump-sqlite3",
+    "sahir619-fable-method-skills-fable-domain",
+    "sahir619-fable-method-skills-fable-judge",
+    "sahir619-fable-method-skills-fable-loop",
+    "sahir619-fable-method-skills-fable-method",
+    "samber-cc-skills-golang-skills-golang-benchmark",
+    "samber-cc-skills-golang-skills-golang-cli",
+    "samber-cc-skills-golang-skills-golang-code-style",
+    "samber-cc-skills-golang-skills-golang-concurrency",
+    "samber-cc-skills-golang-skills-golang-context",
+    "sandbaseai-sandbase-harness",
+    "sergebulaev-instagram-skills",
+    "sergebulaev-instagram-skills-skills-ig-audience-insights",
+    "sergebulaev-instagram-skills-skills-ig-caption-writer",
+    "sergebulaev-instagram-skills-skills-ig-carousel-planner",
+    "sergebulaev-instagram-skills-skills-ig-content-planner",
+    "timescale-pg-aiguide-skills-design-postgis-tables",
+    "timescale-pg-aiguide-skills-design-postgres-tables",
+    "timescale-pg-aiguide-skills-find-hypertable-candidates",
+    "timescale-pg-aiguide-skills-migrate-postgres-tables-to-hypertables",
+    "timescale-pg-aiguide-skills-pgvector-semantic-search",
+    "unbrowse-ai-unbrowse",
+    "unclecatvn-agent-skills-skills-code-review",
+    "unclecatvn-agent-skills-skills-dtg-base",
+    "unclecatvn-agent-skills-skills-flow-diagram",
+    "unclecatvn-agent-skills-skills-odoo-16-0",
+    "unclecatvn-agent-skills-skills-odoo-17-0",
+    "upsonic-upsonic",
+    "waybox-ai-roadtrip-skill",
+    "yizhiyanhua-ai-fireworks-tech-graph",
+    "yizhiyanhua-ai-fireworks-tech-graph-skills-fireworks-tech-graph"
+  ],
+  "surging": [
+    {
+      "slug": "firecrawl-firecrawl-skills-firecrawl-build-interact",
+      "name": "build-interact",
+      "type": "agent_skill",
+      "stars": 192877,
+      "stars_delta_7d": 185284,
+      "stars_growth_pct": 2440.2,
+      "trending_score": 555852
+    },
+    {
+      "slug": "morluto-rea",
+      "name": "rea",
+      "type": "agent_tool",
+      "stars": 327205,
+      "stars_delta_7d": 130457,
+      "stars_growth_pct": 66.3,
+      "trending_score": 216958.66
+    },
+    {
+      "slug": "stablyai-orca-resources-native-chat-visuals-skills-orca-chat-visuals",
+      "name": "chat-visuals",
+      "type": "agent_skill",
+      "stars": 97177,
+      "stars_delta_7d": 5791,
+      "stars_growth_pct": 6.3,
+      "trending_score": 6157.97
+    },
+    {
+      "slug": "anthropics-claude-plugins-official-external_plugins-discord-skills-access",
+      "name": "access",
+      "type": "agent_skill",
+      "stars": 42914,
+      "stars_delta_7d": 5125,
+      "stars_growth_pct": 13.6,
+      "trending_score": 5820.06
+    },
+    {
+      "slug": "affaan-m-ecc-docs-es-skills-api-design",
+      "name": "api-design",
+      "type": "agent_skill",
+      "stars": 283494,
+      "stars_delta_7d": 5114,
+      "stars_growth_pct": 1.8,
+      "trending_score": 5207.95
+    },
+    {
+      "slug": "dietrichgebert-ponytail-skills-ponytail-audit",
+      "name": "audit",
+      "type": "agent_skill",
+      "stars": 167294,
+      "stars_delta_7d": 4815,
+      "stars_growth_pct": 3,
+      "trending_score": 4957.69
+    },
+    {
+      "slug": "cathrynlavery-diagram-design-skills-diagram-design",
+      "name": "diagram-design",
+      "type": "agent_skill",
+      "stars": 57952,
+      "stars_delta_7d": 4249,
+      "stars_growth_pct": 7.9,
+      "trending_score": 4585.18
+    },
+    {
+      "slug": "k-dense-ai-scientific-agent-skills-skills-13c-metabolic-flux",
+      "name": "13c-metabolic-flux",
+      "type": "agent_skill",
+      "stars": 52732,
+      "stars_delta_7d": 4029,
+      "stars_growth_pct": 8.3,
+      "trending_score": 4362.3
+    },
+    {
+      "slug": "leonxlnx-taste-skill-skills-brandkit",
+      "name": "brandkit",
+      "type": "agent_skill",
+      "stars": 99005,
+      "stars_delta_7d": 3546,
+      "stars_growth_pct": 3.7,
+      "trending_score": 3677.72
+    },
+    {
+      "slug": "paperclipai-paperclip-integrations-assistant-plugins-claude-paperclip-skills-delegate-work",
+      "name": "delegate-work",
+      "type": "agent_skill",
+      "stars": 104300,
+      "stars_delta_7d": 2889,
+      "stars_growth_pct": 2.8,
+      "trending_score": 2971.3
+    },
+    {
+      "slug": "tt-a1i-archify-archify",
+      "name": "archify",
+      "type": "agent_skill",
+      "stars": 85550,
+      "stars_delta_7d": 2610,
+      "stars_growth_pct": 3.1,
+      "trending_score": 2692.13
+    },
+    {
+      "slug": "graphify-labs-graphify",
+      "name": "graphify",
+      "type": "agent_tool",
+      "stars": 128604,
+      "stars_delta_7d": 2503,
+      "stars_growth_pct": 2,
+      "trending_score": 2552.68
+    },
+    {
+      "slug": "panniantong-agent-reach",
+      "name": "Agent-Reach",
+      "type": "agent_tool",
+      "stars": 99237,
+      "stars_delta_7d": 2346,
+      "stars_growth_pct": 2.4,
+      "trending_score": 2402.8
+    },
+    {
+      "slug": "addyosmani-agent-skills-skills-api-and-interface-design",
+      "name": "api-and-interface-design",
+      "type": "agent_skill",
+      "stars": 108318,
+      "stars_delta_7d": 2265,
+      "stars_growth_pct": 2.1,
+      "trending_score": 2313.37
+    },
+    {
+      "slug": "ruvnet-ruflo",
+      "name": "ruflo",
+      "type": "agent_skill",
+      "stars": 76729,
+      "stars_delta_7d": 2217,
+      "stars_growth_pct": 3,
+      "trending_score": 2282.96
+    },
+    {
+      "slug": "diegosouzapw-omniroute",
+      "name": "OmniRoute",
+      "type": "agent_tool",
+      "stars": 78236,
+      "stars_delta_7d": 2203,
+      "stars_growth_pct": 2.9,
+      "trending_score": 2266.83
+    },
+    {
+      "slug": "juliusbrussee-caveman-plugins-caveman-skills-cavecrew",
+      "name": "cavecrew",
+      "type": "agent_skill",
+      "stars": 113528,
+      "stars_delta_7d": 2123,
+      "stars_growth_pct": 1.9,
+      "trending_score": 2163.46
+    },
+    {
+      "slug": "nextlevelbuilder-ui-ux-pro-max-skill-cli-assets-skills-banner-design",
+      "name": "banner-design",
+      "type": "agent_skill",
+      "stars": 137347,
+      "stars_delta_7d": 1923,
+      "stars_growth_pct": 1.4,
+      "trending_score": 1950.31
+    },
+    {
+      "slug": "blader-humanizer",
+      "name": "humanizer",
+      "type": "agent_skill",
+      "stars": 58216,
+      "stars_delta_7d": 1735,
+      "stars_growth_pct": 3.1,
+      "trending_score": 1788.3
+    },
+    {
+      "slug": "nousresearch-hermes-agent",
+      "name": "hermes-agent",
+      "type": "agent_tool",
+      "stars": 255031,
+      "stars_delta_7d": 1650,
+      "stars_growth_pct": 0.7,
+      "trending_score": 1660.74
+    },
+    {
+      "slug": "nexu-io-open-design-apps-daemon-tests-fixtures-plugin-fixtures-sample-plugin",
+      "name": "sample-plugin",
+      "type": "agent_skill",
+      "stars": 102299,
+      "stars_delta_7d": 1391,
+      "stars_growth_pct": 1.4,
+      "trending_score": 1410.17
+    },
+    {
+      "slug": "thedotmack-claude-mem-claude-mem-cursor-skills-agent-cost-report",
+      "name": "Agent Cost Report",
+      "type": "agent_skill",
+      "stars": 101675,
+      "stars_delta_7d": 1341,
+      "stars_growth_pct": 1.3,
+      "trending_score": 1358.92
+    },
+    {
+      "slug": "d4vinci-scrapling",
+      "name": "Scrapling",
+      "type": "agent_tool",
+      "stars": 88548,
+      "stars_delta_7d": 1292,
+      "stars_growth_pct": 1.5,
+      "trending_score": 1311.13
+    },
+    {
+      "slug": "latent-spaces-brag-skills-brag-slim",
+      "name": "slim",
+      "type": "agent_skill",
+      "stars": 16800,
+      "stars_delta_7d": 1143,
+      "stars_growth_pct": 7.3,
+      "trending_score": 1226.44
+    },
+    {
+      "slug": "apify-apify-mcp-server",
+      "name": "apify-mcp-server",
+      "type": "mcp_server",
+      "stars": 11927,
+      "stars_delta_7d": 969,
+      "stars_growth_pct": 8.8,
+      "trending_score": 1054.69
+    }
+  ],
+  "summary": {
+    "week": "2026-W43",
+    "generated_at": "2026-10-19T07:41:40.294Z",
+    "added_count": 724,
+    "removed_count": 153,
+    "surging_count": 25,
+    "total_stars_gained": 6234921
+  }
+}

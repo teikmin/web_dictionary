@@ -1,16 +1,20 @@
 ---
 slug: jnmetacode-superpowers-zh-skills-chinese-documentation
 name: chinese-documentation
-tagline: 中文文档排版参考——中英文空格、全半角标点、术语保留、链接格式、中文文案排版指北约定。仅在用户显式
-  /chinese-documentation 时调用，不要根据上下文自动触发。
-summary: 中文技术文档最常见的问题不是内容不够，而是读起来别扭——中英文挤在一起没有空格、全角半角混用、一股机翻味。本技能提供一套完整的中文技术文档写作规范，让你的文档专业、好读、不出戏。
+tagline: Agent skill from jnMetaCode/superpowers-zh
+summary: Agent skill from jnMetaCode/superpowers-zh
 categories:
   - coding-agents
+tags:
+  - agent-skills
+  - agentic-coding
+  - ai-coding
+  - chinese
 status: active
-quality_percentile: 80
+quality_percentile: 88
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: jnMetaCode/superpowers-zh
@@ -18,25 +22,38 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 8305
-  last_commit: 2026-10-08T06:45:46Z
-language: zh
+  stars: 8344
+  last_commit: 2026-10-19T04:47:10Z
+  stars_delta_7d: 39
+  stars_growth_pct: 0.5
+  trending_score: 39.18
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 8267
+    - 8305
+    - 8344
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: jnMetaCode/superpowers-zh
   path: skills/chinese-documentation/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.409Z
+  fetched_at: 2026-10-19T07:39:37.712Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: chinese-documentation
-  description: 中文文档排版参考——中英文空格、全半角标点、术语保留、链接格式、中文文案排版指北约定。仅在用户显式
-    /chinese-documentation 时调用，不要根据上下文自动触发。
+  description: Agent skill from jnMetaCode/superpowers-zh
   folder_path: skills/chinese-documentation
   extra_files: []
-tags: []
+  pack_total_skills: 21
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: jnmetacode-superpowers-zh
 ---
 
 # 中文技术文档写作规范

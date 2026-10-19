@@ -1,6 +1,6 @@
 ---
 slug: google-gemini-gemini-cli-packages-core-src-skills-builtin-skill-creator
-name: skill-creator
+name: creator
 tagline: Guide for creating effective skills. This skill should be used when
   users want to create a new skill (or update an existing skill) that extends
   Gemini
@@ -9,11 +9,16 @@ summary: Skills are modular, self-contained packages that extend Gemini CLI's
   of them as "onboarding guides" for specific domains or tasks—they trans...
 categories:
   - coding-agents
+tags:
+  - ai-agents
+  - cli
+  - gemini
+  - gemini-api
 status: active
-quality_percentile: 84
+quality_percentile: 83
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: google-gemini/gemini-cli
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 107310
-  last_commit: 2026-10-13T01:36:44Z
+  stars: 107446
+  last_commit: 2026-10-19T01:34:29Z
+  stars_delta_7d: 136
+  stars_growth_pct: 0.1
+  trending_score: 136.17
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 107245
+    - 107310
+    - 107446
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,11 +43,11 @@ readme_source:
   repo: google-gemini/gemini-cli
   path: packages/core/src/skills/builtin/skill-creator/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:54:53.405Z
+  fetched_at: 2026-10-19T07:31:32.022Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: skill-creator
+  skill_name: creator
   description: Guide for creating effective skills. This skill should be used when
     users want to create a new skill (or update an existing skill) that extends
     Gemini CLI's capabilities with specialized knowledge, workflows, or tool
@@ -44,7 +57,13 @@ skill:
     - scripts/init_skill.cjs
     - scripts/package_skill.cjs
     - scripts/validate_skill.cjs
-tags: []
+  pack_total_skills: 4
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: google-gemini-gemini-cli
 ---
 
 # Skill Creator

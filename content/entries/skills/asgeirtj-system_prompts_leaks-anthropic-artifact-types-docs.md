@@ -8,12 +8,17 @@ summary: "A doc keeps its content — title, tabs, blocks, comments, who can edi
   — in the Claude Docs service, keyed by the artifact's own id. There is no
   instance file to write, fill in or publish. In particular:"
 categories:
-  - media-creative
+  - cloud-infra
+tags:
+  - ai-agents
+  - ai-prompts
+  - anthropic
+  - chatbot
 status: active
 quality_percentile: 85
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: asgeirtj/system_prompts_leaks
@@ -21,8 +26,15 @@ source:
   official_vendor: false
   license: CC0-1.0
 signals:
-  stars: 69549
-  last_commit: 2026-10-12T02:20:04Z
+  stars: 69880
+  last_commit: 2026-10-16T08:29:42Z
+  stars_delta_7d: 331
+  stars_growth_pct: 0.5
+  trending_score: 332.58
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 69549
+    - 69880
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,7 +42,7 @@ readme_source:
   repo: asgeirtj/system_prompts_leaks
   path: Anthropic/artifact-types/docs/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:12.512Z
+  fetched_at: 2026-10-19T07:37:14.452Z
   truncated: false
 type: agent_skill
 skill:
@@ -48,7 +60,13 @@ skill:
     relay)."
   folder_path: Anthropic/artifact-types/docs
   extra_files: []
-tags: []
+  pack_total_skills: 205
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: asgeirtj-system_prompts_leaks
 ---
 
 # Claude Docs — the shared type

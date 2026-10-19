@@ -1,18 +1,23 @@
 ---
 slug: decolua-9router-skills-9router-chat
-name: 9router-chat
+name: chat
 tagline: "Chat / code generation via 9Router using OpenAI /v1/chat/completions
   or Anthropic /v1/messages format with streaming + auto-fallback combos. Use
   when "
 summary: "- POST $NINEROUTERURL/v1/chat/completions — OpenAI format - POST
   $NINEROUTERURL/v1/messages — Anthropic format"
 categories:
-  - other
+  - agent-frameworks
+tags:
+  - ai-agents
+  - ai-gateway
+  - anthropic
+  - chatgpt
 status: active
-quality_percentile: 89
+quality_percentile: 92
 selection_reason: quality_percentile
 first_seen: 2026-01-05T02:59:30
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: decolua/9router
@@ -20,8 +25,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 30732
-  last_commit: 2026-10-08T12:49:04Z
+  stars: 31045
+  last_commit: 2026-10-15T14:53:12Z
+  stars_delta_7d: 313
+  stars_growth_pct: 1
+  trending_score: 316.19
+  rank_current: 39
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 30411
+    - 30732
+    - 31045
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,18 +44,24 @@ readme_source:
   repo: decolua/9router
   path: skills/9router-chat/SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:14.626Z
+  fetched_at: 2026-10-19T07:37:41.945Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: 9router-chat
+  skill_name: chat
   description: Chat / code generation via 9Router using OpenAI
     /v1/chat/completions or Anthropic /v1/messages format with streaming +
     auto-fallback combos. Use when the user wants to ask an LLM, generate code,
     summarize text, or run prompts through 9Router.
   folder_path: skills/9router-chat
   extra_files: []
-tags: []
+  pack_total_skills: 9
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: decolua-9router
 ---
 
 # 9Router — Chat

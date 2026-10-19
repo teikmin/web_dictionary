@@ -1,17 +1,22 @@
 ---
 slug: decolua-9router-skills-9router-tts
-name: 9router-tts
+name: tts
 tagline: Text-to-speech via 9Router /v1/audio/speech using OpenAI / ElevenLabs /
   Deepgram / Edge TTS / Google TTS / Hyperbolic / Inworld voices. Use when the u
 summary: model field in /v1/audio/speech = voice ID directly (e.g.
   edge-tts/vi-VN-HoaiMyNeural, el/, or openai/tts-1 model+default voice).
 categories:
-  - media-creative
+  - agent-frameworks
+tags:
+  - ai-agents
+  - ai-gateway
+  - anthropic
+  - chatgpt
 status: active
-quality_percentile: 89
+quality_percentile: 92
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: decolua/9router
@@ -19,8 +24,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 30732
-  last_commit: 2026-10-08T12:49:04Z
+  stars: 31045
+  last_commit: 2026-10-15T14:53:12Z
+  stars_delta_7d: 313
+  stars_growth_pct: 1
+  trending_score: 316.19
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 30411
+    - 30732
+    - 31045
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,19 +41,24 @@ readme_source:
   repo: decolua/9router
   path: skills/9router-tts/SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:14.652Z
+  fetched_at: 2026-10-19T07:37:41.945Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: 9router-tts
+  skill_name: tts
   description: Text-to-speech via 9Router /v1/audio/speech using OpenAI /
     ElevenLabs / Deepgram / Edge TTS / Google TTS / Hyperbolic / Inworld voices.
     Use when the user wants to convert text to speech, generate audio,
     voiceover, narrate, or read text aloud.
   folder_path: skills/9router-tts
   extra_files: []
-tags:
-  - audio
+  pack_total_skills: 9
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: decolua-9router
 ---
 
 # 9Router — Text-to-Speech

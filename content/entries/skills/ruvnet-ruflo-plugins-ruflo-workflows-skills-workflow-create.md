@@ -1,0 +1,125 @@
+---
+slug: ruvnet-ruflo-plugins-ruflo-workflows-skills-workflow-create
+name: workflow-create
+tagline: Author a workflow — either an MCP workflow template (persisted,
+  lifecycle) or a native .claude/workflows/*.js orchestration script
+  (agent/parallel/pip
+summary: "- MCP workflow template — a persisted definition with a pause/resume
+  lifecycle. Use for long-lived, human-gated, resumable pipelines. - Native
+  .claude/workflows/.js — an imperative orchestration script that fans subag..."
+categories:
+  - agent-frameworks
+tags:
+  - agentic-ai
+  - agentic-framework
+  - agentic-workflow
+  - agents
+status: active
+quality_percentile: 79
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: ruvnet/ruflo
+  subpath: plugins/ruflo-workflows/skills/workflow-create
+  official_vendor: false
+  license: MIT
+signals:
+  stars: 76729
+  last_commit: 2026-10-19T06:30:38Z
+  stars_delta_7d: 2217
+  stars_growth_pct: 3
+  trending_score: 2282.96
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 74048
+    - 74512
+    - 76729
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: ruvnet/ruflo
+  path: plugins/ruflo-workflows/skills/workflow-create/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:31:55.781Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: workflow-create
+  description: Author a workflow — either an MCP workflow template (persisted,
+    lifecycle) or a native .claude/workflows/*.js orchestration script
+    (agent/parallel/pipeline fan-out)
+  folder_path: plugins/ruflo-workflows/skills/workflow-create
+  extra_files: []
+  pack_total_skills: 161
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: ruvnet-ruflo
+---
+
+# Workflow Create
+Author a workflow on whichever surface fits the job.
+
+## Pick a surface
+
+- **MCP workflow template** — a persisted definition with a pause/resume lifecycle. Use for long-lived, human-gated, resumable pipelines.
+- **Native `.claude/workflows/*.js`** — an imperative orchestration script that fans subagents out. Use for comprehensive fan-out (review, audit, migration, research) where you aggregate structured results in code.
+
+## A — MCP workflow template
+
+1. **List templates** — call `mcp__plugin_ruflo-core_ruflo__workflow_template` to see available templates
+2. **Create workflow** — call `mcp__plugin_ruflo-core_ruflo__workflow_create` with steps, conditions, and execution order
+3. **List workflows** — call `mcp__plugin_ruflo-core_ruflo__workflow_list` to see all defined workflows
+4. **Check status** — call `mcp__plugin_ruflo-core_ruflo__workflow_status` to monitor a workflow
+5. **Clean up** — call `mcp__plugin_ruflo-core_ruflo__workflow_delete` to remove unused workflows
+
+Features: sequential/parallel steps, conditional branching, template inheritance, pause/resume approval gates.
+
+## ADR steps (with ruflo-console 0.39.0 or later)
+
+Neither surface above has a step *type* for decisions, and ruflo-console owns no workflow engine (its Workflows page only reads runs), so these are two ordinary steps, not an engine feature. They use the ADRs of the project you run in, not ruflo's own.
+
+- **requires ADR** (first step): attach the ADRs that govern the area to the console mission (ADRs page, or `/ruflo run adr-attach <n>`); the console puts the accepted decisions in the prompt of every step and spawned agent. Name the ones the step touches before it edits anything.
+- **records ADR** (last step): when the workflow made a decision a person should keep, `/ruflo run adr-propose <title>` (or the page's *draft an ADR from this mission*). It writes a *proposed* record only after the person's Yes on the exact file; a person writes the decision and accepts it.
+
+The console's scope check compares changed file paths with the paths the attached accepted ADRs name and records a warning; it does not prove a step follows a decision.
+
+## B — Native `.claude/workflows/*.js`
+
+Write a `.js` file under `.claude/workflows/`. It MUST begin with a **pure-literal** `export const meta` block; the body runs inside an async wrapper (top-level `await`/`return` are legal) with these hooks injected:
+
+| Hook | Purpose |
+|------|---------|
+| `agent(prompt, opts)` | Spawn one subagent; pass `opts.schema` (JSON Schema) to get validated structured output back |
+| `parallel(thunks)` | Run thunks concurrently with a **barrier** — `.filter(Boolean)` the results |
+| `pipeline(items, ...stages)` | Stream each item through stages independently — **prefer this** over a barrier |
+| `phase(title)` / `log(msg)` | Progress grouping / narration |
+
+```js
+export const meta = {
+  name: 'my-workflow',                 // becomes the invocable name — must be a pure literal
+  description: 'one line',
+  phases: [{ title: 'Find' }, { title: 'Verify' }],
+}
+const SCHEMA = { type: 'object', required: ['ok'], properties: { ok: { type: 'boolean' } }, additionalProperties: false }
+phase('Find')
+const found = await agent('find the things', { schema: SCHEMA, agentType: 'tester' })
+phase('Verify')
+const checked = await parallel((found.items || []).map((it) => () =>
+  agent(`verify ${it}`, { schema: SCHEMA })))
+return { found, checked: checked.filter(Boolean) }
+```
+
+Rules: `meta` is a pure literal (no variables/calls/interpolation); default to `pipeline` over `parallel`; never use `Date.now()`/`Math.random()` (they throw — vary by index instead). Validate syntax (the body is ESM-in-async-wrapper, not a bare module):
+
+```bash
+node -e 'const fs=require("fs");let s=fs.readFileSync(".claude/workflows/my-workflow.js","utf8").replace(/^export\s+const\s+meta/m,"const meta");fs.writeFileSync("/tmp/wf.mjs","let agent,parallel,pipeline,phase,log,args,budget,workflow;async function __wf(){\n"+s+"\n}")' \
+  && node --check /tmp/wf.mjs && echo OK
+```
+
+Run it with the `workflow-run` skill or `Workflow({ name: 'my-workflow' })`. Reference: `.claude/workflows/plugin-contract-audit.js`. See [ADR-0002](https://github.com/ruvnet/ruflo/blob/main/plugins/ruflo-workflows/skills/workflow-create/../../docs/adrs/0002-native-workflow-orchestration.md).

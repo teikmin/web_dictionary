@@ -7,19 +7,34 @@ summary: Add --scope project after mcp add to keep the registration in the
   current workspace. See Autohand Code for current CLI details.
 categories:
   - databases-memory
+tags:
+  - claude
+  - claude-code
+  - database
+  - llm
 status: active
-quality_percentile: 33
+quality_percentile: 35
 selection_reason: quality_percentile
 first_seen: 2024-12-03T20:53:52
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: designcomputer/mysql_mcp_server
   official_vendor: false
   license: MIT
 signals:
-  stars: 1397
+  stars: 1399
   last_commit: 2026-08-02T13:36:20Z
+  stars_delta_7d: 2
+  stars_growth_pct: 0.1
+  trending_score: 2
+  rank_current: 79
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1398
+    - 1397
+    - 1399
 language: en
 needs_keys: false
 prerequisites:
@@ -29,7 +44,7 @@ readme_source:
   repo: designcomputer/mysql_mcp_server
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:08.771Z
+  fetched_at: 2026-10-19T07:33:42.911Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,7 +54,6 @@ launch:
     - mysql_mcp_server
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # MySQL MCP Server

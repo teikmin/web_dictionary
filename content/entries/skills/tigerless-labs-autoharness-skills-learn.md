@@ -1,17 +1,20 @@
 ---
 slug: tigerless-labs-autoharness-skills-learn
 name: learn
-tagline: Use when users /learn, save, remember, or distill lessons.
-summary: "1. Identify class-level, reusable lessons: corrected approaches,
-  non-trivial techniques, durable user preferences. Skip one-off narratives and
-  environment-specific failures. 2. Compare first: read the injected skill i..."
+tagline: Agent skill from tigerless-labs/autoharness
+summary: Agent skill from tigerless-labs/autoharness
 categories:
-  - other
+  - agent-frameworks
+tags:
+  - agent-skills
+  - claude-code
+  - claude-code-plugin
+  - llm-agents
 status: active
-quality_percentile: 56
+quality_percentile: 55
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: tigerless-labs/autoharness
@@ -19,8 +22,17 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 11051
-  last_commit: 2026-10-13T09:27:08Z
+  stars: 11140
+  last_commit: 2026-10-15T16:22:50Z
+  stars_delta_7d: 89
+  stars_growth_pct: 0.8
+  trending_score: 89.72
+  rank_current: 68
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 11051
+    - 11140
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,15 +40,21 @@ readme_source:
   repo: tigerless-labs/autoharness
   path: skills/learn/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.774Z
+  fetched_at: 2026-10-19T07:39:23.558Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: learn
-  description: Use when users /learn, save, remember, or distill lessons.
+  description: Agent skill from tigerless-labs/autoharness
   folder_path: skills/learn
   extra_files: []
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: tigerless-labs-autoharness
 ---
 
 # Learn: distill this session into the skill library

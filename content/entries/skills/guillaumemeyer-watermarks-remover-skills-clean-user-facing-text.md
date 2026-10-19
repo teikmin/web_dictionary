@@ -1,20 +1,20 @@
 ---
 slug: guillaumemeyer-watermarks-remover-skills-clean-user-facing-text
 name: clean-user-facing-text
-tagline: Clean and finalize authorized natural-language text intended for
-  readers by auditing suspicious invisible Unicode and rewriting prose while
-  preserving
-summary: "1. Identify the prose that readers will see. 2. Protect non-prose
-  spans: - fenced and inline code - commands, paths, URLs, identifiers, API
-  names, and exact values - formulas, citations, and text the user asks to
-  quot..."
+tagline: Agent skill from guillaumemeyer/watermarks-remover
+summary: Agent skill from guillaumemeyer/watermarks-remover
 categories:
   - other
+tags:
+  - anthropic
+  - c2pa
+  - chatgpt
+  - claude
 status: active
-quality_percentile: 69
+quality_percentile: 77
 selection_reason: quality_percentile
 first_seen: 2026-08-11T16:32:38
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: guillaumemeyer/watermarks-remover
@@ -22,8 +22,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 23994
-  last_commit: 2026-10-09T01:10:19Z
+  stars: 24395
+  last_commit: 2026-10-17T05:30:08Z
+  stars_delta_7d: 401
+  stars_growth_pct: 1.7
+  trending_score: 407.7
+  rank_current: 32
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 23518
+    - 23994
+    - 24395
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,20 +41,12 @@ readme_source:
   repo: guillaumemeyer/watermarks-remover
   path: skills/clean-user-facing-text/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.437Z
+  fetched_at: 2026-10-19T07:39:36.439Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: clean-user-facing-text
-  description: Clean and finalize authorized natural-language text intended for
-    readers by auditing suspicious invisible Unicode and rewriting prose while
-    preserving facts, meaning, and the writer's voice. Use when the user asks to
-    clean, humanize, polish, or finalize articles, manuscripts, reports,
-    documentation, emails, product copy, UI text, Markdown, or HTML prose, or
-    when a project rule or instruction file explicitly requires this workflow.
-    Don't use for code-only tasks or undisclosed authorship evasion; leave code,
-    commands, identifiers, paths, APIs, formulas, citations, required
-    disclosures, and verbatim quotations unchanged.
+  description: Agent skill from guillaumemeyer/watermarks-remover
   folder_path: skills/clean-user-facing-text
   extra_files:
     - references/detectors.md
@@ -56,7 +58,13 @@ skill:
     - scripts/inspect_text.py
     - scripts/score_stylometry.py
     - scripts/text_unicode.py
-tags: []
+  pack_total_skills: 2
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: guillaumemeyer-watermarks-remover
 ---
 
 # Clean user-facing text

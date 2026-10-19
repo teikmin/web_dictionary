@@ -1,48 +1,55 @@
 ---
 slug: nousresearch-hermes-agent
-type: agent_tool
 name: hermes-agent
 tagline: The agent that grows with you
 summary: The self-improving AI agent built by Nous Research. It's the only agent
   with a built-in learning loop — it creates skills from experience, improves
   them during use, nudges itself to persist knowledge, searches its own...
 categories:
-  - agent-frameworks
+  - domain-research
 tags:
-  - research
+  - ai-agent
+  - ai-agents
+  - anthropic
+  - chatgpt
 status: active
 quality_percentile: 85
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: NousResearch/hermes-agent
   official_vendor: false
   license: MIT
 signals:
-  stars: 253381
-  last_commit: 2026-10-13T16:25:31Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 255031
+  last_commit: 2026-10-19T07:14:58Z
+  stars_delta_7d: 1650
+  stars_growth_pct: 0.7
+  trending_score: 1660.74
+  rank_current: 5
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 251859
+    - 253381
+    - 255031
 language: en
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - multi
 readme_source:
   repo: NousResearch/hermes-agent
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.547Z
+  fetched_at: 2026-10-19T07:36:32.998Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: agent_framework
+  subcategory: other
   install_command: pip install hermes-agent
-  runtime: python
+  runtime: multi
   execution_mode: local
   has_mcp_support: true
   mcp_launch:
@@ -81,12 +88,13 @@ Use any model you want — [Nous Portal](https://portal.nousresearch.com), OpenR
 <tr><td><b>Lives where you do</b></td><td>Telegram, Discord, Slack, WhatsApp, Signal, and CLI — all from a single gateway process. Voice memo transcription, cross-platform conversation continuity.</td></tr>
 <tr><td><b>A closed learning loop</b></td><td>Agent-curated memory with periodic nudges. Autonomous skill creation after complex tasks. Skills self-improve during use. FTS5 session search with LLM summarization for cross-session recall. <a href="https://github.com/plastic-labs/honcho">Honcho</a> dialectic user modeling. Compatible with the <a href="https://agentskills.io">agentskills.io</a> open standard.</td></tr>
 <tr><td><b>Scheduled automations</b></td><td>Built-in cron scheduler with delivery to any platform. Daily reports, nightly backups, weekly audits — all in natural language, running unattended.</td></tr>
-<tr><td><b>Delegates and parallelizes</b></td><td>Spawn isolated subagents for parallel workstreams. Write Python scripts that call tools via RPC, collapsing multi-step pipelines into zero-context-cost turns.</td></tr>
+<tr><td><b>Delegates and parallelizes</b></td><td>Spawn isolated subagents for parallel workstreams. In Desktop, choose their provider, model, and limits under Settings → Model → Subagents, then Apply the complete route. Write Python scripts that call tools via RPC, collapsing multi-step pipelines into zero-context-cost turns.</td></tr>
 <tr><td><b>Runs anywhere, not just your laptop</b></td><td>Seven terminal backends — local, Docker, SSH, Singularity, Modal, Daytona, and Vercel Sandbox. Daytona and Modal offer serverless persistence — your agent's environment hibernates when idle and wakes on demand, costing nearly nothing between sessions. Run it on a $5 VPS or a GPU cluster.</td></tr>
 <tr><td><b>Research-ready</b></td><td>Batch trajectory generation, trajectory compression for training the next generation of tool-calling models.</td></tr>
 </table>
 
 ---
+
 ## Quick Install
 
 ### Linux, macOS, WSL2
@@ -158,6 +166,7 @@ If attestation says "Verification succeeded" and the last line prints `True`, yo
 For more context, see the upstream Astral reports: [astral-sh/uv#13553](https://github.com/astral-sh/uv/issues/13553), [astral-sh/uv#15011](https://github.com/astral-sh/uv/issues/15011), [astral-sh/uv#10079](https://github.com/astral-sh/uv/issues/10079).
 
 ---
+
 ## Getting Started
 
 ```bash
@@ -176,6 +185,7 @@ hermes doctor       # Diagnose any issues
 📖 **[Full documentation →](https://hermes-agent.nousresearch.com/docs/)**
 
 ---
+
 ## Skip the API-key collection — Nous Portal
 
 Hermes works with whatever provider you want — that's not changing. But if you'd rather not collect five separate API keys for the model, web search, image generation, TTS, and a cloud browser, **[Nous Portal](https://portal.nousresearch.com)** covers all of them under one subscription:
@@ -194,6 +204,7 @@ That logs you in via OAuth, sets Nous as your provider, and turns on the Tool Ga
 You can still bring your own keys per-tool whenever you want — the gateway is per-backend, not all-or-nothing.
 
 ---
+
 ## CLI vs Messaging Quick Reference
 
 Hermes has two entry points: start the terminal UI with `hermes`, or run the gateway and talk to it from Telegram, Discord, Slack, WhatsApp, Signal, or Email. Once you're in a conversation, many slash commands are shared across both interfaces.
@@ -213,6 +224,7 @@ Hermes has two entry points: start the terminal UI with `hermes`, or run the gat
 For the full command lists, see the [CLI guide](https://hermes-agent.nousresearch.com/docs/user-guide/cli) and the [Messaging Gateway guide](https://hermes-agent.nousresearch.com/docs/user-guide/messaging).
 
 ---
+
 ## Documentation
 
 All documentation lives at **[hermes-agent.nousresearch.com/docs](https://hermes-agent.nousresearch.com/docs/)**:
@@ -236,6 +248,7 @@ All documentation lives at **[hermes-agent.nousresearch.com/docs](https://hermes
 | [Environment Variables](https://hermes-agent.nousresearch.com/docs/reference/environment-variables) | Complete env var reference                                 |
 
 ---
+
 ## Migrating from OpenClaw
 
 If you're coming from OpenClaw, Hermes can automatically import your settings, memories, skills, and API keys.
@@ -265,6 +278,7 @@ What gets imported:
 See `hermes claw migrate --help` for all options, or use the `openclaw-migration` skill for an interactive agent-guided migration with dry-run previews.
 
 ---
+
 ## Contributing
 
 We welcome contributions! See the [Contributing Guide](https://hermes-agent.nousresearch.com/docs/developer-guide/contributing) for development setup, code style, and PR process.
@@ -274,6 +288,7 @@ for activation, daily use, dependency changes, and leaving the environment.
 [Development Setup](https://github.com/NousResearch/hermes-agent/blob/main/CONTRIBUTING.md#development-setup) covers the separate test environment and verification commands.
 
 ---
+
 ## Community
 
 - 💬 [Discord](https://discord.gg/NousResearch)
@@ -283,6 +298,7 @@ for activation, daily use, dependency changes, and leaving the environment.
 - 🔌 [HermesClaw](https://github.com/AaronWong1999/hermesclaw) — Community WeChat bridge: Run Hermes Agent and OpenClaw on the same WeChat account.
 
 ---
+
 ## License
 
 MIT — see [LICENSE](https://github.com/NousResearch/hermes-agent/blob/main/LICENSE).

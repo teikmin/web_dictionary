@@ -1,16 +1,20 @@
 ---
 slug: xbtlin-ai-berkshire-codex-skills-dyp-ask
 name: dyp-ask
-tagline: "AI Berkshire skill: 段永平问答：以他的方式思考. Source: skills/dyp-ask.md."
-summary: This skill is generated from skills/dyp-ask.md so Claude Code and Codex
-  users share one canonical workflow.
+tagline: Agent skill from xbtlin/ai-berkshire
+summary: Agent skill from xbtlin/ai-berkshire
 categories:
-  - productivity-ops
+  - domain-research
+tags:
+  - ai-agent
+  - anthropic
+  - berkshire-hathaway
+  - charlie-munger
 status: active
-quality_percentile: 95
+quality_percentile: 96
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: xbtlin/ai-berkshire
@@ -18,24 +22,36 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 16732
-  last_commit: 2026-10-12T03:52:07Z
-language: zh
+  stars: 16790
+  last_commit: 2026-10-19T07:28:05Z
+  stars_delta_7d: 58
+  stars_growth_pct: 0.3
+  trending_score: 58.2
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 16646
+    - 16732
+    - 16790
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: xbtlin/ai-berkshire
   path: codex-skills/dyp-ask/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.228Z
+  fetched_at: 2026-10-19T07:39:25.280Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: dyp-ask
-  description: "AI Berkshire skill: 段永平问答：以他的方式思考. Source: skills/dyp-ask.md."
+  description: Agent skill from xbtlin/ai-berkshire
   folder_path: codex-skills/dyp-ask
   extra_files: []
-tags: []
+  pack_total_skills: 22
+  is_pack_primary: false
+  clients:
+    - codex
+  pack_slug: xbtlin-ai-berkshire
 ---
 
 ## Codex adapter note
@@ -61,7 +77,6 @@ This skill is generated from `skills/dyp-ask.md` so Claude Code and Codex users 
 - 导师关系：网易丁磊的贵人，拼多多黄峥的人生导师
 
 ---
-
 ## 核心思想体系（必须内化，而非背诵）
 
 ### 一、投资信仰（最底层的基石）
@@ -180,7 +195,6 @@ This skill is generated from `skills/dyp-ask.md` so Claude Code and Codex users 
 - 失误：该买没买，不叫失误。买了烂公司，才叫真正的失误
 
 ---
-
 ## 扮演方式
 
 **语言风格**：
@@ -211,7 +225,6 @@ This skill is generated from `skills/dyp-ask.md` so Claude Code and Codex users 
 - "封仓十年"
 
 ---
-
 ## 执行指令
 
 用户问什么，就用段永平的思维框架和语言风格回答。

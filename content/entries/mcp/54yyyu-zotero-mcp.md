@@ -7,19 +7,34 @@ tagline: "Zotero MCP: Connects your Zotero research library with Claude and
 summary: "Zotero MCP: Chat with your Research Library in Claude, ChatGPT, and more"
 categories:
   - domain-research
+tags:
+  - ai-agent
+  - chatgpt
+  - claude
+  - claude-code
 status: active
-quality_percentile: 74
+quality_percentile: 79
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: 54yyyu/zotero-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 5363
-  last_commit: 2026-10-08T01:41:37Z
+  stars: 5461
+  last_commit: 2026-10-16T21:34:45Z
+  stars_delta_7d: 98
+  stars_growth_pct: 1.8
+  trending_score: 99.79
+  rank_current: 14
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 5272
+    - 5363
+    - 5461
 language: en
 needs_keys: false
 prerequisites:
@@ -29,7 +44,7 @@ readme_source:
   repo: 54yyyu/zotero-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:57.923Z
+  fetched_at: 2026-10-19T07:32:29.323Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,8 +54,6 @@ launch:
     - zotero-mcp-server
   env_vars: []
   confidence: manifest
-tags:
-  - research
 ---
 
 <!-- mcp-name: io.github.54yyyu/zotero-mcp -->
@@ -95,7 +108,7 @@ One package, `zotero-mcp-server`, ships all three. Pick the one that fits where 
 |---|---|---|---|
 | **For** | Chat apps that speak MCP but have no shell: Claude Desktop, ChatGPT, Cherry Studio, Chorus | Agents with a shell: Claude Code, Codex, Cursor, Windsurf, Gemini CLI, Amp, OpenCode | Chatting inside Zotero, next to the PDF you are reading |
 | **How** | `zotero-mcp setup` | `zotero-mcp install-skill` | `zotero-cli plugin`, then install the `.xpi` in Zotero |
-| **Why** | Works in any MCP client | 98 tokens in context until it is needed, instead of ~13k | Knows the item, page and selection you have open; answers link to pages |
+| **Why** | Works in any MCP client | 98 tokens in context until it is needed, instead of ~17k | Knows the item, page and selection you have open; answers link to pages |
 | **Guide** | [Getting started](https://github.com/54yyyu/zotero-mcp/blob/main/docs/getting-started.md) | [CLI and agent skill](https://github.com/54yyyu/zotero-mcp/blob/main/docs/cli.md) | [Zotero Agent plugin](https://github.com/54yyyu/zotero-mcp/blob/main/docs/chat-plugin.md) |
 
 ## What it does
@@ -203,9 +216,11 @@ An MCP server sends every tool's schema on every request, before you type anythi
 
 | Route | In context | Paid |
 |---|---:|---|
-| MCP server, default profile (38 tools) | **13,448** | every request |
+| MCP server, default profile (41 tools) | **16,815** | every request |
+| MCP server, all tools (53) | 20,942 | every request |
 | Agent skill, frontmatter only | **98** | always |
-| Agent skill, body loaded | 1,368 | when it fires |
+| Agent skill, body loaded | 2,400 | when it fires |
+| Agent skill + full command reference | 6,158 | worst case |
 
 Use the MCP server when your client speaks MCP but has no shell (Claude Desktop, ChatGPT); use the skill when it has a shell. Both share one config. Details: [CLI and agent skill](https://github.com/54yyyu/zotero-mcp/blob/main/docs/cli.md).
 

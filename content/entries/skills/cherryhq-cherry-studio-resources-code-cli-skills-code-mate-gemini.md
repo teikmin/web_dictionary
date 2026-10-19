@@ -9,11 +9,16 @@ summary: 1. Set the Bash working directory to the exact project the user named
   command -v gemini. If it is missing, stop and ask the user to install Gem...
 categories:
   - coding-agents
+tags:
+  - agent-skills
+  - ai-agent
+  - claude-code
+  - codex
 status: active
-quality_percentile: 70
+quality_percentile: 72
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: CherryHQ/cherry-studio
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: AGPL-3.0
 signals:
-  stars: 52597
-  last_commit: 2026-10-13T16:25:21Z
+  stars: 52736
+  last_commit: 2026-10-19T07:10:52Z
+  stars_delta_7d: 139
+  stars_growth_pct: 0.3
+  trending_score: 139.37
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 52419
+    - 52597
+    - 52736
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,7 +43,7 @@ readme_source:
   repo: CherryHQ/cherry-studio
   path: resources/code-cli-skills/code-mate-gemini/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:12.520Z
+  fetched_at: 2026-10-19T07:37:17.766Z
   truncated: false
 type: agent_skill
 skill:
@@ -40,7 +53,11 @@ skill:
     result with another coding agent.
   folder_path: resources/code-cli-skills/code-mate-gemini
   extra_files: []
-tags: []
+  pack_total_skills: 20
+  is_pack_primary: false
+  clients:
+    - antigravity
+  pack_slug: cherryhq-cherry-studio
 ---
 
 # Gemini CLI

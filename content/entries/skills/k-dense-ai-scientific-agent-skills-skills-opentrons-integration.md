@@ -1,0 +1,68 @@
+---
+slug: k-dense-ai-scientific-agent-skills-skills-opentrons-integration
+name: opentrons-integration
+tagline: Agent skill from K-Dense-AI/scientific-agent-skills
+summary: Agent skill from K-Dense-AI/scientific-agent-skills
+categories:
+  - domain-research
+tags:
+  - agent-skills
+  - ai-scientist
+  - bioinformatics
+  - chemoinformatics
+status: active
+quality_percentile: 71
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: K-Dense-AI/scientific-agent-skills
+  subpath: skills/opentrons-integration
+  official_vendor: false
+  license: MIT
+signals:
+  stars: 52732
+  last_commit: 2026-10-15T23:57:39Z
+  stars_delta_7d: 4029
+  stars_growth_pct: 8.3
+  trending_score: 4362.3
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 48703
+    - 52732
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: K-Dense-AI/scientific-agent-skills
+  path: skills/opentrons-integration/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:39:55.949Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: opentrons-integration
+  description: Agent skill from K-Dense-AI/scientific-agent-skills
+  folder_path: skills/opentrons-integration
+  extra_files:
+    - references/api_reference.md
+    - references/liquid_handling.md
+    - references/migration-api-2-19-to-2-29.md
+    - references/modules_and_deck.md
+    - references/protocol_authoring.md
+    - references/sources.md
+    - references/validation_and_operations.md
+    - requirements-flex.txt
+    - requirements-ot2.txt
+    - scripts/absorbance_reader_template.py
+  pack_total_skills: 177
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: k-dense-ai-scientific-agent-skills
+---
+
+Agent skill from K-Dense-AI/scientific-agent-skills

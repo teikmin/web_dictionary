@@ -8,12 +8,17 @@ summary: "1. Read and understand the source material 2. Extract key facts,
   insights, and structured knowledge 3. Determine the appropriate subdirectory:
   - Read knowledge/index.md to see existing categories - If a matching categ..."
 categories:
-  - other
+  - agent-frameworks
+tags:
+  - ai-agent
+  - ai-agents
+  - chatgpt-on-wechat
+  - claude
 status: active
 quality_percentile: 98
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: zhayujie/CowAgent
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 47380
-  last_commit: 2026-10-13T13:43:26Z
+  stars: 47461
+  last_commit: 2026-10-19T03:16:11Z
+  stars_delta_7d: 81
+  stars_growth_pct: 0.2
+  trending_score: 81.14
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 47264
+    - 47380
+    - 47461
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,7 +43,7 @@ readme_source:
   repo: zhayujie/CowAgent
   path: skills/knowledge-wiki/SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:13.468Z
+  fetched_at: 2026-10-19T07:37:15.118Z
   truncated: false
 type: agent_skill
 skill:
@@ -41,7 +54,13 @@ skill:
     asks about the knowledge base.
   folder_path: skills/knowledge-wiki
   extra_files: []
-tags: []
+  pack_total_skills: 3
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: zhayujie-cowagent
 ---
 
 # Knowledge Wiki

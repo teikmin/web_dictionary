@@ -8,19 +8,34 @@ summary: "An open-source Model Context Protocol (MCP) server that lets Claude,
   Excel files: charts, PivotTables, formulas, tables and more. It is built o..."
 categories:
   - media-creative
+tags:
+  - automation
+  - charts
+  - claude
+  - cursor
 status: active
-quality_percentile: 78
+quality_percentile: 83
 selection_reason: quality_percentile
 first_seen: 2025-02-12T06:39:48
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: haris-musa/excel-mcp-server
   official_vendor: false
   license: MIT
 signals:
-  stars: 4235
-  last_commit: 2026-10-10T19:18:13Z
+  stars: 4248
+  last_commit: 2026-10-18T15:56:25Z
+  stars_delta_7d: 13
+  stars_growth_pct: 0.3
+  trending_score: 13.04
+  rank_current: 53
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 4212
+    - 4235
+    - 4248
 language: en
 needs_keys: false
 prerequisites:
@@ -30,7 +45,7 @@ readme_source:
   repo: haris-musa/excel-mcp-server
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:59.787Z
+  fetched_at: 2026-10-19T07:32:30.564Z
   truncated: false
 type: mcp_server
 launch:
@@ -40,7 +55,6 @@ launch:
     - excel-mcp-server
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 <!-- mcp-name: io.github.haris-musa/excel-mcp-server -->
@@ -90,6 +104,9 @@ Excel**, and runs on Windows, macOS and Linux.
   for files that were never opened in Excel
 - Dynamic arrays (`FILTER`, `SORT`, `UNIQUE`, `SEQUENCE`, `LET`) are stored as Excel stores
   them and spill into the cells next to them
+- Find out why a number is wrong: trace precedents and dependents across sheets, names and
+  tables, and evaluate a formula step by step as Excel's Evaluate Formula does
+- Goal Seek: change an input until a formula reaches the value you want
 
 **Data, tables and rules**
 - Read and write cells, dates and hyperlinks; tables with totals rows and calculated columns
@@ -104,6 +121,9 @@ Excel**, and runs on Windows, macOS and Linux.
 **Large files**
 - Reads stream the workbook and return pages, so memory stays flat on sheets with hundreds of
   thousands of rows; every call is bounded by size and cell limits
+- Edits of a sheet of 1 MB of XML or more parse only the rows they touch, so inserting or
+  deleting rows and columns, sorting, replacing, copying a sheet and creating a PivotTable
+  take seconds on a 200,000-row sheet instead of minutes
 
 **Macros (opt-in)**
 - Read the VBA code in `.xlsm` files. Writing VBA is off unless you start the server with
@@ -233,7 +253,10 @@ docker run -p 8017:8017 -v "$PWD/workbooks:/data" -e EXCEL_MCP_AUTH_TOKEN=change
 | `--allow-dir DIR` | `EXCEL_FILES_PATH` | none (stdio), `./excel_files` (HTTP) | Folders workbooks must be in |
 | `--read-only` | `EXCEL_MCP_READ_ONLY=1` | off | Only offer tools that do not change files |
 | `--allow-vba-write` | `EXCEL_MCP_ALLOW_VBA_WRITE=1` | off | Add tools that write VBA macros (see warning below); ignored with `--read-only` |
-| `--max-file-mb N` | | `100` | Largest workbook the server opens. Also sets the unpacked-size limit (10 times this) that every opened or uploaded workbook must stay under; parts compressed over 500:1 are refused |
+| `--tools AREAS` | `EXCEL_MCP_TOOLS` | all | Only offer the core tools and these comma-separated areas, to save context (see [Choosing tools](#choosing-tools)) |
+| `--max-file-mb N` | `EXCEL_MCP_MAX_FILE_MB` | `100` | Largest workbook the server opens. Also sets the unpacked-size limit (10 times this) that every opened or uploaded workbook must stay under; parts compressed over 500:1 are refused |
+| `--max-cells N` | `EXCEL_MCP_MAX_CELLS` | `100000` | Most cells one call may read, write or format; reads are still returned in pages |
+| `--max-pivot-cells N` | `EXCEL_MCP_MAX_PIVOT_CELLS` | `3000000` | Largest PivotTable source in cells (a 230,000-row, 13-column sheet); creating one from the biggest sources takes a minute and about 2 GB of memory |
 | `--log-level LEVEL` | | `WARNING` | Logging on stderr |
 | `--host HOST` | `EXCEL_MCP_HOST` | `127.0.0.1` | HTTP listen address |
 | `--port PORT` | `EXCEL_MCP_PORT` | `8017` | HTTP port |
@@ -245,12 +268,65 @@ docker run -p 8017:8017 -v "$PWD/workbooks:/data" -e EXCEL_MCP_AUTH_TOKEN=change
 | Area | Tools |
 | --- | --- |
 | Workbooks | `create_workbook`, `describe_workbook`, `set_workbook_settings`, `list_workbooks`, `export_workbook`, `import_workbook` |
+| CSV | `import_csv`, `export_csv` |
 | Sheets | `describe_sheet`, `create_sheet`, `rename_sheet`, `copy_sheet`, `delete_sheet`, `insert_rows_or_columns`, `delete_rows_or_columns` |
 | Cells | `read_range`, `write_range`, `clear_range`, `copy_range`, `sort_range`, `transform_range`, `find_cells`, `replace_cells` |
+| Formulas | `trace_formula`, `goal_seek` |
 | Formatting | `format_range`, `merge_cells`, `set_sheet_layout`, `add_conditional_format`, `add_data_validation` |
 | Objects | `set_table`, `create_chart`, `delete_chart`, `create_pivot_table`, `delete_pivot_table`, `add_slicer`, `delete_slicer`, `insert_image`, `delete_image`, `add_sparklines`, `delete_sparklines` |
 | Names and notes | `set_defined_name`, `delete_defined_name`, `set_note`, `delete_note` |
 | Macros | `read_vba`; with `--allow-vba-write`: `write_vba_module`, `delete_vba_module` |
+
+### Choosing tools
+
+Every tool costs context in every request. `--tools` offers only the core tools
+(`describe_workbook`, `describe_sheet`, `read_range`) and the areas you list, for example
+`uvx excel-mcp-server stdio --tools data,charts`. It combines with `--read-only` (read-only tools
+of the areas) and `--allow-vba-write` (which also needs the `vba` area). An unknown area stops the
+server at startup and lists the valid ones. The sizes are characters of tool descriptions and
+schemas, at about 3.5 characters per token:
+
+| Area | Tools | Characters |
+| --- | --- | ---: |
+| core (always) | `describe_workbook`, `describe_sheet`, `read_range` | 8,900 |
+| `workbooks` | `create_workbook`, `set_workbook_settings`, `list_workbooks`, `export_workbook`, `import_workbook` | 2,600 |
+| `csv` | `import_csv`, `export_csv` | 2,200 |
+| `sheets` | `create_sheet`, `rename_sheet`, `copy_sheet`, `delete_sheet`, `insert_rows_or_columns`, `delete_rows_or_columns` | 2,000 |
+| `data` | `write_range`, `clear_range`, `copy_range`, `sort_range`, `transform_range`, `find_cells`, `replace_cells` | 6,700 |
+| `formulas` | `trace_formula`, `goal_seek` | 1,300 |
+| `formatting` | `format_range`, `merge_cells`, `set_sheet_layout`, `add_conditional_format`, `add_data_validation` | 14,000 |
+| `tables` | `set_table` | 1,900 |
+| `charts` | `create_chart`, `delete_chart`, `add_sparklines`, `delete_sparklines` | 9,900 |
+| `pivots` | `create_pivot_table`, `delete_pivot_table` | 4,600 |
+| `slicers` | `add_slicer`, `delete_slicer` | 2,500 |
+| `names` | `set_defined_name`, `delete_defined_name` | 900 |
+| `notes` | `set_note`, `delete_note` | 500 |
+| `images` | `insert_image`, `delete_image` | 800 |
+| `vba` | `read_vba`; with `--allow-vba-write`: `write_vba_module`, `delete_vba_module` | 1,900 |
+
+### CSV
+
+`import_csv` reads a `.csv` or `.tsv` file into a sheet (created if missing) at a cell, and
+`export_csv` writes a range as CSV. Both stay in the allowed folders, within `--max-cells` and
+`--max-file-mb`, and never run anything.
+
+- Import detects the delimiter from the first record (or takes `comma`, `semicolon`, `tab`,
+  `pipe`) and reads UTF-8 with or without a BOM, UTF-16 and `cp1252`. Quoted fields and line
+  breaks inside them are kept.
+- Fields are typed as in Excel's import: numbers (also `1,234.50`, `12%`; `decimal` for a
+  decimal comma), `TRUE`/`FALSE` and ISO dates (`2026-01-31`, `2026-01-31 09:30`) become values.
+  Text Excel would alter stays text: leading zeros (`007`), more than 15 digits, a leading `+`,
+  and numeric dates such as `01/02/2026`, which are read only in the `date_order` you name
+  (`dmy` or `mdy`). `as_text` keeps every field as text.
+- Fields are never formulas. Text starting with `=`, `+`, `-` or `@` is stored as text with
+  Excel's quote prefix, so editing the cell does not run it; a number such as `-5` is a number.
+- Export writes raw values (full precision, ISO dates) or, with `formatted`, what Excel shows.
+  Text cells starting with `=`, `+`, `-` or `@` get a `'` prefix (`escape_formulas`, on by
+  default) so a spreadsheet that opens the file does not run them; numbers are never prefixed.
+  Datetimes are written as `2026-01-31T09:30:00`, which Excel opens as text; use `formatted`
+  for Excel.
+  Use `encoding: utf-8-sig` for a BOM, which Excel needs to show accents when it opens a UTF-8
+  file by double-click. Lines end with CRLF.
 
 Every parameter is documented in [TOOLS.md](https://github.com/haris-musa/excel-mcp-server/blob/main/TOOLS.md). Parameters mean the same in every tool:
 
@@ -287,7 +363,7 @@ refused, since any change would invalidate the signature.
   `http(s)://`, `mailto:` or `#Sheet!A1` link only.
 - Paths are resolved, including symlinks, before they are checked against the allowed
   folders. Network (UNC) and Windows device paths are always rejected.
-- A single call processes at most 100,000 cells, and large reads are returned in pages.
+- A single call processes at most 100,000 cells (`--max-cells`), and large reads are returned in pages.
 - Cell contents are data from files. The server tells the model not to follow instructions
   found in them, but review what an assistant does with workbooks from untrusted sources.
 
@@ -306,12 +382,18 @@ Please report vulnerabilities privately; see [SECURITY.md](https://github.com/ha
   (not array-entered) formulas do the same, and volatile functions such as `RAND` are not
   calculated. The calculator is checked against more than 2,500 formulas recorded from real
   Excel (`tests/fixtures/formula_golden.json`).
+- `trace_formula` and `goal_seek` use that calculator, so `goal_seek` refuses a formula it
+  cannot calculate. Where Excel's Trace Precedents shows the cells an `OFFSET` starts from,
+  `trace_formula` shows the cells `INDIRECT` and `OFFSET` point at; when those cannot be
+  worked out the formula is listed in `unknown`. Where Excel's search stops at the
+  "may not have found a solution" message, `goal_seek` may still find a root, and it stores
+  the answer only when it converges (within 0.001 of the target, as Excel does).
 - Functions Excel added after 2007 (`IFS`, `XLOOKUP`, `STDEV.S`, `SORT`, ...) are written
   with the `_xlfn.` prefix Excel expects, wherever formulas are stored (cells, copied and
   sorted cells, conditional formats, data validation, defined names).
-- Legacy `.xls` and `.csv` files are not supported.
+- Legacy `.xls` files are not supported; use `import_csv` for CSV files.
 - PivotTables are created from a snapshot and can use text, number and date columns of up to
-  100,000 cells; Excel refreshes them from the live source data. They support number formats,
+  3,000,000 cells (`--max-pivot-cells`); Excel refreshes them from the live source data. They support number formats,
   "show values as" (percent of total, row, column or parent, difference from, running total,
   rank), sorting by label or value, date and number grouping, calculated fields, compact,
   outline and tabular layouts, subtotals on or off, filters with chosen items and several

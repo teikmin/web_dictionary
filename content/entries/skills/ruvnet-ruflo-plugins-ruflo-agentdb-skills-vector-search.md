@@ -1,0 +1,153 @@
+---
+slug: ruvnet-ruflo-plugins-ruflo-agentdb-skills-vector-search
+name: vector-search
+tagline: "Vector search via embeddings_* (large-scale HNSW) and ruvllm_hnsw_*
+  (WASM router for ≤11 hot patterns), with RaBitQ 1-bit quantization for 32×
+  memory "
+summary: The speedups in the Performance section apply to the large-scale
+  embeddingssearch path (the older "12,500×" headline was a brute-force-fallback
+  artifact and is retired). The WASM router is not that path.
+categories:
+  - agent-frameworks
+tags:
+  - agentic-ai
+  - agentic-framework
+  - agentic-workflow
+  - agents
+status: active
+quality_percentile: 79
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: ruvnet/ruflo
+  subpath: plugins/ruflo-agentdb/skills/vector-search
+  official_vendor: false
+  license: MIT
+signals:
+  stars: 76729
+  last_commit: 2026-10-19T06:30:38Z
+  stars_delta_7d: 2217
+  stars_growth_pct: 3
+  trending_score: 2282.96
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 74048
+    - 74512
+    - 76729
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: ruvnet/ruflo
+  path: plugins/ruflo-agentdb/skills/vector-search/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:31:55.771Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: vector-search
+  description: Vector search via embeddings_* (large-scale HNSW) and ruvllm_hnsw_*
+    (WASM router for ≤11 hot patterns), with RaBitQ 1-bit quantization for 32×
+    memory reduction
+  folder_path: plugins/ruflo-agentdb/skills/vector-search
+  extra_files: []
+  pack_total_skills: 161
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: ruvnet-ruflo
+---
+
+# Vector Search
+Two distinct vector-search paths live in this plugin. Pick the right one — they're not interchangeable.
+
+| Path | Tool family | Backing | Capacity | Latency |
+|------|-------------|---------|----------|---------|
+| **Large-scale corpus** | `embeddings_*` | `@claude-flow/memory` HNSW (Rust/Native) | large corpora (measured here only at N=5k and N=20k) | ~1.9× at N=20k, ~3.2×–4.7× at N=5k vs brute-force (measured; recall@10 ≈ 0.99). ANN wins above the crossover |
+| **Hot-path router** | `ruvllm_hnsw_*` | WASM-backed router (v2.0.1) | **~11 patterns max** (`ruvllm-tools.ts:58`) | sub-ms; designed for high-priority routing, not corpus search |
+
+The speedups in the Performance section apply to the large-scale `embeddings_search` path (the older "12,500×" headline was a brute-force-fallback artifact and is retired). The WASM router is **not** that path.
+
+## When to use
+
+| Need | Path |
+|---|---|
+| Search a corpus of N ≥ 500 documents | `embeddings_search` |
+| Memory-constrained corpus (≥5,000 vectors) | RaBitQ quantized — see "Quantized search" below |
+| Compare two strings | `embeddings_compare` |
+| Hierarchical / taxonomic data | `embeddings_hyperbolic` (Poincare ball) |
+| Route a query to one of ≤11 hot patterns | `ruvllm_hnsw_route` |
+| Cross-namespace search | `memory_search_unified` |
+
+## Standard search
+
+1. **Check status** — `mcp__plugin_ruflo-core_ruflo__embeddings_status` to verify the embedding engine.
+2. **Initialize** — `mcp__plugin_ruflo-core_ruflo__embeddings_init` if not active.
+3. **Generate** — `mcp__plugin_ruflo-core_ruflo__embeddings_generate` for text input.
+4. **Search** — `mcp__plugin_ruflo-core_ruflo__embeddings_search` with the query.
+5. **Compare** — `mcp__plugin_ruflo-core_ruflo__embeddings_compare` to measure similarity.
+6. **Unified search** — `mcp__plugin_ruflo-core_ruflo__memory_search_unified` for cross-namespace.
+
+## Quantized search (32× memory reduction)
+
+For corpora ≥5,000 vectors and/or memory-constrained environments, use the RaBitQ 1-bit quantization workflow. Below 5,000 vectors the rebuild cost outweighs the savings — use the standard path instead.
+
+| Step | Tool | Purpose |
+|---|---|---|
+| 1 | `embeddings_init` | Engine warm |
+| 2 | `embeddings_rabitq_build` | One-time build of the 1-bit index after corpus is loaded |
+| 3 | `embeddings_rabitq_search` | Hamming-prefilter returns top-N candidate IDs (cheap) |
+| 4 | `embeddings_search` | Optional exact rerank on the candidate set (full-precision) |
+| 5 | `embeddings_rabitq_status` | Index health, memory footprint, build time |
+
+> **Note**: `embeddings_rabitq_search` returns candidate IDs only — the rerank in step 4 is the user's responsibility (mirrors the docstring at `embeddings-tools.ts:911`). Without rerank, results are approximate; with rerank, you get full-precision quality at 32× lower memory.
+
+## Tuning
+
+HNSW exposes three knobs that trade recall against latency. The Performance numbers below were measured at default settings; tune deliberately for your workload and re-measure:
+
+| Profile | `efSearch` | `M` | When to use |
+|---------|-----------|-----|-------------|
+| `recall-first` | 200 | 32 | Pattern recall during planning; quality matters more than ms |
+| `balanced` (default) | 64 | 16 | General-purpose semantic recall |
+| `latency-first` | 16 | 8 | Hot-path routing where p99 latency matters |
+
+`efSearch` is passed via `ruvllm_hnsw_create` (`ruvllm-tools.ts:64`). `M` is registry-level today; raise as a follow-up if it should be MCP-tunable. `efConstruction` defaults to 200 in the lite index (`hnsw-index.ts:537`).
+
+## HNSW pattern router (WASM, ≤11 patterns)
+
+For routing a small number of high-priority patterns:
+- `mcp__plugin_ruflo-core_ruflo__ruvllm_hnsw_create` — create the WASM index (cap ~11)
+- `mcp__plugin_ruflo-core_ruflo__ruvllm_hnsw_add` — add a pattern
+- `mcp__plugin_ruflo-core_ruflo__ruvllm_hnsw_route` — route an incoming query
+
+This is **not** a corpus index. Treat it as a fast classifier over a curated set of patterns.
+
+## Hyperbolic embeddings
+
+For hierarchical data (code trees, org charts), use `mcp__plugin_ruflo-core_ruflo__embeddings_hyperbolic` which maps to Poincare ball space. Distance is geodesic, not cosine.
+
+## CLI alternative
+
+```bash
+npx @claude-flow/cli@latest embeddings search --query "authentication patterns"
+npx @claude-flow/cli@latest embeddings init
+npx @claude-flow/cli@latest memory search --query "your query"
+```
+
+## Performance
+
+Measured numbers (source: `scripts/benchmark-intelligence.mjs`, ruvector NAPI backend; recall@10 ≈ 0.99). The older "150×–12,500×" figures were brute-force-fallback artifacts and have been retired — see project CLAUDE.md "V3 Performance Targets".
+
+| Method | Measured speedup vs brute-force |
+|--------|---------------------------------|
+| Brute-force scan | Baseline |
+| HNSW (N=5,000) | ~3.2×–4.7× faster |
+| HNSW (N=20,000) | ~1.9× faster |
+| HNSW (below crossover, small N) | ties/loses vs brute-force |
+| RaBitQ quantization | 32× memory reduction; 0.60 ms/query at N≈14.7k |
+| `ruvllm_hnsw_route` (n≤11) | sub-ms per route, fixed cost |

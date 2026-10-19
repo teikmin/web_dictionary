@@ -9,19 +9,33 @@ summary: The Agent panel driving ComfyUI end to end. It reads what is installed
   &rarr;
 categories:
   - media-creative
+tags:
+  - agent-skills
+  - ai-agent
+  - claude-code
+  - claude-plugin
 status: active
-quality_percentile: 57
+quality_percentile: 67
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: artokun/comfyui-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 819
-  last_commit: 2026-10-05T09:26:43Z
+  stars: 840
+  last_commit: 2026-10-14T15:35:51Z
+  stars_delta_7d: 21
+  stars_growth_pct: 2.6
+  trending_score: 21.54
+  rank_current: 42
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 819
+    - 840
 language: en
 needs_keys: false
 prerequisites:
@@ -30,7 +44,7 @@ readme_source:
   repo: artokun/comfyui-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:10.809Z
+  fetched_at: 2026-10-19T07:34:17.252Z
   truncated: false
 type: mcp_server
 launch:
@@ -41,9 +55,6 @@ launch:
     - comfyui-mcp
   env_vars: []
   confidence: manifest
-tags:
-  - audio
-  - video
 ---
 
 # comfyui-mcp — drive ComfyUI with ANY LLM

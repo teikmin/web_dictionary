@@ -1,6 +1,5 @@
 ---
 slug: bytedance-ui-tars-desktop
-type: agent_tool
 name: UI-TARS-desktop
 tagline: "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI
   Models and Agent Infra"
@@ -8,49 +7,51 @@ summary: "TARS\\ is a Multimodal AI Agent stack, currently shipping two
   projects: Agent TARS and UI-TARS-desktop:"
 categories:
   - agent-frameworks
-tags: []
+tags:
+  - agent-tars
+  - browser-use
+  - computer-use
+  - cowork
 status: active
-quality_percentile: 92
+quality_percentile: 87
 selection_reason: quality_percentile
 first_seen: 2025-01-19T09:04:43
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: bytedance/UI-TARS-desktop
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 39261
+  stars: 39322
   last_commit: 2026-10-09T01:29:53Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars_delta_7d: 61
+  stars_growth_pct: 0.2
+  trending_score: 61.09
+  rank_current: 28
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 39208
+    - 39261
+    - 39322
 language: en
 needs_keys: false
 prerequisites:
-  - Node.js >= 18
+  - node
 readme_source:
   repo: bytedance/UI-TARS-desktop
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:53.421Z
+  fetched_at: 2026-10-19T07:31:31.638Z
   truncated: false
+type: agent_tool
 tool:
   subcategory: desktop_ui
-  install_command: npx @agent-tars/cli@latest
+  install_command: git clone https://github.com/bytedance/UI-TARS-desktop.git
   runtime: node
   execution_mode: local
   has_mcp_support: true
-  mcp_launch:
-    transport: stdio
-    command: npx
-    args:
-      - -y
-      - "@agent-tars/cli@latest"
-    env_vars: []
-    confidence: readme
 ---
 
 <picture>

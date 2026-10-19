@@ -1,6 +1,5 @@
 ---
 slug: bytebase-dbhub
-type: agent_tool
 name: dbhub
 tagline: Token conscious database MCP server for Postgres, MySQL, SQL Server,
   Oracle, MariaDB, SQLite.
@@ -10,50 +9,49 @@ summary: "DBHub is a minimal MCP server: token-efficient, zero-dependency, and
 categories:
   - databases-memory
 tags:
-  - postgres
-  - sqlite
+  - agents
+  - anthropic
+  - claude
+  - claude-ai
 status: active
-quality_percentile: 73
+quality_percentile: 74
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: bytebase/dbhub
   official_vendor: false
   license: MIT
 signals:
-  stars: 3639
+  stars: 3676
   last_commit: 2026-10-13T15:23:25Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars_delta_7d: 37
+  stars_growth_pct: 1
+  trending_score: 37.38
+  rank_current: 31
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 3639
+    - 3676
 language: en
 needs_keys: false
 prerequisites:
-  - Node.js >= 18
+  - node
 readme_source:
   repo: bytebase/dbhub
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:59.259Z
+  fetched_at: 2026-10-19T07:32:30.837Z
   truncated: false
+type: agent_tool
 tool:
   subcategory: memory_rag
-  install_command: docker run -d bytebase/dbhub
-  runtime: docker
+  install_command: npx dbhub
+  runtime: node
   execution_mode: local
   has_mcp_support: true
-  mcp_launch:
-    transport: stdio
-    command: npx
-    args:
-      - -y
-      - "@bytebase/dbhub@latest"
-    env_vars: []
-    confidence: readme
 ---
 
 > [!NOTE]  

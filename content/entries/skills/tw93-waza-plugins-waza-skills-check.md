@@ -1,20 +1,20 @@
 ---
 slug: tw93-waza-plugins-waza-skills-check
 name: check
-tagline: "Reviews diffs, PRs, release readiness, and publishing follow-through.
-  Use when asked to review, triage issues or PRs, or ship. Not for debugging
-  root "
-summary: Read the diff and find the problems. Review, audit, triage, and
-  readiness requests are report-only; apply fixes only under explicit repair
-  authorization still in force for the same task. Done means the requested
-  revie...
+tagline: Agent skill from tw93/Waza
+summary: Agent skill from tw93/Waza
 categories:
-  - productivity-ops
+  - media-creative
+tags:
+  - agent-skills
+  - ai-agents
+  - claude
+  - claude-code
 status: active
-quality_percentile: 50
+quality_percentile: 55
 selection_reason: quality_percentile
 first_seen: 2026-03-12T00:35:56
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: tw93/Waza
@@ -22,8 +22,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 7286
-  last_commit: 2026-10-12T08:47:41Z
+  stars: 7329
+  last_commit: 2026-10-18T08:14:09Z
+  stars_delta_7d: 43
+  stars_growth_pct: 0.6
+  trending_score: 43.25
+  rank_current: 85
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 7170
+    - 7286
+    - 7329
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,14 +41,12 @@ readme_source:
   repo: tw93/Waza
   path: plugins/waza/skills/check/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.386Z
+  fetched_at: 2026-10-19T07:39:37.458Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: check
-  description: Reviews diffs, PRs, release readiness, and publishing
-    follow-through. Use when asked to review, triage issues or PRs, or ship. Not
-    for debugging root causes or prose.
+  description: Agent skill from tw93/Waza
   folder_path: plugins/waza/skills/check
   extra_files:
     - agents/reviewer-architecture.md
@@ -51,7 +59,13 @@ skill:
     - references/project-context.md
     - references/public-reply.md
     - references/release-surfaces.md
-tags: []
+  pack_total_skills: 8
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: tw93-waza
 ---
 
 # Check: Review Before You Ship

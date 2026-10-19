@@ -9,19 +9,33 @@ summary: Full natural language control over Google Calendar, Drive, Gmail, Docs,
   assistants and developer tools. Includes a full featured CLI & Code...
 categories:
   - productivity-ops
+tags:
+  - chatgpt
+  - claude
+  - claude-code
+  - claude-desktop
 status: active
-quality_percentile: 100
+quality_percentile: 99
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: taylorwilsdon/google_workspace_mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 3332
-  last_commit: 2026-10-09T13:06:48Z
+  stars: 3371
+  last_commit: 2026-10-19T01:42:07Z
+  stars_delta_7d: 39
+  stars_growth_pct: 1.2
+  trending_score: 39.46
+  rank_current: 27
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3332
+    - 3371
 language: en
 needs_keys: false
 prerequisites:
@@ -31,7 +45,7 @@ readme_source:
   repo: taylorwilsdon/google_workspace_mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:01.340Z
+  fetched_at: 2026-10-19T07:33:27.218Z
   truncated: false
 type: mcp_server
 launch:
@@ -41,7 +55,6 @@ launch:
     - workspace-mcp
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 <!-- mcp-name: io.github.taylorwilsdon/workspace-mcp -->

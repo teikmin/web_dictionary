@@ -1,20 +1,20 @@
 ---
 slug: agricidaniel-claude-blog-skills-blog-analyze
 name: blog-analyze
-tagline: Audit and score blog posts on a 5-category 100-point scoring system
-  covering content quality, SEO optimization, E-E-A-T signals, technical
-  elements, a
-summary: "Reference documents (paths from repo root): -
-  skills/blog/references/quality-scoring.md: full scoring checklist -
-  skills/blog/references/eeat-signals.md: E-E-A-T evaluation criteria -
-  skills/blog/references/ai-slop-de..."
+tagline: Agent skill from AgriciDaniel/claude-blog
+summary: Agent skill from AgriciDaniel/claude-blog
 categories:
-  - browser-web
+  - productivity-ops
+tags:
+  - agent-skills
+  - ai-citations
+  - ai-content
+  - ai-marketing
 status: active
-quality_percentile: 54
+quality_percentile: 58
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: AgriciDaniel/claude-blog
@@ -22,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 2376
-  last_commit: 2026-10-09T04:25:17Z
+  stars: 2424
+  last_commit: 2026-10-14T08:51:33Z
+  stars_delta_7d: 48
+  stars_growth_pct: 2
+  trending_score: 48.97
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2340
+    - 2376
+    - 2424
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,25 +39,21 @@ readme_source:
   repo: AgriciDaniel/claude-blog
   path: skills/blog-analyze/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:19.681Z
+  fetched_at: 2026-10-19T07:41:11.314Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: blog-analyze
-  description: >
-    Audit and score blog posts on a 5-category 100-point scoring system covering
-    content quality, SEO optimization, E-E-A-T signals, technical elements, and
-    AI citation readiness. Includes advisory editorial style diagnostics
-    (sentence-length variation, configured phrase lists, vocabulary sampling)
-    that never infer authorship or affect scoring. Supports export formats
-    (markdown, JSON, table) and batch analysis with sorting. Generates
-    prioritized recommendations (Critical/High/Medium/Low) with specific fixes.
-    Works with any format (MDX, markdown, HTML, URL). Use when user says
-    "analyze blog", "audit blog", "blog score", "check blog quality", "blog
-    review", "rate this blog", "blog health check".
+  description: Agent skill from AgriciDaniel/claude-blog
   folder_path: skills/blog-analyze
   extra_files: []
-tags: []
+  pack_total_skills: 33
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: agricidaniel-claude-blog
 ---
 
 # Blog Analyzer: Quality Audit & Scoring

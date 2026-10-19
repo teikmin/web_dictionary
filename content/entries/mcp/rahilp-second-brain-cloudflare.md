@@ -8,19 +8,34 @@ summary: Private memory for you. Shared memory for your team. Available to every
   MCP-compatible AI tool you use.
 categories:
   - cloud-infra
+tags:
+  - ai-memory
+  - claude
+  - claude-ai
+  - claude-code
 status: active
-quality_percentile: 51
+quality_percentile: 55
 selection_reason: quality_percentile
 first_seen: 2026-05-09T23:10:58
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: rahilp/second-brain-cloudflare
   official_vendor: false
   license: MIT
 signals:
-  stars: 802
-  last_commit: 2026-10-03T13:13:58Z
+  stars: 814
+  last_commit: 2026-10-14T11:53:04Z
+  stars_delta_7d: 12
+  stars_growth_pct: 1.5
+  trending_score: 12.18
+  rank_current: 54
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 803
+    - 802
+    - 814
 language: en
 needs_keys: false
 prerequisites:
@@ -29,7 +44,7 @@ readme_source:
   repo: rahilp/second-brain-cloudflare
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:10.892Z
+  fetched_at: 2026-10-19T07:34:17.506Z
   truncated: false
 type: mcp_server
 launch:
@@ -40,9 +55,6 @@ launch:
     - second-brain
   env_vars: []
   confidence: manifest
-tags:
-  - cloudflare
-  - memory
 ---
 
 <p align="center">

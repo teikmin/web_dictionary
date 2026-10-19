@@ -1,19 +1,20 @@
 ---
 slug: aden-hive-hive-core-framework-skills-_default_skills-image-generation
-name: hive.image-generation
-tagline: Required before calling image_generate. Create and edit images from a
-  prompt — generate an image, make a picture / logo / illustration / icon /
-  banner
-summary: Defaults are deliberately cheap and fast. quality is locked to low —
-  medium and high are disabled for cost control, and any request for a higher
-  tier is automatically forced to low. Only raise n when the user explicit...
+name: image-generation
+tagline: Agent skill from aden-hive/hive
+summary: Agent skill from aden-hive/hive
 categories:
-  - media-creative
+  - agent-frameworks
+tags:
+  - agent-framework
+  - agent-skills
+  - anthropic
+  - automation
 status: active
 quality_percentile: 97
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: aden-hive/hive
@@ -21,8 +22,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 11099
-  last_commit: 2026-10-12T11:34:20Z
+  stars: 11108
+  last_commit: 2026-10-19T06:59:53Z
+  stars_delta_7d: 9
+  stars_growth_pct: 0.1
+  trending_score: 9.01
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 11088
+    - 11099
+    - 11108
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,24 +39,21 @@ readme_source:
   repo: aden-hive/hive
   path: core/framework/skills/_default_skills/image-generation/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.167Z
+  fetched_at: 2026-10-19T07:40:31.853Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: hive.image-generation
-  description: Required before calling image_generate. Create and edit images from
-    a prompt — generate an image, make a picture / logo / illustration / icon /
-    banner / poster / thumbnail / hero image / mockup / product shot / social
-    graphic, or edit / restyle / combine existing images from reference images.
-    Uses OpenAI gpt-image-2 through the Hive image service, billed to the user's
-    Hive credits like an LLM call (no API key needed). Teaches the exact call
-    shape, the quality/cost tradeoff (quality="low" is the default and
-    cheapest), reference-image editing, how to show the result to the user with
-    attach_file, and the failure modes (out of credits, model unavailable,
-    moderation).
+  skill_name: image-generation
+  description: Agent skill from aden-hive/hive
   folder_path: core/framework/skills/_default_skills/image-generation
   extra_files: []
-tags: []
+  pack_total_skills: 20
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: aden-hive-hive
 ---
 
 # Image generation

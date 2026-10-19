@@ -8,12 +8,17 @@ summary: 1. Create a writer role that produces the requested deliverable. 2.
   Create a separate reviewer role. Give it the original request and the latest
   draft. On later reviews, also give it the previous required feedback so...
 categories:
-  - productivity-ops
+  - agent-frameworks
+tags:
+  - a2a
+  - a2a-protocol
+  - ag-ui
+  - agent-framework
 status: active
 quality_percentile: 82
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: trpc-group/trpc-agent-go
@@ -21,8 +26,15 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 1860
-  last_commit: 2026-10-13T15:44:15Z
+  stars: 1870
+  last_commit: 2026-10-19T07:09:58Z
+  stars_delta_7d: 10
+  stars_growth_pct: 0.5
+  trending_score: 10.05
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1860
+    - 1870
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,7 +42,7 @@ readme_source:
   repo: trpc-group/trpc-agent-go
   path: examples/dynamicworkflow/skills/skills/quality-loop/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:07.449Z
+  fetched_at: 2026-10-19T07:33:53.714Z
   truncated: false
 type: agent_skill
 skill:
@@ -40,7 +52,13 @@ skill:
     explicit quality criteria.
   folder_path: examples/dynamicworkflow/skills/skills/quality-loop
   extra_files: []
-tags: []
+  pack_total_skills: 71
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: trpc-group-trpc-agent-go
 ---
 
 # Bounded Quality Loop

@@ -7,19 +7,33 @@ summary: A comprehensive Model Context Protocol (MCP) server that enables AI
   smart home devices, query states, execute services and manage your automa...
 categories:
   - productivity-ops
+tags:
+  - claude
+  - hacs
+  - home-assistant
+  - home-automation
 status: active
-quality_percentile: 58
+quality_percentile: 68
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: homeassistant-ai/ha-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 5050
-  last_commit: 2026-10-13T15:32:17Z
+  stars: 5133
+  last_commit: 2026-10-19T05:06:33Z
+  stars_delta_7d: 83
+  stars_growth_pct: 1.6
+  trending_score: 84.36
+  rank_current: 16
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 5050
+    - 5133
 language: en
 needs_keys: false
 prerequisites:
@@ -29,7 +43,7 @@ readme_source:
   repo: homeassistant-ai/ha-mcp
   path: README.md
   branch: master
-  fetched_at: 2026-10-14T14:55:07.426Z
+  fetched_at: 2026-10-19T07:33:31.473Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,7 +53,6 @@ launch:
     - ha-mcp
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 > **Breaking change (v7.3.0):** `ha_config_set_yaml` has been moved to [beta](https://github.com/homeassistant-ai/ha-mcp/blob/master/docs/beta.md).

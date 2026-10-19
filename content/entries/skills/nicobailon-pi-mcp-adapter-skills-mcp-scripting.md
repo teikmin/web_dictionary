@@ -6,12 +6,17 @@ tagline: Read before writing mcpScript code. Covers tool discovery, the shape of
 summary: "Only what the script emits, logs, or returns enters the conversation,
   so keep intermediate data in variables and return a small result:"
 categories:
-  - other
+  - coding-agents
+tags:
+  - claude
+  - coding-agent
+  - extension
+  - llm
 status: active
-quality_percentile: 81
+quality_percentile: 85
 selection_reason: quality_percentile
 first_seen: 2026-01-19T23:23:58
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: nicobailon/pi-mcp-adapter
@@ -19,8 +24,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 1591
-  last_commit: 2026-10-13T05:24:05Z
+  stars: 1597
+  last_commit: 2026-10-18T07:33:52Z
+  stars_delta_7d: 6
+  stars_growth_pct: 0.4
+  trending_score: 6.02
+  rank_current: 109
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1578
+    - 1591
+    - 1597
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,7 +43,7 @@ readme_source:
   repo: nicobailon/pi-mcp-adapter
   path: skills/mcp-scripting/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:07.444Z
+  fetched_at: 2026-10-19T07:33:42.918Z
   truncated: false
 type: agent_skill
 skill:
@@ -38,7 +53,13 @@ skill:
   folder_path: skills/mcp-scripting
   extra_files:
     - references/jev.md
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: nicobailon-pi-mcp-adapter
 ---
 
 # MCP scripting

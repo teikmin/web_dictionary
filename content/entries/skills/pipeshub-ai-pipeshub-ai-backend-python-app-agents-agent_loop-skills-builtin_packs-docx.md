@@ -8,12 +8,17 @@ summary: Always CREATE documents with docx (docx-js) in TypeScript — never wit
   python-docx. python-docx is in this environment for reading existing documents
   only. Run the TypeScript program via whatever coding surface you ha...
 categories:
-  - media-creative
+  - databases-memory
+tags:
+  - agentic-rag
+  - ai-agents
+  - claude-code
+  - context-engineering
 status: active
-quality_percentile: 91
+quality_percentile: 90
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: pipeshub-ai/pipeshub-ai
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 3830
-  last_commit: 2026-10-13T16:25:21Z
+  stars: 3838
+  last_commit: 2026-10-19T07:20:00Z
+  stars_delta_7d: 8
+  stars_growth_pct: 0.2
+  trending_score: 8.02
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3814
+    - 3830
+    - 3838
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,7 +43,7 @@ readme_source:
   repo: pipeshub-ai/pipeshub-ai
   path: backend/python/app/agents/agent_loop/skills/builtin_packs/docx/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:54:59.255Z
+  fetched_at: 2026-10-19T07:32:31.910Z
   truncated: false
 type: agent_skill
 skill:
@@ -44,9 +57,13 @@ skill:
     supported in this environment).
   folder_path: backend/python/app/agents/agent_loop/skills/builtin_packs/docx
   extra_files: []
-tags:
-  - python
-  - typescript
+  pack_total_skills: 8
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: pipeshub-ai-pipeshub-ai
 ---
 
 # Word documents (.docx)

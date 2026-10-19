@@ -1,0 +1,173 @@
+---
+slug: cherryhq-cherry-studio-resources-skills-cherry-tool-guide
+name: cherry-tool-guide
+tagline: "Cherry Studio first-party tool and bundled-shell routing for general
+  agents. For straightforward local work in shell-capable sessions, run JS/TS
+  with "
+summary: This file is a router. It carries only the global rules and the intent
+  → tool → reference table. Each reference holds that domain's prerequisites,
+  sequencing, conditional availability, output interpretation, recovery,...
+categories:
+  - coding-agents
+tags:
+  - agent-skills
+  - ai-agent
+  - claude-code
+  - codex
+status: active
+quality_percentile: 72
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: CherryHQ/cherry-studio
+  subpath: resources/skills/cherry-tool-guide
+  official_vendor: false
+  license: AGPL-3.0
+signals:
+  stars: 52736
+  last_commit: 2026-10-19T07:10:52Z
+  stars_delta_7d: 139
+  stars_growth_pct: 0.3
+  trending_score: 139.37
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 52419
+    - 52597
+    - 52736
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: CherryHQ/cherry-studio
+  path: resources/skills/cherry-tool-guide/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:37:17.766Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: cherry-tool-guide
+  description: Cherry Studio first-party tool and bundled-shell routing for
+    general agents. For straightforward local work in shell-capable sessions,
+    run JS/TS with `bun <file>` and one-off JS tools with `bun x`; run Python
+    with `uv run [--with <pkg>] python` and one-off Python CLIs with `uvx`;
+    search with `rg`. Load this guide before changing project dependencies,
+    deciding whether a tool should be ephemeral or reusable, reading or
+    converting local Office/PDF files, coordinating or delegating across Agent
+    Sessions, or using Cherry-owned web/browser, knowledge, persistent memory,
+    schedules/notifications, IM channels, image generation, artifact reporting,
+    managed CLI, skill, or MCP-server-registration capabilities—even if the user
+    names no tool. Consult it before shell/file workarounds; live tool schemas
+    are authoritative.
+  folder_path: resources/skills/cherry-tool-guide
+  extra_files:
+    - references/automation.md
+    - references/autonomy.md
+    - references/cli.md
+    - references/documents.md
+    - references/knowledge.md
+    - references/mcp.md
+    - references/memory.md
+    - references/outputs.md
+    - references/sessions.md
+    - references/skills.md
+  pack_total_skills: 20
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: cherryhq-cherry-studio
+---
+
+# Cherry Tool Guide
+Cherry Studio injects first-party tools into your session over four MCP servers
+(`mcp__cherry-tools__*`, `mcp__agent-memory__*`, `mcp__skills__*`, `mcp__mcp-manager__*`)
+and gives shell-capable general agents bundled runtimes for local execution. The MCP
+tools act on the running app — the user's knowledge bases, IM channels, schedules,
+managed CLIs, skill library, and MCP server registry — through boundaries only Cherry
+owns. Shell and file tools cannot reach those app boundaries correctly; use the bundled
+runtimes only for the local execution cases routed below.
+
+**This file is a router.** It carries only the global rules and the intent → tool →
+reference table. Each reference holds that domain's prerequisites, sequencing,
+conditional availability, output interpretation, recovery, and examples. Read the one
+reference the task needs (and any it cross-links to) before calling — don't work from
+this page alone.
+
+Tool names here are fully qualified (`mcp__server__tool`); the exact names exposed in
+your session are authoritative if they ever differ. This guide never restates argument
+shapes — **the live tool schema in your session is the authoritative source** for
+parameter names, enums, and required fields. Read it before every call.
+
+## Global rules
+
+- **Check availability first.** Several tools are conditional (each reference says
+  which). If a tool is not in your live tool list, its capability is unavailable *in
+  this session* — say so honestly and stop; never pretend a call succeeded or fabricate
+  a result.
+- **Don't reach around Cherry's mutation boundaries.** Knowledge bases, IM channels,
+  schedules, managed CLIs, skills, and registered MCP servers are mutated only through
+  these tools. Do not shell out to `npm install`, `git clone`, `crontab`, or hand-edit
+  knowledge or MCP settings files to accomplish these — the tool does bookkeeping (registration, scoping, approval, sync)
+  that a raw shell command skips. Shell is fine for *inspection* (e.g. `command -v` to
+  probe PATH) — just not to perform the owned mutation.
+- **Honor approval.** `mcp__cherry-tools__kb_manage`, `mcp__cherry-tools__cli_install`,
+  `mcp__cherry-tools__session_create`, `mcp__cherry-tools__session_send`,
+  `mcp__skills__install_skill`, and `mcp__mcp-manager__install_mcp_server` are gated by
+  the session's approval mode. Call them only once the user's intent is clear; if approval is
+  declined, stop and report — do not retry the same effect through another route.
+- **Intent still gates auto-approved effects.** Memory writes, schedule changes,
+  notifications, and agent/channel configuration may execute without an approval card.
+  Do not call them merely because they are available; first make sure the user requested
+  the effect or it is necessary to complete an already-approved task.
+
+## Routing table
+
+| User intent | Route to | Reference |
+| --- | --- | --- |
+| Look up current/online facts, news, docs | `mcp__cherry-tools__web_search` → `mcp__cherry-tools__web_fetch` | [web.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/web.md) |
+| Browser interaction (click, forms, screenshots) | Automation REPL when Browser is enabled; load `cherry-browser` | [web.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/web.md) |
+| Native desktop applications (open, type, click, screenshots) | Automation REPL when Computer Use is enabled; load `cherry-computer` | [automation.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/automation.md) |
+| Answer from the user's own documents | `mcp__cherry-tools__kb_list` → `mcp__cherry-tools__kb_search` → `mcp__cherry-tools__kb_read` | [knowledge.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/knowledge.md) |
+| Add / delete / re-index knowledge | `mcp__cherry-tools__kb_manage` (resolve IDs first; needs approval) | [knowledge.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/knowledge.md) |
+| Read or convert a local document | `mcp__cherry-tools__to_markdown` → read the returned temporary Markdown path as needed | [documents.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/documents.md) |
+| Recall a past fact, correction, or preference | `mcp__agent-memory__memory` (`search`) before re-asking | [memory.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/memory.md) |
+| Save durable knowledge vs. a one-off event | `mcp__agent-memory__memory` (`update` vs. `append`) | [memory.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/memory.md) |
+| Schedule a recurring / future task | `mcp__cherry-tools__cron` (Cherry scheduling only) | [autonomy.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/autonomy.md) |
+| Proactively message the user or send a file | `mcp__cherry-tools__notify` (needs configured recipients) | [autonomy.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/autonomy.md) |
+| Inspect / connect / repair IM channels, rename agent | `mcp__cherry-tools__config` | [autonomy.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/autonomy.md) |
+| Find, create, message, or inspect work across Agent Sessions | `mcp__cherry-tools__session_list` / `session_search` / `session_create` / `session_send` / `session_deliveries` | [sessions.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/sessions.md) |
+| Generate an image | `mcp__cherry-tools__generate_image` (needs a painting model) | [outputs.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/outputs.md) |
+| Declare final deliverable file(s) | `mcp__cherry-tools__report_artifacts` | [outputs.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/outputs.md) |
+| Run JS/TS or Python, invoke a one-off package, search local code/files | bundled `bun`, `uv` / `uvx`, or `rg` according to task lifetime | [cli.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/cli.md) |
+| Find / install a command-line tool | `command -v` check → `mcp__cherry-tools__cli_list` → `mcp__cherry-tools__cli_search` → `mcp__cherry-tools__cli_install` (approval) | [cli.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/cli.md) |
+| Find / install a new capability skill | `mcp__skills__search_skills` → `mcp__skills__install_skill` (approval) | [skills.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/skills.md) |
+| Register a new MCP server the user supplied | `mcp__mcp-manager__install_mcp_server` (approval; never invent the config) | [mcp.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/mcp.md) |
+
+## When a tool isn't there
+
+Two different situations, don't confuse them:
+
+- **The tool is absent from your live list** → the capability is unavailable this
+  session (e.g. no knowledge base in scope, or CLI management disabled for a shell-less
+  agent). Explain what's missing and what the user can do; don't work around it with
+  shell/file tools. The reference for that domain says exactly when it can be absent.
+- **The tool is listed but reports a missing dependency** → e.g.
+  `mcp__cherry-tools__generate_image` with no painting model. It stays listed and
+  returns a note; relay the note and point the user at configuration — don't retry
+  blindly or fake success.
+
+On any **tool error result** (bad ID, unsupported channel/file, invalid recipe), read
+the message and correct the call; don't silently retry the same arguments. On **declined
+approval**, stop and report — never re-attempt the mutation through a different route.
+
+## Out of scope
+
+Not covered here: SDK-native `Read`/`Edit`/`Bash` and orchestration tools; *calling* the
+tools of a third-party (user-configured) MCP server — only registering one is in scope,
+see [mcp.md](https://github.com/CherryHQ/cherry-studio/blob/main/resources/skills/cherry-tool-guide/references/mcp.md); the AI-SDK chat `read_file` attachment reader (a
+chat-path tool, not exposed on this MCP surface); and the role-specific
+`mcp__assistant__*` navigation/diagnosis tools, which belong to the Cherry Assistant and
+its own guide.

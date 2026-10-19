@@ -1,19 +1,20 @@
 ---
 slug: agricidaniel-claude-ads-skills-ads-amazon
 name: ads-amazon
-tagline: Audit Amazon Ads profiles, regions, Sponsored Products, Sponsored
-  Brands, Sponsored Display, DSP, portfolios, targeting, search terms, retail
-  readines
-summary: 1. Read the main ads operating contract and thinking framework. 2.
-  Collect objective, conversion definition, account and campaign age, geography,
-  date window, timezone, currency, spend, targets, and available data sou...
+tagline: Agent skill from AgriciDaniel/claude-ads
+summary: Agent skill from AgriciDaniel/claude-ads
 categories:
   - productivity-ops
+tags:
+  - agent-skills
+  - ai-marketing
+  - claude-code
+  - claude-code-skill
 status: active
-quality_percentile: 81
+quality_percentile: 82
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: AgriciDaniel/claude-ads
@@ -21,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 9953
-  last_commit: 2026-10-07T17:11:47Z
+  stars: 10124
+  last_commit: 2026-10-17T01:35:42Z
+  stars_delta_7d: 171
+  stars_growth_pct: 1.7
+  trending_score: 173.94
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 9774
+    - 9953
+    - 10124
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,19 +39,21 @@ readme_source:
   repo: AgriciDaniel/claude-ads
   path: skills/ads-amazon/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.809Z
+  fetched_at: 2026-10-19T07:39:32.855Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: ads-amazon
-  description: Audit Amazon Ads profiles, regions, Sponsored Products, Sponsored
-    Brands, Sponsored Display, DSP, portfolios, targeting, search terms, retail
-    readiness, creative, budgets, ACOS, TACOS, reporting, and policy. Use for
-    Amazon Ads, sponsored ads, Amazon PPC, ACOS, TACOS, ASIN advertising, Amazon
-    DSP, or retail-media optimization.
+  description: Agent skill from AgriciDaniel/claude-ads
   folder_path: skills/ads-amazon
   extra_files: []
-tags: []
+  pack_total_skills: 34
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: agricidaniel-claude-ads
 ---
 
 # Amazon Ads Audit

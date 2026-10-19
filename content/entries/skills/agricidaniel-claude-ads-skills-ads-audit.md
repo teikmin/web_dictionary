@@ -1,19 +1,20 @@
 ---
 slug: agricidaniel-claude-ads-skills-ads-audit
 name: ads-audit
-tagline: "Run a source-grounded paid-advertising audit for one or more of
-  Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, Apple, Amazon, Reddit,
-  Pinterest, "
-summary: 1. Read the main ads operating contract and thinking framework. 2.
-  Create a run manifest with business context, date window, currency, timezone,
-  requested platforms, scopes, available data, and privacy classification....
+tagline: Agent skill from AgriciDaniel/claude-ads
+summary: Agent skill from AgriciDaniel/claude-ads
 categories:
   - productivity-ops
+tags:
+  - agent-skills
+  - ai-marketing
+  - claude-code
+  - claude-code-skill
 status: active
-quality_percentile: 81
+quality_percentile: 82
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: AgriciDaniel/claude-ads
@@ -21,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 9953
-  last_commit: 2026-10-07T17:11:47Z
+  stars: 10124
+  last_commit: 2026-10-17T01:35:42Z
+  stars_delta_7d: 171
+  stars_growth_pct: 1.7
+  trending_score: 173.94
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 9774
+    - 9953
+    - 10124
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,20 +39,21 @@ readme_source:
   repo: AgriciDaniel/claude-ads
   path: skills/ads-audit/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.820Z
+  fetched_at: 2026-10-19T07:39:32.855Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: ads-audit
-  description: Run a source-grounded paid-advertising audit for one or more of
-    Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, Apple, Amazon, Reddit,
-    Pinterest, Snapchat, and X. Use for full ad checks, account health reviews,
-    paid-media diagnostics, partial audits after authentication or worker
-    failure, missing-platform weighting, beta-feature eligibility and scoring,
-    spend audits, tracking audits, or prioritized opportunities and risks.
+  description: Agent skill from AgriciDaniel/claude-ads
   folder_path: skills/ads-audit
   extra_files: []
-tags: []
+  pack_total_skills: 34
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: agricidaniel-claude-ads
 ---
 
 # Paid Advertising Audit

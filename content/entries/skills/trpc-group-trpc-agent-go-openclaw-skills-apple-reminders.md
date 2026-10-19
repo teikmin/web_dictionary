@@ -1,0 +1,153 @@
+---
+slug: trpc-group-trpc-agent-go-openclaw-skills-apple-reminders
+name: apple-reminders
+tagline: Manage Apple Reminders via remindctl CLI (list, add, edit, complete,
+  delete). Supports lists, date filters, and JSON/plain output.
+summary: '- User explicitly mentions "reminder" or "Reminders app" - Creating
+  personal to-dos with due dates that sync to iOS - Managing Apple Reminders
+  lists - User wants tasks to appear in their iPhone/iPad Reminders app'
+categories:
+  - agent-frameworks
+tags:
+  - a2a
+  - a2a-protocol
+  - ag-ui
+  - agent-framework
+status: active
+quality_percentile: 82
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: trpc-group/trpc-agent-go
+  subpath: openclaw/skills/apple-reminders
+  official_vendor: false
+  license: Apache-2.0
+signals:
+  stars: 1870
+  last_commit: 2026-10-19T07:09:58Z
+  stars_delta_7d: 10
+  stars_growth_pct: 0.5
+  trending_score: 10.05
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1860
+    - 1870
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: trpc-group/trpc-agent-go
+  path: openclaw/skills/apple-reminders/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:33:53.715Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: apple-reminders
+  description: Manage Apple Reminders via remindctl CLI (list, add, edit,
+    complete, delete). Supports lists, date filters, and JSON/plain output.
+  folder_path: openclaw/skills/apple-reminders
+  extra_files: []
+  pack_total_skills: 71
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: trpc-group-trpc-agent-go
+---
+
+# Apple Reminders CLI (remindctl)
+Use `remindctl` to manage Apple Reminders directly from the terminal.
+
+## When to Use
+
+✅ **USE this skill when:**
+
+- User explicitly mentions "reminder" or "Reminders app"
+- Creating personal to-dos with due dates that sync to iOS
+- Managing Apple Reminders lists
+- User wants tasks to appear in their iPhone/iPad Reminders app
+
+## When NOT to Use
+
+❌ **DON'T use this skill when:**
+
+- Scheduling Clawdbot tasks or alerts → use `cron` tool with systemEvent instead
+- Calendar events or appointments → use Apple Calendar
+- Project/work task management → use Notion, GitHub Issues, or task queue
+- One-time notifications → use `cron` tool for timed alerts
+- User says "remind me" but means a Clawdbot alert → clarify first
+
+## Setup
+
+- Install: `brew install steipete/tap/remindctl`
+- macOS-only; grant Reminders permission when prompted
+- Check status: `remindctl status`
+- Request access: `remindctl authorize`
+
+## Common Commands
+
+### View Reminders
+
+```bash
+remindctl                    # Today's reminders
+remindctl today              # Today
+remindctl tomorrow           # Tomorrow
+remindctl week               # This week
+remindctl overdue            # Past due
+remindctl all                # Everything
+remindctl 2026-01-04         # Specific date
+```
+
+### Manage Lists
+
+```bash
+remindctl list               # List all lists
+remindctl list Work          # Show specific list
+remindctl list Projects --create    # Create list
+remindctl list Work --delete        # Delete list
+```
+
+### Create Reminders
+
+```bash
+remindctl add "Buy milk"
+remindctl add --title "Call mom" --list Personal --due tomorrow
+remindctl add --title "Meeting prep" --due "2026-02-15 09:00"
+```
+
+### Complete/Delete
+
+```bash
+remindctl complete 1 2 3     # Complete by ID
+remindctl delete 4A83 --force  # Delete by ID
+```
+
+### Output Formats
+
+```bash
+remindctl today --json       # JSON for scripting
+remindctl today --plain      # TSV format
+remindctl today --quiet      # Counts only
+```
+
+## Date Formats
+
+Accepted by `--due` and date filters:
+
+- `today`, `tomorrow`, `yesterday`
+- `YYYY-MM-DD`
+- `YYYY-MM-DD HH:mm`
+- ISO 8601 (`2026-01-04T12:34:56Z`)
+
+## Example: Clarifying User Intent
+
+User: "Remind me to check on the deploy in 2 hours"
+
+**Ask:** "Do you want this in Apple Reminders (syncs to your phone) or as a Clawdbot alert (I'll message you here)?"
+
+- Apple Reminders → use this skill
+- Clawdbot alert → use `cron` tool with systemEvent

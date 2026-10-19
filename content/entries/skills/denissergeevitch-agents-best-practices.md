@@ -1,18 +1,20 @@
 ---
 slug: denissergeevitch-agents-best-practices
 name: agents-best-practices
-tagline: Use this skill when designing, generating an MVP blueprint for,
-  auditing, troubleshooting, refactoring, or explaining an agentic harness for
-  any domai
-summary: "Canonical source: DenisSergeevitch/agents-best-practices, branch main.
-  Installed copies are snapshots, not guaranteed-current guidance."
+tagline: Agent skill from DenisSergeevitch/agents-best-practices
+summary: Agent skill from DenisSergeevitch/agents-best-practices
 categories:
-  - coding-agents
+  - agent-frameworks
+tags:
+  - agent-skills
+  - agentic-workflows
+  - agents
+  - ai-agents
 status: active
-quality_percentile: 55
+quality_percentile: 64
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: DenisSergeevitch/agents-best-practices
@@ -20,8 +22,17 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 2378
-  last_commit: 2026-10-13T15:53:38Z
+  stars: 2385
+  last_commit: 2026-10-19T00:12:05Z
+  stars_delta_7d: 7
+  stars_growth_pct: 0.3
+  trending_score: 7.02
+  rank_current: 107
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2378
+    - 2385
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,23 +40,12 @@ readme_source:
   repo: DenisSergeevitch/agents-best-practices
   path: SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.443Z
+  fetched_at: 2026-10-19T07:39:42.809Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: agents-best-practices
-  description: "Use this skill when designing, generating an MVP blueprint for,
-    auditing, troubleshooting, refactoring, or explaining an agentic harness for
-    any domain. Covers provider-neutral agent architecture for OpenAI,
-    Anthropic, and OpenAI-compatible APIs: agent loops, tool design, record
-    provenance, interactive presentation, user-memory lifecycles,
-    environment-adaptive tools, speculative tool execution, late-bound
-    capabilities, permissions, system prompts, planning, goals, always-on agents
-    and durable runtime, adaptive agent teams, context compaction, memory,
-    skills, MCP/external connectors, public-board communications, realtime voice
-    agents, hardware agents and board deployment, self-refining recursive
-    harnesses, programmable context, continual refinement, observability, evals,
-    prompt caching, agent-legible environments, feedback loops, and safety."
+  description: Agent skill from DenisSergeevitch/agents-best-practices
   folder_path: .
   extra_files:
     - .gitignore
@@ -58,7 +58,13 @@ skill:
     - references/agent-legibility-feedback-loops.md
     - references/agentic-loop.md
     - references/always-on-agents.md
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: denissergeevitch-agents-best-practices
 ---
 
 # Agents Best Practices

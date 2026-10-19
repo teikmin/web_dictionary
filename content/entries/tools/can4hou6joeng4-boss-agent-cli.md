@@ -1,44 +1,52 @@
 ---
 slug: can4hou6joeng4-boss-agent-cli
-type: agent_tool
 name: boss-agent-cli
 tagline: 🤖 Local-assist BOSS Zhipin CLI for AI agents — search, welfare
   filtering, shortlist, JSON-envelope output; low-risk & compliant by default.
 summary: 🤖 面向真人与 AI Agent 的招聘平台 CLI —— 纯终端向导 · 福利筛选 · 双角色工作流 · JSON 信封。
 categories:
-  - coding-agents
-tags: []
+  - browser-web
+tags:
+  - agent-tools
+  - ai-agent
+  - boss-zhipin
+  - claude
 status: active
-quality_percentile: 58
+quality_percentile: 61
 selection_reason: quality_percentile
 first_seen: 2026-03-20T08:41:59
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: can4hou6joeng4/boss-agent-cli
   official_vendor: false
   license: MIT
 signals:
-  stars: 2080
-  last_commit: 2026-10-12T08:19:24Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 2106
+  last_commit: 2026-10-19T01:13:47Z
+  stars_delta_7d: 26
+  stars_growth_pct: 1.3
+  trending_score: 26.33
+  rank_current: 36
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 2045
+    - 2080
+    - 2106
 language: zh
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - python
 readme_source:
   repo: can4hou6joeng4/boss-agent-cli
   path: README.md
   branch: master
-  fetched_at: 2026-10-14T14:55:08.406Z
+  fetched_at: 2026-10-19T07:33:39.597Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: browser_agent
+  subcategory: coding_agent
   install_command: pip install boss-agent-cli
   runtime: python
   execution_mode: local
@@ -124,7 +132,7 @@ boss hr recommendations --job-id <encJobId>
 boss hr jobs list
 ```
 
-所有命令输出结构化 JSON（`ok` 判断成败，`exit 0/1`）。完整上手见 [快速上手](https://github.com/can4hou6joeng4/boss-agent-cli/blob/master/docs/getting-started.md)。
+所有命令输出结构化 JSON（`ok` 判断成败，默认 `exit 0/1`；可选 `--exit-codes sysexits` 返回按错误类别区分的语义化退出码）。完整上手见 [快速上手](https://github.com/can4hou6joeng4/boss-agent-cli/blob/master/docs/getting-started.md)。
 
 ## 🎭 角色与平台
 
@@ -242,10 +250,10 @@ CLI (Click)
             └─ output.py → JSON 信封 → stdout
 ```
 
-**不变量**：stdout 仅 JSON 信封 · stderr 仅日志 · `exit 0/1` · 错误含 `code/recoverable/recovery_action` · `boss schema` 为能力真源。
+**不变量**：stdout 仅 JSON 信封 · stderr 仅日志 · `exit 0/1`（可选 `--exit-codes sysexits` 语义化退出码） · 错误含 `code/recoverable/recovery_action` · `boss schema` 为能力真源。
 **双受众提示**：`hints.next_actions` 是给 Agent 执行的后继命令，`hints.operator_actions` 是给真人操作者的自然语言指引（扫码、在浏览器里调整条件等需要离开终端完成的动作）；TTY 下只渲染后者到 stderr，Agent 应把它转述给操作者。
 **命令还是 wizard**：单次、无状态的能力调用走顶层命令；需要跨步骤状态、可恢复、或中途要把指引递给真人的走 `boss wizard`（goal 取值见 `boss schema` 的 `wizard_catalog`）。
-**选型**：Python ≥ 3.10 · Click · httpx · patchright / CDP（登录、导出与声明的浏览器 adapter）· cryptography（Fernet）· sqlite3（WAL）· pytest（1600+ 项）。
+**选型**：Python ≥ 3.10 · Click · httpx · patchright / CDP（登录、导出与声明的浏览器 adapter）· cryptography（Fernet）· sqlite3（WAL）· pytest（2900+ 项）。
 
 ## 🔌 本地存储
 

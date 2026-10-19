@@ -7,19 +7,34 @@ summary: "바로 쓰기: Claude.ai 커넥터에 https://mcp.gomdori.app/law?oc=�
   Code는 플러그인 두 줄 → 설치 및 사용법"
 categories:
   - domain-research
+tags:
+  - case-law
+  - citation-verification
+  - claude
+  - claude-desktop
 status: active
 quality_percentile: 93
 selection_reason: quality_percentile
 first_seen: 2025-12-19T11:03:22
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: chrisryugj/korean-law-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 2697
-  last_commit: 2026-10-13T09:23:09Z
+  stars: 2739
+  last_commit: 2026-10-14T15:18:00Z
+  stars_delta_7d: 42
+  stars_growth_pct: 1.6
+  trending_score: 42.65
+  rank_current: 24
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2647
+    - 2697
+    - 2739
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +43,7 @@ readme_source:
   repo: chrisryugj/korean-law-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:02.372Z
+  fetched_at: 2026-10-19T07:33:27.257Z
   truncated: true
 type: mcp_server
 launch:
@@ -37,7 +52,6 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # Korean Law MCP
@@ -72,6 +86,12 @@ tags: []
 | Claude에 연결하기 | ChatGPT에 연결하기 |
 |:---:|:---:|
 | [![Claude에 법령MCP 연결하기](https://raw.githubusercontent.com/chrisryugj/korean-law-mcp/main/docs/video-claude.jpg)](https://youtu.be/KaUKLOH7290) | [![GPT에 법령MCP 연결하기](https://raw.githubusercontent.com/chrisryugj/korean-law-mcp/main/docs/video-gpt.jpg)](https://youtu.be/KCFIzervxtE) |
+
+---
+
+## v4.15.9: 노동 행정 결정례 3종
+
+- `search_decisions`·`get_decision_text` 에 고용노동부 법령해석(`moel`, 질의회시)·산재보험재심사위원회(`iaciac`)·고용보험심사위원회(`eiac`) 결정문 추가. 기여: @adfakdjk332 (#175). [변경 내역](https://github.com/chrisryugj/korean-law-mcp/blob/main/CHANGELOG.md)
 
 ---
 

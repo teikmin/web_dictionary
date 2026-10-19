@@ -1,6 +1,5 @@
 ---
 slug: 0xmassi-webclaw
-type: agent_tool
 name: webclaw
 tagline: Fast, local-first web content extraction for LLMs. Scrape, crawl,
   extract structured data — all from Rust. CLI, REST API, and MCP server.
@@ -8,49 +7,51 @@ summary: Turn websites into clean markdown, JSON, and LLM-ready context. CLI,
   MCP server, REST API, and SDKs for AI agents and RAG pipelines.
 categories:
   - browser-web
-tags: []
+tags:
+  - ai-agents
+  - ai-scraping
+  - apify-alternative
+  - cli
 status: active
-quality_percentile: 65
+quality_percentile: 74
 selection_reason: quality_percentile
 first_seen: 2026-03-10T17:50:15
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: 0xMassi/webclaw
   official_vendor: false
   license: AGPL-3.0
 signals:
-  stars: 2375
-  last_commit: 2026-10-13T15:19:51Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 2382
+  last_commit: 2026-10-19T07:24:43Z
+  stars_delta_7d: 7
+  stars_growth_pct: 0.3
+  trending_score: 7.02
+  rank_current: 45
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 2371
+    - 2375
+    - 2382
 language: en
 needs_keys: false
 prerequisites:
-  - Node.js >= 18
+  - rust
 readme_source:
   repo: 0xMassi/webclaw
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:01.822Z
+  fetched_at: 2026-10-19T07:33:27.433Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: browser_agent
-  install_command: pip install webclaw
-  runtime: python
-  execution_mode: local
+  subcategory: coding_agent
+  install_command: cargo install --git https://github.com/0xMassi/webclaw.git
+  runtime: rust
+  execution_mode: hybrid
   has_mcp_support: true
-  mcp_launch:
-    transport: stdio
-    command: npx
-    args:
-      - -y
-      - "@webclaw/mcp"
-    env_vars: []
-    confidence: readme
 ---
 
 <p align="center"><strong>English</strong> | <a href="https://github.com/0xMassi/webclaw/blob/main/README_zh-CN.md">简体中文</a></p>
@@ -91,6 +92,7 @@ tool:
 </p>
 
 ---
+
 Most web scraping tools give your agent one of two bad outputs:
 
 - a blocked page, login wall, or empty app shell
@@ -115,6 +117,7 @@ You may use this domain in literature without prior coordination or asking for p
 Use it from the terminal, wire it into Claude/Cursor through MCP, call the hosted API from your app, or self-host the OSS server.
 
 ---
+
 ## Install
 
 ### Agent setup
@@ -198,6 +201,7 @@ If building from source fails because native build tools are missing, install th
 | macOS | `xcode-select --install` |
 
 ---
+
 ## Quick Start
 
 ### Scrape one page
@@ -254,6 +258,7 @@ webclaw https://example.com/pricing --diff-with pricing-old.json
 ```
 
 ---
+
 ## MCP Server
 
 webclaw ships with an MCP server for AI agents.
@@ -288,6 +293,7 @@ Extract the brand colors, fonts, and logos from this company website.
 ```
 
 ---
+
 ## Use as an agent skill
 
 Add webclaw to Claude Code, Cursor, Windsurf, and other MCP agents in one command:
@@ -303,6 +309,7 @@ to handle bot-protected and JavaScript-rendered pages.
 Find it on [skills.sh](https://www.skills.sh/0xMassi/webclaw-skill/webclaw).
 
 ---
+
 ## Tools
 
 | Tool | What it does | Local |
@@ -319,6 +326,7 @@ Find it on [skills.sh](https://www.skills.sh/0xMassi/webclaw-skill/webclaw).
 | `research` | Multi-source research workflow | Hosted API |
 
 ---
+
 ## SDKs
 
 ```bash
@@ -382,6 +390,7 @@ curl -X POST https://api.webclaw.io/v1/scrape \
 </details>
 
 ---
+
 ## Output Formats
 
 | Format | Use it when you need |
@@ -393,6 +402,7 @@ curl -X POST https://api.webclaw.io/v1/scrape \
 | `html` | Cleaned HTML for custom processing |
 
 ---
+
 ## Local First, Hosted When Needed
 
 The CLI and MCP server work locally without an account for the core extraction path.
@@ -413,6 +423,7 @@ webclaw https://example.com --cloud
 ```
 
 ---
+
 ## What You Can Build
 
 | Use case | Example |
@@ -440,6 +451,7 @@ webclaw/
 `webclaw-core` is pure extraction logic: no network I/O, small surface area, and usable independently from the fetching layer.
 
 ---
+
 ## Configuration
 
 | Variable | Description |
@@ -456,6 +468,7 @@ webclaw/
 | `WEBCLAW_PROXY_FILE` | Proxy pool file |
 
 ---
+
 ## Contributing
 
 The most useful contributions right now are practical and small:
@@ -487,6 +500,7 @@ CLI, MCP, SDK, or API:
 Please remove secrets, cookies, private tokens, and customer data from logs before posting.
 
 ---
+
 ## Strategic Partner
 
 <table>
@@ -519,6 +533,7 @@ Please remove secrets, cookies, private tokens, and customer data from logs befo
 </table>
 
 ---
+
 ## Infrastructure Partner
 
 <table>
@@ -543,6 +558,7 @@ Please remove secrets, cookies, private tokens, and customer data from logs befo
 </table>
 
 ---
+
 ## Studio Partners
 
 <table>
@@ -605,6 +621,7 @@ Please remove secrets, cookies, private tokens, and customer data from logs befo
 </table>
 
 ---
+
 ## Community Plugins
 
 Third-party plugins that integrate webclaw with AI agent platforms:
@@ -617,6 +634,7 @@ Third-party plugins that integrate webclaw with AI agent platforms:
 Built a webclaw integration? [Open a PR](https://github.com/0xMassi/webclaw/pulls) to add it here.
 
 ---
+
 ## Contributors
 
 Thanks to everyone improving webclaw through issues, examples, docs, bug reports, and pull requests.
@@ -626,6 +644,7 @@ Thanks to everyone improving webclaw through issues, examples, docs, bug reports
 </a>
 
 ---
+
 ## Star History
 
 <a href="https://github.com/0xMassi/webclaw/stargazers">
@@ -637,6 +656,7 @@ Thanks to everyone improving webclaw through issues, examples, docs, bug reports
 </a>
 
 ---
+
 ## License
 
 [AGPL-3.0](https://github.com/0xMassi/webclaw/blob/main/LICENSE)

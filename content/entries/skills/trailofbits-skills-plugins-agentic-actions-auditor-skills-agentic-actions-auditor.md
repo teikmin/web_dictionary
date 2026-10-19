@@ -1,20 +1,19 @@
 ---
 slug: trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor
 name: agentic-actions-auditor
-tagline: Audits GitHub Actions workflows for security vulnerabilities in AI
-  agent integrations including Claude Code Action, Gemini CLI, OpenAI Codex, and
-  GitH
-summary: "- Auditing a repository's GitHub Actions workflows for AI agent
-  security - Reviewing CI/CD configurations that invoke Claude Code Action,
-  Gemini CLI, or OpenAI Codex - Checking whether attacker-controlled input can
-  re..."
+tagline: Agent skill from trailofbits/skills
+summary: Agent skill from trailofbits/skills
 categories:
   - security-auth
+tags:
+  - agent-skills
+  - research
+  - security
 status: active
-quality_percentile: 55
+quality_percentile: 59
 selection_reason: quality_percentile
 first_seen: 2026-01-14T18:23:21
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: trailofbits/skills
@@ -22,8 +21,18 @@ source:
   official_vendor: false
   license: CC-BY-SA-4.0
 signals:
-  stars: 7507
-  last_commit: 2026-10-13T15:45:03Z
+  stars: 7640
+  last_commit: 2026-10-15T19:32:12Z
+  stars_delta_7d: 133
+  stars_growth_pct: 1.8
+  trending_score: 135.36
+  rank_current: 59
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 7412
+    - 7507
+    - 7640
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,19 +40,12 @@ readme_source:
   repo: trailofbits/skills
   path: plugins/agentic-actions-auditor/skills/agentic-actions-auditor/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.114Z
+  fetched_at: 2026-10-19T07:40:36.583Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: agentic-actions-auditor
-  description: Audits GitHub Actions workflows for security vulnerabilities in AI
-    agent integrations including Claude Code Action, Gemini CLI, OpenAI Codex,
-    and GitHub AI Inference. Detects attack vectors where attacker-controlled
-    input reaches AI agents running in CI/CD pipelines, including env var
-    intermediary patterns, direct expression injection, dangerous sandbox
-    configurations, and wildcard user allowlists. Use when reviewing workflow
-    files that invoke AI coding agents, auditing CI/CD pipeline security for
-    prompt injection risks, or evaluating agentic action configurations.
+  description: Agent skill from trailofbits/skills
   folder_path: plugins/agentic-actions-auditor/skills/agentic-actions-auditor
   extra_files:
     - agents/openai.yaml
@@ -56,9 +58,13 @@ skill:
     - references/vector-c-cli-data-fetch.md
     - references/vector-d-pr-target-checkout.md
     - references/vector-e-error-log-injection.md
-tags:
-  - github
-  - security
+  pack_total_skills: 85
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: trailofbits-skills
 ---
 
 # Agentic Actions Auditor

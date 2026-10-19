@@ -1,6 +1,5 @@
 ---
 slug: 1panel-dev-maxkb
-type: agent_tool
 name: MaxKB
 tagline: 🔥 MaxKB is an open-source platform for building enterprise-grade
   agents.  强大易用的开源企业级智能体平台。
@@ -8,41 +7,50 @@ summary: MaxKB = Max Knowledge Brain, it is an open-source platform for building
   enterprise-grade agents. MaxKB integrates Retrieval-Augmented Generation (RAG)
   pipelines, supports robust workflows, and provides advanced MCP to...
 categories:
-  - databases-memory
-tags: []
+  - agent-frameworks
+tags:
+  - agentic-ai
+  - chatbot
+  - deepseek-r1
+  - knowledgebase
 status: active
-quality_percentile: 83
+quality_percentile: 87
 selection_reason: quality_percentile
 first_seen: 2023-09-14T02:05:12
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: 1Panel-dev/MaxKB
   official_vendor: false
   license: GPL-3.0
 signals:
-  stars: 22967
-  last_commit: 2026-10-13T12:35:57Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 22995
+  last_commit: 2026-10-19T07:24:08Z
+  stars_delta_7d: 28
+  stars_growth_pct: 0.1
+  trending_score: 28.03
+  rank_current: 35
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 22912
+    - 22967
+    - 22995
 language: en
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - python
 readme_source:
   repo: 1Panel-dev/MaxKB
   path: README.md
   branch: v2
-  fetched_at: 2026-10-14T14:54:55.183Z
+  fetched_at: 2026-10-19T07:31:56.022Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: agent_framework
-  install_command: docker run -d --name=maxkb 1panel/maxkb
-  runtime: docker
+  subcategory: memory_rag
+  install_command: pip install maxkb
+  runtime: python
   execution_mode: local
   has_mcp_support: true
   mcp_launch:

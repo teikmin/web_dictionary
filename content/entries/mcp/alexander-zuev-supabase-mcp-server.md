@@ -9,19 +9,34 @@ summary: Query MCP is an open-source MCP server that lets your IDE safely run
   Admin SDK — all with built-in safety controls.
 categories:
   - databases-memory
+tags:
+  - cursor
+  - model-context-protocol
+  - supabase
+  - windsurf
 status: active
-quality_percentile: 19
+quality_percentile: 17
 selection_reason: quality_percentile
 first_seen: 2025-02-15T08:54:29
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: alexander-zuev/supabase-mcp-server
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 831
+  stars: 833
   last_commit: 2026-08-21T20:27:19Z
+  stars_delta_7d: 2
+  stars_growth_pct: 0.2
+  trending_score: 2
+  rank_current: 81
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 831
+    - 831
+    - 833
 language: en
 needs_keys: false
 prerequisites:
@@ -31,7 +46,7 @@ readme_source:
   repo: alexander-zuev/supabase-mcp-server
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:10.670Z
+  fetched_at: 2026-10-19T07:34:17.176Z
   truncated: false
 type: mcp_server
 launch:
@@ -41,8 +56,6 @@ launch:
     - supabase-mcp-server
   env_vars: []
   confidence: manifest
-tags:
-  - supabase
 ---
 
 # Query | MCP server for Supabase

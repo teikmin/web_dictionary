@@ -1,19 +1,20 @@
 ---
 slug: gosom-google-maps-scraper-skills-google-maps-scraper
 name: google-maps-scraper
-tagline: Find businesses, leads, emails, reviews, ratings, and contact details
-  from Google Maps. Use for requests such as "find dentists in Berlin", "scrape
-  Go
-summary: Resolve the directory containing this file as SKILLDIR. Run bundled
-  scripts from that directory; do not assume the current directory is the
-  repository checkout.
+tagline: Agent skill from gosom/google-maps-scraper
+summary: Agent skill from gosom/google-maps-scraper
 categories:
   - browser-web
+tags:
+  - agent-skills
+  - claude-skills
+  - codex-skills
+  - distributed-scraper
 status: active
-quality_percentile: 60
+quality_percentile: 64
 selection_reason: quality_percentile
 first_seen: 2023-04-22T14:35:13
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: gosom/google-maps-scraper
@@ -21,8 +22,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 6406
+  stars: 6572
   last_commit: 2026-09-24T04:54:54Z
+  stars_delta_7d: 166
+  stars_growth_pct: 2.6
+  trending_score: 170.3
+  rank_current: 54
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 6309
+    - 6406
+    - 6572
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,17 +41,12 @@ readme_source:
   repo: gosom/google-maps-scraper
   path: skills/google-maps-scraper/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.115Z
+  fetched_at: 2026-10-19T07:40:30.475Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: google-maps-scraper
-  description: >
-    Find businesses, leads, emails, reviews, ratings, and contact details from
-    Google Maps. Use for requests such as "find dentists in Berlin", "scrape
-    Google Maps", "get local business leads", or "collect Google Maps reviews".
-    Runs the open-source scraper locally with Docker and guides nontechnical
-    users through setup, monitoring, and results.
+  description: Agent skill from gosom/google-maps-scraper
   folder_path: skills/google-maps-scraper
   extra_files:
     - references/advanced-coverage.md
@@ -53,7 +59,13 @@ skill:
     - scripts/configure-proxy.sh
     - scripts/ensure-latest.sh
     - scripts/helpers_test.sh
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: gosom-google-maps-scraper
 ---
 
 # Google Maps Scraper

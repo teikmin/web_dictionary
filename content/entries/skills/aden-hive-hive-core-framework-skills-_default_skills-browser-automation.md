@@ -1,20 +1,20 @@
 ---
 slug: aden-hive-hive-core-framework-skills-_default_skills-browser-automation
-name: hive.browser-automation
-tagline: Required before any hive-browser CLI command. The browser is driven
-  from the terminal by running `hive-browser <command> ... --json` via
-  terminal_exec
-summary: "The bridge attaches to the user's already-running Chrome via the
-  extension. The browser is not yours: it holds the user's logged-in sessions
-  and other agents' work, and the runtime — not you — owns the connection to
-  i..."
+name: browser-automation
+tagline: Agent skill from aden-hive/hive
+summary: Agent skill from aden-hive/hive
 categories:
-  - browser-web
+  - agent-frameworks
+tags:
+  - agent-framework
+  - agent-skills
+  - anthropic
+  - automation
 status: active
 quality_percentile: 97
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: aden-hive/hive
@@ -22,8 +22,18 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 11099
-  last_commit: 2026-10-12T11:34:20Z
+  stars: 11108
+  last_commit: 2026-10-19T06:59:53Z
+  stars_delta_7d: 9
+  stars_growth_pct: 0.1
+  trending_score: 9.01
+  rank_current: 105
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 11088
+    - 11099
+    - 11108
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,25 +41,21 @@ readme_source:
   repo: aden-hive/hive
   path: core/framework/skills/_default_skills/browser-automation/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.113Z
+  fetched_at: 2026-10-19T07:40:31.853Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: hive.browser-automation
-  description: Required before any hive-browser CLI command. The browser is driven
-    from the terminal by running `hive-browser <command> ... --json` via
-    terminal_exec — not via MCP tools. Teaches the browser lifecycle rules (the
-    bridge attaches to the USER'S running Chrome — never kill or launch browser
-    processes; timeouts are transport issues, not crashes), the screenshot +
-    coordinate workflow (hive-browser interact with a fractional coordinate)
-    that reaches shadow-DOM inputs selectors can't see, the viewport-fraction
-    coordinate rule (not pixels), rich-text editor quirks ("send button stays
-    disabled" failures), and CSP gotchas. Covers Chrome via CDP through the GCU
-    Beeline extension.
+  skill_name: browser-automation
+  description: Agent skill from aden-hive/hive
   folder_path: core/framework/skills/_default_skills/browser-automation
   extra_files: []
-tags:
-  - terminal
+  pack_total_skills: 20
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: aden-hive-hive
 ---
 
 # GCU Browser Automation

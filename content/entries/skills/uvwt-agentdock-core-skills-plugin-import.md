@@ -7,12 +7,17 @@ summary: pluginmanage 直接接受本地目录或 ZIP，并自动识别 AgentDoc
   Plugin 格式；OpenAI/Claude 的兼容性转换由 Core 在审核前完成，不需要模型手工改写 manifest 或重新打包。这个 Skill
   只负责远程来源发现/固定/获取，以及 Core 尚不认识的其他格式。最终包的安全校验、规范化摘要、review token、安装事务和运行时激...
 categories:
-  - coding-agents
+  - cloud-infra
+tags:
+  - agent-skills
+  - ai-agents
+  - automation
+  - devops
 status: active
-quality_percentile: 58
+quality_percentile: 61
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: uvwt/agentdock
@@ -20,8 +25,15 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 1234
-  last_commit: 2026-10-13T16:25:31Z
+  stars: 1253
+  last_commit: 2026-10-18T06:58:34Z
+  stars_delta_7d: 19
+  stars_growth_pct: 1.5
+  trending_score: 19.29
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1234
+    - 1253
 language: zh
 needs_keys: false
 prerequisites: []
@@ -29,7 +41,7 @@ readme_source:
   repo: uvwt/agentdock
   path: core-skills/plugin-import/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:08.430Z
+  fetched_at: 2026-10-19T07:33:43.462Z
   truncated: false
 type: agent_skill
 skill:
@@ -39,9 +51,13 @@ skill:
   folder_path: core-skills/plugin-import
   extra_files:
     - references/portable-plugin.md
-tags:
-  - github
-  - git
+  pack_total_skills: 4
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: uvwt-agentdock
 ---
 
 # Plugin Import

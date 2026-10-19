@@ -1,17 +1,22 @@
 ---
 slug: stablyai-orca-skills-orca-cli
-name: orca-cli
+name: cli
 tagline: Operate Orca-managed worktrees, folder contexts, terminals, repos,
   automations, artifacts, skill sharing, worktree comments, and Orca's embedded
   brows
 summary: "Choose the executable once and reuse it for every later command:"
 categories:
-  - coding-agents
+  - agent-frameworks
+tags:
+  - ade
+  - agent-ide
+  - ai-agents
+  - automation
 status: active
-quality_percentile: 64
+quality_percentile: 67
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: stablyai/orca
@@ -19,8 +24,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 91386
-  last_commit: 2026-10-13T16:24:00Z
+  stars: 97177
+  last_commit: 2026-10-19T07:28:54Z
+  stars_delta_7d: 5791
+  stars_growth_pct: 6.3
+  trending_score: 6157.97
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 86961
+    - 91386
+    - 97177
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,11 +41,11 @@ readme_source:
   repo: stablyai/orca
   path: skills/orca-cli/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.953Z
+  fetched_at: 2026-10-19T07:36:40.961Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: orca-cli
+  skill_name: cli
   description: Operate Orca-managed worktrees, folder contexts, terminals, repos,
     automations, artifacts, skill sharing, worktree comments, and Orca's
     embedded browser through the `orca` CLI. Use when the user says "$orca-cli",
@@ -44,7 +57,13 @@ skill:
     a CLI, filesystem, or API cannot do.
   folder_path: skills/orca-cli
   extra_files: []
-tags: []
+  pack_total_skills: 11
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: stablyai-orca
 ---
 
 # Orca CLI

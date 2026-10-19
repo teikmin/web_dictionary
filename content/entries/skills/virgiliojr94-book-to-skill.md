@@ -1,17 +1,20 @@
 ---
 slug: virgiliojr94-book-to-skill
 name: book-to-skill
-tagline: Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown, plain
-  text, RTF, MOBI/AZW with Calibre) into structured agent skills, extracting
-  framew
-summary: ... [skill-name-slug] -->
+tagline: Agent skill from virgiliojr94/book-to-skill
+summary: Agent skill from virgiliojr94/book-to-skill
 categories:
   - media-creative
+tags:
+  - agent-skills
+  - ai-agents
+  - book-to-skill
+  - context-engineering
 status: active
-quality_percentile: 76
+quality_percentile: 77
 selection_reason: quality_percentile
 first_seen: 2026-05-01T02:09:39
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: virgiliojr94/book-to-skill
@@ -19,8 +22,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 34751
-  last_commit: 2026-10-12T00:30:58Z
+  stars: 35303
+  last_commit: 2026-10-18T21:24:32Z
+  stars_delta_7d: 552
+  stars_growth_pct: 1.6
+  trending_score: 560.77
+  rank_current: 25
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 34049
+    - 34751
+    - 35303
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,18 +41,12 @@ readme_source:
   repo: virgiliojr94/book-to-skill
   path: SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:18.058Z
+  fetched_at: 2026-10-19T07:40:23.211Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: book-to-skill
-  description: Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown,
-    plain text, RTF, MOBI/AZW with Calibre) into structured agent skills,
-    extracting frameworks, mental models, principles, techniques, and
-    anti-patterns. Use when the user wants to study a document through GitHub
-    Copilot CLI, Amp, Claude Code, Hermes Agent, OpenCode, or OpenClaw, apply an
-    author's frameworks while working, or build a reusable knowledge base from a
-    file.
+  description: Agent skill from virgiliojr94/book-to-skill
   folder_path: .
   extra_files:
     - .github/FUNDING.yml
@@ -52,8 +59,13 @@ skill:
     - .github/workflows/deploy-docs.yml
     - .gitignore
     - AGENTS.md
-tags:
-  - pdf
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: virgiliojr94-book-to-skill
 ---
 
 <!--
@@ -92,7 +104,6 @@ Books contain crystallized expertise: frameworks, principles, and techniques tha
 **Layer depth appropriately.** Simple books → simple skills. Complex books with 10+ frameworks → skills with reference files and on-demand chapters.
 
 ---
-
 ## Modes of Operation
 
 Four paths available. Route based on what the user asks:
@@ -118,7 +129,6 @@ Four paths available. Route based on what the user asks:
 **Output:** Updated existing skill with new/revised chapter summaries and merged indexes/glossaries.
 
 ---
-
 ## Skill Locations
 
 This converter can run from multiple skill systems. When looking for this converter's helper script or writing the generated book skill, prefer these locations in order:
@@ -141,7 +151,6 @@ This converter can run from multiple skill systems. When looking for this conver
 For **generated** book skills, prefer the user-level cross-agent root `~/.agents/skills/` — one physical copy serves the cross-agent hosts and OpenClaw when it uses its default state. Copilot CLI and Amp discover it natively; Claude Code needs a symlink from `~/.claude/skills/<skill_name>` (created in Step 10, see Step 5 for the rules). Pick a host-private or project-local root only when the user explicitly asks for one. `BOOK_TO_SKILL_SCOPE=project` or `personal` can make that choice explicit for automation; do not ask a mandatory scope question merely because both scopes are available.
 
 ---
-
 ## Step 0 — Out-of-scope check
 
 If no arguments are provided, stop and respond:
@@ -156,7 +165,6 @@ Throughout the workflow:
 - **Re-run guard.** Before starting extraction for a Full Conversion, derive the prospective skill slug under Step 5's naming options — the author-concept form, the by-title form, and any `SKILL_NAME` given — and check the resolved root for an existing match. On a match, STOP and ask the user: "`<skill-name>` already exists. Choose: (1) Update/Fold-in (Mode 4), (2) verify the existing skill is complete and stop, or (3) force full regeneration." Do not re-extract until the user chooses. On context recovery after an interrupted run (network cut-off, replayed or continued conversation), reuse the extraction work directory that run reported (`Workdir ->` in its output, or the path you set in `BOOK_SKILL_WORKDIR`) **only if it is still intact and still matches the current inputs and options** — the directory exists, its `metadata.json` is readable, the `sources` it lists match the files being converted now one-to-one on filename **and content fingerprint** (the extractor records a per-source `sha256` in `metadata.json`; recompute the fingerprint from each file as it exists now and require an exact match — `reuse_is_safe()` in `book_to_skill/utils.py` is the executable form of this check), and its recorded `extraction_mode` is the mode this run is using (Step 2's "confirm the extraction is the document you asked for" rule). If it is missing (temp cleanup), its `metadata.json` is gone, the sources no longer match (a different filename, or a changed content fingerprint), the recorded metadata has no `sha256` for a source (recorded before fingerprints existed, so freshness cannot be established), or the mode differs, say so and start a fresh extraction instead of resuming. When in doubt, ask the user before discarding or resuming.
 
 ---
-
 ## Step 1 — Validate input
 
 Verify that there is at least one supported file, directory, or glob pattern among the `INPUT_PATHS`.
@@ -165,7 +173,6 @@ For directories and globs, expand them to find matching supported files (`.pdf`,
 If no supported files are found, stop with a clear error message.
 
 ---
-
 ## Step 1.5 — Identify content type
 
 Before extracting, ask the user:
@@ -188,7 +195,6 @@ Store the answer as `BOOK_TYPE`:
 > "📄 Text mode selected — using the fastest suitable extractor for each file type. Plain text/Markdown/HTML are usually ready in seconds; PDFs use pdftotext when available."
 
 ---
-
 ## Step 2 — Extract text from the source documents
 
 Run the extraction script, passing the input paths:
@@ -310,7 +316,6 @@ Read that run's `metadata.json` to inspect the results.
 **Always confirm the extraction is the document you asked for** before generating anything: check `filename` / `source_file` in `metadata.json`, or the `SOURCE:` header on the first line of `full_text.txt`. If you are waiting on a background run, wait on *its* specific workdir — polling a shared path can surface a different run's output.
 
 ---
-
 ## Step 2.5 — Pre-flight cost estimate
 
 Read this run's `metadata.json` (the `Meta ->` path from the extraction output) and present the user with an estimate **before doing any generation**:
@@ -347,7 +352,6 @@ Read this run's `metadata.json` (the `Meta ->` path from the extraction output) 
 Wait for the user to confirm before proceeding. If they say "analyze only", switch to Mode 2.
 
 ---
-
 ## Step 2.6 — REPL-style access for large books (> 50k tokens)
 
 Inspired by the Recursive Language Model (RLM) paradigm: treat `full_text.txt` as a queryable corpus, not a single read. Loading the whole file into context burns budget you will need later for generation.
@@ -376,7 +380,6 @@ Use this approach for Step 3 (structure analysis), Step 7 (per-chapter summaries
 Why this matters: a 200-page book is ~75k tokens. Re-reading it once per chapter (28 passes) costs ~2M input tokens; using grep + sed to pull only relevant slices keeps generation cost proportional to the output, not the source.
 
 ---
-
 ## Step 3 — Analyze book structure
 
 Read the first 8,000 characters of the extracted `full_text.txt` to identify:
@@ -411,7 +414,6 @@ Then read the Table of Contents section if present to map all chapters.
 ```
 
 ---
-
 ## Step 4 — Ask purpose (Full Conversion only)
 
 Before generating, ask the user:
@@ -431,7 +433,6 @@ Use the answer to weight what gets highlighted in the SKILL.md Core section.
 `DEPTH` and `BOOK_TYPE` together set the per-chapter token budget in Step 7. Do **not** ask a separate "study vs reference" question — it is inferred here. (In Modes 2/3, where Step 4 is skipped, default `DEPTH=study`.)
 
 ---
-
 ## Step 5 — Determine skill name
 
 If `SKILL_NAME` was provided, use it as the skill slug.
@@ -480,7 +481,6 @@ If the skill already exists, prompt the user to choose:
 If the user selects **Update / Fold-in**, proceed immediately to the **Update / Fold-in Workflow** section after Step 2.5 (skipping Steps 3, 4, 6, 7, 8, 9).
 
 ---
-
 ## Step 6 — Create skill directory structure
 
 ```bash
@@ -488,7 +488,6 @@ mkdir -p "$SKILLS_HOME/<skill_name>/chapters"
 ```
 
 ---
-
 ## Step 7 — Generate chapter summaries
 
 **TOKEN BUDGET RULE — CRITICAL (adaptive):**
@@ -571,7 +570,6 @@ Create `$SKILLS_HOME/<skill_name>/chapters/ch<NN>-<slug>.md` using the structure
 ```
 
 ---
-
 ## Step 8 — Generate supporting files
 
 ### glossary.md
@@ -604,7 +602,6 @@ Avoid: bare term→definition rows (that's the glossary), and prose paragraphs (
 - Max 1,200 tokens.
 
 ---
-
 ## Step 9 — Generate the master SKILL.md
 
 **CRITICAL TOKEN BUDGET: Keep SKILL.md body under 4,000 tokens.**
@@ -613,11 +610,9 @@ Compaction truncates from the END — put the most important content FIRST.
 Create `$SKILLS_HOME/<skill_name>/SKILL.md`:
 
 ```markdown
----
-name: <skill_name>
+---name: <skill_name>
 description: "Knowledge base from \"<Full Title>\" by <Author(s)>. Use when applying <author>'s frameworks for <key topics, 3–6 terms>, studying the book, or referencing its concepts."
 ---
-
 <!-- argument-hint: [topic, framework name, or chapter number] -->
 
 # <Full Title>
@@ -634,7 +629,6 @@ When you ask about a topic not covered in Core Frameworks below, I will read
 the relevant chapter file before answering.
 
 ---
-
 ## Core Frameworks & Mental Models
 <!-- ~2,000 tokens: the author's most important named frameworks and principles.
      Preserve exact names. Write as "Use X when Y", "Prefer X over Y because Z".
@@ -643,7 +637,6 @@ the relevant chapter file before answering.
 <generate 2,000 tokens of the most critical frameworks and insights here>
 
 ---
-
 ## Chapter Index
 
 | # | Title | Key Frameworks |
@@ -665,7 +658,6 @@ the relevant chapter file before answering.
 - [cheatsheet.md](https://github.com/virgiliojr94/book-to-skill/blob/master/cheatsheet.md) — quick reference tables and decision guides
 
 ---
-
 ## Scope & Limits
 
 This skill covers the book content only. For hands-on implementation in your codebase,
@@ -675,7 +667,6 @@ or ask the agent directly.
 ```
 
 ---
-
 ## Step 9.5 — Scan the generated skill
 
 Before reporting success, loading the skill in another session, or publishing it, run the advisory security scan:
@@ -688,7 +679,6 @@ SKILL_CONVERTER_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
 If the scanner exits non-zero, stop and ask a human to review its file/line findings. Do not silently rewrite the generated files, and do not load or publish the skill until the findings are resolved or explicitly accepted.
 
 ---
-
 ## Step 10 — Cleanup and report
 
 If the host is Claude Code and `SKILLS_HOME` is `~/.agents/skills` (the default personal install), expose the skill to Claude Code with a symlink — Claude Code only scans `~/.claude/skills`:
@@ -818,7 +808,6 @@ The "Somewhere else?" relocation line must be correct for the path actually take
 The "Prompted for permission on every file?" line is the answer to a host that gates writes outside the working directory (any personal-scope root is out-of-cwd): the destination was announced above, and the one-line fix — re-run asking for the project-local root — sits next to it. Keep it only for personal-scope installs; drop it when the user already chose project-local.
 
 ---
-
 ## Step 11 — Publish the generated skill to GitHub (optional)
 
 After the Step 10 report, offer once — and only if the Step 9.5 scan passed:
@@ -870,7 +859,6 @@ Install on any Agent Skills host:
 The root-level `SKILL.md` layout is exactly what the `skills` CLI detects, so the repo is installable as-is — no restructuring needed. Outside the nested-repo case the local folder stays the live install for this machine and is the remote's working copy, so later Update/Fold-in runs can commit and push their changes to the same remote.
 
 ---
-
 ## Update / Fold-in Workflow
 
 When performing an Update/Fold-in operation on an existing skill at `$SKILLS_HOME/<skill_name>/`:
@@ -919,7 +907,6 @@ Update the master skill file `$SKILLS_HOME/<skill_name>/SKILL.md`:
 Once the files are successfully written and merged, run **Step 9.5**, then proceed to **Step 10** to perform cleanup and print a custom update report summarizing the newly added chapters, merged glossary terms, and updated indices. If the skill folder is a git repository with a remote (published via **Step 11**), offer to commit the update and push it.
 
 ---
-
 ## Quality Rules
 
 1. **Extract structure, not summaries** — capture named frameworks, exact formulations, anti-patterns; not chapter recaps

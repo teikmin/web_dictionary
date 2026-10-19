@@ -9,12 +9,17 @@ summary: "- Memory or standing instructions → Edit memory/ or
   persisted on the host. The composed provider document (CLAUDE.md or AGENTS.md)
   is regenerated..."
 categories:
-  - databases-memory
+  - productivity-ops
+tags:
+  - ai-agents
+  - ai-assistant
+  - claude-code
+  - claude-skills
 status: active
 quality_percentile: 99
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: nanocoai/nanoclaw
@@ -22,8 +27,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 30935
-  last_commit: 2026-10-13T15:17:20Z
+  stars: 30966
+  last_commit: 2026-10-18T13:44:15Z
+  stars_delta_7d: 31
+  stars_growth_pct: 0.1
+  trending_score: 31.03
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 30890
+    - 30935
+    - 30966
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,7 +44,7 @@ readme_source:
   repo: nanocoai/nanoclaw
   path: container/skills/self-customize/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:14.639Z
+  fetched_at: 2026-10-19T07:37:41.464Z
   truncated: false
 type: agent_skill
 skill:
@@ -42,8 +55,13 @@ skill:
     changes, delegate to a builder agent via create_agent.
   folder_path: container/skills/self-customize
   extra_files: []
-tags:
-  - memory
+  pack_total_skills: 4
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: nanocoai-nanoclaw
 ---
 
 # Self-Customization

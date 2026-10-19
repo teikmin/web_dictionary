@@ -1,0 +1,137 @@
+---
+slug: affaan-m-ecc-docs-ja-jp-skills-click-path-audit
+name: click-path-audit
+tagline: ユーザー向けボタン/タッチポイントを完全な状態変更シーケンスを通して追跡し、機能が個別に機能するが互いにキャンセルされたり、間違った最終状態を生成したり、UIを矛盾した状態にしたままにするバグを見つけます。次の場合に使用します：体系的なデバッグがバグを見つけたが、ユーザーは壊れたボタンを報告する場合
+summary: 従来のデバッグチェック： - 関数が存在しますか？（不足している配線） - クラッシュしますか？（ランタイムエラー） -
+  正しいタイプを返しますか？（データフロー）
+categories:
+  - security-auth
+tags:
+  - ai-agents
+  - anthropic
+  - claude
+  - claude-code
+status: active
+quality_percentile: 96
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: affaan-m/ECC
+  subpath: docs/ja-JP/skills/click-path-audit
+  official_vendor: false
+  license: MIT
+signals:
+  stars: 283494
+  last_commit: 2026-10-19T05:03:15Z
+  stars_delta_7d: 5114
+  stars_growth_pct: 1.8
+  trending_score: 5207.95
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 274698
+    - 278380
+    - 283494
+language: zh
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: affaan-m/ECC
+  path: docs/ja-JP/skills/click-path-audit/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:36:32.549Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: click-path-audit
+  description: ユーザー向けボタン/タッチポイントを完全な状態変更シーケンスを通して追跡し、機能が個別に機能するが互いにキャンセルされたり、間違った最終状態を生成したり、UIを矛盾した状態にしたままにするバグを見つけます。次の場合に使用します：体系的なデバッグがバグを見つけたが、ユーザーは壊れたボタンを報告する場合、または共有状態ストアに触れる主要なリファクター後。
+  folder_path: docs/ja-JP/skills/click-path-audit
+  extra_files: []
+  pack_total_skills: 312
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: affaan-m-ecc
+---
+
+# /click-path-audit — 行動フロー監査
+静的コード読み取りが見落とすバグを見つけ：状態相互作用の副作用、順序を付けられた呼び出し間の競合状態、および互いに静かに取り消すハンドラー。
+
+## この解決する問題
+
+従来のデバッグチェック：
+- 関数が存在しますか？（不足している配線）
+- クラッシュしますか？（ランタイムエラー）
+- 正しいタイプを返しますか？（データフロー）
+
+しかし、それはチェック**しません**：
+- **最終UI状態がボタンラベルが約束したものと一致しますか？**
+- **関数Bが関数Aが行ったばかりをサイレンス的に取り消しますか？**
+- **共有状態（Zustand/Redux/context）に意図した操作をキャンセルする副作用がありますか？**
+
+実例：「新しいメール」ボタンが`setComposeMode(true)`を呼び出してから`selectThread(null)`。両方は個別に機能しました。しかし、`selectThread`には`composeMode: false`をリセットする副作用がありました。ボタンは何もしなかった。54のバグは体系的なデバッグによって見つかりました — これは見落とされました。
+
+---
+
+## 動作方法
+
+対象領域のすべてのインタラクティブなタッチポイントについて：
+
+```
+1. ハンドラーを特定（onClick、onSubmit、onChangeなど）
+2. ハンドラーのすべての関数呼び出しを**順序で**追跡
+3. 各関数呼び出し**について**：
+   a. どの状態を読んでいますか？
+   b. どの状態を書き込んでいますか？
+   c. 共有状態に副作用がありますか？
+   d. 副作用として状態をリセット/クリアしますか？
+4. チェック：後の呼び出しが以前の呼び出しからの状態変更を取り消しますか？
+5. チェック：最終状態はユーザーがボタンラベルから期待するもの？
+6. チェック：競合状態がありますか（非同期呼び出しが間違った順序で解決される）？
+```
+
+---
+
+## 実行ステップ
+
+### ステップ1：マップ状態ストア
+
+任意のタッチポイントを監査する前に、すべての状態ストアアクションの副作用マップを構築：
+
+```
+範囲内の各Zustand ストア / React コンテキストについて：
+  各アクション/セッター：
+    - どのフィールドをセットしますか？
+    - 副作用として他のフィールドをリセットしますか？
+    - ドキュメント：actionName → {sets: [...], resets: [...]}
+```
+
+これは重要な参照です。「新しいメール」バグは`selectThread`が`composeMode`をリセットしていることを知らないと見えなくなりました。
+
+**出力形式：**
+```
+STORE: emailStore
+  setComposeMode(bool) → sets: {composeMode}
+  selectThread(thread|null) → sets: {selectedThread, selectedThreadId, messages, drafts, selectedDraft, summary} RESETS: {composeMode: false, composeData: null, redraftOpen: false}
+  setDraftGenerating(bool) → sets: {draftGenerating}
+  ...
+
+DANGEROUS RESETS（所有していない状態をクリアするアクション）：
+  selectThread → composeMode をリセット（setComposeModeで所有）
+  reset → すべてをリセット
+```
+
+### ステップ2：各タッチポイントを監査
+
+対象領域の各ボタン/トグル/フォーム送信について：
+
+```
+TOUCHPOINT: [ボタンラベル] in [Component:line]
+ハンドラー：[関数呼び出しの完全なシーケンス]
+最終状態：[これが達成されるべきもの]
+```
+
+詳細については、ドキュメントを参照してください。

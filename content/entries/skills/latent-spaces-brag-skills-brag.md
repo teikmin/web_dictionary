@@ -1,20 +1,20 @@
 ---
 slug: latent-spaces-brag-skills-brag
 name: brag
-tagline: Turn the current project website into a short, polished, shareable
-  launch video using Hyperframes. Use when someone says "/brag", "let's brag
-  about th
-summary: "Model check. If you are Claude Opus 5.5 and the invocation doesn't ask
-  for the full workflow (--full, \"use the full brag\") or for voiceover
-  (--voice, which brag-slim doesn't do), switch to brag-slim: read /slim.md
-  (th..."
+tagline: Agent skill from latent-spaces/brag
+summary: Agent skill from latent-spaces/brag
 categories:
   - media-creative
+tags:
+  - agent-skills
+  - claude-code
+  - claude-skills
+  - hyperframes
 status: active
-quality_percentile: 62
+quality_percentile: 65
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: latent-spaces/brag
@@ -22,8 +22,15 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 15657
+  stars: 16800
   last_commit: 2026-10-13T11:08:09Z
+  stars_delta_7d: 1143
+  stars_growth_pct: 7.3
+  trending_score: 1226.44
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 15657
+    - 16800
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,16 +38,12 @@ readme_source:
   repo: latent-spaces/brag
   path: skills/brag/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.223Z
+  fetched_at: 2026-10-19T07:39:23.623Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: brag
-  description: Turn the current project website into a short, polished, shareable
-    launch video using Hyperframes. Use when someone says "/brag", "let's brag
-    about this", "make a launch video", "turn this into a video", or wants to
-    share what they built. Reads the project code directly — no live URL or
-    screenshots needed.
+  description: Agent skill from latent-spaces/brag
   folder_path: skills/brag
   extra_files:
     - assets/music/README.md
@@ -53,8 +56,13 @@ skill:
     - assets/music/cues/happy-beats-business-moves-vol-12-by-ende-dot-app.music-cues.json
     - assets/music/cues/happy-beats-business-moves-vol-12-by-ende-dot-app.music-cues.md
     - assets/music/cues/happy-beats-business-moves-vol-9-by-ende-dot-app.music-cues.json
-tags:
-  - video
+  pack_total_skills: 2
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: latent-spaces-brag
 ---
 
 # /brag
@@ -119,7 +127,6 @@ specific to the product so the voice feels like part of the edit rather than a
 separate narration track.
 
 ---
-
 ## Output directory
 
 By default, output goes to `brag-output/`. To avoid overwriting previous runs, use a timestamped directory:
@@ -139,7 +146,6 @@ Generate the timestamp at the start of the run (`YYYY-MM-DD-HHmmss`) and use it 
 `<skill-dir>` is the directory containing this `SKILL.md`. Claude Code prints it as "Base directory for this skill" when the skill loads; for other agents it's wherever the skill was installed. Bundled assets are under `<skill-dir>/assets/` and scripts under `<skill-dir>/scripts/`. Don't guess an install path: a plugin install, a `~/.claude/skills/` copy, and this repo all put it somewhere different.
 
 ---
-
 ## Step 1: Inspect the project
 
 **Read:** [references/step-1-inspect.md](https://github.com/latent-spaces/brag/blob/main/skills/brag/references/step-1-inspect.md)
@@ -149,7 +155,6 @@ Scan the project directory and extract the information needed to plan the brag v
 **Gate:** You can answer all 9 questions in the brag planning rubric.
 
 ---
-
 ## Step 2: Plan and storyboard
 
 **Read:** [references/step-2-plan.md](https://github.com/latent-spaces/brag/blob/main/skills/brag/references/step-2-plan.md)
@@ -161,7 +166,6 @@ When music is selected, include a compact `Music cue guidance` section: read the
 **Gate:** `<output-dir>/brag-plan.md` exists with a full storyboard. Scene durations sum to 15–25 seconds.
 
 ---
-
 ## Step 3: Hand off to Hyperframes
 
 **Read:** The Hyperframes domain skills — `hyperframes-core`, `hyperframes-animation`, `hyperframes-creative`, `hyperframes-keyframes`, `hyperframes-cli`. /brag is its own workflow: do not enter the `hyperframes` entry-point intent interview or route into its generic promo / launch-video workflow.
@@ -175,7 +179,6 @@ Write the composition brief and use Hyperframes to create the video implementati
 **Gate:** `npx hyperframes check` passes with zero errors inside `<output-dir>/composition/` (the single browser gate before render — see hyperframes-cli for what it audits).
 
 ---
-
 ## Step 4: Validate, render, and deliver
 
 **Read:** [references/step-4-deliver.md](https://github.com/latent-spaces/brag/blob/main/skills/brag/references/step-4-deliver.md)
@@ -185,7 +188,6 @@ Validate, preview, render to `<output-dir>/brag.mp4`, pick the best poster frame
 **Gate:** `<output-dir>/brag.mp4` exists. A best-frame poster `<output-dir>/brag.jpg` is picked (not an arbitrary frame) and baked as frame 0 of `brag.mp4`. Share copy is written.
 
 ---
-
 ## Tone system
 
 Seven tone presets ship with `/brag`. Each changes scripting energy, pacing, typography personality, and transition style. Presets are defaults, not limits.
@@ -205,7 +207,6 @@ Full definitions: [references/tones.md](https://github.com/latent-spaces/brag/bl
 Always allow a freeform creative direction to refine or override the preset.
 
 ---
-
 ## Creative laws
 
 These apply to every brag video regardless of tone.

@@ -1,0 +1,163 @@
+---
+slug: wshobson-agents-plugins-ui-design-skills-mobile-android-design
+name: mobile-android-design
+tagline: Master Material Design 3 and Jetpack Compose patterns for building
+  native Android apps. Use when designing Android interfaces, implementing
+  Compose UI
+summary: "- Designing Android app interfaces following Material Design 3 -
+  Building Jetpack Compose UI and layouts - Implementing Android navigation
+  patterns (Navigation Compose) - Creating adaptive layouts for phones,
+  tablets,..."
+categories:
+  - coding-agents
+tags:
+  - agent-skills
+  - agentic-ai
+  - ai-agents
+  - anthropic
+status: active
+quality_percentile: 93
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: wshobson/agents
+  subpath: plugins/ui-design/skills/mobile-android-design
+  official_vendor: false
+  license: MIT
+signals:
+  stars: 41052
+  last_commit: 2026-10-19T01:07:28Z
+  stars_delta_7d: 462
+  stars_growth_pct: 1.1
+  trending_score: 467.26
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 40271
+    - 40590
+    - 41052
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: wshobson/agents
+  path: plugins/ui-design/skills/mobile-android-design/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:37:40.662Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: mobile-android-design
+  description: Master Material Design 3 and Jetpack Compose patterns for building
+    native Android apps. Use when designing Android interfaces, implementing
+    Compose UI, or following Google's Material Design guidelines.
+  folder_path: plugins/ui-design/skills/mobile-android-design
+  extra_files:
+    - references/android-navigation.md
+    - references/compose-components.md
+    - references/details.md
+    - references/material3-theming.md
+  pack_total_skills: 185
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: wshobson-agents
+---
+
+# Android Mobile Design
+Master Material Design 3 (Material You) and Jetpack Compose to build modern, adaptive Android applications that integrate seamlessly with the Android ecosystem.
+
+## When to Use This Skill
+
+- Designing Android app interfaces following Material Design 3
+- Building Jetpack Compose UI and layouts
+- Implementing Android navigation patterns (Navigation Compose)
+- Creating adaptive layouts for phones, tablets, and foldables
+- Using Material 3 theming with dynamic colors
+- Building accessible Android interfaces
+- Implementing Android-specific gestures and interactions
+- Designing for different screen configurations
+
+## Detailed section: Core Concepts
+
+Originally a 9201-byte section in this SKILL.md. Moved to `references/details.md` to fit Codex's 8 KB skill body cap.
+
+## Quick Start Component
+
+```kotlin
+@Composable
+fun ItemListCard(
+    item: Item,
+    onItemClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(48.dp)
+                    .clip(CircleShape)
+                    .background(MaterialTheme.colorScheme.primaryContainer),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Star,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+            }
+
+            Spacer(modifier = Modifier.width(16.dp))
+
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = item.title,
+                    style = MaterialTheme.typography.titleMedium
+                )
+                Text(
+                    text = item.subtitle,
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+
+            Icon(
+                imageVector = Icons.Default.ChevronRight,
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
+    }
+}
+```
+
+## Best Practices
+
+1. **Use Material Theme**: Access colors via `MaterialTheme.colorScheme` for automatic dark mode support
+2. **Support Dynamic Color**: Enable dynamic color on Android 12+ for personalization
+3. **Adaptive Layouts**: Use `WindowSizeClass` for responsive designs
+4. **Content Descriptions**: Add `contentDescription` to all interactive elements
+5. **Touch Targets**: Minimum 48dp touch targets for accessibility
+6. **State Hoisting**: Hoist state to make components reusable and testable
+7. **Remember Properly**: Use `remember` and `rememberSaveable` appropriately
+8. **Preview Annotations**: Add `@Preview` with different configurations
+
+## Common Issues
+
+- **Recomposition Issues**: Avoid passing unstable lambdas; use `remember`
+- **State Loss**: Use `rememberSaveable` for configuration changes
+- **Performance**: Use `LazyColumn` instead of `Column` for long lists
+- **Theme Leaks**: Ensure `MaterialTheme` wraps all composables
+- **Navigation Crashes**: Handle back press and deep links properly
+- **Memory Leaks**: Cancel coroutines in `DisposableEffect`

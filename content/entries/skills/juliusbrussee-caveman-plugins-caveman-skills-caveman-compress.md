@@ -1,19 +1,24 @@
 ---
 slug: juliusbrussee-caveman-plugins-caveman-skills-caveman-compress
-name: caveman-compress
+name: compress
 tagline: "Compress a memory file such as CLAUDE.md or a todo list into caveman
-  format to save input tokens, keeping a readable backup. Trigger:
-  /caveman-compres"
+  format to save input tokens, keeping a readable backup. Sends the file's text
+  to "
 summary: Compress natural language files (CLAUDE.md, todos, preferences) into
   caveman-speak to reduce input tokens. Compressed version overwrites original.
   Human-readable backup saved as .original.md, but NOT beside the source...
 categories:
-  - databases-memory
+  - agent-frameworks
+tags:
+  - anthropic
+  - caveman
+  - claude
+  - claude-code
 status: active
-quality_percentile: 56
+quality_percentile: 60
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: JuliusBrussee/caveman
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 111405
-  last_commit: 2026-10-13T16:22:44Z
+  stars: 113528
+  last_commit: 2026-10-18T07:42:47Z
+  stars_delta_7d: 2123
+  stars_growth_pct: 1.9
+  trending_score: 2163.46
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 110366
+    - 111405
+    - 113528
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,14 +43,15 @@ readme_source:
   repo: JuliusBrussee/caveman
   path: plugins/caveman/skills/caveman-compress/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.928Z
+  fetched_at: 2026-10-19T07:36:36.823Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: caveman-compress
+  skill_name: compress
   description: >
     Compress a memory file such as CLAUDE.md or a todo list into caveman format
-    to save input tokens, keeping a readable backup. Trigger: /caveman-compress.
+    to save input tokens, keeping a readable backup. Sends the file's text to
+    the configured model provider. Trigger: /caveman-compress.
   folder_path: plugins/caveman/skills/caveman-compress
   extra_files:
     - scripts/__init__.py
@@ -47,18 +61,27 @@ skill:
     - scripts/compress.py
     - scripts/detect.py
     - scripts/validate.py
-tags:
-  - memory
+  pack_total_skills: 22
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: juliusbrussee-caveman
 ---
 
 # Caveman Compress
 ## Purpose
+
+> **Data leaves the machine.** Compression sends the file's full text to the model provider that `scripts/compress.py` is configured for: the `claude` CLI, the Anthropic API, or an OpenAI-compatible endpoint. Files whose names look like secrets (`.env`, `credentials`, `secrets`, `.netrc`, …) are refused before they are read. Don't compress a file the provider shouldn't see.
 
 Compress natural language files (CLAUDE.md, todos, preferences) into caveman-speak to reduce input tokens. Compressed version overwrites original. Human-readable backup saved as `<filename>.original.md`, but NOT beside the source file — it lives in an out-of-tree data dir (`$XDG_DATA_HOME/caveman-compress/backups/<parent-dir-name>/`, or `%LOCALAPPDATA%\caveman-compress\backups\<parent-dir-name>\` on Windows) so skill auto-loaders don't re-ingest it as a live file.
 
 ## Trigger
 
 `/caveman-compress <filepath>` or when user asks to compress a memory file.
+
+**Requires an explicit filepath.** If the user pastes raw text instead of naming a file, do NOT improvise an inline compression — ask them for the filepath to compress, or offer to save the pasted text to a file first. Writing your own reasoning/commentary about the request into the compressed output (e.g. "User passed text directly, not a filepath...") is the exact failure this guards against — never let that leak into a saved file.
 
 ## Process
 

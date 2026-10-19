@@ -7,11 +7,16 @@ tagline: "How to create and revise a design system made from the Design System
 summary: "Write only under project/: everything else is the type's (refused)."
 categories:
   - cloud-infra
+tags:
+  - ai-agents
+  - ai-prompts
+  - anthropic
+  - chatbot
 status: active
 quality_percentile: 85
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: asgeirtj/system_prompts_leaks
@@ -19,8 +24,15 @@ source:
   official_vendor: false
   license: CC0-1.0
 signals:
-  stars: 69549
-  last_commit: 2026-10-12T02:20:04Z
+  stars: 69880
+  last_commit: 2026-10-16T08:29:42Z
+  stars_delta_7d: 331
+  stars_growth_pct: 0.5
+  trending_score: 332.58
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 69549
+    - 69880
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,7 +40,7 @@ readme_source:
   repo: asgeirtj/system_prompts_leaks
   path: Anthropic/artifact-types/design-system/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:12.500Z
+  fetched_at: 2026-10-19T07:37:14.451Z
   truncated: false
 type: agent_skill
 skill:
@@ -43,7 +55,13 @@ skill:
     - artifact-type/reference/format.md
     - artifact-type/reference/from-code.md
     - artifact-type/reference/from-design-tool.md
-tags: []
+  pack_total_skills: 205
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: asgeirtj-system_prompts_leaks
 ---
 
 # Design System — a system made from the shared type

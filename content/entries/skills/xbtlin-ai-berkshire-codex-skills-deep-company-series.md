@@ -1,17 +1,20 @@
 ---
 slug: xbtlin-ai-berkshire-codex-skills-deep-company-series
 name: deep-company-series
-tagline: "AI Berkshire skill: 看懂XX公司（深度公司系列）：3-8 篇长文拆一家公司. Source:
-  skills/deep-company-series.md."
-summary: This skill is generated from skills/deep-company-series.md so Claude
-  Code and Codex users share one canonical workflow.
+tagline: Agent skill from xbtlin/ai-berkshire
+summary: Agent skill from xbtlin/ai-berkshire
 categories:
-  - productivity-ops
+  - domain-research
+tags:
+  - ai-agent
+  - anthropic
+  - berkshire-hathaway
+  - charlie-munger
 status: active
-quality_percentile: 95
+quality_percentile: 96
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: xbtlin/ai-berkshire
@@ -19,25 +22,36 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 16732
-  last_commit: 2026-10-12T03:52:07Z
-language: zh
+  stars: 16790
+  last_commit: 2026-10-19T07:28:05Z
+  stars_delta_7d: 58
+  stars_growth_pct: 0.3
+  trending_score: 58.2
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 16646
+    - 16732
+    - 16790
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: xbtlin/ai-berkshire
   path: codex-skills/deep-company-series/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.221Z
+  fetched_at: 2026-10-19T07:39:25.280Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: deep-company-series
-  description: "AI Berkshire skill: 看懂XX公司（深度公司系列）：3-8 篇长文拆一家公司. Source:
-    skills/deep-company-series.md."
+  description: Agent skill from xbtlin/ai-berkshire
   folder_path: codex-skills/deep-company-series
   extra_files: []
-tags: []
+  pack_total_skills: 22
+  is_pack_primary: false
+  clients:
+    - codex
+  pack_slug: xbtlin-ai-berkshire
 ---
 
 ## Codex adapter note
@@ -57,7 +71,6 @@ This skill is generated from `skills/deep-company-series.md` so Claude Code and 
 参考样本：`reports/腾讯/《看懂腾讯》/`
 
 ---
-
 ## 一、触发场景
 
 用户希望为一家公司做"教科书级别"的深度研究，并以**系列长文**形式公开发布。区别于一篇研报：
@@ -68,7 +81,6 @@ This skill is generated from `skills/deep-company-series.md` so Claude Code and 
 **不适合用本 skill 的场景**：单篇研报、季报点评、行业研究——那些用 `/investment-research`、`/earnings-review`、`/industry-research`。
 
 ---
-
 ## 二、系列篇目模板
 
 ### 篇数适配公司复杂度（先定篇数，再定篇目）
@@ -109,7 +121,6 @@ This skill is generated from `skills/deep-company-series.md` so Claude Code and 
 **篇目必须适配公司**：模板是腾讯长出来的，不是套子。某篇没有独立内容（如没有投资组合的公司写不了 04），就替换成该公司特有的主轴（如快手的可灵 AI、电商），或按上面的合并方式折进更少的篇数。判断标准：这一篇能否用"一个尖锐问题"独立成文。
 
 ---
-
 ## 二·五、篇内结构模板（从《看懂腾讯》8 篇正文提炼）
 
 每篇不是自由发挥，有固定骨架。共性结构：
@@ -133,7 +144,6 @@ This skill is generated from `skills/deep-company-series.md` so Claude Code and 
 | 08 决策 | SOTP 分部估值（说清"你买的到底是什么"）→ 历史估值分位 + **必须警告"后视镜不是导航仪"** → 未来利润三情景表（乐观/中性/保守 + 隐含增速，标明"是预测不是事实"）→ 红线清单（触发≠必卖，但必须重审）→ 赔率思维收尾 |
 
 ---
-
 ## 三、写作风格规范
 
 ### 语气
@@ -162,7 +172,6 @@ This skill is generated from `skills/deep-company-series.md` so Claude Code and 
 - 用专业读者熟悉的术语（"伯克希尔"而不是"巴菲特"，公司名优于人名）
 
 ---
-
 ## 四、严苛事实核查 Checklist（核心 IP）
 
 ### 写之前就要警惕的"伪精确"陷阱
@@ -194,7 +203,6 @@ This skill is generated from `skills/deep-company-series.md` so Claude Code and 
 - 总股本会反弹：SBC 集中年初授予会让股本短期上升
 
 ---
-
 ## 五、执行流程
 
 ### 阶段 1：调研（写 01-02 篇前完成）
@@ -230,7 +238,6 @@ grep -r "<本机用户名>\|/Users/\|<个人身份信息>" reports/ | head
 确认无误后才 `git pull --rebase && git commit && git push`。
 
 ---
-
 ## 六、修订意见处理流程
 
 用户给修订意见时，按以下顺序处理：
@@ -271,7 +278,6 @@ grep -r "<本机用户名>\|/Users/\|<个人身份信息>" reports/ | head
 ```
 
 ---
-
 ## 七、本 skill 不做什么
 
 - **不替读者做投资决策**——所有篇章末尾"不构成投资建议"
@@ -281,7 +287,6 @@ grep -r "<本机用户名>\|/Users/\|<个人身份信息>" reports/ | head
 - **不强求 8 篇都写**——如果某篇没足够独立内容（如某公司管理层不够特别），合并到其他篇或减篇数
 
 ---
-
 ## 八、合规与隐私
 
 - 所有公开报告**只用公开信息**（财报、官方披露、券商研报、知名第三方机构）
@@ -290,7 +295,6 @@ grep -r "<本机用户名>\|/Users/\|<个人身份信息>" reports/ | head
 - 公开署名按用户多层身份策略，不混用
 
 ---
-
 ## 一句话总结
 
 **写《看懂 X 系列》的核心能力 ≠ 写得好，而是改得严**——

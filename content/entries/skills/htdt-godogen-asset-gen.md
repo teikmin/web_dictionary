@@ -1,20 +1,20 @@
 ---
 slug: htdt-godogen-asset-gen
 name: asset-gen
-tagline: "Generate visual assets from text prompts: PNG images (Gemini / xAI
-  Grok, or local Qwen-Image when installed), GLB 3D models (Tripo CLI), rigged
-  charac"
-summary: "Gemini and Grok are equally strong: both follow detailed prompts
-  closely, and both slip on small details — a miscounted item, a mirrored
-  left/right. Use whichever key is set; with both, assetgen.py defaults to
-  Gemini..."
+tagline: Agent skill from htdt/godogen
+summary: Agent skill from htdt/godogen
 categories:
   - media-creative
+tags:
+  - claude
+  - claude-code
+  - claude-code-skill
+  - codex
 status: active
-quality_percentile: 50
+quality_percentile: 65
 selection_reason: quality_percentile
 first_seen: 2026-02-06T18:46:52
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: htdt/godogen
@@ -22,8 +22,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 7106
-  last_commit: 2026-10-01T18:40:42Z
+  stars: 7160
+  last_commit: 2026-10-16T14:56:03Z
+  stars_delta_7d: 54
+  stars_growth_pct: 0.8
+  trending_score: 54.41
+  rank_current: 80
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 7059
+    - 7106
+    - 7160
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,26 +41,30 @@ readme_source:
   repo: htdt/godogen
   path: asset-gen/SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:16.435Z
+  fetched_at: 2026-10-19T07:39:36.317Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: asset-gen
-  description: >
-    Generate visual assets from text prompts: PNG images (Gemini / xAI Grok, or
-    local Qwen-Image when installed), GLB 3D models (Tripo CLI), rigged
-    characters, retargeted animations, and frame-by-frame animated sprites, plus
-    background removal. Use whenever a game needs generated art.
+  description: Agent skill from htdt/godogen
   folder_path: asset-gen
   extra_files:
+    - api.md
     - motion.md
     - rembg.md
     - tools/asset_gen.py
     - tools/find_loop_frame.py
     - tools/grid_slice.py
+    - tools/loop_audio.py
     - tools/rembg_matting.py
     - tools/requirements.txt
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: htdt-godogen
 ---
 
 # Asset Generator

@@ -1,49 +1,58 @@
 ---
 slug: omnigent-ai-omnigent
-type: agent_tool
 name: omnigent
 tagline: "Omnigent is an open-source AI agent framework and meta-harness:
   orchestrate Claude Code, Codex, Cursor, Pi, and custom agents — swap harnesses
   without"
-summary: "Omnigent is an open-source meta-harness that gives you a common
-  orchestration layer over Claude Code, Codex, Cursor, OpenCode, Hermes, Pi, and
-  the agents you write yourself: swap or combine harnesses without rewriting..."
+summary: "Omnigent is an open-source AI agent framework and meta-harness:
+  orchestrate Claude Code, Codex, Cursor, Pi, and custom agents — swap harnesses
+  without rewriting, enforce policies and sandboxing, and collaborate in real
+  time from any device."
 categories:
   - agent-frameworks
-tags: []
+tags:
+  - agent-framework
+  - agent-governance
+  - agent-orchestration
+  - agents
 status: active
 quality_percentile: 84
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: omnigent-ai/omnigent
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 10781
-  last_commit: 2026-10-13T16:25:51Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 10888
+  last_commit: 2026-10-19T07:29:05Z
+  stars_delta_7d: 107
+  stars_growth_pct: 1
+  trending_score: 108.06
+  rank_current: 22
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 10648
+    - 10781
+    - 10888
 language: en
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - multi
 readme_source:
   repo: omnigent-ai/omnigent
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.360Z
+  fetched_at: 2026-10-19T07:39:30.542Z
   truncated: false
+type: agent_tool
 tool:
   subcategory: agent_framework
   install_command: pip install omnigent
-  runtime: python
+  runtime: multi
   execution_mode: local
   has_mcp_support: true
   mcp_launch:
@@ -76,8 +85,7 @@ Omnigent is an open-source **meta-harness** that gives you a common orchestratio
   <img src="https://raw.githubusercontent.com/omnigent-ai/omnigent/main/docs/images/omnigent-desktop.png" alt="The Omnigent desktop app: starting a new session, with pinned and project-grouped sessions in the sidebar" width="720" />
 </p>
 
----
-## Why Omnigent?
+---## Why Omnigent?
 
 Omnigent lets you:
 
@@ -114,8 +122,7 @@ Omnigent lets you:
   before risky actions, cap spend, or limit which tools an agent reaches.
   They apply to the whole server, one agent, or a single chat.
 
----
-## Quick start
+---## Quick start
 
 ### 1. Install
 
@@ -640,8 +647,7 @@ checked first. Spend caps and access limits ship as builtins.
 
 See the [policy guide](https://github.com/omnigent-ai/omnigent/blob/main/docs/POLICIES.md) for the full catalog and trust model.
 
----
-## Write your own agent
+---## Write your own agent
 
 For centrally managed remote tools, reusable account connections, and a gateway
 with session policies around built-in or external backends, see the
@@ -694,8 +700,7 @@ The same file can declare sub-agents and reviewers. For a fuller example, see
 Polly at [`examples/polly/`](https://github.com/omnigent-ai/omnigent/tree/main/examples/polly/), and the
 [Agent YAML spec](https://github.com/omnigent-ai/omnigent/blob/main/docs/AGENT_YAML_SPEC.md) for the full schema.
 
----
-## Telemetry
+---## Telemetry
 
 Omnigent collects anonymized usage data (telemetry) by default. This data
 contains no sensitive or personally identifiable information. If you're using
@@ -704,8 +709,7 @@ service agreement to determine any data collection that may impact your use of
 the service. To opt out, follow our instructions in
 [Usage Telemetry](https://omnigent.ai/docs/deploy/telemetry).
 
----
-## Contributing
+---## Contributing
 
 Contributions are welcome. See [CONTRIBUTING.md](https://github.com/omnigent-ai/omnigent/blob/main/CONTRIBUTING.md) for how to set up your environment, run the checks, and open a pull request.
 

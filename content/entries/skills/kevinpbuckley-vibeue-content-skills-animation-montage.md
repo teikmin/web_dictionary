@@ -7,11 +7,16 @@ tagline: Create and manipulate Animation Montages — sections, slots, segments,
 summary: Use AnimMontageService for animation montage operations.
 categories:
   - media-creative
+tags:
+  - ai-tools
+  - automation
+  - blueprint
+  - claude
 status: active
-quality_percentile: 51
+quality_percentile: 55
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: kevinpbuckley/VibeUE
@@ -19,8 +24,15 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 745
+  stars: 781
   last_commit: 2026-10-07T14:45:41Z
+  stars_delta_7d: 36
+  stars_growth_pct: 4.8
+  trending_score: 37.74
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 745
+    - 781
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,7 +40,7 @@ readme_source:
   repo: kevinpbuckley/VibeUE
   path: Content/Skills/animation-montage/SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:11.088Z
+  fetched_at: 2026-10-19T07:34:23.730Z
   truncated: false
 type: agent_skill
 skill:
@@ -41,7 +53,13 @@ skill:
   folder_path: Content/Skills/animation-montage
   extra_files:
     - scripts/create_montage.txt
-tags: []
+  pack_total_skills: 39
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: kevinpbuckley-vibeue
 ---
 
 > 🧠 **Brains complement:** IF an `unreal-engine-skills-manager` tool (external MCP) exists in this session, call it with `{action: "load", skill: "animation-system"}` for UE domain knowledge on this topic — correct APIs, architecture, best practices — and treat it as the rubric for any review / "best practices" question. If no such tool is available (e.g. running under Claude Code or Codex without that MCP), skip this line entirely and proceed with this skill alone — do NOT attempt the call.

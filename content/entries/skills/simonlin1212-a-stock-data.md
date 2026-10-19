@@ -1,17 +1,20 @@
 ---
 slug: simonlin1212-a-stock-data
 name: a-stock-data
-tagline: 当任务需要写代码实际获取A股及相关市场数据时使用——行情/K线/逐笔(腾讯日周月前后复权+分钟线+当日逐笔、通达信官网全市场盘后包、百度)、研报(东财+新浪+同花顺+iwencai)、信号(热点/北向/龙虎榜/解禁/行业/板块资金流)、资金面(融资融券/大宗/股东户数/分红/资金流/ETF份额)、新
-summary: 十五层数据架构，87 个能力端点（82 主端点 + 5 备胎）、34 个来源。V3.10 新增的 2 个入口于 2026-09-22
-  实测，V3.9 新增的 25 个入口于 2026-09-20
-  实测；旧端点的验证日期见各章节。覆盖主板/创业板/科创板/ST，北交所覆盖依端点而异；已有备胎的数据可按「备用源速查」降级。
+tagline: Agent skill from simonlin1212/a-stock-data
+summary: Agent skill from simonlin1212/a-stock-data
 categories:
   - domain-research
+tags:
+  - a-share
+  - ai-agent
+  - ai-skill
+  - china-stocks
 status: active
-quality_percentile: 88
+quality_percentile: 85
 selection_reason: quality_percentile
 first_seen: 2026-05-11T01:08:15
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: simonlin1212/a-stock-data
@@ -19,21 +22,31 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 10843
+  stars: 10946
   last_commit: 2026-10-11T13:08:34Z
-language: zh
+  stars_delta_7d: 103
+  stars_growth_pct: 0.9
+  trending_score: 103.98
+  rank_current: 66
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 10657
+    - 10843
+    - 10946
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: simonlin1212/a-stock-data
   path: SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.780Z
-  truncated: true
+  fetched_at: 2026-10-19T07:39:30.480Z
+  truncated: false
 type: agent_skill
 skill:
   skill_name: a-stock-data
-  description: 当任务需要写代码实际获取A股及相关市场数据时使用——行情/K线/逐笔(腾讯日周月前后复权+分钟线+当日逐笔、通达信官网全市场盘后包、百度)、研报(东财+新浪+同花顺+iwencai)、信号(热点/北向/龙虎榜/解禁/行业/板块资金流)、资金面(融资融券/大宗/股东户数/分红/资金流/ETF份额)、新闻(财联社/东财/华尔街见闻/新闻联播)、财务三表/F10/估值历史/ST名单、公告(巨潮)、打板(涨停池/连板/炸板率/监控池/异动)、ETF期权、舆情互动(互动易/上证e互动/热榜)、筹码分布、复权因子、申万行业变迁、宏观与利率(社融/PMI/中债收益率曲线/回购定盘利率/LPR/全球宏观日历)、指数成分/权重/估值/交易日历、期货与大宗商品(五家期货交易所日行情/商品与股指期权/持仓排名/期货日K含大商所/实时期货/A50/上海金)、事件驱动(业绩预告/机构调研/增减持/回购/股权质押/新股申购)、可转债等真实数据。十五层·87端点(含5备胎)·34个来源·内嵌全部可运行代码，自包含零外部文件；优先用腾讯/交易所官方等不封IP源，东财接口已内置限流防封，主源被封可查「备用源速查」降级。仅在需要调用数据接口取数时使用：A股概念解释、投资观点讨论、策略问答等无需取数的话题不要加载本skill。
+  description: Agent skill from simonlin1212/a-stock-data
   folder_path: .
   extra_files:
     - .github/FUNDING.yml
@@ -46,7 +59,13 @@ skill:
     - assets/bmc-qr.png
     - assets/bmc-sponsor.png
     - docs/source-integration-v3.8.0.md
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: simonlin1212-a-stock-data
 ---
 
 > 📦 项目主页：https://github.com/simonlin1212/a-stock-data — 更新、反馈、支持作者
@@ -431,7 +450,6 @@ ETF期权层 (V3.3 新增)
 > 注：`em_get` / `EM_SESSION` / `EM_MIN_INTERVAL` 是所有东财代码块共用的前置定义，使用任一东财端点前需先执行「共用 helper」代码块。
 
 ---
-
 ## When to Activate
 
 - 用户需要**指数成分、指数权重、指数 PE / 股息率、官方交易日历、沪深官方两融或北交所行情备份**（V3.8）。
@@ -465,7 +483,6 @@ ETF期权层 (V3.3 新增)
 - 关键词：估值、一致预期、机构预测、市盈率、PEG、市值、研报、产业链、行业研究、K线、盘口、公告、新闻、**强势股、题材、热点、概念归因、北向资金、沪股通、深股通、概念板块、资金流向、主力、龙虎榜、席位、营业部、全市场龙虎榜、净买入、解禁、限售、行业对比、行业轮动、融资融券、两融、大宗交易、股东户数、筹码集中、分红、派息、送股、指数、ETF、涨停、打板、连板、炸板、跌停、涨停原因、封板、晋级率、ETF期权、希腊字母、隐含波动率、互动易、投资者关系、热榜、人气榜、市场热度、期货、商品期权、股指期权、持仓排名、A50、黄金、上海金、业绩预告、机构调研、增减持、回购、股权质押、新股申购、打新、可转债、转股溢价率、国债收益率、收益率曲线、回购利率、FR007、LPR、宏观日历、ETF份额、ST、新闻联播、上证e互动、聚宽、回测**
 
 ---
-
 ## Prerequisites
 
 ```bash
@@ -1091,7 +1108,6 @@ def _em_day(value):
 <!-- v39-helpers:end -->
 
 ---
-
 ## Layer 1: 行情层（实时，不封IP）
 
 > **V3.10.0 起本层重排：能用的在前，2026-09 起失效的 mootdx 行情命令移到最后（§1.7，留档）。**

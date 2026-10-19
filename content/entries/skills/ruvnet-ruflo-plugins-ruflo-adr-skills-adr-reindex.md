@@ -8,12 +8,17 @@ summary: This is a different failure mode from staleness (an ADR that changed
   but whose stored record didn't) — that's convergence, adr-index's job. This is
   reaping — the source of truth (the ADR file) is gone, so the derived...
 categories:
-  - other
+  - agent-frameworks
+tags:
+  - agentic-ai
+  - agentic-framework
+  - agentic-workflow
+  - agents
 status: active
 quality_percentile: 79
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: ruvnet/ruflo
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 74512
-  last_commit: 2026-10-13T06:51:12Z
+  stars: 76729
+  last_commit: 2026-10-19T06:30:38Z
+  stars_delta_7d: 2217
+  stars_growth_pct: 3
+  trending_score: 2282.96
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 74048
+    - 74512
+    - 76729
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,7 +43,7 @@ readme_source:
   repo: ruvnet/ruflo
   path: plugins/ruflo-adr/skills/adr-reindex/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:54:53.413Z
+  fetched_at: 2026-10-19T07:31:55.771Z
   truncated: false
 type: agent_skill
 skill:
@@ -40,7 +53,13 @@ skill:
     (scripts/reindex.mjs). Use when adr-index alone leaves stale rows behind.
   folder_path: plugins/ruflo-adr/skills/adr-reindex
   extra_files: []
-tags: []
+  pack_total_skills: 161
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: ruvnet-ruflo
 ---
 
 # ADR Reindex

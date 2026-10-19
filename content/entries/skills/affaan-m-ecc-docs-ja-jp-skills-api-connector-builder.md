@@ -1,0 +1,172 @@
+---
+slug: affaan-m-ecc-docs-ja-jp-skills-api-connector-builder
+name: api-connector-builder
+tagline: ターゲット リポジトリの既存統合パターンに正確に一致する新しい API コネクターまたはプロバイダーを構築します。2
+  番目のアーキテクチャを発明せずに、1 つ以上の統合を追加するときに使用します。
+summary: ポイントはホスト リポジトリのパターンと一致することです：
+categories:
+  - productivity-ops
+tags:
+  - ai-agents
+  - anthropic
+  - claude
+  - claude-code
+status: active
+quality_percentile: 96
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: affaan-m/ECC
+  subpath: docs/ja-JP/skills/api-connector-builder
+  official_vendor: false
+  license: MIT
+signals:
+  stars: 283494
+  last_commit: 2026-10-19T05:03:15Z
+  stars_delta_7d: 5114
+  stars_growth_pct: 1.8
+  trending_score: 5207.95
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 274698
+    - 278380
+    - 283494
+language: zh
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: affaan-m/ECC
+  path: docs/ja-JP/skills/api-connector-builder/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:36:32.548Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: api-connector-builder
+  description: ターゲット リポジトリの既存統合パターンに正確に一致する新しい API コネクターまたはプロバイダーを構築します。2
+    番目のアーキテクチャを発明せずに、1 つ以上の統合を追加するときに使用します。
+  folder_path: docs/ja-JP/skills/api-connector-builder
+  extra_files: []
+  pack_total_skills: 312
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: affaan-m-ecc
+---
+
+# API コネクター ビルダー
+リポジトリネイティブな統合サーフェスを追加する場合に使用します。汎用 HTTP クライアントではありません。
+
+ポイントはホスト リポジトリのパターンと一致することです：
+
+- コネクター レイアウト
+- 構成スキーマ
+- 認証モデル
+- エラー処理
+- テスト スタイル
+- 登録/発見ワイヤリング
+
+## 使用するとき
+
+- 「このプロジェクトの Jira コネクターを構築する」
+- 「既存のパターンに従う Slack プロバイダーを追加する」
+- 「この API の新しい統合を作成する」
+- 「リポジトリのコネクター スタイルに一致するプラグインを構築する」
+
+## ガード レール
+
+- リポジトリに既に統合アーキテクチャがある場合は、新しい統合アーキテクチャを発明しないでください。
+- ベンダー ドキュメントだけから始めないでください。最初に既存の repo 内コネクターから始めてください。
+- リポジトリがレジストリ ワイヤリング、テスト、およびドキュメントを期待する場合は、トランスポート コードで停止しないでください。
+- リポジトリに新しい現在のパターンがある場合は、古いコネクターをカーゴカルト化しないでください。
+
+## ワークフロー
+
+### 1. ハウス スタイルを学ぶ
+
+少なくとも 2 つの既存のコネクター/プロバイダーを検査して、マップしてください：
+
+- ファイル レイアウト
+- 抽象化の境界
+- 構成モデル
+- 再試行 / ページネーション コンベンション
+- レジストリ フック
+- テスト フィクスチャと命名
+
+### 2. ターゲット統合を絞り込む
+
+リポジトリが実際に必要とするサーフェスのみを定義します：
+
+- 認証フロー
+- キー エンティティ
+- コア読み取り/書き込み操作
+- ページネーションとレート制限
+- Webhook またはポーリング モデル
+
+### 3. リポジトリネイティブ レイヤーで構築
+
+一般的なスライス：
+
+- 構成/スキーマ
+- クライアント/トランスポート
+- マッピング レイヤー
+- コネクター/プロバイダー エントリ ポイント
+- 登録
+- テスト
+
+### 4. ソース パターンに対して検証
+
+新しいコネクターは、別のエコシステムから インポートされたのではなく、コードベースで明白に見えるはずです。
+
+## リファレンス シェイプ
+
+### プロバイダー スタイル
+
+```text
+providers/
+  existing_provider/
+    __init__.py
+    provider.py
+    config.py
+```
+
+### コネクター スタイル
+
+```text
+integrations/
+  existing/
+    client.py
+    models.py
+    connector.py
+```
+
+### TypeScript プラグイン スタイル
+
+```text
+src/integrations/
+  existing/
+    index.ts
+    client.ts
+    types.ts
+    test.ts
+```
+
+## 品質チェックリスト
+
+- [ ] 既存の repo 内統合パターンに一致します
+- [ ] 構成検証が存在します
+- [ ] 認証とエラー処理が明示的です
+- [ ] ページネーション/再試行動作がリポジトリ規範に従います
+- [ ] レジストリ/発見ワイヤリングが完成しました
+- [ ] テストはホスト リポジトリのスタイルを反映しています
+- [ ] ドキュメント/例がリポジトリで期待されている場合は更新されます
+
+## 関連スキル
+
+- `backend-patterns`
+- `mcp-server-patterns`
+- `github-ops`

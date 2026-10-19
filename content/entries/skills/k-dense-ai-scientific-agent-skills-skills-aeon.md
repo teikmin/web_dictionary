@@ -1,20 +1,20 @@
 ---
 slug: k-dense-ai-scientific-agent-skills-skills-aeon
 name: aeon
-tagline: This skill should be used for time series machine learning tasks
-  including classification, regression, clustering, forecasting, anomaly
-  detection, seg
-summary: Aeon is a scikit-learn compatible Python toolkit for time series
-  machine learning (aeon-toolkit.org). It provides algorithms across
-  classification, regression, clustering, forecasting, anomaly detection,
-  segmentation,...
+tagline: Agent skill from K-Dense-AI/scientific-agent-skills
+summary: Agent skill from K-Dense-AI/scientific-agent-skills
 categories:
-  - agent-frameworks
+  - domain-research
+tags:
+  - agent-skills
+  - ai-scientist
+  - bioinformatics
+  - chemoinformatics
 status: active
-quality_percentile: 68
+quality_percentile: 71
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: K-Dense-AI/scientific-agent-skills
@@ -22,8 +22,15 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 48703
-  last_commit: 2026-10-12T09:43:31Z
+  stars: 52732
+  last_commit: 2026-10-15T23:57:39Z
+  stars_delta_7d: 4029
+  stars_growth_pct: 8.3
+  trending_score: 4362.3
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 48703
+    - 52732
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,18 +38,12 @@ readme_source:
   repo: K-Dense-AI/scientific-agent-skills
   path: skills/aeon/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.077Z
+  fetched_at: 2026-10-19T07:39:55.948Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: aeon
-  description: This skill should be used for time series machine learning tasks
-    including classification, regression, clustering, forecasting, anomaly
-    detection, segmentation, and similarity search. Use when working with
-    temporal data, sequential patterns, or time-indexed observations requiring
-    specialized algorithms beyond standard ML approaches. Particularly suited
-    for univariate and multivariate time series analysis with scikit-learn
-    compatible APIs.
+  description: Agent skill from K-Dense-AI/scientific-agent-skills
   folder_path: skills/aeon
   extra_files:
     - references/anomaly_detection.md
@@ -55,8 +56,13 @@ skill:
     - references/regression.md
     - references/segmentation.md
     - references/similarity_search.md
-tags:
-  - python
+  pack_total_skills: 177
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: k-dense-ai-scientific-agent-skills
 ---
 
 # Aeon Time Series Machine Learning

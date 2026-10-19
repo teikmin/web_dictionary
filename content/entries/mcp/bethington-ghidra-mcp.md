@@ -9,19 +9,34 @@ summary: A production-ready Model Context Protocol (MCP) server that bridges
   automation frameworks. 209 MCP tools, battle-tested AI workflows, and the...
 categories:
   - security-auth
+tags:
+  - binary-analysis
+  - ghidra
+  - ghidra-extension
+  - java
 status: active
-quality_percentile: 66
+quality_percentile: 74
 selection_reason: quality_percentile
 first_seen: 2025-08-30T06:40:03
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: bethington/ghidra-mcp
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 5559
-  last_commit: 2026-10-13T14:37:36Z
+  stars: 5782
+  last_commit: 2026-10-16T01:17:04Z
+  stars_delta_7d: 223
+  stars_growth_pct: 4
+  trending_score: 231.95
+  rank_current: 9
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 4702
+    - 5559
+    - 5782
 language: en
 needs_keys: false
 prerequisites:
@@ -31,7 +46,7 @@ readme_source:
   repo: bethington/ghidra-mcp
   path: README.md
   branch: dev
-  fetched_at: 2026-10-14T14:54:58.044Z
+  fetched_at: 2026-10-19T07:32:29.362Z
   truncated: true
 type: mcp_server
 launch:
@@ -41,7 +56,6 @@ launch:
     - ghidra-mcp-bridge
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # Ghidra MCP Server

@@ -8,12 +8,17 @@ summary: "Scenario 1: Acquiring a Suspect Laptop Hard Drive Connect the drive
   via a Tableau T35u hardware write-blocker, identify as /dev/sdb, use dcfldd
   with SHA-256 hashing, split into 4GB segments for DVD archival, verify ha..."
 categories:
-  - cloud-infra
+  - security-auth
+tags:
+  - ai-agents
+  - claude-code
+  - cloud-security
+  - cybersecurity
 status: active
-quality_percentile: 63
+quality_percentile: 66
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: mukul975/Anthropic-Cybersecurity-Skills
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 34367
+  stars: 34678
   last_commit: 2026-08-31T04:32:44Z
+  stars_delta_7d: 311
+  stars_growth_pct: 0.9
+  trending_score: 313.81
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 33900
+    - 34367
+    - 34678
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,7 +43,7 @@ readme_source:
   repo: mukul975/Anthropic-Cybersecurity-Skills
   path: skills/acquiring-disk-image-with-dd-and-dcfldd/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:13.484Z
+  fetched_at: 2026-10-19T07:39:20.817Z
   truncated: false
 type: agent_skill
 skill:
@@ -46,7 +59,13 @@ skill:
     - LICENSE
     - references/api-reference.md
     - scripts/agent.py
-tags: []
+  pack_total_skills: 818
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: mukul975-anthropic-cybersecurity-skills
 ---
 
 # Acquiring Disk Image with dd and dcfldd

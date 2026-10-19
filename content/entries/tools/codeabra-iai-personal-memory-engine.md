@@ -1,6 +1,5 @@
 ---
 slug: codeabra-iai-personal-memory-engine
-type: agent_tool
 name: iai-personal-memory-engine
 tagline: A cyber brain for your AI. It never forgets a detail, remembers exactly
   what you said, and learns how you work over time. Free, local, works with Curs
@@ -9,40 +8,48 @@ summary: Keeps every conversation word-for-word and gives your AI agent the
 categories:
   - databases-memory
 tags:
-  - memory
+  - agent-memory
+  - ai-memory
+  - claude
+  - claude-code
 status: active
-quality_percentile: 47
+quality_percentile: 55
 selection_reason: quality_percentile
 first_seen: 2026-05-06T08:04:52
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: CodeAbra/iai-personal-memory-engine
   official_vendor: false
   license: MIT
 signals:
-  stars: 906
-  last_commit: 2026-10-07T11:51:57Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 912
+  last_commit: 2026-10-17T01:35:59Z
+  stars_delta_7d: 6
+  stars_growth_pct: 0.7
+  trending_score: 6.04
+  rank_current: 46
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 901
+    - 906
+    - 912
 language: en
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - multi
 readme_source:
   repo: CodeAbra/iai-personal-memory-engine
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:10.052Z
+  fetched_at: 2026-10-19T07:34:17.154Z
   truncated: false
+type: agent_tool
 tool:
   subcategory: memory_rag
-  install_command: pip install iai-memory
-  runtime: python
+  install_command: pip install iai-pme
+  runtime: multi
   execution_mode: local
   has_mcp_support: true
   mcp_launch:
@@ -94,6 +101,7 @@ tool:
 </p>
 
 ---
+
 ## What it is
 
 A local server that speaks the MCP protocol and gives Claude, and any other
@@ -118,6 +126,7 @@ plus one optional nightly consolidation step that asks your model for a single
 insight through the same subscription your CLI already uses.
 
 ---
+
 ## Quick start
 
 ### Claude Code
@@ -178,6 +187,7 @@ native engine, run `iai-mcp migrate-to-lilli` — `iai-mcp doctor` prints the ex
 command, and the [technical reference](https://github.com/CodeAbra/iai-personal-memory-engine/blob/main/docs/REFERENCE.md) documents the full flow.
 
 ---
+
 ## What happens after installation
 
 | Event | Action |
@@ -193,6 +203,7 @@ The background process is called the `daemon` in the CLI. The MCP wrapper and
 unavailable.
 
 ---
+
 ## How it works
 
 ### Memory model
@@ -226,6 +237,7 @@ at no more than 1% of the daily quota. No Anthropic API key is required.
 | **Native engine** | Rust embedder and graph kernels |
 
 ---
+
 ## Dashboard and CLI
 
 ```bash
@@ -246,6 +258,7 @@ configuration files, and directories. Full formats and administrative commands
 are listed in [`docs/REFERENCE.md`](https://github.com/CodeAbra/iai-personal-memory-engine/blob/main/docs/REFERENCE.md).
 
 ---
+
 ## Benchmarks
 
 Every harness ships in `bench/`; methodology and reproduce commands are in
@@ -269,6 +282,7 @@ apply to explicit `memory_recall`, whose default response budget is 1,500
 tokens.
 
 ---
+
 ## MCP tools
 
 ```text
@@ -286,6 +300,7 @@ correction; reinforcement and consolidation; behavioural-profile control; and
 store introspection.
 
 ---
+
 ## Compatibility
 
 | Host | Ambient behaviour |
@@ -300,6 +315,7 @@ store introspection.
 | **Claude Desktop** | MCP tools; plain Chat does not expose Claude Code-style ambient hooks |
 
 ---
+
 ## Privacy and limitations
 
 - Records are encrypted at rest with AES-256-GCM. The store and key live under
@@ -328,6 +344,7 @@ iai-mcp self-update
 ```
 
 ---
+
 ## About the name
 
 **IAI — Independent Autistic Intelligence** describes the memory design.
@@ -343,6 +360,7 @@ iai-mcp self-update
 machine, used by the assistant they already have.
 
 ---
+
 ## Documentation
 
 - [`docs/REFERENCE.md`](https://github.com/CodeAbra/iai-personal-memory-engine/blob/main/docs/REFERENCE.md) — technical and operational reference

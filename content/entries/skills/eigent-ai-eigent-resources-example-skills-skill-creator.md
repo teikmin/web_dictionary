@@ -1,20 +1,20 @@
 ---
 slug: eigent-ai-eigent-resources-example-skills-skill-creator
-name: skill-creator
-tagline: Guide for creating effective skills. Use when creating a new skill or
-  updating an existing skill that extends agent capabilities with specialized
-  know
-summary: Skills are modular, self-contained packages that extend agent
-  capabilities by providing specialized knowledge, workflows, and tools. Think
-  of them as "onboarding guides" for specific domains or tasks—they transform
-  a...
+name: creator
+tagline: Agent skill from eigent-ai/eigent
+summary: Agent skill from eigent-ai/eigent
 categories:
-  - other
+  - agent-frameworks
+tags:
+  - agent-framework
+  - agent-skills
+  - agentic-ai
+  - agentic-workflow
 status: active
-quality_percentile: 75
+quality_percentile: 77
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: eigent-ai/eigent
@@ -22,8 +22,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 15514
-  last_commit: 2026-10-13T12:26:39Z
+  stars: 15599
+  last_commit: 2026-10-17T21:07:58Z
+  stars_delta_7d: 85
+  stars_growth_pct: 0.5
+  trending_score: 85.47
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 15467
+    - 15514
+    - 15599
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,14 +39,12 @@ readme_source:
   repo: eigent-ai/eigent
   path: resources/example-skills/skill-creator/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.091Z
+  fetched_at: 2026-10-19T07:40:23.640Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: skill-creator
-  description: Guide for creating effective skills. Use when creating a new skill
-    or updating an existing skill that extends agent capabilities with
-    specialized knowledge, workflows, or tool integrations.
+  skill_name: creator
+  description: Agent skill from eigent-ai/eigent
   folder_path: resources/example-skills/skill-creator
   extra_files:
     - LICENSE.txt
@@ -47,7 +53,13 @@ skill:
     - scripts/init_skill.py
     - scripts/package_skill.py
     - scripts/quick_validate.py
-tags: []
+  pack_total_skills: 6
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: eigent-ai-eigent
 ---
 
 # Skill Creator

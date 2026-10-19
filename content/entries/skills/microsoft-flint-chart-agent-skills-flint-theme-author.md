@@ -7,12 +7,16 @@ tagline: "Use when: creating, translating, refining, reviewing, or validating a
 summary: Read these before authoring. When prose and source disagree, the
   TypeScript contract is authoritative.
 categories:
-  - productivity-ops
+  - other
+tags:
+  - ai-agents
+  - charting-library
+  - data-visualization
 status: active
-quality_percentile: 94
+quality_percentile: 93
 selection_reason: official_vendor
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: microsoft/flint-chart
@@ -20,8 +24,16 @@ source:
   official_vendor: true
   license: MIT
 signals:
-  stars: 4367
-  last_commit: 2026-10-13T06:27:25Z
+  stars: 4380
+  last_commit: 2026-10-18T17:03:16Z
+  stars_delta_7d: 13
+  stars_growth_pct: 0.3
+  trending_score: 13.04
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 4345
+    - 4367
+    - 4380
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,7 +41,7 @@ readme_source:
   repo: microsoft/flint-chart
   path: agent-skills/flint-theme-author/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:54:58.215Z
+  fetched_at: 2026-10-19T07:32:30.698Z
   truncated: false
 type: agent_skill
 skill:
@@ -41,8 +53,13 @@ skill:
     without inventing fields or changing chart semantics."
   folder_path: agent-skills/flint-theme-author
   extra_files: []
-tags:
-  - typescript
+  pack_total_skills: 2
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: microsoft-flint-chart
 ---
 
 # Flint ThemeSpec authoring

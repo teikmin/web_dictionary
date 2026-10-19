@@ -1,18 +1,18 @@
 ---
 slug: microsoft-skillopt-plugins-openclaw
-name: plugins-skillopt-sleep
-tagline: Reference-only OpenClaw adaptation of SkillOpt-Sleep. Use it to study
-  or port the contributed DeepSeek wrapper, not as a ready-to-run installation.
-summary: Do not run or schedule the files unchanged. Several scripts and the
-  sample configuration preserve assumptions from the contributor's original
-  machine, and parts of the wrapper have not yet been ported to the current s...
+name: openclaw
+tagline: Agent skill from microsoft/SkillOpt
+summary: Agent skill from microsoft/SkillOpt
 categories:
   - other
+tags:
+  - agent-skills
+  - self-evolving-agents
 status: active
 quality_percentile: 98
 selection_reason: official_vendor
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: microsoft/SkillOpt
@@ -20,8 +20,16 @@ source:
   official_vendor: true
   license: MIT
 signals:
-  stars: 18302
-  last_commit: 2026-10-06T17:42:32Z
+  stars: 18547
+  last_commit: 2026-10-18T17:03:51Z
+  stars_delta_7d: 245
+  stars_growth_pct: 1.3
+  trending_score: 248.28
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 18098
+    - 18302
+    - 18547
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,14 +37,12 @@ readme_source:
   repo: microsoft/SkillOpt
   path: plugins/openclaw/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.094Z
+  fetched_at: 2026-10-19T07:40:23.574Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: plugins-skillopt-sleep
-  description: Reference-only OpenClaw adaptation of SkillOpt-Sleep. Use it to
-    study or port the contributed DeepSeek wrapper, not as a ready-to-run
-    installation.
+  skill_name: openclaw
+  description: Agent skill from microsoft/SkillOpt
   folder_path: plugins/openclaw
   extra_files:
     - README.md
@@ -48,7 +54,13 @@ skill:
     - tests/devops-tasks.json
     - tests/research-cron-tasks.json
     - tests/wiki-tasks.json
-tags: []
+  pack_total_skills: 2
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: microsoft-skillopt
 ---
 
 # SkillOpt-Sleep OpenClaw reference adaptation

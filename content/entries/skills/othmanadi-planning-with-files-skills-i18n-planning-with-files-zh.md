@@ -1,6 +1,6 @@
 ---
 slug: othmanadi-planning-with-files-skills-i18n-planning-with-files-zh
-name: planning-with-files-zh
+name: zh
 tagline: 用于多步骤 AI 代理工作的持久化文件规划系统。将 task_plan.md、findings.md 和 progress.md
   保存在磁盘上，生命周期钩子会注入选定的项目规划上下文。自动恢复只读取项目规划文件。只有显式运行 session-catchup.py --metadata
   才会检查本机同
@@ -9,12 +9,17 @@ summary: 1. 使用已安装的 scripts/resolve-plan-dir.sh（或 .ps1），结�
   如果显式选择器被拒绝，或会话隔离已启用且存在多个计划但没有
   PLANID，请修正固定关系，不要回退到另一项任务。只有没有适用的选择器或命名计划时，才使用项目根目录的旧文件。 3....
 categories:
-  - databases-memory
+  - agent-frameworks
+tags:
+  - agent-skills
+  - autonomous-agents
+  - claude
+  - claude-code
 status: active
-quality_percentile: 70
+quality_percentile: 72
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: OthmanAdi/planning-with-files
@@ -22,8 +27,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 27430
-  last_commit: 2026-10-12T08:07:36Z
+  stars: 27522
+  last_commit: 2026-10-17T21:51:12Z
+  stars_delta_7d: 92
+  stars_growth_pct: 0.3
+  trending_score: 92.31
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 27320
+    - 27430
+    - 27522
 language: zh
 needs_keys: false
 prerequisites: []
@@ -31,11 +44,11 @@ readme_source:
   repo: OthmanAdi/planning-with-files
   path: skills/i18n/planning-with-files-zh/SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:14.648Z
+  fetched_at: 2026-10-19T07:37:41.715Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: planning-with-files-zh
+  skill_name: zh
   description: 用于多步骤 AI 代理工作的持久化文件规划系统。将 task_plan.md、findings.md 和 progress.md
     保存在磁盘上，生命周期钩子会注入选定的项目规划上下文。自动恢复只读取项目规划文件。只有显式运行 session-catchup.py
     --metadata 才会检查本机同项目的会话元数据；--replay 可输出有长度限制且由 nonce
@@ -53,7 +66,13 @@ skill:
     - scripts/inject-plan.py
     - scripts/inject-plan.sh
     - scripts/ledger-append.ps1
-tags: []
+  pack_total_skills: 6
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: othmanadi-planning-with-files
 ---
 
 # 文件规划系统

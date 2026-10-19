@@ -1,19 +1,20 @@
 ---
 slug: alibaba-open-code-review-plugins-open-code-review-skills-open-code-review-delegate
-name: open-code-review-delegate
-tagline: Delegation mode for open-code-review (OCR). Instead of OCR calling an
-  LLM endpoint, this skill instructs the host agent to perform the code review
-  its
-summary: A skill for performing AI code review where OCR provides deterministic
-  engineering (file filtering, rule resolution) and the host agent performs the
-  actual review using its own intelligence and tools.
+name: delegate
+tagline: Agent skill from alibaba/open-code-review
+summary: Agent skill from alibaba/open-code-review
 categories:
   - coding-agents
+tags:
+  - agent-skills
+  - code-review
+  - code-review-assistant
+  - harness
 status: active
-quality_percentile: 60
+quality_percentile: 64
 selection_reason: quality_percentile
 first_seen: 2026-05-18T02:16:36
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: alibaba/open-code-review
@@ -21,8 +22,18 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 46827
-  last_commit: 2026-10-13T13:47:09Z
+  stars: 47619
+  last_commit: 2026-10-19T06:58:16Z
+  stars_delta_7d: 792
+  stars_growth_pct: 1.7
+  trending_score: 805.4
+  rank_current: 23
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 44194
+    - 46827
+    - 47619
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,21 +41,21 @@ readme_source:
   repo: alibaba/open-code-review
   path: plugins/open-code-review/skills/open-code-review-delegate/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.056Z
+  fetched_at: 2026-10-19T07:40:23.373Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: open-code-review-delegate
-  description: >
-    Delegation mode for open-code-review (OCR). Instead of OCR calling an LLM
-    endpoint, this skill instructs the host agent to perform the code review
-    itself, using OCR only for deterministic engineering: file selection and
-    rule resolution. Use when the host agent should drive the review with its
-    own LLM capabilities.
+  skill_name: delegate
+  description: Agent skill from alibaba/open-code-review
   folder_path: plugins/open-code-review/skills/open-code-review-delegate
   extra_files: []
-tags:
-  - ocr
+  pack_total_skills: 2
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: alibaba-open-code-review
 ---
 
 # Open Code Review — Delegation Mode

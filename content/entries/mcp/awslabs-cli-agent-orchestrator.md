@@ -8,19 +8,34 @@ summary: "<!-- An absolute raw URL, not a repo-relative path: this file is also
   resolve relative paths."
 categories:
   - agent-frameworks
+tags:
+  - agent-orchestration
+  - ai-agents
+  - ai-coding-assistant
+  - antigravity
 status: active
-quality_percentile: 86
+quality_percentile: 85
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: awslabs/cli-agent-orchestrator
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 1418
-  last_commit: 2026-10-13T14:25:43Z
+  stars: 1451
+  last_commit: 2026-10-19T06:43:45Z
+  stars_delta_7d: 33
+  stars_growth_pct: 2.3
+  trending_score: 33.77
+  rank_current: 31
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1394
+    - 1418
+    - 1451
 language: en
 needs_keys: false
 prerequisites:
@@ -30,7 +45,7 @@ readme_source:
   repo: awslabs/cli-agent-orchestrator
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:08.792Z
+  fetched_at: 2026-10-19T07:33:42.940Z
   truncated: false
 type: mcp_server
 launch:
@@ -40,7 +55,6 @@ launch:
     - cli-agent-orchestrator
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 <!-- An absolute raw URL, not a repo-relative path: this file is also the PyPI
@@ -175,6 +189,7 @@ provider override while keeping the same sequence.
   host-rendered fleet interfaces.
 - [Flows](https://github.com/awslabs/cli-agent-orchestrator/blob/main/docs/flows.md) and [workflows](https://github.com/awslabs/cli-agent-orchestrator/blob/main/docs/workflows.md): scheduled runs and
   multi-step pipelines.
+- [Launch decisions](https://github.com/awslabs/cli-agent-orchestrator/blob/main/docs/decisions.md): local routing settings and content-free records.
 - [Skills](https://github.com/awslabs/cli-agent-orchestrator/blob/main/docs/skills.md): install, scope, and author reusable agent guidance.
 - [Memory](https://github.com/awslabs/cli-agent-orchestrator/blob/main/docs/memory.md) and [self-learning](https://github.com/awslabs/cli-agent-orchestrator/blob/main/docs/self-learning.md):
   persistent cross-session memory, and the opt-in loop that turns workflow

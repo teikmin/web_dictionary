@@ -1,28 +1,39 @@
 ---
 slug: xquik-dev-x-twitter-scraper
 name: x-twitter-scraper
-tagline: X (Twitter) scraper API & tweet scraper with a Twitter MCP server,
-  SDKs, a CLI & webhooks. Xquik is the world's fastest and cheapest X Twitter
-  scraper
-summary: Xquik is the world's fastest and cheapest X Twitter scraper service
-  with the most complete X data. Use it as a tweet scraper and Twitter API
-  alternative. Scrape Twitter search results, Tweets, profiles, followers &
-  re...
+tagline: X (Twitter) scraper API & Twitter MCP server to scrape tweets, profiles
+  & followers. Not affiliated with X Corp.
+summary: X (Twitter) scraper API & Twitter MCP server to scrape tweets, profiles
+  & followers. Not affiliated with X Corp.
 categories:
   - browser-web
+tags:
+  - agent-skills
+  - follower-export
+  - social-media-api
+  - tweet-scraper
 status: active
-quality_percentile: 27
+quality_percentile: 35
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Xquik-dev/x-twitter-scraper
   official_vendor: false
   license: MIT
 signals:
-  stars: 213
-  last_commit: 2026-10-13T12:29:23Z
+  stars: 214
+  last_commit: 2026-10-19T00:14:20Z
+  stars_delta_7d: 1
+  stars_growth_pct: 0.5
+  trending_score: 1
+  rank_current: 85
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 213
+    - 214
 language: en
 needs_keys: false
 prerequisites:
@@ -31,7 +42,7 @@ readme_source:
   repo: Xquik-dev/x-twitter-scraper
   path: README.md
   branch: master
-  fetched_at: 2026-10-14T14:55:17.627Z
+  fetched_at: 2026-10-19T07:39:42.804Z
   truncated: false
 type: mcp_server
 launch:
@@ -40,7 +51,6 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # X (Twitter) scraper API & Twitter MCP server by Xquik

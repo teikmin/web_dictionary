@@ -8,11 +8,16 @@ summary: "Before issuing any control command, verify that this agent is running
   inside a Herdr-managed pane:"
 categories:
   - coding-agents
+tags:
+  - agent-orchestration
+  - ai-agents
+  - claude-code
+  - cli
 status: active
-quality_percentile: 46
+quality_percentile: 55
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: herdrdev/herdr
@@ -20,8 +25,18 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 43772
-  last_commit: 2026-10-13T16:00:58Z
+  stars: 44696
+  last_commit: 2026-10-18T18:57:09Z
+  stars_delta_7d: 924
+  stars_growth_pct: 2.1
+  trending_score: 943.51
+  rank_current: 20
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 42777
+    - 43772
+    - 44696
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,7 +44,7 @@ readme_source:
   repo: herdrdev/herdr
   path: skills/herdr/SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:13.463Z
+  fetched_at: 2026-10-19T07:37:14.839Z
   truncated: false
 type: agent_skill
 skill:
@@ -41,8 +56,13 @@ skill:
     or parallel work. Requires HERDR_ENV=1.
   folder_path: skills/herdr
   extra_files: []
-tags:
-  - terminal
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: herdrdev-herdr
 ---
 
 # Herdr

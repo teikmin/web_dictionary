@@ -11,12 +11,17 @@ summary: "⚠️ The plugin is consumed by two users at once: the human and the
   the LLM sees its state. Internalize this before writing code: the view is
   y..."
 categories:
-  - other
+  - agent-frameworks
+tags:
+  - apps-sdk
+  - chatgpt
+  - claude
+  - claude-code
 status: active
-quality_percentile: 53
+quality_percentile: 56
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: alpic-ai/skybridge
@@ -24,8 +29,17 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 2160
-  last_commit: 2026-10-13T15:28:36Z
+  stars: 2163
+  last_commit: 2026-10-15T12:11:21Z
+  stars_delta_7d: 3
+  stars_growth_pct: 0.1
+  trending_score: 3
+  rank_current: 110
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2160
+    - 2163
 language: en
 needs_keys: false
 prerequisites: []
@@ -33,7 +47,7 @@ readme_source:
   repo: alpic-ai/skybridge
   path: skills/chatgpt-app-builder/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:03.558Z
+  fetched_at: 2026-10-19T07:33:31.310Z
   truncated: false
 type: agent_skill
 skill:
@@ -59,7 +73,13 @@ skill:
     - evals/state-and-context.json
     - evals/ui-guidelines.json
     - evals/update-existing.json
-tags: []
+  pack_total_skills: 3
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: alpic-ai-skybridge
 ---
 
 # Creating Plugins For LLMs

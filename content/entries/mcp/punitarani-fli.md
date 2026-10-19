@@ -5,19 +5,33 @@ tagline: Google Flights MCP, CLI and Python Library
 summary: "The MCP server provides two main tools:"
 categories:
   - domain-research
+tags:
+  - api
+  - flights-api
+  - google-flights
+  - google-flights-api
 status: active
-quality_percentile: 48
+quality_percentile: 47
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: punitarani/fli
   official_vendor: false
   license: MIT
 signals:
-  stars: 3225
+  stars: 3234
   last_commit: 2026-09-20T23:05:06Z
+  stars_delta_7d: 9
+  stars_growth_pct: 0.3
+  trending_score: 9.03
+  rank_current: 64
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3225
+    - 3234
 language: en
 needs_keys: false
 prerequisites:
@@ -27,7 +41,7 @@ readme_source:
   repo: punitarani/fli
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:01.783Z
+  fetched_at: 2026-10-19T07:33:27.215Z
   truncated: false
 type: mcp_server
 launch:
@@ -37,8 +51,6 @@ launch:
     - flights
   env_vars: []
   confidence: manifest
-tags:
-  - python
 ---
 
 # 🛫 Fli - Flight Search MCP Server and Library

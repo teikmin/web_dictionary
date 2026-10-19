@@ -1,0 +1,109 @@
+---
+slug: wshobson-agents-plugins-skill-forge-essentials-skills-visual-edit-precision
+name: visual-edit-precision
+tagline: Use when making UI/frontend changes guided by visual context, when the
+  user selects elements visually, draws annotations, or provides screenshots
+  alon
+summary: "When visual context accompanies a change request (element selections,
+  annotations, screenshots), make targeted, minimal edits. Precision over
+  ambition: change exactly what was indicated, preserve everything else."
+categories:
+  - coding-agents
+tags:
+  - agent-skills
+  - agentic-ai
+  - ai-agents
+  - anthropic
+status: active
+quality_percentile: 93
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: wshobson/agents
+  subpath: plugins/skill-forge-essentials/skills/visual-edit-precision
+  official_vendor: false
+  license: MIT
+signals:
+  stars: 41052
+  last_commit: 2026-10-19T01:07:28Z
+  stars_delta_7d: 462
+  stars_growth_pct: 1.1
+  trending_score: 467.26
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 40271
+    - 40590
+    - 41052
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: wshobson/agents
+  path: plugins/skill-forge-essentials/skills/visual-edit-precision/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:37:40.660Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: visual-edit-precision
+  description: Use when making UI/frontend changes guided by visual context, when
+    the user selects elements visually, draws annotations, or provides
+    screenshots alongside change requests. Also use when editing components
+    where spatial context (element identity, DOM references, layout data)
+    supplements text instructions.
+  folder_path: plugins/skill-forge-essentials/skills/visual-edit-precision
+  extra_files: []
+  pack_total_skills: 185
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: wshobson-agents
+---
+
+# Visual Edit Precision
+## Overview
+
+When visual context accompanies a change request (element selections, annotations, screenshots), make targeted, minimal edits. Precision over ambition: change exactly what was indicated, preserve everything else.
+
+## Process
+
+When visual context is provided:
+
+1. **IDENTIFY** - What exact element(s) were indicated? Which component file owns them?
+2. **SCOPE** - Change ONLY what was pointed at. Don't refactor surrounding code.
+3. **PRESERVE** - Keep existing styles, classes, and behavior. Only modify what was asked.
+4. **TARGETED** - Make the minimal CSS/markup change that achieves the visual result.
+5. **VERIFY** - Confirm the change renders correctly without side effects.
+
+## Key Principles
+
+### Precision Over Ambition
+
+Visual context gives a SPECIFIC element. Don't:
+- Refactor the entire component when only one style was requested
+- Change the component's API when only its appearance was pointed at
+- Touch logic when only visuals were selected
+
+Do:
+- Find the exact file and line for the selected element
+- Make the minimal edit that achieves the described visual change
+- Preserve all existing behavior, event handlers, accessibility
+
+### Multiple Edits
+
+When multiple visual edits arrive:
+- Each targets its own element independently
+- Don't wait for one to finish before processing another
+- If two edits conflict (same element, different requests), handle the most recent
+
+## Common Mistakes
+
+- Rewriting an entire component when the user pointed at one button
+- Changing global config when only one element's color needs adjusting
+- Breaking responsive behavior by adding fixed widths to match a selection
+- Ignoring specificity (user indicated ONE card, agent changed ALL cards)
+- Removing accessibility attributes (aria-*, role, tabindex) during visual edits

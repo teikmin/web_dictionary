@@ -8,19 +8,34 @@ summary: The largest and fastest-growing open-source project for AI context,
   data cataloging, and metadata management.
 categories:
   - databases-memory
+tags:
+  - context
+  - context-layer
+  - data-catalog
+  - data-collaboration
 status: active
-quality_percentile: 96
+quality_percentile: 97
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: open-metadata/OpenMetadata
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 15460
-  last_commit: 2026-10-13T16:24:50Z
+  stars: 15511
+  last_commit: 2026-10-19T07:28:10Z
+  stars_delta_7d: 51
+  stars_growth_pct: 0.3
+  trending_score: 51.17
+  rank_current: 20
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 15400
+    - 15460
+    - 15511
 language: en
 needs_keys: false
 prerequisites:
@@ -29,16 +44,14 @@ readme_source:
   repo: open-metadata/OpenMetadata
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:56.184Z
+  fetched_at: 2026-10-19T07:32:25.364Z
   truncated: false
 type: mcp_server
 launch:
   transport: http
-  remote_url: https://{openmetadata_host}/mcp
   args: []
   env_vars: []
-  confidence: manifest
-tags: []
+  confidence: none
 ---
 
 # OpenMetadata

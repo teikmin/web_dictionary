@@ -7,19 +7,34 @@ summary: While browsing a variety of websites, I repeatedly observed significant
   the reported financial statements often didn't line up, and there w...
 categories:
   - domain-research
+tags:
+  - algorithmic-trading
+  - equities
+  - factor-analysis
+  - finance
 status: active
-quality_percentile: 48
+quality_percentile: 52
 selection_reason: quality_percentile
 first_seen: 2019-04-08T11:44:25
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: JerBouma/FinanceToolkit
   official_vendor: false
   license: MIT
 signals:
-  stars: 5428
-  last_commit: 2026-10-12T20:22:08Z
+  stars: 5439
+  last_commit: 2026-10-18T17:51:37Z
+  stars_delta_7d: 11
+  stars_growth_pct: 0.2
+  trending_score: 11.02
+  rank_current: 59
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 5404
+    - 5428
+    - 5439
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +43,7 @@ readme_source:
   repo: JerBouma/FinanceToolkit
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:58.189Z
+  fetched_at: 2026-10-19T07:32:29.369Z
   truncated: true
 type: mcp_server
 launch:
@@ -37,7 +52,6 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 <!-- mcp-name: io.github.JerBouma/financetoolkit -->

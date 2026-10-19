@@ -1,19 +1,20 @@
 ---
 slug: miqdadbadjuber-anti-slop-skills-antislop-copywriting
 name: antislop-copywriting
-tagline: "Copy and text skill for antislop. Use when writing or editing prose:
-  headlines, tone, CTAs, and anti-AI-writing patterns. Load with the core."
-summary: "- Load together with antislop.md whenever the task is copy or text
-  work. The core holds the mechanism (the purpose test, the three tiers, the
-  Delivery Gate) and the hard bans (R-02, R-15, R-16, R-17, R-18, R-36,
-  R-38)..."
+tagline: Agent skill from miqdadbadjuber/anti-slop
+summary: Agent skill from miqdadbadjuber/anti-slop
 categories:
-  - productivity-ops
+  - coding-agents
+tags:
+  - accessibility
+  - agent-skills
+  - ai-agents
+  - ai-coding-agent
 status: active
-quality_percentile: 45
+quality_percentile: 54
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: miqdadbadjuber/anti-slop
@@ -21,8 +22,15 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 5989
-  last_commit: 2026-10-13T05:27:32Z
+  stars: 6471
+  last_commit: 2026-10-16T11:43:22Z
+  stars_delta_7d: 482
+  stars_growth_pct: 8
+  trending_score: 520.79
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 5989
+    - 6471
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,17 +38,21 @@ readme_source:
   repo: miqdadbadjuber/anti-slop
   path: skills/antislop-copywriting/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.126Z
+  fetched_at: 2026-10-19T07:40:30.948Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: antislop-copywriting
-  description: "Copy and text skill for antislop. Use when writing or editing
-    prose: headlines, tone, CTAs, and anti-AI-writing patterns. Load with the
-    core."
+  description: Agent skill from miqdadbadjuber/anti-slop
   folder_path: skills/antislop-copywriting
   extra_files: []
-tags: []
+  pack_total_skills: 6
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: miqdadbadjuber-anti-slop
 ---
 
 # antislop-copywriting

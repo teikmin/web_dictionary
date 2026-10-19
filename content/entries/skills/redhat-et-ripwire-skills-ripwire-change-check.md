@@ -1,6 +1,6 @@
 ---
 slug: redhat-et-ripwire-skills-ripwire-change-check
-name: ripwire-change-check
+name: change-check
 tagline: "Merge-SAFETY of an existing diff — yours before you push, or a PR you
   review: blast radius, tests to run, a broken contract (--edit-check=SYM),
   branch"
@@ -8,12 +8,17 @@ summary: = repo root. Run from the repo with your working changes
   staged/unstaged, or check out the PR branch first. This works on a real diff —
   --situ, --map-diff, and --pr-context read git diff automatically.
 categories:
-  - domain-research
+  - coding-agents
+tags:
+  - ai-agents
+  - call-graph
+  - claude
+  - claude-code
 status: active
-quality_percentile: 53
+quality_percentile: 56
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: redhat-et/ripwire
@@ -21,8 +26,15 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 2443
-  last_commit: 2026-10-13T16:17:41Z
+  stars: 2458
+  last_commit: 2026-10-19T07:10:31Z
+  stars_delta_7d: 15
+  stars_growth_pct: 0.6
+  trending_score: 15.09
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2443
+    - 2458
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,11 +42,11 @@ readme_source:
   repo: redhat-et/ripwire
   path: skills/ripwire-change-check/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:01.820Z
+  fetched_at: 2026-10-19T07:33:30.115Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: ripwire-change-check
+  skill_name: change-check
   description: >
     Merge-SAFETY of an existing diff — yours before you push, or a PR you
     review: blast radius, tests to run, a broken contract (--edit-check=SYM),
@@ -43,8 +55,13 @@ skill:
     runs --edit-check.
   folder_path: skills/ripwire-change-check
   extra_files: []
-tags:
-  - git
+  pack_total_skills: 18
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: redhat-et-ripwire
 ---
 
 # Change check with ripwire
@@ -233,8 +250,8 @@ emits a flat `<cand r= s= n= id= k= p= l=>` top-K — identity + score + signatu
     1-hop `callers=`, the transitive `--impact` blast radius (`impact_reaches=`), every `--uses`
     read/write/import/call/extends site (`uses=`), how much of that radius the `tested=` lens covers
     (`radius_tested=`/`radius_untested=`), and `--dead-code`'s own zero-caller/internal-linkage shape at
-    `defs=1` (`dead_code_candidate=`), into ONE call. `risk=` NAMES what was found — `none-found` / `uses-exist` / `unmodelled` /
-    `untested-radius` — never a go/no-go verdict; `radius_untested=` equal to `impact_reaches=` is the
+    `defs=1` (`dead_code_candidate=`), into ONE call. `risk=` NAMES what was found — `none-found` / `possible-callers` (a declined call could have
+    meant it; its `<dc>` rows name the sites) / `uses-exist` / `unmodelled` / `untested-radius` — never a go/no-go verdict; `radius_untested=` equal to `impact_reaches=` is the
     strongest signal ("nothing downstream is test-covered"). `ambiguous_callers=`/per-row `amb="1"` disclose
     the same call-graph resolution limit `--edit-check`'s `incompatible=` and `--for`'s `amb=` already carry.
 

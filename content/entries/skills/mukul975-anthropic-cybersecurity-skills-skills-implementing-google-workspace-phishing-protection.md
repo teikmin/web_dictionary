@@ -1,0 +1,150 @@
+---
+slug: mukul975-anthropic-cybersecurity-skills-skills-implementing-google-workspace-phishing-protection
+name: implementing-google-workspace-phishing-protection
+tagline: Configures Google Workspace advanced phishing and malware protection
+  settings in the Admin Console — pre-delivery message scanning, attachment
+  protect
+summary: "- When deploying or configuring implementing google workspace phishing
+  protection capabilities in your environment - When establishing security
+  controls aligned to compliance requirements - When building or improving..."
+categories:
+  - productivity-ops
+tags:
+  - ai-agents
+  - claude-code
+  - cloud-security
+  - cybersecurity
+status: active
+quality_percentile: 66
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: mukul975/Anthropic-Cybersecurity-Skills
+  subpath: skills/implementing-google-workspace-phishing-protection
+  official_vendor: false
+  license: Apache-2.0
+signals:
+  stars: 34678
+  last_commit: 2026-08-31T04:32:44Z
+  stars_delta_7d: 311
+  stars_growth_pct: 0.9
+  trending_score: 313.81
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 33900
+    - 34367
+    - 34678
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: mukul975/Anthropic-Cybersecurity-Skills
+  path: skills/implementing-google-workspace-phishing-protection/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:39:20.892Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: implementing-google-workspace-phishing-protection
+  description: Configures Google Workspace advanced phishing and malware
+    protection settings in the Admin Console — pre-delivery message scanning,
+    attachment protection, spoofing/impersonation detection, and Enhanced Safe
+    Browsing enforcement. Use when hardening Gmail against phishing, spoofing,
+    and malware, or when tuning Workspace email security policies.
+  folder_path: skills/implementing-google-workspace-phishing-protection
+  extra_files:
+    - LICENSE
+    - assets/template.md
+    - references/api-reference.md
+    - references/standards.md
+    - references/workflows.md
+    - scripts/agent.py
+    - scripts/process.py
+  pack_total_skills: 818
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: mukul975-anthropic-cybersecurity-skills
+---
+
+# Implementing Google Workspace Phishing Protection
+## Overview
+Google Workspace provides advanced phishing and malware protection through the Admin Console under Apps > Google Workspace > Gmail > Safety. Key features include Enhanced Pre-Delivery Scanning that examines messages more thoroughly before they reach inboxes, attachment and link protection that scans for malware and checks against known malicious sites, and spoofing detection for domain and employee name impersonation. Google's Advanced Protection Program (APP) provides the strongest account security for high-privilege users.
+
+
+## When to Use
+
+- When deploying or configuring implementing google workspace phishing protection capabilities in your environment
+- When establishing security controls aligned to compliance requirements
+- When building or improving security architecture for this domain
+- When conducting security assessments that require this implementation
+
+## Prerequisites
+- Google Workspace Business Standard or higher license
+- Gmail Settings administrator privilege
+- Understanding of organizational email flow and third-party integrations
+- Access to Google Admin Console (admin.google.com)
+- DNS management access for SPF, DKIM, DMARC configuration
+
+## Workflow
+
+### Step 1: Configure Advanced Phishing Protection
+- Navigate to Admin Console > Apps > Google Workspace > Gmail > Safety
+- Enable "Protect against domain spoofing based on similar domain names"
+- Enable "Protect against spoofing of employee names"
+- Enable "Protect against inbound emails spoofing your domain"
+- Set action for detected spoofing: quarantine or move to spam with warning banner
+- Apply settings to all organizational units or specific high-risk groups
+
+### Step 2: Enable Enhanced Pre-Delivery Scanning
+- In Safety settings, enable "Enhanced pre-delivery message scanning"
+- This adds additional delay (seconds) to scan messages more thoroughly
+- Configure to detect phishing attempts that evade initial filters
+- Enable "Identify links behind shortened URLs"
+- Enable "Scan linked images" for image-based phishing detection
+
+### Step 3: Configure Attachment Protection
+- Enable "Protect against encrypted attachments from untrusted senders"
+- Enable "Protect against attachments with scripts from untrusted senders"
+- Enable "Protect against anomalous attachment types in emails"
+- Configure action: warn users, move to spam, or quarantine
+- Create exceptions for known legitimate encrypted file senders
+
+### Step 4: Enable Enhanced Safe Browsing
+- Navigate to Admin Console > Security > Gmail Enhanced Safe Browsing
+- Enable Enhanced Safe Browsing for the organization (off by default)
+- This provides real-time protection against phishing URLs in emails
+- Configure at organizational unit level for phased rollout
+- Monitor user feedback for false positive impact
+
+### Step 5: Enroll High-Risk Users in Advanced Protection Program
+- Identify high-privilege accounts: super admins, executives, finance leadership
+- Enroll users in Google's Advanced Protection Program (APP)
+- APP requires FIDO2 security keys for authentication
+- APP blocks third-party app access unless explicitly approved
+- APP provides enhanced scanning for Gmail and Drive downloads
+
+### Step 6: Configure Email Authentication
+- Publish SPF record: `v=spf1 include:_spf.google.com ~all`
+- Enable DKIM signing in Admin Console > Apps > Google Workspace > Gmail > Authenticate email
+- Configure DMARC with monitoring: `v=DMARC1; p=none; rua=mailto:dmarc@company.com`
+- Progress DMARC to enforcement per organizational readiness
+
+## Tools & Resources
+- **Google Admin Console**: Central management for all security settings
+- **Google Workspace Security Investigation Tool**: Threat analysis and response
+- **Google Security Center**: Security health recommendations and dashboard
+- **Gmail Security Sandbox**: Attachment detonation for enterprise licenses
+- **Google Advanced Protection Program**: Strongest account security
+
+## Validation
+- Spoofing protection blocks test email with lookalike domain
+- Pre-delivery scanning catches test phishing with delayed weaponization
+- Attachment protection warns on test encrypted attachment
+- Enhanced Safe Browsing blocks known phishing URL clicked in email
+- APP-enrolled accounts reject non-FIDO2 authentication attempts
+- SPF, DKIM, DMARC all pass for outbound messages

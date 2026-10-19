@@ -6,12 +6,17 @@ summary: "Transport matters: - SSE clients receive push notifications for
   debugger events (breakpoints, exceptions, state changes) in real time. - HTTP
   clients must poll — call WaitForEvent to long-poll for events, or read the..."
 categories:
-  - coding-agents
+  - security-auth
+tags:
+  - ai-agents
+  - ai-debugging
+  - binary-analysis
+  - claude
 status: active
-quality_percentile: 72
+quality_percentile: 68
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: duty1g/x64dbg-mcp-server
@@ -19,8 +24,17 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 2484
+  stars: 2563
   last_commit: 2026-10-12T08:49:17Z
+  stars_delta_7d: 79
+  stars_growth_pct: 3.2
+  trending_score: 81.51
+  rank_current: 71
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2484
+    - 2563
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,7 +42,7 @@ readme_source:
   repo: duty1g/x64dbg-mcp-server
   path: SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:01.809Z
+  fetched_at: 2026-10-19T07:33:27.437Z
   truncated: false
 type: agent_skill
 skill:
@@ -46,7 +60,13 @@ skill:
     - logo.png
     - src/core/bridge.zig
     - src/core/config.zig
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: duty1g-x64dbg-mcp-server
 ---
 
 # x64dbg Reverse Engineering — MCP Workflow Guide

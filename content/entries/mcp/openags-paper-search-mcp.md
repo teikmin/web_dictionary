@@ -9,19 +9,32 @@ summary: "- Overview - Project Principles - MCP Authorization Compatibility -
   —..."
 categories:
   - domain-research
+tags:
+  - ai-scientist
+  - arxiv-papers
+  - paper-search
 status: active
-quality_percentile: 40
+quality_percentile: 43
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: openags/paper-search-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 2817
+  stars: 2863
   last_commit: 2026-10-02T06:16:38Z
+  stars_delta_7d: 46
+  stars_growth_pct: 1.6
+  trending_score: 46.75
+  rank_current: 22
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2817
+    - 2863
 language: en
 needs_keys: false
 prerequisites:
@@ -31,7 +44,7 @@ readme_source:
   repo: openags/paper-search-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:02.545Z
+  fetched_at: 2026-10-19T07:33:27.261Z
   truncated: false
 type: mcp_server
 launch:
@@ -41,7 +54,6 @@ launch:
     - paper-search-mcp
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # Paper Search MCP

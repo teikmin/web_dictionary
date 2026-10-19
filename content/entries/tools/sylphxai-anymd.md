@@ -1,6 +1,5 @@
 ---
 slug: sylphxai-anymd
-type: agent_tool
 name: anymd
 tagline: "Any file → clean Markdown for AI agents: PDF, Word, PowerPoint, Excel,
   EPUB, HTML and web pages, images (OCR), audio and video (metadata, subtitles,
@@ -11,52 +10,49 @@ summary: PDF, Word, PowerPoint, Excel, EPUB, HTML and web pages, images (OCR),
 categories:
   - media-creative
 tags:
-  - pdf
-  - audio
-  - video
-  - ocr
+  - ai-agents
+  - cli
+  - document-conversion
+  - docx
 status: active
-quality_percentile: 43
+quality_percentile: 51
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: SylphxAI/anymd
   official_vendor: false
   license: MIT
 signals:
-  stars: 1038
-  last_commit: 2026-10-11T23:42:38Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 1044
+  last_commit: 2026-10-19T01:17:53Z
+  stars_delta_7d: 6
+  stars_growth_pct: 0.6
+  trending_score: 6.03
+  rank_current: 47
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 1038
+    - 1044
 language: en
 needs_keys: false
 prerequisites:
-  - Node.js >= 18
+  - multi
 readme_source:
   repo: SylphxAI/anymd
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:08.437Z
+  fetched_at: 2026-10-19T07:33:54.109Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: browser_agent
-  install_command: npm install -g anymd
-  runtime: node
+  subcategory: coding_agent
+  install_command: cargo install --git https://github.com/SylphxAI/anymd.git
+  runtime: multi
   execution_mode: local
   has_mcp_support: true
-  mcp_launch:
-    transport: stdio
-    command: npx
-    args:
-      - -y
-      - "@sylphx/anymd"
-    env_vars: []
-    confidence: readme
 ---
 
 <div align="center">
@@ -68,6 +64,10 @@ tool:
 <!-- generated:lead -->
 PDF, Word, PowerPoint, Excel, EPUB, HTML and web pages, images (OCR), audio and video (metadata, subtitles, transcripts). A fast Rust MCP server and CLI that runs on your machine. No API key.
 <!-- /generated:lead -->
+
+<!-- generated:hosted -->
+anymd is the free, local mode of the same crates that run [Sylphx AI parse](https://sylphx.com/ai), the hosted document-parse service: the same crates, hosted and metered per page for callers that want no local runtime.
+<!-- /generated:hosted -->
 
 [![npm](https://mark.sylphx.com/npm/v/@sylphx/anymd?style=flat-square&labelColor=0a0d07&color=c3f53c)](https://www.npmjs.com/package/@sylphx/anymd)
 [![downloads](https://img.shields.io/npm/dm/@sylphx/anymd?style=flat-square&labelColor=0a0d07&color=c3f53c)](https://www.npmjs.com/package/@sylphx/anymd)
@@ -194,6 +194,8 @@ npm install -g @sylphx/anymd     # or run it once with: npx -y @sylphx/anymd <fi
 
 Python: `uvx anymd report.pdf > report.md` runs it once, `pip install anymd` installs it, and `uvx anymd mcp` starts the MCP server. The wheels carry the same prebuilt binary.
 
+Windows: `winget install Sylphx.anymd`. macOS and Linux: `brew install sylphxai/tap/anymd`. Scoop: `scoop bucket add sylphx https://github.com/SylphxAI/scoop-bucket && scoop install anymd`.
+
 Docker (amd64 and arm64):
 
 ```bash
@@ -260,11 +262,13 @@ anymd exposes four tools.
 A `read` answer looks like this:
 
 ```markdown
----source: papers/attention.pdf
+---
+source: papers/attention.pdf
 title: Attention Is All You Need
 pages: 15
 showing: pages 1-9
 ---
+
 <!-- page 1 -->
 
 # Attention Is All You Need
@@ -330,7 +334,18 @@ For PDFs, anymd reads glyph positions rather than text runs. Glyphs are grouped 
 
 ## anymd Pro
 
-The anymd core is free and open source (MIT), and nothing that was free has moved to Pro. **anymd Pro** (US$29 once, from 8.4.0) adds exactly two things for agents that must show their evidence: video timelines with exact, hashed frames (`inspect` `video_timeline` and `render_frame`, and the `timeline` option of `read` and `outline`) and cite-check, which verifies a quote at a page and location in a PDF. Licences are checked offline; no account. Pro funds anymd's development. [Buy anymd Pro](https://buy.sylphx.com/buy/anymd) for instant delivery after payment: copy your licence token from the checkout confirmation page, or retrieve it through the emailed licence link. Buy from the terminal: `anymd pro buy` opens the Pro page; in-terminal purchase turns on when the checkout service is live. [See anymd Pro](https://sylphxai.github.io/anymd/pro).
+The anymd core is free and open source (MIT), and nothing that was free has moved to Pro. **anymd Pro** (US$29 once, from 8.4.0) adds exactly two things for agents that must show their evidence: video timelines with exact, hashed frames (`inspect` `video_timeline` and `render_frame`, and the `timeline` option of `read` and `outline`) and cite-check, which verifies a quote at a page and location in a PDF. Licences are checked offline; no account. Pro funds anymd's development. [Buy anymd Pro](https://buy.sylphx.com/buy/anymd) for instant delivery after payment: copy your licence token from the checkout confirmation page, or retrieve it through the emailed licence link. Buy from the terminal: `anymd pro buy` opens the checkout in your browser and turns the payment into a licence token on this machine, so there is nothing to copy. [See anymd Pro](https://sylphxai.github.io/anymd/pro).
+
+## Local and hosted
+
+anymd has two modes, and only one of them runs on your machine:
+
+- **Local (free, MIT, this repository).** The `anymd` binary, the MCP server, the CLI and the `anymd-core`, `anymd-pdf` and `anymd-formats` crates. It converts on your machine, uploads nothing, and needs no API key.
+- **Hosted ([Sylphx AI parse](https://sylphx.com/ai), metered).** The same crates, pinned at the published version and imported unchanged, serve document parsing for Sylphx AI callers that do not want a local runtime. The call is billed per page and needs a Sylphx AI account. This is the paid mode; there is no licence key and nothing in the local binary is gated by it.
+
+Sylphx AI parse is not a different parser and not a fork: the hosted service imports these crates, so a fix here reaches both modes and the two never drift into separate engines. Only the free local binary lives in this repository; the hosted service lives in the Sylphx platform.
+
+For importers, the `anymd-core`, `anymd-pdf` and `anymd-formats` crate APIs are stable within a major version: no breaking change ships without a major version bump, so the service's pinned version keeps working and is moved forward deliberately, never forced by a patch or minor release.
 
 ## Security
 

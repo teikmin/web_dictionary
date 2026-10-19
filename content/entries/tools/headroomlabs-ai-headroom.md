@@ -1,6 +1,5 @@
 ---
 slug: headroomlabs-ai-headroom
-type: agent_tool
 name: headroom
 tagline: Compress tool outputs, logs, files, and RAG chunks before they reach
   the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON,
@@ -8,42 +7,50 @@ tagline: Compress tool outputs, logs, files, and RAG chunks before they reach
 summary: Quickstart · Headroom for Teams · Install · Proof · Agents · Docs ·
   Discord · llms.txt
 categories:
-  - databases-memory
+  - agent-frameworks
 tags:
-  - discord
+  - anthropic
+  - claude-code
+  - compression
+  - context-engineering
 status: active
 quality_percentile: 85
 selection_reason: quality_percentile
 first_seen: 2026-01-07T19:58:51
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: headroomlabs-ai/headroom
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 75189
-  last_commit: 2026-10-13T02:36:25Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 75939
+  last_commit: 2026-10-17T18:29:50Z
+  stars_delta_7d: 750
+  stars_growth_pct: 1
+  trending_score: 757.48
+  rank_current: 7
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 74574
+    - 75189
+    - 75939
 language: en
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - multi
 readme_source:
   repo: headroomlabs-ai/headroom
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:13.048Z
+  fetched_at: 2026-10-19T07:36:39.641Z
   truncated: false
+type: agent_tool
 tool:
   subcategory: memory_rag
   install_command: pip install headroom-ai
-  runtime: python
+  runtime: multi
   execution_mode: local
   has_mcp_support: true
   mcp_launch:
@@ -681,8 +688,8 @@ prompts, completions, code or file paths. It exists so we can see when a release
 regresses a compression ratio across real workloads rather than only our own test
 corpus.
 
-Turn it off with `HEADROOM_BEACON=off`, the `DO_NOT_TRACK=1` convention, or
-`HEADROOM_OFFLINE=1`. The full field list is in
+Turn it off with `HEADROOM_BEACON=off`, `HEADROOM_TELEMETRY=off`, the
+`DO_NOT_TRACK=1` convention, or `HEADROOM_OFFLINE=1`. The full field list is in
 [the proxy docs](https://docs.headroomlabs.ai/docs/proxy).
 
 ## Headroom for teams

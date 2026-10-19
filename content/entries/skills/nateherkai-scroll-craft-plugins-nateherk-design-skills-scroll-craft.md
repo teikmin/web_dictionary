@@ -1,20 +1,20 @@
 ---
 slug: nateherkai-scroll-craft-plugins-nateherk-design-skills-scroll-craft
 name: scroll-craft
-tagline: Build premium scroll-driven landing pages for service, product, food,
-  and drink brands. Plan the visitor journey, page grammar, emotional peak, and
-  be
-summary: "What you produce: an interview brief, a page grammar, a
-  customer-journey map, a feeling curve with one engineered peak, a scroll
-  score, one signature move, generated assets, one real HTML page on a
-  token-driven design..."
+tagline: Agent skill from nateherkai/scroll-craft
+summary: Agent skill from nateherkai/scroll-craft
 categories:
   - media-creative
+tags:
+  - accessibility
+  - agent-skills
+  - ai-web-design
+  - anthropic
 status: active
-quality_percentile: 49
+quality_percentile: 54
 selection_reason: quality_percentile
 first_seen: 2026-08-22T15:25:08
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: nateherkai/scroll-craft
@@ -22,8 +22,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 3334
+  stars: 3649
   last_commit: 2026-09-30T13:31:42Z
+  stars_delta_7d: 315
+  stars_growth_pct: 9.4
+  trending_score: 344.76
+  rank_current: 36
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2978
+    - 3334
+    - 3649
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,24 +41,12 @@ readme_source:
   repo: nateherkai/scroll-craft
   path: plugins/nateherk-design/skills/scroll-craft/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:19.223Z
+  fetched_at: 2026-10-19T07:40:38.204Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: scroll-craft
-  description: >
-    Build premium scroll-driven landing pages for service, product, food, and
-    drink brands. Plan the visitor journey, page grammar, emotional peak, and
-    bespoke signature move. Create dimensional heroes with independent visual
-    planes, restrained motion, and separate mobile composition. Use supplied
-    photos and footage or generate photoreal assets through kie.ai, write
-    semantic HTML, and verify desktop, mobile, and reduced-motion scroll states
-    visually. Use for "scrollcraft", "scroll craft", "layered hero", "premium
-    hero", "cinematic hero", "scrollytelling", "scroll animation site", "a site
-    where scrolling plays a video", "Apple-style landing page", "3D scroll
-    world", "interactive landing page", "make my brand a scroll experience",
-    "this looks like a template", or requests for a distinctive website that
-    feels like an experience rather than a document.
+  description: Agent skill from nateherkai/scroll-craft
   folder_path: plugins/nateherk-design/skills/scroll-craft
   extra_files:
     - CHANGELOG.md
@@ -61,7 +59,13 @@ skill:
     - references/feel.md
     - references/hero-depth.md
     - references/taste.md
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: nateherkai-scroll-craft
 ---
 
 # scroll-craft

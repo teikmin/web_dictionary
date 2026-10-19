@@ -7,12 +7,17 @@ summary: Identify the connected company with paperclipconnection. Locate the
   task by its durable ID or paperclipsearchtasks, then use paperclipreadtask,
   papercliplistdeliverables and paperclipreaddocument to inspect progress a...
 categories:
-  - productivity-ops
+  - agent-frameworks
+tags:
+  - acpx
+  - agent-orchestration
+  - agent-skills
+  - agentic-ai
 status: active
-quality_percentile: 96
+quality_percentile: 97
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: paperclipai/paperclip
@@ -20,8 +25,15 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 101411
-  last_commit: 2026-10-13T16:17:51Z
+  stars: 104300
+  last_commit: 2026-10-19T07:26:15Z
+  stars_delta_7d: 2889
+  stars_growth_pct: 2.8
+  trending_score: 2971.3
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 101411
+    - 104300
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,7 +41,7 @@ readme_source:
   repo: paperclipai/paperclip
   path: integrations/assistant-plugins/claude/paperclip/skills/follow-up-results/SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:11.930Z
+  fetched_at: 2026-10-19T07:36:39.296Z
   truncated: false
 type: agent_skill
 skill:
@@ -38,7 +50,13 @@ skill:
     user-requested feedback with human attribution.
   folder_path: integrations/assistant-plugins/claude/paperclip/skills/follow-up-results
   extra_files: []
-tags: []
+  pack_total_skills: 37
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: paperclipai-paperclip
 ---
 
 Identify the connected company with `paperclip_connection`. Locate the task by its durable ID or `paperclip_search_tasks`, then use `paperclip_read_task`, `paperclip_list_deliverables` and `paperclip_read_document` to inspect progress and actual outputs. Do not rely on memory of another conversation or equate task creation with completion.

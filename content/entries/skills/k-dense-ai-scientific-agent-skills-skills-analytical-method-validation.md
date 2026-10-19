@@ -1,20 +1,20 @@
 ---
 slug: k-dense-ai-scientific-agent-skills-skills-analytical-method-validation
 name: analytical-method-validation
-tagline: Plans, executes, and documents validation, verification, and transfer
-  of analytical procedures under the governing framework - ICH Q2(R2) and Q14,
-  USP
-summary: "Any time the question is whether an analytical procedure is fit for
-  its intended purpose: designing a validation study, evaluating validation
-  data, verifying a compendial procedure, transferring a procedure to
-  another..."
+tagline: Agent skill from K-Dense-AI/scientific-agent-skills
+summary: Agent skill from K-Dense-AI/scientific-agent-skills
 categories:
-  - agent-frameworks
+  - domain-research
+tags:
+  - agent-skills
+  - ai-scientist
+  - bioinformatics
+  - chemoinformatics
 status: active
-quality_percentile: 68
+quality_percentile: 71
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: K-Dense-AI/scientific-agent-skills
@@ -22,8 +22,15 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 48703
-  last_commit: 2026-10-12T09:43:31Z
+  stars: 52732
+  last_commit: 2026-10-15T23:57:39Z
+  stars_delta_7d: 4029
+  stars_growth_pct: 8.3
+  trending_score: 4362.3
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 48703
+    - 52732
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,26 +38,12 @@ readme_source:
   repo: K-Dense-AI/scientific-agent-skills
   path: skills/analytical-method-validation/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.094Z
+  fetched_at: 2026-10-19T07:39:55.948Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: analytical-method-validation
-  description: Plans, executes, and documents validation, verification, and
-    transfer of analytical procedures under the governing framework - ICH Q2(R2)
-    and Q14, USP <1220>/<1225>/<1226>, ICH M10 bioanalytical, CLSI EP, or
-    ISO/IEC 17025. Use for HPLC, LC-MS/MS, GC, CE, ICP-MS, dissolution, qNMR,
-    qPCR, NIR, and ligand binding or cell-based assays whenever the question is
-    whether a procedure is fit for its intended purpose. Triggers include
-    "method validation", "analytical method validation", "AMV", "validation
-    protocol", "acceptance criteria", "linearity", "reportable range", "accuracy
-    and precision", "repeatability", "intermediate precision", "recovery",
-    "LOD", "LOQ", "detection limit", "quantitation limit", "specificity",
-    "robustness", "method transfer", "method comparison", "Deming",
-    "Passing-Bablok", "Bland-Altman", "equivalence testing", "OOS
-    investigation", "ICH Q2", "Q2(R2)", "Q14", "USP 1225", "ICH M10", "incurred
-    sample reanalysis", "ISR", "CLSI EP", and any request to show that an assay
-    works.
+  description: Agent skill from K-Dense-AI/scientific-agent-skills
   folder_path: skills/analytical-method-validation
   extra_files:
     - assets/validation-protocol-template.md
@@ -63,7 +56,13 @@ skill:
     - references/statistics.md
     - scripts/_catalog.py
     - scripts/_common.py
-tags: []
+  pack_total_skills: 177
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: k-dense-ai-scientific-agent-skills
 ---
 
 # Analytical Method Validation

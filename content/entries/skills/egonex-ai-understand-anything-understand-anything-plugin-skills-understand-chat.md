@@ -9,11 +9,16 @@ summary: "The knowledge graph JSON has this structure: - project — {name,
   languageNote..."
 categories:
   - coding-agents
+tags:
+  - antigravity-skills
+  - business-knowledge
+  - claude-code
+  - claude-skills
 status: active
-quality_percentile: 71
+quality_percentile: 66
 selection_reason: quality_percentile
 first_seen: 2026-03-15T02:30:51
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Egonex-AI/Understand-Anything
@@ -21,8 +26,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 86141
+  stars: 86920
   last_commit: 2026-10-12T10:24:59Z
+  stars_delta_7d: 779
+  stars_growth_pct: 0.9
+  trending_score: 786.04
+  rank_current: 24
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 85511
+    - 86141
+    - 86920
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,7 +45,7 @@ readme_source:
   repo: Egonex-AI/Understand-Anything
   path: understand-anything-plugin/skills/understand-chat/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:12.489Z
+  fetched_at: 2026-10-19T07:36:40.548Z
   truncated: false
 type: agent_skill
 skill:
@@ -39,7 +54,13 @@ skill:
     code using a knowledge graph
   folder_path: understand-anything-plugin/skills/understand-chat
   extra_files: []
-tags: []
+  pack_total_skills: 9
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: egonex-ai-understand-anything
 ---
 
 # /understand-chat

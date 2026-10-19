@@ -6,19 +6,33 @@ tagline: A search-first, profile-aware reverse-engineering workspace for AI
 summary: A search-first, profile-aware reverse-engineering workspace for AI agents.
 categories:
   - security-auth
+tags:
+  - ai-agents
+  - anti-detection
+  - browser-automation
+  - chrome-devtools-protocol
 status: active
 quality_percentile: 93
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: vmoranv/jshookmcp
   official_vendor: false
   license: AGPL-3.0
 signals:
-  stars: 2041
-  last_commit: 2026-10-10T13:28:19Z
+  stars: 2057
+  last_commit: 2026-10-18T02:33:42Z
+  stars_delta_7d: 16
+  stars_growth_pct: 0.8
+  trending_score: 16.13
+  rank_current: 48
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2041
+    - 2057
 language: en
 needs_keys: false
 prerequisites:
@@ -27,7 +41,7 @@ readme_source:
   repo: vmoranv/jshookmcp
   path: README.md
   branch: master
-  fetched_at: 2026-10-14T14:55:03.895Z
+  fetched_at: 2026-10-19T07:33:31.046Z
   truncated: false
 type: mcp_server
 launch:
@@ -38,7 +52,6 @@ launch:
     - "@jshookmcp/jshook"
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 <div align="center">

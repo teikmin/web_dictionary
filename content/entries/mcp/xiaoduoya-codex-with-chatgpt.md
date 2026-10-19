@@ -7,20 +7,35 @@ summary: 中文 — ChatGPT 付费订阅的网页版额度大量闲置，Codex �
   Review。本项目把"思考"交给你已付费的网页版 ChatGPT， Codex 只负责执行。不用 API Key、不搞逆向代理——官方网页 + 只读
   MCP 桥接。
 categories:
-  - agent-frameworks
+  - security-auth
+tags:
+  - ai-agents
+  - chatgpt
+  - codex
+  - model-context-protocol
 status: active
-quality_percentile: 77
+quality_percentile: 78
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: XiaoDuoYa/codex-with-chatgpt
   official_vendor: false
   license: MIT
 signals:
-  stars: 7345
+  stars: 7457
   last_commit: 2026-10-01T05:19:24Z
+  stars_delta_7d: 112
+  stars_growth_pct: 1.5
+  trending_score: 113.71
+  rank_current: 12
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 7095
+    - 7345
+    - 7457
 language: en
 needs_keys: false
 prerequisites:
@@ -29,7 +44,7 @@ readme_source:
   repo: XiaoDuoYa/codex-with-chatgpt
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:05.678Z
+  fetched_at: 2026-10-19T07:33:31.435Z
   truncated: false
 type: mcp_server
 launch:
@@ -40,7 +55,6 @@ launch:
     - codex-with-chatgpt
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # Codex with ChatGPT

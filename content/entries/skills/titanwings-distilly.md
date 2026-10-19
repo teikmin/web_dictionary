@@ -6,12 +6,17 @@ tagline: Set up the owner profile so a personal agent knows who it works for
   celebr
 summary: Read only the flow file the request needs, then follow it.
 categories:
-  - other
+  - agent-frameworks
+tags:
+  - agent-skills
+  - agentic-ai
+  - ai-agent
+  - ai-agents
 status: active
-quality_percentile: 70
+quality_percentile: 66
 selection_reason: quality_percentile
 first_seen: 2026-03-30T05:22:23
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: titanwings/distilly
@@ -19,8 +24,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 25573
+  stars: 25774
   last_commit: 2026-10-13T05:57:17Z
+  stars_delta_7d: 201
+  stars_growth_pct: 0.8
+  trending_score: 202.58
+  rank_current: 51
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 25376
+    - 25573
+    - 25774
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,7 +43,7 @@ readme_source:
   repo: titanwings/distilly
   path: SKILL.md
   branch: dot-skill
-  fetched_at: 2026-10-14T14:55:14.629Z
+  fetched_at: 2026-10-19T07:37:40.890Z
   truncated: false
 type: agent_skill
 skill:
@@ -48,7 +63,13 @@ skill:
     - .gitignore
     - .npmrc
     - CITATION.cff
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: titanwings-distilly
 ---
 
 > **Language**: These instructions are written in English. Detect the user's language from their first message and reply to the user in that language throughout.

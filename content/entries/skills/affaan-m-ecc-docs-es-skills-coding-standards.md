@@ -7,11 +7,16 @@ tagline: Convenciones de codificación base entre proyectos para nomenclatura,
 summary: Este skill es el suelo compartido, no el manual detallado de frameworks.
 categories:
   - coding-agents
+tags:
+  - ai-agents
+  - anthropic
+  - claude
+  - claude-code
 status: active
 quality_percentile: 96
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: affaan-m/ECC
@@ -19,8 +24,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 278380
-  last_commit: 2026-10-12T14:45:46Z
+  stars: 283494
+  last_commit: 2026-10-19T05:03:15Z
+  stars_delta_7d: 5114
+  stars_growth_pct: 1.8
+  trending_score: 5207.95
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 274698
+    - 278380
+    - 283494
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,7 +41,7 @@ readme_source:
   repo: affaan-m/ECC
   path: docs/es/skills/coding-standards/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.090Z
+  fetched_at: 2026-10-19T07:36:32.536Z
   truncated: false
 type: agent_skill
 skill:
@@ -38,7 +51,13 @@ skill:
     Usar skills de frontend o backend para patrones específicos de frameworks.
   folder_path: docs/es/skills/coding-standards
   extra_files: []
-tags: []
+  pack_total_skills: 312
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: affaan-m-ecc
 ---
 
 # Estándares de Codificación y Buenas Prácticas

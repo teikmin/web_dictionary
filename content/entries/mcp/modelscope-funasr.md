@@ -7,19 +7,34 @@ tagline: Open-source speech recognition toolkit for training, inference,
 summary: (简体中文|English|日本語|한국어)
 categories:
   - media-creative
+tags:
+  - asr
+  - audio
+  - chinese
+  - emotion-recognition
 status: active
-quality_percentile: 74
+quality_percentile: 79
 selection_reason: quality_percentile
 first_seen: 2022-11-24T02:28:11
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: modelscope/FunASR
   official_vendor: false
   license: MIT
 signals:
-  stars: 20677
-  last_commit: 2026-10-13T03:41:32Z
+  stars: 20748
+  last_commit: 2026-10-18T15:49:53Z
+  stars_delta_7d: 71
+  stars_growth_pct: 0.3
+  trending_score: 71.24
+  rank_current: 18
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 20602
+    - 20677
+    - 20748
 language: en
 needs_keys: false
 prerequisites: []
@@ -27,7 +42,7 @@ readme_source:
   repo: modelscope/FunASR
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:54.782Z
+  fetched_at: 2026-10-19T07:31:56.046Z
   truncated: false
 type: mcp_server
 launch:
@@ -35,7 +50,6 @@ launch:
   args: []
   env_vars: []
   confidence: none
-tags: []
 ---
 
 ([简体中文](https://github.com/modelscope/FunASR/blob/main/README_zh.md)|English|[日本語](https://github.com/modelscope/FunASR/blob/main/README_ja.md)|[한국어](https://github.com/modelscope/FunASR/blob/main/README_ko.md))

@@ -8,11 +8,16 @@ summary: "- Main results pass /result-to-claim with claimsupported = yes or
   reviewer identifies missing ablations"
 categories:
   - domain-research
+tags:
+  - ai-research
+  - ai-tools
+  - aris
+  - autonomous-agent
 status: active
-quality_percentile: 88
+quality_percentile: 90
 selection_reason: quality_percentile
 first_seen: 2026-03-10T07:31:45
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: wanshuiyin/Auto-claude-code-research-in-sleep
@@ -20,8 +25,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 17411
-  last_commit: 2026-10-07T07:46:15Z
+  stars: 17693
+  last_commit: 2026-10-19T06:20:47Z
+  stars_delta_7d: 282
+  stars_growth_pct: 1.6
+  trending_score: 286.57
+  rank_current: 42
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 17090
+    - 17411
+    - 17693
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,7 +44,7 @@ readme_source:
   repo: wanshuiyin/Auto-claude-code-research-in-sleep
   path: skills/ablation-planner/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:54:54.765Z
+  fetched_at: 2026-10-19T07:32:25.027Z
   truncated: false
 type: agent_skill
 skill:
@@ -38,7 +53,13 @@ skill:
     partial) and ablation studies are needed for paper submission.
   folder_path: skills/ablation-planner
   extra_files: []
-tags: []
+  pack_total_skills: 85
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: wanshuiyin-auto-claude-code-research-in-sleep
 ---
 
 # Ablation Planner

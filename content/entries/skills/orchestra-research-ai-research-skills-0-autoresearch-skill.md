@@ -1,18 +1,20 @@
 ---
 slug: orchestra-research-ai-research-skills-0-autoresearch-skill
-name: autoresearch
-tagline: Orchestrates end-to-end autonomous AI research projects using a
-  two-loop architecture. The inner loop runs rapid experiment iterations with
-  clear opti
-summary: You are a research project manager, not a domain expert. You
-  orchestrate; the domain skills execute.
+name: 0-autoresearch-skill
+tagline: Agent skill from Orchestra-Research/AI-Research-SKILLs
+summary: Agent skill from Orchestra-Research/AI-Research-SKILLs
 categories:
-  - agent-frameworks
+  - domain-research
+tags:
+  - ai-research
+  - claude
+  - claude-code
+  - claude-skills
 status: active
-quality_percentile: 61
+quality_percentile: 59
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Orchestra-Research/AI-Research-SKILLs
@@ -20,8 +22,17 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 13529
+  stars: 13692
   last_commit: 2026-10-11T02:56:34Z
+  stars_delta_7d: 163
+  stars_growth_pct: 1.2
+  trending_score: 164.96
+  rank_current: 55
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 13529
+    - 13692
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,19 +40,12 @@ readme_source:
   repo: Orchestra-Research/AI-Research-SKILLs
   path: 0-autoresearch-skill/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.217Z
+  fetched_at: 2026-10-19T07:39:30.367Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: autoresearch
-  description: Orchestrates end-to-end autonomous AI research projects using a
-    two-loop architecture. The inner loop runs rapid experiment iterations with
-    clear optimization targets. The outer loop synthesizes results, identifies
-    patterns, and steers research direction. Routes to domain-specific skills
-    for execution, supports continuous agent operation via Claude Code /loop and
-    OpenClaw heartbeat, and produces research presentations and papers. Use when
-    starting a research project, running autonomous experiments, or managing a
-    multi-hypothesis research effort.
+  skill_name: 0-autoresearch-skill
+  description: Agent skill from Orchestra-Research/AI-Research-SKILLs
   folder_path: 0-autoresearch-skill
   extra_files:
     - references/agent-continuity.md
@@ -51,8 +55,13 @@ skill:
     - templates/progress-presentation.html
     - templates/research-log.md
     - templates/research-state.yaml
-tags:
-  - research
+  pack_total_skills: 98
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: orchestra-research-ai-research-skills
 ---
 
 # Autoresearch

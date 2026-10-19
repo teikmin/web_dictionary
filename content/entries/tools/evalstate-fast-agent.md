@@ -1,46 +1,54 @@
 ---
 slug: evalstate-fast-agent
-type: agent_tool
 name: fast-agent
 tagline: Code, Build and Evaluate agents - excellent Model and
   Skills/MCP/ACP/A2A Support
 summary: fast-agent is a flexible way to interact with LLMs, excellent for use
   as a Coding Agent, Development Toolkit, Evaluation or Workflow platform.
 categories:
-  - productivity-ops
-tags: []
+  - agent-frameworks
+tags:
+  - a2a
+  - acp
+  - agent-framework
+  - agent-skills
 status: active
-quality_percentile: 82
+quality_percentile: 83
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: evalstate/fast-agent
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 3932
-  last_commit: 2026-10-13T08:16:42Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 3942
+  last_commit: 2026-10-18T17:55:49Z
+  stars_delta_7d: 10
+  stars_growth_pct: 0.3
+  trending_score: 10.03
+  rank_current: 42
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 3929
+    - 3932
+    - 3942
 language: en
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - python
 readme_source:
   repo: evalstate/fast-agent
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:00.976Z
+  fetched_at: 2026-10-19T07:32:30.844Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: eval_observability
-  install_command: pip install fast-agent
+  subcategory: coding_agent
+  install_command: pip install fast-agent-mcp
   runtime: python
   execution_mode: local
   has_mcp_support: true

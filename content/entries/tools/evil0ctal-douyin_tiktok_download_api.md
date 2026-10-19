@@ -1,52 +1,58 @@
 ---
 slug: evil0ctal-douyin_tiktok_download_api
-type: agent_tool
 name: Douyin_TikTok_Download_API
-tagline: 🚀 抖音、TikTok 数据采集与无水印视频下载 API，自托管，支持 MCP 调用与 Docker 一键部署。| Self-hosted
-  TikTok & Douyin scraper and no-watermark video downloader — async REST API,
-  MCP
+tagline: "🚀 自托管的抖音、TikTok 数据采集与无水印视频下载 API，支持 AI agent 通过 MCP 调用与离线语音转文字，Docker
+  一键部署。| Self-hosted TikTok & Douyin scraper and no-watermark video downloader —
+  "
 summary: 🚀 A self-hosted data API for Douyin and TikTok. One docker compose up,
   an identity pool that maintains itself, and a REST API, MCP server and web
   console on top.
 categories:
   - browser-web
 tags:
-  - docker
-  - video
+  - ai-agents
+  - crawler
+  - data-collection
+  - douyin
 status: active
-quality_percentile: 78
+quality_percentile: 87
 selection_reason: quality_percentile
 first_seen: 2021-11-07T01:35:09
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Evil0ctal/Douyin_TikTok_Download_API
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 20625
-  last_commit: 2026-10-02T00:45:24Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 20779
+  last_commit: 2026-10-18T10:47:08Z
+  stars_delta_7d: 154
+  stars_growth_pct: 0.7
+  trending_score: 155.15
+  rank_current: 17
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 20496
+    - 20625
+    - 20779
 language: en
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - python
 readme_source:
   repo: Evil0ctal/Douyin_TikTok_Download_API
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:55.295Z
+  fetched_at: 2026-10-19T07:31:56.059Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: browser_agent
-  install_command: pip install -r requirements.txt
+  subcategory: coding_agent
+  install_command: pip install dtk
   runtime: python
-  execution_mode: local
+  execution_mode: hybrid
   has_mcp_support: true
   mcp_launch:
     transport: stdio
@@ -311,6 +317,7 @@ here rather than costing an upstream request.
 | Signing | a_bogus, X-Bogus, X-Gnarly and X-Dynosaur in pure Python |
 | Identity minting | CloakBrowser, headless, in a container of its own, called over HTTP |
 | Downloader | Go 1.23, standard library only, statically linked into a scratch image |
+| Transcription | FunASR ONNX (Paraformer, FSMN-VAD, CT-Transformer), offline, in a container with no network route |
 | Auth | argon2id password hashing · API keys with scopes |
 | Protocols | REST (OpenAPI) · MCP (streamable-http) · CLI |
 | Tooling | uv · ruff · mypy · pytest · Docker Compose |
@@ -357,11 +364,12 @@ Douyin_TikTok_Download_API/
 │       ├── pages/          one file per console page
 │       ├── components/     design system and shared components
 │       └── locales/        console English and Chinese strings
-├── docker/                 three Dockerfiles, compose, and two sidecars
+├── docker/                 four Dockerfiles, compose, and three sidecars
 │   ├── browser_rpc/        Python, wrapping CloakBrowser
 │   ├── downloader/         Go, the media download sidecar
+│   ├── transcriber/        Python, offline FunASR transcription
 │   └── compose.yml
-├── documents/              user documentation, 17 pages in each language
+├── documents/              user documentation, 18 pages in each language
 ├── tests/                  unit / integration / contract / replay
 ├── scripts/                smoke.sh
 ├── .github/workflows/      CI and Docker image publishing
@@ -469,7 +477,7 @@ filesystem, process supervision — you put back yourself. That section lists th
 | What you want to do | Where |
 |---|---|
 | Size a machine, change the container limits | [Three sizes](https://github.com/Evil0ctal/Douyin_TikTok_Download_API/blob/main/documents/en/02-installation.md#three-sizes) · [Changing the limits](https://github.com/Evil0ctal/Douyin_TikTok_Download_API/blob/main/documents/en/02-installation.md#changing-the-limits) |
-| Turn on the browser container or the downloader sidecar | [The two optional profiles](https://github.com/Evil0ctal/Douyin_TikTok_Download_API/blob/main/documents/en/02-installation.md#the-two-optional-profiles) |
+| Turn on the browser container, the downloader or the transcriber sidecar | [The optional profiles](https://github.com/Evil0ctal/Douyin_TikTok_Download_API/blob/main/documents/en/02-installation.md#the-optional-profiles) |
 | Put TLS and a reverse proxy in front | [Behind a reverse proxy](https://github.com/Evil0ctal/Douyin_TikTok_Download_API/blob/main/documents/en/02-installation.md#behind-a-reverse-proxy) |
 | Understand how the environment is actually read | [Environment variables](https://github.com/Evil0ctal/Douyin_TikTok_Download_API/blob/main/documents/en/02-installation.md#environment-variables) |
 | Confirm an install is genuinely healthy | [Verifying an install](https://github.com/Evil0ctal/Douyin_TikTok_Download_API/blob/main/documents/en/02-installation.md#verifying-an-install) |
@@ -482,7 +490,7 @@ filesystem, process supervision — you put back yourself. That section lists th
 | Web console | `/` | Identity pool, scheduler, library, downloads, logs, diagnostics |
 | API reference | `/docs` | Swagger UI inside the console, English and Chinese |
 | Bare reference | `/swagger`, `/redoc` | No login required |
-| REST API | `/api/v1/...` | 93 operations |
+| REST API | `/api/v1/...` | 109 operations |
 | MCP | `/mcp` | Shares the service layer with REST; client setup at `/mcp-guide` in the console |
 | CLI | `dtk --help` | Same |
 
@@ -539,7 +547,7 @@ upgrading, which is the only rollback that always works.
 
 ## 📖 Documentation
 
-**Read it online at [douyin.wtf](https://douyin.wtf)** — the same 17 pages, rendered,
+**Read it online at [douyin.wtf](https://douyin.wtf)** — the same 18 pages, rendered,
 searchable and in both languages. The markdown source is in
 [`documents/`](https://github.com/Evil0ctal/Douyin_TikTok_Download_API/blob/main/documents/README.md) and is what the site is built from, so the two
 never disagree.

@@ -1,19 +1,20 @@
 ---
 slug: k-dense-ai-scientific-agent-skills-skills-alphagenome
 name: alphagenome
-tagline: Looks up precomputed AlphaGenome Atlas effects for any GRCh38
-  single-nucleotide variant (AVI score with Phred and 18 SHAP feature
-  attributions, plus r
-summary: Shell examples quote variant strings because > otherwise redirects
-  output. Network examples below are illustrative and were checked against SDK
-  0.9.0 contracts, without authenticated prediction/Atlas calls during this...
+tagline: Agent skill from K-Dense-AI/scientific-agent-skills
+summary: Agent skill from K-Dense-AI/scientific-agent-skills
 categories:
-  - agent-frameworks
+  - domain-research
+tags:
+  - agent-skills
+  - ai-scientist
+  - bioinformatics
+  - chemoinformatics
 status: active
-quality_percentile: 68
+quality_percentile: 71
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: K-Dense-AI/scientific-agent-skills
@@ -21,8 +22,15 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 48703
-  last_commit: 2026-10-12T09:43:31Z
+  stars: 52732
+  last_commit: 2026-10-15T23:57:39Z
+  stars_delta_7d: 4029
+  stars_growth_pct: 8.3
+  trending_score: 4362.3
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 48703
+    - 52732
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,23 +38,12 @@ readme_source:
   repo: K-Dense-AI/scientific-agent-skills
   path: skills/alphagenome/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.087Z
+  fetched_at: 2026-10-19T07:39:55.948Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: alphagenome
-  description: Looks up precomputed AlphaGenome Atlas effects for any GRCh38
-    single-nucleotide variant (AVI score with Phred and 18 SHAP feature
-    attributions, plus raw and quantile scores for RNA-seq, DNase, ATAC,
-    ChIP-TF, ChIP-histone, CAGE, PRO-cap, splicing, polyadenylation and
-    contact-map tracks), scores variants or scans windows on demand with the
-    AlphaGenome model for human and mouse (variant scoring, in silico
-    mutagenesis, REF-versus-ALT track prediction), and builds Atlas website deep
-    links. Use when the user mentions AlphaGenome, AlphaGenome Atlas, AVI or
-    AlphaGenome Variant Impact, DeepMind variant effect prediction, or wants to
-    prioritise or mechanistically interpret non-coding, regulatory, splicing,
-    enhancer, promoter, or chromatin-accessibility effects of SNVs from a VCF,
-    credible set, or region. Research use only; not a clinical tool.
+  description: Agent skill from K-Dense-AI/scientific-agent-skills
   folder_path: skills/alphagenome
   extra_files:
     - references/atlas.md
@@ -56,7 +53,13 @@ skill:
     - scripts/atlas_link.py
     - scripts/atlas_query.py
     - scripts/score_variants.py
-tags: []
+  pack_total_skills: 177
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: k-dense-ai-scientific-agent-skills
 ---
 
 # AlphaGenome and the AlphaGenome Atlas

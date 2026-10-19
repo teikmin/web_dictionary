@@ -9,12 +9,17 @@ summary: 'Resolve the absolute directory containing this SKILL.md; all helper
   python3 "${CLAUDESKILLDIR}/scripts/acr.py" …. Python 3.9+ standard library
   o...'
 categories:
-  - other
+  - databases-memory
+tags:
+  - ai-agents
+  - ai-memory
+  - anthropic
+  - artificial-intelligence
 status: active
-quality_percentile: 71
+quality_percentile: 73
 selection_reason: quality_percentile
 first_seen: 2025-08-31T20:50:03
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: thedotmack/claude-mem
@@ -22,8 +27,18 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 100334
-  last_commit: 2026-10-13T07:33:53Z
+  stars: 101675
+  last_commit: 2026-10-19T07:28:57Z
+  stars_delta_7d: 1341
+  stars_growth_pct: 1.3
+  trending_score: 1358.92
+  rank_current: 17
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 97519
+    - 100334
+    - 101675
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,7 +46,7 @@ readme_source:
   repo: thedotmack/claude-mem
   path: claude-mem-cursor/skills/agent-cost-report/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.922Z
+  fetched_at: 2026-10-19T07:36:38.585Z
   truncated: false
 type: agent_skill
 skill:
@@ -53,8 +68,14 @@ skill:
     - scripts/acr/devices.py
     - scripts/acr/evidence.py
     - scripts/acr/labels.py
-tags:
-  - python
+  pack_total_skills: 31
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - cursor
+    - codex
+    - antigravity
+  pack_slug: thedotmack-claude-mem
 ---
 
 # Agent Cost Report

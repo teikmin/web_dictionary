@@ -1,19 +1,20 @@
 ---
 slug: nvidia-skills-plugins-nvidia-skills-skills-nvidia-skill-finder
 name: nvidia-skill-finder
-tagline: Use for NVIDIA-related requests where an NVIDIA skill might help, even
-  if the user did not ask for a skill. Trigger on NVIDIA products, hardware,
-  soft
-summary: Help users discover, install, and start using NVIDIA skills that may
-  not be installed yet. Treat this skill as a stable NVIDIA capability detector
-  and catalog router, not as a mirror of every external skill's trigger...
+tagline: Agent skill from NVIDIA/skills
+summary: Agent skill from NVIDIA/skills
 categories:
-  - other
+  - databases-memory
+tags:
+  - agent-skills
+  - agentic-ai
+  - ai-agents
+  - claude-code
 status: active
-quality_percentile: 54
+quality_percentile: 59
 selection_reason: quality_percentile
 first_seen: 2026-02-25T21:54:05
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: NVIDIA/skills
@@ -21,8 +22,18 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 3581
-  last_commit: 2026-10-09T15:27:20Z
+  stars: 3642
+  last_commit: 2026-10-17T15:10:49Z
+  stars_delta_7d: 61
+  stars_growth_pct: 1.7
+  trending_score: 62.04
+  rank_current: 78
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3536
+    - 3581
+    - 3642
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,18 +41,12 @@ readme_source:
   repo: NVIDIA/skills
   path: plugins/nvidia-skills/skills/nvidia-skill-finder/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.534Z
+  fetched_at: 2026-10-19T07:41:08.969Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: nvidia-skill-finder
-  description: Use for NVIDIA-related requests where an NVIDIA skill might help,
-    even if the user did not ask for a skill. Trigger on NVIDIA products,
-    hardware, software, SDKs, GPUs, Jetson/JetPack/L4T/BSP/SDK
-    Manager/driver/flashing/setup, CUDA, NIM, NeMo, Omniverse/OpenUSD/SimReady,
-    Isaac, RAPIDS/cuDF, cuPyNumeric, cuOpt, Dynamo, Holoscan, TensorRT,
-    DeepStream, VSS, TAO, NGC/NVCF. Do not use for generic non-NVIDIA route,
-    optimize, deploy, AI, video, data, or infrastructure tasks.
+  description: Agent skill from NVIDIA/skills
   folder_path: plugins/nvidia-skills/skills/nvidia-skill-finder
   extra_files:
     - BENCHMARK.md
@@ -50,7 +55,13 @@ skill:
     - references/taxonomy-routing.md
     - skill-card.md
     - skill.oms.sig
-tags: []
+  pack_total_skills: 417
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: nvidia-skills
 ---
 
 # NVIDIA Skill Finder

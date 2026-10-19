@@ -1,43 +1,51 @@
 ---
 slug: minishlab-semble
-type: agent_tool
 name: semble
 tagline: Fast and Accurate Code Search for Agents. Uses 99% fewer tokens than grep+read
 summary: Fast and Accurate Code Search for Agents Uses 99% fewer tokens than grep+read
 categories:
   - browser-web
-tags: []
+tags:
+  - agents
+  - code-search
+  - embeddings
+  - model-context-protocol
 status: active
-quality_percentile: 66
+quality_percentile: 69
 selection_reason: quality_percentile
 first_seen: 2026-04-06T14:56:45
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: MinishLab/semble
   official_vendor: false
   license: MIT
 signals:
-  stars: 6199
-  last_commit: 2026-10-11T12:02:42Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 6231
+  last_commit: 2026-10-16T10:48:43Z
+  stars_delta_7d: 32
+  stars_growth_pct: 0.5
+  trending_score: 32.17
+  rank_current: 33
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 6187
+    - 6199
+    - 6231
 language: en
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - python
 readme_source:
   repo: MinishLab/semble
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:57.526Z
+  fetched_at: 2026-10-19T07:32:29.348Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: coding_agent
+  subcategory: other
   install_command: pip install semble
   runtime: python
   execution_mode: local
@@ -77,7 +85,7 @@ tool:
 
 </div>
 
-Semble is a code search library built for agents. It returns the exact code snippets they need instantly, using ~99% fewer tokens than grep+read. Indexing and searching a full codebase end-to-end takes under a second for most repos, matching the retrieval quality of a code-specialized transformer while indexing ~380x faster and querying ~17x faster (see [benchmarks](#benchmarks)). Everything runs on CPU with no API keys, GPU, or external services. Use it as an MCP server, a CLI tool via AGENTS.md, or a dedicated sub-agent, and any coding agent (Claude Code, Cursor, Codex, OpenCode, etc.) gets instant access to any repo.
+Semble is a code search library built for agents. It returns the exact code snippets they need instantly, using ~99% fewer tokens than grep+read. Indexing and searching a full codebase end-to-end takes under a second for most repos, matching the retrieval quality of a code-specialized transformer while indexing ~480x faster and querying ~23x faster (see [benchmarks](#benchmarks)). Everything runs on CPU with no API keys, GPU, or external services. Use it as an MCP server, a CLI tool via AGENTS.md, or a dedicated sub-agent, and any coding agent (Claude Code, Cursor, Codex, OpenCode, etc.) gets instant access to any repo.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MinishLab/semble/main/assets/images/demo-dark.gif">
@@ -131,7 +139,7 @@ semble install --agent claude --type mcp subagent --yes
 ## Main Features
 
 - **Fast**: indexes an average repo in ~500 ms and answers queries in ~1 ms, all on CPU.
-- **Accurate**: NDCG@10 of 0.854 on our [benchmarks](#benchmarks), on par with code-specialized transformer models, at a fraction of the size and cost.
+- **Accurate**: NDCG@10 of 0.855 on our [benchmarks](#benchmarks), on par with code-specialized transformer models, at a fraction of the size and cost.
 - **Token-efficient**: returns only the relevant chunks, using [~99% fewer tokens than grep+read](#benchmarks).
 - **Zero setup**: runs on CPU with no API keys, GPU, or external services required.
 - **MCP server**: works with Claude Code, Cursor, Codex, OpenCode, VS Code, and any other MCP-compatible agent.
@@ -188,6 +196,8 @@ generated/     # exclude generated dir
 !*.proto       # include Protobuf files
 !*.cob         # include COBOL files
 ```
+
+Run `semble file-types` to see which extensions are indexed per content type. Extensions not listed (including data files such as `.json` and `.csv`) are not indexed by default and can be force-included with a `!` pattern as above.
 
 Semble also always skips a set of well-known non-source directories regardless of ignore files (e.g. `node_modules/`, `.venv/`, `dist/`, `build/`, `__pycache__/`, and similar).
 
@@ -312,7 +322,7 @@ We benchmark quality and speed across ~1,250 queries over 63 repositories in 19 
 </tr>
 </table>
 
-The quality benchmark (left) scores retrieval quality (NDCG@10) against total latency; semble matches the quality of the 137M-parameter [CodeRankEmbed](https://huggingface.co/nomic-ai/CodeRankEmbed) while indexing 380x faster. The token efficiency benchmark (right) measures how many tokens each method needs to reach a given recall level; semble uses 99% fewer tokens on average and hits 97% recall at only 2k tokens, while grep+read needs a full 100k context window to reach 85%. See [benchmarks](https://github.com/MinishLab/semble/blob/main/benchmarks/README.md) for per-language results, ablations, and full methodology.
+The quality benchmark (left) scores retrieval quality (NDCG@10) against total latency; semble matches the quality of the 137M-parameter [CodeRankEmbed](https://huggingface.co/nomic-ai/CodeRankEmbed) while indexing 480x faster. The token efficiency benchmark (right) measures how many tokens each method needs to reach a given recall level; semble uses 99% fewer tokens on average and hits 96% recall at only 2k tokens, while grep+read needs a full 100k context window to reach 85%. See [benchmarks](https://github.com/MinishLab/semble/blob/main/benchmarks/README.md) for per-language results, ablations, and full methodology.
 
 ## How it works
 

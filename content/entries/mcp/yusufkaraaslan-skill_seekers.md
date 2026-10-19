@@ -7,19 +7,33 @@ summary: English | 简体中文 | 日本語 | 한국어 | Español | Français |
   Türkçe | العربية | हिन्दी | Русский
 categories:
   - coding-agents
+tags:
+  - ai-tools
+  - ast-parser
+  - automation
+  - claude-ai
 status: active
 quality_percentile: 87
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: yusufkaraaslan/Skill_Seekers
   official_vendor: false
   license: MIT
 signals:
-  stars: 15141
+  stars: 15180
   last_commit: 2026-09-30T18:49:17Z
+  stars_delta_7d: 39
+  stars_growth_pct: 0.3
+  trending_score: 39.1
+  rank_current: 28
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 15141
+    - 15180
 language: en
 needs_keys: false
 prerequisites:
@@ -29,7 +43,7 @@ readme_source:
   repo: yusufkaraaslan/Skill_Seekers
   path: README.md
   branch: development
-  fetched_at: 2026-10-14T14:54:56.348Z
+  fetched_at: 2026-10-19T07:32:25.341Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,8 +53,6 @@ launch:
     - skill-seekers
   env_vars: []
   confidence: manifest
-tags:
-  - github
 ---
 
 <p align="center">

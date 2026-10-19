@@ -1,20 +1,20 @@
 ---
 slug: epoko77-ai-im-not-ai-extras-skills-commit-ko
 name: commit-ko
-tagline: AI(Claude 등)가 제안한 한글 커밋 메시지의 사무적·번역투 어휘("~을 수행함", "~을 진행함", "~적 개선을
-  실시함" 등)를 실제 개발자가 쓰는 자연스러운 한국어 커밋 메시지로 다듬는 스킬. humanize-korean과 달리 산문 문단이 아니라
-  1~2줄짜
-summary: "- 커밋 메시지 초안(subject 1줄 + 선택적 body). 여러 개면 각각 처리. - Conventional
-  Commits 형식(type(scope): subject, 예: fix(auth): 로그인 실패 시 재시도 로직을 수행함)이면
-  type/scope 접두사는 그대로 두고, 콜론 뒤 한국어 부분만 윤문 대상으로 삼는다. - (선택) 사용자가 git diff나 변경 요약을
-  함께..."
+tagline: Agent skill from epoko77-ai/im-not-ai
+summary: Agent skill from epoko77-ai/im-not-ai
 categories:
-  - coding-agents
+  - other
+tags:
+  - agent-skills
+  - ai-detection
+  - claude
+  - claude-code
 status: active
-quality_percentile: 60
+quality_percentile: 64
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: epoko77-ai/im-not-ai
@@ -22,8 +22,15 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 5971
+  stars: 6047
   last_commit: 2026-10-12T09:57:11Z
+  stars_delta_7d: 76
+  stars_growth_pct: 1.3
+  trending_score: 76.97
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 5971
+    - 6047
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,22 +38,22 @@ readme_source:
   repo: epoko77-ai/im-not-ai
   path: extras/skills/commit-ko/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.144Z
+  fetched_at: 2026-10-19T07:40:31.003Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: commit-ko
-  description: >
-    AI(Claude 등)가 제안한 한글 커밋 메시지의 사무적·번역투 어휘("~을 수행함", "~을 진행함", "~적 개선을 실시함" 등)를
-    실제 개발자가 쓰는 자연스러운 한국어 커밋 메시지로 다듬는 스킬. humanize-korean과 달리 산문 문단이 아니라 1~2줄짜리
-    커밋 메시지 register에 특화되어 진단·청킹 없이 단일 콜로 즉시 처리한다. 트리거 — "커밋 메시지 자연스럽게", "커밋 메시지
-    다듬어줘", "이 커밋 메시지 AI 티 나", "commit message 한국어로 자연스럽게", "커밋 메시지 어색해", "커밋 메시지
-    사람처럼".
+  description: Agent skill from epoko77-ai/im-not-ai
   folder_path: extras/skills/commit-ko
   extra_files:
     - references/commit-lexicon.md
-tags:
-  - git
+  pack_total_skills: 5
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: epoko77-ai-im-not-ai
 ---
 
 # commit-ko — 커밋 메시지 자연화

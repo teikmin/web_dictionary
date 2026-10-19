@@ -1,17 +1,20 @@
 ---
 slug: gentleman-programming-gentle-ai-internal-assets-skills-cognitive-doc-design
 name: cognitive-doc-design
-tagline: "Design docs that reduce cognitive load. Trigger: writing guides,
-  READMEs, RFCs, onboarding, architecture, or review-facing docs."
-summary: Load this skill when creating or editing documentation that people need
-  to understand quickly, retain, or use during review.
+tagline: Agent skill from Gentleman-Programming/gentle-ai
+summary: Agent skill from Gentleman-Programming/gentle-ai
 categories:
-  - media-creative
+  - coding-agents
+tags:
+  - agent-skills
+  - ai-agents
+  - ai-coding
+  - claude-code
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Gentleman-Programming/gentle-ai
@@ -19,8 +22,15 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 7736
-  last_commit: 2026-10-12T22:54:05Z
+  stars: 7849
+  last_commit: 2026-10-18T03:14:37Z
+  stars_delta_7d: 113
+  stars_growth_pct: 1.5
+  trending_score: 114.65
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 7736
+    - 7849
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,16 +38,21 @@ readme_source:
   repo: Gentleman-Programming/gentle-ai
   path: internal/assets/skills/cognitive-doc-design/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.401Z
+  fetched_at: 2026-10-19T07:39:38.094Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: cognitive-doc-design
-  description: "Design docs that reduce cognitive load. Trigger: writing guides,
-    READMEs, RFCs, onboarding, architecture, or review-facing docs."
+  description: Agent skill from Gentleman-Programming/gentle-ai
   folder_path: internal/assets/skills/cognitive-doc-design
   extra_files: []
-tags: []
+  pack_total_skills: 18
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: gentleman-programming-gentle-ai
 ---
 
 ## When to Use

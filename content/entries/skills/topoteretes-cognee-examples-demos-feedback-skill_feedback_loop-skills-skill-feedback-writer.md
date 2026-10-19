@@ -1,18 +1,20 @@
 ---
 slug: topoteretes-cognee-examples-demos-feedback-skill_feedback_loop-skills-skill-feedback-writer
-name: skill-feedback-writer
-tagline: Use to identify missing instructions in another skill based on its output.
-summary: Focus on improving pr-comment-evaluator unless diff-risk-explainer
-  failed to identify the main runtime risk. The pr-comment-evaluator is
-  defective if it judges tone only or fails to compare the reviewer comment
-  agains...
+name: feedback-writer
+tagline: Agent skill from topoteretes/cognee
+summary: Agent skill from topoteretes/cognee
 categories:
-  - agent-frameworks
+  - databases-memory
+tags:
+  - agent-memory
+  - agent-skills
+  - ai-agents
+  - ai-memory
 status: active
-quality_percentile: 68
+quality_percentile: 77
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: topoteretes/cognee
@@ -20,8 +22,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 32175
-  last_commit: 2026-10-13T16:25:20Z
+  stars: 32515
+  last_commit: 2026-10-19T05:14:14Z
+  stars_delta_7d: 340
+  stars_growth_pct: 1.1
+  trending_score: 343.59
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 31540
+    - 32175
+    - 32515
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,15 +39,21 @@ readme_source:
   repo: topoteretes/cognee
   path: examples/demos/feedback/skill_feedback_loop/skills/skill-feedback-writer/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.080Z
+  fetched_at: 2026-10-19T07:40:23.378Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: skill-feedback-writer
-  description: Use to identify missing instructions in another skill based on its output.
+  skill_name: feedback-writer
+  description: Agent skill from topoteretes/cognee
   folder_path: examples/demos/feedback/skill_feedback_loop/skills/skill-feedback-writer
   extra_files: []
-tags: []
+  pack_total_skills: 3
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: topoteretes-cognee
 ---
 
 # skill-feedback-writer

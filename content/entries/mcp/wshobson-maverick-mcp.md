@@ -10,19 +10,34 @@ summary: MaverickMCP is an open-source stock market MCP server for stock
   co...
 categories:
   - domain-research
+tags:
+  - ai-agents
+  - anthropic
+  - backtesting
+  - claude
 status: active
-quality_percentile: 81
+quality_percentile: 82
 selection_reason: quality_percentile
 first_seen: 2025-08-24T15:24:20
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: wshobson/maverick-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 704
-  last_commit: 2026-10-13T06:17:27Z
+  stars: 707
+  last_commit: 2026-10-17T23:30:31Z
+  stars_delta_7d: 3
+  stars_growth_pct: 0.4
+  trending_score: 3.01
+  rank_current: 76
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 701
+    - 704
+    - 707
 language: en
 needs_keys: false
 prerequisites:
@@ -31,18 +46,14 @@ readme_source:
   repo: wshobson/maverick-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.636Z
+  fetched_at: 2026-10-19T07:34:17.476Z
   truncated: false
 type: mcp_server
 launch:
   transport: http
-  remote_url: http://localhost:8003/mcp
   args: []
   env_vars: []
-  confidence: manifest
-tags:
-  - python
-  - finance
+  confidence: none
 ---
 
 <!-- mcp-name: io.github.wshobson/maverick-mcp -->
@@ -76,10 +87,8 @@ or provide financial advice. Market data can be delayed, incomplete, or wrong.
 | Portfolio tracking | Record positions, calculate average cost and profit or loss, review risk, manage watchlists, and keep a trade journal. |
 | Optional backtesting and research | Test strategies on historical data, compare results, or research companies and sectors with source citations. |
 
-The current source has 38 core tools, 12 optional backtesting tools, and 3
-optional research tools. The published `v1.1.0` release has 37 core tools and
-predates the current correctness fixes. Follow the source installation below
-for the behavior documented here.
+The `v1.2.1` release has 38 core tools, 12 optional backtesting tools, and 3
+optional research tools.
 
 Daily history supports US stock symbols and the exchange suffixes `.L`, `.T`,
 `.TO`, `.AX`, `.HK`, and `.DE`. Other exchange suffixes return a calendar error
@@ -120,11 +129,10 @@ uv run --directory /absolute/path/to/maverick-mcp maverick-mcp --transport stdio
 
 The PyPI name `maverick-mcp-server` belongs to an unrelated project while the
 [name-transfer request](https://github.com/pypi/support/issues/12150) is pending.
-Do not install that name from PyPI. The existing release can be run from its
-Git tag, but it does not include the changes described for current source.
+Do not install that name from PyPI. Run the release from its Git tag instead.
 
 ```bash
-uvx --from "git+https://github.com/wshobson/maverick-mcp@v1.1.0" maverick-mcp --transport stdio
+uvx --from "git+https://github.com/wshobson/maverick-mcp@v1.2.1" maverick-mcp --transport stdio
 ```
 
 ### Connect your MCP client
@@ -163,8 +171,8 @@ it local unless you have configured separate access controls.
 
 ### Docker with persistent data
 
-Build the current source to include the fixes documented here. The existing
-published `1.1.0` image predates them.
+Build the image from source as shown below, or run the published
+`ghcr.io/wshobson/maverick-mcp:1.2.1` image with the same options.
 
 ```bash
 cp .env.example .env

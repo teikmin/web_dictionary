@@ -1,19 +1,20 @@
 ---
 slug: aaron-he-zhu-aaron-marketing-skills-ad-activate-conversion-value-mapper
 name: conversion-value-mapper
-tagline: Use when the user asks to "set up conversion values so tROAS optimizes
-  profit not orders", "map margin onto my purchase value", "build value rules
-  for
-summary: "Expected output: a conversion value-model spec (per-conversion value +
-  net-value/margin adjustment + rule logic), a static-vs-dynamic value-rule
-  decision, proxy values for non-revenue actions with a stated derivation,..."
+tagline: Agent skill from aaron-he-zhu/aaron-marketing-skills
+summary: Agent skill from aaron-he-zhu/aaron-marketing-skills
 categories:
   - productivity-ops
+tags:
+  - aaron-marketing
+  - agent-skills
+  - ai-staff
+  - brand-messaging
 status: active
-quality_percentile: 48
+quality_percentile: 58
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: aaron-he-zhu/aaron-marketing-skills
@@ -21,8 +22,15 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 2930
-  last_commit: 2026-10-13T13:23:14Z
+  stars: 2980
+  last_commit: 2026-10-19T02:54:48Z
+  stars_delta_7d: 50
+  stars_growth_pct: 1.7
+  trending_score: 50.85
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2930
+    - 2980
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,25 +38,21 @@ readme_source:
   repo: aaron-he-zhu/aaron-marketing-skills
   path: ad/activate/conversion-value-mapper/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:19.242Z
+  fetched_at: 2026-10-19T07:40:46.955Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: conversion-value-mapper
-  description: Use when the user asks to "set up conversion values so tROAS
-    optimizes profit not orders", "map margin onto my purchase value", "build
-    value rules for lead / phone / signup conversions", or "stop bidding to
-    revenue when I care about profit"; defines and QAs the conversion VALUE
-    model — per-conversion values, margin/net-value adjustment,
-    static-vs-dynamic value rules, proxy values for non-revenue actions, and a
-    value-vs-count sanity check — as a value-model spec plus a pre-launch value
-    QA sheet. Not for whether the tag fires or UTMs are clean — use
-    conversion-signal-qa; not for cross-platform double-count de-dup — use
-    attribution-reconciler; not for scoring R1/R2 — that is a scored veto in
-    ad-account-auditor. 付费广告转化价值建模/利润出价/价值规则QA
+  description: Agent skill from aaron-he-zhu/aaron-marketing-skills
   folder_path: ad/activate/conversion-value-mapper
   extra_files: []
-tags: []
+  pack_total_skills: 120
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: aaron-he-zhu-aaron-marketing-skills
 ---
 
 # Conversion Value Mapper

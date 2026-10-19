@@ -1,19 +1,20 @@
 ---
 slug: orchestratorinc-agent-orchestrator-backend-internal-skillassets-using-ao
 name: using-ao
-tagline: "Catalog of the AO (Agent Orchestrator) `ao` CLI: spawning workers,
-  managing sessions and projects, creating reusable Cues, sending messages,
-  controlli"
-summary: "- Most read commands accept --json for machine-readable output. - -p /
-  --project scopes session subcommand lookups to one project. - Session and
-  project ids are shown by ao session ls and ao project ls. - To refer to..."
+tagline: Agent skill from OrchestratorInc/agent-orchestrator
+summary: Agent skill from OrchestratorInc/agent-orchestrator
 categories:
   - agent-frameworks
+tags:
+  - agent-fleet
+  - agent-ide
+  - agent-orchestration
+  - agent-swarm
 status: active
-quality_percentile: 81
+quality_percentile: 82
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: OrchestratorInc/agent-orchestrator
@@ -21,8 +22,18 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 13138
-  last_commit: 2026-10-13T16:22:22Z
+  stars: 13339
+  last_commit: 2026-10-19T06:42:40Z
+  stars_delta_7d: 201
+  stars_growth_pct: 1.5
+  trending_score: 204.08
+  rank_current: 50
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 12863
+    - 13138
+    - 13339
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,16 +41,12 @@ readme_source:
   repo: OrchestratorInc/agent-orchestrator
   path: backend/internal/skillassets/using-ao/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.218Z
+  fetched_at: 2026-10-19T07:39:23.664Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: using-ao
-  description: "Catalog of the AO (Agent Orchestrator) `ao` CLI: spawning workers,
-    managing sessions and projects, creating reusable Cues, sending messages,
-    controlling the shared browser, previewing pages, and daemon control. Use
-    when using the ao CLI, creating Cues, spawning workers, or managing AO
-    sessions in an AO workspace."
+  description: Agent skill from OrchestratorInc/agent-orchestrator
   folder_path: backend/internal/skillassets/using-ao
   extra_files:
     - commands/automation.md
@@ -52,7 +59,13 @@ skill:
     - commands/project.md
     - commands/render.md
     - commands/report.md
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: orchestratorinc-agent-orchestrator
 ---
 
 # AO CLI Catalog

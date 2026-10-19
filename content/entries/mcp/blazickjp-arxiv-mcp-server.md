@@ -9,19 +9,33 @@ summary: A local MCP server for agent literature work. The differentiator is
   Papers stay on disk. The working loop is paper ID → outline → one sectio...
 categories:
   - domain-research
+tags:
+  - arxiv
+  - claude-ai
+  - gpt
+  - llm
 status: active
-quality_percentile: 40
+quality_percentile: 43
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: blazickjp/arxiv-mcp-server
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 3214
+  stars: 3224
   last_commit: 2026-10-08T13:08:10Z
+  stars_delta_7d: 10
+  stars_growth_pct: 0.3
+  trending_score: 10.03
+  rank_current: 60
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3214
+    - 3224
 language: en
 needs_keys: false
 prerequisites:
@@ -31,7 +45,7 @@ readme_source:
   repo: blazickjp/arxiv-mcp-server
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:01.630Z
+  fetched_at: 2026-10-19T07:33:27.277Z
   truncated: false
 type: mcp_server
 launch:
@@ -41,7 +55,6 @@ launch:
     - arxiv-mcp-server
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # arxiv-mcp-server

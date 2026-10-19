@@ -8,19 +8,32 @@ summary: "n8n-MCP serves as a bridge between n8n's workflow automation platform
   effectively. It provides structured access to:"
 categories:
   - productivity-ops
+tags:
+  - n8n
+  - workflows
 status: active
 quality_percentile: 97
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: czlonkowski/n8n-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 23058
-  last_commit: 2026-10-13T02:59:52Z
+  stars: 23102
+  last_commit: 2026-10-19T06:18:25Z
+  stars_delta_7d: 44
+  stars_growth_pct: 0.2
+  trending_score: 44.08
+  rank_current: 23
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 23049
+    - 23058
+    - 23102
 language: en
 needs_keys: false
 prerequisites:
@@ -29,7 +42,7 @@ readme_source:
   repo: czlonkowski/n8n-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:55.293Z
+  fetched_at: 2026-10-19T07:31:56.044Z
   truncated: false
 type: mcp_server
 launch:
@@ -40,17 +53,16 @@ launch:
     - n8n-mcp
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # n8n-MCP
-A Model Context Protocol (MCP) server that provides AI assistants with comprehensive access to n8n node documentation, properties, and operations. Deploy in minutes to give Claude and other AI assistants deep knowledge about n8n's 2,951 workflow automation nodes (838 core + 2,113 community).
+A Model Context Protocol (MCP) server that provides AI assistants with comprehensive access to n8n node documentation, properties, and operations. Deploy in minutes to give Claude and other AI assistants deep knowledge about n8n's 3,135 workflow automation nodes (840 core + 2,295 community).
 
 ## Overview
 
 n8n-MCP serves as a bridge between n8n's workflow automation platform and AI models, enabling them to understand and work with n8n nodes effectively. It provides structured access to:
 
-- **2,951 n8n nodes** - 838 core nodes + 2,113 community nodes (1,730 verified)
+- **3,135 n8n nodes** - 840 core nodes + 2,295 community nodes (1,878 verified)
 - **Node properties** - 99% coverage with detailed schemas
 - **Node operations** - 66.5% coverage of available actions
 - **Documentation** - 86% coverage from official n8n docs (including AI nodes)

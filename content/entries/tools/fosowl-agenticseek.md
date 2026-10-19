@@ -1,0 +1,62 @@
+---
+slug: fosowl-agenticseek
+name: agenticSeek
+tagline: Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an
+  autonomous agent that thinks, browses the web, and code for the sole cost of
+  electricit
+summary: Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an
+  autonomous agent that thinks, browses the web, and code for the sole cost of
+  electricity.
+categories:
+  - agent-frameworks
+tags:
+  - agentic-ai
+  - agents
+  - autonomous-agents
+  - deepseek-r1
+status: active
+quality_percentile: 75
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: Fosowl/agenticSeek
+  official_vendor: false
+  license: GPL-3.0
+signals:
+  stars: 27509
+  last_commit: 2026-10-15T19:02:25Z
+  stars_delta_7d: 305
+  stars_growth_pct: 0
+  trending_score: 0
+  velocity_source: age_velocity
+  sparkline_4w:
+    - 27509
+language: en
+needs_keys: false
+prerequisites:
+  - python
+readme_source:
+  repo: Fosowl/agenticSeek
+  path: README.md
+  branch: main
+  fetched_at: 2026-10-19T07:41:25.782Z
+  truncated: false
+type: agent_tool
+tool:
+  subcategory: other
+  install_command: pip install agenticseek
+  runtime: python
+  execution_mode: local
+  has_mcp_support: true
+  mcp_launch:
+    transport: stdio
+    command: uvx
+    args:
+      - agenticseek
+    env_vars: []
+    confidence: manifest
+---
+
+Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity.

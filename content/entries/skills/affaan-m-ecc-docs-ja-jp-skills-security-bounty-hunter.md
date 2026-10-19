@@ -1,0 +1,150 @@
+---
+slug: affaan-m-ecc-docs-ja-jp-skills-security-bounty-hunter
+name: security-bounty-hunter
+tagline: リポジトリ内の悪用可能なバウンティ対象のセキュリティ問題を発見します。ノイズの多いローカルのみの発見ではなく、実際のレポートに適格なリモートから到達可能な脆弱性に焦点を当てます。
+summary: "- リポジトリの悪用可能な脆弱性をスキャンする場合 - Huntr、HackerOne、または類似のバウンティ提出を準備する場合 -
+  「これは実際に報酬が出るか？」であり「これは理論的に安全でないか？」ではないトリアージ"
+categories:
+  - security-auth
+tags:
+  - ai-agents
+  - anthropic
+  - claude
+  - claude-code
+status: active
+quality_percentile: 96
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: affaan-m/ECC
+  subpath: docs/ja-JP/skills/security-bounty-hunter
+  official_vendor: false
+  license: MIT
+signals:
+  stars: 283494
+  last_commit: 2026-10-19T05:03:15Z
+  stars_delta_7d: 5114
+  stars_growth_pct: 1.8
+  trending_score: 5207.95
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 274698
+    - 278380
+    - 283494
+language: zh
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: affaan-m/ECC
+  path: docs/ja-JP/skills/security-bounty-hunter/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:36:32.566Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: security-bounty-hunter
+  description: リポジトリ内の悪用可能なバウンティ対象のセキュリティ問題を発見します。ノイズの多いローカルのみの発見ではなく、実際のレポートに適格なリモートから到達可能な脆弱性に焦点を当てます。
+  folder_path: docs/ja-JP/skills/security-bounty-hunter
+  extra_files: []
+  pack_total_skills: 312
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: affaan-m-ecc
+---
+
+# Security Bounty Hunter
+責任ある開示やバウンティ提出のための実際的な脆弱性発見が目的の場合に使用します。広範なベストプラクティスレビューではありません。
+
+## 使用するタイミング
+
+- リポジトリの悪用可能な脆弱性をスキャンする場合
+- Huntr、HackerOne、または類似のバウンティ提出を準備する場合
+- 「これは実際に報酬が出るか？」であり「これは理論的に安全でないか？」ではないトリアージ
+
+## 動作の仕組み
+
+リモートから到達可能なユーザー制御の攻撃パスに偏り、プラットフォームが定期的に情報提供または範囲外として却下するパターンを排除します。
+
+## 対象範囲内のパターン
+
+継続的に重要な問題の種類:
+
+| パターン | CWE | 典型的な影響 |
+| --- | --- | --- |
+| ユーザー制御の URL による SSRF | CWE-918 | 内部ネットワークアクセス、クラウドメタデータの窃取 |
+| ミドルウェアまたは API ガードでの認証バイパス | CWE-287 | 不正なアカウントまたはデータアクセス |
+| リモートデシリアライゼーションまたはアップロードから RCE へのパス | CWE-502 | コード実行 |
+| 到達可能なエンドポイントでの SQL インジェクション | CWE-89 | データ流出、認証バイパス、データ破壊 |
+| リクエストハンドラーでのコマンドインジェクション | CWE-78 | コード実行 |
+| ファイル提供パスでのパストラバーサル | CWE-22 | 任意のファイルの読み取りまたは書き込み |
+| 自動トリガーされる XSS | CWE-79 | セッション窃取、管理者の侵害 |
+
+## スキップするもの
+
+プログラムが別途指定しない限り、通常は低シグナルまたはバウンティの範囲外です:
+
+- リモートパスのないローカルのみの `pickle.loads`、`torch.load`、または同等
+- CLI のみのツールでの `eval()` または `exec()`
+- 完全にハードコードされたコマンドの `shell=True`
+- セキュリティヘッダーのみの欠如
+- 悪用の影響のない一般的なレート制限の不満
+- 被害者がコードを手動で貼り付ける必要のあるセルフ XSS
+- ターゲットプログラムの範囲外の CI/CD インジェクション
+- デモ、サンプル、またはテスト専用のコード
+
+## ワークフロー
+
+1. まず範囲を確認: プログラムルール、SECURITY.md、開示チャネル、および除外事項。
+2. 実際のエントリーポイントを見つける: HTTP ハンドラー、アップロード、バックグラウンドジョブ、Webhook、パーサー、統合エンドポイント。
+3. 静的ツールが役立つ場合は実行するが、トリアージ入力としてのみ扱う。
+4. 実際のコードパスをエンドツーエンドで読む。
+5. ユーザー制御が意味のあるシンクに到達することを証明する。
+6. 可能な限り小さな安全な PoC で悪用可能性と影響を確認する。
+7. レポートを作成する前に重複を確認する。
+
+## トリアージループの例
+
+```bash
+semgrep --config=auto --severity=ERROR --severity=WARNING --json
+```
+
+次に手動でフィルタリング:
+
+- テスト、デモ、フィクスチャ、ベンダーコードを除外
+- ローカルのみまたは到達不可能なパスを除外
+- ネットワークまたはユーザー制御の明確なルートがある所見のみを保持
+
+## レポート構造
+
+```markdown
+## 説明
+[脆弱性の内容とその重要性]
+
+## 脆弱なコード
+[ファイルパス、行範囲、および小さなスニペット]
+
+## 概念実証
+[最小限の動作するリクエストまたはスクリプト]
+
+## 影響
+[攻撃者が達成できること]
+
+## 影響を受けるバージョン
+[テストされたバージョン、コミット、またはデプロイターゲット]
+```
+
+## 品質ゲート
+
+提出前に:
+
+- コードパスが実際のユーザーまたはネットワーク境界から到達可能
+- 入力が真にユーザー制御可能
+- シンクが意味があり悪用可能
+- PoC が動作する
+- 問題がアドバイザリー、CVE、またはオープンチケットでまだカバーされていない
+- ターゲットがバウンティプログラムの実際の範囲内

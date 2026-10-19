@@ -1,6 +1,6 @@
 ---
 slug: syngnat-gonavi-npm-gonavi-cli-skill
-name: gonavi-cli
+name: cli
 tagline: Operate databases through the GoNavi headless CLI — the `gonavi`
   executable shipped in verified GitHub Release archives. Covers
   listing/adding/importi
@@ -8,12 +8,17 @@ summary: "Download the matching gonavi-cli${VERSION}${goos}${arch} archive and
   gonavi-cli${VERSION}checksums.txt file from a GoNavi GitHub Release, verify
   the SHA256 checksum, extract the archive, then run:"
 categories:
-  - coding-agents
+  - databases-memory
+tags:
+  - cross-platform
+  - database-client
+  - database-gui
+  - desktop-app
 status: active
-quality_percentile: 65
+quality_percentile: 73
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Syngnat/GoNavi
@@ -21,8 +26,17 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 2067
-  last_commit: 2026-10-13T12:41:32Z
+  stars: 2074
+  last_commit: 2026-10-19T07:03:13Z
+  stars_delta_7d: 7
+  stars_growth_pct: 0.3
+  trending_score: 7.02
+  rank_current: 108
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2067
+    - 2074
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,11 +44,11 @@ readme_source:
   repo: Syngnat/GoNavi
   path: npm/gonavi-cli/skill/SKILL.md
   branch: dev
-  fetched_at: 2026-10-14T14:55:07.442Z
+  fetched_at: 2026-10-19T07:33:39.588Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: gonavi-cli
+  skill_name: cli
   description: Operate databases through the GoNavi headless CLI — the `gonavi`
     executable shipped in verified GitHub Release archives. Covers
     listing/adding/importing saved connections, running SQL queries against
@@ -48,8 +62,13 @@ skill:
   folder_path: npm/gonavi-cli/skill
   extra_files:
     - references/connection-config.md
-tags:
-  - github
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: syngnat-gonavi
 ---
 
 # GoNavi CLI

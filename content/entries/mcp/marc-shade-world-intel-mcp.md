@@ -1,28 +1,43 @@
 ---
 slug: marc-shade-world-intel-mcp
 name: world-intel-mcp
-tagline: "139-tool MCP server for real-time global intelligence from free public
-  APIs: markets, SEC filings, conflict, military, aircraft-cohort early warning,
+tagline: "160-tool MCP server for real-time global intelligence from free public
+  APIs: markets, liquidity, prediction markets, SEC filings, conflict, military,
   "
-summary: Real-time global intelligence across 30+ domains with 139 MCP tools, a
+summary: Real-time global intelligence across 30+ domains with 160 MCP tools, a
   live ops-center dashboard, a CLI, and a Qdrant vector store for
   enterprise-grade semantic search across accumulated intelligence. All data
   comes f...
 categories:
-  - databases-memory
+  - domain-research
+tags:
+  - ai-tools
+  - ai-watch
+  - anthropic
+  - claude
 status: active
-quality_percentile: 64
+quality_percentile: 73
 selection_reason: quality_percentile
 first_seen: 2025-11-29T16:49:53
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: marc-shade/world-intel-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 941
-  last_commit: 2026-10-12T19:11:43Z
+  stars: 967
+  last_commit: 2026-10-18T19:44:29Z
+  stars_delta_7d: 26
+  stars_growth_pct: 2.8
+  trending_score: 26.72
+  rank_current: 38
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 657
+    - 941
+    - 967
 language: en
 needs_keys: false
 prerequisites:
@@ -32,8 +47,8 @@ readme_source:
   repo: marc-shade/world-intel-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:10.271Z
-  truncated: false
+  fetched_at: 2026-10-19T07:33:54.092Z
+  truncated: true
 type: mcp_server
 launch:
   transport: stdio
@@ -42,8 +57,6 @@ launch:
     - world-intel-mcp
   env_vars: []
   confidence: manifest
-tags:
-  - qdrant
 ---
 
 ![Phoenix Intelligence Dashboard](https://raw.githubusercontent.com/marc-shade/world-intel-mcp/main/docs/dashboard.png)
@@ -54,9 +67,11 @@ tags:
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-green)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](https://raw.githubusercontent.com/marc-shade/world-intel-mcp/main/LICENSE)
 
-Real-time global intelligence across **30+ domains** with **139 MCP tools**, a live ops-center dashboard, a CLI, and a **Qdrant vector store** for enterprise-grade semantic search across accumulated intelligence. All data comes from free, public APIs: no paid subscriptions required.
+Real-time global intelligence across **30+ domains** with **160 MCP tools**, a live ops-center dashboard, a CLI, and a **Qdrant vector store** for enterprise-grade semantic search across accumulated intelligence. All data comes from free, public APIs: no paid subscriptions required.
 
 Built for AI agents that need world awareness: market conditions, geopolitical risk, military posture, aircraft-cohort early warning, refugee and migration flows, supply chain disruptions, cyber threats, and more — all queryable via the Model Context Protocol. The vector store enables natural language queries like *"military activity near Taiwan"* or *"cyber threats targeting healthcare"* across all historical data.
+
+For research, the collector keeps a dated history of what it captures. Each observation carries the period it describes, the publisher's release date when known, and when it was saved, so earlier copies, revised values, lagged correlations between series and any past day can be queried, and collection health is measured from the collector's run log rather than inferred from cache freshness. The server also exposes **29 MCP prompts** (worked research questions, each naming the tools it needs and the limit to respect) and **3 MCP resources**: a research guide generated from the live tool registry (`intel://guide`), a measures glossary (`intel://guide/measures`) and live source health (`intel://guide/source-health`).
 
 ---
 
@@ -70,9 +85,11 @@ Built for AI agents that need world awareness: market conditions, geopolitical r
 | **Earnings** | 2 | Yahoo Finance (mega-cap calendar, surprise history) |
 | **SEC Filings** | 3 | SEC EDGAR (full-text search, company filings, 8-K material events) |
 | **Company Enrichment** | 1 | Yahoo Finance + GDELT + SEC + GitHub (composite profile) |
+| **News vs Market Reaction** | 1 | RSS story clusters + Yahoo Finance daily bars + SEC ticker file (same-session move of named companies and country indices) |
 | **Macro Composite** | 1 | Weighted 6-signal market verdict (Fear&Greed, VIX, sectors, DXY, BTC, yields) |
 | **Economic Indicators** | 6 | AAA fuel prices, EIA energy, FRED macro, World Bank |
 | **Central Banks** | 1 | 15 central bank policy rates |
+| **Liquidity and Money** | 5 | Keyless FRED graph CSV (Fed balance sheet, Treasury General Account, overnight reverse repo, US M2) and ECB Data Portal (euro area M1/M2/M3 stocks, flows and growth, Eurosystem balance sheet); derived net liquidity with its formula, unit conversion and date alignment stated |
 | **BTC Technicals** | 1 | SMA 50/200, golden/death cross, Mayer Multiple |
 | **Natural Disasters** | 2 | USGS earthquakes, NASA FIRMS wildfires |
 | **Environmental** | 2 | NASA EONET, GDACS disaster alerts |
@@ -83,6 +100,7 @@ Built for AI agents that need world awareness: market conditions, geopolitical r
 | **Maritime** | 2 | NGA navigation warnings, vessel snapshots |
 | **Aviation** | 5 | FAA airport delays, domestic flight snapshot, business-jet/military cohort early warning (adsb.lol live + globe_history heatmaps) |
 | **News & Media** | 3 | 119 RSS feeds (4-tier), GDELT, trending keywords |
+| **News Signals** | 3 | GDELT DOC timelines (daily volume, hostile-term volume, tone) per country or pair; RSS situations ranked by coverage, hostility or change; top stories by distinct-outlet count with attention growth |
 | **Intelligence Analysis** | 8 | Signal convergence, focal points, instability index, risk scores, escalation |
 | **NLP Intelligence** | 4 | Entity extraction, event classification, news clustering, keyword spikes |
 | **Strategic Synthesis** | 4 | Strategic posture, world brief, fleet report, population exposure |
@@ -93,9 +111,9 @@ Built for AI agents that need world awareness: market conditions, geopolitical r
 | **Space Weather** | 1 | NOAA SWPC (Kp index, solar flares, alerts) |
 | **Social & Sanctions** | 3 | Reddit velocity, OFAC SDN list, nuclear test site monitoring |
 | **Country Intelligence** | 3 | Country brief, country stocks, financial centers |
-| **Prediction Markets** | 1 | Polymarket event contracts |
+| **Prediction Markets** | 4 | Polymarket and Kalshi event contracts, the same event on both venues side by side with a stated match confidence, and settled markets scored against their earlier prices (Brier) |
 | **Elections** | 1 | Global election calendar with risk scoring |
-| **Displacement and Migration** | 5 | UNHCR refugee/IDP data, origin -> destination corridors since 1951, year-over-year surge detection; World Bank net migration and migrant stock |
+| **Displacement and Migration** | 7 | UNHCR refugee/IDP data, origin -> destination corridors since 1951, year-over-year surge detection; World Bank net migration and migrant stock; border crossings as flows (CBP monthly encounters, UK small-boat arrivals), never mixed with the year-end stocks |
 | **Shipping** | 1 | Dry bulk shipping stress index |
 | **Government** | 1 | USAspending.gov federal contracts |
 | **Traffic** | 2 | Road traffic flow, real-time incidents |
@@ -109,10 +127,12 @@ Built for AI agents that need world awareness: market conditions, geopolitical r
 | **Severe Weather** | 2 | NWS active CAP alerts (US), Meteoalarm (39 EU countries) |
 | **Space Launches** | 1 | Launch Library 2 upcoming launches |
 | **Volcanoes** | 1 | Smithsonian GVP weekly activity report |
-| **Tropical Cyclones** | 2 | NHC (Atlantic, E/C Pacific) + JTWC (NW Pacific, N Indian, S Hemisphere) |
+| **Tropical Cyclones** | 2 | NHC (Atlantic, E/C Pacific) + JTWC (NW Pacific, N Indian, S Hemisphere), with opt-in forecast tracks: positions, UTC valid times and intensities, plus NHC's cone of uncertainty |
 | **Situation Brief** | 1 | Cited situational awareness brief over MCP: bounded server-side overview synthesized via local Ollama, with a mechanically-cited fallback |
+| **Collection History** | 6 | Collector run log (per-source health, overdue and failing sources), saved captures with change detection and replay, dated observation series, revisions, one UTC day's timeline by collection or observation date, and on-demand backfill of the history FRED and the ECB Data Portal already serve |
+| **Connections Between Series** | 1 | Correlation between stored series at leads and lags, with a minimum sample, false-discovery control and what it cannot prove |
 
-**Total: 139 tools** across 30+ intelligence domains.
+**Total: 160 tools** across 30+ intelligence domains.
 
 ---
 
@@ -158,6 +178,14 @@ intel-dashboard              # http://localhost:8501
 intel-dashboard --port 9000  # custom port
 ```
 
+**Research panels** (RESEARCH in the top bar, or the `p` key): four tabs over the same functions the MCP tools call, each loaded from its own JSON route when the tab opens and refreshed every 60 s while the panel is open.
+
+- **Liquidity board** (`/api/liquidity-board?sort=biggest_move|newest`, `fetch_liquidity_board`): latest value, units as each row states them (USD millions, USD billions, EUR millions; nothing converted), change and percent change against the previous observation, freshness and stale-cache badges, the ranking rule, unavailable indicators with their reasons, the blocked upstreams (ICI, FINRA, BLS) and the net liquidity method. Amounts outstanding are grouped apart from flows; a change between two levels is labelled as not a flow.
+- **Situations** (`/api/situations?hours=&sort=&kind=`, `fetch_situations`) and **Top stories** (`/api/top-stories?hours=&min_outlets=`, `fetch_top_stories`): ranked situations or multi-outlet stories with sample headlines, the attention list, feed coverage (failed feeds named) and the functions' own definitions, method and data gaps.
+- **Collection health** (`/api/collection-health`, `HistoryStore.collection_health`): state counts, then failing, degraded, not-attempted-recently and never-run sources with last attempt, last success, failures in a row, overdue and reason, storage size, and the report's `cannot_prove` text as given.
+
+A panel that has not loaded says so; a failed call shows UNAVAILABLE with the reason (HTTP 503, or 504 after a 90 s budget) and never an empty list; a failed refresh keeps the earlier copy under a REFRESH FAILED banner with the time it loaded. Limits: the situations and top stories panels read every RSS feed: 5 to 15 s per call in the 2026-10-17 runs, warm cache included, because a feed that fails is not cached and every call tries it again, with retries, for up to 12 s. Collection health reads the history store in the dashboard's own cache database (`WORLD_INTEL_CACHE_DB`, or the default path), so it shows only cycles a collector ran against that same database; one writing elsewhere leaves every source `never_run`. These four routes send no `Access-Control-Allow-Origin` header, so a page from another site cannot read their answers; the older dashboard routes still send `Access-Control-Allow-Origin: *`, and `/api/overview` includes the cache database path. The server binds 127.0.0.1 unless `--host` says otherwise.
+
 ### PDF/HTML Reports
 
 ```bash
@@ -177,7 +205,23 @@ intel markets              # stock indices
 intel earthquakes --min-mag 5.0
 intel migration-surges     # year-over-year displacement jumps (UNHCR)
 intel migration-flows -o Sudan
+intel liquidity            # Fed balance sheet, TGA, RRP, net liquidity, US M2, euro area M1-M3
+intel net-liquidity -n 0   # full weekly history, components and RRP date per week
+intel news-reaction -c finance  # same-session moves of companies in the news
+intel hostility Iran Israel --days 7   # daily hostile coverage (GDELT)
+intel situations --sort change         # ranked situations (RSS)
+intel top-stories -m 4                 # stories carried by 4+ outlets
+intel kalshi -c Economics  # Kalshi open markets by volume
+intel prediction-compare -c Economics   # same event on Kalshi and Polymarket
+intel prediction-settled   # Brier scores on settled markets
 intel status               # cache + circuit breaker health
+intel guide                # the research guide (also served as intel://guide)
+intel history health       # per-source collection health from the collector's run log
+intel history connections central_bank_rates:federal_funds_rate central_bank_rates:boe_bank_rate_sonia
+                           # correlation at leads and lags between stored series (day grid by default)
+intel history day 2026-10-17 --by observed   # values observed on one UTC day (default: captures that day)
+intel history backfill fred WALCL RRPONTSYD --start 2020-01-01  # load FRED history into the history store
+intel history backfill ecb BSI.M.U2.Y.V.M30.X.1.U2.2300.Z01.E   # load ECB Data Portal history (euro area M3)
 ```
 
 ---
@@ -195,10 +239,73 @@ collector.py  (daemon)    ─┘
 - **CircuitBreaker**: Per-source tracking. 3 consecutive failures trips for 5 minutes. Each RSS feed gets its own breaker.
 - **Cache**: SQLite WAL-mode TTL cache. `get()` returns live data, `get_stale()` returns expired data for fallback.
 - **VectorStore**: Qdrant + FastEmbed (BAAI/bge-small-en-v1.5, 384-dim). Async background worker queue for non-blocking storage. Enables semantic search across all accumulated intelligence.
-- **Collector**: Standalone daemon that fetches all 55 sources in parallel and populates the vector store. Run once or as a daemon (default: 5-minute interval). Includes the AOI change sweep, so a running daemon continuously watches every defined geofence.
+- **Collector**: Standalone daemon that fetches all 61 sources in parallel and populates the vector store. Run once or as a daemon (default: 5-minute interval). Includes the AOI change sweep, so a running daemon continuously watches every defined geofence.
 - **Sources** (`sources/*.py`): 30+ modules, each exports `async def fetch_*(fetcher, **kwargs) -> dict`.
 - **Analysis** (`analysis/*.py`): Cross-domain synthesis — signal aggregation, instability indexing, NLP, company enrichment, macro composite.
 - **Config** (`config/*.py`): Curated datasets — 22 hotspots, 70+ bases, 40 ports, 24 pipelines, 24 nuclear facilities, 34 cables, 48 datacenters, 27 spaceports, 82 exchanges.
+
+---
+
+## Research Guide: MCP Prompts and Resources
+
+Besides its tools, the server answers the MCP `resources` and `prompts`
+requests and advertises both capabilities at initialize. A connecting
+model can read which tool answers which question, and what the data
+cannot support, before it calls anything.
+
+| Resource | Type | What it holds |
+|----------|------|---------------|
+| `intel://guide` | Markdown | How to ask a strong question (name the period, the comparison, the measure and the place), what an answer contains, what this server will not do, the worked prompts, and every tool grouped by domain. Built from the live tool registry on each read, so it always matches `tools/list`. |
+| `intel://guide/source-health` | JSON | Open circuit breakers, stale serves, cache freshness per source prefix, and which keyed sources have their variables set (names only, never values). Reading it starts no fetch. Breaker state covers this server process only; the collector keeps its own. `failing_sources` names every source whose last call failed, before or after its breaker opens. A `verdict` line says when there is nothing to go on yet (no requests made and an empty cache). A cache that cannot be read is reported as `cache.available: false` with the error, next to the rest of the snapshot, and `cache.requested_path` and `cache.fell_back` show when the configured database could not be opened and a temporary one is in use. `cache.moved` is true when the cache file was moved, deleted or replaced while the server holds it open. |
+| `intel://guide/measures` | Markdown | Amount outstanding versus flow, growth versus acceleration, percentage points, seasonal adjustment, observation versus publication versus collection dates, revisions, correlation and timing offsets, composite scores, and why missing data is not zero. |
+
+**29 prompts**, each a worked research question that names the tools to
+call and the limits an honest answer respects (arguments marked * are
+required):
+
+| Domain | Prompts |
+|--------|---------|
+| conflict | `conflict-trend` (country*, days), `hotspot-escalation` |
+| markets | `market-risk-snapshot`, `yield-curve-check`, `central-bank-compare`, `fx-move` (symbol*, base, days), `company-events` (ticker*), `energy-pressure`, `crypto-structure` |
+| hazards | `earthquake-exposure` (min_magnitude, hours), `severe-weather` (us_area, europe_country), `wildfire-situation` (region), `space-weather-impact` |
+| migration | `displacement-history` (country*, role), `migration-surges` (year) |
+| aviation | `airspace-anomaly` (cohort, region), `airport-disruption` |
+| cyber | `cyber-landscape` |
+| infrastructure | `internet-disruption` (country*, resource), `cloud-incidents` |
+| maritime | `maritime-chokepoints` |
+| aoi | `aoi-watch-setup` (name*, lat*, lon*, radius_km*), `aoi-review` (name*) |
+| news | `story-breadth` (topic*) |
+| politics | `election-watch` (country) |
+| finance | `sanctions-screen` (query*) |
+| health | `disease-watch` |
+| history | `history-recall` (topic*, hours) |
+| country | `country-overview` (country*) |
+
+`prompts/get` with `conflict-trend` and `{"country": "Sudan"}` returns one
+user message: the question with Sudan and the default 30-day window
+filled in, the numbered tools (`intel_ucdp_events`, `intel_acled_events`,
+`intel_unrest_events`) with the arguments to pass and what each call is
+for, the limits (recent days are the least complete; count events and
+fatalities separately; compare each source only with itself), and the
+shape of a complete answer. A missing required argument, an unknown
+argument, a number outside its range (latitude -90 to 90, longitude -180
+to 180, an AOI radius of 1 to 2000 km), a value outside an argument's
+list, a value that names a tool the prompt does not call, or an unknown
+prompt is an `invalid params` error, never a guess. The tests fail if a
+prompt names a tool that is not registered, passes an argument the
+tool's schema does not take (wrong name, type or listed value), cites an
+output field the code does not produce, describes a step in words that
+share nothing with the called tool's own description, or if the guide
+leaves out a registered tool. Tools that cannot work without an API key carry a
+`[needs VARIABLE]` mark in the guide's tool list.
+
+From the shell, `intel guide` prints the same guide markdown and
+`intel guide --measures` prints the glossary. `intel guide` builds its
+tool list from the live registry, so it opens the cache database and
+creates it on first run (`~/.cache/world-intel-mcp/cache.db`, or the
+path set by `WORLD_INTEL_CACHE_DB` or `XDG_CACHE_HOME`). Starting the CLI
+at all, `intel --help` and `intel guide --measures` included, creates
+`~/.cache/world-intel-mcp/temporal.db` under your home directory.
 
 ---
 
@@ -212,7 +319,7 @@ collector.py  (daemon)    ─┘
 | `intel_stablecoin_status` | Stablecoin peg health (USDT, USDC, DAI, FDUSD) |
 | `intel_etf_flows` | Bitcoin spot ETF prices and volumes |
 | `intel_sector_heatmap` | US equity sector performance (11 SPDR ETFs) |
-| `intel_macro_signals` | 7 macro indicators (Fear & Greed, VIX, DXY, gold, 10Y, BTC) |
+| `intel_macro_signals` | 7 macro signals: Fear & Greed, Bitcoin mempool fees, DXY, VIX, gold, 10Y Treasury yield, BTC dominance |
 | `intel_commodity_quotes` | Commodity futures (gold, silver, crude, natgas, grains) |
 
 ### Forex & Currency (3)
@@ -246,6 +353,11 @@ collector.py  (daemon)    ─┘
 |------|-------------|
 | `intel_company_profile` | Composite profile: stock quote + financials + news + SEC + GitHub |
 
+### News vs Market Reaction (1)
+| Tool | Description |
+|------|-------------|
+| `intel_news_market_reaction` | Companies and countries named in recent story clusters, mapped to tickers from the entity table (US tickers annotated with their SEC registrant) and country indices; the move on the story's market session (stock, benchmark, excess return; index return with a trailing z-score). After-close stories map to the next session, weekends and holidays to the next trading day, in the exchange's timezone; a session not yet closed or not yet final is pending. Unmapped and ambiguous names are listed with reasons; a failed quote or an expired cached copy is a data gap, never 0%. Co-movement, not causation; not a trading signal |
+
 ### Macro Composite (1)
 | Tool | Description |
 |------|-------------|
@@ -265,6 +377,17 @@ collector.py  (daemon)    ─┘
 | Tool | Description |
 |------|-------------|
 | `intel_central_bank_rates` | Policy rates for 15 major central banks |
+
+### Liquidity and Money (5)
+Keyless: FRED graph CSV and the ECB Data Portal. Every point carries its observation date, value and units; every series is typed `amount_outstanding`, `flow`, `growth_rate`, `index` or `unknown`, and carries a freshness block (age of the newest observation against its publication cadence). `limit=0` returns the full history. A failed upstream is an error or an `unavailable` row, never a zero.
+
+| Tool | Description |
+|------|-------------|
+| `intel_liquidity_board` | Latest reading and change vs the previous observation for the Fed balance sheet, TGA, overnight reverse repo, net liquidity, US M2, euro area M1/M2/M3 and Eurosystem total assets; sort by `biggest_move` (absolute change in billions of each row currency, no FX conversion; horizons differ) or `newest`; a `blocked` list names the measures not covered (ICI fund flows and ETF net issuance, FINRA margin statistics, BLS) with the upstream status measured, and no proxy stands in for them |
+| `intel_net_liquidity` | Weekly WALCL minus WDTGAL minus RRPONTSYD in USD billions (millions divided by 1,000), aligned on the WALCL Wednesday; each point names its components and the RRP date used; unaligned weeks are skipped and counted; a `method` block states each term's observation basis, units, conversion and RRP alignment |
+| `intel_money_supply` | US M2 (FRED M2SL) and euro area M1, M2, M3 (ECB BSI stocks, monthly flows, annual growth rates), reported separately and never summed; US M3 is reported as discontinued |
+| `intel_fed_liquidity_series` | One FRED liquidity series (WALCL, WDTGAL, WTREGEN, RRPONTSYD, M2SL) with full history; blank source dates are counted, not read as zero |
+| `intel_ecb_series` | ECB Data Portal series by SDMX key from BSI (monetary aggregates) or ILM (Eurosystem weekly financial statement), with units, scale and provisional flags from the response |
 
 ### BTC Technicals (1)
 | Tool | Description |
@@ -337,6 +460,13 @@ collector.py  (daemon)    ─┘
 | `intel_trending_keywords` | Trending terms with spike detection |
 | `intel_gdelt_search` | GDELT 2.0 global news search |
 
+### News Signals (3)
+| Tool | Description |
+|------|-------------|
+| `intel_hostility_timeline` | Per-day GDELT coverage of a country or a pair: article count, articles using threat / sanction / force / criticism terms (GDELT keyword match, terms listed in the response), average tone. A failed call, an expired cached copy, or a day GDELT did not return is null and listed in `data_gaps` (`column_status` per call), never zero; partial days are flagged per column |
+| `intel_situations` | Situations between countries (headlines naming two or more) and inside a country (headlines naming one), ranked by most covered, most hostile (headline keyword heuristic) or biggest change against the prior window; the response defines each measure and names the feeds excluded from change figures. With no comparable feed, change is null and `change_measured` false |
+| `intel_top_stories` | Stories carried by at least `min_outlets` distinct outlets (sister feeds of one publisher count once), plus the countries and organizations whose headline mentions grew most (`attention_change_measured` false when nothing could be compared) |
+
 ### Intelligence Analysis (8)
 | Tool | Description |
 |------|-------------|
@@ -354,7 +484,7 @@ collector.py  (daemon)    ─┘
 |------|-------------|
 | `intel_extract_entities` | Named entity extraction (countries, leaders, orgs, CVEs, APTs) |
 | `intel_classify_event` | Event classification into 14 threat categories |
-| `intel_news_clusters` | Topic clustering by Jaccard similarity |
+| `intel_news_clusters` | Topic clustering by Jaccard similarity, with each cluster's distinct-outlet count |
 | `intel_keyword_spikes` | Keyword spike detection with Welford's algorithm |
 
 ### Strategic Synthesis (4)
@@ -370,17 +500,20 @@ collector.py  (daemon)    ─┘
 |------|-------------|
 | `intel_climate_anomalies` | Open-Meteo temperature/precipitation anomalies |
 
-### Prediction Markets (1)
+### Prediction Markets (4)
 | Tool | Description |
 |------|-------------|
 | `intel_prediction_markets` | Polymarket prediction contracts |
+| `intel_kalshi_markets` | Kalshi open markets from its public market data (no account), ranked by volume; YES implied probabilities with the venue's units stated; filter by category or series. Says which events it scanned and whether the scan was complete. Data served from an expired cache entry after a failed fetch is marked `stale` and `degraded`, with its age |
+| `intel_prediction_compare` | The same event on Kalshi and Polymarket: deterministic matching (quantities, years, end dates, negation, rate actions such as cut/raise/hold, directions such as above/below, and outcome side must agree), a `match_confidence` with reasons per pair, the price gap, the closest rejected pairs and why, and unmatched counts per venue. `match_confidence` is an ordinal score for ranking pairs, not a probability that two markets are the same event. Each side names its price basis, spread and last-trade time; a pair is flagged and listed after comparable ones when either side has no price, is not a two-sided quote midpoint, comes from an expired cached copy served after a failed live fetch, or has a spread wider than 0.10, when the two venues' thresholds differ at the boundary (strict on one, inclusive on the other), or when a looked-up Kalshi last trade differs from the listing's last price |
+| `intel_prediction_settled` | Settled markets on both venues with the outcome, the YES price at fixed offsets before close, and a Brier score per venue and offset with sample size, distinct events, selection and exclusions. A venue without price history is not scored, and a price history served from expired cache is excluded. Reference times differ by venue (Kalshi `close_time`; Polymarket the earlier of `endDate` and `closedTime`), so the two scores are not a head-to-head comparison. Polymarket's price histories share the `polymarket` circuit breaker with `intel_prediction_markets`: three failed history calls pause every Polymarket read for the breaker's 300 s cooldown |
 
 ### Elections (1)
 | Tool | Description |
 |------|-------------|
 | `intel_election_calendar` | Global election calendar with risk scoring |
 
-### Displacement and migration (5)
+### Displacement and migration (7)
 | Tool | Description |
 |------|-------------|
 | `intel_displacement_summary` | UNHCR refugee/IDP statistics, top 30 origins |
@@ -388,6 +521,8 @@ collector.py  (daemon)    ─┘
 | `intel_migration_surges` | Largest year-over-year increases and decreases by origin and corridor, plus IDPs, sized against population |
 | `intel_migration_history` | One country's yearly series since 1951 as an origin or a host, with its peak and largest waves |
 | `intel_net_migration` | World Bank net migration and migrant stock: latest ranking, regions, or one country since 1960 |
+| `intel_us_border_encounters` | CBP encounters per month over the four fiscal years in CBP's newest file (from October 2022 as of October 2026; apprehensions, inadmissibles, Title 42 expulsions): nationwide or by land border region, by component and citizenship, with same-month prior-year change and fiscal-year totals. Events, not unique people |
+| `intel_uk_small_boat_arrivals` | Home Office daily and weekly small-boat arrivals across the English Channel (migrants, boats, uncontrolled landings) with French-reported preventions, month and year sums, and year to date vs last year. Provisional operational data |
 
 ### Aviation (5)
 | Tool | Description |
@@ -518,10 +653,10 @@ different, openly licensed data source; no ews code is used.
 | `intel_aoi_define` | Define a named area of interest: point + radius in km (1-2000) |
 | `intel_aoi_define_polygon` | Define a polygon AOI from 3-64 [lat, lon] vertices (a border region, a strait, an EEZ) |
 | `intel_aoi_define_corridor` | Define a corridor AOI: 2-64 waypoints plus a width in km (a shipping lane, supply road, cable run) |
-| `intel_aoi_update` | Rename an AOI or change its center/radius in place (a rename keeps its change history) |
+| `intel_aoi_update` | Rename any AOI, or change a circle AOI's center/radius in place (a polygon or corridor can only be renamed; to change its shape, delete and redefine it). A rename keeps its change history; an actual change to center or radius resets it, because the old baseline described a different area |
 | `intel_aoi_list` | List all user-defined AOIs |
 | `intel_aoi_delete` | Delete a user-defined AOI by name |
-| `intel_aoi_brief` | Cited brief for an AOI: earthquakes, military flights, wildfires, conflict events, aviation, nearby infrastructure, and news mentions, all filtered to the AOI's radius |
+| `intel_aoi_brief` | Cited brief for an AOI: earthquakes, military flights, wildfires, ACLED conflict events and sampled aviation inside the AOI's exact shape (circle, polygon or corridor); nearby static infrastructure with distances in km (for polygon and corridor AOIs, point sites are refined to the shape and pipelines and cables match the bounding circle, noted in `data_gaps`); and news for the settlement and county at the AOI's center (OSM Nominatim reverse geocoding), falling back to the AOI's name, noted in `data_gaps`, when no place is found. Every item carries a [n] citation; `data_gaps` names each domain that could not be scoped |
 | `intel_aoi_escalation` | Hotspot escalation scoring (same engine as the 22 built-in hotspots) applied to a user AOI |
 | `intel_aoi_changes` | What entered or left an AOI since the last sweep (earthquakes, military flights, ACLED events, wildfire clusters, news); the first call sets a baseline |
 | `intel_aoi_digest` | One change sweep across every AOI (or a named subset) with a combined markdown digest; a scheduler can call it on an interval |
@@ -540,8 +675,8 @@ different, openly licensed data source; no ews code is used.
 ### Tropical Cyclones (2)
 | Tool | Description |
 |------|-------------|
-| `intel_cyclones` | NHC active storms: Atlantic, Eastern and Central Pacific |
-| `intel_jtwc_cyclones` | JTWC warnings: Northwest Pacific, North Indian Ocean, Southern Hemisphere |
+| `intel_cyclones` | NHC active storms: Atlantic, Eastern and Central Pacific. `include_forecast` adds each storm's forecast track (from its forecast/advisory) and a simplified 5-day cone outline |
+| `intel_jtwc_cyclones` | JTWC warnings: Northwest Pacific, North Indian Ocean, Southern Hemisphere. `include_forecast` adds each storm's forecast track from its warning text (JTWC publishes no cone) |
 
 ### Space Launches (1)
 | Tool | Description |
@@ -557,6 +692,25 @@ different, openly licensed data source; no ews code is used.
 | Tool | Description |
 |------|-------------|
 | `intel_situation_brief` | Cited situational awareness brief, generated on demand over MCP: a bounded server-side overview (earthquakes, military flights, ACLED conflict events, wildfires, cyber threats, disease outbreaks, news, space weather, strategic posture, alert digest), synthesized via local Ollama or a mechanically-cited fallback when Ollama is unreachable |
+
+### Collection History (6)
+History accrues only while the collector (`intel-collector`) runs; nothing before its first recorded cycle exists, except what a backfill loads (`intel_history_backfill`, `intel history backfill`): FRED graph CSV and ECB Data Portal series, stored under `backfill:fred` and `backfill:ecb` with the publisher's current vintage, so revisions made before the first backfill are invisible. Every observation keeps three dates: `observed_at` (the period the value describes, from the payload, or null when the payload has none), `published_at` (publisher release, when known) and `collected_at` (when this server saved it). A run answered from an expired cached copy is recorded as a stale-cache replay: it never counts as a success, and its observations are not stored, because a replay is not a new observation.
+
+| Tool | Description |
+|------|-------------|
+| `intel_collection_health` | Per-source health from the collector's run log: last attempt, last live success (a source served from stale cache reads `stale` and goes overdue), last fully ok capture, consecutive failures, overdue against the expected cadence, never-run sources, lost history writes, history storage size; states its data gaps and what it cannot prove (a fresh capture does not mean upstream observations are current) |
+| `intel_capture_history` | A source's earlier captures (ok / degraded / error with reason, such as `served stale cache`, duration, record count) and whether each changed from the previous one; `capture_id` replays one stored payload (an outline of its keys past the replay cap) |
+| `intel_series_history` | One series' observations with all three dates, or the list of available series |
+| `intel_revisions` | Values for the same `observed_at` that a later capture changed (USGS magnitude revisions, NOAA Kp updates), with how many observations and dated series were checked |
+| `intel_day_timeline` | What the history store holds for one UTC day (`YYYY-MM-DD`; a future day is an error). `by=collected` (default): per source, that day's captures (attempts, ok / degraded / error with reasons, changed vs unchanged payloads, first and last capture, observations stored), and extractor failures and partial failures, and for a source with no capture whether the collector did not run that day, ran without it, never ran it, the day is before the run log starts, or it is past run-log retention. `by=observed`: values whose `observed_at` falls on the day; month and year values containing the day are listed apart as period values, and undated observations are counted and excluded. Every item carries `observed_at`, `published_at` and `collected_at`; pruned records are named, never read as a quiet day; per-source and total caps (shared by both by=observed lists) with truncation disclosed. Read-only, one snapshot per call, never fetches |
+| `intel_history_backfill` | Load the history FRED (graph CSV) or the ECB Data Portal already serve into the history store: one capture per request (a FRED id, or an ECB key that may match several series) under `backfill:fred` / `backfill:ecb`, `observed_at` from the publisher's dates, `published_at` null, `collected_at` the backfill time; re-runs store only new or changed values (a change is a revision); FRED missing values skipped and counted, ECB missing values not countable (null); writes and fetches, so capped at 5 FRED series or 2 ECB keys per call |
+
+### Connections Between Series (1)
+Reads the history store only, so the sample is what the collector saved, not each series' full history. A connection is a correlation in that sample: it does not show causation, and a lead does not show causal direction.
+
+| Tool | Description |
+|------|-------------|
+| `intel_lagged_connections` | Correlation between 2 to 8 stored series (keys as `intel_series_history` lists them) on a UTC day, week or month grid, tested at every lag from `-max_lag` to `+max_lag` (default 5, at most 30, at most 1,000 tests a call). Default transform is period-over-period changes, because levels of trending series correlate spuriously; `levels` on request. Per pair: the lag with the smallest p, with Pearson r, overlap n, two-sided p from Student's t (periods treated as independent), `p_ar1` recomputed with an AR(1) effective sample size from both series' lag-1 autocorrelations, and the Benjamini-Hochberg `q` and `q_ar1` across every test in the call. `significant` means `q_ar1` <= 0.05 by default (`significant_if_independent` applies the threshold to `q`); an effective sample under 3 is reported as no evidence, and `data_gaps` names autocorrelated series and pairs where serial correlation dominates. Lag +k compares A at period t with B at t+k, so A leads B by k. Pair/lag overlaps under `min_overlap` points (default 30, clamped to 20..3,000; `--min-overlap` in the CLI) are listed as not tested with their n; revised points use the latest vintage; rows without `observed_at` (Yahoo quotes) are not used; every clamped input is reported, in the CLI too |
 
 ---
 
@@ -609,7 +763,8 @@ radius), wildfires (region-mapped, since NASA FIRMS has no point+radius
 query), ACLED conflict events, a sample of nearby aviation traffic,
 nearby static infrastructure (military bases, ports, pipelines, nuclear
 facilities, undersea cables, datacenters, spaceports) with distances in
-km, and news headline mentions of "Pittsburgh". Every item in the
+km, and news about the place at the AOI's centre (the reverse-geocoded
+settlement and county, here Pittsburgh). Every item in the
 response carries a `[n]` citation into a numbered `sources` list, and
 `data_gaps` names any domain that couldn't be scoped to the AOI (for
 example, wildfires when the AOI falls outside NASA FIRMS's coverage
@@ -619,13 +774,41 @@ instead of silently omitting it.
 `intel_aoi_escalation` runs the same baseline/military/conflict/social-
 unrest scoring engine that powers `intel_hotspot_escalation` for the 22
 built-in hotspots, but scoped to your AOI's own radius instead of a fixed
-2-degree window.
+2-degree window. An AOI has no curated baseline, so that component is 0
+and the score tops out at 80; `score_ceiling` gives this call's ceiling,
+lower when a component is missing or zero-filled. It also scores the two
+components the built-ins leave null. News is the change in the area's
+share of all GDELT coverage, the 7 days ending with GDELT's current
+(still filling) daily step against the 7 before, for the reverse-geocoded
+settlement and county at the AOI's centre (the same query the brief
+uses), so a swing or outage in what GDELT ingests is not read as a news
+surge; only a rise scores. Convergence runs the multi-domain convergence
+grid, laid at four half-degree offsets so a compact cluster on a degree
+line is not split, over the earthquakes, military flights, ACLED events
+and wildfires inside the AOI's exact shape. A source that did not answer,
+or answered only with an expired cached copy, counts as missing, never as
+quiet, and a global sample that hit its cap counts as partial. If either
+component's inputs fail, it comes back null with the reason in
+`data_gaps`, never as a 0, and `computed_from` names the components the
+score was computed from (`zero_filled_components` flags any that are a 0
+only because the military or ACLED fetch failed, and
+`lower_bound_components` any that partial data can only have
+understated).
 
 AOIs persist in a dedicated table inside the same SQLite cache database
-the server already uses (`~/.cache/world-intel-mcp/cache.db` by default,
-or `$WORLD_INTEL_CACHE_DB`), so a scheduled agent can watch any named
+the server already uses (`$WORLD_INTEL_CACHE_DB` when set, otherwise
+`$XDG_CACHE_HOME/world-intel-mcp/cache.db`, falling back to
+`~/.cache/world-intel-mcp/cache.db`), so a scheduled agent can watch any named
 area across restarts with `intel_aoi_list` / `intel_aoi_delete` to manage
 them.
+
+Temporal and keyword spike baselines use `temporal.db` and
+`keyword_spikes.db` in `$XDG_CACHE_HOME/world-intel-mcp/`, or
+`~/.cache/world-intel-mcp/` when `XDG_CACHE_HOME` is unset.
+`WORLD_INTEL_CACHE_DB` only overrides the main cache database, not these
+baseline files. Databases open on first use, not on import. If you set
+`XDG_CACHE_HOME`, move the two baseline files from `~/.cache/world-intel-mcp/`
+to `$XDG_CACHE_HOME/world-intel-mcp/` to keep existing baselines.
 
 ---
 
@@ -692,16 +875,32 @@ The vector store uses FastEmbed (ONNX-based, BAAI/bge-small-en-v1.5) for embeddi
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `ACLED_ACCESS_TOKEN` | No | ACLED conflict events |
+| `ACLED_EMAIL` | No | ACLED account email: conflict events, unrest and risk scores (with `ACLED_PASSWORD`) |
+| `ACLED_PASSWORD` | No | ACLED account password (with `ACLED_EMAIL`) |
+| `UCDP_ACCESS_TOKEN` | No | UCDP organized violence events; the UCDP API refuses requests without it |
 | `NASA_FIRMS_API_KEY` | No | Satellite wildfire data |
 | `EIA_API_KEY` | No | Energy price data |
 | `CLOUDFLARE_API_TOKEN` | No | Internet outage data |
 | `FRED_API_KEY` | No | Macro economic data (also used for yield curve) |
 | `OPENSKY_CLIENT_ID` | No | Military flight fallback |
 | `OPENSKY_CLIENT_SECRET` | No | Military flight fallback |
+| `OPENSKY_USERNAME` | No | OpenSky account for the aviation tools (with `OPENSKY_PASSWORD`); requests are anonymous without it |
+| `OPENSKY_PASSWORD` | No | OpenSky account password (with `OPENSKY_USERNAME`) |
+| `TOMTOM_API_KEY` | No | Traffic flow and incidents |
+| `WINDY_API_KEY` | No | Webcams |
 | `OLLAMA_API_URL` | No | Ollama server for AI-generated briefs (default: `http://localhost:11434`) |
 | `OLLAMA_MODEL` | No | Ollama model for AI-generated briefs (default: `llama3.2`) |
 | `WORLD_INTEL_LOG_LEVEL` | No | Logging level (default: INFO) |
+| `WORLD_INTEL_CACHE_DB` | No | Cache and history database path (default: `$XDG_CACHE_HOME/world-intel-mcp/cache.db`, else `~/.cache/world-intel-mcp/cache.db`) |
+| `WORLD_INTEL_DASHBOARD_HOST` | No | Dashboard bind interface (default: `127.0.0.1`) |
+| `WORLD_INTEL_HEATMAP_CACHE_MB` | No | On-disk cap for adsb.lol heatmaps used by the aircraft-cohort tools (default: 1024) |
+| `WORLD_INTEL_HISTORY_CADENCE_S` | No | Expected seconds between collector attempts, for collection health (default: 300) |
+| `WORLD_INTEL_HISTORY_CADENCES` | No | Per-source cadence overrides, e.g. `aoi_digest=900,news_feed=600` |
+| `WORLD_INTEL_HISTORY_PAYLOAD_DAYS` | No | Days stored payload bodies are kept (default: 7; 0 keeps them forever) |
+| `WORLD_INTEL_HISTORY_CAPTURE_DAYS` | No | Days run-log captures are kept (default: 30; 0 keeps them forever) |
+| `WORLD_INTEL_HISTORY_DAYS` | No | Days observations are kept (default: 365; 0 keeps them forever) |
+| `WORLD_INTEL_HISTORY_MAX_BODY_BYTES` | No | Largest payload body stored, in bytes of JSON (default: 4194304; 0 = no cap) |
+| `WORLD_INTEL_HISTORY_REPLAY_MAX_BYTES` | No | Largest payload returned by a capture replay (default: 262144; 0 = no cap) |
 | `WORLD_INTEL_AOI_WEBHOOK` | No | URL POSTed when an AOI sweep finds changes (collector daemon); quiet sweeps don't fire |
 | `WORLD_INTEL_AOI_WEBHOOK_FORMAT` | No | `json` (default: title/totals/markdown payload) or `text` (raw markdown body + `Title` header, ntfy-style) |
 
@@ -711,23 +910,4 @@ Everything else uses free, unauthenticated public APIs.
 
 ## Development
 
-```bash
-pip install -e ".[dev]"
-pytest                       # 973 tests (991 total, 18 live-network smoke tests deselected by default)
-pytest --cov=world_intel_mcp # with coverage
-pytest tests/test_forex.py -v # single module
-```
-
-### Adding a New Source
-
-1. Create `sources/your_source.py` with `async def fetch_your_data(fetcher: Fetcher, **kwargs) -> dict`
-2. Use `fetcher.get_json(url, source="your-source", cache_key=..., cache_ttl=300)` — automatic caching, retries, circuit breaking, rate limiting
-3. In `server.py`: add `Tool(...)` to `TOOLS`, add `case` to `_dispatch()` (use inline import)
-4. Add tests using `respx` to mock HTTP (see `tests/test_forex.py` for pattern)
-5. Optionally add to `dashboard/app.py` (SSE) and `cli.py` (Click)
-
----
-
-## License
-
-MIT
+*(README truncated for display. [Read the full README on GitHub](https://github.com/marc-shade/world-intel-mcp)).*

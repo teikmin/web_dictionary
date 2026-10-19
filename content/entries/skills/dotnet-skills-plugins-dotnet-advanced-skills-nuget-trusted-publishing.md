@@ -1,19 +1,17 @@
 ---
 slug: dotnet-skills-plugins-dotnet-advanced-skills-nuget-trusted-publishing
 name: nuget-trusted-publishing
-tagline: "Set up NuGet trusted publishing (OIDC) on a GitHub Actions repo —
-  replaces long-lived API keys with short-lived tokens. USE FOR: trusted
-  publishing, N"
-summary: "- GitHub Actions — this skill covers GitHub Actions setup only -
-  nuget.org account — the user needs access to create trusted publishing
-  policies"
+tagline: Agent skill from dotnet/skills
+summary: Agent skill from dotnet/skills
 categories:
-  - coding-agents
+  - other
+tags:
+  - agent-skills
 status: active
-quality_percentile: 49
+quality_percentile: 54
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: dotnet/skills
@@ -21,8 +19,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 5617
-  last_commit: 2026-10-13T16:25:34Z
+  stars: 5669
+  last_commit: 2026-10-19T07:23:49Z
+  stars_delta_7d: 52
+  stars_growth_pct: 0.9
+  trending_score: 52.48
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 5571
+    - 5617
+    - 5669
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,24 +36,23 @@ readme_source:
   repo: dotnet/skills
   path: plugins/dotnet-advanced/skills/nuget-trusted-publishing/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.168Z
+  fetched_at: 2026-10-19T07:40:38.125Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: nuget-trusted-publishing
-  description: >
-    Set up NuGet trusted publishing (OIDC) on a GitHub Actions repo — replaces
-    long-lived API keys with short-lived tokens. USE FOR: trusted publishing,
-    NuGet OIDC, keyless NuGet publish, migrate from NuGet API key, NuGet/login,
-    secure NuGet publishing. DO NOT USE FOR: publishing to private feeds or
-    Azure Artifacts (OIDC is nuget.org only). INVOKES: shell (powershell or
-    bash), edit, create, ask_user for guided repo setup.
+  description: Agent skill from dotnet/skills
   folder_path: plugins/dotnet-advanced/skills/nuget-trusted-publishing
   extra_files:
     - references/package-types.md
     - references/publish-workflow.md
-tags:
-  - github
+  pack_total_skills: 107
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: dotnet-skills
 ---
 
 # NuGet Trusted Publishing Setup

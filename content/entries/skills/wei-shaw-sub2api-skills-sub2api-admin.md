@@ -1,17 +1,22 @@
 ---
 slug: wei-shaw-sub2api-skills-sub2api-admin
-name: sub2api-admin
+name: admin
 tagline: Manage Sub2API admin APIs for accounts, redeem codes, groups, proxies,
   error passthrough rules, TLS fingerprint profiles, imports, exports, batch
   upda
 summary: For all commands and payload examples, read references/admin-cli.md.
 categories:
-  - coding-agents
+  - other
+tags:
+  - 2api
+  - antigravity2api
+  - cc2api
+  - claude
 status: active
-quality_percentile: 93
+quality_percentile: 95
 selection_reason: quality_percentile
 first_seen: 2025-12-18T02:26:18
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Wei-Shaw/sub2api
@@ -19,8 +24,18 @@ source:
   official_vendor: false
   license: LGPL-3.0
 signals:
-  stars: 43887
-  last_commit: 2026-10-13T13:28:15Z
+  stars: 44338
+  last_commit: 2026-10-19T07:16:55Z
+  stars_delta_7d: 451
+  stars_growth_pct: 1
+  trending_score: 455.63
+  rank_current: 30
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 43398
+    - 43887
+    - 44338
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,11 +43,11 @@ readme_source:
   repo: Wei-Shaw/sub2api
   path: skills/sub2api-admin/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:13.462Z
+  fetched_at: 2026-10-19T07:37:14.761Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: sub2api-admin
+  skill_name: admin
   description: Manage Sub2API admin APIs for accounts, redeem codes, groups,
     proxies, error passthrough rules, TLS fingerprint profiles, imports,
     exports, batch updates, and raw administrator API calls. Use when the user
@@ -45,7 +60,13 @@ skill:
     - agents/openai.yaml
     - references/admin-cli.md
     - scripts/sub2api-admin.js
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: wei-shaw-sub2api
 ---
 
 # Sub2API Admin

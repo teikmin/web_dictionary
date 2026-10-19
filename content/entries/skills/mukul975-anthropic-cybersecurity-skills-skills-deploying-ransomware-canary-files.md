@@ -1,0 +1,140 @@
+---
+slug: mukul975-anthropic-cybersecurity-skills-skills-deploying-ransomware-canary-files
+name: deploying-ransomware-canary-files
+tagline: Deploys and monitors ransomware canary files using Python's watchdog
+  library, placing decoy files mimicking high-value targets (financial records,
+  cre
+summary: "- Deploying proactive ransomware detection on file servers, NAS
+  devices, or endpoint systems - Building an early-warning system that detects
+  ransomware before it encrypts business-critical data - Supplementing EDR
+  sol..."
+categories:
+  - security-auth
+tags:
+  - ai-agents
+  - claude-code
+  - cloud-security
+  - cybersecurity
+status: active
+quality_percentile: 66
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: mukul975/Anthropic-Cybersecurity-Skills
+  subpath: skills/deploying-ransomware-canary-files
+  official_vendor: false
+  license: Apache-2.0
+signals:
+  stars: 34678
+  last_commit: 2026-08-31T04:32:44Z
+  stars_delta_7d: 311
+  stars_growth_pct: 0.9
+  trending_score: 313.81
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 33900
+    - 34367
+    - 34678
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: mukul975/Anthropic-Cybersecurity-Skills
+  path: skills/deploying-ransomware-canary-files/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:39:20.849Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: deploying-ransomware-canary-files
+  description: Deploys and monitors ransomware canary files using Python's
+    watchdog library, placing decoy files mimicking high-value targets
+    (financial records, credentials, database exports) where ransomware
+    enumerates first, and alerting via email, Slack, or syslog on any
+    read/modify/rename/delete. Use for early-warning ransomware detection on
+    file servers, NAS, or endpoints, or to supplement EDR where agents can't be
+    deployed.
+  folder_path: skills/deploying-ransomware-canary-files
+  extra_files:
+    - LICENSE
+    - references/api-reference.md
+    - scripts/agent.py
+  pack_total_skills: 818
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: mukul975-anthropic-cybersecurity-skills
+---
+
+# Deploying Ransomware Canary Files
+## When to Use
+
+- Deploying proactive ransomware detection on file servers, NAS devices, or endpoint systems
+- Building an early-warning system that detects ransomware before it encrypts business-critical data
+- Supplementing EDR solutions with lightweight canary file monitoring on systems where agents cannot be deployed
+- Testing ransomware incident response procedures by simulating canary file triggers
+- Monitoring shared drives, home directories, and backup volumes for unauthorized file operations
+
+**Do not use** as a replacement for endpoint protection, backup strategy, or network segmentation. Canary files are a detection layer, not a prevention mechanism.
+
+## Prerequisites
+
+- Python 3.8+ with pip
+- watchdog library (pip install watchdog)
+- Write access to directories where canary files will be placed
+- SMTP server credentials or Slack webhook URL for alerting
+- Administrative access for placing canaries in system directories
+
+## Workflow
+
+### Step 1: Generate Canary Files
+
+Create decoy files with realistic names and content that attract ransomware scanners. Files should have names like `Passwords.xlsx`, `Financial_Report_2026.docx`, `backup_credentials.csv` and contain plausible-looking but fake data. Place them in directories ransomware typically targets first: user desktops, Documents folders, network share roots, and backup paths.
+
+### Step 2: Deploy Filesystem Monitor
+
+Use Python's watchdog library with a custom `FileSystemEventHandler` that watches canary file paths. The handler triggers on `on_modified`, `on_deleted`, `on_moved`, and `on_created` events for canary files. Any legitimate user or process should never touch these files, so any interaction is a high-confidence indicator of ransomware or unauthorized access.
+
+### Step 3: Configure Alert Pipeline
+
+Wire the filesystem monitor to multiple alert channels: email via SMTP, Slack webhook POST, syslog forwarding to SIEM, and local log file. Include the triggering event type, file path, timestamp, and process information (when available) in alert payloads.
+
+### Step 4: Validate and Test
+
+Simulate ransomware behavior by programmatically modifying, renaming, and deleting canary files to verify the detection pipeline fires correctly. Measure time-to-alert and validate alert delivery across all configured channels.
+
+## Key Concepts
+
+| Term | Definition |
+|------|------------|
+| **Canary File** | A decoy file placed in a monitored directory that triggers an alert when accessed, modified, or deleted |
+| **Watchdog** | Python library that monitors filesystem events using OS-native APIs (inotify on Linux, FSEvents on macOS, ReadDirectoryChangesW on Windows) |
+| **Honey File** | Synonym for canary file; a fake document designed to attract and detect malicious activity |
+| **Entropy Check** | Measuring randomness in file content to detect encryption (ransomware produces high-entropy output) |
+
+## Tools & Systems
+
+- **watchdog**: Python filesystem monitoring library using OS-native event APIs
+- **smtplib**: Python standard library for SMTP email alerting
+- **requests**: HTTP library for Slack webhook integration
+- **hashlib**: SHA-256 hashing for canary file integrity verification
+- **psutil**: Process information gathering when canary file access is detected
+
+## Output Format
+
+```
+RANSOMWARE CANARY ALERT
+========================
+Timestamp: 2026-03-11T14:23:07Z
+Event: FILE_MODIFIED
+Canary File: /srv/shares/finance/Passwords.xlsx
+Directory: /srv/shares/finance
+SHA-256 Before: a3f2...8b4c
+SHA-256 After: 7e91...2d3f
+Alert Channels: [email, slack, syslog]
+Action: Investigate immediately - potential ransomware activity
+```

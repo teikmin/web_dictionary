@@ -6,19 +6,33 @@ summary: "The mcp-proxy is a tool that lets you switch between server
   transports. There are two supported modes:"
 categories:
   - agent-frameworks
+tags:
+  - proxy
+  - sse
+  - streamable-http
 status: active
-quality_percentile: 66
+quality_percentile: 74
 selection_reason: quality_percentile
 first_seen: 2024-12-26T20:31:54
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: sparfenyuk/mcp-proxy
   official_vendor: false
   license: MIT
 signals:
-  stars: 2781
-  last_commit: 2026-10-10T18:59:46Z
+  stars: 2796
+  last_commit: 2026-10-14T21:57:15Z
+  stars_delta_7d: 15
+  stars_growth_pct: 0.5
+  trending_score: 15.08
+  rank_current: 50
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2773
+    - 2781
+    - 2796
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +42,7 @@ readme_source:
   repo: sparfenyuk/mcp-proxy
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:02.420Z
+  fetched_at: 2026-10-19T07:33:27.295Z
   truncated: false
 type: mcp_server
 launch:
@@ -38,7 +52,6 @@ launch:
     - mcp-proxy
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # mcp-proxy

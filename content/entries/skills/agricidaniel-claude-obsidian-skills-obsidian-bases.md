@@ -1,19 +1,20 @@
 ---
 slug: agricidaniel-claude-obsidian-skills-obsidian-bases
 name: obsidian-bases
-tagline: Explain, draft, and validate Obsidian Bases .base files with filters,
-  formulas, properties, summaries, and table, card, or list views. Use for
-  Obsidia
-summary: Answer design and syntax questions read-only. For a requested .base
-  edit, resolve the user vault and use one inspected transaction; never write
-  the file directly.
+tagline: Agent skill from AgriciDaniel/claude-obsidian
+summary: Agent skill from AgriciDaniel/claude-obsidian
 categories:
   - productivity-ops
+tags:
+  - agent-skills
+  - ai-note-taking
+  - ai-second-brain
+  - claude-code
 status: active
-quality_percentile: 45
+quality_percentile: 77
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: AgriciDaniel/claude-obsidian
@@ -21,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 15504
-  last_commit: 2026-09-10T17:44:23Z
+  stars: 15634
+  last_commit: 2026-10-18T17:55:37Z
+  stars_delta_7d: 130
+  stars_growth_pct: 0.8
+  trending_score: 131.09
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 15392
+    - 15504
+    - 15634
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,18 +39,21 @@ readme_source:
   repo: AgriciDaniel/claude-obsidian
   path: skills/obsidian-bases/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.232Z
+  fetched_at: 2026-10-19T07:39:24.750Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: obsidian-bases
-  description: Explain, draft, and validate Obsidian Bases .base files with
-    filters, formulas, properties, summaries, and table, card, or list views.
-    Use for Obsidian Bases, database-like vault views, dynamic tables, reading
-    lists, task trackers, filters, formulas, summaries, and .base file edits.
+  description: Agent skill from AgriciDaniel/claude-obsidian
   folder_path: skills/obsidian-bases
   extra_files: []
-tags: []
+  pack_total_skills: 16
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: agricidaniel-claude-obsidian
 ---
 
 # Obsidian Bases

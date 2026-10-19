@@ -7,19 +7,34 @@ tagline: "Stealth browser automation for AI agents over MCP and the Chrome
 summary: Stealth browser automation for MCP-compatible AI agents.
 categories:
   - browser-web
+tags:
+  - ai-agent-tools
+  - ai-tools
+  - anthropic
+  - anti-bot-bypass
 status: active
-quality_percentile: 53
+quality_percentile: 56
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: vibheksoni/stealth-browser-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 2223
+  stars: 3000
   last_commit: 2026-10-12T13:19:48Z
+  stars_delta_7d: 777
+  stars_growth_pct: 35
+  trending_score: 1048.58
+  rank_current: 2
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2212
+    - 2223
+    - 3000
 language: en
 needs_keys: false
 prerequisites:
@@ -29,7 +44,7 @@ readme_source:
   repo: vibheksoni/stealth-browser-mcp
   path: README.md
   branch: master
-  fetched_at: 2026-10-14T14:55:04.131Z
+  fetched_at: 2026-10-19T07:33:27.211Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,7 +54,6 @@ launch:
     - stealth-browser-mcp
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 <div align="center">

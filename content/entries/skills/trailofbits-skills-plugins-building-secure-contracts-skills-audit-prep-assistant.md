@@ -1,18 +1,19 @@
 ---
 slug: trailofbits-skills-plugins-building-secure-contracts-skills-audit-prep-assistant
 name: audit-prep-assistant
-tagline: Prepares codebases for security review using Trail of Bits' checklist.
-  Helps set review goals, runs static analysis tools, increases test coverage,
-  re
-summary: Helps prepare for a security review using Trail of Bits' checklist. A
-  well-prepared codebase makes the review process smoother and more effective.
+tagline: Agent skill from trailofbits/skills
+summary: Agent skill from trailofbits/skills
 categories:
   - security-auth
+tags:
+  - agent-skills
+  - research
+  - security
 status: active
-quality_percentile: 55
+quality_percentile: 59
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: trailofbits/skills
@@ -20,8 +21,16 @@ source:
   official_vendor: false
   license: CC-BY-SA-4.0
 signals:
-  stars: 7507
-  last_commit: 2026-10-13T15:45:03Z
+  stars: 7640
+  last_commit: 2026-10-15T19:32:12Z
+  stars_delta_7d: 133
+  stars_growth_pct: 1.8
+  trending_score: 135.36
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 7412
+    - 7507
+    - 7640
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,26 +38,23 @@ readme_source:
   repo: trailofbits/skills
   path: plugins/building-secure-contracts/skills/audit-prep-assistant/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.155Z
+  fetched_at: 2026-10-19T07:40:36.583Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: audit-prep-assistant
-  description: Prepares codebases for security review using Trail of Bits'
-    checklist. Helps set review goals, runs static analysis tools, increases
-    test coverage, removes dead code, ensures accessibility, and generates
-    documentation (flowcharts, user stories, inline comments). Use when
-    preparing your own codebase to be audited by someone else, getting a
-    repository review-ready before an external security review, deciding what to
-    fix before auditors start, or asking what assessors need from a project. For
-    understanding unfamiliar code you are about to audit, use
-    audit-context-building instead.
+  description: Agent skill from trailofbits/skills
   folder_path: plugins/building-secure-contracts/skills/audit-prep-assistant
   extra_files:
     - agents/openai.yaml
     - assets/trail-of-bits-mark.svg
-tags:
-  - security
+  pack_total_skills: 85
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: trailofbits-skills
 ---
 
 # Audit Prep Assistant
@@ -59,7 +65,6 @@ Helps prepare for a security review using Trail of Bits' checklist. A well-prepa
 **Use this**: 1-2 weeks before your security audit
 
 ---
-
 ## The Preparation Process
 
 ### Step 1: Set Review Goals
@@ -77,7 +82,6 @@ Helps define what you want from the review:
 Documents goals to share with the assessment team.
 
 ---
-
 ### Step 2: Resolve Easy Issues
 
 Runs static analysis and helps fix low-hanging fruit:
@@ -124,7 +128,6 @@ Then I'll:
 **Goal**: Clean static analysis report, high test coverage, minimal dead code
 
 ---
-
 ### Step 3: Ensure Code Accessibility
 
 Helps make code clear and accessible:
@@ -154,7 +157,6 @@ Helps make code clear and accessible:
 - Focus review on your code
 
 ---
-
 ### Step 4: Generate Documentation
 
 Helps create documentation:
@@ -208,7 +210,6 @@ Helps create documentation:
 - Architecture overview
 
 ---
-
 ## How I Work
 
 When invoked, I will:
@@ -228,7 +229,6 @@ Adapts based on:
 - Review timeline
 
 ---
-
 ## Rationalizations (Do Not Skip)
 
 | Rationalization | Why It's Wrong | Required Action |
@@ -243,7 +243,6 @@ Adapts based on:
 | "I'll do this step later" | Steps build on each other - skipping creates gaps | Complete all 4 steps sequentially, track progress with checklist |
 
 ---
-
 ## Example Output
 
 When I finish helping you prepare, you'll have concrete deliverables like:
@@ -256,7 +255,6 @@ Audit Date: March 15, 2024
 Preparation Status: Complete
 
 ---
-
 ## REVIEW GOALS DOCUMENT
 
 Security Objectives:
@@ -278,7 +276,6 @@ Questions for Auditors:
 - How resilient is the system to temporary oracle failures?
 
 ---
-
 ## STATIC ANALYSIS REPORT
 
 Slither Scan Results:
@@ -292,7 +289,6 @@ Date: March 1, 2024
 Status: CLEAN (all critical issues resolved)
 
 ---
-
 ## TEST COVERAGE REPORT
 
 Overall Coverage: 94%
@@ -308,7 +304,6 @@ Command: forge coverage
 Status: EXCELLENT
 
 ---
-
 ## CODE SCOPE
 
 In-Scope Files (8):
@@ -329,7 +324,6 @@ Out-of-Scope:
 Total In-Scope: 2,068 lines of Solidity
 
 ---
-
 ## BUILD INSTRUCTIONS
 
 Prerequisites:
@@ -353,7 +347,6 @@ Verification:
 ✓ No warnings from compiler
 
 ---
-
 ## DOCUMENTATION
 
 Generated Artifacts:
@@ -367,7 +360,6 @@ Generated Artifacts:
 NatSpec Coverage: 100% of public functions
 
 ---
-
 ## DEPLOYMENT INFO
 
 Network: Ethereum Mainnet
@@ -378,13 +370,11 @@ Deployed Contracts:
 [... etc]
 
 ---
-
 PACKAGE READY FOR AUDIT ✓
 Next Step: Share with Trail of Bits assessment team
 ```
 
 ---
-
 ## What You'll Get
 
 **Review Goals Document**:
@@ -429,7 +419,6 @@ Next Step: Share with Trail of Bits assessment team
 - [ ] Glossary created
 
 ---
-
 ## Timeline
 
 **2 weeks before audit**:
@@ -450,7 +439,6 @@ Next Step: Share with Trail of Bits assessment team
 - Send package to auditors
 
 ---
-
 ## Ready to Prep
 
 Let me know when you're ready and I'll help you prepare for your security review!

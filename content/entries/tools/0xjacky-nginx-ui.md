@@ -1,0 +1,482 @@
+---
+slug: 0xjacky-nginx-ui
+name: nginx-ui
+tagline: Yet another WebUI for Nginx
+summary: "&nbsp;Proudly hosted on AtomGit — a part of the G-Star program."
+categories:
+  - cloud-infra
+tags:
+  - code-completion
+  - copilot
+  - cron
+  - docker
+status: active
+quality_percentile: 75
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: 0xJacky/nginx-ui
+  official_vendor: false
+  license: AGPL-3.0
+signals:
+  stars: 11644
+  last_commit: 2026-10-19T02:28:02Z
+  stars_delta_7d: 39
+  stars_growth_pct: 0
+  trending_score: 0
+  velocity_source: age_velocity
+  sparkline_4w:
+    - 11571
+    - 11644
+language: en
+needs_keys: false
+prerequisites:
+  - multi
+readme_source:
+  repo: 0xJacky/nginx-ui
+  path: README.md
+  branch: dev
+  fetched_at: 2026-10-19T07:32:25.360Z
+  truncated: false
+type: agent_tool
+tool:
+  subcategory: other
+  install_command: go install github.com/0xJacky/nginx-ui@latest
+  runtime: multi
+  execution_mode: hybrid
+  has_mcp_support: true
+  mcp_launch:
+    transport: stdio
+    command: npx
+    args:
+      - -y
+      - browserslist@latest
+    env_vars: []
+    confidence: readme
+---
+
+<div align="center">
+      <img src="https://raw.githubusercontent.com/0xJacky/nginx-ui/dev/resources/logo.png" alt="Nginx UI Logo">
+</div>
+
+# Nginx UI
+Yet another Nginx Web UI, developed by [0xJacky](https://jackyu.cn/), [Hintay](https://blog.kugeek.com/) and [Akino](https://github.com/akinoccc).
+
+<div align="center">
+
+[![DeepWiki](https://img.shields.io/badge/DeepWiki-0xJacky%2Fnginx--ui-blue.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAyCAYAAAAnWDnqAAAAAXNSR0IArs4c6QAAA05JREFUaEPtmUtyEzEQhtWTQyQLHNak2AB7ZnyXZMEjXMGeK/AIi+QuHrMnbChYY7MIh8g01fJoopFb0uhhEqqcbWTp06/uv1saEDv4O3n3dV60RfP947Mm9/SQc0ICFQgzfc4CYZoTPAswgSJCCUJUnAAoRHOAUOcATwbmVLWdGoH//PB8mnKqScAhsD0kYP3j/Yt5LPQe2KvcXmGvRHcDnpxfL2zOYJ1mFwrryWTz0advv1Ut4CJgf5uhDuDj5eUcAUoahrdY/56ebRWeraTjMt/00Sh3UDtjgHtQNHwcRGOC98BJEAEymycmYcWwOprTgcB6VZ5JK5TAJ+fXGLBm3FDAmn6oPPjR4rKCAoJCal2eAiQp2x0vxTPB3ALO2CRkwmDy5WohzBDwSEFKRwPbknEggCPB/imwrycgxX2NzoMCHhPkDwqYMr9tRcP5qNrMZHkVnOjRMWwLCcr8ohBVb1OMjxLwGCvjTikrsBOiA6fNyCrm8V1rP93iVPpwaE+gO0SsWmPiXB+jikdf6SizrT5qKasx5j8ABbHpFTx+vFXp9EnYQmLx02h1QTTrl6eDqxLnGjporxl3NL3agEvXdT0WmEost648sQOYAeJS9Q7bfUVoMGnjo4AZdUMQku50McDcMWcBPvr0SzbTAFDfvJqwLzgxwATnCgnp4wDl6Aa+Ax283gghmj+vj7feE2KBBRMW3FzOpLOADl0Isb5587h/U4gGvkt5v60Z1VLG8BhYjbzRwyQZemwAd6cCR5/XFWLYZRIMpX39AR0tjaGGiGzLVyhse5C9RKC6ai42ppWPKiBagOvaYk8lO7DajerabOZP46Lby5wKjw1HCRx7p9sVMOWGzb/vA1hwiWc6jm3MvQDTogQkiqIhJV0nBQBTU+3okKCFDy9WwferkHjtxib7t3xIUQtHxnIwtx4mpg26/HfwVNVDb4oI9RHmx5WGelRVlrtiw43zboCLaxv46AZeB3IlTkwouebTr1y2NjSpHz68WNFjHvupy3q8TFn3Hos2IAk4Ju5dCo8B3wP7VPr/FGaKiG+T+v+TQqIrOqMTL1VdWV1DdmcbO8KXBz6esmYWYKPwDL5b5FA1a0hwapHiom0r/cKaoqr+27/XcrS5UwSMbQAAAABJRU5ErkJggg==)](https://deepwiki.com/0xJacky/nginx-ui) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/0xJacky/nginx-ui) [![Documentation](https://img.shields.io/badge/Documentation-nginxui.com-1f6feb?logo=readthedocs&logoColor=white)](https://nginxui.com)
+
+<p align="center">
+  <a href="https://atomgit.com/uozi/nginx-ui" target="_blank" title="This project is part of the AtomGit G-Star program"><img src="https://raw.githubusercontent.com/0xJacky/nginx-ui/dev/resources/atomgit-logo.svg" alt="AtomGit" height="20" align="middle" style="vertical-align: middle;"></a>
+  &nbsp;Proudly hosted on <a href="https://atomgit.com/uozi/nginx-ui">AtomGit</a> — a part of the <b>G-Star</b> program.
+</p>
+
+[![AtomGit Stars](https://atomgit.com/uozi/nginx-ui/star/badge.svg)](https://atomgit.com/uozi/nginx-ui)
+
+[![Build and Publish](https://github.com/0xJacky/nginx-ui/actions/workflows/build.yml/badge.svg)](https://github.com/0xJacky/nginx-ui/actions/workflows/build.yml) [![GitHub license](https://img.shields.io/github/license/0xJacky/nginx-ui?label=License&logo=github)](https://github.com/0xJacky/nginx-ui "Click to view the repo on GitHub") [![Release Version](https://img.shields.io/github/release/0xJacky/nginx-ui?include_prereleases&label=Release&logo=github)](https://github.com/0xJacky/nginx-ui/releases/latest "Click to view the repo on GitHub") [![GitHub Stars](https://img.shields.io/github/stars/0xJacky/nginx-ui?label=Stars&logo=github)](https://github.com/0xJacky/nginx-ui "Click to view the repo on GitHub") [![GitHub Forks](https://img.shields.io/github/forks/0xJacky/nginx-ui?label=Forks&logo=github)](https://github.com/0xJacky/nginx-ui "Click to view the repo on GitHub") [![Repo Size](https://img.shields.io/github/repo-size/0xJacky/nginx-ui?label=Size&logo=github)](https://github.com/0xJacky/nginx-ui "Click to view the repo on GitHub") [![Closed Issues](https://img.shields.io/github/issues-closed-raw/0xJacky/nginx-ui?label=Closed%20Issues&logo=github)](https://github.com/0xJacky/nginx-ui/issues "View issues on GitHub")
+
+[![Docker Stars](https://img.shields.io/docker/stars/uozi/nginx-ui?label=Stars&logo=docker)](https://hub.docker.com/r/uozi/nginx-ui "Click to view the image on Docker Hub") [![Docker Pulls](https://img.shields.io/docker/pulls/uozi/nginx-ui?label=Pulls&logo=docker)](https://hub.docker.com/r/uozi/nginx-ui "Click to view the image on Docker Hub") [![Image Size](https://img.shields.io/docker/image-size/uozi/nginx-ui/latest?label=Image%20Size&logo=docker)](https://hub.docker.com/r/uozi/nginx-ui "Click to view the image on Docker Hub")
+
+[![Featured｜HelloGitHub](https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=86f3a8f779934748a34fe6f1b5cd442f&claim_uid=MOFqadzAShCBeQj&theme=small)](https://hellogithub.com/repository/86f3a8f779934748a34fe6f1b5cd442f) [![Plumber Score](https://score.getplumber.io/github.com/0xJacky/nginx-ui.svg)](https://score.getplumber.io/github.com/0xJacky/nginx-ui)
+
+[![Deploy on RainYun](https://rainyun-apps.cn-nb1.rains3.com/materials/deploy-on-rainyun-en.svg)](https://app.rainyun.com/apps/rca/store/8035/nginxui_)
+
+</div>
+
+## Documentation
+To check out docs, visit [nginxui.com](https://nginxui.com).
+
+## Sponsor
+
+If you find this project helpful, please consider sponsoring us to support ongoing development and maintenance.
+
+[![GitHub Sponsors](https://img.shields.io/badge/GitHub-Sponsors-ea4aaa?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/nginxui)
+[![Afdian](https://img.shields.io/badge/爱发电-Support-946ce6?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDE1Ljc0TDEyIDIyTDEwLjkxIDE1Ljc0TDQgOUwxMC45MSA4LjI2TDEyIDJaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K)](https://afdian.com/a/nginxui)
+
+### Sponsors
+
+<a href="https://www.axisnow.io/" target="_blank">
+  <img src="https://raw.githubusercontent.com/0xJacky/nginx-ui/dev/resources/axisnow-logo.png" alt="AxisNow" width="220px">
+</a>
+
+Protect and accelerate websites and APIs with consistent access performance across mainland China and worldwide, and extend acceleration and security to native and mobile apps through client SDKs — **Self-hosted private CDN｜Subscription-based anti-DDoS CDN｜A self-controlled, flexibly composable CDN network.**
+
+### Official Community Group
+
+Join the official Nginx UI WeChat community group to discuss usage, deployment ideas, and troubleshooting with other community members.
+
+Scan the QR code below to add us on WeChat, and include `Nginx UI Community Group` in your request. The administrator will invite you to the official community group.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/0xJacky/nginx-ui/dev/docs/public/assets/wechat-community-qr.png" alt="Nginx UI WeChat Community QR Code" width="320">
+</p>
+
+Your support helps us:
+- 🚀 Accelerate the development of new features
+- 🐛 Fix bugs and improve stability
+- 📚 Enhance documentation and tutorials
+- 🌐 Provide better community support
+- 💻 Maintain infrastructure and demo servers
+
+### Tooling Support
+
+<a href="https://www.jetbrains.com/?from=nginx-ui" target="_blank">
+  <img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" alt="JetBrains Logo" width="200px">
+</a>
+
+Thanks to [JetBrains](https://www.jetbrains.com/?from=nginx-ui) for supporting us with free open source licenses.
+
+
+## Stargazers over time
+
+[![Stargazers over time](https://cloud.nginxui.com/stars/0xJacky/nginx-ui.svg)](https://cloud.nginxui.com/stars/0xJacky/nginx-ui.svg)
+
+English | [Español](https://github.com/0xJacky/nginx-ui/blob/dev/resources/readme/README-es.md) | [简体中文](https://github.com/0xJacky/nginx-ui/blob/dev/resources/readme/README-zh_CN.md) | [繁體中文](https://github.com/0xJacky/nginx-ui/blob/dev/resources/readme/README-zh_TW.md) | [Tiếng Việt](https://github.com/0xJacky/nginx-ui/blob/dev/resources/readme/README-vi_VN.md) | [日本語](https://github.com/0xJacky/nginx-ui/blob/dev/resources/readme/README-ja_JP.md)
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#internationalization">Internationalization</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#before-use">Before Use</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li>
+          <a href="#usage">Usage</a>
+          <ul>
+            <li><a href="#from-executable">From Executable</a></li>
+            <li><a href="#with-systemd">With Systemd</a></li>
+            <li><a href="#with-docker">With Docker</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#manual-build">Manual Build</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#build-app">Build Frontend</a></li>
+        <li><a href="#build-backend">Build Backend</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#script-for-linux">Script for Linux</a>
+      <ul>
+        <li><a href="#basic-usage">Basic Usage</a></li>
+        <li><a href="#more-usage">More Usage</a></li>
+      </ul>
+    </li>
+    <li><a href="#example-of-nginx-reverse-proxy-configuration">Example of Nginx Reverse Proxy Configuration</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
+
+## About The Project
+
+![Dashboard](https://raw.githubusercontent.com/0xJacky/nginx-ui/dev/resources/screenshots/dashboard_en.png)
+
+### Demo
+URL：[https://demo.nginxui.com](https://demo.nginxui.com)
+- Username：admin
+- Password：admin
+
+### Features
+
+- Online statistics for server indicators such as CPU usage, memory usage, load average, and disk usage.
+- Automatic configuration backup after changes, with version comparison and restore capabilities
+- Cluster management supporting mirroring operations to multiple nodes, making multi-server environments easy to manage
+- Export encrypted Nginx / Nginx UI configurations for quick deployment and recovery to new environments
+- Enhanced online **ChatGPT** assistant supporting multiple models, including Deepseek-R1's chain-of-thought display to help you better understand and optimize configurations
+- **MCP** (Model Context Protocol) provides special interfaces for AI agents to interact with Nginx UI, enabling automated configuration management and service control.
+- One-click deployment and automatic renewal Let's Encrypt certificates.
+- Online editing websites configurations with our self-designed **NgxConfigEditor** which is a user-friendly block editor for nginx configurations or **Ace Code Editor** which supports **LLM Code Completion** and highlighting nginx configuration syntax.
+- Online view Nginx logs
+- Written in Go and Vue, distribution is a single executable binary.
+- Automatically test configuration file and reload nginx after saving configuration.
+- Web Terminal
+- Dark Mode
+- Responsive Web Design
+
+### Internationalization
+
+We proudly offer official support for:
+
+- English
+- Simplified Chinese
+- Traditional Chinese
+
+As non-native English speakers, we strive for accuracy, but we know there's always room for improvement. If you spot any issues, we'd love your feedback!
+
+Thanks to our amazing community, additional languages are also available! Explore and contribute to translations on [Weblate](https://weblate.nginxui.com).
+
+
+## Getting Started
+
+### Before Use
+
+The Nginx UI follows the Debian web server configuration file standard. Created site configuration files will be placed in the `sites-available` folder that under the Nginx configuration folder (auto-detected). The configuration files for an enabled site will create a soft link to the `sites-enabled` folder. You may need to adjust the way the configuration files are organised.
+
+For non-Debian (and Ubuntu) systems, you may need to change the contents of the `nginx.conf` configuration file to the Debian style as shown below.
+
+```nginx
+http {
+	# ...
+	include /etc/nginx/conf.d/*.conf;
+	include /etc/nginx/sites-enabled/*;
+}
+```
+
+For more information: [debian/conf/nginx.conf](https://salsa.debian.org/nginx-team/nginx/-/blob/debian/latest/debian/conf/nginx.conf#L60-L61)
+
+### Installation
+
+Nginx UI is available on the following platforms:
+
+- macOS 11 Big Sur and later (amd64 / arm64)
+- Windows 10 and later (amd64 / arm64)
+- Linux 2.6.23 and later (x86 / amd64 / arm64 / armv5 / armv6 / armv7 / mips32 / mips64 / riscv64 / loongarch64)
+  - Including but not limited to Debian 7 / 8, Ubuntu 12.04 / 14.04 and later, CentOS 6 / 7, Arch Linux
+- FreeBSD
+- OpenBSD
+- Dragonfly BSD
+- Openwrt
+
+You can visit [latest release](https://github.com/0xJacky/nginx-ui/releases/latest) to download the latest distribution, or just use [installation scripts for Linux](#script-for-linux).
+
+### Usage
+
+In the first runtime of Nginx UI, please visit `http://<your_server_ip>:<listen_port>`
+in your browser to complete the follow-up configurations.
+
+#### From Executable
+**Run Nginx UI in Terminal**
+
+```shell
+nginx-ui -config app.ini
+```
+Press `Control+C` in the terminal to exit Nginx UI.
+
+**Run Nginx UI in Background**
+
+```shell
+nohup ./nginx-ui -config app.ini &
+```
+Stop Nginx UI with the follow command.
+
+```shell
+kill -9 $(ps -aux | grep nginx-ui | grep -v grep | awk '{print $2}')
+```
+
+#### With Systemd
+If you are using the [installation script for Linux](#script-for-linux), the Nginx UI will be installed as `nginx-ui` service in systemd. Please use the `systemctl` command to control it.
+
+**Start Nginx UI**
+
+```shell
+systemctl start nginx-ui
+```
+**Stop Nginx UI**
+
+```shell
+systemctl stop nginx-ui
+```
+**Restart Nginx UI**
+
+```shell
+systemctl restart nginx-ui
+```
+
+#### With Docker
+Our docker image [uozi/nginx-ui:latest](https://hub.docker.com/r/uozi/nginx-ui) is based on the latest nginx image and
+can be used to replace the Nginx on the host. By publishing the container's port 80 and 443 to the host,
+you can easily make the switch.
+
+##### Note
+1. When using this container for the first time, ensure that the volume mapped to /etc/nginx is empty.
+2. If you want to host static files, you can map directories to container.
+3. If you are upgrading from an older image, see the [Docker WebSocket fix guide](https://nginxui.com/guide/docker-websocket-fix.html) for required `conf.d/nginx-ui.conf` updates.
+
+<details>
+<summary><b>Deploy with Docker</b></summary>
+
+1. [Install Docker.](https://docs.docker.com/install/)
+
+2. Then deploy nginx-ui like this:
+
+```bash
+docker run -dit \
+  --name=nginx-ui \
+  --restart=always \
+  -e TZ=Asia/Shanghai \
+  -v /mnt/user/appdata/nginx:/etc/nginx \
+  -v /mnt/user/appdata/nginx-ui:/etc/nginx-ui \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -p 8080:80 -p 8443:443 \
+  uozi/nginx-ui:latest
+```
+
+3. When your docker container is running, Log in to nginx-ui panel with `http://<your_server_ip>:8080/install`.
+   If you change the port mapping, access Nginx UI through the host port mapped to container port `80` instead.
+</details>
+
+<details>
+<summary><b>Deploy with Docker-Compose</b></summary>
+
+1. [Install Docker-Compose.](https://docs.docker.com/compose/install/)
+
+2. Create a docker-compose.yml file like this:
+
+```yml
+services:
+    nginx-ui:
+        stdin_open: true
+        tty: true
+        container_name: nginx-ui
+        restart: always
+        environment:
+            - TZ=Asia/Shanghai
+        volumes:
+            - '/mnt/user/appdata/nginx:/etc/nginx'
+            - '/mnt/user/appdata/nginx-ui:/etc/nginx-ui'
+            - '/var/www:/var/www'
+            - '/var/run/docker.sock:/var/run/docker.sock'
+        ports:
+            - 8080:80
+            - 8443:443
+        image: 'uozi/nginx-ui:latest'
+```
+
+3. Then creat your container by:
+```bash
+docker compose up -d
+```
+
+4. When your docker container is running, Log in to nginx-ui panel with `http://<your_server_ip>:8080/install`.
+   If you change the port mapping, access Nginx UI through the host port mapped to container port `80` instead.
+
+</details>
+
+## Manual Build
+
+On platforms that do not have an official build version, they can be built manually.
+
+### Prerequisites
+
+- Make
+
+- Golang 1.23+
+
+- node.js 21+
+
+  ```shell
+  npx browserslist@latest --update-db
+  ```
+
+### Build Frontend
+
+Please execute the following command in `app` directory.
+
+```shell
+bun install
+bun run build
+```
+
+### Build Backend
+
+Please build the app first, and then execute the following command in the project root directory.
+
+```shell
+go generate
+go build -tags=jsoniter -ldflags "$LD_FLAGS -X 'github.com/0xJacky/Nginx-UI/settings.buildTime=$(date +%s)'" -o nginx-ui -v main.go
+```
+
+## Script for Linux
+
+### Basic Usage
+
+**Install and Upgrade**
+
+```shell
+bash -c "$(curl -L https://cloud.nginxui.com/install.sh)" @ install
+```
+The default listening port is `9000`, and the default HTTP Challenge port is `9180`.
+If there is a port conflict, please modify `/usr/local/etc/nginx-ui/app.ini` manually,
+then use `systemctl restart nginx-ui` to reload the Nginx UI service.
+
+**Remove Nginx UI, except configuration and database files**
+
+```shell
+bash -c "$(curl -L https://cloud.nginxui.com/install.sh)" @ remove
+```
+
+### More Usage
+
+````shell
+bash -c "$(curl -L https://cloud.nginxui.com/install.sh)" @ help
+````
+
+## Example of Nginx Reverse Proxy Configuration
+
+```nginx
+server {
+    listen          80;
+    listen          [::]:80;
+
+    server_name     <your_server_name>;
+    rewrite ^(.*)$  https://$host$1 permanent;
+}
+
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    ''      close;
+}
+
+server {
+    listen  443       ssl;
+    listen  [::]:443  ssl;
+    http2   on;
+
+    server_name         <your_server_name>;
+
+    ssl_certificate     /path/to/ssl_cert;
+    ssl_certificate_key /path/to/ssl_cert_key;
+
+    location / {
+        proxy_set_header    Host                $host;
+        proxy_set_header    X-Real-IP           $remote_addr;
+        proxy_set_header    X-Forwarded-For     $proxy_add_x_forwarded_for;
+        proxy_set_header    X-Forwarded-Proto   $scheme;
+        proxy_http_version  1.1;
+        proxy_set_header    Upgrade             $http_upgrade;
+        proxy_set_header    Connection          $connection_upgrade;
+        proxy_pass          http://127.0.0.1:9000/;
+    }
+}
+```
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you  make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is provided under a GNU Affero General Public License v3.0 license that can be found in the [LICENSE](https://github.com/0xJacky/nginx-ui/blob/dev/LICENSE) file. By using, distributing, or contributing to this project, you agree to the terms and conditions of this license.

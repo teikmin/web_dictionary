@@ -1,17 +1,20 @@
 ---
 slug: ljagiello-ctf-skills-ctf-ai-ml
 name: ctf-ai-ml
-tagline: Provides AI and machine learning techniques for CTF challenges. Use
-  when attacking ML models, crafting adversarial examples, performing model
-  extracti
-summary: "Python packages (all platforms):"
+tagline: Agent skill from ljagiello/ctf-skills
+summary: Agent skill from ljagiello/ctf-skills
 categories:
-  - agent-frameworks
+  - security-auth
+tags:
+  - agent-skills
+  - claude-code
+  - claude-code-skills
+  - codex
 status: active
-quality_percentile: 35
+quality_percentile: 54
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: ljagiello/ctf-skills
@@ -19,8 +22,17 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 3437
-  last_commit: 2026-09-13T21:09:41Z
+  stars: 3475
+  last_commit: 2026-10-17T01:17:07Z
+  stars_delta_7d: 38
+  stars_growth_pct: 1.1
+  trending_score: 38.42
+  rank_current: 88
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3437
+    - 3475
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,23 +40,24 @@ readme_source:
   repo: ljagiello/ctf-skills
   path: ctf-ai-ml/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:19.220Z
+  fetched_at: 2026-10-19T07:40:39.008Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: ctf-ai-ml
-  description: Provides AI and machine learning techniques for CTF challenges. Use
-    when attacking ML models, crafting adversarial examples, performing model
-    extraction, prompt injection, membership inference, training data poisoning,
-    fine-tuning manipulation, neural network analysis, LoRA adapter
-    exploitation, LLM jailbreaking, or solving AI-related puzzles.
+  description: Agent skill from ljagiello/ctf-skills
   folder_path: ctf-ai-ml
   extra_files:
     - adversarial-ml.md
     - llm-attacks.md
     - model-attacks.md
-tags:
-  - python
+  pack_total_skills: 11
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: ljagiello-ctf-skills
 ---
 
 # CTF AI/ML
@@ -74,7 +87,6 @@ brew install python@3
 - [llm-attacks.md](https://github.com/ljagiello/ctf-skills/blob/main/ctf-ai-ml/llm-attacks.md) - Prompt injection (direct/indirect), LLM jailbreaking, token smuggling, context window manipulation, tool use exploitation
 
 ---
-
 ## When to Pivot
 
 - If the challenge becomes pure math, lattice reduction, or number theory with no ML component, switch to `/ctf-crypto`.

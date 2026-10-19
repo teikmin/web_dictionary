@@ -1,6 +1,5 @@
 ---
 slug: koala73-worldmonitor
-type: agent_tool
 name: worldmonitor
 tagline: Real-time global intelligence dashboard. AI-powered news aggregation,
   geopolitical monitoring, and infrastructure tracking in a unified situational
@@ -10,46 +9,56 @@ summary: Real-time global intelligence dashboard — AI-powered news aggregation
   awareness interface.
 categories:
   - cloud-infra
-tags: []
+tags:
+  - dashboard
+  - geopolitics
+  - monitoring
+  - news
 status: active
 quality_percentile: 97
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: koala73/worldmonitor
   official_vendor: false
   license: AGPL-3.0
 signals:
-  stars: 88374
-  last_commit: 2026-10-13T16:25:20Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 88774
+  last_commit: 2026-10-19T06:43:33Z
+  stars_delta_7d: 400
+  stars_growth_pct: 0.5
+  trending_score: 401.81
+  rank_current: 9
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 87972
+    - 88374
+    - 88774
 language: en
 needs_keys: false
 prerequisites:
-  - Network access (HTTP MCP server)
+  - node
 readme_source:
   repo: koala73/worldmonitor
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:54.275Z
+  fetched_at: 2026-10-19T07:31:31.599Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: desktop_ui
+  subcategory: other
   install_command: git clone https://github.com/koala73/worldmonitor.git
   runtime: node
   execution_mode: local
   has_mcp_support: true
   mcp_launch:
     transport: http
+    remote_url: https://worldmonitor.app/mcp
     args: []
     env_vars: []
-    remote_url: https://worldmonitor.app/mcp
     confidence: manifest
 ---
 
@@ -77,7 +86,7 @@ tool:
 
 <p align="center">
   <a href="https://www.npmjs.com/package/worldmonitor"><img src="https://img.shields.io/npm/v/worldmonitor?style=for-the-badge&logo=npm&logoColor=white&label=npm%20i%20worldmonitor&color=CB3837" alt="npm i worldmonitor"></a>&nbsp;
-  <a href="https://www.npmjs.com/package/worldmonitor"><img src="https://img.shields.io/badge/CLI-npx%20worldmonitor-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npx worldmonitor"></a>&nbsp;
+  <a href="https://www.worldmonitor.app/docs/cli-dashboard"><img src="https://img.shields.io/badge/Terminal_Dashboard-npx%20worldmonitor-CB3837?style=for-the-badge&logo=gnometerminal&logoColor=white" alt="Terminal dashboard: npx worldmonitor"></a>&nbsp;
   <a href="https://pypi.org/project/worldmonitor-sdk/"><img src="https://img.shields.io/pypi/v/worldmonitor-sdk?style=for-the-badge&logo=pypi&logoColor=white&label=pip%20install%20worldmonitor-sdk&color=3775A9" alt="pip install worldmonitor-sdk"></a>&nbsp;
   <a href="https://rubygems.org/gems/worldmonitor"><img src="https://img.shields.io/gem/v/worldmonitor?style=for-the-badge&logo=rubygems&logoColor=white&label=gem%20install%20worldmonitor&color=E9573F" alt="gem install worldmonitor"></a>&nbsp;
   <a href="https://pkg.go.dev/github.com/koala73/worldmonitor/sdk/go"><img src="https://img.shields.io/badge/go%20get-sdk%2Fgo-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="go get github.com/koala73/worldmonitor/sdk/go"></a>
@@ -98,7 +107,23 @@ tool:
 
 ![World Monitor Dashboard](https://raw.githubusercontent.com/koala73/worldmonitor/main/docs/images/worldmonitor-7-mar-2026.jpg)
 
+## Ways to Use It
+
+| Surface | Get it | Docs |
+|---------|--------|------|
+| **Web app** | [worldmonitor.app](https://www.worldmonitor.app) and the tech, finance, commodity, happy and energy variants | [Getting Started](https://www.worldmonitor.app/docs/getting-started) |
+| **Desktop app** (Tauri) | Windows, macOS and Linux downloads above | [Desktop App](https://www.worldmonitor.app/docs/desktop-app) |
+| **Terminal dashboard** | `npx worldmonitor` | [Terminal Dashboard](https://www.worldmonitor.app/docs/cli-dashboard) |
+| **CLI** | `npm install -g worldmonitor` | [Command-Line Client](https://www.worldmonitor.app/docs/cli) |
+| **SDKs** | Python `worldmonitor-sdk`, Ruby `worldmonitor`, Go `sdk/go` | [SDKs](https://www.worldmonitor.app/docs/sdks) |
+| **MCP server** | `https://worldmonitor.app/mcp` | [MCP Overview](https://www.worldmonitor.app/docs/mcp-overview) |
+
+The terminal dashboard runs the same live data in your shell: world map, news, markets, conflict, military flights, cyber, climate, prediction markets and live TV, with mouse support and colour themes. No API key needed.
+
+![World Monitor terminal dashboard](https://raw.githubusercontent.com/koala73/worldmonitor/main/docs/images/tui/overview.webp)
+
 ---
+
 ## What It Does
 
 - **Curated news feeds** across global and regional categories, AI-synthesized into briefs
@@ -115,6 +140,7 @@ tool:
 For the full feature list, architecture, data sources, and algorithms, see the **[documentation](https://www.worldmonitor.app/docs/documentation)**.
 
 ---
+
 ## Support Status
 
 All site variants and desktop binaries are built from a single codebase and ship from the same release process. The table below clarifies maintenance status so you know which surfaces are safe to depend on.
@@ -123,10 +149,12 @@ All site variants and desktop binaries are built from a single codebase and ship
 |---------|--------|-------|
 | `worldmonitor.app`, `tech.`, `finance.`, `commodity.`, `happy.`, `energy.` | Stable | Public deployments built from this repo, actively maintained |
 | Desktop binaries (Windows / macOS Apple Silicon / macOS Intel / Linux AppImage) | Stable | One Tauri binary for every variant — install World Monitor and switch to tech, finance, commodity, energy, or happy in-app. There is deliberately no per-variant download |
+| `worldmonitor` npm package (terminal dashboard and CLI) | Stable | Published from [`cli/`](https://github.com/koala73/worldmonitor/blob/main/cli/) on every `cli-v*` tag |
 
 Issues filed against any of the above are triaged from the same backlog — see the [issues board](https://github.com/koala73/worldmonitor/issues) for currently-open work.
 
 ---
+
 ## Quick Start
 
 ```bash
@@ -153,6 +181,7 @@ npm run dev:energy     # energy.worldmonitor.app
 See the **[self-hosting guide](https://www.worldmonitor.app/docs/getting-started)** for deployment options (Vercel, Docker, static).
 
 ---
+
 ## Tech Stack
 
 | Category | Technologies |
@@ -167,6 +196,7 @@ See the **[self-hosting guide](https://www.worldmonitor.app/docs/getting-started
 Full stack details in the **[architecture docs](https://www.worldmonitor.app/docs/architecture)**.
 
 ---
+
 ## Programmatic Access
 
 World Monitor is built for agents and scripts as well as browsers:
@@ -174,7 +204,7 @@ World Monitor is built for agents and scripts as well as browsers:
 - **MCP server** — `https://worldmonitor.app/mcp` (Streamable HTTP). Public `tools/list`; `tools/call` authenticates with a `X-WorldMonitor-Key` header or OAuth.
   The server also publishes its Agent Skills through the draft `io.modelcontextprotocol/skills` extension (`skills/list`, `skills/get`, and `skill://…` resource reads).
 - **REST API** — base `https://api.worldmonitor.app`, described by the [OpenAPI spec](https://worldmonitor.app/openapi.yaml).
-- **CLI** — the official [`worldmonitor`](https://www.npmjs.com/package/worldmonitor) npm package (source in [`cli/`](https://github.com/koala73/worldmonitor/blob/main/cli/)):
+- **CLI** — the official [`worldmonitor`](https://www.npmjs.com/package/worldmonitor) npm package (source in [`cli/`](https://github.com/koala73/worldmonitor/blob/main/cli/)). Run it with no arguments in a terminal for the [terminal dashboard](https://www.worldmonitor.app/docs/cli-dashboard):
 
   ```sh
   npx worldmonitor tools          # run ad-hoc — list every MCP tool (no key needed)
@@ -187,16 +217,19 @@ World Monitor is built for agents and scripts as well as browsers:
 Agent discovery files: [`llms.txt`](https://worldmonitor.app/llms.txt) · [agent-skills manifest](https://worldmonitor.app/.well-known/agent-skills/index.json) · [api-catalog](https://worldmonitor.app/.well-known/api-catalog). Get an API key at [worldmonitor.app/pro](https://www.worldmonitor.app/pro).
 
 ---
+
 ## Flight Data
 
 Flight data provided graciously by [Wingbits](https://wingbits.com?utm_source=worldmonitor&utm_medium=referral&utm_campaign=worldmonitor), the most advanced ADS-B flight data solution.
 
 ---
+
 ## Data Sources
 
 WorldMonitor aggregates attributed upstream sources across geopolitics, finance, energy, climate, aviation, cyber, military, infrastructure, and news intelligence. Curated feeds and freshness-tracked source groups are published in the full [data sources catalog](https://www.worldmonitor.app/docs/data-sources), with provider, feed-tier, license-posture, and collection-method details.
 
 ---
+
 ## Contributing
 
 Contributions welcome! See [CONTRIBUTING.md](https://github.com/koala73/worldmonitor/blob/main/CONTRIBUTING.md) for guidelines.
@@ -207,6 +240,7 @@ npm run build:full       # Production build
 ```
 
 ---
+
 ## License
 
 **AGPL-3.0-only** for the source code. Commercial use is permitted under the AGPL when you comply with its copyleft and source-availability terms.
@@ -224,6 +258,7 @@ See [LICENSE](https://github.com/koala73/worldmonitor/blob/main/LICENSE) for the
 Copyright (C) 2024-2026 Elie Habib. All rights reserved.
 
 ---
+
 ## Author
 
 **Elie Habib** — [GitHub](https://github.com/koala73)
@@ -243,6 +278,7 @@ We thank the following researchers for responsibly disclosing security issues:
 See our [Security Policy](https://github.com/koala73/worldmonitor/blob/main/SECURITY.md) for responsible disclosure guidelines.
 
 ---
+
 <p align="center">
   <a href="https://www.worldmonitor.app">worldmonitor.app</a> &nbsp;·&nbsp;
   <a href="https://www.worldmonitor.app/docs/documentation">docs.worldmonitor.app</a> &nbsp;·&nbsp;

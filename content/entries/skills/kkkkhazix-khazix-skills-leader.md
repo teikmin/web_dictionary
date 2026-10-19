@@ -1,19 +1,20 @@
 ---
 slug: kkkkhazix-khazix-skills-leader
 name: leader
-tagline: 把一句话的想法拆成 AI agent 能独立跑完的目标任务书。用户说「帮我给 agent
-  写个目标」「帮我详细拆一下这个目标」「写个任务书/brief 给 agent」「写个 goal 提示词」「让 agent 自己跑这个项目」「把活分给几个
-  agent 并行」时使用。先进代码库实测、必要时联网调研
-summary: 1 调研。自己能查的一律不问。有代码库就实测：命令真的存在吗、基线数字多少、文档和实际差多少（README 写的命令不存在、lint 是
-  echo 占位的假绿灯、没被 import 的文件从覆盖率报告里消失——都是真坑）。行业知识能联网就查，查不到标「假设，未验证」。摸不到环境就把自测写成任务
-  0。
+tagline: Agent skill from KKKKhazix/khazix-skills
+summary: Agent skill from KKKKhazix/khazix-skills
 categories:
-  - other
+  - coding-agents
+tags:
+  - agent-skills
+  - ai-agents
+  - claude
+  - claude-code
 status: active
-quality_percentile: 63
+quality_percentile: 60
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: KKKKhazix/khazix-skills
@@ -21,29 +22,40 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 21368
+  stars: 21498
   last_commit: 2026-10-01T13:15:32Z
-language: zh
+  stars_delta_7d: 130
+  stars_growth_pct: 0.6
+  trending_score: 130.79
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 21220
+    - 21368
+    - 21498
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: KKKKhazix/khazix-skills
   path: leader/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:14.649Z
+  fetched_at: 2026-10-19T07:39:21.385Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: leader
-  description: 把一句话的想法拆成 AI agent 能独立跑完的目标任务书。用户说「帮我给 agent
-    写个目标」「帮我详细拆一下这个目标」「写个任务书/brief 给 agent」「写个 goal 提示词」「让 agent 自己跑这个项目」「把活分给几个
-    agent 并行」时使用。先进代码库实测、必要时联网调研，再一次性提问（≤5 个），产出一份 ≤4000 字符、直接粘进 /goal
-    就能跑的任务书，含实测数字、白名单地界、防作弊验收和断点续跑。执行型与探索型（调研/选型/找方案）自动分流。
+  description: Agent skill from KKKKhazix/khazix-skills
   folder_path: leader
   extra_files:
     - references/anatomy.md
     - references/style.md
-tags: []
+  pack_total_skills: 6
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: kkkkhazix-khazix-skills
 ---
 
 # 领导 · 你出想法，我出任务书

@@ -8,12 +8,17 @@ summary: "- Conducting accessibility audits - Fixing WCAG violations -
   Implementing accessible components - Preparing for accessibility lawsuits -
   Meeting ADA/Section 508 requirements - Achieving VPAT compliance"
 categories:
-  - security-auth
+  - coding-agents
+tags:
+  - agent-skills
+  - agentic-ai
+  - ai-agents
+  - anthropic
 status: active
-quality_percentile: 92
+quality_percentile: 93
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: wshobson/agents
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 40590
-  last_commit: 2026-10-12T03:07:19Z
+  stars: 41052
+  last_commit: 2026-10-19T01:07:28Z
+  stars_delta_7d: 462
+  stars_growth_pct: 1.1
+  trending_score: 467.26
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 40271
+    - 40590
+    - 41052
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,7 +43,7 @@ readme_source:
   repo: wshobson/agents
   path: plugins/accessibility-compliance/skills/wcag-audit-patterns/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:13.469Z
+  fetched_at: 2026-10-19T07:37:40.641Z
   truncated: false
 type: agent_skill
 skill:
@@ -42,7 +55,13 @@ skill:
   folder_path: plugins/accessibility-compliance/skills/wcag-audit-patterns
   extra_files:
     - references/details.md
-tags: []
+  pack_total_skills: 185
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: wshobson-agents
 ---
 
 # WCAG Audit Patterns

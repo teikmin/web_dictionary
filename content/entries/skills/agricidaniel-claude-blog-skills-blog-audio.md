@@ -1,19 +1,20 @@
 ---
 slug: agricidaniel-claude-blog-skills-blog-audio
 name: blog-audio
-tagline: "Generate audio narration of blog posts using Google Gemini TTS.
-  Supports summary narration, full article read-aloud, and two-speaker
-  podcast/dialogue "
-summary: "- Python 3.11+ (venv managed automatically by run.py) - GOOGLEAIAPIKEY
-  environment variable (same key used by blog-image) - FFmpeg (for WAV-to-MP3
-  conversion; falls back to WAV if missing)"
+tagline: Agent skill from AgriciDaniel/claude-blog
+summary: Agent skill from AgriciDaniel/claude-blog
 categories:
-  - media-creative
+  - productivity-ops
+tags:
+  - agent-skills
+  - ai-citations
+  - ai-content
+  - ai-marketing
 status: active
-quality_percentile: 54
+quality_percentile: 58
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: AgriciDaniel/claude-blog
@@ -21,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 2376
-  last_commit: 2026-10-09T04:25:17Z
+  stars: 2424
+  last_commit: 2026-10-14T08:51:33Z
+  stars_delta_7d: 48
+  stars_growth_pct: 2
+  trending_score: 48.97
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2340
+    - 2376
+    - 2424
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,19 +39,12 @@ readme_source:
   repo: AgriciDaniel/claude-blog
   path: skills/blog-audio/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:19.691Z
+  fetched_at: 2026-10-19T07:41:11.314Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: blog-audio
-  description: >
-    Generate audio narration of blog posts using Google Gemini TTS. Supports
-    summary narration, full article read-aloud, and two-speaker podcast/dialogue
-    mode with 30 voice options. Outputs MP3 with HTML5 audio embed code. Works
-    standalone via /blog audio or internally from blog-write. Falls back
-    gracefully when API key is not configured. Use when user says "blog audio",
-    "narrate blog", "audio version", "text to speech", "tts", "podcast mode",
-    "read aloud", "audio narration", "voice", "narration", "generate audio".
+  description: Agent skill from AgriciDaniel/claude-blog
   folder_path: skills/blog-audio
   extra_files:
     - references/voices.md
@@ -51,10 +53,15 @@ skill:
     - scripts/requirements.lock
     - scripts/requirements.txt
     - scripts/run.py
+    - scripts/runtime_paths.py
     - scripts/setup_environment.py
-tags:
-  - python
-  - audio
+  pack_total_skills: 33
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: agricidaniel-claude-blog
 ---
 
 # Blog Audio: Gemini TTS Narration for Blog Posts

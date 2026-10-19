@@ -1,0 +1,59 @@
+---
+slug: nexu-io-html-anything-next-src-lib-templates-skills-deck-xhs-post
+name: deck-xhs-post
+tagline: Agent skill from nexu-io/html-anything
+summary: Agent skill from nexu-io/html-anything
+categories:
+  - media-creative
+tags:
+  - agent-skills
+  - agentic
+  - ai-agents
+  - ai-design
+status: active
+quality_percentile: 65
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: nexu-io/html-anything
+  subpath: next/src/lib/templates/skills/deck-xhs-post
+  official_vendor: false
+  license: Apache-2.0
+signals:
+  stars: 9173
+  last_commit: 2026-10-13T02:33:42Z
+  stars_delta_7d: 74
+  stars_growth_pct: 0.8
+  trending_score: 74.6
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 9099
+    - 9173
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: nexu-io/html-anything
+  path: next/src/lib/templates/skills/deck-xhs-post/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:39:36.182Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: deck-xhs-post
+  description: Agent skill from nexu-io/html-anything
+  folder_path: next/src/lib/templates/skills/deck-xhs-post
+  extra_files:
+    - example.html
+  pack_total_skills: 81
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: nexu-io-html-anything
+---
+
+Agent skill from nexu-io/html-anything

@@ -1,0 +1,66 @@
+---
+slug: earthtojake-text-to-cad-skills-urdf
+name: urdf
+tagline: Agent skill from earthtojake/text-to-cad
+summary: Agent skill from earthtojake/text-to-cad
+categories:
+  - other
+tags:
+  - agents
+  - ai-agents
+  - cad
+  - mechanical-engineering
+status: active
+quality_percentile: 58
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: earthtojake/text-to-cad
+  subpath: skills/urdf
+  official_vendor: false
+  license: MIT
+signals:
+  stars: 21538
+  last_commit: 2026-10-19T06:42:50Z
+  stars_delta_7d: 836
+  stars_growth_pct: 0
+  trending_score: 0
+  velocity_source: age_velocity
+  sparkline_4w:
+    - 21538
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: earthtojake/text-to-cad
+  path: skills/urdf/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:41:16.818Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: urdf
+  description: Agent skill from earthtojake/text-to-cad
+  folder_path: skills/urdf
+  extra_files:
+    - LICENSE
+    - agents/openai.yaml
+    - references/authoring-contract.md
+    - references/design-ledger.md
+    - references/frame-semantics.md
+    - references/inertials.md
+    - references/meshes.md
+    - references/urdf-workflow.md
+    - references/validation.md
+  pack_total_skills: 13
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: earthtojake-text-to-cad
+---
+
+Agent skill from earthtojake/text-to-cad

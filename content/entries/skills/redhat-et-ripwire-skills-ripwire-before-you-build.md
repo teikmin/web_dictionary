@@ -1,6 +1,6 @@
 ---
 slug: redhat-et-ripwire-skills-ripwire-before-you-build
-name: ripwire-before-you-build
+name: before-you-build
 tagline: "Starting a FEATURE (multi-symbol work): the plan, the API boundary,
   the scope — how big does this change get — from the codebase's real structure.
   Imp"
@@ -9,11 +9,16 @@ summary: = repo root. FEATURE/APPROACH = your task in 2–4 plain words; SYM = a
   the same building blocks.
 categories:
   - coding-agents
+tags:
+  - ai-agents
+  - call-graph
+  - claude
+  - claude-code
 status: active
-quality_percentile: 53
+quality_percentile: 56
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: redhat-et/ripwire
@@ -21,8 +26,15 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 2443
-  last_commit: 2026-10-13T16:17:41Z
+  stars: 2458
+  last_commit: 2026-10-19T07:10:31Z
+  stars_delta_7d: 15
+  stars_growth_pct: 0.6
+  trending_score: 15.09
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2443
+    - 2458
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,11 +42,11 @@ readme_source:
   repo: redhat-et/ripwire
   path: skills/ripwire-before-you-build/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:01.814Z
+  fetched_at: 2026-10-19T07:33:30.114Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: ripwire-before-you-build
+  skill_name: before-you-build
   description: >
     Starting a FEATURE (multi-symbol work): the plan, the API boundary, the
     scope — how big does this change get — from the codebase's real structure.
@@ -43,7 +55,13 @@ skill:
     with an obvious home needs none of this.
   folder_path: skills/ripwire-before-you-build
   extra_files: []
-tags: []
+  pack_total_skills: 18
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: redhat-et-ripwire
 ---
 
 # Before you build — with ripwire

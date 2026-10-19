@@ -1,19 +1,20 @@
 ---
 slug: guillaumemeyer-watermarks-remover-skills-remove-ai-marks
 name: remove-ai-marks
-tagline: "Remove multi-vendor AI provenance marks: invisible Unicode (Layer A),
-  statistical text watermarks via rewrite (Layer B, always offer), and
-  C2PA/EXIF/X"
-summary: "- references/mark-classes.md — Unicode / sampling / C2PA / containers
-  - references/vendor-notes.md — Claude, Gemini/SynthID, OpenAI, open-LLM -
-  references/removal-matrix.md — which layer when - references/ethics.md —..."
+tagline: Agent skill from guillaumemeyer/watermarks-remover
+summary: Agent skill from guillaumemeyer/watermarks-remover
 categories:
-  - productivity-ops
+  - other
+tags:
+  - anthropic
+  - c2pa
+  - chatgpt
+  - claude
 status: active
-quality_percentile: 69
+quality_percentile: 77
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: guillaumemeyer/watermarks-remover
@@ -21,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 23994
-  last_commit: 2026-10-09T01:10:19Z
+  stars: 24395
+  last_commit: 2026-10-17T05:30:08Z
+  stars_delta_7d: 401
+  stars_growth_pct: 1.7
+  trending_score: 407.7
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 23518
+    - 23994
+    - 24395
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,20 +39,12 @@ readme_source:
   repo: guillaumemeyer/watermarks-remover
   path: skills/remove-ai-marks/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.447Z
+  fetched_at: 2026-10-19T07:39:36.439Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: remove-ai-marks
-  description: >
-    Remove multi-vendor AI provenance marks: invisible Unicode (Layer A),
-    statistical text watermarks via rewrite (Layer B, always offer), and
-    C2PA/EXIF/XMP/container metadata on
-    PNG/JPEG/WebP/SVG/PDF/DOCX/ODT/HTML/MD/TEX. Covers Claude,
-    Gemini/SynthID-class, OpenAI provenance, and open-LLM sampling marks. Use
-    when the user asks to strip watermarks, remove C2PA/Content Credentials,
-    clean AI metadata, remove invisible Unicode, anti-detect clean AI output, or
-    runs /remove-ai-marks (aliases: /remove-claude-marks).
+  description: Agent skill from guillaumemeyer/watermarks-remover
   folder_path: skills/remove-ai-marks
   extra_files:
     - references/ethics.md
@@ -52,7 +53,13 @@ skill:
     - references/markdiffusion.md
     - references/removal-matrix.md
     - references/vendor-notes.md
-tags: []
+  pack_total_skills: 2
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: guillaumemeyer-watermarks-remover
 ---
 
 # Remove AI marks
@@ -291,8 +298,7 @@ sentence boundaries and length; and replace both content words and function
 words where meaning allows. Preserve all facts, numbers, names, and technical
 identifiers. Do not add or remove claims. Output only the rewritten text.
 
----
-{TEXT}
+---{TEXT}
 ```
 
 **Humanize (write like a human):**
@@ -304,8 +310,7 @@ filler with concrete natural phrasing, and use plain, varied wording. Preserve
 all facts, numbers, names, and technical identifiers. Do not add or remove
 claims. Output only the rewritten text.
 
----
-{TEXT}
+---{TEXT}
 ```
 
 **Code (comments / docstrings / identifiers):**
@@ -317,8 +322,7 @@ parameters, and private helper names to semantically equivalent names. Preserve
 program behavior, public API names, and all values that affect output. Output
 only the rewritten code.
 
----
-{TEXT}
+---{TEXT}
 ```
 
 **Back-translate (two steps):**

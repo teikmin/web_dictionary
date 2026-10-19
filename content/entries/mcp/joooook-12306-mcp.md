@@ -7,19 +7,32 @@ summary: A 12306 ticket search server based on the Model Context Protocol (MCP).
   12306 tickets.
 categories:
   - browser-web
+tags:
+  - "12306"
+  - train-tickets
 status: active
-quality_percentile: 30
+quality_percentile: 33
 selection_reason: quality_percentile
 first_seen: 2025-04-14T14:31:32
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Joooook/12306-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 2372
+  stars: 2395
   last_commit: 2026-07-31T06:22:59Z
+  stars_delta_7d: 23
+  stars_growth_pct: 1
+  trending_score: 23.22
+  rank_current: 41
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2288
+    - 2372
+    - 2395
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +41,7 @@ readme_source:
   repo: Joooook/12306-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:03.907Z
+  fetched_at: 2026-10-19T07:33:27.984Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,7 +52,6 @@ launch:
     - 12306-mcp
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # <div align="center">12306-mcp</div>

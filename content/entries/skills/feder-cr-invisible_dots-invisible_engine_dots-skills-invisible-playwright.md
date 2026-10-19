@@ -2,16 +2,19 @@
 slug: feder-cr-invisible_dots-invisible_engine_dots-skills-invisible-playwright
 name: invisible-playwright
 tagline: Agent skill from feder-cr/invisible_dots
-summary: "--- name: invisible-playwright description: Use the Dot's browser
-  identities for any task on a website or search on the web: which identity to
-  use, opening and closing one, and when a plain download is simpler than a..."
+summary: Agent skill from feder-cr/invisible_dots
 categories:
   - browser-web
+tags:
+  - agent-skills
+  - agentic-ai
+  - ai-agent
+  - ai-agents
 status: active
-quality_percentile: 94
+quality_percentile: 96
 selection_reason: quality_percentile
 first_seen: 2024-08-04T12:15:06
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: feder-cr/invisible_dots
@@ -19,8 +22,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 32015
-  last_commit: 2026-10-12T22:25:29Z
+  stars: 32155
+  last_commit: 2026-10-19T01:04:36Z
+  stars_delta_7d: 140
+  stars_growth_pct: 0.4
+  trending_score: 140.61
+  rank_current: 56
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 31792
+    - 32015
+    - 32155
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,7 +41,7 @@ readme_source:
   repo: feder-cr/invisible_dots
   path: invisible_engine_dots/skills/invisible-playwright/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.059Z
+  fetched_at: 2026-10-19T07:40:23.264Z
   truncated: false
 type: agent_skill
 skill:
@@ -36,15 +49,18 @@ skill:
   description: Agent skill from feder-cr/invisible_dots
   folder_path: invisible_engine_dots/skills/invisible-playwright
   extra_files: []
-tags:
-  - playwright
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: feder-cr-invisible_dots
 ---
 
----
-name: invisible-playwright
+---name: invisible-playwright
 description: Use the Dot's browser identities for any task on a website or search on the web: which identity to use, opening and closing one, and when a plain download is simpler than a browser.
 ---
-
 # The browser identities
 
 Your browser is invisible_playwright: a real Firefox that a site sees as a person at a computer. How to drive a page

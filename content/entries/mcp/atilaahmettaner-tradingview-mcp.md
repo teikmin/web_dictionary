@@ -1,27 +1,40 @@
 ---
 slug: atilaahmettaner-tradingview-mcp
 name: tradingview-mcp
-tagline: TradingView MCP server — real-time market data, technical analysis,
-  screeners & backtesting for Claude, ChatGPT, Cursor & any MCP client. Stocks,
-  cryp
-summary: TradingView MCP server — real-time market data, technical indicators,
-  screeners, and backtesting for Claude, ChatGPT, Cursor, Copilot, and any MCP
-  client. Stocks, crypto, forex & futures across global exchanges. Backt...
+tagline: "MCP server for market analysis in AI assistants: screeners,
+  multi-timeframe technical analysis, backtests and sentiment for crypto,
+  stocks, forex and "
+summary: "# TradingView MCP Market Data & Technical Analysis for AI Assistants"
 categories:
   - domain-research
+tags:
+  - claude-desktop
+  - cryptocurrency
+  - futures
+  - market-data
 status: active
 quality_percentile: 86
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: atilaahmettaner/tradingview-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 5047
-  last_commit: 2026-10-11T20:17:05Z
+  stars: 5083
+  last_commit: 2026-10-16T21:41:54Z
+  stars_delta_7d: 36
+  stars_growth_pct: 0.7
+  trending_score: 36.26
+  rank_current: 29
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 4952
+    - 5047
+    - 5083
 language: en
 needs_keys: false
 prerequisites:
@@ -30,7 +43,7 @@ readme_source:
   repo: atilaahmettaner/tradingview-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:59.230Z
+  fetched_at: 2026-10-19T07:32:30.551Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,10 +52,11 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
+<!-- mcp-name: io.github.atilaahmettaner/tradingview-mcp -->
 # TradingView MCP Market Data & Technical Analysis for AI Assistants
+
 <p align="center">
   <a href="https://github.com/atilaahmettaner/tradingview-mcp/blob/main/assets/tradingmcp-film-15.mp4"><img src="https://raw.githubusercontent.com/atilaahmettaner/tradingview-mcp/main/assets/tradingmcp-film-15.webp" width="820" alt="15-second product film: an AI is asked 'What did the market do today?', a live market board assembles, Ethereum is marked as the day's top mover and its daily chart with Bollinger Bands is drawn in the chat — TradingMCP, the hosted version of this server" /></a>
   <br>
@@ -173,7 +187,7 @@ https://github-production-user-asset-6210df.s3.amazonaws.com/67838093/478689497-
 | **Setup Time** | 5 minutes | Hours (Docker, Conda...) | Weeks (Contracts) |
 | **Cost** | Free & Open Source | Variable | $30k+/year |
 | **Backtesting** | ✅ 9 strategies + Walk-forward + Sharpe | ❌ Manual scripting | ✅ Proprietary |
-| **Live Sentiment** | ✅ Reddit + RSS news | ❌ Separate setup | ✅ Terminal |
+| **News & Sentiment** | ✅ Licensed news + per-ticker sentiment (Marketaux) | ❌ Separate setup | ✅ Terminal |
 | **Market Data** | ✅ Live / Real-Time | Historical / Delayed | Live |
 | **API Keys** | **None required** | Multiple (OpenAI, etc.) | N/A |
 

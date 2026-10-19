@@ -1,0 +1,51 @@
+---
+slug: ref-tools-ref-tools-mcp
+name: ref-tools-mcp
+tagline: Helping coding agents never make mistakes working with public or
+  private libraries without wasting the context window.
+summary: Helping coding agents never make mistakes working with public or
+  private libraries without wasting the context window.
+categories:
+  - coding-agents
+tags:
+  - coding-agent
+  - documentation-tool
+status: active
+quality_percentile: 37
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: ref-tools/ref-tools-mcp
+  official_vendor: false
+  license: MIT
+signals:
+  stars: 1183
+  last_commit: 2026-10-01T22:21:11Z
+  stars_delta_7d: 12
+  stars_growth_pct: 0
+  trending_score: 0
+  velocity_source: age_velocity
+  sparkline_4w:
+    - 1183
+language: en
+needs_keys: false
+prerequisites:
+  - Network access (HTTP MCP server)
+readme_source:
+  repo: ref-tools/ref-tools-mcp
+  path: README.md
+  branch: main
+  fetched_at: 2026-10-19T07:41:25.516Z
+  truncated: false
+type: mcp_server
+launch:
+  transport: http
+  remote_url: https://api.ref.tools/mcp
+  args: []
+  env_vars: []
+  confidence: manifest
+---
+
+Helping coding agents never make mistakes working with public or private libraries without wasting the context window.

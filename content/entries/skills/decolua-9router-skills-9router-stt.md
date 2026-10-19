@@ -1,18 +1,23 @@
 ---
 slug: decolua-9router-skills-9router-stt
-name: 9router-stt
+name: stt
 tagline: Speech-to-text via 9Router /v1/audio/transcriptions using OpenAI
   Whisper / Groq / Gemini / Deepgram / AssemblyAI / NVIDIA / HuggingFace models.
   Use wh
 summary: model = STT model ID (e.g. openai/whisper-1, groq/whisper-large-v3,
   deepgram/nova-3, gemini/gemini-2.5-flash).
 categories:
-  - media-creative
+  - agent-frameworks
+tags:
+  - ai-agents
+  - ai-gateway
+  - anthropic
+  - chatgpt
 status: active
-quality_percentile: 89
+quality_percentile: 92
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: decolua/9router
@@ -20,8 +25,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 30732
-  last_commit: 2026-10-08T12:49:04Z
+  stars: 31045
+  last_commit: 2026-10-15T14:53:12Z
+  stars_delta_7d: 313
+  stars_growth_pct: 1
+  trending_score: 316.19
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 30411
+    - 30732
+    - 31045
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,19 +42,24 @@ readme_source:
   repo: decolua/9router
   path: skills/9router-stt/SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:14.647Z
+  fetched_at: 2026-10-19T07:37:41.945Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: 9router-stt
+  skill_name: stt
   description: Speech-to-text via 9Router /v1/audio/transcriptions using OpenAI
     Whisper / Groq / Gemini / Deepgram / AssemblyAI / NVIDIA / HuggingFace
     models. Use when the user wants to transcribe audio, convert speech to text,
     or get subtitles from audio files.
   folder_path: skills/9router-stt
   extra_files: []
-tags:
-  - audio
+  pack_total_skills: 9
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: decolua-9router
 ---
 
 # 9Router — Speech-to-Text

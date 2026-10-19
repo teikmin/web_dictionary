@@ -1,42 +1,49 @@
 ---
 slug: prefecthq-fastmcp
-type: agent_tool
 name: fastmcp
 tagline: 🚀 The fast, Pythonic way to build MCP servers and clients.
 summary: Move fast and make things.
 categories:
   - agent-frameworks
 tags:
+  - agents
   - fastmcp
+  - llms
+  - mcp-clients
 status: active
-quality_percentile: 90
+quality_percentile: 89
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: PrefectHQ/fastmcp
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 28063
-  last_commit: 2026-10-13T13:21:27Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 28132
+  last_commit: 2026-10-18T21:09:40Z
+  stars_delta_7d: 69
+  stars_growth_pct: 0.2
+  trending_score: 69.17
+  rank_current: 27
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 27993
+    - 28063
+    - 28132
 language: en
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - python
 readme_source:
   repo: PrefectHQ/fastmcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:04.736Z
+  fetched_at: 2026-10-19T07:33:31.452Z
   truncated: false
+type: agent_tool
 tool:
   subcategory: sdk_harness
   install_command: pip install fastmcp
@@ -78,7 +85,9 @@ tool:
 <a href="https://trendshift.io/repositories/21461" target="_blank"><img src="https://trendshift.io/api/badge/repositories/21461" alt="prefecthq%2Ffastmcp | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 </div>
 
----The [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) connects LLMs to tools and data. FastMCP is a full MCP application framework for servers, clients, and interactive apps. A server starts with ordinary Python:
+---
+
+The [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) connects LLMs to tools and data. FastMCP is a full MCP application framework for servers, clients, and interactive apps. A server starts with ordinary Python:
 
 ```python
 from fastmcp import FastMCP

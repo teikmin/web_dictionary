@@ -7,11 +7,16 @@ tagline: Autonomously improve a generated paper via GPT-6-Astra xhigh review →
 summary: "Autonomously improve the paper at: $ARGUMENTS"
 categories:
   - domain-research
+tags:
+  - ai-research
+  - ai-tools
+  - aris
+  - autonomous-agent
 status: active
-quality_percentile: 88
+quality_percentile: 90
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: wanshuiyin/Auto-claude-code-research-in-sleep
@@ -19,8 +24,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 17411
-  last_commit: 2026-10-07T07:46:15Z
+  stars: 17693
+  last_commit: 2026-10-19T06:20:47Z
+  stars_delta_7d: 282
+  stars_growth_pct: 1.6
+  trending_score: 286.57
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 17090
+    - 17411
+    - 17693
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,7 +41,7 @@ readme_source:
   repo: wanshuiyin/Auto-claude-code-research-in-sleep
   path: skills/auto-paper-improvement-loop/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:54:54.783Z
+  fetched_at: 2026-10-19T07:32:25.028Z
   truncated: false
 type: agent_skill
 skill:
@@ -39,10 +52,27 @@ skill:
     generated paper.
   folder_path: skills/auto-paper-improvement-loop
   extra_files: []
-tags: []
+  pack_total_skills: 85
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: wanshuiyin-auto-claude-code-research-in-sleep
 ---
 
 # Auto Paper Improvement Loop: Review → Fix → Recompile
+> **Before each reviewer slot**, follow [Selectable Reviewers](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/auto-paper-improvement-loop/../shared-references/reviewer-backends.md):
+> resolve invocation → `.aris/reviewer.json` → Claude Code default (Codex MCP)
+> with `reviewer_route.py` through the canonical helper resolver, preserving this
+> slot's tier, fresh contexts, source/image inputs and deterministic gates.
+> Codex examples/pins below apply only to `backend=codex`; other routes use their
+> own first-call/reply contract. Save the route and actual returned identity;
+> unavailable selections are `REVIEW_UNAVAILABLE`. Classify acceptance from actual
+> families/completion/scope. Forward invocation reviewer/model/effort overrides
+> to reviewer-bearing children. Generation workers are unchanged.
+
+
 > 🔒 **Do not wrap this skill in `/loop`, `/schedule`, or `CronCreate`.** It
 > already loops internally (review → fix → recompile) with its own round
 > structure and a deliberate fresh-reviewer bias guard each round (no
@@ -284,6 +314,8 @@ done > /tmp/paper_full_text.txt
 
 Send the full paper text AND compiled PDF to GPT-6-Astra xhigh:
 
+> Resolve this reviewer slot first; the following is the `backend=codex` example.
+
 ```
 mcp__codex__codex:
   model: gpt-6-astra
@@ -447,6 +479,8 @@ This is advisory only — the inline Step 4.5 check remains the default and cont
 ### Step 5: Round 2 Review
 
 If `REVIEWER_BIAS_GUARD = true` (default), use a **fresh** `mcp__codex__codex` thread for Round 2. Do not reuse the Round 1 threadId for prompting. Save the returned threadId only for recovery bookkeeping.
+
+> Resolve this reviewer slot first; the following is the `backend=codex` example.
 
 ```
 mcp__codex__codex:

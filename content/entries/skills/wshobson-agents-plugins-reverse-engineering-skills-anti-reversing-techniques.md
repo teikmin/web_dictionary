@@ -1,0 +1,126 @@
+---
+slug: wshobson-agents-plugins-reverse-engineering-skills-anti-reversing-techniques
+name: anti-reversing-techniques
+tagline: "Understand anti-reversing, obfuscation, and protection techniques
+  encountered during software analysis. Use this skill when analyzing malware
+  evasion "
+summary: Understanding protection mechanisms encountered during authorized
+  software analysis, security research, and malware analysis. This knowledge
+  helps analysts bypass protections to complete legitimate analysis tasks.
+categories:
+  - coding-agents
+tags:
+  - agent-skills
+  - agentic-ai
+  - ai-agents
+  - anthropic
+status: active
+quality_percentile: 93
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: wshobson/agents
+  subpath: plugins/reverse-engineering/skills/anti-reversing-techniques
+  official_vendor: false
+  license: MIT
+signals:
+  stars: 41052
+  last_commit: 2026-10-19T01:07:28Z
+  stars_delta_7d: 462
+  stars_growth_pct: 1.1
+  trending_score: 467.26
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 40271
+    - 40590
+    - 41052
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: wshobson/agents
+  path: plugins/reverse-engineering/skills/anti-reversing-techniques/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:37:40.658Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: anti-reversing-techniques
+  description: Understand anti-reversing, obfuscation, and protection techniques
+    encountered during software analysis. Use this skill when analyzing malware
+    evasion techniques, when implementing anti-debugging protections for CTF
+    challenges, when reverse engineering packed binaries, or when building
+    security research tools that need to detect virtualized environments.
+  folder_path: plugins/reverse-engineering/skills/anti-reversing-techniques
+  extra_files:
+    - references/advanced-techniques.md
+    - references/details.md
+  pack_total_skills: 185
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: wshobson-agents
+---
+
+> **AUTHORIZED USE ONLY**: This skill contains dual-use security techniques. Before proceeding with any bypass or analysis:
+>
+> 1. **Verify authorization**: Confirm you have explicit written permission from the software owner, or are operating within a legitimate security context (CTF, authorized pentest, malware analysis, security research)
+> 2. **Document scope**: Ensure your activities fall within the defined scope of your authorization
+> 3. **Legal compliance**: Understand that unauthorized bypassing of software protection may violate laws (CFAA, DMCA anti-circumvention, etc.)
+>
+> **Legitimate use cases**: Malware analysis, authorized penetration testing, CTF competitions, academic security research, analyzing software you own/have rights to
+
+# Anti-Reversing Techniques
+
+Understanding protection mechanisms encountered during authorized software analysis, security research, and malware analysis. This knowledge helps analysts bypass protections to complete legitimate analysis tasks.
+
+For advanced techniques, see [references/advanced-techniques.md](https://github.com/wshobson/agents/blob/main/plugins/reverse-engineering/skills/anti-reversing-techniques/references/advanced-techniques.md)
+
+---
+
+## Input / Output
+
+**What you provide:**
+
+- **Binary path or sample**: the executable, DLL, or firmware image under analysis
+- **Platform**: Windows x86/x64, Linux, macOS, ARM — affects which checks apply
+- **Goal**: bypass for dynamic analysis, identify protection type, build detection code, implement for CTF
+
+**What this skill produces:**
+
+- **Protection identification**: named technique (e.g., RDTSC timing check, PEB BeingDebugged) with location in binary
+- **Bypass strategy**: specific patch addresses, hook points, or tool commands to neutralize each check
+- **Analysis report**: structured findings listing each protection layer, severity, and recommended bypass
+- **Code artifacts**: Python/IDAPython scripts, GDB command sequences, or C stubs for bypassing or implementing checks
+
+---
+
+## Detailed patterns and worked examples
+
+Detailed pattern documentation lives in `references/details.md`. Read that file when the navigation tier above is insufficient.
+
+## Troubleshooting
+
+**Detection technique works on x86 but not ARM**
+
+RDTSC and CPUID are x86-only. On ARM, use `MRS x0, PMCCNTR_EL0` (requires kernel PMU access) or `clock_gettime(CLOCK_MONOTONIC)`. PEB/TEB do not exist on ARM — replace with `/proc/self/status` (Linux) or `task_info` (macOS). Rebuild detection logic with platform-specific APIs.
+
+**False positive on legitimate debugger or analysis tool**
+
+Timing checks fire when Process Monitor or AV hooks inflate syscall latency. Calibrate the threshold at startup: measure the guarded path 3 times and use `mean + 3*stddev`. For ptrace checks, verify the TracerPid comm name via `/proc/<pid>/comm` before exiting — it may be an unrelated monitoring tool, not a debugger.
+
+**Bypass patch causes crash instead of continuing execution**
+
+Before NOPing a conditional jump, trace the "detected" branch fully. If it initializes or frees heap state needed later, patching the jump skips that setup and corrupts state. Instead, patch the comparison operand to the expected "clean" value, or use x64dbg's "Set condition to always false" on the breakpoint rather than modifying bytes.
+
+---
+
+## Related Skills
+
+- `binary-analysis-patterns` — static and dynamic analysis workflows for ELF/PE/Mach-O
+- `memory-forensics` — process memory acquisition, artifact extraction, and live analysis
+- `protocol-reverse-engineering` — decoding custom binary protocols and encrypted network traffic

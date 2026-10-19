@@ -8,20 +8,35 @@ summary: ContextForge is an open source registry and proxy that federates tools,
   agents, and APIs into one clean endpoint for your AI clients. It provides
   centralized governance, discovery, and observability across your AI inf...
 categories:
-  - agent-frameworks
+  - cloud-infra
+tags:
+  - agents
+  - api-gateway
+  - asyncio
+  - authentication-middleware
 status: active
 quality_percentile: 96
 selection_reason: quality_percentile
 first_seen: 2025-05-08T08:16:59
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: IBM/mcp-context-forge
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 4616
-  last_commit: 2026-10-13T15:58:00Z
+  stars: 4649
+  last_commit: 2026-10-17T15:15:57Z
+  stars_delta_7d: 33
+  stars_growth_pct: 0.7
+  trending_score: 33.24
+  rank_current: 32
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 4582
+    - 4616
+    - 4649
 language: en
 needs_keys: false
 prerequisites:
@@ -31,7 +46,7 @@ readme_source:
   repo: IBM/mcp-context-forge
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:06.297Z
+  fetched_at: 2026-10-19T07:33:31.476Z
   truncated: false
 type: mcp_server
 launch:
@@ -41,7 +56,6 @@ launch:
     - mcp-contextforge-gateway
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # ContextForge

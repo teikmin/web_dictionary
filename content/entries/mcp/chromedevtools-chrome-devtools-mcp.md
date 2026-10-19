@@ -6,20 +6,35 @@ summary: "[Tool reference][tool-reference] | [Changelog][changelog] |
   [Contributing][contributing] | [Troubleshooting][troubleshooting] | [Design
   Principles][design-principles]"
 categories:
-  - coding-agents
+  - browser-web
+tags:
+  - browser
+  - chrome
+  - chrome-devtools
+  - debugging
 status: active
-quality_percentile: 83
+quality_percentile: 87
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: ChromeDevTools/chrome-devtools-mcp
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 53450
-  last_commit: 2026-10-13T16:08:03Z
+  stars: 53815
+  last_commit: 2026-10-19T07:25:40Z
+  stars_delta_7d: 365
+  stars_growth_pct: 0.7
+  trending_score: 367.49
+  rank_current: 6
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 53072
+    - 53450
+    - 53815
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +43,7 @@ readme_source:
   repo: ChromeDevTools/chrome-devtools-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:53.420Z
+  fetched_at: 2026-10-19T07:31:31.557Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,7 +54,6 @@ launch:
     - chrome-devtools-mcp@latest
   env_vars: []
   confidence: readme
-tags: []
 ---
 
 # Chrome DevTools for agents

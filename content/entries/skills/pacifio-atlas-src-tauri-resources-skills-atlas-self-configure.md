@@ -1,17 +1,20 @@
 ---
 slug: pacifio-atlas-src-tauri-resources-skills-atlas-self-configure
-name: atlas-self-configure
-tagline: Inspect and safely update Atlas user preferences through Atlas's config.toml.
-summary: The same path on every platform. If $XDGCONFIGHOME is set to an
-  absolute path, it's $XDGCONFIGHOME/atlas/config.toml instead — check that
-  variable before assuming.
+name: self-configure
+tagline: Agent skill from pacifio/atlas
+summary: Agent skill from pacifio/atlas
 categories:
-  - other
+  - agent-frameworks
+tags:
+  - ai-coding-assistant
+  - claude-code
+  - codex
+  - coding-agents
 status: active
-quality_percentile: 69
+quality_percentile: 72
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: pacifio/atlas
@@ -19,8 +22,17 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 9593
-  last_commit: 2026-10-13T16:16:11Z
+  stars: 9622
+  last_commit: 2026-10-19T05:59:38Z
+  stars_delta_7d: 29
+  stars_growth_pct: 0.3
+  trending_score: 29.09
+  rank_current: 94
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 9593
+    - 9622
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,15 +40,21 @@ readme_source:
   repo: pacifio/atlas
   path: src-tauri/resources/skills/atlas-self-configure/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.782Z
+  fetched_at: 2026-10-19T07:39:30.955Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: atlas-self-configure
-  description: Inspect and safely update Atlas user preferences through Atlas's config.toml.
+  skill_name: self-configure
+  description: Agent skill from pacifio/atlas
   folder_path: src-tauri/resources/skills/atlas-self-configure
   extra_files: []
-tags: []
+  pack_total_skills: 6
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: pacifio-atlas
 ---
 
 # Atlas self-configure

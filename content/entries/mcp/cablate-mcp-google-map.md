@@ -3,24 +3,37 @@ slug: cablate-mcp-google-map
 name: mcp-google-map
 tagline: 18 Google Maps tools and 3 Agent Skills for place search, routes,
   travel planning, and local SEO—via MCP or standalone CLI.
-summary: "@cablate/mcp-google-map turns Google Maps Platform into 18 read-only
-  agent tools and three focused Skills. An agent can find real places, verify
-  routes, compare options, build practical itineraries, or audit local sea..."
+summary: 18 Google Maps tools and 3 Agent Skills for place search, routes,
+  travel planning, and local SEO—via MCP or standalone CLI.
 categories:
   - domain-research
+tags:
+  - agent-tools
+  - ai-agent
+  - codex-plugin
+  - geocoding
 status: active
-quality_percentile: 49
+quality_percentile: 50
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: cablate/mcp-google-map
   official_vendor: false
   license: MIT
 signals:
-  stars: 471
+  stars: 473
   last_commit: 2026-09-26T20:35:07Z
+  stars_delta_7d: 2
+  stars_growth_pct: 0.4
+  trending_score: 2.01
+  rank_current: 78
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 471
+    - 473
 language: en
 needs_keys: false
 prerequisites:
@@ -29,7 +42,7 @@ readme_source:
   repo: cablate/mcp-google-map
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:17.596Z
+  fetched_at: 2026-10-19T07:39:42.772Z
   truncated: false
 type: mcp_server
 launch:
@@ -40,7 +53,6 @@ launch:
     - "@cablate/mcp-google-map"
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # Google Maps for AI agents

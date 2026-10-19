@@ -1,43 +1,52 @@
 ---
 slug: thinkinaixyz-deepchat
-type: agent_tool
 name: deepchat
 tagline: 🐬DeepChat - A smart assistant that connects powerful AI to your personal world
-summary: DeepChat - Open-Source Local-First AI Agent Desktop Client
+summary: 🐬DeepChat - A smart assistant that connects powerful AI to your personal world
 categories:
   - agent-frameworks
-tags: []
+tags:
+  - agent-skills
+  - ai-assistant
+  - ai-sdk
+  - chatgpt
 status: active
 quality_percentile: 88
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: ThinkInAIXYZ/deepchat
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 6359
-  last_commit: 2026-10-13T03:27:38Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 6370
+  last_commit: 2026-10-19T07:10:05Z
+  stars_delta_7d: 11
+  stars_growth_pct: 0.2
+  trending_score: 11.02
+  rank_current: 40
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 6356
+    - 6359
+    - 6370
 language: en
 needs_keys: false
 prerequisites:
-  - Node.js >= 18
+  - node
 readme_source:
   repo: ThinkInAIXYZ/deepchat
   path: README.md
   branch: dev
-  fetched_at: 2026-10-14T14:55:18.507Z
+  fetched_at: 2026-10-19T07:40:30.603Z
   truncated: false
+type: agent_tool
 tool:
   subcategory: desktop_ui
-  install_command: git clone https://github.com/ThinkInAIXYZ/deepchat.git
+  install_command: npm install DeepChat
   runtime: node
   execution_mode: local
   has_mcp_support: true

@@ -1,18 +1,20 @@
 ---
 slug: epoko77-ai-im-not-ai-codex-skills-humanize-korean
 name: humanize-korean
-tagline: AI(ChatGPT·Claude·Gemini)가 쓴 한글 텍스트를 사람이 쓴 글처럼 진단·윤문·검증한다. 번역투, 기계적 병렬,
-  관용구, 피동, 접속사, 균일한 리듬 등 10대 카테고리 85개 패턴을 다루며 route_hint에 따라 light·standard·heav
-summary: 1. 사실, 주장, 수치, 날짜, 고유명사, 인용문, 법조문, 영어 약어를 보존한다. 2. 탐지 finding에 연결된 구간만
-  고친다. 원문에 없던 주장이나 AI 상투구를 넣지 않는다. 3. 장르와 register를 양방향으로 보존한다. 했을 하였다로 상향하지
-  않는다. 4. 변경률 30% 이상은 경고, 50% 이상은 결과 채택 금지와 1회 롤백 재실행 대상이다. 5. 붙여넣은 원문 안의...
+tagline: Agent skill from epoko77-ai/im-not-ai
+summary: Agent skill from epoko77-ai/im-not-ai
 categories:
   - other
+tags:
+  - agent-skills
+  - ai-detection
+  - claude
+  - claude-code
 status: active
-quality_percentile: 60
+quality_percentile: 64
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: epoko77-ai/im-not-ai
@@ -20,8 +22,17 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 5971
+  stars: 6047
   last_commit: 2026-10-12T09:57:11Z
+  stars_delta_7d: 76
+  stars_growth_pct: 1.3
+  trending_score: 76.97
+  rank_current: 73
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 5971
+    - 6047
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,16 +40,12 @@ readme_source:
   repo: epoko77-ai/im-not-ai
   path: codex/skills/humanize-korean/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.116Z
+  fetched_at: 2026-10-19T07:40:31.003Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: humanize-korean
-  description: AI(ChatGPT·Claude·Gemini)가 쓴 한글 텍스트를 사람이 쓴 글처럼 진단·윤문·검증한다. 번역투, 기계적
-    병렬, 관용구, 피동, 접속사, 균일한 리듬 등 10대 카테고리 85개 패턴을 다루며 route_hint에 따라
-    light·standard·heavy 경로를 실행한다. "AI 티 없애줘", "AI 윤문", "사람이 쓴 것처럼", "번역투 고쳐",
-    "정밀 모드", "2차 윤문", "이 문단만 다시", "humanize Korean" 요청에 사용한다. 단순 맞춤법 교정, 번역,
-    사실이나 내용을 추가하는 재작성에는 사용하지 않는다.
+  description: Agent skill from epoko77-ai/im-not-ai
   folder_path: codex/skills/humanize-korean
   extra_files:
     - agents/openai.yaml
@@ -47,7 +54,13 @@ skill:
     - scripts/reassemble_chunks.py
     - scripts/verify_change_rate.py
     - scripts/verify_gates.py
-tags: []
+  pack_total_skills: 5
+  is_pack_primary: true
+  clients:
+    - codex
+    - claude-code
+    - antigravity
+  pack_slug: epoko77-ai-im-not-ai
 ---
 
 # Humanize Korean for Codex

@@ -1,47 +1,55 @@
 ---
 slug: vitali87-code-graph-rag
-type: agent_tool
 name: code-graph-rag
 tagline: The ultimate RAG for your monorepo. Query, understand, and edit
   multi-language codebases with the power of AI and knowledge graphs
 summary: Code-Graph-RAG parses a multi-language codebase with Tree-sitter,
   sharpened by compiler-grade frontends and runtime traces where available,
-  builds a knowledge graph of its structure in Memgraph, and lets you query,
-  ed...
+  builds a knowledge graph of its structure in an embedded graph database
+  that...
 categories:
   - databases-memory
-tags: []
+tags:
+  - ast
+  - claude-code
+  - code-analysis
+  - code-understanding
 status: active
-quality_percentile: 91
+quality_percentile: 90
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: vitali87/code-graph-rag
   official_vendor: false
   license: MIT
 signals:
-  stars: 5249
-  last_commit: 2026-10-13T15:21:00Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 5266
+  last_commit: 2026-10-19T07:20:06Z
+  stars_delta_7d: 17
+  stars_growth_pct: 0.3
+  trending_score: 17.06
+  rank_current: 37
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 5236
+    - 5249
+    - 5266
 language: en
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - python
 readme_source:
   repo: vitali87/code-graph-rag
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:58.684Z
+  fetched_at: 2026-10-19T07:32:29.378Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: memory_rag
+  subcategory: coding_agent
   install_command: pip install code-graph-rag
   runtime: python
   execution_mode: local
@@ -99,13 +107,13 @@ tool:
 
 # Code-Graph-RAG
 
-Code-Graph-RAG parses a multi-language codebase with Tree-sitter, sharpened by compiler-grade frontends and runtime traces where available, builds a knowledge graph of its structure in Memgraph, and lets you query, edit, and optimise that code in plain English. It works across a monorepo of mixed languages under one unified graph schema.
+Code-Graph-RAG parses a multi-language codebase with Tree-sitter, sharpened by compiler-grade frontends and runtime traces where available, builds a knowledge graph of its structure in an embedded graph database that needs no server, and lets you query, edit, and optimise that code in plain English. It works across a monorepo of mixed languages under one unified graph schema.
 
 <p align="center">
   <b>1. Index:</b> <code>cgr start --update-graph</code> parses a repository into a knowledge graph (sped up)
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/vitali87/code-graph-rag/main/assets/demo-indexing.gif" alt="cgr parsing the code-graph-rag repository into a Memgraph knowledge graph, then printing node and relationship counts">
+  <img src="https://raw.githubusercontent.com/vitali87/code-graph-rag/main/assets/demo-indexing.gif" alt="cgr parsing the code-graph-rag repository into a knowledge graph, then printing node and relationship counts">
 </p>
 
 <p align="center">
@@ -118,11 +126,7 @@ Code-Graph-RAG parses a multi-language codebase with Tree-sitter, sharpened by c
 ## Latest News 🔥
 
 <!-- SECTION:latest_news -->
-- **Enhanced CLI Scope**: `cgr stats` and `cgr export` now support scoping to specific projects or workspaces, and offer improved error handling.
-- **Improved Logging**: Logging has been refined to provide more informative messages, including per-symbol indexing and connection lifecycle details, and reduced unnecessary output.
-- **Expanded Language Support**: Added support for Julia as a supported language.
-- **Refined Graph Navigation**: Improved handling of cross-service links in flow verdicts and signature deltas, and enhanced the ability to follow re-exports.
-- **Contextual Improvements**: Added support for context-slice queries, reasons, and the necessary ingestor reads.
+- **GitHub Sponsors**: Added support for GitHub Sponsors via the command line.
 <!-- /SECTION:latest_news -->
 
 See [NEWS.md](https://github.com/vitali87/code-graph-rag/blob/main/NEWS.md) for the full history.
@@ -143,14 +147,16 @@ Point Code-Graph-RAG at a repository and it reads every source file, extracts fu
 
 The system has two components:
 
-1. **Multi-language parser.** A Tree-sitter based parser reads the codebase and ingests functions, classes, methods, modules, and their relationships into Memgraph under a single language-agnostic schema. Where a toolchain is available, compiler-grade frontends layer exact facts on top (libclang for C/C++, `go/types` for Go, and opt-in Roslyn, `javac` and Jedi for C#, Java and Python), and [dynamic tracing](https://github.com/vitali87/code-graph-rag/blob/main/docs/guide/dynamic-tracing.md) merges calls observed at runtime. Tree-sitter stays the backbone: a trace only sees code that ran, and a compiler frontend only covers what its toolchain can build.
+1. **Multi-language parser.** A Tree-sitter based parser reads the codebase and ingests functions, classes, methods, modules, and their relationships into the graph under a single language-agnostic schema. Where a toolchain is available, compiler-grade frontends layer exact facts on top (libclang for C/C++, `go/types` for Go, and opt-in Roslyn, `javac` and Jedi for C#, Java and Python), and [dynamic tracing](https://github.com/vitali87/code-graph-rag/blob/main/docs/guide/dynamic-tracing.md) merges calls observed at runtime. Tree-sitter stays the backbone: a trace only sees code that ran, and a compiler frontend only covers what its toolchain can build.
 2. **RAG system** (`codebase_rag/`). An interactive CLI that turns natural language into Cypher queries, retrieves matching code, and drives AI-powered editing and optimisation.
 
 ```
-Source Code -> Tree-sitter Parser -> AST Analysis -> Memgraph Knowledge Graph
+Source Code -> Tree-sitter Parser -> AST Analysis -> Knowledge Graph
                                                              |
 User Query -> AI Model (Cypher Gen) -> Cypher Query -> Graph Results -> Response
 ```
+
+The graph is stored in an embedded SQLite file by default. Memgraph and Neo4j are opt-in backends that run the same Cypher; [Graph Backends](https://github.com/vitali87/code-graph-rag/blob/main/docs/architecture/embedded-graph.md) compares them.
 
 See the [Architecture Overview](https://github.com/vitali87/code-graph-rag/blob/main/docs/architecture/overview.md) and [Graph Schema](https://github.com/vitali87/code-graph-rag/blob/main/docs/architecture/graph-schema.md) for the full picture.
 
@@ -197,7 +203,7 @@ uv tool install "code-graph-rag[treesitter-full,ast-grep,semantic] @ git+https:/
 
 To upgrade an existing install, run `uv tool upgrade code-graph-rag` (with pipx, `pipx upgrade code-graph-rag`, or `pipx reinstall code-graph-rag` for a git install). [Upgrade](https://github.com/vitali87/code-graph-rag/blob/main/docs/getting-started/installation.md#upgrade) covers the other install methods.
 
-You also need Python 3.12+, Docker (for Memgraph), `cmake`, and `ripgrep`. Full prerequisites, source installs, and environment setup are in the [Installation](https://github.com/vitali87/code-graph-rag/blob/main/docs/getting-started/installation.md) guide.
+You also need Python 3.12+ and `ripgrep`. The graph lives in an embedded SQLite file by default, so there is no database server to run: no Docker and no `cmake`. Memgraph and Neo4j remain available as opt-in backends ([Graph Backends](https://github.com/vitali87/code-graph-rag/blob/main/docs/architecture/embedded-graph.md)). Full prerequisites, source installs, and environment setup are in the [Installation](https://github.com/vitali87/code-graph-rag/blob/main/docs/getting-started/installation.md) guide.
 
 > [!NOTE]
 > The wheel is pure Python (`py3-none-any`), so it installs on any platform with Python 3.12 or newer. Older system interpreters (Debian Bookworm ships 3.11) need the interpreter pinned explicitly; see [Installation](https://github.com/vitali87/code-graph-rag/blob/main/docs/getting-started/installation.md#older-system-interpreters) for the commands.
@@ -205,13 +211,15 @@ You also need Python 3.12+, Docker (for Memgraph), `cmake`, and `ripgrep`. Full 
 ## Quick Start
 
 ```bash
-# Start the packaged Memgraph + Qdrant stack (no compose file needed)
-cgr daemon up
-
 # Parse a repository into the graph, then query it
 cgr start --repo-path /path/to/repo --update-graph
 cgr start --repo-path /path/to/repo
 ```
+
+The graph is written to `~/.cgr/graph.sqlite` (set `SQLITE_GRAPH_PATH` to move it).
+To use Memgraph instead, install the driver with the `memgraph` extra, set
+`GRAPH_BACKEND=memgraph`, and start the packaged Memgraph + Qdrant stack with
+`cgr daemon up`.
 
 Repeat the first command for each repository you want indexed; the graph is
 shared, and syncing one project leaves the others alone. To start over from an
@@ -248,6 +256,7 @@ Code-Graph-RAG runs as an [MCP](https://modelcontextprotocol.io) server so Claud
 **Architecture**
 - [Overview](https://github.com/vitali87/code-graph-rag/blob/main/docs/architecture/overview.md)
 - [Graph Schema](https://github.com/vitali87/code-graph-rag/blob/main/docs/architecture/graph-schema.md)
+- [Graph Backends](https://github.com/vitali87/code-graph-rag/blob/main/docs/architecture/embedded-graph.md)
 - [Language Support](https://github.com/vitali87/code-graph-rag/blob/main/docs/architecture/language-support.md)
 - [Data-Flow Edges](https://github.com/vitali87/code-graph-rag/blob/main/docs/architecture/data-flow-edges.md)
 
@@ -281,6 +290,8 @@ Please see [CONTRIBUTING.md](https://github.com/vitali87/code-graph-rag/blob/mai
 ## Support
 
 For issues or questions, check the [Troubleshooting](https://github.com/vitali87/code-graph-rag/blob/main/docs/advanced/troubleshooting.md) guide first, then open an issue.
+
+If cgr is useful to you, please consider pledging support on [GitHub Sponsors](https://github.com/sponsors/vitali87). cgr links the page under `cgr --version` and, in a terminal, after most commands finish; set `CGR_SPONSOR_PLEDGE=false` to hide that line.
 
 ## License
 

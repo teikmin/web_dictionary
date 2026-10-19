@@ -1,6 +1,6 @@
 ---
 slug: stacklok-toolhive-skills-toolhive-cli-user
-name: toolhive-cli-user
+name: cli-user
 tagline: Guide for using ToolHive CLI (thv) to run and manage MCP servers,
   skills, and AI-client plugins. Use when managing `thv ai-plugin` installs,
   project s
@@ -8,12 +8,17 @@ summary: "- Container Runtime: Docker, Podman, Colima, or Rancher Desktop (with
   dockerd/moby) - ToolHive CLI: Install with brew install stacklok/tap/thv
   (macOS/Linux) or winget install stacklok.thv (Windows)"
 categories:
-  - coding-agents
+  - cloud-infra
+tags:
+  - ai-security
+  - aicodeassistant
+  - golang
+  - kubernetes
 status: active
-quality_percentile: 77
+quality_percentile: 82
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: stacklok/toolhive
@@ -21,8 +26,18 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 2279
-  last_commit: 2026-10-13T15:10:00Z
+  stars: 2295
+  last_commit: 2026-10-19T00:21:31Z
+  stars_delta_7d: 16
+  stars_growth_pct: 0.7
+  trending_score: 16.11
+  rank_current: 99
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2242
+    - 2279
+    - 2295
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,11 +45,11 @@ readme_source:
   repo: stacklok/toolhive
   path: skills/toolhive-cli-user/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:07.442Z
+  fetched_at: 2026-10-19T07:33:39.616Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: toolhive-cli-user
+  skill_name: cli-user
   description: Guide for using ToolHive CLI (thv) to run and manage MCP servers,
     skills, and AI-client plugins. Use when managing `thv ai-plugin` installs,
     project sync or upgrades, or plugin publishing for Claude Code or Codex;
@@ -47,8 +62,13 @@ skill:
   extra_files:
     - references/COMMANDS.md
     - references/EXAMPLES.md
-tags:
-  - docker
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: stacklok-toolhive
 ---
 
 # ToolHive CLI User Guide

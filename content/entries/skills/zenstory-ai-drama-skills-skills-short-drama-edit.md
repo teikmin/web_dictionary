@@ -1,15 +1,20 @@
 ---
 slug: zenstory-ai-drama-skills-skills-short-drama-edit
 name: short-drama-edit
-tagline: 将已生成的短剧镜头剪成成片，记录入出点、镜序、声音、字幕与交付规格。用于套剪、加字幕、统一响度、调整节奏或导出精修素材；需要补素材或修改故事时转回对应创作阶段。
-summary: 根据实际素材选择可用片段，按剧本与分镜核对叙事。素材与意图不一致时，记录取舍和缺口。
+tagline: Agent skill from zenstory-ai/drama-skills
+summary: Agent skill from zenstory-ai/drama-skills
 categories:
-  - other
+  - media-creative
+tags:
+  - agent-skills
+  - ai-short-drama
+  - ai-video
+  - aigc
 status: active
-quality_percentile: 67
+quality_percentile: 76
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: zenstory-ai/drama-skills
@@ -17,21 +22,29 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 2825
-  last_commit: 2026-10-03T08:56:29Z
-language: zh
+  stars: 3053
+  last_commit: 2026-10-15T09:53:13Z
+  stars_delta_7d: 228
+  stars_growth_pct: 8.1
+  trending_score: 246.4
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2574
+    - 2825
+    - 3053
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: zenstory-ai/drama-skills
   path: skills/short-drama-edit/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:19.695Z
+  fetched_at: 2026-10-19T07:40:39.132Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: short-drama-edit
-  description: 将已生成的短剧镜头剪成成片，记录入出点、镜序、声音、字幕与交付规格。用于套剪、加字幕、统一响度、调整节奏或导出精修素材；需要补素材或修改故事时转回对应创作阶段。
+  description: Agent skill from zenstory-ai/drama-skills
   folder_path: skills/short-drama-edit
   extra_files:
     - agents/openai.yaml
@@ -44,7 +57,13 @@ skill:
     - assets/remotion/src/font.ts
     - assets/remotion/src/index.ts
     - assets/remotion/src/rules.mjs
-tags: []
+  pack_total_skills: 12
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: zenstory-ai-drama-skills
 ---
 
 # 短剧剪辑与成片

@@ -1,47 +1,54 @@
 ---
 slug: panniantong-agent-reach
-type: agent_tool
 name: Agent-Reach
 tagline: Give your AI agent eyes to see the entire internet. Read & search
   Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API
   fees.
 summary: 当下最稳的接入方式，替你选好、装好、体检好——接入方式会换代，你不用操心
 categories:
-  - coding-agents
+  - browser-web
 tags:
-  - github
+  - agent-infrastructure
+  - ai-agent
+  - ai-search
+  - automation
 status: active
 quality_percentile: 85
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Panniantong/Agent-Reach
   official_vendor: false
   license: MIT
 signals:
-  stars: 96891
-  last_commit: 2026-10-08T08:31:08Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 99237
+  last_commit: 2026-10-15T11:34:42Z
+  stars_delta_7d: 2346
+  stars_growth_pct: 2.4
+  trending_score: 2402.8
+  rank_current: 3
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 93055
+    - 96891
+    - 99237
 language: zh
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - python
 readme_source:
   repo: Panniantong/Agent-Reach
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:12.464Z
+  fetched_at: 2026-10-19T07:36:32.922Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: browser_agent
-  install_command: git clone https://github.com/Panniantong/Agent-Reach.git
+  subcategory: coding_agent
+  install_command: pip install agent-reach
   runtime: python
   execution_mode: local
   has_mcp_support: true
@@ -80,6 +87,7 @@ tool:
 </p>
 
 ---
+
 ## ❤️赞助商
 
 > [想出现在这里？](mailto:pnt01@foxmail.com)
@@ -109,6 +117,7 @@ tool:
 </details>
 
 ---
+
 ## 为什么需要 Agent Reach？
 
 AI Agent 已经能帮你写代码、改文档、管项目——但你让它去网上找点东西，它就抓瞎了：
@@ -154,6 +163,7 @@ AI Agent 已经能帮你写代码、改文档、管项目——但你让它去�
 | 🩺 **自带诊断** | `agent-reach doctor` 一条命令告诉你哪个通、哪个不通、怎么修 |
 
 ---
+
 ## 支持的平台
 
 | 平台 | 装好即用 | 配置后解锁 | 怎么配 |
@@ -185,6 +195,7 @@ AI Agent 已经能帮你写代码、改文档、管项目——但你让它去�
 > 💻 本地电脑不需要代理。代理只有部署在服务器上才需要（~$1/月）。
 
 ---
+
 ## 快速上手
 
 > ⚠️ **OpenClaw 用户请先确认 exec 权限已开启**
@@ -230,6 +241,7 @@ AI Agent 已经能帮你写代码、改文档、管项目——但你让它去�
 </details>
 
 ---
+
 ## 装好就能用
 
 不需要任何配置，告诉 Agent 就行：
@@ -244,6 +256,7 @@ AI Agent 已经能帮你写代码、改文档、管项目——但你让它去�
 **不需要记命令。** Agent 读了 SKILL.md 之后自己知道该调什么。需要登录的平台（小红书、Twitter、Reddit、Facebook、Instagram），告诉 Agent「帮我配 XXX」即可解锁。
 
 ---
+
 ## 设计理念
 
 **Agent Reach 是一个能力层（capability layer），不是又一个工具。**
@@ -295,6 +308,7 @@ channels/
 > 📌 这些都是「当前选型」，基于真机实测定期复核。某条路失效了我们换下一条——`agent-reach doctor` 永远告诉你现在走的是哪条。
 
 ---
+
 ## 安全性
 
 Agent Reach 在设计上重视安全：
@@ -343,6 +357,7 @@ agent-reach uninstall --keep-config
 卸载 Python 包本身：`pip uninstall agent-reach`
 
 ---
+
 ## ⭐ 为什么值得 Star
 
 这个项目我自己每天在用，所以我会一直维护它。
@@ -356,6 +371,7 @@ agent-reach uninstall --keep-config
 Star 一下，下次需要的时候能找到。⭐
 
 ---
+
 ## 致谢
 
 [OpenCLI](https://github.com/jackwener/opencli) · [twitter-cli](https://github.com/public-clis/twitter-cli) · [rdt-cli](https://github.com/public-clis/rdt-cli) · [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) · [xhs-cli](https://github.com/jackwener/xiaohongshu-cli) · [bili-cli](https://github.com/public-clis/bilibili-cli) · [yt-dlp](https://github.com/yt-dlp/yt-dlp) · [Jina Reader](https://github.com/jina-ai/reader) · [Exa](https://exa.ai) · [mcporter](https://github.com/nicobailon/mcporter) · [feedparser](https://github.com/kurtmckee/feedparser) · [mcp-server-linkedin](https://github.com/stickerdaniel/linkedin-mcp-server)

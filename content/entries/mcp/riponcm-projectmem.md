@@ -9,19 +9,34 @@ summary: 🎉 v0.3.4 is out — the summary stays small as your project ages,
   depend on your time zone. See what changed →
 categories:
   - databases-memory
+tags:
+  - agent-memory
+  - agentic-ai
+  - ai-agents
+  - ai-memory
 status: active
-quality_percentile: 22
+quality_percentile: 21
 selection_reason: quality_percentile
 first_seen: 2026-05-09T20:28:36
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: riponcm/projectmem
   official_vendor: false
   license: MIT
 signals:
-  stars: 864
+  stars: 868
   last_commit: 2026-10-03T00:01:18Z
+  stars_delta_7d: 4
+  stars_growth_pct: 0.5
+  trending_score: 4.02
+  rank_current: 74
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 852
+    - 864
+    - 868
 language: en
 needs_keys: false
 prerequisites:
@@ -31,7 +46,7 @@ readme_source:
   repo: riponcm/projectmem
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:10.253Z
+  fetched_at: 2026-10-19T07:34:17.207Z
   truncated: false
 type: mcp_server
 launch:
@@ -41,8 +56,6 @@ launch:
     - projectmem
   env_vars: []
   confidence: manifest
-tags:
-  - memory
 ---
 
 <!-- mcp-name: io.github.riponcm/projectmem -->

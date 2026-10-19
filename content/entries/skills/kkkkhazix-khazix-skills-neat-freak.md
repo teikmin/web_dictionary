@@ -1,17 +1,20 @@
 ---
 slug: kkkkhazix-khazix-skills-neat-freak
 name: neat-freak
-tagline: "Knowledge and governance closeout: reconcile project docs, rule files
-  (CLAUDE.md/AGENTS.md), authorized agent memory, and workspace residue with
-  what "
-summary: 一次洁癖收尾只有在相关事实面都得到明确状态后才算完成：
+tagline: Agent skill from KKKKhazix/khazix-skills
+summary: Agent skill from KKKKhazix/khazix-skills
 categories:
-  - databases-memory
+  - coding-agents
+tags:
+  - agent-skills
+  - ai-agents
+  - claude
+  - claude-code
 status: active
-quality_percentile: 63
+quality_percentile: 60
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: KKKKhazix/khazix-skills
@@ -19,32 +22,29 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 21368
+  stars: 21498
   last_commit: 2026-10-01T13:15:32Z
-language: zh
+  stars_delta_7d: 130
+  stars_growth_pct: 0.6
+  trending_score: 130.79
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 21220
+    - 21368
+    - 21498
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: KKKKhazix/khazix-skills
   path: neat-freak/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:14.652Z
+  fetched_at: 2026-10-19T07:39:21.385Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: neat-freak
-  description: 'Knowledge and governance closeout: reconcile project docs, rule
-    files (CLAUDE.md/AGENTS.md), authorized agent memory, and workspace residue
-    with what the code and runtime actually do, so the next session or the next
-    person starts from one current answer. Trigger when the user names
-    "neat-freak", "洁癖", or "/neat" — and also on clear knowledge-closeout intent
-    without the name: syncing or tidying project docs/rules/memory after
-    development ("把文档和记忆整理一下", "收尾时把文档同步掉", "docs 和代码对不上了"), stale or
-    conflicting CLAUDE.md/memory, a clean handoff to a teammate or a fresh
-    session, or auditing whether workspace rules are actually followed. Do not
-    trigger for pure coding/refactoring/debugging tasks, tidying data or prose
-    (JSON, 周报, changelog announcements), or a bare "整理" with no
-    project-knowledge context.'
+  description: Agent skill from KKKKhazix/khazix-skills
   folder_path: neat-freak
   extra_files:
     - evals/evals.json
@@ -57,8 +57,13 @@ skill:
     - evals/fixtures/eval-1-routine-dev-sync/workspace/taskflow/README.md
     - evals/fixtures/eval-1-routine-dev-sync/workspace/taskflow/docs/architecture.md
     - evals/fixtures/eval-1-routine-dev-sync/workspace/taskflow/package.json
-tags:
-  - memory
+  pack_total_skills: 6
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: kkkkhazix-khazix-skills
 ---
 
 # 洁癖 — Knowledge and Governance Closeout

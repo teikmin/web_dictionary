@@ -1,19 +1,20 @@
 ---
 slug: tw93-waza-plugins-waza-skills-health
 name: health
-tagline: Audits agent config, instruction drift, hooks or MCP, and AI
-  maintainability. Use when Claude, Codex, or Pi setup looks wrong. Not for
-  application bug
-summary: "Audit the current project's agent setup and AI coding maintainability
-  against this framework: agent config → instruction surfaces → tools/runtime →
-  verifiers → maintainability"
+tagline: Agent skill from tw93/Waza
+summary: Agent skill from tw93/Waza
 categories:
-  - agent-frameworks
+  - media-creative
+tags:
+  - agent-skills
+  - ai-agents
+  - claude
+  - claude-code
 status: active
-quality_percentile: 50
+quality_percentile: 55
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: tw93/Waza
@@ -21,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 7286
-  last_commit: 2026-10-12T08:47:41Z
+  stars: 7329
+  last_commit: 2026-10-18T08:14:09Z
+  stars_delta_7d: 43
+  stars_growth_pct: 0.6
+  trending_score: 43.25
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 7170
+    - 7286
+    - 7329
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,14 +39,12 @@ readme_source:
   repo: tw93/Waza
   path: plugins/waza/skills/health/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.396Z
+  fetched_at: 2026-10-19T07:39:37.458Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: health
-  description: Audits agent config, instruction drift, hooks or MCP, and AI
-    maintainability. Use when Claude, Codex, or Pi setup looks wrong. Not for
-    application bugs or PR review.
+  description: Agent skill from tw93/Waza
   folder_path: plugins/waza/skills/health
   extra_files:
     - agents/inspector-context.md
@@ -50,7 +57,13 @@ skill:
     - scripts/check-agent-context.sh
     - scripts/check-doc-refs.sh
     - scripts/check-maintainability.sh
-tags: []
+  pack_total_skills: 8
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: tw93-waza
 ---
 
 # Health: Agent-Assisted Engineering Health

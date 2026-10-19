@@ -1,42 +1,47 @@
 ---
 slug: modelcontextprotocol-python-sdk
-type: agent_tool
 name: python-sdk
 tagline: The official Python SDK for Model Context Protocol servers and clients
 summary: Python implementation of the Model Context Protocol (MCP)
 categories:
   - agent-frameworks
 tags:
+  - mcp-client
   - python
 status: active
-quality_percentile: 100
+quality_percentile: 99
 selection_reason: official_vendor
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: modelcontextprotocol/python-sdk
   official_vendor: true
   license: MIT
 signals:
-  stars: 24564
-  last_commit: 2026-10-13T10:21:52Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 24615
+  last_commit: 2026-10-17T13:54:39Z
+  stars_delta_7d: 51
+  stars_growth_pct: 0.2
+  trending_score: 51.11
+  rank_current: 29
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 24504
+    - 24564
+    - 24615
 language: en
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - python
 readme_source:
   repo: modelcontextprotocol/python-sdk
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:55.121Z
+  fetched_at: 2026-10-19T07:31:56.008Z
   truncated: false
+type: agent_tool
 tool:
   subcategory: sdk_harness
   install_command: pip install mcp

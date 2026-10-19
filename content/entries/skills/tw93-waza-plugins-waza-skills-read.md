@@ -1,17 +1,20 @@
 ---
 slug: tw93-waza-plugins-waza-skills-read
 name: read
-tagline: Fetches URLs and PDFs, then summarizes or returns clean Markdown. Use
-  when asked to read, fetch, quote, cite, convert, or save a URL or PDF. Not for
-  l
-summary: Fetch any URL or local PDF.
+tagline: Agent skill from tw93/Waza
+summary: Agent skill from tw93/Waza
 categories:
   - media-creative
+tags:
+  - agent-skills
+  - ai-agents
+  - claude
+  - claude-code
 status: active
-quality_percentile: 50
+quality_percentile: 55
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: tw93/Waza
@@ -19,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 7286
-  last_commit: 2026-10-12T08:47:41Z
+  stars: 7329
+  last_commit: 2026-10-18T08:14:09Z
+  stars_delta_7d: 43
+  stars_growth_pct: 0.6
+  trending_score: 43.25
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 7170
+    - 7286
+    - 7329
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,23 +39,27 @@ readme_source:
   repo: tw93/Waza
   path: plugins/waza/skills/read/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.415Z
+  fetched_at: 2026-10-19T07:39:37.458Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: read
-  description: Fetches URLs and PDFs, then summarizes or returns clean Markdown.
-    Use when asked to read, fetch, quote, cite, convert, or save a URL or PDF.
-    Not for local text files already in the repo.
+  description: Agent skill from tw93/Waza
   folder_path: plugins/waza/skills/read
   extra_files:
     - references/read-methods.md
+    - scripts/deepseek.py
     - scripts/fetch.sh
     - scripts/fetch_feishu.py
     - scripts/fetch_local.py
     - scripts/fetch_weixin.py
-tags:
-  - pdf
+  pack_total_skills: 8
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: tw93-waza
 ---
 
 # Read: Read Any URL or PDF

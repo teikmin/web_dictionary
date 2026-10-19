@@ -10,11 +10,16 @@ summary: Automate quality gates so that no change reaches production without
   and...
 categories:
   - productivity-ops
+tags:
+  - agent-skills
+  - antigravity
+  - claude-code
+  - codex
 status: active
-quality_percentile: 71
+quality_percentile: 73
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: addyosmani/agent-skills
@@ -22,8 +27,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 106053
-  last_commit: 2026-10-10T08:28:49Z
+  stars: 108318
+  last_commit: 2026-10-13T20:24:07Z
+  stars_delta_7d: 2265
+  stars_growth_pct: 2.1
+  trending_score: 2313.37
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 102528
+    - 106053
+    - 108318
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,7 +44,7 @@ readme_source:
   repo: addyosmani/agent-skills
   path: skills/ci-cd-and-automation/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.938Z
+  fetched_at: 2026-10-19T07:36:36.021Z
   truncated: false
 type: agent_skill
 skill:
@@ -41,7 +54,13 @@ skill:
     configure test runners in CI, or establish deployment strategies.
   folder_path: skills/ci-cd-and-automation
   extra_files: []
-tags: []
+  pack_total_skills: 25
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: addyosmani-agent-skills
 ---
 
 # CI/CD and Automation

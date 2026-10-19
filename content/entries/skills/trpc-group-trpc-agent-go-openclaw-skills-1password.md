@@ -1,0 +1,109 @@
+---
+slug: trpc-group-trpc-agent-go-openclaw-skills-1password
+name: 1password
+tagline: Set up and use 1Password CLI (op). Use when installing the CLI,
+  enabling desktop app integration, signing in (single or multi-account), or
+  reading/inj
+summary: "- references/get-started.md (install + app integration + sign-in flow)
+  - references/cli-examples.md (real op examples)"
+categories:
+  - agent-frameworks
+tags:
+  - a2a
+  - a2a-protocol
+  - ag-ui
+  - agent-framework
+status: active
+quality_percentile: 82
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: trpc-group/trpc-agent-go
+  subpath: openclaw/skills/1password
+  official_vendor: false
+  license: Apache-2.0
+signals:
+  stars: 1870
+  last_commit: 2026-10-19T07:09:58Z
+  stars_delta_7d: 10
+  stars_growth_pct: 0.5
+  trending_score: 10.05
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1860
+    - 1870
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: trpc-group/trpc-agent-go
+  path: openclaw/skills/1password/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:33:53.715Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: 1password
+  description: Set up and use 1Password CLI (op). Use when installing the CLI,
+    enabling desktop app integration, signing in (single or multi-account), or
+    reading/injecting/running secrets via op.
+  folder_path: openclaw/skills/1password
+  extra_files:
+    - references/cli-examples.md
+    - references/get-started.md
+  pack_total_skills: 71
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: trpc-group-trpc-agent-go
+---
+
+# 1Password CLI
+Follow the official CLI get-started steps. Don't guess install commands.
+
+## References
+
+- `references/get-started.md` (install + app integration + sign-in flow)
+- `references/cli-examples.md` (real `op` examples)
+
+## Workflow
+
+1. Check OS + shell.
+2. Verify CLI present: `op --version`.
+3. Confirm desktop app integration is enabled (per get-started) and the app is unlocked.
+4. REQUIRED: create a fresh tmux session for all `op` commands (no direct `op` calls outside tmux).
+5. Sign in / authorize inside tmux: `op signin` (expect app prompt).
+6. Verify access inside tmux: `op whoami` (must succeed before any secret read).
+7. If multiple accounts: use `--account` or `OP_ACCOUNT`.
+
+## REQUIRED tmux session (T-Max)
+
+The shell tool uses a fresh TTY per command. To avoid re-prompts and failures, always run `op` inside a dedicated tmux session with a fresh socket/session name.
+
+Example (see `tmux` skill for socket conventions, do not reuse old session names):
+
+```bash
+SOCKET_DIR="${OPENCLAW_TMUX_SOCKET_DIR:-${CLAWDBOT_TMUX_SOCKET_DIR:-${TMPDIR:-/tmp}/openclaw-tmux-sockets}}"
+mkdir -p "$SOCKET_DIR"
+SOCKET="$SOCKET_DIR/openclaw-op.sock"
+SESSION="op-auth-$(date +%Y%m%d-%H%M%S)"
+
+tmux -S "$SOCKET" new -d -s "$SESSION" -n shell
+tmux -S "$SOCKET" send-keys -t "$SESSION":0.0 -- "op signin --account my.1password.com" Enter
+tmux -S "$SOCKET" send-keys -t "$SESSION":0.0 -- "op whoami" Enter
+tmux -S "$SOCKET" send-keys -t "$SESSION":0.0 -- "op vault list" Enter
+tmux -S "$SOCKET" capture-pane -p -J -t "$SESSION":0.0 -S -200
+tmux -S "$SOCKET" kill-session -t "$SESSION"
+```
+
+## Guardrails
+
+- Never paste secrets into logs, chat, or code.
+- Prefer `op run` / `op inject` over writing secrets to disk.
+- If sign-in without app integration is needed, use `op account add`.
+- If a command returns "account is not signed in", re-run `op signin` inside tmux and authorize in the app.
+- Do not run `op` outside tmux; stop and ask if tmux is unavailable.

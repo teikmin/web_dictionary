@@ -8,12 +8,17 @@ summary: 1. Inspect package.json, the server entry, exported tool refs,
   a new stable project with create-mcp-use-app@latest and the appropriate
   temp...
 categories:
-  - other
+  - agent-frameworks
+tags:
+  - agent-plugins
+  - agentic-framework
+  - apps-sdk
+  - chatgpt
 status: active
 quality_percentile: 95
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: mcp-use/mcp-use
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 10753
-  last_commit: 2026-10-12T03:42:03Z
+  stars: 10785
+  last_commit: 2026-10-18T01:04:46Z
+  stars_delta_7d: 32
+  stars_growth_pct: 0.3
+  trending_score: 32.1
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 10728
+    - 10753
+    - 10785
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,7 +43,7 @@ readme_source:
   repo: mcp-use/mcp-use
   path: skills/mcp-builder/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:54:55.819Z
+  fetched_at: 2026-10-19T07:32:29.192Z
   truncated: false
 type: agent_skill
 skill:
@@ -49,8 +62,13 @@ skill:
     - references/skills-over-mcp.md
     - references/verification.md
     - references/views.md
-tags:
-  - typescript
+  pack_total_skills: 6
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: mcp-use-mcp-use
 ---
 
 # Build with mcp-use

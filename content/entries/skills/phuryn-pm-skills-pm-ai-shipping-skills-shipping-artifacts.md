@@ -1,19 +1,20 @@
 ---
 slug: phuryn-pm-skills-pm-ai-shipping-skills-shipping-artifacts
 name: shipping-artifacts
-tagline: The durable documentation set that makes an AI-built (vibe-coded) app
-  reviewable before shipping. A small core every app needs — architecture,
-  user/pe
-summary: AI agents write code fast, but they leave no durable record of intent —
-  what the system is supposed to do, who is allowed to do what, where the
-  secrets live, which rules are actually verified. Without that record, no...
+tagline: Agent skill from phuryn/pm-skills
+summary: Agent skill from phuryn/pm-skills
 categories:
-  - coding-agents
+  - productivity-ops
+tags:
+  - agent-skill-repository
+  - agent-skills
+  - agentic-skills
+  - claude-code-marketplace
 status: active
-quality_percentile: 68
+quality_percentile: 71
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: phuryn/pm-skills
@@ -21,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 26957
-  last_commit: 2026-10-10T10:56:32Z
+  stars: 27192
+  last_commit: 2026-10-16T12:28:37Z
+  stars_delta_7d: 235
+  stars_growth_pct: 0.9
+  trending_score: 237.05
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 26820
+    - 26957
+    - 27192
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,22 +39,21 @@ readme_source:
   repo: phuryn/pm-skills
   path: pm-ai-shipping/skills/shipping-artifacts/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.081Z
+  fetched_at: 2026-10-19T07:40:28.334Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: shipping-artifacts
-  description: "The durable documentation set that makes an AI-built (vibe-coded)
-    app reviewable before shipping. A small core every app needs — architecture,
-    user/permission flows, permissions, variables/secrets, and a test-coverage
-    map — plus conditional docs added only when they apply: emails, scheduled
-    work, SEO, and embedded agents/automation. Defines what each doc must
-    capture and how a reviewer or auditor uses it. Use when documenting a
-    codebase for handoff, mapping user journeys and trust-boundary crossings,
-    planning test coverage, or preparing for a security or performance audit."
+  description: Agent skill from phuryn/pm-skills
   folder_path: pm-ai-shipping/skills/shipping-artifacts
   extra_files: []
-tags: []
+  pack_total_skills: 69
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: phuryn-pm-skills
 ---
 
 # Shipping Artifacts: The Docs That Make AI-Built Code Reviewable

@@ -8,11 +8,16 @@ summary: When the pptx base rules cover it, the text here says â†’ see pptx v2 Â
   Read skills/officecli-pptx/SKILL.md first if you have not.
 categories:
   - media-creative
+tags:
+  - claude-code
+  - cli
+  - codex
+  - docx
 status: active
-quality_percentile: 63
+quality_percentile: 60
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: iOfficeAI/OfficeCLI
@@ -20,8 +25,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 31942
+  stars: 32159
   last_commit: 2026-10-13T02:29:44Z
+  stars_delta_7d: 217
+  stars_growth_pct: 0.7
+  trending_score: 218.47
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 31654
+    - 31942
+    - 32159
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,7 +42,7 @@ readme_source:
   repo: iOfficeAI/OfficeCLI
   path: skills/morph-ppt/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:13.481Z
+  fetched_at: 2026-10-19T07:37:42.643Z
   truncated: false
 type: agent_skill
 skill:
@@ -56,7 +69,13 @@ skill:
     - reference/styles/bw--brutalist-raw/style.md
     - reference/styles/bw--mono-line/build.sh
     - reference/styles/bw--mono-line/bw__mono_line.pptx
-tags: []
+  pack_total_skills: 11
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: iofficeai-officecli
 ---
 
 # OfficeCLI Morph-PPT Skill

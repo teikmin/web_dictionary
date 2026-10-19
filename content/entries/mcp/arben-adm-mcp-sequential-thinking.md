@@ -8,12 +8,17 @@ summary: "- Structured Thinking Framework: Organizes thoughts through standard
   Conclusion), with warnings (or, in --strict-stages mode, rejection) when a
   thou..."
 categories:
-  - agent-frameworks
+  - productivity-ops
+tags:
+  - model-context-protocol
+  - python
+  - sqlite
+  - working-notes
 status: active
-quality_percentile: 43
+quality_percentile: 56
 selection_reason: quality_percentile
 first_seen: 2025-01-09T22:47:33
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: arben-adm/mcp-sequential-thinking
@@ -21,7 +26,17 @@ source:
   license: MIT
 signals:
   stars: 955
-  last_commit: 2026-09-25T05:13:29Z
+  last_commit: 2026-10-16T05:13:35Z
+  stars_delta_7d: 0
+  stars_growth_pct: 0
+  trending_score: 0
+  rank_current: 89
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 952
+    - 955
+    - 955
 language: en
 needs_keys: false
 prerequisites:
@@ -31,7 +46,7 @@ readme_source:
   repo: arben-adm/mcp-sequential-thinking
   path: README.md
   branch: master
-  fetched_at: 2026-10-14T14:55:09.880Z
+  fetched_at: 2026-10-19T07:33:54.093Z
   truncated: false
 type: mcp_server
 launch:
@@ -41,8 +56,6 @@ launch:
     - mcp-sequential-thinking
   env_vars: []
   confidence: manifest
-tags:
-  - research
 ---
 
 # Sequential Thinking MCP Server

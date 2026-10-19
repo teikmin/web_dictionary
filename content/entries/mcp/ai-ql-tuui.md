@@ -9,19 +9,34 @@ summary: This repository is essentially an LLM chat desktop application based on
   AI. Many components within the project have been directly converte...
 categories:
   - agent-frameworks
+tags:
+  - agentic-ai
+  - ai-playground
+  - anthropic
+  - claude
 status: active
-quality_percentile: 6
+quality_percentile: 5
 selection_reason: quality_percentile
 first_seen: 2025-04-01T15:09:38
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: AI-QL/tuui
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 1157
+  stars: 1159
   last_commit: 2026-05-14T09:02:28Z
+  stars_delta_7d: 2
+  stars_growth_pct: 0.2
+  trending_score: 2
+  rank_current: 80
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1155
+    - 1157
+    - 1159
 language: en
 needs_keys: false
 prerequisites:
@@ -30,7 +45,7 @@ readme_source:
   repo: AI-QL/tuui
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:08.804Z
+  fetched_at: 2026-10-19T07:33:54.014Z
   truncated: false
 type: mcp_server
 launch:
@@ -41,7 +56,6 @@ launch:
     - tuui
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # <img src="https://cdn.jsdelivr.net/gh/AI-QL/tuui@main/buildAssets/icons/icon.png" alt="Logo" width="24"/> TUUI - Local AI Playground with MCP

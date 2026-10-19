@@ -6,20 +6,34 @@ tagline: "Klavis AI:  MCP integration platforms that let AI agents use tools
 summary: "- 📖 Documentation - 💬 Discord Community - 🐛 Report Issues - 🌐
   Klavis AI Website"
 categories:
-  - coding-agents
+  - agent-frameworks
+tags:
+  - agents
+  - ai-agents
+  - api
+  - developer-tools
 status: active
-quality_percentile: 18
+quality_percentile: 14
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Klavis-AI/klavis
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 5809
+  stars: 5814
   last_commit: 2026-06-01T21:21:04Z
+  stars_delta_7d: 5
+  stars_growth_pct: 0.1
+  trending_score: 5
+  rank_current: 73
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 5809
+    - 5814
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +42,7 @@ readme_source:
   repo: Klavis-AI/klavis
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:57.561Z
+  fetched_at: 2026-10-19T07:32:29.328Z
   truncated: false
 type: mcp_server
 launch:
@@ -37,8 +51,6 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
-tags:
-  - discord
 ---
 
 <div align="center">

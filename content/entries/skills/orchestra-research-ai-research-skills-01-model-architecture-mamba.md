@@ -1,18 +1,20 @@
 ---
 slug: orchestra-research-ai-research-skills-01-model-architecture-mamba
-name: mamba-architecture
-tagline: State-space model with O(n) complexity vs Transformers' O(n²). 5×
-  faster inference, million-token sequences, no KV cache. Selective SSM with
-  hardware-
-summary: Mamba is a state-space model architecture achieving O(n) linear
-  complexity for sequence modeling.
+name: mamba
+tagline: Agent skill from Orchestra-Research/AI-Research-SKILLs
+summary: Agent skill from Orchestra-Research/AI-Research-SKILLs
 categories:
-  - productivity-ops
+  - domain-research
+tags:
+  - ai-research
+  - claude
+  - claude-code
+  - claude-skills
 status: active
-quality_percentile: 61
+quality_percentile: 59
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Orchestra-Research/AI-Research-SKILLs
@@ -20,8 +22,15 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 13529
+  stars: 13692
   last_commit: 2026-10-11T02:56:34Z
+  stars_delta_7d: 163
+  stars_growth_pct: 1.2
+  trending_score: 164.96
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 13529
+    - 13692
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,22 +38,24 @@ readme_source:
   repo: Orchestra-Research/AI-Research-SKILLs
   path: 01-model-architecture/mamba/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.229Z
+  fetched_at: 2026-10-19T07:39:30.368Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: mamba-architecture
-  description: State-space model with O(n) complexity vs Transformers' O(n²). 5×
-    faster inference, million-token sequences, no KV cache. Selective SSM with
-    hardware-aware design. Mamba-1 (d_state=16) and Mamba-2 (d_state=128,
-    multi-head). Models 130M-2.8B on HuggingFace.
+  skill_name: mamba
+  description: Agent skill from Orchestra-Research/AI-Research-SKILLs
   folder_path: 01-model-architecture/mamba
   extra_files:
     - references/architecture-details.md
     - references/benchmarks.md
     - references/training-guide.md
-tags:
-  - linear
+  pack_total_skills: 98
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: orchestra-research-ai-research-skills
 ---
 
 # Mamba - Selective State Space Models

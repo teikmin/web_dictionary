@@ -1,17 +1,20 @@
 ---
 slug: ljagiello-ctf-skills-ctf-forensics
 name: ctf-forensics
-tagline: Provides digital forensics and signal analysis techniques for CTF
-  challenges. Use when analyzing disk images, memory dumps, event logs, network
-  captur
-summary: "Python packages (all platforms):"
+tagline: Agent skill from ljagiello/ctf-skills
+summary: Agent skill from ljagiello/ctf-skills
 categories:
-  - databases-memory
+  - security-auth
+tags:
+  - agent-skills
+  - claude-code
+  - claude-code-skills
+  - codex
 status: active
-quality_percentile: 35
+quality_percentile: 54
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: ljagiello/ctf-skills
@@ -19,8 +22,15 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 3437
-  last_commit: 2026-09-13T21:09:41Z
+  stars: 3475
+  last_commit: 2026-10-17T01:17:07Z
+  stars_delta_7d: 38
+  stars_growth_pct: 1.1
+  trending_score: 38.42
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3437
+    - 3475
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,17 +38,12 @@ readme_source:
   repo: ljagiello/ctf-skills
   path: ctf-forensics/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:19.238Z
+  fetched_at: 2026-10-19T07:40:39.008Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: ctf-forensics
-  description: Provides digital forensics and signal analysis techniques for CTF
-    challenges. Use when analyzing disk images, memory dumps, event logs,
-    network captures, cryptocurrency transactions, steganography, PDF analysis,
-    Windows registry, Volatility, PCAP, Docker images, coredumps, side-channel
-    power traces, DTMF audio spectrograms, packet timing analysis, CD audio disc
-    images, or recovering deleted files and credentials.
+  description: Agent skill from ljagiello/ctf-skills
   folder_path: ctf-forensics
   extra_files:
     - 3d-printing.md
@@ -51,9 +56,13 @@ skill:
     - peripheral-capture.md
     - signals-and-hardware.md
     - steganography.md
-tags:
-  - python
-  - memory
+  pack_total_skills: 11
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: ljagiello-ctf-skills
 ---
 
 # CTF Forensics & Blockchain
@@ -101,7 +110,6 @@ gem install zsteg
 - [signals-and-hardware.md](https://github.com/ljagiello/ctf-skills/blob/main/ctf-forensics/signals-and-hardware.md) - Hardware signal decoding with decode code (VGA frame parsing, HDMI TMDS symbol decode, DisplayPort 8b/10b + LFSR descrambler), Voyager Golden Record audio, Saleae Logic 2 UART decode, Flipper Zero .sub files, side-channel power analysis (DPA), keyboard acoustic side-channel, CD audio disc image steganography (CIRC de-interleaving + spiral rendering), caps-lock LED Morse code from video, Linux input_event keylogger dump parsing, serial UART from WAV audio, USB MIDI Launchpad grid reconstruction
 
 ---
-
 ## When to Pivot
 
 - If you recover an encrypted blob and the hard part becomes RSA, AES, or lattice work, switch to `/ctf-crypto`.

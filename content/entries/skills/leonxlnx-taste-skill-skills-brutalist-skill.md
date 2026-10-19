@@ -1,18 +1,23 @@
 ---
 slug: leonxlnx-taste-skill-skills-brutalist-skill
 name: industrial-brutalist-ui
-tagline: Raw mechanical interfaces fusing Swiss typographic print with military
-  terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian
-  colo
+tagline: "Classic style skill, opt-in: it runs only when called by name. A hard
+  mechanical look with Swiss type, rigid grids, extreme scale contrast and
+  utilita"
 summary: "CRITICAL: Choose ONE substrate palette per project and use it
   consistently. Never mix light and dark substrates within the same interface."
 categories:
-  - coding-agents
+  - cloud-infra
+tags:
+  - agent-skills
+  - ai-agents
+  - anti-slop
+  - claude-code
 status: active
-quality_percentile: 64
+quality_percentile: 67
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Leonxlnx/taste-skill
@@ -20,8 +25,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 95459
-  last_commit: 2026-10-13T15:01:01Z
+  stars: 99005
+  last_commit: 2026-10-19T05:47:12Z
+  stars_delta_7d: 3546
+  stars_growth_pct: 3.7
+  trending_score: 3677.72
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 93423
+    - 95459
+    - 99005
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,20 +42,24 @@ readme_source:
   repo: Leonxlnx/taste-skill
   path: skills/brutalist-skill/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.931Z
+  fetched_at: 2026-10-19T07:36:41.103Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: industrial-brutalist-ui
-  description: Raw mechanical interfaces fusing Swiss typographic print with
-    military terminal aesthetics. Rigid grids, extreme type scale contrast,
-    utilitarian color, analog degradation effects. For data-heavy dashboards,
-    portfolios, or editorial sites that need to feel like declassified
-    blueprints.
+  description: "Classic style skill, opt-in: it runs only when called by name. A
+    hard mechanical look with Swiss type, rigid grids, extreme scale contrast
+    and utilitarian colour."
   folder_path: skills/brutalist-skill
-  extra_files: []
-tags:
-  - terminal
+  extra_files:
+    - agents/openai.yaml
+  pack_total_skills: 13
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: leonxlnx-taste-skill
 ---
 
 # SKILL: Industrial Brutalism & Tactical Telemetry UI

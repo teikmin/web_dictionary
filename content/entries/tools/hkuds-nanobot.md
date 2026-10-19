@@ -1,6 +1,5 @@
 ---
 slug: hkuds-nanobot
-type: agent_tool
 name: nanobot
 tagline: Ultra-lightweight, open-source, self-hosted personal AI agent framework
   in Python with WebUI, tools, memory, MCP, multi-agent workflows, automation, a
@@ -8,45 +7,51 @@ summary: 🐈 nanobot is an ultra-lightweight, open-source, self-hosted personal
   AI agent framework written in Python. Use it in a browser, terminal, or chat
   app to work with files, remember preferences, and schedule tasks. Conn...
 categories:
-  - agent-frameworks
+  - productivity-ops
 tags:
-  - python
-  - terminal
-  - memory
+  - agent-framework
+  - ai-agent
+  - ai-agents
+  - chatbot
 status: active
 quality_percentile: 97
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: HKUDS/nanobot
   official_vendor: false
   license: MIT
 signals:
-  stars: 48993
-  last_commit: 2026-10-13T16:11:00Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 49166
+  last_commit: 2026-10-19T07:15:41Z
+  stars_delta_7d: 173
+  stars_growth_pct: 0.4
+  trending_score: 173.61
+  rank_current: 15
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 48838
+    - 48993
+    - 49166
 language: en
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - python
 readme_source:
   repo: HKUDS/nanobot
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:04.899Z
+  fetched_at: 2026-10-19T07:33:31.102Z
   truncated: true
+type: agent_tool
 tool:
-  subcategory: agent_framework
+  subcategory: memory_rag
   install_command: pip install nanobot-ai
   runtime: python
-  execution_mode: local
+  execution_mode: hybrid
   has_mcp_support: true
   mcp_launch:
     transport: stdio
@@ -136,7 +141,7 @@ You need **Python 3.11 or newer** and access to a [supported model provider or l
 
 Choose the **stable release** for everyday use or **current source** for development and the latest features. This README describes current source; [published documentation](https://nanobot.wiki/docs/latest/getting-started/nanobot-overview) covers the released version.
 
-New to terminals or model credentials? Follow [Start Without Technical Background](https://github.com/HKUDS/nanobot/blob/main/docs/start-without-technical-background.md). Updating an existing instance? Back up its config directory and workspace, stop every old nanobot process using that workspace, then update and restart through the original launcher or service. See [session storage and version changes](https://github.com/HKUDS/nanobot/blob/main/docs/cli-reference.md#session-storage-and-rollback).
+New to terminals or model credentials? Follow [Start Without Technical Background](https://github.com/HKUDS/nanobot/blob/main/docs/start-without-technical-background.md). Updating an existing instance? Stop every old nanobot process using that workspace, back up its config directory and workspace, then update and restart through the original launcher or service. See [session storage and version changes](https://github.com/HKUDS/nanobot/blob/main/docs/cli-reference.md#session-storage).
 
 **Stable release: automatic setup (recommended)**
 

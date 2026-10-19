@@ -8,20 +8,34 @@ summary: "The official Model Context Protocol (MCP) server for Atlassian: a
   cloud-hosted bridge that gives your AI tools secure, real-time access to Jira,
   Confluence, Jira Service Management, Bitbucket, Compass, Loom, and the w..."
 categories:
-  - agent-frameworks
+  - productivity-ops
+tags:
+  - ai-agents
+  - atlassian
+  - bitbucket
+  - chatgpt
 status: active
-quality_percentile: 57
+quality_percentile: 60
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: atlassian/atlassian-mcp-server
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 1090
+  stars: 1106
   last_commit: 2026-10-10T20:27:29Z
+  stars_delta_7d: 16
+  stars_growth_pct: 1.5
+  trending_score: 16.23
+  rank_current: 47
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1090
+    - 1106
 language: en
 needs_keys: false
 prerequisites:
@@ -30,7 +44,7 @@ readme_source:
   repo: atlassian/atlassian-mcp-server
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:08.965Z
+  fetched_at: 2026-10-19T07:33:54.053Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,8 +53,6 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
-tags:
-  - jira
 ---
 
 <p align="center">

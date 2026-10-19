@@ -6,20 +6,35 @@ summary: "- Open source MCP servers for AWS - Table of Contents - What is the
   Model Context Protocol (MCP) and how does it work with MCP Servers for AWS? -
   Open source MCP servers for AWS Transport Mechanisms - Supported transp..."
 categories:
-  - cloud-infra
+  - agent-frameworks
+tags:
+  - aws
+  - mcp-client
+  - mcp-clients
+  - mcp-host
 status: active
 quality_percentile: 94
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: awslabs/mcp
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 9775
-  last_commit: 2026-10-12T21:58:54Z
+  stars: 9793
+  last_commit: 2026-10-16T20:30:35Z
+  stars_delta_7d: 18
+  stars_growth_pct: 0.2
+  trending_score: 18.03
+  rank_current: 44
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 9761
+    - 9775
+    - 9793
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +43,7 @@ readme_source:
   repo: awslabs/mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:56.994Z
+  fetched_at: 2026-10-19T07:32:28.536Z
   truncated: true
 type: mcp_server
 launch:
@@ -37,8 +52,6 @@ launch:
   args: []
   env_vars: []
   confidence: registry
-tags:
-  - aws
 ---
 
 # Open source MCP servers for AWS

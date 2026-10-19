@@ -1,17 +1,20 @@
 ---
 slug: xbtlin-ai-berkshire-codex-skills-bottleneck-hunter
 name: bottleneck-hunter
-tagline: "AI Berkshire skill: 供应链瓶颈猎手：AI驱动的全球产业链瓶颈套利. Source:
-  skills/bottleneck-hunter.md."
-summary: This skill is generated from skills/bottleneck-hunter.md so Claude Code
-  and Codex users share one canonical workflow.
+tagline: Agent skill from xbtlin/ai-berkshire
+summary: Agent skill from xbtlin/ai-berkshire
 categories:
-  - productivity-ops
+  - domain-research
+tags:
+  - ai-agent
+  - anthropic
+  - berkshire-hathaway
+  - charlie-munger
 status: active
-quality_percentile: 95
+quality_percentile: 96
 selection_reason: quality_percentile
 first_seen: 2026-04-07T11:19:51
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: xbtlin/ai-berkshire
@@ -19,25 +22,38 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 16732
-  last_commit: 2026-10-12T03:52:07Z
-language: zh
+  stars: 16790
+  last_commit: 2026-10-19T07:28:05Z
+  stars_delta_7d: 58
+  stars_growth_pct: 0.3
+  trending_score: 58.2
+  rank_current: 79
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 16646
+    - 16732
+    - 16790
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: xbtlin/ai-berkshire
   path: codex-skills/bottleneck-hunter/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.215Z
+  fetched_at: 2026-10-19T07:39:25.280Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: bottleneck-hunter
-  description: "AI Berkshire skill: 供应链瓶颈猎手：AI驱动的全球产业链瓶颈套利. Source:
-    skills/bottleneck-hunter.md."
+  description: Agent skill from xbtlin/ai-berkshire
   folder_path: codex-skills/bottleneck-hunter
   extra_files: []
-tags: []
+  pack_total_skills: 22
+  is_pack_primary: true
+  clients:
+    - codex
+  pack_slug: xbtlin-ai-berkshire
 ---
 
 ## Codex adapter note
@@ -63,7 +79,6 @@ This skill is generated from `skills/bottleneck-hunter.md` so Claude Code and Co
 超额收益来源：第一层瓶颈（GPU、HBM、电力）已被充分定价。真正的alpha在**第二层、第三层**——光模块、激光器、InP衬底、SOI晶圆、外延设备、晶圆级测试、IC载板、特殊玻纤等。
 
 ---
-
 ## 第一步：超级趋势确认
 
 ### 1.1 趋势筛选标准
@@ -104,7 +119,6 @@ This skill is generated from `skills/bottleneck-hunter.md` so Claude Code and Co
 ```
 
 ---
-
 ## 第二步：供应链物理拆解
 
 ### 2.1 分层拆解框架
@@ -160,7 +174,6 @@ Layer 4：
 - "{趋势} sole source supplier"
 
 ---
-
 ## 第三步：瓶颈识别——寻找"咽喉"
 
 ### 3.1 瓶颈判定6条标准
@@ -205,7 +218,6 @@ B级瓶颈（有压力）：
 ```
 
 ---
-
 ## 第四步：公司筛选——从瓶颈到标的
 
 ### 4.1 对每个S级和A级瓶颈，找出所有相关上市公司
@@ -291,7 +303,6 @@ B级瓶颈（有压力）：
 ```
 
 ---
-
 ## 第五步：交叉验证——不只听一个故事
 
 ### 5.1 正向验证
@@ -322,7 +333,6 @@ B级瓶颈（有压力）：
 - 行业协会/研究机构是否有相关数据？（第三方验证）
 
 ---
-
 ## 第六步：输出——瓶颈机会看板
 
 ### 6.1 瓶颈机会排名表
@@ -377,7 +387,6 @@ B级瓶颈（有压力）：
 | C | 暂不追踪 | 替代技术风险过高 |
 
 ---
-
 ## 第七步：存量更新——瓶颈地图动态维护
 
 ### 7.1 每次运行时的增量更新
@@ -402,7 +411,6 @@ B级瓶颈（有压力）：
 - `deep-dive/` — 深入分析的公司单独建文件
 
 ---
-
 ## 每小时扫描模式（定时任务使用）
 
 每小时执行一次，采用"只在有料时出报告"的模式：
@@ -460,7 +468,6 @@ B级瓶颈（有压力）：
 **建议**：执行深入研究 / 加入观察 / 等待更好价格
 
 ---
-
 ## 其他信号（无明确标的）
 
 | 环节 | 信号 | 来源 | 初步判断 |
@@ -487,7 +494,6 @@ B级瓶颈（有压力）：
 ```
 
 ---
-
 ## AI研究偏见自觉
 
 | 偏见 | 表现 | 应对 |
@@ -499,7 +505,6 @@ B级瓶颈（有压力）：
 | 时效偏见 | 依赖过时信息 | 优先搜索最近30天的数据 |
 
 ---
-
 ## 核心原则（最高优先级）
 
 1. **不让AI推荐股票，让AI拆供应链** — 问题比答案重要
@@ -513,7 +518,6 @@ B级瓶颈（有压力）：
 9. **遵循CLAUDE.md客观性原则** — 不预设看多，先数据后结论
 
 ---
-
 ## 输出要求
 
 1. **报告位置**：

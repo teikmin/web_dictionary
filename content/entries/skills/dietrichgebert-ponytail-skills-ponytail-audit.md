@@ -1,6 +1,6 @@
 ---
 slug: dietrichgebert-ponytail-skills-ponytail-audit
-name: ponytail-audit
+name: audit
 tagline: "Quality audit of a whole repo: bugs, security holes, what breaks under
   real load, risky code without tests, slow paths, and what to delete, merge or
   s"
@@ -9,11 +9,16 @@ summary: "Audit the whole repo like the senior developer who just inherited it
   under load, tested, fast, lean. Lean still matters: every extra line mus..."
 categories:
   - security-auth
+tags:
+  - agent-skills
+  - ai-agents
+  - claude
+  - claude-code
 status: active
-quality_percentile: 57
+quality_percentile: 60
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: DietrichGebert/ponytail
@@ -21,8 +26,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 162479
-  last_commit: 2026-10-13T01:46:28Z
+  stars: 167294
+  last_commit: 2026-10-18T01:55:14Z
+  stars_delta_7d: 4815
+  stars_growth_pct: 3
+  trending_score: 4957.69
+  rank_current: 5
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 157371
+    - 162479
+    - 167294
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,11 +45,11 @@ readme_source:
   repo: DietrichGebert/ponytail
   path: skills/ponytail-audit/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.916Z
+  fetched_at: 2026-10-19T07:36:33.447Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: ponytail-audit
+  skill_name: audit
   description: >
     Quality audit of a whole repo: bugs, security holes, what breaks under real
     load, risky code without tests, slow paths, and what to delete, merge or
@@ -43,8 +58,13 @@ skill:
     "find bloat", "what can I delete", /ponytail-audit.
   folder_path: skills/ponytail-audit
   extra_files: []
-tags:
-  - security
+  pack_total_skills: 6
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: dietrichgebert-ponytail
 ---
 
 Audit the whole repo like the senior developer who just inherited it and

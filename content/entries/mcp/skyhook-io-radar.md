@@ -7,19 +7,33 @@ summary: The missing open-source Kubernetes UI. Single binary. No account
   required. Free forever.
 categories:
   - cloud-infra
+tags:
+  - ai-agents
+  - argocd
+  - cloud-native
+  - fluxcd
 status: active
-quality_percentile: 59
+quality_percentile: 68
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: skyhook-io/radar
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 3758
-  last_commit: 2026-10-13T16:24:30Z
+  stars: 3851
+  last_commit: 2026-10-19T06:25:12Z
+  stars_delta_7d: 93
+  stars_growth_pct: 2.5
+  trending_score: 95.3
+  rank_current: 15
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3758
+    - 3851
 language: en
 needs_keys: false
 prerequisites: []
@@ -27,7 +41,7 @@ readme_source:
   repo: skyhook-io/radar
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:59.259Z
+  fetched_at: 2026-10-19T07:32:30.866Z
   truncated: false
 type: mcp_server
 launch:
@@ -35,8 +49,6 @@ launch:
   args: []
   env_vars: []
   confidence: none
-tags:
-  - kubernetes
 ---
 
 # Radar
@@ -403,7 +415,7 @@ View TLS certificate details and expiry dates across all namespaces — catch ex
 
 ### GitOps
 
-Monitor, diagnose, and manage FluxCD and ArgoCD resources from a dedicated GitOps workspace.
+Monitor, diagnose, and manage FluxCD and ArgoCD resources in one place.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/skyhook-io/radar/main/docs/screenshots/gitops-view.png" alt="GitOps fleet view" width="800">
@@ -490,6 +502,7 @@ Proactive best-practices scanner with 44 checks across security, reliability, an
 - Check-grouped remediation queue with search and category, severity, and framework filters; expand a check to see affected resources
 - Each finding includes description and remediation guidance, with inline hide actions for a check or category
 - Configurable: ignored namespaces (with wildcard patterns), disabled checks, persisted across sessions
+- Per-resource opt-out via the `radarhq.io/ignore-checks` annotation (comma-separated check IDs) — set on the resource a finding is attributed to, so the exclusion travels with the manifest instead of living in one operator's local settings
 - Framework labels: NSA/CISA, CIS benchmarks
 - MCP tool (`get_cluster_audit`) for AI-assisted cluster analysis
 
@@ -592,7 +605,7 @@ Upgrade impact also gets list-only access to CSIStorageCapacities, FlowSchemas, 
 | **Strimzi** | [KafkaConnector failure evidence](https://github.com/skyhook-io/radar/blob/main/docs/integrations.md#strimzi-kafka-connectors) (connector/task status) |
 | **Velero** | Backup, Restore, Schedule, BackupStorageLocation, VolumeSnapshotLocation |
 | **External Secrets** | ExternalSecret, ClusterExternalSecret, SecretStore, ClusterSecretStore |
-| **CloudNativePG** | Cluster, Backup, ScheduledBackup, Pooler, Database, Publication, Subscription, ImageCatalog, ClusterImageCatalog, ObjectStore — plus a [workspace](https://github.com/skyhook-io/radar/blob/main/docs/cnpg.md) for fleet, protection and declaration triage |
+| **CloudNativePG** | Cluster, Backup, ScheduledBackup, Pooler, Database, Publication, Subscription, ImageCatalog, ClusterImageCatalog, ObjectStore — plus [dedicated views](https://github.com/skyhook-io/radar/blob/main/docs/cnpg.md) for fleet, protection and declaration triage |
 | **Crossplane** | Managed Resources (any provider), Composite Resources, Claims, Provider, ProviderConfig, Function, Configuration, Composition, CompositionRevision, XRD |
 | **Kyverno** | Policy, ClusterPolicy, PolicyReport, ClusterPolicyReport |
 | **Sealed Secrets** | SealedSecret |

@@ -1,6 +1,6 @@
 ---
 slug: redhat-et-ripwire-skills-ripwire-find-bug
-name: ripwire-find-bug
+name: find-bug
 tagline: "You have a SYMPTOM — crash, exception, wrong output, failing test,
   error string — and don't know which code is responsible. Ranks candidates; a
   stack "
@@ -8,12 +8,17 @@ summary: = repo root. Calls are warm after the first parse — chain freely. Pic
   the branch that matches what you already know; each converges on the same
   evidence trail (relevance × maintenance pain × blast radius), so you can...
 categories:
-  - other
+  - coding-agents
+tags:
+  - ai-agents
+  - call-graph
+  - claude
+  - claude-code
 status: active
-quality_percentile: 53
+quality_percentile: 56
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: redhat-et/ripwire
@@ -21,8 +26,15 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 2443
-  last_commit: 2026-10-13T16:17:41Z
+  stars: 2458
+  last_commit: 2026-10-19T07:10:31Z
+  stars_delta_7d: 15
+  stars_growth_pct: 0.6
+  trending_score: 15.09
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2443
+    - 2458
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,11 +42,11 @@ readme_source:
   repo: redhat-et/ripwire
   path: skills/ripwire-find-bug/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:01.824Z
+  fetched_at: 2026-10-19T07:33:30.115Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: ripwire-find-bug
+  skill_name: find-bug
   description: >
     You have a SYMPTOM — crash, exception, wrong output, failing test, error
     string — and don't know which code is responsible. Ranks candidates; a stack
@@ -43,7 +55,13 @@ skill:
     focused read is enough.
   folder_path: skills/ripwire-find-bug
   extra_files: []
-tags: []
+  pack_total_skills: 18
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: redhat-et-ripwire
 ---
 
 # Find the bug with ripwire

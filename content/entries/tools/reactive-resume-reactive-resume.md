@@ -1,6 +1,5 @@
 ---
 slug: reactive-resume-reactive-resume
-type: agent_tool
 name: reactive-resume
 tagline: A one-of-a-kind resume builder that keeps your privacy in mind.
   Completely secure, customizable, portable, open-source and free forever. Try
@@ -9,53 +8,63 @@ summary: Reactive Resume is a free and open-source resume builder for writing
   resumes and cover letters, checking your work, and tracking job applications.
 categories:
   - media-creative
-tags: []
+tags:
+  - agent-skills
+  - dsh-plugin
+  - hacktoberfest
+  - javascript
 status: active
 quality_percentile: 79
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: reactive-resume/reactive-resume
   official_vendor: false
   license: MIT
 signals:
-  stars: 44233
-  last_commit: 2026-10-13T15:56:33Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 44513
+  last_commit: 2026-10-19T04:11:21Z
+  stars_delta_7d: 280
+  stars_growth_pct: 0.6
+  trending_score: 281.77
+  rank_current: 10
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 43949
+    - 44233
+    - 44513
 language: en
 needs_keys: false
 prerequisites:
-  - Network access (HTTP MCP server)
+  - node
 readme_source:
   repo: reactive-resume/reactive-resume
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:54.740Z
+  fetched_at: 2026-10-19T07:31:31.671Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: desktop_ui
+  subcategory: other
   install_command: git clone https://github.com/reactive-resume/reactive-resume.git
   runtime: node
-  execution_mode: local
+  execution_mode: hybrid
   has_mcp_support: true
   mcp_launch:
     transport: http
+    remote_url: https://rxresu.me/mcp
     args: []
     env_vars: []
-    remote_url: https://rxresu.me/mcp
     confidence: manifest
 ---
 
 > [!IMPORTANT]
-> **Repository moved:** Reactive Resume now lives at **[`reactive-resume/reactive-resume`](https://github.com/reactive-resume/reactive-resume)** on GitHub.
-> **Docker Hub stays at `amruthpillai/reactive-resume`.** GHCR images publish to `ghcr.io/reactive-resume/reactive-resume`.
-> GitHub Sponsors and Open Collective funding links remain unchanged.
+> Reactive Resume now lives at **[`reactive-resume/reactive-resume`](https://github.com/reactive-resume/reactive-resume)** on GitHub.  
+> GHCR images publish to `ghcr.io/reactive-resume/reactive-resume`.  
+> Docker Hub stays at `amruthpillai/reactive-resume`.
 
 <div align="center">
   <a href="https://rxresu.me">
@@ -84,21 +93,36 @@ tool:
   </p>
 
   <p><sub>Sponsored by</sub></p>
-  <a href="https://www.hostg.xyz/aff_c?offer_id=48&amp;aff_id=232413&amp;url_id=6857">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="docs/images/sponsors/hostinger-dark.svg" />
-      <img src="https://raw.githubusercontent.com/reactive-resume/reactive-resume/main/docs/images/sponsors/hostinger-light.svg" alt="Hostinger" width="118" height="24" />
-    </picture>
-  </a>
 
-  <br />
-  <br />
-  <a href="https://vercel.com/open-source-program">
-    <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge-2026.svg" />
-  </a>
+  <table align="center">
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://www.vultr.com/?ref=9929207">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/e023617e-563e-4423-817b-2e2d4e70fc84" />
+            <img src="https://github.com/user-attachments/assets/2e47d6a3-75ac-4f62-a50c-eef1b7d1930a" alt="Vultr" height="24" />
+          </picture>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://www.hostg.xyz/aff_c?offer_id=48&amp;aff_id=232413&amp;url_id=6857">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="docs/images/sponsors/hostinger-dark.svg" />
+            <img src="https://raw.githubusercontent.com/reactive-resume/reactive-resume/main/docs/images/sponsors/hostinger-light.svg" alt="Hostinger" height="24" />
+          </picture>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://vercel.com/open-source-program">
+          <img src="https://vercel.com/oss/program-badge-2026.svg" alt="Vercel OSS Program" height="24" />
+        </a>
+      </td>
+    </tr>
+  </table>
 </div>
 
 ---
+
 Create a free account, import an existing resume or start fresh, and see the finished page as you write. Download a PDF, Word, Markdown, or JSON file, or share your resume with a public link. You can also run the whole application on your own infrastructure.
 
 You own your data. The codebase is open source under the MIT license, with no tracking, no ads, and no paid tier. Optional AI features use a provider you connect; hosting and provider usage may have their own costs.
@@ -117,7 +141,7 @@ You own your data. The codebase is open source under the MIT license, with no tr
 
 **Templates and Customization**
 
-- 17 templates, including the new Porygon and Smeargle, previewed with your own content
+- 18 templates, including the new Porygon and Smeargle, previewed with your own content
 - One-column, two-column, and ATS-safe template filters
 - Font presets, custom fonts, colors, spacing, A4 and Letter paper, and left or right sidebars
 - Fit overflowing content by adjusting density, margins, and text size
@@ -216,6 +240,10 @@ You own your data. The codebase is open source under the MIT license, with no tr
     <td align="center">
       <img src="https://raw.githubusercontent.com/reactive-resume/reactive-resume/main/apps/web/public/templates/jpg/onyx.jpg" alt="Onyx" width="150" />
       <br /><sub><b>Onyx</b></sub>
+    </td>
+    <td align="center">
+      <img src="https://raw.githubusercontent.com/reactive-resume/reactive-resume/main/apps/web/public/templates/jpg/persian.jpg" alt="Persian" width="150" />
+      <br /><sub><b>Persian</b></sub>
     </td>
     <td align="center">
       <img src="https://raw.githubusercontent.com/reactive-resume/reactive-resume/main/apps/web/public/templates/jpg/pikachu.jpg" alt="Pikachu" width="150" />

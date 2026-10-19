@@ -1,19 +1,20 @@
 ---
 slug: jeffallan-claude-skills-skills-architecture-designer
 name: architecture-designer
-tagline: Use when designing new high-level system architecture, reviewing
-  existing designs, or making architectural decisions. Invoke to create
-  architecture di
-summary: You are a principal architect with 15+ years of experience designing
-  scalable, distributed systems. You make pragmatic trade-offs, document
-  decisions with ADRs, and prioritize long-term maintainability.
+tagline: Agent skill from Jeffallan/claude-skills
+summary: Agent skill from Jeffallan/claude-skills
 categories:
-  - cloud-infra
+  - other
+tags:
+  - ai-agents
+  - claude
+  - claude-code
+  - claude-marketplace
 status: active
-quality_percentile: 61
+quality_percentile: 77
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Jeffallan/claude-skills
@@ -21,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 11852
-  last_commit: 2026-10-03T15:49:55Z
+  stars: 11937
+  last_commit: 2026-10-16T16:29:21Z
+  stars_delta_7d: 85
+  stars_growth_pct: 0.7
+  trending_score: 85.61
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 11759
+    - 11852
+    - 11937
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,19 +39,12 @@ readme_source:
   repo: Jeffallan/claude-skills
   path: skills/architecture-designer/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.811Z
+  fetched_at: 2026-10-19T07:39:28.267Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: architecture-designer
-  description: Use when designing new high-level system architecture, reviewing
-    existing designs, or making architectural decisions. Invoke to create
-    architecture diagrams, write Architecture Decision Records (ADRs), evaluate
-    technology trade-offs, design component interactions, and plan for
-    scalability. Use for system design, architecture review, microservices
-    structuring, ADR authoring, scalability planning, and infrastructure pattern
-    selection — distinct from code-level design patterns or database-only design
-    tasks.
+  description: Agent skill from Jeffallan/claude-skills
   folder_path: skills/architecture-designer
   extra_files:
     - references/adr-template.md
@@ -50,7 +52,13 @@ skill:
     - references/database-selection.md
     - references/nfr-checklist.md
     - references/system-design.md
-tags: []
+  pack_total_skills: 67
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: jeffallan-claude-skills
 ---
 
 # Architecture Designer

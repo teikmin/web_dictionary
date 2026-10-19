@@ -1,19 +1,20 @@
 ---
 slug: phuryn-pm-skills-pm-ai-shipping-skills-intended-vs-implemented
 name: intended-vs-implemented
-tagline: The method for finding the gap between what a system is supposed to do
-  and what the code actually does — the class of bug generic scanners miss
-  becaus
-summary: A linter scans code in a vacuum. It can tell you the code is internally
-  consistent; it cannot tell you the code does what you meant, because it has no
-  model of your intent. The highest-value security and correctness b...
+tagline: Agent skill from phuryn/pm-skills
+summary: Agent skill from phuryn/pm-skills
 categories:
-  - coding-agents
+  - productivity-ops
+tags:
+  - agent-skill-repository
+  - agent-skills
+  - agentic-skills
+  - claude-code-marketplace
 status: active
-quality_percentile: 68
+quality_percentile: 71
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: phuryn/pm-skills
@@ -21,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 26957
-  last_commit: 2026-10-10T10:56:32Z
+  stars: 27192
+  last_commit: 2026-10-16T12:28:37Z
+  stars_delta_7d: 235
+  stars_growth_pct: 0.9
+  trending_score: 237.05
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 26820
+    - 26957
+    - 27192
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,22 +39,21 @@ readme_source:
   repo: phuryn/pm-skills
   path: pm-ai-shipping/skills/intended-vs-implemented/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.071Z
+  fetched_at: 2026-10-19T07:40:28.334Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: intended-vs-implemented
-  description: The method for finding the gap between what a system is supposed to
-    do and what the code actually does — the class of bug generic scanners miss
-    because they have no model of intent. Defines what counts as documented
-    intent, what counts as implementation evidence, which mismatches matter, and
-    how to avoid hand-wavy findings. Use when auditing AI-built code, reviewing
-    access control against documented permissions, or checking whether a
-    codebase matches its own documentation.
+  description: Agent skill from phuryn/pm-skills
   folder_path: pm-ai-shipping/skills/intended-vs-implemented
   extra_files: []
-tags:
-  - security
+  pack_total_skills: 69
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: phuryn-pm-skills
 ---
 
 # Intended vs. Implemented: Auditing the Gap

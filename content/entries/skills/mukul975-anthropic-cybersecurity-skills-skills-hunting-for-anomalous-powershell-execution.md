@@ -1,0 +1,117 @@
+---
+slug: mukul975-anthropic-cybersecurity-skills-skills-hunting-for-anomalous-powershell-execution
+name: hunting-for-anomalous-powershell-execution
+tagline: Hunt for malicious PowerShell activity by analyzing Script Block
+  Logging (Event 4104), Module Logging (Event 4103), and process creation
+  events. The a
+summary: PowerShell Script Block Logging (Event ID 4104) records the full
+  deobfuscated script text executed on a Windows endpoint, making it the primary
+  data source for hunting malicious PowerShell. Combined with Module Loggin...
+categories:
+  - security-auth
+tags:
+  - ai-agents
+  - claude-code
+  - cloud-security
+  - cybersecurity
+status: active
+quality_percentile: 66
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: mukul975/Anthropic-Cybersecurity-Skills
+  subpath: skills/hunting-for-anomalous-powershell-execution
+  official_vendor: false
+  license: Apache-2.0
+signals:
+  stars: 34678
+  last_commit: 2026-08-31T04:32:44Z
+  stars_delta_7d: 311
+  stars_growth_pct: 0.9
+  trending_score: 313.81
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 33900
+    - 34367
+    - 34678
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: mukul975/Anthropic-Cybersecurity-Skills
+  path: skills/hunting-for-anomalous-powershell-execution/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:39:20.877Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: hunting-for-anomalous-powershell-execution
+  description: >
+    Hunt for malicious PowerShell activity by analyzing Script Block Logging
+    (Event 4104), Module Logging (Event 4103), and process creation events. The
+    analyst parses Windows Event Log EVTX files to detect obfuscated commands,
+    AMSI bypass attempts, encoded payloads, credential dumping keywords, and
+    suspicious download cradles. Activates for requests involving PowerShell
+    threat hunting, script block analysis, encoded command detection, or AMSI
+    bypass identification.
+  folder_path: skills/hunting-for-anomalous-powershell-execution
+  extra_files:
+    - LICENSE
+    - references/api-reference.md
+    - scripts/agent.py
+  pack_total_skills: 818
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: mukul975-anthropic-cybersecurity-skills
+---
+
+# Hunting for Anomalous PowerShell Execution
+## Overview
+
+PowerShell Script Block Logging (Event ID 4104) records the full deobfuscated script text
+executed on a Windows endpoint, making it the primary data source for hunting malicious
+PowerShell. Combined with Module Logging (4103) and process creation events, analysts can
+detect encoded commands, AMSI bypass patterns, download cradles, credential theft tools,
+and fileless attack techniques even when the attacker uses obfuscation layers.
+
+
+## When to Use
+
+- When investigating security incidents that require hunting for anomalous powershell execution
+- When building detection rules or threat hunting queries for this domain
+- When SOC analysts need structured procedures for this analysis type
+- When validating security monitoring coverage for related attack techniques
+
+## Prerequisites
+
+- Windows Event Log exports (.evtx) from Microsoft-Windows-PowerShell/Operational
+- Python 3.8+ with python-evtx and lxml libraries
+- Script Block Logging enabled via Group Policy
+- Understanding of common PowerShell attack techniques
+
+## Steps
+
+1. Parse EVTX files extracting Event 4104 script block text and metadata
+2. Reassemble multi-part script blocks using ScriptBlock ID correlation
+3. Scan script text for AMSI bypass indicators and obfuscation patterns
+4. Detect encoded command execution and base64 payloads
+5. Identify download cradles, credential dumping, and lateral movement commands
+6. Score and prioritize findings by threat severity
+
+## Expected Output
+
+```json
+{
+  "total_events": 1247,
+  "suspicious_events": 23,
+  "amsi_bypass_attempts": 2,
+  "encoded_commands": 8,
+  "download_cradles": 5,
+  "credential_access": 3
+}
+```

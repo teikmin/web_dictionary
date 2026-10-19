@@ -1,19 +1,20 @@
 ---
 slug: zenstory-ai-drama-skills-maintainers-skills-short-drama-knowhow
 name: short-drama-knowhow
-tagline: 维护者专用的短剧 know-how
-  学习、验证与生命周期治理。仅在维护者明确要求从其当前会话提供的授权只读文本源学习完整短剧项目链，并把私有观察逐步转成去标识、去复刻、经盲测与独立审查的公共
-  reference、rubric 或 synthetic fixture 候选时使用；不用于普通创作、公开运
-summary: 只在维护者主动调用本 skill，且当前会话已经提供授权的只读访问时读取非公开来源。
-  把连接细节、凭据、源名称和私有卡片留在维护者指定的隔离工作区；不得写入本 skill、
-  公开技能树、公共候选或评测夹具。没有授权或无法确认只读时停止来源读取，只能用合成材料演练流程。
+tagline: Agent skill from zenstory-ai/drama-skills
+summary: Agent skill from zenstory-ai/drama-skills
 categories:
-  - other
+  - media-creative
+tags:
+  - agent-skills
+  - ai-short-drama
+  - ai-video
+  - aigc
 status: active
-quality_percentile: 67
+quality_percentile: 76
 selection_reason: quality_percentile
 first_seen: 2026-07-16T16:11:19
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: zenstory-ai/drama-skills
@@ -21,23 +22,31 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 2825
-  last_commit: 2026-10-03T08:56:29Z
-language: zh
+  stars: 3053
+  last_commit: 2026-10-15T09:53:13Z
+  stars_delta_7d: 228
+  stars_growth_pct: 8.1
+  trending_score: 246.4
+  rank_current: 44
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2574
+    - 2825
+    - 3053
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: zenstory-ai/drama-skills
   path: maintainers/skills/short-drama-knowhow/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:19.667Z
+  fetched_at: 2026-10-19T07:40:39.132Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: short-drama-knowhow
-  description: 维护者专用的短剧 know-how
-    学习、验证与生命周期治理。仅在维护者明确要求从其当前会话提供的授权只读文本源学习完整短剧项目链，并把私有观察逐步转成去标识、去复刻、经盲测与独立审查的公共
-    reference、rubric 或 synthetic fixture 候选时使用；不用于普通创作、公开运行时取数、媒体生成或粗略数据分析。
+  description: Agent skill from zenstory-ai/drama-skills
   folder_path: maintainers/skills/short-drama-knowhow
   extra_files:
     - agents/openai.yaml
@@ -46,7 +55,13 @@ skill:
     - references/promotion-ledger.md
     - references/prompt-production-learning.md
     - references/synthesis-and-promotion.md
-tags: []
+  pack_total_skills: 12
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: zenstory-ai-drama-skills
 ---
 
 # 短剧 Know-how 学习

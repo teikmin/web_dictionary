@@ -8,19 +8,31 @@ summary: The Apify Model Context Protocol (MCP) server at mcp.apify.com enables
   e-commerce sites, and any other website using thousands of ready-made scra...
 categories:
   - browser-web
+tags:
+  - agents
 status: active
-quality_percentile: 74
+quality_percentile: 79
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: apify/apify-mcp-server
   official_vendor: false
   license: MIT
 signals:
-  stars: 10958
-  last_commit: 2026-10-13T16:15:14Z
+  stars: 11927
+  last_commit: 2026-10-16T15:37:39Z
+  stars_delta_7d: 969
+  stars_growth_pct: 8.8
+  trending_score: 1054.69
+  rank_current: 1
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 9987
+    - 10958
+    - 11927
 language: en
 needs_keys: false
 prerequisites:
@@ -29,7 +41,7 @@ readme_source:
   repo: apify/apify-mcp-server
   path: README.md
   branch: master
-  fetched_at: 2026-10-14T14:54:56.911Z
+  fetched_at: 2026-10-19T07:32:25.363Z
   truncated: false
 type: mcp_server
 launch:
@@ -38,7 +50,6 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 <h1 align="center">
@@ -358,8 +369,10 @@ Legend for the **Enabled by default** column:
 All tools include metadata annotations to help MCP clients and LLMs understand tool behavior:
 
 - **`title`**: Short display name for the tool (e.g., "Search Actors", "Call Actor", "apify/rag-web-browser")
-- **`readOnlyHint`**: `true` for tools that only read data without modifying state (e.g., `get-dataset`, `fetch-actor-details`). Actor tools get it only for Apify-maintained Actors with limited permissions and no secret, writable storage, MCP connector, or code input (e.g., `apify--web-fetch`); other Actor tools are marked destructive.
+- **`readOnlyHint`**: `true` for tools that only read data without modifying state (e.g., `get-dataset`, `fetch-actor-details`). Actor tools get it only for Apify-maintained Actors with limited permissions and no accepted secret, writable storage, MCP connector, or code input (e.g., `apify--web-fetch`). Direct tools can restrict the original Actor inputs: `apify--website-content-crawler` excludes and rejects `pageFunction` and `initialCookies`, so it is read-only. Other Actor tools are marked destructive.
 - **`openWorldHint`**: `true` for tools that access external resources outside the Apify platform (e.g., `call-actor` executes external Actors). Tools that interact only with the Apify platform (like `search-actors` or `fetch-apify-docs`) do not have this hint.
+
+The direct `apify--website-content-crawler` tool defaults `respectRobotsTxtFile` to `true`; an explicit `false` is preserved. These restrictions and defaults apply only to the direct tool. `call-actor`, `call-actor-widget`, and `fetch-actor-details` retain the original Actor input contract.
 
 ### Tools configuration
 

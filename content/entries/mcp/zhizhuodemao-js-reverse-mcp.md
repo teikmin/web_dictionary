@@ -7,19 +7,34 @@ summary: AI-first / AI-native 的 JavaScript 逆向工程 MCP Server，让你的
   Claude、Cursor、Copilot）能够像分析师一样持续调试、定位、保存和复盘网页中的 JavaScript 行为。
 categories:
   - security-auth
+tags:
+  - anti-detection
+  - browser-automation
+  - cdp
+  - chrome-devtools
 status: active
-quality_percentile: 47
+quality_percentile: 51
 selection_reason: quality_percentile
 first_seen: 2025-11-29T15:42:31
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: zhizhuodemao/js-reverse-mcp
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 2945
+  stars: 2979
   last_commit: 2026-09-03T11:45:13Z
+  stars_delta_7d: 34
+  stars_growth_pct: 1.2
+  trending_score: 34.39
+  rank_current: 30
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2904
+    - 2945
+    - 2979
 language: zh
 needs_keys: false
 prerequisites:
@@ -28,7 +43,7 @@ readme_source:
   repo: zhizhuodemao/js-reverse-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:01.305Z
+  fetched_at: 2026-10-19T07:33:27.196Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,7 +54,6 @@ launch:
     - js-reverse-mcp
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # JS Reverse MCP

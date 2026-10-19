@@ -1,6 +1,6 @@
 ---
 slug: dietrichgebert-ponytail-skills-ponytail-debt
-name: ponytail-debt
+name: debt
 tagline: List every `shortcut:` comment (and older `ponytail:` ones) as a debt
   ledger. One-shot report, changes nothing. Use for "ponytail debt", "what did
   pon
@@ -8,12 +8,17 @@ summary: "Every deliberate ponytail shortcut is marked with a shortcut: comment
   naming its ceiling and upgrade path (older code may say ponytail:). This
   collects them into one ledger so a deferral can't quietly become permanent."
 categories:
-  - other
+  - coding-agents
+tags:
+  - agent-skills
+  - ai-agents
+  - claude
+  - claude-code
 status: active
-quality_percentile: 57
+quality_percentile: 60
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: DietrichGebert/ponytail
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 162479
-  last_commit: 2026-10-13T01:46:28Z
+  stars: 167294
+  last_commit: 2026-10-18T01:55:14Z
+  stars_delta_7d: 4815
+  stars_growth_pct: 3
+  trending_score: 4957.69
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 157371
+    - 162479
+    - 167294
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,18 +43,24 @@ readme_source:
   repo: DietrichGebert/ponytail
   path: skills/ponytail-debt/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.926Z
+  fetched_at: 2026-10-19T07:36:33.447Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: ponytail-debt
+  skill_name: debt
   description: >
     List every `shortcut:` comment (and older `ponytail:` ones) as a debt
     ledger. One-shot report, changes nothing. Use for "ponytail debt", "what did
     ponytail defer", "list the shortcuts", /ponytail-debt.
   folder_path: skills/ponytail-debt
   extra_files: []
-tags: []
+  pack_total_skills: 6
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: dietrichgebert-ponytail
 ---
 
 Every deliberate ponytail shortcut is marked with a `shortcut:` comment naming
@@ -79,5 +98,4 @@ End with `<N> markers, <M> with no trigger.` Nothing found: `No shortcut debt. C
 ## Boundaries
 
 Reads and reports only, changes nothing. To persist it, ask and it writes the
-ledger to a file (e.g. `PONYTAIL-DEBT.md`). One-shot. "stop ponytail-debt" or
-"normal mode" to revert.
+ledger to a file (e.g. `PONYTAIL-DEBT.md`). One-shot.

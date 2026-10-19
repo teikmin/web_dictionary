@@ -1,6 +1,6 @@
 ---
 slug: dietrichgebert-ponytail-skills-ponytail-gain
-name: ponytail-gain
+name: gain
 tagline: Show ponytail's measured savings (code, cost, speed) from the
   benchmark. One-shot display. Use for /ponytail-gain, "what does ponytail
   save", "ponytai
@@ -9,12 +9,17 @@ summary: "The figures are the published agentic benchmark of Ponytail 5:
   in a real FastAPI + React repo, bug fixes, security and privacy cases,
   small..."
 categories:
-  - security-auth
+  - coding-agents
+tags:
+  - agent-skills
+  - ai-agents
+  - claude
+  - claude-code
 status: active
-quality_percentile: 57
+quality_percentile: 60
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: DietrichGebert/ponytail
@@ -22,8 +27,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 162479
-  last_commit: 2026-10-13T01:46:28Z
+  stars: 167294
+  last_commit: 2026-10-18T01:55:14Z
+  stars_delta_7d: 4815
+  stars_growth_pct: 3
+  trending_score: 4957.69
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 157371
+    - 162479
+    - 167294
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,19 +44,24 @@ readme_source:
   repo: DietrichGebert/ponytail
   path: skills/ponytail-gain/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.935Z
+  fetched_at: 2026-10-19T07:36:33.448Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: ponytail-gain
+  skill_name: gain
   description: >
     Show ponytail's measured savings (code, cost, speed) from the benchmark.
     One-shot display. Use for /ponytail-gain, "what does ponytail save",
     "ponytail impact".
   folder_path: skills/ponytail-gain
   extra_files: []
-tags:
-  - security
+  pack_total_skills: 6
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: dietrichgebert-ponytail
 ---
 
 # Ponytail Gain
@@ -89,4 +107,3 @@ this card points there instead of inventing one.
 ## Boundaries
 
 One-shot display. Edits nothing, changes no mode.
-"stop ponytail" or "normal mode": revert.

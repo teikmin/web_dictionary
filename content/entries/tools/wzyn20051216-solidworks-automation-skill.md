@@ -1,44 +1,52 @@
 ---
 slug: wzyn20051216-solidworks-automation-skill
-type: agent_tool
 name: solidworks-automation-skill
 tagline: Reliable AI Skill + MCP toolkit for agent-driven desktop CAD automation.
 summary: 让 Codex、Claude、Cursor 等 Agent 通过自然语言调用真实 CAD 软件，并对执行结果进行验证与追踪。
 categories:
   - productivity-ops
-tags: []
+tags:
+  - agent-tools
+  - ai-agent
+  - autocad
+  - cad
 status: active
-quality_percentile: 47
+quality_percentile: 51
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: wzyn20051216/solidworks-automation-skill
   official_vendor: false
   license: MIT
 signals:
-  stars: 1197
-  last_commit: 2026-10-12T11:08:08Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 1291
+  last_commit: 2026-10-17T15:50:00Z
+  stars_delta_7d: 94
+  stars_growth_pct: 7.9
+  trending_score: 101.38
+  rank_current: 23
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 1197
+    - 1291
 language: zh
 needs_keys: false
 prerequisites:
-  - Node.js >= 18
+  - multi
 readme_source:
   repo: wzyn20051216/solidworks-automation-skill
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:09.003Z
+  fetched_at: 2026-10-19T07:33:42.915Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: coding_agent
-  install_command: git clone https://github.com/wzyn20051216/solidworks-automation-skill.git
-  runtime: python
+  subcategory: desktop_ui
+  install_command: npx solidworks-automation-skill
+  runtime: multi
   execution_mode: local
   has_mcp_support: true
   mcp_launch:
@@ -74,6 +82,7 @@ User → Agent (Codex / Claude / Cursor) → Skill / MCP → Execution Core → 
 AI 负责理解意图、查证 API、规划步骤；Execution Core 保证执行过程可追踪、可验证、失败可恢复。
 
 ---
+
 ## See It In Action
 
 <p align="center">
@@ -89,6 +98,7 @@ AI 负责理解意图、查证 API、规划步骤；Execution Core 保证执行�
 | [标准渐开线直齿轮](https://github.com/wzyn20051216/solidworks-automation-skill/blob/main/references/gears.md) | 模数/齿数/压力角驱动实体 | `pilot` |
 
 ---
+
 ## Quick Start
 
 三种入口**任选其一**即可，不需要同时启动。
@@ -123,6 +133,7 @@ smithery mcp add wzyn20051216/solidworks-automation-skill --client codex --confi
 三者是**平级入口**，共用同一套能力清单（`capabilities.yaml`）、脚本与证据系统。安装后可用 `python scripts/cad_doctor.py` 做环境诊断；详细安装与 CLI 见 [`docs/CAD_STUDIO_USER_MANUAL.md`](https://github.com/wzyn20051216/solidworks-automation-skill/blob/main/docs/CAD_STUDIO_USER_MANUAL.md)。
 
 ---
+
 ## Why This Project
 
 LLM 会规划，但常见的 AI CAD 自动化有几个真实问题：
@@ -145,6 +156,7 @@ LLM 会规划，但常见的 AI CAD 自动化有几个真实问题：
 | 是否可靠 | Golden Workflow Eval |
 
 ---
+
 ## Architecture
 
 ```text
@@ -178,6 +190,7 @@ Artifacts + Evidence
 详细：[`docs/architecture/execution-core.md`](https://github.com/wzyn20051216/solidworks-automation-skill/blob/main/docs/architecture/execution-core.md)
 
 ---
+
 ## Reliability
 
 V2 附带 **37 个 deterministic reliability scenarios**，覆盖正常执行、故障注入、后端回退、能力缺口与策略门禁。
@@ -195,6 +208,7 @@ V2 附带 **37 个 deterministic reliability scenarios**，覆盖正常执行、
 原生 SolidWorks 操作当前以 **2026** 为支持与验收目标。方案 B 保留现有执行架构，修复失败状态、原生阵列、草图可编辑性和文档归属，并提供可选 HTTP 与可验证的产物取回；原有 60 个 MCP 工具的名称和输入 Schema 保持兼容。
 
 ---
+
 ## Capabilities & Status
 
 | Category | 你能做什么 | 状态 |
@@ -225,6 +239,7 @@ V2 附带 **37 个 deterministic reliability scenarios**，覆盖正常执行、
 - 领域工作流 → [`subskills/`](https://github.com/wzyn20051216/solidworks-automation-skill/blob/main/subskills/) · [`SUBSKILLS.md`](https://github.com/wzyn20051216/solidworks-automation-skill/blob/main/SUBSKILLS.md)
 
 ---
+
 ## No SolidWorks Installed?
 
 没有 SolidWorks 时，部分开放格式任务仍可完成：
@@ -236,11 +251,13 @@ V2 附带 **37 个 deterministic reliability scenarios**，覆盖正常执行、
 但原生 `SLDPRT / SLDASM / SLDDRW` 仍需要合法 SolidWorks 环境。
 
 ---
+
 ## Examples
 
 [`examples/`](https://github.com/wzyn20051216/solidworks-automation-skill/blob/main/examples/) 目录包含从基础零件到装配、工程图、Motion、FEA 的可运行示例。
 
 ---
+
 ## Documentation
 
 | Topic | Link |
@@ -255,6 +272,7 @@ V2 附带 **37 个 deterministic reliability scenarios**，覆盖正常执行、
 | Troubleshooting | [`references/troubleshooting.md`](https://github.com/wzyn20051216/solidworks-automation-skill/blob/main/references/troubleshooting.md) |
 
 ---
+
 ## Roadmap & Contributing
 
 **Roadmap**：更广的真机验证 · 更可靠的能力路由 · 更好的 CAD Studio 可观测性 · 更多 verified 子技能 · 社区贡献工作流。
@@ -262,6 +280,7 @@ V2 附带 **37 个 deterministic reliability scenarios**，覆盖正常执行、
 **Contributing**：新增能力时，先查 `capabilities.yaml`，优先复用现有 backend，新增 tests + evidence，不要把未验证 capability 标为 `verified`。详见 [`CONTRIBUTING.md`](https://github.com/wzyn20051216/solidworks-automation-skill/blob/main/CONTRIBUTING.md)。
 
 ---
+
 ## License & Community
 
 [MIT](https://github.com/wzyn20051216/solidworks-automation-skill/blob/main/LICENSE) · [GitHub Issues](https://github.com/wzyn20051216/solidworks-automation-skill/issues) · [Star History](https://github.com/wzyn20051216/solidworks-automation-skill/blob/main/assets/star-history.svg)
@@ -272,11 +291,13 @@ V2 附带 **37 个 deterministic reliability scenarios**，覆盖正常执行、
 </picture>
 
 ---
+
 ## English
 
 **SolidWorks Automation Skill** is an AI Skill + MCP toolkit for reliable desktop CAD automation. Codex, Claude, Cursor, and other agents drive real SolidWorks / CAD workflows through natural language, with verification, deterministic recovery decisions, and execution tracing. Three peer entry points — Skill, MCP, and CAD Studio — share one capability registry (`capabilities.yaml`). **Choose one; no extra runtime service is required.** See Quick Start above.
 
 ---
+
 <sub>关注抖音 @balance. · 嵌入式开发、SolidWorks 自动化和 AI 辅助工程实践持续更新</sub>
 
 ### 装配干涉检查 API

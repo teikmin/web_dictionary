@@ -7,19 +7,34 @@ summary: "[//]: # (STDIO) Streamable HTTP MCP URL：http://127.0.0.1:5556/mcp/ M
   其他说明 由于作品链接携带日期信息，使用先前日期获取的作品链接可能会被风控，建议下载作品文件时使用最新获取的作品链接 如果需要程序使用..."
 categories:
   - browser-web
+tags:
+  - api
+  - docker
+  - downloader
+  - fastapi
 status: active
-quality_percentile: 67
+quality_percentile: 75
 selection_reason: quality_percentile
 first_seen: 2023-08-16T11:03:36
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: JoeanAmier/XHS-Downloader
   official_vendor: false
   license: GPL-3.0
 signals:
-  stars: 13000
-  last_commit: 2026-10-09T05:03:06Z
+  stars: 13048
+  last_commit: 2026-10-18T03:41:38Z
+  stars_delta_7d: 48
+  stars_growth_pct: 0.4
+  trending_score: 48.18
+  rank_current: 21
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 12930
+    - 13000
+    - 13048
 language: zh
 needs_keys: false
 prerequisites:
@@ -29,7 +44,7 @@ readme_source:
   repo: JoeanAmier/XHS-Downloader
   path: README.md
   branch: master
-  fetched_at: 2026-10-14T14:54:56.182Z
+  fetched_at: 2026-10-19T07:32:25.353Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,7 +54,6 @@ launch:
     - XHS-Downloader
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 <div align="center">

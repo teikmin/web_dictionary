@@ -6,20 +6,34 @@ summary: A Model Context Protocol (MCP) server that lets AI assistants control
   DaVinci Resolve Studio through the official Scripting API. It provides full
   API coverage plus guarded workflow helpers for editing, media pool orga...
 categories:
-  - productivity-ops
+  - media-creative
+tags:
+  - blackmagic
+  - blackmagic-design
+  - blackmagicdesign
+  - davinci-resolve
 status: active
-quality_percentile: 59
+quality_percentile: 68
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: samuelgursky/davinci-resolve-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 3520
-  last_commit: 2026-10-12T13:08:51Z
+  stars: 3631
+  last_commit: 2026-10-18T17:53:22Z
+  stars_delta_7d: 111
+  stars_growth_pct: 3.2
+  trending_score: 114.5
+  rank_current: 11
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3520
+    - 3631
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +42,7 @@ readme_source:
   repo: samuelgursky/davinci-resolve-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:01.710Z
+  fetched_at: 2026-10-19T07:32:30.853Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,13 +53,12 @@ launch:
     - davinci-resolve-mcp
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # DaVinci Resolve MCP Server
 English | [简体中文](https://github.com/samuelgursky/davinci-resolve-mcp/blob/main/README.zh-CN.md)
 
-[![Version](https://img.shields.io/badge/version-4.13.1-blue.svg)](https://github.com/samuelgursky/davinci-resolve-mcp/releases)
+[![Version](https://img.shields.io/badge/version-4.14.1-blue.svg)](https://github.com/samuelgursky/davinci-resolve-mcp/releases)
 [![npm](https://img.shields.io/npm/v/davinci-resolve-mcp.svg?label=npm&color=CB3837)](https://www.npmjs.com/package/davinci-resolve-mcp)
 [![API Coverage](https://img.shields.io/badge/API%20Coverage-100%25-brightgreen.svg)](https://raw.githubusercontent.com/samuelgursky/davinci-resolve-mcp/main/docs/reference/api-coverage.md)
 [![Tools](https://img.shields.io/badge/MCP%20Tools-37%20(390%20full)-blue.svg)](#server-modes)

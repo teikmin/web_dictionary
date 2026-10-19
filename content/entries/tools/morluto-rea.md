@@ -1,47 +1,56 @@
 ---
 slug: morluto-rea
-type: agent_tool
 name: rea
 tagline: Reverse engineer anything with agents, from app behavior down to native
   binaries.
 summary: English · 简体中文 · 繁體中文 · 日本語 · 한국어 · Türkçe · Русский · Tiếng Việt · ไทย
   · Deutsch · Español · Français · Українська · Polski · Português (Brasil) ·
-  العربية · فارسی · Bahasa Indonesia · Italiano · Ελληνικά
+  العربية · فارسی · Bahasa Indonesia · Italiano · Ελληνικά · മലയാളം
 categories:
   - security-auth
-tags: []
+tags:
+  - agent-skills
+  - ai-agents
+  - binary-analysis
+  - claude-code
 status: active
 quality_percentile: 99
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: morluto/rea
   official_vendor: false
   license: MIT
 signals:
-  stars: 196748
-  last_commit: 2026-10-13T16:25:01Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 327205
+  last_commit: 2026-10-19T07:16:31Z
+  stars_delta_7d: 130457
+  stars_growth_pct: 66.3
+  trending_score: 216958.66
+  rank_current: 1
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 12895
+    - 196748
+    - 327205
 language: en
 needs_keys: false
 prerequisites:
-  - Node.js >= 18
+  - node
 readme_source:
   repo: morluto/rea
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:05.261Z
+  fetched_at: 2026-10-19T07:33:31.110Z
   truncated: false
+type: agent_tool
 tool:
   subcategory: coding_agent
-  install_command: pip install rea
-  runtime: python
+  install_command: npx rea-agents
+  runtime: node
   execution_mode: local
   has_mcp_support: true
   mcp_launch:
@@ -57,7 +66,7 @@ tool:
 <div align="center">
 
 **English** · [简体中文](https://github.com/morluto/rea/blob/main/docs/readme/README_zh.md) · [繁體中文](https://github.com/morluto/rea/blob/main/docs/readme/README_zh-TW.md) · [日本語](https://github.com/morluto/rea/blob/main/docs/readme/README_ja.md) · [한국어](https://github.com/morluto/rea/blob/main/docs/readme/README_ko.md) · [Türkçe](https://github.com/morluto/rea/blob/main/docs/readme/README_tr.md) · [Русский](https://github.com/morluto/rea/blob/main/docs/readme/README_ru.md) · [Tiếng Việt](https://github.com/morluto/rea/blob/main/docs/readme/README_vi.md) · [ไทย](https://github.com/morluto/rea/blob/main/docs/readme/README_th.md) · [Deutsch](https://github.com/morluto/rea/blob/main/docs/readme/README_de.md) · [Español](https://github.com/morluto/rea/blob/main/docs/readme/README_es.md) · [Français](https://github.com/morluto/rea/blob/main/docs/readme/README_fr.md) · [Українська](https://github.com/morluto/rea/blob/main/docs/readme/README_uk.md) · [Polski](https://github.com/morluto/rea/blob/main/docs/readme/README_pl.md) · [Português (Brasil)](https://github.com/morluto/rea/blob/main/docs/readme/README_pt-BR.md) · [العربية](https://github.com/morluto/rea/blob/main/docs/readme/README_ar.md) · [فارسی](https://github.com/morluto/rea/blob/main/docs/readme/README_fa.md) · [Bahasa Indonesia](https://github.com/morluto/rea/blob/main/docs/readme/README_id.md) · [Italiano](https://github.com/morluto/rea/blob/main/docs/readme/README_it.md)
-· [Ελληνικά](https://github.com/morluto/rea/blob/main/docs/readme/README_el.md)
+· [Ελληνικά](https://github.com/morluto/rea/blob/main/docs/readme/README_el.md) · [മലയാളം](https://github.com/morluto/rea/blob/main/docs/readme/README_ml.md)
 
 # REA: Reverse Engineer Anything
 
@@ -113,6 +122,7 @@ tool:
 </div>
 
 ---
+
 See a feature in an app that you want in your own product? Ask your agent to investigate it with REA. It can inspect the app without its source code, explain how the feature works, show the evidence, and build a version for your project.
 
 REA connects your agent to tools for inspecting native binaries, JavaScript and Electron apps, .NET assemblies, and websites. You can also use the same tools from your terminal. Analysis runs locally, and results include the evidence and limitations behind each conclusion.
@@ -187,6 +197,14 @@ For a CLI installed with `npm install --global` or `bun add --global`:
 rea update
 ```
 
+`rea --update` is an alias for this verified workflow and accepts the same global
+output flags. Use `rea update` when combining it with other command controls.
+
+Updater commands retain at most 4 MiB of stdout and stderr combined. Oversized
+metadata replies are rejected after the command exits; verbose installs continue
+with bounded diagnostics. Human progress output respects terminal backpressure
+and waits for submitted writes to finish.
+
 Bun global updates require Bun 1.2.17 or later. With an older Bun release,
 upgrade Bun manually before running `rea update`.
 
@@ -260,7 +278,8 @@ or update either provider.
 
 Native formats and host support vary by provider. See
 [Hopper and Ghidra setup](https://github.com/morluto/rea/blob/main/docs/installation.md#hopper), the
-[IDA guide](https://github.com/morluto/rea/blob/main/docs/ida-provider.md) (including an optional native MCP bridge), and
+[IDA guide](https://github.com/morluto/rea/blob/main/docs/ida-provider.md) (including an optional native MCP bridge), the
+[Kuna decompiler guide](https://github.com/morluto/rea/blob/main/docs/kuna-provider.md), and
 [experimental Windows Ghidra support](https://github.com/morluto/rea/blob/main/docs/windows-ghidra-p0.md).
 Ghidra also supports [16-bit DOS analysis](https://github.com/morluto/rea/blob/main/docs/ghidra-dos.md).
 For large binaries, raise the provider's startup deadline with
@@ -399,7 +418,7 @@ Report vulnerabilities through [SECURITY.md](https://github.com/morluto/rea/blob
 
 ## Star history
 
-🎉 **200,000 GitHub stars — thank you!**
+🎉 **300,000 GitHub stars — thank you!**
 
 Thanks to everyone using REA, reporting bugs, requesting features, testing builds, and contributing fixes.
 

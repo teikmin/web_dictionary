@@ -1,16 +1,20 @@
 ---
 slug: zenstory-ai-drama-skills-skills-short-drama-assets
 name: short-drama-assets
-tagline: 从短剧剧本拆出人物/造型、地点/视图、道具/状态和跨场连续性，写成创作者可读的视觉设定。用户说“拆角色/场景/道具”“做资产设定”“判断复用还是新变体”“更新造型/道具状态”，或拿现成剧本直接做视觉资产准备时使用；不写图片提示词，不生成媒体。
-summary: "- 身份：换一个就不再是同一个人、地或物； - 变体：身份不变，但服装、伤势、时段、天气、开合或持有状态改变； -
-  镜头瞬态：姿势、视线、左右手、站位和相机角度，由分镜拥有； - 故事语义：知识、目标、关系和情绪由写作/开发拥有，只引用可见后果。"
+tagline: Agent skill from zenstory-ai/drama-skills
+summary: Agent skill from zenstory-ai/drama-skills
 categories:
-  - other
+  - media-creative
+tags:
+  - agent-skills
+  - ai-short-drama
+  - ai-video
+  - aigc
 status: active
-quality_percentile: 67
+quality_percentile: 76
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: zenstory-ai/drama-skills
@@ -18,21 +22,29 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 2825
-  last_commit: 2026-10-03T08:56:29Z
-language: zh
+  stars: 3053
+  last_commit: 2026-10-15T09:53:13Z
+  stars_delta_7d: 228
+  stars_growth_pct: 8.1
+  trending_score: 246.4
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2574
+    - 2825
+    - 3053
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: zenstory-ai/drama-skills
   path: skills/short-drama-assets/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:19.678Z
+  fetched_at: 2026-10-19T07:40:39.132Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: short-drama-assets
-  description: 从短剧剧本拆出人物/造型、地点/视图、道具/状态和跨场连续性，写成创作者可读的视觉设定。用户说“拆角色/场景/道具”“做资产设定”“判断复用还是新变体”“更新造型/道具状态”，或拿现成剧本直接做视觉资产准备时使用；不写图片提示词，不生成媒体。
+  description: Agent skill from zenstory-ai/drama-skills
   folder_path: skills/short-drama-assets
   extra_files:
     - agents/openai.yaml
@@ -45,7 +57,13 @@ skill:
     - examples/minimal/characters.jsonl
     - examples/minimal/looks.jsonl
     - references/asset-review-checklist.md
-tags: []
+  pack_total_skills: 12
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: zenstory-ai-drama-skills
 ---
 
 # 短剧资产拆解

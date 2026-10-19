@@ -5,20 +5,34 @@ tagline: Give your AI agents persistent, collective memory — with deduplicatin
   absorb, supersession lineage, semantic search, and a graph UI. Speaks MCP.
 summary: '"You never truly know the value of a moment until it becomes a memory."'
 categories:
-  - browser-web
+  - databases-memory
+tags:
+  - agent-memory
+  - ai-agent
+  - claude
+  - claude-code
 status: active
-quality_percentile: 37
+quality_percentile: 50
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: agentic-box/memora
   official_vendor: false
   license: MIT
 signals:
-  stars: 737
-  last_commit: 2026-09-28T12:00:53Z
+  stars: 742
+  last_commit: 2026-10-18T11:47:39Z
+  stars_delta_7d: 5
+  stars_growth_pct: 0.7
+  trending_score: 5.03
+  rank_current: 71
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 737
+    - 742
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +42,7 @@ readme_source:
   repo: agentic-box/memora
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.707Z
+  fetched_at: 2026-10-19T07:34:17.497Z
   truncated: false
 type: mcp_server
 launch:
@@ -38,8 +52,6 @@ launch:
     - memora-mcp
   env_vars: []
   confidence: manifest
-tags:
-  - memory
 ---
 
 <h1 align="center"><img src="https://raw.githubusercontent.com/agentic-box/memora/main/media/memora_new.gif" width="60" alt="Memora Logo" align="absmiddle"> Memora</h1>

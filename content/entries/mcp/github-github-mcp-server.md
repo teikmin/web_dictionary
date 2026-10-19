@@ -7,19 +7,31 @@ summary: "- Repository Management: Browse and query code, search files, analyze
   access to. - Issue & PR Automation: Create, update, and manage issues and..."
 categories:
   - coding-agents
+tags:
+  - github
 status: active
 quality_percentile: 98
 selection_reason: official_vendor
 first_seen: 2025-03-04T16:42:04
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: github/github-mcp-server
   official_vendor: true
   license: MIT
 signals:
-  stars: 33579
-  last_commit: 2026-10-13T14:59:15Z
+  stars: 33745
+  last_commit: 2026-10-15T21:16:40Z
+  stars_delta_7d: 166
+  stars_growth_pct: 0.5
+  trending_score: 166.82
+  rank_current: 10
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 33427
+    - 33579
+    - 33745
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +40,7 @@ readme_source:
   repo: github/github-mcp-server
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:54.263Z
+  fetched_at: 2026-10-19T07:31:56.154Z
   truncated: true
 type: mcp_server
 launch:
@@ -37,8 +49,6 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
-tags:
-  - github
 ---
 
 # GitHub MCP Server

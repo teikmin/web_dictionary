@@ -1,43 +1,53 @@
 ---
 slug: 0xsline-openchatcut
-type: agent_tool
 name: OpenChatCut
 tagline: Open-source, local-first conversational AI video editor with a
   professional multi-track timeline, Agent Skills, MCP integration, and Remotion
   renderin
-summary: Open-source ChatCut alternative · agent-native · local-first AI video editor
+summary: Open-source, local-first conversational AI video editor with a
+  professional multi-track timeline, Agent Skills, MCP integration, and Remotion
+  rendering.
 categories:
   - media-creative
 tags:
-  - video
+  - agent-skills
+  - agentic-ai
+  - ai-agent
+  - ai-video-editor
 status: active
-quality_percentile: 75
+quality_percentile: 81
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: 0xsline/OpenChatCut
   official_vendor: false
   license: AGPL-3.0
 signals:
-  stars: 2329
-  last_commit: 2026-10-07T06:36:29Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 2510
+  last_commit: 2026-10-18T17:16:43Z
+  stars_delta_7d: 181
+  stars_growth_pct: 7.8
+  trending_score: 195.07
+  rank_current: 12
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 2170
+    - 2329
+    - 2510
 language: en
 needs_keys: false
 prerequisites:
-  - Node.js >= 18
+  - node
 readme_source:
   repo: 0xsline/OpenChatCut
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:20.390Z
+  fetched_at: 2026-10-19T07:41:09.209Z
   truncated: false
+type: agent_tool
 tool:
   subcategory: desktop_ui
   install_command: git clone https://github.com/0xsline/OpenChatCut.git
@@ -138,8 +148,7 @@ If OpenChatCut helps you, you can support its continued development on Ko-fi or 
   </a>
 </p>
 
----
-## What is OpenChatCut?
+---## What is OpenChatCut?
 
 OpenChatCut is an **open-source ChatCut alternative**: a video editor that brings **conversational agents** and **professional timeline editing** into the same workspace. It is independent open source (AGPL), not affiliated with the commercial ChatCut product.
 
@@ -174,8 +183,7 @@ Join the OpenChatCut community to discuss workflows, share feedback, and follow 
   <img src="https://raw.githubusercontent.com/0xsline/OpenChatCut/main/assets/readme-pic/wechat-community.jpg" width="220" alt="OpenChatCut WeChat community QR code" />
 </p>
 
----
-## Product Tour
+---## Product Tour
 
 The following screenshots show real OpenChatCut projects and editor states, not static mockups.
 
@@ -212,8 +220,7 @@ The following screenshots show real OpenChatCut projects and editor states, not 
   </tr>
 </table>
 
----
-## Why OpenChatCut?
+---## Why OpenChatCut?
 
 Traditional editors excel at precise control. One-shot AI video generators excel at producing results quickly. OpenChatCut connects both approaches through one continuously editable project:
 
@@ -234,8 +241,7 @@ Describe the goal → Agent reads the project → Produces verifiable edits → 
                   → Preview / adjust / undo → Captions and mixing → Export
 ```
 
----
-## Core Capabilities
+---## Core Capabilities
 
 | Area | Implemented capabilities |
 |---|---|
@@ -251,8 +257,7 @@ Describe the goal → Agent reads the project → Produces verifiable edits → 
 | Publishing | Agent-driven publishing of finished renders to TikTok, Instagram, YouTube, LinkedIn, Facebook, X, Threads, Pinterest, and Bluesky via Upload-Post, with a preview and explicit confirmation first |
 | Agent | Built-in conversational agent, skills, proposal-based edits, and external Streamable HTTP MCP |
 
----
-## Community Resources
+---## Community Resources
 
 The [OpenChatCut resource library](https://openchatcut.com/resources) is a shared catalog for reusable MG animations, sound effects, transitions, visual effects, zooms, and LUTs.
 
@@ -276,8 +281,7 @@ The [OpenChatCut resource library](https://openchatcut.com/resources) is a share
 
 Installable visual resources use the editor's `openchatcut-plugin@1` format and runtime validation. Official OpenChatCut resources use the MIT license; community contributors select a license during submission, and each published card identifies its creator and license.
 
----
-## Use Cases
+---## Use Cases
 
 - **Talking-head and interview editing**: transcribe audio or video, remove mistakes, pauses, and repetition through text, then generate captions automatically.
 - **Fast multiformat assembly**: import video, images, and audio, then let an agent create the rough cut, transitions, soundtrack, and pacing.
@@ -294,8 +298,7 @@ Installable visual resources use the editor's `openchatcut-plugin@1` format and 
 5. Finish captions, audio, effects, and color.
 6. Export video, audio, captions, FCPXML, or the complete project.
 
----
-## Quick Start
+---## Quick Start
 
 ### Desktop installers
 
@@ -360,15 +363,13 @@ npm run desktop:dev
 
 The desktop app uses an Electron shell with the same embedded services. The web development build and desktop build share project, agent, generation, and export logic.
 
----
-## Project Status
+---## Project Status
 
 OpenChatCut is under active development. The editor, project format, and agent tools will continue to evolve. Prebuilt macOS, Windows, and Linux installers are published on [GitHub Releases](https://github.com/0xsline/OpenChatCut/releases); running from source remains the most transparent option for development and troubleshooting.
 
 The core timeline, local projects, built-in media, and manual editing do not depend on cloud services. Connected features such as AI models, online media, generation, and transcription are enabled only after you configure the corresponding services.
 
----
-## Using OpenChatCut with Codex / Claude Code
+---## Using OpenChatCut with Codex / Claude Code
 
 Install the single OpenChatCut Agent Skill:
 
@@ -494,8 +495,7 @@ OPENCHATCUT_EDITOR_URL=https://your-editor.example.com
 
 Clients must send `Authorization: Bearer <token>`. The current bridge is designed for a single user on one machine, not as a multi-tenant service.
 
----
-## Architecture
+---## Architecture
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/0xsline/OpenChatCut/main/assets/readme-pic/openchatcut-runtime.en.svg" alt="OpenChatCut runtime architecture connecting agents, MCP, EditorCore, local storage, preview, rendering, and export" />
@@ -532,8 +532,7 @@ Clients must send `Authorization: Bearer <token>`. The current bridge is designe
 | `desktop/` | Electron main process and embedded services |
 | `remotion/` | Headless rendering and export pipeline |
 
----
-## Data and Privacy
+---## Data and Privacy
 
 - Projects, chat history, and version data are stored in the shared local store under `~/.openchatcut`; IndexedDB provides a browser-side cache and legacy-data migration.
 - User media is stored in a local media directory that you can back up or migrate.
@@ -541,8 +540,7 @@ Clients must send `Authorization: Bearer <token>`. The current bridge is designe
 - Unconfigured cloud features do not affect the local timeline or editing of existing media.
 - When exposing MCP externally, configure a Bearer Token and restrict network access to the editor endpoint.
 
----
-## Security Model
+---## Security Model
 
 - API keys are only available to server-side configuration; vendor credentials must never be exposed to the browser through `VITE_`.
 - LLM output, plugin packages, template code, and user input are validated at trust boundaries.
@@ -551,8 +549,7 @@ Clients must send `Authorization: Bearer <token>`. The current bridge is designe
 - MCP binds locally by default; public endpoints support Bearer Token authentication.
 - Local media directories and R2 credentials are managed by the server and never written into project JSON.
 
----
-### Fal.ai image and video generation
+---### Fal.ai image and video generation
 
 Fal.ai is an optional generation provider with an explicit image/video model catalog.
 Configure it under **Settings → AI Generation → Image or Video → Fal.ai**.
@@ -581,8 +578,7 @@ npm test
 npm run build
 ```
 
----
-## Technical Foundations
+---## Technical Foundations
 
 OpenChatCut is built with the following core projects and specifications:
 
@@ -598,13 +594,11 @@ JianYing / CapCut draft export is powered by [capcut-cli](https://github.com/ren
 
 This list covers the project's major technical foundations. It does not replace the licenses bundled with individual dependencies, fonts, or binaries. See `package-lock.json` for JavaScript dependency versions and [`assets/fonts/LICENSES.md`](https://github.com/0xsline/OpenChatCut/blob/main/assets/fonts/LICENSES.md) for font licenses.
 
----
-## Changelog
+---## Changelog
 
 See the bilingual [`CHANGELOG.md`](https://github.com/0xsline/OpenChatCut/blob/main/CHANGELOG.md) for notable changes, or browse all published packages on [GitHub Releases](https://github.com/0xsline/OpenChatCut/releases).
 
----
-## Star Growth
+---## Star Growth
 
 <p align="center">
   <a href="https://www.star-history.com/?type=date&repos=0xsline%2FOpenChatCut">
@@ -616,14 +610,12 @@ See the bilingual [`CHANGELOG.md`](https://github.com/0xsline/OpenChatCut/blob/m
   </a>
 </p>
 
----
-## License
+---## License
 
 OpenChatCut is licensed under the [GNU Affero General Public License v3.0 or later](https://github.com/0xsline/OpenChatCut/blob/main/LICENSE).
 Third-party components and assets remain subject to their respective licenses.
 
 ---
-
 ## Contributing
 
 1. Create a branch from `main`.

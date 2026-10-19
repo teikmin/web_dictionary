@@ -1,18 +1,20 @@
 ---
 slug: zju-real-easel-skills-builtin-ai-image-gen
 name: ai-image-gen
-tagline: 通用 AI 生图：文生图 / 图生图 / 图像变体。当用户说 AI 生图、AI 画图、文生图、图生图、生成图片、生成配图、图像生成、AI
-  出图、AI 作图、换图、改图、图像编辑、给我画一张、生成一张图 时使用。支持 OpenAI 兼容 API 与 apimart 异步 API，用户自备 API
-  ke
-summary: 调用共享脚本 skills/shared/scripts/aiimage.py（纯标准库，无第三方依赖）。 本 SKILL
-  不索要、不回显、不写入、不提交任何真实 API key —— key 只存在于用户自己的 .env。
+tagline: Agent skill from ZJU-REAL/Easel
+summary: Agent skill from ZJU-REAL/Easel
 categories:
-  - other
+  - productivity-ops
+tags:
+  - content-automation
+  - content-creation
+  - content-generation
+  - openclaw
 status: active
-quality_percentile: 88
+quality_percentile: 92
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: ZJU-REAL/Easel
@@ -20,27 +22,40 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 3567
-  last_commit: 2026-10-12T11:58:39Z
-language: zh
+  stars: 3844
+  last_commit: 2026-10-18T10:45:50Z
+  stars_delta_7d: 277
+  stars_growth_pct: 7.8
+  trending_score: 298.51
+  rank_current: 41
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3567
+    - 3844
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: ZJU-REAL/Easel
   path: skills/builtin/ai-image-gen/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.441Z
+  fetched_at: 2026-10-19T07:39:51.002Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: ai-image-gen
-  description: 通用 AI 生图：文生图 / 图生图 / 图像变体。当用户说 AI 生图、AI
-    画图、文生图、图生图、生成图片、生成配图、图像生成、AI 出图、AI 作图、换图、改图、图像编辑、给我画一张、生成一张图 时使用。支持 OpenAI
-    兼容 API 与 apimart 异步 API，用户自备 API key。
+  description: Agent skill from ZJU-REAL/Easel
   folder_path: skills/builtin/ai-image-gen
   extra_files:
     - EASEL-META.md
-tags: []
+  pack_total_skills: 114
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: zju-real-easel
 ---
 
 # ai-image-gen Skill

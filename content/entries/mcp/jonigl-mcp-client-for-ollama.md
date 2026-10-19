@@ -9,19 +9,34 @@ summary: A simple yet powerful Python client for interacting with Model Context
   advanced tool execution. English | 简体中文 | Español
 categories:
   - agent-frameworks
+tags:
+  - agentic-ai
+  - command-line-tool
+  - harness
+  - linux
 status: active
-quality_percentile: 57
+quality_percentile: 60
 selection_reason: quality_percentile
 first_seen: 2025-04-23T21:05:02
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: jonigl/mcp-client-for-ollama
   official_vendor: false
   license: MIT
 signals:
-  stars: 830
+  stars: 831
   last_commit: 2026-10-13T00:55:22Z
+  stars_delta_7d: 1
+  stars_growth_pct: 0.1
+  trending_score: 1
+  rank_current: 84
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 827
+    - 830
+    - 831
 language: en
 needs_keys: false
 prerequisites:
@@ -31,7 +46,7 @@ readme_source:
   repo: jonigl/mcp-client-for-ollama
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.056Z
+  fetched_at: 2026-10-19T07:34:17.214Z
   truncated: true
 type: mcp_server
 launch:
@@ -41,8 +56,6 @@ launch:
     - mcp-client-for-ollama
   env_vars: []
   confidence: manifest
-tags:
-  - python
 ---
 
 <p align="center">

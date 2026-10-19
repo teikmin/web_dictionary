@@ -6,12 +6,17 @@ tagline: "Linear ticket work through Orca's CLI. Use when working from a linked
   moving "
 summary: "Choose the executable once and reuse it for every later command:"
 categories:
-  - productivity-ops
+  - agent-frameworks
+tags:
+  - ade
+  - agent-ide
+  - ai-agents
+  - automation
 status: active
-quality_percentile: 64
+quality_percentile: 67
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: stablyai/orca
@@ -19,8 +24,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 91386
-  last_commit: 2026-10-13T16:24:00Z
+  stars: 97177
+  last_commit: 2026-10-19T07:28:54Z
+  stars_delta_7d: 5791
+  stars_growth_pct: 6.3
+  trending_score: 6157.97
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 86961
+    - 91386
+    - 97177
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,7 +41,7 @@ readme_source:
   repo: stablyai/orca
   path: skills/linear-tickets/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.942Z
+  fetched_at: 2026-10-19T07:36:40.961Z
   truncated: false
 type: agent_skill
 skill:
@@ -41,8 +54,13 @@ skill:
     for `orca-linear`; kept so existing installs converge.
   folder_path: skills/linear-tickets
   extra_files: []
-tags:
-  - linear
+  pack_total_skills: 11
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: stablyai-orca
 ---
 
 # Linear Tickets (Legacy Name)

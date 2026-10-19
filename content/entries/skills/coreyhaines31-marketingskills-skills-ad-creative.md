@@ -10,11 +10,16 @@ summary: "Check for product marketing context first: If
   asking question..."
 categories:
   - productivity-ops
+tags:
+  - agent-skills
+  - ai-agents
+  - ai-seo
+  - claude
 status: active
-quality_percentile: 84
+quality_percentile: 82
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: coreyhaines31/marketingskills
@@ -22,8 +27,15 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 54518
-  last_commit: 2026-10-13T05:44:02Z
+  stars: 55431
+  last_commit: 2026-10-15T21:33:21Z
+  stars_delta_7d: 913
+  stars_growth_pct: 1.7
+  trending_score: 928.29
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 54518
+    - 55431
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,7 +43,7 @@ readme_source:
   repo: coreyhaines31/marketingskills
   path: skills/ad-creative/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:12.502Z
+  fetched_at: 2026-10-19T07:37:21.630Z
   truncated: false
 type: agent_skill
 skill:
@@ -62,7 +74,13 @@ skill:
     - references/imessage-video-ads.md
     - references/meta-creative-formats.md
     - references/motion-video-ads.md
-tags: []
+  pack_total_skills: 50
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: coreyhaines31-marketingskills
 ---
 
 # Ad Creative
@@ -72,6 +90,8 @@ You are an expert performance creative strategist. Your goal is to generate high
 
 **Check for product marketing context first:**
 If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+
+Check its **Learnings** section before drafting: angles, offers, and formats already tested there shouldn't be re-proposed as new ideas, and active lessons apply unless the user says otherwise.
 
 Gather this context (ask if not provided):
 

@@ -1,19 +1,20 @@
 ---
 slug: img2threejs-img2threejs
 name: img2threejs
-tagline: Turn an object or character reference image into a quality-gated,
-  animation-ready procedural Three.js model built in code. Use for image-to-3D
-  reconst
-summary: 'Agent-agnostic: works under Claude Code, Codex, or OpenCode. Wherever
-  this doc says "agent vision" or "agent browser tool", use whatever the host
-  provides — native image reading, a browser MCP (playwright/chrome-devto...'
+tagline: Agent skill from img2threejs/img2threejs
+summary: Agent skill from img2threejs/img2threejs
 categories:
-  - browser-web
+  - media-creative
+tags:
+  - 3d
+  - ai-agents
+  - claude-code
+  - computer-graphics
 status: active
-quality_percentile: 62
+quality_percentile: 72
 selection_reason: quality_percentile
 first_seen: 2026-07-15T02:58:39
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: img2threejs/img2threejs
@@ -21,8 +22,18 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 18060
-  last_commit: 2026-10-08T04:50:41Z
+  stars: 18402
+  last_commit: 2026-10-17T21:41:15Z
+  stars_delta_7d: 342
+  stars_growth_pct: 1.9
+  trending_score: 348.48
+  rank_current: 35
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 17639
+    - 18060
+    - 18402
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,15 +41,12 @@ readme_source:
   repo: img2threejs/img2threejs
   path: SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:14.631Z
+  fetched_at: 2026-10-19T07:39:21.074Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: img2threejs
-  description: Turn an object or character reference image into a quality-gated,
-    animation-ready procedural Three.js model built in code. Use for image-to-3D
-    reconstruction, detail-accurate object rebuilds, stylized/likeness-maximized
-    human characters, sculpt specs, and staged code generation.
+  description: Agent skill from img2threejs/img2threejs
   folder_path: .
   extra_files:
     - .github/FUNDING.yml
@@ -51,8 +59,13 @@ skill:
     - .github/workflows/ci.yml
     - .github/workflows/cli-publish.yml
     - .github/workflows/issue-triage.yml
-tags:
-  - playwright
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: img2threejs-img2threejs
 ---
 
 # img2threejs — Image to procedural Three.js

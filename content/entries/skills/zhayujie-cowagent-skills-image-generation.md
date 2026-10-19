@@ -7,12 +7,17 @@ tagline: Generate or edit images from text prompts. Use when the user asks to
 summary: "Supported models (passed via model only when the user asks for a
   specific one):"
 categories:
-  - media-creative
+  - agent-frameworks
+tags:
+  - ai-agent
+  - ai-agents
+  - chatgpt-on-wechat
+  - claude
 status: active
 quality_percentile: 98
 selection_reason: quality_percentile
 first_seen: 2022-08-07T08:33:41
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: zhayujie/CowAgent
@@ -20,8 +25,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 47380
-  last_commit: 2026-10-13T13:43:26Z
+  stars: 47461
+  last_commit: 2026-10-19T03:16:11Z
+  stars_delta_7d: 81
+  stars_growth_pct: 0.2
+  trending_score: 81.14
+  rank_current: 72
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 47264
+    - 47380
+    - 47461
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,7 +44,7 @@ readme_source:
   repo: zhayujie/CowAgent
   path: skills/image-generation/SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:13.462Z
+  fetched_at: 2026-10-19T07:37:15.118Z
   truncated: false
 type: agent_skill
 skill:
@@ -40,7 +55,13 @@ skill:
   folder_path: skills/image-generation
   extra_files:
     - scripts/generate.py
-tags: []
+  pack_total_skills: 3
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: zhayujie-cowagent
 ---
 
 # Image Generation

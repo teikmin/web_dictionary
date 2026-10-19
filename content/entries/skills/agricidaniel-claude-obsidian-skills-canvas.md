@@ -1,18 +1,20 @@
 ---
 slug: agricidaniel-claude-obsidian-skills-canvas
 name: canvas
-tagline: Create, inspect, and update Obsidian JSON Canvas boards with text,
-  file, link, group, and edge nodes. Use for canvas status, canvas lists, visual
-  maps
-summary: "Resolve the installed product root from this skill's own location, not
-  from the vault or current working directory:"
+tagline: Agent skill from AgriciDaniel/claude-obsidian
+summary: Agent skill from AgriciDaniel/claude-obsidian
 categories:
-  - media-creative
+  - productivity-ops
+tags:
+  - agent-skills
+  - ai-note-taking
+  - ai-second-brain
+  - claude-code
 status: active
-quality_percentile: 45
+quality_percentile: 77
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: AgriciDaniel/claude-obsidian
@@ -20,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 15504
-  last_commit: 2026-09-10T17:44:23Z
+  stars: 15634
+  last_commit: 2026-10-18T17:55:37Z
+  stars_delta_7d: 130
+  stars_growth_pct: 0.8
+  trending_score: 131.09
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 15392
+    - 15504
+    - 15634
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,20 +39,22 @@ readme_source:
   repo: AgriciDaniel/claude-obsidian
   path: skills/canvas/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.224Z
+  fetched_at: 2026-10-19T07:39:24.750Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: canvas
-  description: Create, inspect, and update Obsidian JSON Canvas boards with text,
-    file, link, group, and edge nodes. Use for canvas status, canvas lists,
-    visual maps, zones, spatial layouts, adding vault notes or media to a
-    .canvas file, and requests such as create canvas, add to canvas, or put this
-    on the canvas.
+  description: Agent skill from AgriciDaniel/claude-obsidian
   folder_path: skills/canvas
   extra_files:
     - references/canvas-spec.md
-tags: []
+  pack_total_skills: 16
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: agricidaniel-claude-obsidian
 ---
 
 # Canvas

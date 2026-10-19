@@ -12,11 +12,16 @@ summary: A language model writes whatever is most likely to come next, so by
   choic...
 categories:
   - other
+tags:
+  - agent-skills
+  - ai-humanizer
+  - ai-writing
+  - chatgpt
 status: active
-quality_percentile: 50
+quality_percentile: 66
 selection_reason: quality_percentile
 first_seen: 2026-01-18T05:30:15
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: blader/humanizer
@@ -24,8 +29,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 56481
-  last_commit: 2026-09-28T05:55:12Z
+  stars: 58216
+  last_commit: 2026-10-16T19:12:03Z
+  stars_delta_7d: 1735
+  stars_growth_pct: 3.1
+  trending_score: 1788.3
+  rank_current: 15
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 54590
+    - 56481
+    - 58216
 language: en
 needs_keys: false
 prerequisites: []
@@ -33,7 +48,7 @@ readme_source:
   repo: blader/humanizer
   path: SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:12.493Z
+  fetched_at: 2026-10-19T07:37:14.641Z
   truncated: false
 type: agent_skill
 skill:
@@ -62,7 +77,13 @@ skill:
     - AGENTS.md
     - CHANGELOG.md
     - LICENSE
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: blader-humanizer
 ---
 
 # Humanizer: remove AI writing patterns

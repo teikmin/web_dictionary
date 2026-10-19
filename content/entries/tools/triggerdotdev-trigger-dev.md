@@ -1,46 +1,56 @@
 ---
 slug: triggerdotdev-trigger-dev
-type: agent_tool
 name: trigger.dev
 tagline: Trigger.dev – build and deploy durable AI agents and workflows
 summary: Website | Docs | Issues | Example projects | Feature requests | Public
   roadmap | Self-hosting
 categories:
-  - cloud-infra
-tags: []
+  - agent-frameworks
+tags:
+  - ai-agent-framework
+  - ai-agents
+  - automation
+  - background-jobs
 status: active
-quality_percentile: 91
+quality_percentile: 90
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: triggerdotdev/trigger.dev
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 16531
-  last_commit: 2026-10-13T13:17:29Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 16571
+  last_commit: 2026-10-18T22:21:08Z
+  stars_delta_7d: 40
+  stars_growth_pct: 0.2
+  trending_score: 40.1
+  rank_current: 30
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 16493
+    - 16531
+    - 16571
 language: en
 needs_keys: false
-prerequisites: []
+prerequisites:
+  - node
 readme_source:
   repo: triggerdotdev/trigger.dev
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:54.783Z
+  fetched_at: 2026-10-19T07:31:56.050Z
   truncated: false
+type: agent_tool
 tool:
   subcategory: agent_framework
-  install_command: npx trigger.dev@latest init
+  install_command: git clone https://github.com/triggerdotdev/trigger.dev.git
   runtime: node
-  execution_mode: hybrid
-  has_mcp_support: false
+  execution_mode: cloud
+  has_mcp_support: true
 ---
 
 <div align="center">

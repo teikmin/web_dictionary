@@ -1,47 +1,55 @@
 ---
 slug: ar9av-obsidian-wiki
-type: agent_tool
 name: obsidian-wiki
 tagline: Framework for AI agents to build and maintain a digital brain through
   Obsidian wiki | Memory System for Agents
-summary: A digital brain you grow with your AI agent.
+summary: Framework for AI agents to build and maintain a digital brain through
+  Obsidian wiki | Memory System for Agents
 categories:
-  - productivity-ops
+  - databases-memory
 tags:
-  - memory
+  - agent-memory
+  - agent-skills
+  - brain
+  - claude-code
 status: active
-quality_percentile: 75
+quality_percentile: 76
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Ar9av/obsidian-wiki
   official_vendor: false
   license: MIT
 signals:
-  stars: 3558
-  last_commit: 2026-10-13T03:32:08Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 3590
+  last_commit: 2026-10-18T14:40:05Z
+  stars_delta_7d: 32
+  stars_growth_pct: 0.9
+  trending_score: 32.29
+  rank_current: 32
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 3529
+    - 3558
+    - 3590
 language: en
 needs_keys: false
 prerequisites:
-  - Python >= 3.10
-  - uv
+  - python
 readme_source:
   repo: Ar9av/obsidian-wiki
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:19.094Z
+  fetched_at: 2026-10-19T07:40:38.320Z
   truncated: false
+type: agent_tool
 tool:
   subcategory: memory_rag
-  install_command: git clone https://github.com/Ar9av/obsidian-wiki.git
-  runtime: node
+  install_command: pip install obsidian-wiki
+  runtime: python
   execution_mode: local
   has_mcp_support: true
   mcp_launch:
@@ -81,8 +89,7 @@ tool:
   English | <a href="https://github.com/Ar9av/obsidian-wiki/blob/main/README_TW.md">繁體中文</a>
 </p>
 
----
-You solve a hard problem on a Tuesday. Three months later, in a different repo, you solve it again from scratch — because the answer lived in a chat log you'll never find.
+---You solve a hard problem on a Tuesday. Three months later, in a different repo, you solve it again from scratch — because the answer lived in a chat log you'll never find.
 
 This fixes that. Point it at a folder, tell your agent what to remember, and it compiles what you learn into interconnected markdown you own. The pattern comes from Andrej Karpathy's [LLM Wiki gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f): compile knowledge once and keep it current, instead of asking an LLM the same questions forever or re-running RAG every time.
 

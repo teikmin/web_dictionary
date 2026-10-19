@@ -2,24 +2,36 @@
 slug: dataforseo-mcp-server-typescript
 name: mcp-server-typescript
 tagline: "DataForSEO API modelcontextprotocol server "
-summary: MCP server and CLI for LLM agents to browse DataForSEO API
-  documentation and make authenticated API requests. By default the binary
-  starts an MCP server on stdio; CLI commands are an optional second mode.
+summary: "DataForSEO API modelcontextprotocol server "
 categories:
-  - coding-agents
+  - browser-web
+tags:
+  - aiworkflow
+  - dataforseo
+  - dataforseo-apis
+  - modelcontextprotocol
 status: active
-quality_percentile: 59
+quality_percentile: 61
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: dataforseo/mcp-server-typescript
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 253
+  stars: 255
   last_commit: 2026-10-02T17:45:49Z
+  stars_delta_7d: 2
+  stars_growth_pct: 0.8
+  trending_score: 2.02
+  rank_current: 77
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 253
+    - 255
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +40,7 @@ readme_source:
   repo: dataforseo/mcp-server-typescript
   path: README.md
   branch: master
-  fetched_at: 2026-10-14T14:55:21.335Z
+  fetched_at: 2026-10-19T07:41:31.545Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,8 +51,6 @@ launch:
     - dataforseo-mcp-server
   env_vars: []
   confidence: manifest
-tags:
-  - typescript
 ---
 
 # DataForSEO MCP Server

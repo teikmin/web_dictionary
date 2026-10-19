@@ -7,19 +7,32 @@ summary: Tools like Chrome DevTools MCP and Playwright MCP drive a fresh,
   choice for debugging the app you are actually looking at, because since C...
 categories:
   - browser-web
+tags:
+  - anthropic
+  - cursor
 status: active
-quality_percentile: 38
+quality_percentile: 83
 selection_reason: quality_percentile
 first_seen: 2025-02-10T09:20:38
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: AgentDeskAI/browser-tools-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 7329
-  last_commit: 2026-08-12T16:48:04Z
+  stars: 7327
+  last_commit: 2026-10-16T18:21:25Z
+  stars_delta_7d: 0
+  stars_growth_pct: 0
+  trending_score: 0
+  rank_current: 86
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 7327
+    - 7329
+    - 7327
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +41,7 @@ readme_source:
   repo: AgentDeskAI/browser-tools-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:57.207Z
+  fetched_at: 2026-10-19T07:32:28.475Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,8 +52,6 @@ launch:
     - "@agentdeskai/browser-tools-mcp@latest"
   env_vars: []
   confidence: readme
-tags:
-  - playwright
 ---
 
 # BrowserTools MCP
@@ -221,6 +232,18 @@ This tool captures whatever your browser sees, so it treats that data carefully:
   unless explicitly requested.
 - **Cookie access is an optional permission** you grant from the panel, not
   something the extension holds by default.
+- **Audits stay off your internal network.** An audit accepts a url, and the
+  caller may be a model reading untrusted pages. Link-local and cloud metadata
+  addresses are never audited. Pages on localhost or a private network are
+  audited only while open in a connected tab (or allowlisted with
+  `--audit-allow-origin`), and every request the audit browser makes —
+  redirects and subresources included — is checked again as it happens. A
+  local page may load only the local origins that are open in a tab or
+  allowlisted, so if your app calls an API on another local port, open that
+  too or allowlist it. Audits connect directly, not through a system proxy.
+  Behind a fake-IP proxy (Clash, sing-box, Surge), which hides where names
+  really go, audits are refused unless you pass
+  `--audit-allow-private-network`; see SECURITY.md.
 
 Report vulnerabilities per [SECURITY.md](https://github.com/AgentDeskAI/browser-tools-mcp/blob/main/SECURITY.md).
 
@@ -240,6 +263,8 @@ Flags, or the matching `BROWSER_TOOLS_*` environment variables:
 | `--connect <url>` | Attach to a connector already running elsewhere |
 | `--token <t>` | Auth token to use with `--connect` |
 | `--no-redact` | Disable credential scrubbing (not recommended) |
+| `--audit-allow-origin <o,o>` | Loopback/private origins audits may target or load without an open tab |
+| `--audit-allow-private-network` | Let audits reach any loopback/private address except the audit's own ports (not recommended); also needed behind a fake-IP proxy |
 
 To share one browser session between several MCP clients, start the connector
 once with `npx @agentdeskai/browser-tools-server` and every client will attach to

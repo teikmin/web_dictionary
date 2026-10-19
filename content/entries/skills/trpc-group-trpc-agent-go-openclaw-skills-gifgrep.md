@@ -1,0 +1,105 @@
+---
+slug: trpc-group-trpc-agent-go-openclaw-skills-gifgrep
+name: gifgrep
+tagline: Search GIF providers with CLI/TUI, download results, and extract stills/sheets.
+summary: GIF-Grab (gifgrep workflow)
+categories:
+  - agent-frameworks
+tags:
+  - a2a
+  - a2a-protocol
+  - ag-ui
+  - agent-framework
+status: active
+quality_percentile: 82
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: trpc-group/trpc-agent-go
+  subpath: openclaw/skills/gifgrep
+  official_vendor: false
+  license: Apache-2.0
+signals:
+  stars: 1870
+  last_commit: 2026-10-19T07:09:58Z
+  stars_delta_7d: 10
+  stars_growth_pct: 0.5
+  trending_score: 10.05
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1860
+    - 1870
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: trpc-group/trpc-agent-go
+  path: openclaw/skills/gifgrep/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:33:53.716Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: gifgrep
+  description: Search GIF providers with CLI/TUI, download results, and extract
+    stills/sheets.
+  folder_path: openclaw/skills/gifgrep
+  extra_files: []
+  pack_total_skills: 71
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: trpc-group-trpc-agent-go
+---
+
+# gifgrep
+Use `gifgrep` to search GIF providers (Tenor/Giphy), browse in a TUI, download results, and extract stills or sheets.
+
+GIF-Grab (gifgrep workflow)
+
+- Search → preview → download → extract (still/sheet) for fast review and sharing.
+
+Quick start
+
+- `gifgrep cats --max 5`
+- `gifgrep cats --format url | head -n 5`
+- `gifgrep search --json cats | jq '.[0].url'`
+- `gifgrep tui "office handshake"`
+- `gifgrep cats --download --max 1 --format url`
+
+TUI + previews
+
+- TUI: `gifgrep tui "query"`
+- CLI still previews: `--thumbs` (Kitty/Ghostty only; still frame)
+
+Download + reveal
+
+- `--download` saves to `~/Downloads`
+- `--reveal` shows the last download in Finder
+
+Stills + sheets
+
+- `gifgrep still ./clip.gif --at 1.5s -o still.png`
+- `gifgrep sheet ./clip.gif --frames 9 --cols 3 -o sheet.png`
+- Sheets = single PNG grid of sampled frames (great for quick review, docs, PRs, chat).
+- Tune: `--frames` (count), `--cols` (grid width), `--padding` (spacing).
+
+Providers
+
+- `--source auto|tenor|giphy`
+- `GIPHY_API_KEY` required for `--source giphy`
+- `TENOR_API_KEY` optional (Tenor demo key used if unset)
+
+Output
+
+- `--json` prints an array of results (`id`, `title`, `url`, `preview_url`, `tags`, `width`, `height`)
+- `--format` for pipe-friendly fields (e.g., `url`)
+
+Environment tweaks
+
+- `GIFGREP_SOFTWARE_ANIM=1` to force software animation
+- `GIFGREP_CELL_ASPECT=0.5` to tweak preview geometry

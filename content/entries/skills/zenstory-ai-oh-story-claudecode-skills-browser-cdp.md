@@ -1,18 +1,20 @@
 ---
 slug: zenstory-ai-oh-story-claudecode-skills-browser-cdp
 name: browser-cdp
-tagline: "Use this skill when you need to control a Chrome browser via CDP
-  (Chrome DevTools Protocol) to reuse existing login sessions. Covers: launching
-  Chrome"
-summary: "- macOS / Linux / Windows（实验性），已安装 Google Chrome - Node.js 20+ -
-  agent-browser 已安装：npm install -g agent-browser"
+tagline: Agent skill from zenstory-ai/oh-story-claudecode
+summary: Agent skill from zenstory-ai/oh-story-claudecode
 categories:
   - browser-web
+tags:
+  - agent-skills
+  - ai-agent
+  - ai-novel-writing
+  - ai-writing
 status: active
-quality_percentile: 76
+quality_percentile: 81
 selection_reason: quality_percentile
 first_seen: 2026-04-22T16:35:39
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: zenstory-ai/oh-story-claudecode
@@ -20,30 +22,41 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 7517
-  last_commit: 2026-10-10T11:50:41Z
-language: zh
+  stars: 7737
+  last_commit: 2026-10-18T01:05:23Z
+  stars_delta_7d: 220
+  stars_growth_pct: 2.9
+  trending_score: 226.44
+  rank_current: 46
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 7340
+    - 7517
+    - 7737
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: zenstory-ai/oh-story-claudecode
   path: skills/browser-cdp/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.384Z
+  fetched_at: 2026-10-19T07:39:37.264Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: browser-cdp
-  description: "Use this skill when you need to control a Chrome browser via CDP
-    (Chrome DevTools Protocol) to reuse existing login sessions. Covers:
-    launching Chrome in debug mode, opening URLs, waiting for page load,
-    evaluating JavaScript, taking snapshots, and extracting auth tokens. Trigger
-    phrases: browser automation, CDP, agent-browser, 浏览器操作, 操作浏览器, Chrome CDP,
-    复用登录态, extract token from browser."
+  description: Agent skill from zenstory-ai/oh-story-claudecode
   folder_path: skills/browser-cdp
   extra_files:
     - scripts/setup-cdp-chrome.js
-tags: []
+  pack_total_skills: 13
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: zenstory-ai-oh-story-claudecode
 ---
 
 # Browser CDP 操作工具
@@ -58,7 +71,6 @@ tags: []
 > ⚠️ **首次启动会 kill 用户的常规 Chrome。** 在启动前必须征求用户同意（见下方"启动流程"），否则用户可能丢失未保存的标签页/草稿。
 
 ---
-
 ## 启动流程（skill-mode 强制步骤）
 
 **第一步：探测当前状态（无副作用）**
@@ -95,7 +107,6 @@ CHROME_PID_COUNT=3
 **为什么不能直接 `--yes`：** 脚本在非 TTY（即 skill 模式 / Bash 工具）下，如果检测到 Chrome 在跑而没有 `--yes`，会以退出码 3 报 `NEEDS_CONSENT: ...` 并中止，**不会**静默杀进程。这是有意的兜底——但 skill 流程仍应先问用户，而不是看到 3 就盲传 `--yes`。
 
 ---
-
 ## 启动脚本选项
 
 | 选项 | 说明 |
@@ -109,7 +120,6 @@ CHROME_PID_COUNT=3
 退出码：`0` 成功 / `1` 通用错误 / `2` 用户拒绝（TTY）/ `3` 需同意但缺 `--yes`。
 
 ---
-
 ## 常用操作
 
 ### 打开页面并等待加载
@@ -155,7 +165,6 @@ agent-browser --cdp 9222 type "<sel>" "<text>"
 ```
 
 ---
-
 ## 停止 / 清理
 
 - 关掉 debug Chrome 窗口即可。若窗口无响应，先按 `--user-data-dir` 核验出 debug 实例的 PID 再只结束它：
@@ -166,7 +175,6 @@ agent-browser --cdp 9222 type "<sel>" "<text>"
 - 登录态失效：`node {SKILL_DIR}/scripts/setup-cdp-chrome.js 9222 --reset --yes`（注意 `--yes` 同样需要先问用户）。
 
 ---
-
 ## OpenCode 环境注意事项
 
 opencode 没有后台执行命令行的工具，长时间的 CDP 操作（如等待页面加载、大批量数据抓取）会阻塞整个会话，导致 CLI 无响应。
@@ -203,7 +211,6 @@ timeout 30 agent-browser --cdp 9222 eval "window.location.replace('https://www.q
 如遇到持续卡死的操作，在 opencode 中按 `ESC` 手动打断。
 
 ---
-
 ## 常见问题
 
 | 问题 | 解决方案 |

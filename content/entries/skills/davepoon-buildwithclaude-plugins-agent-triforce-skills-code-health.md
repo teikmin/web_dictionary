@@ -7,12 +7,17 @@ summary: "- Periodic codebase hygiene check - Before a release to ensure no dead
   code or unresolved debt - After a large refactoring to verify cleanliness -
   When onboarding to understand current code quality"
 categories:
-  - coding-agents
+  - agent-frameworks
+tags:
+  - claude
+  - claude-code
+  - claude-code-commands
+  - claude-skills
 status: active
-quality_percentile: 90
+quality_percentile: 93
 selection_reason: quality_percentile
 first_seen: 2025-07-25T02:26:45
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: davepoon/buildwithclaude
@@ -20,8 +25,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 3631
-  last_commit: 2026-10-13T07:52:46Z
+  stars: 3650
+  last_commit: 2026-10-18T23:51:10Z
+  stars_delta_7d: 19
+  stars_growth_pct: 0.5
+  trending_score: 19.1
+  rank_current: 98
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3604
+    - 3631
+    - 3650
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,7 +44,7 @@ readme_source:
   repo: davepoon/buildwithclaude
   path: plugins/agent-triforce/skills/code-health/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:00.990Z
+  fetched_at: 2026-10-19T07:33:26.854Z
   truncated: false
 type: agent_skill
 skill:
@@ -38,7 +53,13 @@ skill:
     and code quality issues. Delegates to the Centinela (QA) agent.
   folder_path: plugins/agent-triforce/skills/code-health
   extra_files: []
-tags: []
+  pack_total_skills: 400
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: davepoon-buildwithclaude
 ---
 
 # Code Health

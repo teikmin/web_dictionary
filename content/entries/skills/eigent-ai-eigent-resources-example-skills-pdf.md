@@ -1,19 +1,20 @@
 ---
 slug: eigent-ai-eigent-resources-example-skills-pdf
 name: pdf
-tagline: "Use this skill whenever the user wants to do anything with PDF files.
-  This includes reading or extracting text/tables from PDFs, combining or
-  merging "
-summary: This guide covers essential PDF processing operations using Python
-  libraries and command-line tools. For advanced features, JavaScript libraries,
-  and detailed examples, see REFERENCE.md. If you need to fill out a PDF...
+tagline: Agent skill from eigent-ai/eigent
+summary: Agent skill from eigent-ai/eigent
 categories:
-  - media-creative
+  - agent-frameworks
+tags:
+  - agent-framework
+  - agent-skills
+  - agentic-ai
+  - agentic-workflow
 status: active
-quality_percentile: 75
+quality_percentile: 77
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: eigent-ai/eigent
@@ -21,8 +22,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 15514
-  last_commit: 2026-10-13T12:26:39Z
+  stars: 15599
+  last_commit: 2026-10-17T21:07:58Z
+  stars_delta_7d: 85
+  stars_growth_pct: 0.5
+  trending_score: 85.47
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 15467
+    - 15514
+    - 15599
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,18 +39,12 @@ readme_source:
   repo: eigent-ai/eigent
   path: resources/example-skills/pdf/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.073Z
+  fetched_at: 2026-10-19T07:40:23.640Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: pdf
-  description: Use this skill whenever the user wants to do anything with PDF
-    files. This includes reading or extracting text/tables from PDFs, combining
-    or merging multiple PDFs into one, splitting PDFs apart, rotating pages,
-    adding watermarks, creating new PDFs, filling PDF forms,
-    encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to
-    make them searchable. If the user mentions a .pdf file or asks to produce
-    one, use this skill.
+  description: Agent skill from eigent-ai/eigent
   folder_path: resources/example-skills/pdf
   extra_files:
     - LICENSE.txt
@@ -54,9 +57,13 @@ skill:
     - scripts/extract_form_field_info.py
     - scripts/extract_form_structure.py
     - scripts/fill_fillable_fields.py
-tags:
-  - pdf
-  - python
+  pack_total_skills: 6
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: eigent-ai-eigent
 ---
 
 # PDF Processing Guide

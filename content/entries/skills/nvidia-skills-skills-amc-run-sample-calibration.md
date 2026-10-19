@@ -1,18 +1,20 @@
 ---
 slug: nvidia-skills-skills-amc-run-sample-calibration
 name: amc-run-sample-calibration
-tagline: Run end-to-end calibration on the shipped sample dataset
-  (sdg_08_2_sample_data_010926.zip) against a running AMC microservice. Use when
-  user says 'tes
-summary: "Activate this skill when the user wants to sanity-check a running AMC
-  stack with the bundled sample dataset. Typical prompts:"
+tagline: Agent skill from NVIDIA/skills
+summary: Agent skill from NVIDIA/skills
 categories:
-  - other
+  - databases-memory
+tags:
+  - agent-skills
+  - agentic-ai
+  - ai-agents
+  - claude-code
 status: active
-quality_percentile: 54
+quality_percentile: 59
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: NVIDIA/skills
@@ -20,8 +22,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 3581
-  last_commit: 2026-10-09T15:27:20Z
+  stars: 3642
+  last_commit: 2026-10-17T15:10:49Z
+  stars_delta_7d: 61
+  stars_growth_pct: 1.7
+  trending_score: 62.04
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3536
+    - 3581
+    - 3642
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,15 +39,12 @@ readme_source:
   repo: NVIDIA/skills
   path: skills/amc-run-sample-calibration/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.562Z
+  fetched_at: 2026-10-19T07:41:08.969Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: amc-run-sample-calibration
-  description: Run end-to-end calibration on the shipped sample dataset
-    (sdg_08_2_sample_data_010926.zip) against a running AMC microservice. Use
-    when user says 'test sample dataset', 'run sample calibration', 'verify AMC
-    install', or 'launch and test'.
+  description: Agent skill from NVIDIA/skills
   folder_path: skills/amc-run-sample-calibration
   extra_files:
     - BENCHMARK.md
@@ -45,7 +52,13 @@ skill:
     - scripts/run_sample_calibration.py
     - skill-card.md
     - skill.oms.sig
-tags: []
+  pack_total_skills: 417
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: nvidia-skills
 ---
 
 # Skill: Calibrate Sample Dataset

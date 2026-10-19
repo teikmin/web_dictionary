@@ -1,18 +1,20 @@
 ---
 slug: phuryn-pm-skills-pm-data-analytics-skills-ab-test-analysis
 name: ab-test-analysis
-tagline: Analyze A/B test results with statistical significance, sample size
-  validation, confidence intervals, and ship/extend/stop recommendations. Use
-  when e
-summary: Evaluate A/B test results with statistical rigor and translate findings
-  into clear product decisions.
+tagline: Agent skill from phuryn/pm-skills
+summary: Agent skill from phuryn/pm-skills
 categories:
-  - other
+  - productivity-ops
+tags:
+  - agent-skill-repository
+  - agent-skills
+  - agentic-skills
+  - claude-code-marketplace
 status: active
-quality_percentile: 68
+quality_percentile: 71
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: phuryn/pm-skills
@@ -20,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 26957
-  last_commit: 2026-10-10T10:56:32Z
+  stars: 27192
+  last_commit: 2026-10-16T12:28:37Z
+  stars_delta_7d: 235
+  stars_growth_pct: 0.9
+  trending_score: 237.05
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 26820
+    - 26957
+    - 27192
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,18 +39,21 @@ readme_source:
   repo: phuryn/pm-skills
   path: pm-data-analytics/skills/ab-test-analysis/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.090Z
+  fetched_at: 2026-10-19T07:40:28.334Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: ab-test-analysis
-  description: Analyze A/B test results with statistical significance, sample size
-    validation, confidence intervals, and ship/extend/stop recommendations. Use
-    when evaluating experiment results, checking if a test reached significance,
-    interpreting split test data, or deciding whether to ship a variant.
+  description: Agent skill from phuryn/pm-skills
   folder_path: pm-data-analytics/skills/ab-test-analysis
   extra_files: []
-tags: []
+  pack_total_skills: 69
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: phuryn-pm-skills
 ---
 
 ## A/B Test Analysis
@@ -114,7 +127,6 @@ If the user provides data files (CSV, Excel, or analytics exports), read and ana
 Think step by step. Save as markdown. Generate Python scripts for calculations if raw data is provided.
 
 ---
-
 ### Further Reading
 
 - [A/B Testing 101 + Examples](https://www.productcompass.pm/p/ab-testing-101-for-pms)

@@ -8,19 +8,34 @@ summary: Give your AI agents access to LinkedIn through your own browser
   conversations and connection requests.
 categories:
   - browser-web
+tags:
+  - ai-agents
+  - anthropic
+  - chatgpt
+  - chatgpt-desktop
 status: active
 quality_percentile: 93
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: stickerdaniel/linkedin-mcp-server
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 3852
-  last_commit: 2026-10-13T15:31:10Z
+  stars: 3925
+  last_commit: 2026-10-19T06:35:05Z
+  stars_delta_7d: 73
+  stars_growth_pct: 1.9
+  trending_score: 74.38
+  rank_current: 17
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3782
+    - 3852
+    - 3925
 language: en
 needs_keys: false
 prerequisites:
@@ -30,7 +45,7 @@ readme_source:
   repo: stickerdaniel/linkedin-mcp-server
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:59.821Z
+  fetched_at: 2026-10-19T07:32:30.859Z
   truncated: false
 type: mcp_server
 launch:
@@ -40,8 +55,6 @@ launch:
     - mcp-server-linkedin
   env_vars: []
   confidence: manifest
-tags:
-  - research
 ---
 
 # MCP Server for LinkedIn

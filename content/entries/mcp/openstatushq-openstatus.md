@@ -5,20 +5,35 @@ tagline: Open-source status page, incident response and uptime monitoring
 summary: The open-source status page, incident response and uptime monitoring
   platform. Learn more » Documentation · Website · Discord
 categories:
-  - coding-agents
+  - cloud-infra
+tags:
+  - alerting
+  - incident-management
+  - monitoring
+  - monitoring-as-code
 status: active
-quality_percentile: 87
+quality_percentile: 86
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: openstatusHQ/openstatus
   official_vendor: false
   license: AGPL-3.0
 signals:
-  stars: 9178
-  last_commit: 2026-10-12T15:44:12Z
+  stars: 9195
+  last_commit: 2026-10-19T06:20:04Z
+  stars_delta_7d: 17
+  stars_growth_pct: 0.2
+  trending_score: 17.03
+  rank_current: 46
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 9175
+    - 9178
+    - 9195
 language: en
 needs_keys: false
 prerequisites:
@@ -27,7 +42,7 @@ readme_source:
   repo: openstatusHQ/openstatus
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:57.646Z
+  fetched_at: 2026-10-19T07:32:28.521Z
   truncated: false
 type: mcp_server
 launch:
@@ -36,8 +51,6 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
-tags:
-  - discord
 ---
 
 <p align="center" style="margin-top: 120px">

@@ -1,18 +1,20 @@
 ---
 slug: revfactory-harness-skills-evolve
 name: evolve
-tagline: 하네스 진화 스킬. 사용 중인 하네스의 실행 결과에 대한 피드백을 수집·일반화하여 에이전트/스킬/오케스트레이터에 반영하고, 초기
-  구성 대비 델타를 포착해 변경 이력을 갱신한다. '하네스 회고', '하네스 진화', '하네스 피드백 반영', '하네스 개선', '결과가 아쉬
-summary: 1. .claude/agents/, .claude/skills/, CLAUDE.md(변경 이력 테이블)를 읽는다 2. git
-  저장소라면 하네스 파일들의 변경 이력을 조회한다 (git log --oneline -- .claude/ CLAUDE.md) — 초기 구성
-  대비 무엇이 언제 왜 바뀌었는지 파악 3. workspace/가 있으면 최근 실행의 중간 산출물을 훑어 실제 실행 흔적을 확인...
+tagline: Agent skill from revfactory/harness
+summary: Agent skill from revfactory/harness
 categories:
-  - productivity-ops
+  - agent-frameworks
+tags:
+  - claude-code
+  - claude-code-plugin
+  - harness
+  - harness-engineering
 status: active
-quality_percentile: 69
+quality_percentile: 65
 selection_reason: quality_percentile
 first_seen: 2026-03-26T21:22:07
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: revfactory/harness
@@ -20,8 +22,18 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 9168
+  stars: 9204
   last_commit: 2026-09-28T05:19:20Z
+  stars_delta_7d: 36
+  stars_growth_pct: 0.4
+  trending_score: 36.14
+  rank_current: 90
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 9131
+    - 9168
+    - 9204
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,19 +41,21 @@ readme_source:
   repo: revfactory/harness
   path: skills/evolve/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.380Z
+  fetched_at: 2026-10-19T07:39:30.584Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: evolve
-  description: 하네스 진화 스킬. 사용 중인 하네스의 실행 결과에 대한 피드백을 수집·일반화하여 에이전트/스킬/오케스트레이터에
-    반영하고, 초기 구성 대비 델타를 포착해 변경 이력을 갱신한다. '하네스 회고', '하네스 진화', '하네스 피드백 반영', '하네스
-    개선', '결과가 아쉬웠어 하네스 고쳐줘', '이 피드백 하네스에 반영해줘', '하네스 레슨 정리' 등 기존 하네스의 실행 경험을
-    바탕으로 한 개선 요청 시 반드시 이 스킬을 사용. 하네스 신규 구축·구조 재설계·에이전트 추가는 harness 스킬이 담당.
+  description: Agent skill from revfactory/harness
   folder_path: skills/evolve
   extra_files: []
-tags:
-  - git
+  pack_total_skills: 2
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: revfactory-harness
 ---
 
 # Harness Evolve — 하네스 진화 메커니즘

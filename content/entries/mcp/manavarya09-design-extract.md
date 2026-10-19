@@ -7,19 +7,33 @@ tagline: "Extract any website's complete design system with one command. DTCG
 summary: Built by Manav Arya Singh (@Manavarya09)
 categories:
   - media-creative
+tags:
+  - accessibility
+  - chrome-extension
+  - claude-code-plugin
+  - cli
 status: active
-quality_percentile: 48
+quality_percentile: 47
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Manavarya09/design-extract
   official_vendor: false
   license: MIT
 signals:
-  stars: 4229
+  stars: 4259
   last_commit: 2026-10-08T17:11:10Z
+  stars_delta_7d: 30
+  stars_growth_pct: 0.7
+  trending_score: 30.21
+  rank_current: 36
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 4229
+    - 4259
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +42,7 @@ readme_source:
   repo: Manavarya09/design-extract
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:00.265Z
+  fetched_at: 2026-10-19T07:32:30.567Z
   truncated: false
 type: mcp_server
 launch:
@@ -39,7 +53,6 @@ launch:
     - designlang
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 <p align="center">

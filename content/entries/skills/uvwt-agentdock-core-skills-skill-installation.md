@@ -1,17 +1,22 @@
 ---
 slug: uvwt-agentdock-core-skills-skill-installation
-name: skill-installation
+name: installation
 tagline: 审查、安装、配置、验证、更新和移除 AgentDock Skill 时使用；负责来源校验、安全评估、环境配置、content
   digest、精确 skill_ref 与当前 managed 内容验收。
 summary: AgentDock 的 managed Skill 只有“当前内容”，没有独立版本选择、activate 或 rollback。更新同名
   managed Skill 等价于审查新内容后原子替换当前目录；相同 contentdigest 为 no-op。
 categories:
-  - other
+  - cloud-infra
+tags:
+  - agent-skills
+  - ai-agents
+  - automation
+  - devops
 status: active
-quality_percentile: 58
+quality_percentile: 61
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: uvwt/agentdock
@@ -19,8 +24,15 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 1234
-  last_commit: 2026-10-13T16:25:31Z
+  stars: 1253
+  last_commit: 2026-10-18T06:58:34Z
+  stars_delta_7d: 19
+  stars_growth_pct: 1.5
+  trending_score: 19.29
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1234
+    - 1253
 language: zh
 needs_keys: false
 prerequisites: []
@@ -28,17 +40,23 @@ readme_source:
   repo: uvwt/agentdock
   path: core-skills/skill-installation/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:08.437Z
+  fetched_at: 2026-10-19T07:33:43.463Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: skill-installation
+  skill_name: installation
   description: 审查、安装、配置、验证、更新和移除 AgentDock Skill 时使用；负责来源校验、安全评估、环境配置、content
     digest、精确 skill_ref 与当前 managed 内容验收。
   folder_path: core-skills/skill-installation
   extra_files:
     - references/skill-security-review.md
-tags: []
+  pack_total_skills: 4
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: uvwt-agentdock
 ---
 
 # Skill Installation

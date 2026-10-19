@@ -1,18 +1,20 @@
 ---
 slug: alibaba-open-code-review-plugins-open-code-review-skills-open-code-review
 name: open-code-review
-tagline: Performs AI-powered code review on Git changes using the `ocr` CLI from
-  alibaba/open-code-review. Use when the user asks to review code, review a pull
-summary: A skill for invoking open-code-review (ocr) — an open-source AI code
-  review CLI that reads Git diffs and generates structured, line-level review
-  comments.
+tagline: Agent skill from alibaba/open-code-review
+summary: Agent skill from alibaba/open-code-review
 categories:
   - coding-agents
+tags:
+  - agent-skills
+  - code-review
+  - code-review-assistant
+  - harness
 status: active
-quality_percentile: 60
+quality_percentile: 64
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: alibaba/open-code-review
@@ -20,8 +22,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 46827
-  last_commit: 2026-10-13T13:47:09Z
+  stars: 47619
+  last_commit: 2026-10-19T06:58:16Z
+  stars_delta_7d: 792
+  stars_growth_pct: 1.7
+  trending_score: 805.4
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 44194
+    - 46827
+    - 47619
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,24 +39,21 @@ readme_source:
   repo: alibaba/open-code-review
   path: plugins/open-code-review/skills/open-code-review/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.068Z
+  fetched_at: 2026-10-19T07:40:23.373Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: open-code-review
-  description: >
-    Performs AI-powered code review on Git changes using the `ocr` CLI from
-    alibaba/open-code-review. Use when the user asks to review code, review a
-    pull request, review staged/unstaged changes, review a commit, or compare
-    branches for code quality issues. Produces line-level review comments and
-    can automatically apply fixes when requested. With appropriate review rules,
-    can detect various types of issues including bugs, security vulnerabilities,
-    performance problems, and code quality concerns.
+  description: Agent skill from alibaba/open-code-review
   folder_path: plugins/open-code-review/skills/open-code-review
   extra_files: []
-tags:
-  - git
-  - ocr
+  pack_total_skills: 2
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: alibaba-open-code-review
 ---
 
 # Open Code Review

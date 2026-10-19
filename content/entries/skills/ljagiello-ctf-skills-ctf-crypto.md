@@ -1,17 +1,20 @@
 ---
 slug: ljagiello-ctf-skills-ctf-crypto
 name: ctf-crypto
-tagline: Provides cryptography attack techniques for CTF challenges. Use when
-  attacking encryption, hashing, signatures, ZKP, PRNG, or mathematical crypto
-  prob
-summary: "Python packages (all platforms):"
+tagline: Agent skill from ljagiello/ctf-skills
+summary: Agent skill from ljagiello/ctf-skills
 categories:
   - security-auth
+tags:
+  - agent-skills
+  - claude-code
+  - claude-code-skills
+  - codex
 status: active
-quality_percentile: 35
+quality_percentile: 54
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: ljagiello/ctf-skills
@@ -19,8 +22,15 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 3437
-  last_commit: 2026-09-13T21:09:41Z
+  stars: 3475
+  last_commit: 2026-10-17T01:17:07Z
+  stars_delta_7d: 38
+  stars_growth_pct: 1.1
+  trending_score: 38.42
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3437
+    - 3475
 language: en
 needs_keys: false
 prerequisites: []
@@ -28,16 +38,12 @@ readme_source:
   repo: ljagiello/ctf-skills
   path: ctf-crypto/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:19.229Z
+  fetched_at: 2026-10-19T07:40:39.008Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: ctf-crypto
-  description: Provides cryptography attack techniques for CTF challenges. Use
-    when attacking encryption, hashing, signatures, ZKP, PRNG, or mathematical
-    crypto problems involving RSA, AES, ECC, lattices, LWE, CVP, number theory,
-    Coppersmith, Pollard, Wiener, padding oracle, GCM, key derivation, or
-    stream/block cipher weaknesses.
+  description: Agent skill from ljagiello/ctf-skills
   folder_path: ctf-crypto
   extra_files:
     - advanced-math.md
@@ -50,8 +56,13 @@ skill:
     - lattice-and-lwe.md
     - modern-ciphers-2.md
     - modern-ciphers-3.md
-tags:
-  - python
+  pack_total_skills: 11
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: ljagiello-ctf-skills
 ---
 
 # CTF Cryptography
@@ -106,7 +117,6 @@ brew install hashcat
 - [exotic-crypto-2.md](https://github.com/ljagiello/ctf-skills/blob/main/ctf-crypto/exotic-crypto-2.md) - Exotic algebraic structures (Part 2, 2017+): BB-84 QKD MITM, ElGamal trivial DLP (B=p-1), Paillier LSB oracle via homomorphic doubling, differential privacy noise cancellation, homomorphic encryption bit-extraction, ElGamal over matrices via Jordan normal form, OSS signature forgery via Pollard, Cayley-Purser decryption without private key, BIP39 partial mnemonic checksum brute force, Asmuth-Bloom CRT threshold recovery, Rabin with polynomial primes, LCG period detection, Vandermonde polynomial coefficient recovery
 
 ---
-
 ## When to Pivot
 
 - If the real blocker is understanding a binary, obfuscated client, or weird VM, switch to `/ctf-reverse`.

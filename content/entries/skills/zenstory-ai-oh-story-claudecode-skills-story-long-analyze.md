@@ -1,15 +1,20 @@
 ---
 slug: zenstory-ai-oh-story-claudecode-skills-story-long-analyze
 name: story-long-analyze
-tagline: 长篇网文拆文。保留黄金三章、逐章摘要、剧情、情绪、节奏、角色、设定和文风接口，以连续章节块完成因果、双时间线、关系与三维节奏分析；兼容旧成果直接使用、按需增强和断点续跑。含可选三层灵感库管道（灵感库、跨书灵感聚合、更新灵感库）。触发方式：/story-long-analyze、/长篇拆文、「帮我拆这
-summary: 核心原则：机械边界只解析一次；原文按连续章节块读取一次；同次读取产生逐章事实和跨章观察；聚合阶段复用落盘结果，不重新阅读全文。
+tagline: Agent skill from zenstory-ai/oh-story-claudecode
+summary: Agent skill from zenstory-ai/oh-story-claudecode
 categories:
-  - other
+  - productivity-ops
+tags:
+  - agent-skills
+  - ai-agent
+  - ai-novel-writing
+  - ai-writing
 status: active
-quality_percentile: 76
+quality_percentile: 81
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: zenstory-ai/oh-story-claudecode
@@ -17,34 +22,48 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 7517
-  last_commit: 2026-10-10T11:50:41Z
-language: zh
+  stars: 7737
+  last_commit: 2026-10-18T01:05:23Z
+  stars_delta_7d: 220
+  stars_growth_pct: 2.9
+  trending_score: 226.44
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 7340
+    - 7517
+    - 7737
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: zenstory-ai/oh-story-claudecode
   path: skills/story-long-analyze/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:16.415Z
+  fetched_at: 2026-10-19T07:39:37.264Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: story-long-analyze
-  description: 长篇网文拆文。保留黄金三章、逐章摘要、剧情、情绪、节奏、角色、设定和文风接口，以连续章节块完成因果、双时间线、关系与三维节奏分析；兼容旧成果直接使用、按需增强和断点续跑。含可选三层灵感库管道（灵感库、跨书灵感聚合、更新灵感库）。触发方式：/story-long-analyze、/长篇拆文、「帮我拆这本书」「拆这本书」「分析黄金三章」「深度拆解」「完整拆解」或提供小说文本文件路径。
+  description: Agent skill from zenstory-ai/oh-story-claudecode
   folder_path: skills/story-long-analyze
   extra_files:
     - references/author-facing.md
-    - references/deconstruction-notes.md
     - references/final-checks.md
     - references/index-rebuild.md
     - references/inspiration-library.md
     - references/pipeline-ops.md
-    - references/semantic-acceptance-fixtures.md
     - references/stage1-golden-chapters.md
     - references/stage2-extraction.md
     - references/stage3-plot-rhythm.md
-tags: []
+    - references/stage4-characters-settings.md
+    - references/stage5-report.md
+  pack_total_skills: 13
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: zenstory-ai-oh-story-claudecode
 ---
 
 # story-long-analyze：长篇网文拆文

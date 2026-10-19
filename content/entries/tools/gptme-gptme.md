@@ -1,0 +1,62 @@
+---
+slug: gptme-gptme
+name: gptme
+tagline: "Your agent in your terminal, equipped with local tools: writes code,
+  uses the terminal, browses the web. Make your own persistent autonomous agent
+  on "
+summary: "Your agent in your terminal, equipped with local tools: writes code,
+  uses the terminal, browses the web. Make your own persistent autonomous agent
+  on top!"
+categories:
+  - agent-frameworks
+tags:
+  - agents
+  - ai-agents
+  - ai-assistant
+  - anthropic
+status: active
+quality_percentile: 57
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: gptme/gptme
+  official_vendor: false
+  license: MIT
+signals:
+  stars: 4456
+  last_commit: 2026-10-19T07:18:05Z
+  stars_delta_7d: 24
+  stars_growth_pct: 0
+  trending_score: 0
+  velocity_source: age_velocity
+  sparkline_4w:
+    - 4456
+language: en
+needs_keys: false
+prerequisites:
+  - python
+readme_source:
+  repo: gptme/gptme
+  path: README.md
+  branch: master
+  fetched_at: 2026-10-19T07:41:25.782Z
+  truncated: false
+type: agent_tool
+tool:
+  subcategory: coding_agent
+  install_command: pip install gptme
+  runtime: python
+  execution_mode: local
+  has_mcp_support: true
+  mcp_launch:
+    transport: stdio
+    command: uvx
+    args:
+      - gptme
+    env_vars: []
+    confidence: manifest
+---
+
+Your agent in your terminal, equipped with local tools: writes code, uses the terminal, browses the web. Make your own persistent autonomous agent on top!

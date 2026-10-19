@@ -1,24 +1,37 @@
 ---
 slug: upstash-context7
 name: context7
-tagline: Context7 Platform -- Up-to-date code documentation for LLMs and AI code editors
+tagline: Context7 Platform -- Up-to-date docs for AI agents
 summary: "LLMs rely on outdated or generic information about the libraries you
   use. You get:"
 categories:
-  - coding-agents
+  - other
+tags:
+  - llm
+  - vibe-coding
 status: active
-quality_percentile: 83
+quality_percentile: 69
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: upstash/context7
   official_vendor: false
   license: MIT
 signals:
-  stars: 62986
-  last_commit: 2026-10-13T15:06:04Z
+  stars: 63272
+  last_commit: 2026-10-17T14:44:22Z
+  stars_delta_7d: 286
+  stars_growth_pct: 0.5
+  trending_score: 287.3
+  rank_current: 7
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 62764
+    - 62986
+    - 63272
 language: en
 needs_keys: false
 prerequisites:
@@ -27,7 +40,7 @@ readme_source:
   repo: upstash/context7
   path: README.md
   branch: master
-  fetched_at: 2026-10-14T14:54:54.355Z
+  fetched_at: 2026-10-19T07:31:31.545Z
   truncated: false
 type: mcp_server
 launch:
@@ -36,14 +49,13 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 ![Cover](https://github.com/upstash/context7/blob/master/public/cover.png?raw=true)
 
 [![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=context7&config=eyJ1cmwiOiJodHRwczovL21jcC5jb250ZXh0Ny5jb20vbWNwIn0%3D)
 
-# Context7 Platform - Up-to-date Code Docs For Any Prompt
+# Context7 - Up-to-date Docs for AI Agents
 
 [![Website](https://img.shields.io/badge/Website-context7.com-blue)](https://context7.com) [![NPM Version](https://img.shields.io/npm/v/%40upstash%2Fcontext7-mcp?color=red)](https://www.npmjs.com/package/@upstash/context7-mcp) [![MIT licensed](https://img.shields.io/npm/l/%40upstash%2Fcontext7-mcp)](https://raw.githubusercontent.com/upstash/context7/master/LICENSE)
 
@@ -59,7 +71,7 @@ LLMs rely on outdated or generic information about the libraries you use. You ge
 
 ## ✅ With Context7
 
-Context7 pulls up-to-date, version-specific documentation and code examples straight from the source — and places them directly into your prompt.
+Context7 pulls up-to-date, version-specific documentation and code examples straight from the source — and gives them to your coding agent.
 
 ```txt
 Create a Next.js proxy that checks for a valid JWT in cookies
@@ -75,7 +87,7 @@ JSON API responses for five minutes. use context7
 Show me the Supabase auth API for email/password sign-up.
 ```
 
-Context7 fetches up-to-date code examples and documentation right into your LLM's context. No tab-switching, no hallucinated APIs that don't exist, no outdated code generation.
+Context7 fetches up-to-date code examples and documentation right into your coding agent's context. No tab-switching, no hallucinated APIs that don't exist, no outdated code generation.
 
 Works in two modes:
 

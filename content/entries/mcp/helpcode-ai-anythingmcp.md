@@ -1,25 +1,40 @@
 ---
 slug: helpcode-ai-anythingmcp
 name: anythingmcp
-tagline: "Open-source, self-hosted MCP gateway: turn any REST/OpenAPI, SOAP,
-  GraphQL, OData or SQL API into MCP tools for Claude, ChatGPT & Copilot. 331
-  connect"
+tagline: "MCP gateway for AI agents: turn any REST/OpenAPI, GraphQL, SOAP or SQL
+  API into MCP tools. 475 ready-made connectors (SAP, ERP, e-commerce) with
+  RBAC,"
 summary: "AnythingMCP: self-hosted MCP gateway"
 categories:
   - agent-frameworks
+tags:
+  - agents
+  - ai-agents
+  - ai-gateway
+  - api-gateway
 status: active
-quality_percentile: 46
+quality_percentile: 50
 selection_reason: quality_percentile
 first_seen: 2026-02-28T12:01:26
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: HelpCode-ai/anythingmcp
   official_vendor: false
   license: AGPL-3.0
 signals:
-  stars: 736
-  last_commit: 2026-10-13T15:09:25Z
+  stars: 760
+  last_commit: 2026-10-19T07:28:21Z
+  stars_delta_7d: 24
+  stars_growth_pct: 3.3
+  trending_score: 24.78
+  rank_current: 40
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 990
+    - 736
+    - 760
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +43,7 @@ readme_source:
   repo: HelpCode-ai/anythingmcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:11.491Z
+  fetched_at: 2026-10-19T07:34:17.498Z
   truncated: false
 type: mcp_server
 launch:
@@ -37,11 +52,10 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/HelpCode-ai/anythingmcp/badges/banner.png" alt="AnythingMCP turns ERP, e-commerce, REST, SOAP and SQL systems into MCP tools for Claude and ChatGPT: 412 connectors, 19 of them with no API key." width="100%" />
+  <img src="https://raw.githubusercontent.com/HelpCode-ai/anythingmcp/badges/banner.png" alt="AnythingMCP turns ERP, e-commerce, REST, SOAP and SQL systems into MCP tools for Claude and ChatGPT: 475 connectors, 20 of them with no API key." width="100%" />
 </p>
 
 <h1 align="center">AnythingMCP: self-hosted MCP gateway</h1>
@@ -61,7 +75,7 @@ tags: []
 
 <p align="center">
   <strong>AnythingMCP is an open-source, self-hosted MCP gateway that turns any REST/OpenAPI, SOAP, GraphQL, OData or SQL system into MCP tools for Claude, ChatGPT and Copilot, without writing an MCP server.</strong><br/>
-  It ships 412 ready connectors, among them SAP, Etsy, weclapp and Amazon Seller, and 19 of them need no API key.
+  It ships 475 ready connectors, among them SAP, Etsy, weclapp and Amazon Seller, and 20 of them need no API key.
 </p>
 
 <p align="center">
@@ -145,7 +159,7 @@ Tools register at runtime, without a restart. Per-connector `{{VAR}}` values are
 
 ## Connector catalog
 
-412 adapters, exposing 2,400+ tools. Every one has a setup guide on [anythingmcp.com/guides](https://anythingmcp.com/guides), in seven languages.
+475 adapters, exposing 2,400+ tools. Every one has a setup guide on [anythingmcp.com/guides](https://anythingmcp.com/guides), in seven languages.
 
 | Category | Examples |
 |---|---|
@@ -254,7 +268,7 @@ Everything runs on your infrastructure, so you decide what leaves it. OAuth2, RB
 The same MCP server works in every client that speaks MCP, so you build a connector once:
 
 - **Claude.** Add the server URL as a **custom connector** under *Customize → Connectors*; it then works in Claude.ai, Claude Desktop and Claude Code. OAuth 2.0 is supported out of the box. On AnythingMCP Cloud you can also add it in one click from the [Claude Directory](https://claude.ai/directory/anythingmcp). [Claude setup](https://github.com/HelpCode-ai/anythingmcp/blob/main/docs/integrations/claude.md)
-- **ChatGPT.** Apps in ChatGPT are built on MCP. Add the server in ChatGPT's settings, or use it as the tool layer of an Apps SDK app. [ChatGPT setup](https://github.com/HelpCode-ai/anythingmcp/blob/main/docs/integrations/chatgpt.md)
+- **ChatGPT.** Apps in ChatGPT are built on MCP. Add the server under *Plugins* in ChatGPT (*+ → Add custom MCP server*), or use it as the tool layer of an Apps SDK app. [ChatGPT setup](https://github.com/HelpCode-ai/anythingmcp/blob/main/docs/integrations/chatgpt.md)
 - **Meta Muse.** In Muse, open *Settings → Connectors → Add custom connector*, paste the server URL and sign in to AnythingMCP. [Muse setup](https://github.com/HelpCode-ai/anythingmcp/blob/main/docs/integrations/muse.md)
 - **Copilot, Gemini, Cursor** and other MCP clients: [client setup guides](https://github.com/HelpCode-ai/anythingmcp/blob/main/docs/guides.md).
 

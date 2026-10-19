@@ -1,18 +1,20 @@
 ---
 slug: agricidaniel-claude-obsidian-skills-defuddle
 name: defuddle
-tagline: "Plan and, with explicit network consent, use an optional external
-  Defuddle cleaner to extract article-like HTTPS pages as Markdown. Use for
-  defuddle, "
-summary: "Resolve the installed product root from this skill's own location,
-  never from the selected vault or process working directory:"
+tagline: Agent skill from AgriciDaniel/claude-obsidian
+summary: Agent skill from AgriciDaniel/claude-obsidian
 categories:
-  - media-creative
+  - productivity-ops
+tags:
+  - agent-skills
+  - ai-note-taking
+  - ai-second-brain
+  - claude-code
 status: active
-quality_percentile: 45
+quality_percentile: 77
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: AgriciDaniel/claude-obsidian
@@ -20,8 +22,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 15504
-  last_commit: 2026-09-10T17:44:23Z
+  stars: 15634
+  last_commit: 2026-10-18T17:55:37Z
+  stars_delta_7d: 130
+  stars_growth_pct: 0.8
+  trending_score: 131.09
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 15392
+    - 15504
+    - 15634
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,18 +39,21 @@ readme_source:
   repo: AgriciDaniel/claude-obsidian
   path: skills/defuddle/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.228Z
+  fetched_at: 2026-10-19T07:39:24.750Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: defuddle
-  description: Plan and, with explicit network consent, use an optional external
-    Defuddle cleaner to extract article-like HTTPS pages as Markdown. Use for
-    defuddle, clean this URL, strip page clutter, readable Markdown from a web
-    page, or preparing a web source for later wiki ingestion.
+  description: Agent skill from AgriciDaniel/claude-obsidian
   folder_path: skills/defuddle
   extra_files: []
-tags: []
+  pack_total_skills: 16
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: agricidaniel-claude-obsidian
 ---
 
 # Defuddle

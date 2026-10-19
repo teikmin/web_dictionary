@@ -8,19 +8,33 @@ summary: mcpc is a command-line client for the Model Context Protocol (MCP) that
   maps every MCP operation to an intuitive shell command.
 categories:
   - agent-frameworks
+tags:
+  - ai-agents
+  - bash
+  - claude
+  - cli
 status: active
-quality_percentile: 47
+quality_percentile: 51
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: apify/mcpc
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 1026
-  last_commit: 2026-10-09T10:52:40Z
+  stars: 1056
+  last_commit: 2026-10-17T22:00:06Z
+  stars_delta_7d: 30
+  stars_growth_pct: 2.9
+  trending_score: 30.88
+  rank_current: 34
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1026
+    - 1056
 language: en
 needs_keys: false
 prerequisites:
@@ -29,7 +43,7 @@ readme_source:
   repo: apify/mcpc
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:09.497Z
+  fetched_at: 2026-10-19T07:33:54.012Z
   truncated: true
 type: mcp_server
 launch:
@@ -40,7 +54,6 @@ launch:
     - "@apify/mcpc"
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # mcpc — a universal MCP CLI client

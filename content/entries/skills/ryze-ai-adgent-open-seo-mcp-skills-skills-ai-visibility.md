@@ -9,12 +9,17 @@ summary: "The free Ryze MCP connector (https://connector.get-ryze.ai/mcp).
   https://connector.get-ryze.ai/mcp. claude.ai / Desktop / Cursor: add it as a
   custom connector with the..."
 categories:
-  - agent-frameworks
+  - domain-research
+tags:
+  - ai-seo
+  - ai-visibility
+  - backlinks
+  - claude
 status: active
 quality_percentile: 74
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Ryze-AI-Adgent/open-seo-mcp-skills
@@ -22,8 +27,17 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 5240
+  stars: 6078
   last_commit: 2026-10-13T03:37:44Z
+  stars_delta_7d: 838
+  stars_growth_pct: 16
+  trending_score: 972.02
+  rank_current: 19
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 5240
+    - 6078
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,7 +45,7 @@ readme_source:
   repo: Ryze-AI-Adgent/open-seo-mcp-skills
   path: skills/ai-visibility/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:54:58.205Z
+  fetched_at: 2026-10-19T07:32:30.399Z
   truncated: false
 type: agent_skill
 skill:
@@ -43,7 +57,13 @@ skill:
     AI search".
   folder_path: skills/ai-visibility
   extra_files: []
-tags: []
+  pack_total_skills: 8
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: ryze-ai-adgent-open-seo-mcp-skills
 ---
 
 # AI Visibility

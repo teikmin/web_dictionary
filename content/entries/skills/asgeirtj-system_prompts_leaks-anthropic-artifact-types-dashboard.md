@@ -8,12 +8,17 @@ summary: "What the person asks for is what you build; the defaults apply only to
   what they left unsaid. Whatever the page's own code can draw or do is allowed:
   any chart, control or interaction. A chart they named is the one yo..."
 categories:
-  - other
+  - cloud-infra
+tags:
+  - ai-agents
+  - ai-prompts
+  - anthropic
+  - chatbot
 status: active
 quality_percentile: 85
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: asgeirtj/system_prompts_leaks
@@ -21,8 +26,17 @@ source:
   official_vendor: false
   license: CC0-1.0
 signals:
-  stars: 69549
-  last_commit: 2026-10-12T02:20:04Z
+  stars: 69880
+  last_commit: 2026-10-16T08:29:42Z
+  stars_delta_7d: 331
+  stars_growth_pct: 0.5
+  trending_score: 332.58
+  rank_current: 38
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 69549
+    - 69880
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,7 +44,7 @@ readme_source:
   repo: asgeirtj/system_prompts_leaks
   path: Anthropic/artifact-types/dashboard/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:12.491Z
+  fetched_at: 2026-10-19T07:37:14.451Z
   truncated: false
 type: agent_skill
 skill:
@@ -46,7 +60,13 @@ skill:
     - artifact-type/reference/design-defaults.md
     - artifact-type/reference/exporting.md
     - artifact-type/reference/features.md
-tags: []
+  pack_total_skills: 205
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: asgeirtj-system_prompts_leaks
 ---
 
 # Dashboard — the shared type

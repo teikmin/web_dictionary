@@ -6,19 +6,34 @@ tagline: Community plugin to control Blender 3D with any LLM of your choice. Not
 summary: Connect Blender to any LLM
 categories:
   - media-creative
+tags:
+  - 3d-modeling
+  - blender
+  - blender-addon
+  - blender-mcp
 status: active
-quality_percentile: 86
+quality_percentile: 90
 selection_reason: quality_percentile
 first_seen: 2025-03-07T09:58:58
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: ahujasid/mcp-for-blender
   official_vendor: false
   license: MIT
 signals:
-  stars: 30632
-  last_commit: 2026-10-06T15:08:04Z
+  stars: 31608
+  last_commit: 2026-10-18T15:42:25Z
+  stars_delta_7d: 976
+  stars_growth_pct: 3.2
+  trending_score: 1007.1
+  rank_current: 3
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 30173
+    - 30632
+    - 31608
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +43,7 @@ readme_source:
   repo: ahujasid/mcp-for-blender
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:05.044Z
+  fetched_at: 2026-10-19T07:33:31.487Z
   truncated: false
 type: mcp_server
 launch:
@@ -38,7 +53,6 @@ launch:
     - mcp-for-blender
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 <div align="center">
@@ -679,7 +693,7 @@ The AI writes Blender Python itself for modelling, layout, materials, animation,
 | `execute_blender_code` | Run Python in your live Blender |
 | `look` | See the result from the `viewport`, `camera`, `angles` (auto-framed multi-view sheet, any direction) or `frames` (animation strip), drawn `solid`, `material`, `rendered`, `wireframe` or `xray`; or show a render or image file |
 | `get_scene_info` | Compact scene summary, one line per object with the fields you pick (placement, materials, topology, weights, ...); drill in with `root` or `query` |
-| `generate_3d` | One call to generate and import a model with Tripo, Hunyuan3D or Hyper3D Rodin. Premium generators are preferred automatically |
+| `generate_3d` | One call to generate and import a model with Tripo, Hunyuan3D, Hyper3D Rodin or Meshy. Premium generators are preferred automatically |
 | `search_assets` / `import_asset` | [Poly Haven](https://polyhaven.com/) HDRIs, textures and models, [Sketchfab](https://sketchfab.com/) models, [Poly Pizza](https://poly.pizza/) low-poly models |
 | `get_addon_status` | Blender version, addon version, and which libraries and generators are switched on |
 | `disable_telemetry`, `record_trajectory_feedback` | Data collection controls |
@@ -696,6 +710,14 @@ Which Tencent Cloud service the addon must call depends on where your account li
 International credentials sent to the mainland endpoint fail with `AuthFailure.SignatureFailure` or
 `ResourceUnavailable`, so tick the toggle when your SecretId/SecretKey come from tencentcloud.com.
 The toggle sits under **Tencent Hunyuan 3D → Official API** in the sidebar.
+
+#### Meshy
+
+[Meshy](https://www.meshy.ai/) generates textured 3D models from a text prompt or a reference image,
+sized to real-world height with the origin at the bottom, so models arrive standing on the ground at a plausible size.
+It runs on your own Meshy API key only, not through Premium. API keys need a paid Meshy plan:
+[get a Meshy API key](https://www.meshy.ai/developers/keys?utm_source=mcp-for-blender&utm_medium=integration&utm_campaign=blender-addon).
+Tick **Meshy** under **AI Model Generation** in the sidebar, choose a **Model**, and paste the key.
 
 #### Poly Haven
 
@@ -776,6 +798,7 @@ Here are some examples of what you can ask Claude to do:
 | Give a reference image, and create a Blender scene out of it | [Watch](https://www.youtube.com/watch?v=FDRb03XPiRo) |
 | *"Get information about the current scene, and make a threejs sketch from it"* | [Watch](https://www.youtube.com/watch?v=jxbNI5L7AH8) |
 | *"Generate a 3D model of a garden gnome through Hyper3D"* | |
+| *"Generate a wooden rocking chair with Meshy"* | |
 | *"Fill this room with low-poly furniture from Poly Pizza"* | |
 | *"Make this car red and metallic"* | |
 | *"Create a sphere and place it above the cube"* | |
@@ -797,6 +820,7 @@ You can store these values there so they survive Blender restarts:
 - Hyper3D API Key
 - Hunyuan3D SecretId / SecretKey
 - Hunyuan3D API URL
+- Meshy API Key
 
 For headless setups or CI, credentials can also be injected by environment variables:
 
@@ -808,6 +832,7 @@ For headless setups or CI, credentials can also be injected by environment varia
 | `BLENDERMCP_HUNYUAN3D_SECRET_ID` |
 | `BLENDERMCP_HUNYUAN3D_SECRET_KEY` |
 | `BLENDERMCP_HUNYUAN3D_API_URL` |
+| `BLENDERMCP_MESHY_API_KEY` |
 
 ---
 

@@ -1,6 +1,5 @@
 ---
 slug: avids2-memorix
-type: agent_tool
 name: memorix
 tagline: Open-source cross-agent memory layer for coding agents via MCP.
   Compatible with Claude Code, Codex, Cursor, Windsurf, Gemini CLI, Antigravity,
@@ -12,39 +11,47 @@ summary: Local-first shared memory layer for AI coding agents. One project
 categories:
   - databases-memory
 tags:
-  - memory
+  - agent-memory
+  - ai-coding
+  - antigravity
+  - claude-code
 status: active
-quality_percentile: 42
+quality_percentile: 46
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: AVIDS2/memorix
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 836
-  last_commit: 2026-10-12T15:03:25Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 846
+  last_commit: 2026-10-17T16:47:08Z
+  stars_delta_7d: 10
+  stars_growth_pct: 1.2
+  trending_score: 10.12
+  rank_current: 41
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 836
+    - 846
 language: en
 needs_keys: false
 prerequisites:
-  - Node.js >= 18
+  - node
 readme_source:
   repo: AVIDS2/memorix
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:10.612Z
+  fetched_at: 2026-10-19T07:34:17.287Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: memory_rag
-  install_command: pip install memorix
-  runtime: python
+  subcategory: coding_agent
+  install_command: npx memorix
+  runtime: node
   execution_mode: local
   has_mcp_support: true
   mcp_launch:
@@ -100,6 +107,7 @@ tool:
 </p>
 
 ---
+
 > Maintainer status and the current public work boundary live in
 > [ACTIVE_WORK.md](https://github.com/AVIDS2/memorix/blob/main/ACTIVE_WORK.md). It is the repository's single living work
 > tracker.
@@ -592,6 +600,8 @@ OpenAI-compatible `https://api.atlascloud.ai/v1` endpoint and reads
 For OpenRouter embeddings, use `provider = "api"`, `base_url = "https://openrouter.ai/api/v1"`, and `model = "qwen/qwen3-embedding-8b"`. Memorix accepts `OPENROUTER_API_KEY` for that embedding endpoint; `MEMORIX_EMBEDDING_API_KEY` remains the explicit override.
 
 For Requesty, choose Requesty in `memorix init` or set `provider = "requesty"` in `[memory.llm]` (endpoint `https://router.requesty.ai/v1`, key from `REQUESTY_API_KEY` or `MEMORIX_LLM_API_KEY`). Requesty embeddings use `provider = "api"`, `base_url = "https://router.requesty.ai/v1"`, and `model = "openai/text-embedding-3-small"` with `REQUESTY_API_KEY`.
+
+For [API Route](https://www.api-route.com), choose API Route in `memorix init` or set `provider = "apiroute"` in `[memory.llm]`. The preset uses `https://global.api-route.com/v1` and `deepseek-v4.1-flash`, with your own `API_ROUTE_API_KEY` or `MEMORIX_LLM_API_KEY`. It is opt-in memory LLM processing; embeddings and memcode's model registry are configured separately. See [configuration](https://github.com/AVIDS2/memorix/blob/main/docs/CONFIGURATION.md#api-route-memory-preset).
 
 For controlled MiniMax media generation, set `MINIMAX_API_KEY` (global) or
 `MINIMAX_CN_API_KEY` (China region) in your environment or `.env`. The media

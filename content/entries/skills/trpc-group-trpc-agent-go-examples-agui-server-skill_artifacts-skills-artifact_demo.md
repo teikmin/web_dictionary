@@ -4,12 +4,17 @@ name: artifact_demo
 tagline: Demo skill that writes an output file and persists it as an artifact.
 summary: This skill is used by the examples/agui/server/skillartifacts demo.
 categories:
-  - other
+  - agent-frameworks
+tags:
+  - a2a
+  - a2a-protocol
+  - ag-ui
+  - agent-framework
 status: active
 quality_percentile: 82
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: trpc-group/trpc-agent-go
@@ -17,8 +22,17 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 1860
-  last_commit: 2026-10-13T15:44:15Z
+  stars: 1870
+  last_commit: 2026-10-19T07:09:58Z
+  stars_delta_7d: 10
+  stars_growth_pct: 0.5
+  trending_score: 10.05
+  rank_current: 103
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 1860
+    - 1870
 language: en
 needs_keys: false
 prerequisites: []
@@ -26,7 +40,7 @@ readme_source:
   repo: trpc-group/trpc-agent-go
   path: examples/agui/server/skill_artifacts/skills/artifact_demo/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:07.442Z
+  fetched_at: 2026-10-19T07:33:53.714Z
   truncated: false
 type: agent_skill
 skill:
@@ -34,7 +48,13 @@ skill:
   description: Demo skill that writes an output file and persists it as an artifact.
   folder_path: examples/agui/server/skill_artifacts/skills/artifact_demo
   extra_files: []
-tags: []
+  pack_total_skills: 71
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: trpc-group-trpc-agent-go
 ---
 
 This skill is used by the `examples/agui/server/skill_artifacts` demo.

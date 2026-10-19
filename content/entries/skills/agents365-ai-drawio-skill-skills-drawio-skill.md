@@ -7,12 +7,17 @@ tagline: Create and edit draw.io/diagrams.net diagrams as editable `.drawio`
 summary: "Run from this skill directory, or replace scripts/ with the absolute
   path to this skill's scripts directory:"
 categories:
-  - other
+  - cloud-infra
+tags:
+  - agent-skills
+  - architecture
+  - architecture-diagram
+  - asyncapi
 status: active
-quality_percentile: 59
+quality_percentile: 69
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: Agents365-ai/drawio-skill
@@ -20,8 +25,17 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 10111
+  stars: 10231
   last_commit: 2026-10-11T11:22:56Z
+  stars_delta_7d: 120
+  stars_growth_pct: 1.2
+  trending_score: 121.42
+  rank_current: 62
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 10111
+    - 10231
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,7 +43,7 @@ readme_source:
   repo: Agents365-ai/drawio-skill
   path: skills/drawio-skill/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:54:55.808Z
+  fetched_at: 2026-10-19T07:32:28.520Z
   truncated: false
 type: agent_skill
 skill:
@@ -52,7 +66,13 @@ skill:
     - references/autolayout.md
     - references/ci-gate.md
     - references/cookbook.md
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: agents365-ai-drawio-skill
 ---
 
 # Draw.io Architecture Studio

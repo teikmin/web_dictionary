@@ -1,15 +1,20 @@
 ---
 slug: zenstory-ai-drama-skills-skills-short-drama-develop
 name: short-drama-develop
-tagline: 将中文小说、短剧或漫剧想法、梗概、改编材料、已有系列笔记或多集完整剧本发展成可追溯的改编方案、戏剧方向、创作简报、导演阐述、故事引擎与分集地图，并按题材与制作形态（画风）选择写法。用户提出“导入小说做短剧”“从多集整稿生成/补分集地图”“开发短剧/漫剧”“做故事设定/系列大纲/分集规划”“写导演阐述
-summary: 离线验证多集整稿的精确索引、切片和源文件变更检测：
+tagline: Agent skill from zenstory-ai/drama-skills
+summary: Agent skill from zenstory-ai/drama-skills
 categories:
-  - other
+  - media-creative
+tags:
+  - agent-skills
+  - ai-short-drama
+  - ai-video
+  - aigc
 status: active
-quality_percentile: 67
+quality_percentile: 76
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: zenstory-ai/drama-skills
@@ -17,21 +22,29 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 2825
-  last_commit: 2026-10-03T08:56:29Z
-language: zh
+  stars: 3053
+  last_commit: 2026-10-15T09:53:13Z
+  stars_delta_7d: 228
+  stars_growth_pct: 8.1
+  trending_score: 246.4
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 2574
+    - 2825
+    - 3053
+language: en
 needs_keys: false
 prerequisites: []
 readme_source:
   repo: zenstory-ai/drama-skills
   path: skills/short-drama-develop/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:19.687Z
+  fetched_at: 2026-10-19T07:40:39.132Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: short-drama-develop
-  description: 将中文小说、短剧或漫剧想法、梗概、改编材料、已有系列笔记或多集完整剧本发展成可追溯的改编方案、戏剧方向、创作简报、导演阐述、故事引擎与分集地图，并按题材与制作形态（画风）选择写法。用户提出“导入小说做短剧”“从多集整稿生成/补分集地图”“开发短剧/漫剧”“做故事设定/系列大纲/分集规划”“写导演阐述”“这个题材怎么写”“定画风/制作形态”“把这个点子变成短剧”或需要梳理人物冲突与集间交接时使用；已有单集剧本可直接进入写作、资产或审查流程，不强制补开发文件。
+  description: Agent skill from zenstory-ai/drama-skills
   folder_path: skills/short-drama-develop
   extra_files:
     - agents/openai.yaml
@@ -44,7 +57,13 @@ skill:
     - references/director-brief-craft.md
     - references/episode-design.md
     - references/genre-and-hook-playbook.md
-tags: []
+  pack_total_skills: 12
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: zenstory-ai-drama-skills
 ---
 
 # 短剧开发

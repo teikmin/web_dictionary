@@ -1,0 +1,110 @@
+---
+slug: mukul975-anthropic-cybersecurity-skills-skills-implementing-log-integrity-with-blockchain
+name: implementing-log-integrity-with-blockchain
+tagline: Builds an append-only log integrity chain using SHA-256 hash chaining,
+  where each entry incorporates the previous entry's hash so tampering
+  invalidate
+summary: "- When deploying or configuring implementing log integrity with
+  blockchain capabilities in your environment - When establishing security
+  controls aligned to compliance requirements - When building or improving
+  securit..."
+categories:
+  - security-auth
+tags:
+  - ai-agents
+  - claude-code
+  - cloud-security
+  - cybersecurity
+status: active
+quality_percentile: 66
+selection_reason: quality_percentile
+first_seen: 2026-10-19
+last_updated: 2026-10-19T07:41:42.374Z
+source:
+  kind: github_repo
+  repo: mukul975/Anthropic-Cybersecurity-Skills
+  subpath: skills/implementing-log-integrity-with-blockchain
+  official_vendor: false
+  license: Apache-2.0
+signals:
+  stars: 34678
+  last_commit: 2026-08-31T04:32:44Z
+  stars_delta_7d: 311
+  stars_growth_pct: 0.9
+  trending_score: 313.81
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 33900
+    - 34367
+    - 34678
+language: en
+needs_keys: false
+prerequisites: []
+readme_source:
+  repo: mukul975/Anthropic-Cybersecurity-Skills
+  path: skills/implementing-log-integrity-with-blockchain/SKILL.md
+  branch: main
+  fetched_at: 2026-10-19T07:39:20.895Z
+  truncated: false
+type: agent_skill
+skill:
+  skill_name: implementing-log-integrity-with-blockchain
+  description: Builds an append-only log integrity chain using SHA-256 hash
+    chaining, where each entry incorporates the previous entry's hash so
+    tampering invalidates all subsequent hashes; covers log ingestion
+    (syslog/JSON/plain text), chain verification, pinpoint tamper detection, and
+    checkpoint anchoring to external timestamping services. Use for
+    tamper-evident log storage for compliance or forensics, or to verify whether
+    log entries were altered.
+  folder_path: skills/implementing-log-integrity-with-blockchain
+  extra_files:
+    - LICENSE
+    - references/api-reference.md
+    - scripts/agent.py
+  pack_total_skills: 818
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: mukul975-anthropic-cybersecurity-skills
+---
+
+# Implementing Log Integrity with Blockchain
+## When to Use
+
+- When deploying or configuring implementing log integrity with blockchain capabilities in your environment
+- When establishing security controls aligned to compliance requirements
+- When building or improving security architecture for this domain
+- When conducting security assessments that require this implementation
+
+## Prerequisites
+
+- Familiarity with security operations concepts and tools
+- Access to a test or lab environment for safe execution
+- Python 3.8+ with required dependencies installed
+- Appropriate authorization for any testing activities
+
+## Instructions
+
+1. Install dependencies: `pip install requests`
+2. Ingest log entries from syslog, JSON, or plain text files.
+3. For each entry, compute SHA-256 hash of: previous_hash + timestamp + log_content.
+4. Store the chain as a JSON ledger with entry index, timestamp, content hash, previous hash, and chain hash.
+5. Verify chain integrity by recomputing all hashes and detecting breaks.
+6. Optionally anchor checkpoint hashes to an external timestamping service.
+
+```bash
+python scripts/agent.py --log-file /var/log/syslog --chain-file log_chain.json --verify --output integrity_report.json
+```
+
+## Examples
+
+### Chain Entry Structure
+```json
+{"index": 42, "timestamp": "2024-01-15T10:30:00Z", "content_hash": "a1b2c3...",
+ "prev_hash": "d4e5f6...", "chain_hash": "SHA256(prev_hash + timestamp + content_hash)"}
+```
+
+### Tamper Detection
+If entry 42 is modified, chain_hash[42] will not match SHA256(chain_hash[41] + ...), and all entries from 42 onward will be flagged as invalid.

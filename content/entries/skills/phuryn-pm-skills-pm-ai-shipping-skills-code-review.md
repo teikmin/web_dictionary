@@ -1,20 +1,20 @@
 ---
 slug: phuryn-pm-skills-pm-ai-shipping-skills-code-review
 name: code-review
-tagline: Review code for actionable defects. Correctness is the core;
-  performance and security are optional sub-cases of the same engine. Anchors on
-  agreements
-summary: "Most review output is noise: a list of things that look wrong,
-  unranked, unrefuted, and impossible to act on. This skill produces the
-  opposite — a small number of findings, each with a required behaviour, a
-  feasible t..."
+tagline: Agent skill from phuryn/pm-skills
+summary: Agent skill from phuryn/pm-skills
 categories:
   - coding-agents
+tags:
+  - agent-skill-repository
+  - agent-skills
+  - agentic-skills
+  - claude-code-marketplace
 status: active
-quality_percentile: 68
+quality_percentile: 71
 selection_reason: quality_percentile
 first_seen: 2026-03-01T23:33:44
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: phuryn/pm-skills
@@ -22,8 +22,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 26957
-  last_commit: 2026-10-10T10:56:32Z
+  stars: 27192
+  last_commit: 2026-10-16T12:28:37Z
+  stars_delta_7d: 235
+  stars_growth_pct: 0.9
+  trending_score: 237.05
+  rank_current: 45
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 26820
+    - 26957
+    - 27192
 language: en
 needs_keys: false
 prerequisites: []
@@ -31,23 +41,24 @@ readme_source:
   repo: phuryn/pm-skills
   path: pm-ai-shipping/skills/code-review/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.060Z
+  fetched_at: 2026-10-19T07:40:28.334Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: code-review
-  description: Review code for actionable defects. Correctness is the core;
-    performance and security are optional sub-cases of the same engine. Anchors
-    on agreements between participants across a boundary, forces a violating
-    execution, and refutes every candidate before reporting. Use when asked to
-    review changes, find bugs, audit a codebase, or check whether a fix is safe.
+  description: Agent skill from phuryn/pm-skills
   folder_path: pm-ai-shipping/skills/code-review
   extra_files:
     - references/correctness-taxonomy.md
     - references/performance-review.md
     - references/security-review.md
-tags:
-  - security
+  pack_total_skills: 69
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: phuryn-pm-skills
 ---
 
 # Code Review

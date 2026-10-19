@@ -1,46 +1,54 @@
 ---
 slug: yishentu-claudian
-type: agent_tool
 name: claudian
 tagline: An Obsidian plugin that embeds Claude Code/Codex as an AI collaborator
   in your vault
-summary: An Obsidian plugin that embeds AI coding agents (Claude Code, Codex,
-  Grok Build, OpenCode, Pi, DeepSeek Harness, and more to come) in your vault.
-  Your vault becomes the agent's working directory — file read/write, sea...
+summary: An Obsidian plugin that embeds Claude Code/Codex as an AI collaborator
+  in your vault
 categories:
-  - agent-frameworks
-tags: []
+  - productivity-ops
+tags:
+  - claude-code
+  - codex
+  - grok
+  - ide
 status: active
-quality_percentile: 62
+quality_percentile: 65
 selection_reason: quality_percentile
 first_seen: 2025-12-05T17:58:26
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: YishenTu/claudian
   official_vendor: false
   license: MIT
 signals:
-  stars: 15653
-  last_commit: 2026-10-13T07:37:04Z
-  stars_delta_7d: 0
-  stars_growth_pct: 0
-  trending_score: 0
+  stars: 15725
+  last_commit: 2026-10-19T07:16:48Z
+  stars_delta_7d: 72
+  stars_growth_pct: 0.5
+  trending_score: 72.33
+  rank_current: 26
+  rank_delta: null
   velocity_source: snapshot_delta
-  sparkline_4w: []
+  sparkline_4w:
+    - 15598
+    - 15653
+    - 15725
 language: en
 needs_keys: false
 prerequisites:
-  - Node.js >= 18
+  - node
 readme_source:
   repo: YishenTu/claudian
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:15.744Z
+  fetched_at: 2026-10-19T07:39:23.549Z
   truncated: false
+type: agent_tool
 tool:
-  subcategory: coding_agent
-  install_command: git clone https://github.com/YishenTu/claudian.git
+  subcategory: other
+  install_command: npm install claudian
   runtime: node
   execution_mode: local
   has_mcp_support: true

@@ -1,18 +1,20 @@
 ---
 slug: aden-hive-hive-core-framework-skills-_default_skills-colony-progress-tracker
-name: hive.colony-progress-tracker
-tagline: Claim tasks, record step progress, and verify SOP gates in the colony
-  SQLite queue. Applies when your spawn message includes a db_path field.
-summary: "Applies when your spawn message has dbpath: and colonyid: fields. The
-  DB is your durable working memory — tells you what's done, what to skip, which
-  SOP gates you owe."
+name: colony-progress-tracker
+tagline: Agent skill from aden-hive/hive
+summary: Agent skill from aden-hive/hive
 categories:
-  - databases-memory
+  - agent-frameworks
+tags:
+  - agent-framework
+  - agent-skills
+  - anthropic
+  - automation
 status: active
 quality_percentile: 97
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: aden-hive/hive
@@ -20,8 +22,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 11099
-  last_commit: 2026-10-12T11:34:20Z
+  stars: 11108
+  last_commit: 2026-10-19T06:59:53Z
+  stars_delta_7d: 9
+  stars_growth_pct: 0.1
+  trending_score: 9.01
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 11088
+    - 11099
+    - 11108
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,19 +39,21 @@ readme_source:
   repo: aden-hive/hive
   path: core/framework/skills/_default_skills/colony-progress-tracker/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.122Z
+  fetched_at: 2026-10-19T07:40:31.853Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: hive.colony-progress-tracker
-  description: Claim tasks, record step progress, and verify SOP gates in the
-    colony SQLite queue. Applies when your spawn message includes a db_path
-    field.
+  skill_name: colony-progress-tracker
+  description: Agent skill from aden-hive/hive
   folder_path: core/framework/skills/_default_skills/colony-progress-tracker
   extra_files: []
-tags:
-  - sqlite
-  - memory
+  pack_total_skills: 20
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: aden-hive-hive
 ---
 
 ## Operational Protocol: Colony Progress Tracker

@@ -6,19 +6,34 @@ summary: 🚨 No Nix/NixOS Required! Works on any system - Windows, macOS, Linux
   You're just querying APIs.
 categories:
   - cloud-infra
+tags:
+  - ai-assistant
+  - ai-integration
+  - ai-tools
+  - anthropic
 status: active
-quality_percentile: 22
+quality_percentile: 21
 selection_reason: quality_percentile
 first_seen: 2025-03-20T05:05:00
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: utensils/mcp-nixos
   official_vendor: false
   license: MIT
 signals:
-  stars: 853
+  stars: 862
   last_commit: 2026-09-05T02:31:09Z
+  stars_delta_7d: 9
+  stars_growth_pct: 1.1
+  trending_score: 9.09
+  rank_current: 62
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 851
+    - 853
+    - 862
 language: en
 needs_keys: false
 prerequisites:
@@ -28,7 +43,7 @@ readme_source:
   repo: utensils/mcp-nixos
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:09.873Z
+  fetched_at: 2026-10-19T07:34:17.147Z
   truncated: false
 type: mcp_server
 launch:
@@ -38,7 +53,6 @@ launch:
     - mcp-nixos
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # MCP-NixOS - Because Your AI Shouldn't Hallucinate Package Names

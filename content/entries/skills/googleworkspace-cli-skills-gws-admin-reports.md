@@ -1,18 +1,20 @@
 ---
 slug: googleworkspace-cli-skills-gws-admin-reports
 name: gws-admin-reports
-tagline: "Google Workspace Admin SDK: Audit logs and usage reports."
-summary: "- list — Retrieves a list of activities for a specific customer's
-  account and application such as the Admin console application or the Google
-  Drive application. For more information, see the guides for administrator
-  a..."
+tagline: Agent skill from googleworkspace/cli
+summary: Agent skill from googleworkspace/cli
 categories:
-  - agent-frameworks
+  - productivity-ops
+tags:
+  - agent-skills
+  - ai-agent
+  - automation
+  - cli
 status: active
-quality_percentile: 55
+quality_percentile: 54
 selection_reason: quality_percentile
 first_seen: 2026-03-02T19:46:06
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: googleworkspace/cli
@@ -20,8 +22,18 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 31448
+  stars: 31663
   last_commit: 2026-10-06T20:23:04Z
+  stars_delta_7d: 215
+  stars_growth_pct: 0.7
+  trending_score: 216.47
+  rank_current: 48
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 31270
+    - 31448
+    - 31663
 language: en
 needs_keys: false
 prerequisites: []
@@ -29,15 +41,21 @@ readme_source:
   repo: googleworkspace/cli
   path: skills/gws-admin-reports/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.059Z
+  fetched_at: 2026-10-19T07:40:30.390Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: gws-admin-reports
-  description: "Google Workspace Admin SDK: Audit logs and usage reports."
+  description: Agent skill from googleworkspace/cli
   folder_path: skills/gws-admin-reports
   extra_files: []
-tags: []
+  pack_total_skills: 95
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: googleworkspace-cli
 ---
 
 # admin-reports (reports_v1)

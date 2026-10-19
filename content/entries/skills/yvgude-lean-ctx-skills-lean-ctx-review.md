@@ -1,6 +1,6 @@
 ---
 slug: yvgude-lean-ctx-skills-lean-ctx-review
-name: lean-ctx-review
+name: review
 tagline: Review how the lean-ctx ctx_* MCP tools performed in the current
   session and file upstream issues for confirmed problems. Use when the user
   asks to re
@@ -8,12 +8,17 @@ summary: Reads a Claude Code session transcript, so it applies to agents that
   write /.claude/projects//.jsonl. Other harnesses need their own extractor; the
   triage rules below are harness-independent.
 categories:
-  - browser-web
+  - agent-frameworks
+tags:
+  - agentic-coding
+  - ai-agents
+  - ai-coding
+  - ai-governance
 status: active
-quality_percentile: 73
+quality_percentile: 74
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: yvgude/lean-ctx
@@ -21,8 +26,16 @@ source:
   official_vendor: false
   license: Apache-2.0
 signals:
-  stars: 3875
-  last_commit: 2026-10-13T16:19:21Z
+  stars: 3888
+  last_commit: 2026-10-18T21:58:42Z
+  stars_delta_7d: 13
+  stars_growth_pct: 0.3
+  trending_score: 13.04
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 3866
+    - 3875
+    - 3888
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,11 +43,11 @@ readme_source:
   repo: yvgude/lean-ctx
   path: skills/lean-ctx-review/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:54:59.248Z
+  fetched_at: 2026-10-19T07:32:31.110Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: lean-ctx-review
+  skill_name: review
   description: Review how the lean-ctx ctx_* MCP tools performed in the current
     session and file upstream issues for confirmed problems. Use when the user
     asks to review/audit lean-ctx tool performance, says "lean-ctx review", asks
@@ -43,7 +56,13 @@ skill:
   folder_path: skills/lean-ctx-review
   extra_files:
     - scripts/scan_session.py
-tags: []
+  pack_total_skills: 2
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: yvgude-lean-ctx
 ---
 
 # lean-ctx session review

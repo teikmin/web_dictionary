@@ -4,14 +4,21 @@ name: suede-creator-skills
 tagline: "Open-source AI skills for SEO, AI search visibility, conversion copy,
   marketing strategy, and business operations. Reusable workflows for Claude
   Code "
-summary: Install · The skills · Docs site · Skill catalog · Blog · MCP · @johnnysuede
+summary: Open-source AI skills for SEO, AI search visibility, conversion copy,
+  marketing strategy, and business operations. Reusable workflows for Claude
+  Code and Codex, plus code review, app delivery, and creator tools.
 categories:
-  - browser-web
+  - agent-frameworks
+tags:
+  - agent-orchestration
+  - agent-skills
+  - ai-agents
+  - ai-coding
 status: active
-quality_percentile: 16
+quality_percentile: 17
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: JasonColapietro/suede-creator-skills
@@ -19,27 +26,31 @@ source:
   license: MIT
 signals:
   stars: 127
-  last_commit: 2026-10-12T14:36:33Z
+  last_commit: 2026-10-19T04:34:24Z
+  stars_delta_7d: 0
+  stars_growth_pct: 0
+  trending_score: 0
+  rank_current: 90
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 127
+    - 127
 language: en
 needs_keys: false
-prerequisites:
-  - Node.js >= 18
+prerequisites: []
 readme_source:
   repo: JasonColapietro/suede-creator-skills
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:17.234Z
+  fetched_at: 2026-10-19T07:39:42.819Z
   truncated: false
 type: mcp_server
 launch:
   transport: stdio
-  command: npx
-  args:
-    - -y
-    - skills
+  args: []
   env_vars: []
-  confidence: readme
-tags: []
+  confidence: none
 ---
 
 <div align="center">
@@ -63,7 +74,6 @@ tags: []
 </div>
 
 ---
-
 ## Suede Creator Skills for SEO and business growth
 
 Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.

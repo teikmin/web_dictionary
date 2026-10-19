@@ -1,6 +1,6 @@
 ---
 slug: coplaydev-unity-mcp-unity-mcp-skill
-name: unity-mcp-orchestrator
+name: orchestrator
 tagline: Orchestrate Unity Editor via MCP (Model Context Protocol) tools and
   resources. Use when working with Unity projects through MCP for Unity -
   creating/m
@@ -9,11 +9,16 @@ summary: Examples in references/workflows.md and references/tools-reference.md
   setups (UGUI/TMP/Input System), and project-specific conventions. Ple...
 categories:
   - agent-frameworks
+tags:
+  - ai-integration
+  - anthropic
+  - claude
+  - copilot
 status: active
-quality_percentile: 89
+quality_percentile: 93
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: CoplayDev/unity-mcp
@@ -21,8 +26,18 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 14902
-  last_commit: 2026-10-08T21:45:49Z
+  stars: 15115
+  last_commit: 2026-10-19T02:54:24Z
+  stars_delta_7d: 213
+  stars_growth_pct: 1.4
+  trending_score: 216.04
+  rank_current: 49
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 14742
+    - 14902
+    - 15115
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,11 +45,11 @@ readme_source:
   repo: CoplayDev/unity-mcp
   path: unity-mcp-skill/SKILL.md
   branch: beta
-  fetched_at: 2026-10-14T14:55:04.336Z
+  fetched_at: 2026-10-19T07:33:31.451Z
   truncated: false
 type: agent_skill
 skill:
-  skill_name: unity-mcp-orchestrator
+  skill_name: orchestrator
   description: Orchestrate Unity Editor via MCP (Model Context Protocol) tools and
     resources. Use when working with Unity projects through MCP for Unity -
     creating/modifying GameObjects, editing scripts, managing scenes, running
@@ -46,7 +61,13 @@ skill:
     - references/resources-reference.md
     - references/tools-reference.md
     - references/workflows.md
-tags: []
+  pack_total_skills: 1
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: coplaydev-unity-mcp
 ---
 
 # Unity-MCP Operator Guide

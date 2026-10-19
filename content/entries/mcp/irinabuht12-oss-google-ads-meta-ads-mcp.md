@@ -8,19 +8,34 @@ summary: "Skip the setup: use the hosted Ryze MCP (no developer token, no Google
   Cloud project, approval-gated writes)."
 categories:
   - productivity-ops
+tags:
+  - advertising
+  - chatgpt
+  - claude
+  - cursor
 status: active
-quality_percentile: 73
+quality_percentile: 69
 selection_reason: quality_percentile
 first_seen: 2026-04-06T04:41:14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: irinabuht12-oss/google-ads-meta-ads-mcp
   official_vendor: false
   license: MIT
 signals:
-  stars: 4710
+  stars: 5247
   last_commit: 2026-10-12T06:10:55Z
+  stars_delta_7d: 537
+  stars_growth_pct: 11.4
+  trending_score: 598.22
+  rank_current: 4
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 4200
+    - 4710
+    - 5247
 language: en
 needs_keys: false
 prerequisites:
@@ -29,7 +44,7 @@ readme_source:
   repo: irinabuht12-oss/google-ads-meta-ads-mcp
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:54:58.580Z
+  fetched_at: 2026-10-19T07:32:29.341Z
   truncated: false
 type: mcp_server
 launch:
@@ -38,7 +53,6 @@ launch:
   args: []
   env_vars: []
   confidence: manifest
-tags: []
 ---
 
 # Google Ads MCP + Meta Ads MCP (Facebook Ads MCP) + GA4: one hosted MCP server for Claude, ChatGPT and Cursor

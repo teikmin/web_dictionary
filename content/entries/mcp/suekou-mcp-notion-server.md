@@ -8,19 +8,34 @@ summary: This server targets the Notion API 2026-03-11 and uses the current
   workflows.
 categories:
   - productivity-ops
+tags:
+  - model-context-protocol
+  - notion
+  - notion-api
+  - npm
 status: active
-quality_percentile: 30
+quality_percentile: 29
 selection_reason: quality_percentile
 first_seen: 2024-11-30T10:01:30
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: suekou/mcp-notion-server
   official_vendor: false
   license: MIT
 signals:
-  stars: 920
+  stars: 921
   last_commit: 2026-07-31T07:14:56Z
+  stars_delta_7d: 1
+  stars_growth_pct: 0.1
+  trending_score: 1
+  rank_current: 83
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 920
+    - 920
+    - 921
 language: en
 needs_keys: false
 prerequisites:
@@ -29,7 +44,7 @@ readme_source:
   repo: suekou/mcp-notion-server
   path: README.md
   branch: main
-  fetched_at: 2026-10-14T14:55:09.898Z
+  fetched_at: 2026-10-19T07:34:17.111Z
   truncated: false
 type: mcp_server
 launch:
@@ -40,8 +55,6 @@ launch:
     - "@suekou/mcp-notion-server"
   env_vars: []
   confidence: manifest
-tags:
-  - notion
 ---
 
 # Notion MCP Server

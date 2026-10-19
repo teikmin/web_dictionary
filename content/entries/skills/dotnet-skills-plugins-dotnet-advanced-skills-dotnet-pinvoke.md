@@ -1,19 +1,17 @@
 ---
 slug: dotnet-skills-plugins-dotnet-advanced-skills-dotnet-pinvoke
 name: dotnet-pinvoke
-tagline: Correctly call native (C/C++) libraries from .NET using P/Invoke and
-  LibraryImport. Covers function signatures, string marshalling, memory
-  lifetime, S
-summary: This skill covers both DllImport (available since .NET Framework 1.0)
-  and LibraryImport (source-generated, .NET 7+). When targeting .NET Framework,
-  always use DllImport. When targeting .NET 7+, prefer LibraryImport fo...
+tagline: Agent skill from dotnet/skills
+summary: Agent skill from dotnet/skills
 categories:
-  - databases-memory
+  - other
+tags:
+  - agent-skills
 status: active
-quality_percentile: 49
+quality_percentile: 54
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: dotnet/skills
@@ -21,8 +19,16 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 5617
-  last_commit: 2026-10-13T16:25:34Z
+  stars: 5669
+  last_commit: 2026-10-19T07:23:49Z
+  stars_delta_7d: 52
+  stars_growth_pct: 0.9
+  trending_score: 52.48
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 5571
+    - 5617
+    - 5669
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,26 +36,23 @@ readme_source:
   repo: dotnet/skills
   path: plugins/dotnet-advanced/skills/dotnet-pinvoke/SKILL.md
   branch: main
-  fetched_at: 2026-10-14T14:55:18.161Z
+  fetched_at: 2026-10-19T07:40:38.125Z
   truncated: false
 type: agent_skill
 skill:
   skill_name: dotnet-pinvoke
-  description: >
-    Correctly call native (C/C++) libraries from .NET using P/Invoke and
-    LibraryImport. Covers function signatures, string marshalling, memory
-    lifetime, SafeHandle, and cross-platform patterns. USE FOR: writing new
-    P/Invoke or LibraryImport declarations, reviewing or debugging existing
-    native interop code, wrapping a C or C++ library for use in .NET, diagnosing
-    crashes, memory leaks, or corruption at the managed/native boundary. DO NOT
-    USE FOR: COM interop, C++/CLI mixed-mode assemblies, or pure managed code
-    with no native dependencies.
+  description: Agent skill from dotnet/skills
   folder_path: plugins/dotnet-advanced/skills/dotnet-pinvoke
   extra_files:
     - references/diagnostics.md
     - references/type-mapping.md
-tags:
-  - memory
+  pack_total_skills: 107
+  is_pack_primary: false
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: dotnet-skills
 ---
 
 # .NET P/Invoke
@@ -86,7 +89,6 @@ This skill covers both `DllImport` (available since .NET Framework 1.0) and `Lib
 **Agent behavior:** When documentation and native headers diverge, always trust the header. Online documentation (including official Win32 API docs) frequently omits or simplifies details about types, calling conventions, and struct layout that are critical for correct P/Invoke signatures.
 
 ---
-
 ## Workflow
 
 ### Step 1: Choose DllImport or LibraryImport
@@ -371,7 +373,6 @@ GC.KeepAlive(callback); // prevent collection — fnPtr does not root the delega
 ```
 
 ---
-
 ## Cross-Platform Library Loading
 
 Use `NativeLibrary.SetDllImportResolver` for complex scenarios, or conditional compilation for simple cases. Use `CLong`/`CULong` for C `long`/`unsigned long`. Note: `CLong`/`CULong` with `LibraryImport` requires `[assembly: DisableRuntimeMarshalling]`.
@@ -412,7 +413,6 @@ NativeLibrary.SetDllImportResolver(typeof(MyLib).Assembly,
 ```
 
 ---
-
 ## Migrating DllImport to LibraryImport
 
 For codebases targeting .NET 7+, migrating provides AOT compatibility and trimming safety.
@@ -434,7 +434,6 @@ Enable the interop analyzers:
 ```
 
 ---
-
 ## Tooling
 
 ### CsWin32 (Win32 APIs)
@@ -454,7 +453,6 @@ For WinRT interop, use [Microsoft.Windows.CsWinRT](https://github.com/microsoft/
 For binding Objective-C libraries (macOS/iOS), use [Objective Sharpie](https://learn.microsoft.com/previous-versions/xamarin/cross-platform/macios/binding/objective-sharpie) to generate initial P/Invoke and binding definitions from Objective-C headers.
 
 ---
-
 ## Validation
 
 ### Review checklist

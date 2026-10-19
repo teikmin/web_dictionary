@@ -8,12 +8,17 @@ summary: Identify the connected person and company with paperclipconnection.
   requested outcome. Resolve ambiguity about team, scope or assignee with the
   us...
 categories:
-  - productivity-ops
+  - agent-frameworks
+tags:
+  - acpx
+  - agent-orchestration
+  - agent-skills
+  - agentic-ai
 status: active
-quality_percentile: 96
+quality_percentile: 97
 selection_reason: quality_percentile
 first_seen: 2026-10-14
-last_updated: 2026-10-14T14:55:21.336Z
+last_updated: 2026-10-19T07:41:42.374Z
 source:
   kind: github_repo
   repo: paperclipai/paperclip
@@ -21,8 +26,17 @@ source:
   official_vendor: false
   license: MIT
 signals:
-  stars: 101411
-  last_commit: 2026-10-13T16:17:51Z
+  stars: 104300
+  last_commit: 2026-10-19T07:26:15Z
+  stars_delta_7d: 2889
+  stars_growth_pct: 2.8
+  trending_score: 2971.3
+  rank_current: 9
+  rank_delta: null
+  velocity_source: snapshot_delta
+  sparkline_4w:
+    - 101411
+    - 104300
 language: en
 needs_keys: false
 prerequisites: []
@@ -30,7 +44,7 @@ readme_source:
   repo: paperclipai/paperclip
   path: integrations/assistant-plugins/claude/paperclip/skills/delegate-work/SKILL.md
   branch: master
-  fetched_at: 2026-10-14T14:55:11.921Z
+  fetched_at: 2026-10-19T07:36:39.296Z
   truncated: false
 type: agent_skill
 skill:
@@ -39,7 +53,13 @@ skill:
     durable task reference and clear execution expectations.
   folder_path: integrations/assistant-plugins/claude/paperclip/skills/delegate-work
   extra_files: []
-tags: []
+  pack_total_skills: 37
+  is_pack_primary: true
+  clients:
+    - claude-code
+    - codex
+    - antigravity
+  pack_slug: paperclipai-paperclip
 ---
 
 Identify the connected person and company with `paperclip_connection`. List agents and, if relevant, projects. Select the agent suited to the requested outcome. Resolve ambiguity about team, scope or assignee with the user before creating work. Report paused or unavailable agents; do not promise they will run.
